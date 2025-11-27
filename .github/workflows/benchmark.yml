@@ -1,0 +1,142 @@
+# Benchmark CI Workflow
+# Runs benchmarks on CPU (GitHub Actions) and/or GPU (RunsOn) runners.
+# All runs are manual-only via workflow_dispatch.
+
+name: Benchmarks
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_cpu:
+        description: 'Run CPU benchmarks (GitHub Actions, free)'
+        required: false
+        default: true
+        type: boolean
+      run_gpu:
+        description: 'Run GPU benchmarks (RunsOn, incurs costs)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  # =============================================================================
+  # CPU Benchmarks - GitHub Actions (free)
+  # =============================================================================
+  benchmark-cpu:
+    name: CPU Benchmarks
+    if: inputs.run_cpu == true
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install numpy numba jax[cpu]
+
+      - name: Run hardware benchmarks
+        run: |
+          python hardware/benchmark_hardware.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-cpu
+          path: benchmark_results_bare_metal.json
+
+  # =============================================================================
+  # GPU Benchmarks - RunsOn (pay-per-use)
+  # =============================================================================
+  benchmark-gpu:
+    name: GPU Benchmarks
+    if: inputs.run_gpu == true
+    runs-on:
+      - runs-on
+      - runner=gpu
+      - image=quantecon-gpu-ubuntu2404
+      - run-id=${{ github.run_id }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Conda environment
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+          # JAX with CUDA is pre-installed in the QuantEcon AMI
+
+      - name: Verify GPU
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+          nvidia-smi
+          python -c "import jax; print(f'JAX devices: {jax.devices()}')"
+
+      - name: Run hardware benchmarks
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+          python hardware/benchmark_hardware.py
+
+      - name: Run lax.scan profiler
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+          python jax/lax_scan/profile_lax_scan.py --diagnose -n 100000
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-gpu
+          path: |
+            benchmark_results_bare_metal.json
+
+  # =============================================================================
+  # GPU Benchmarks with Nsight Profiling (advanced)
+  # =============================================================================
+  benchmark-gpu-nsight:
+    name: GPU Benchmarks (Nsight)
+    if: inputs.run_gpu == true
+    runs-on:
+      - runs-on
+      - runner=gpu
+      - image=quantecon-gpu-ubuntu2404
+      - run-id=${{ github.run_id }}
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Conda environment
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+
+      - name: Install Nsight Systems
+        run: |
+          # Nsight Systems may be pre-installed on the AMI
+          # If not, install from NVIDIA
+          which nsys || echo "Nsight not installed"
+
+      - name: Run lax.scan with Nsight profiling
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+          # Use smaller iteration count for Nsight to keep trace manageable
+          nsys profile -o lax_scan_profile --trace=cuda,nvtx \
+            python jax/lax_scan/profile_lax_scan.py --nsys -n 1000
+        continue-on-error: true  # Don't fail if nsys not available
+
+      - name: Upload Nsight profile
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsight-profile
+          path: lax_scan_profile.nsys-rep
+        if: always()
