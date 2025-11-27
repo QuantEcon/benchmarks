@@ -1,0 +1,14 @@
+# Core dependencies
+numpy>=1.24.0
+jax>=0.4.0
+
+# Optional: For Numba benchmarks
+numba>=0.57.0
+
+# Optional: For profiling
+tensorboard>=2.12.0
+tensorboard-plugin-profile>=2.12.0
+
+# Optional: For notebook benchmarks
+jupyter>=1.0.0
+jupytext>=1.14.0
