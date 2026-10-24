@@ -14,6 +14,8 @@ benchmarks/
 │   ├── lax_scan/          # lax.scan performance analysis
 │   └── matmul/            # Matrix multiplication benchmarks
 ├── hardware/              # Hardware detection and general benchmarks
+├── precision/             # float32 against float64 across CPU, CUDA and Apple Silicon
+├── results/               # JSON-lines output from precision runs, by host (created by a run)
 ├── notebooks/             # Jupyter notebook benchmarks
 └── docs/                  # Documentation and findings
 ```
@@ -33,6 +35,10 @@ General hardware detection and cross-platform benchmarks comparing:
 - NumPy (CPU)
 - Numba (CPU, with parallelization)
 - JAX (CPU and GPU)
+
+### Precision Benchmarks (`precision/`)
+
+What float64 costs against float32 on each kind of device, by kernel type (compute-, memory- and launch-bound), with the GPU and its own host CPU measured in the same run. One fresh process per measurement, so compile time counts. See [`precision/README.md`](precision/README.md) and [#1](https://github.com/QuantEcon/benchmarks/issues/1).
 
 ### Notebook Benchmarks (`notebooks/`)
 

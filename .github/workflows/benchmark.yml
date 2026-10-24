@@ -17,6 +17,16 @@ on:
         required: false
         default: false
         type: boolean
+      run_precision:
+        description: 'Run precision benchmarks: float32 against float64 on the GPU and its host CPU (RunsOn, incurs costs)'
+        required: false
+        default: false
+        type: boolean
+      precision_quick:
+        description: 'Precision benchmarks: quick sizes only'
+        required: false
+        default: true
+        type: boolean
 
 jobs:
   # =============================================================================
@@ -140,3 +150,43 @@ jobs:
           name: nsight-profile
           path: lax_scan_profile.nsys-rep
         if: always()
+
+  # =============================================================================
+  # Precision Benchmarks - float32 against float64, GPU against its host CPU
+  # See precision/README.md
+  # =============================================================================
+  benchmark-precision:
+    name: Precision Benchmarks
+    if: inputs.run_precision == true
+    runs-on:
+      - runs-on
+      - runner=gpu
+      - image=quantecon-gpu-ubuntu2404
+      - run-id=${{ github.run_id }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install JAX
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+          # The same JAX release as the other platforms, not the AMI's
+          pip install -U "jax[cuda13]"
+          nvidia-smi
+          python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}')"
+
+      - name: Run precision matrix
+        run: |
+          eval "$(conda shell.bash hook)"
+          conda activate base
+          python precision/run_matrix.py --host runson-gpu --devices cpu,gpu ${{ inputs.precision_quick && '--quick' || '' }}
+          python precision/summarise.py results/ | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: benchmark-results-precision
+          path: results/
