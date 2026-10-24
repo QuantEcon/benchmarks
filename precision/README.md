@@ -47,7 +47,7 @@ The workflow in `.github/workflows/benchmark.yml` runs the matrix on the RunsOn 
 - **Cold and warm are kept apart.** `compile_s` and `first_run_s` are what a lecture pays on first use; `warm_s` holds five timed runs after that, summarised by their median. `process_s` is the whole process, imports included.
 - **The result dtype is asserted**, so a silent float32 cannot pass as float64.
 - **Fidelity**: each cell keeps 64 values from fixed positions in its result, and the summary reports the largest relative difference between float32 and float64.
-- **Memory**: cells that would need more than 80% of a device's memory are recorded as skipped rather than run. XLA's own buffer accounting is kept as `memory_analysis`.
+- **Memory**: cells that would need more than `--memory-fraction` of a device's memory (80% by default) are recorded as skipped rather than run. XLA's own buffer accounting is kept as `memory_analysis`.
 - **GPU telemetry**: clocks, temperature, power and clock-event reasons are read just after timing, since stacked cards can throttle.
 
 ## Output
