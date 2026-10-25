@@ -1,0 +1,104 @@
+# Redacted for publication: the machine is a guest's. The console user's name is <console user>, and
+# software its owner's institution manages is <managed agent>; their CPU figures are as recorded.
+== before: 2026-10-25 18:04:42 EDT (22:04:42 UTC)
+18:04  up 1 day,  2:01, 4 users, load averages: 1.40 1.66 1.45
+console idle: 93457 s
+  PID STAT  %CPU USER             COMM
+  505 Ss    32.2 root             /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService
+  338 Ss     9.8 root             <managed agent>
+25028 Ss     6.1 root             <managed agent>
+74943 Ss+    2.7 root             login
+74945 S+     2.4 matt             /bin/bash
+  146 Ss     2.3 root             /usr/libexec/opendirectoryd
+74939 Ss     1.9 matt             zsh
+  180 Ss     1.7 root             /System/Library/PrivateFrameworks/TCC.framework/Support/tccd
+  291 Ss     1.6 root             /usr/libexec/syspolicyd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== between: 2026-10-25 18:06:02 EDT (22:06:02 UTC)
+18:06  up 1 day,  2:02, 4 users, load averages: 5.07 3.05 2.01
+console idle: 93537 s
+  PID STAT  %CPU USER             COMM
+25028 Ss     3.7 root             <managed agent>
+  235 Ss     1.2 root             /usr/libexec/airportd
+  338 Ss     1.1 root             <managed agent>
+  181 Ss     0.3 <console user>             /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  525 Ss     0.2 root             /usr/libexec/wifivelocityd
+ 1143 Ss     0.1 root             <managed agent>
+  344 Ss     0.1 root             <managed agent>
+  336 Ss     0.1 root             <managed agent>
+75096 S      0.0 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 18:14:42 EDT (22:14:42 UTC)
+18:14  up 1 day,  2:11, 4 users, load averages: 6.40 6.55 4.17
+console idle: 94057 s
+  PID STAT  %CPU USER             COMM
+76746 R+   171.1 matt             .venv/bin/python
+  338 Ss     9.0 root             <managed agent>
+25028 Rs     3.8 root             <managed agent>
+  344 Ss     0.9 root             <managed agent>
+  352 Ss     0.3 root             <managed agent>
+74968 S+     0.3 matt             /bin/bash
+    1 Ss     0.1 root             /sbin/launchd
+  569 Ss     0.1 root             /usr/libexec/diagnosticd
+  172 Ss     0.1 root             /usr/sbin/notifyd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 18:24:43 EDT (22:24:43 UTC)
+18:24  up 1 day,  2:21, 4 users, load averages: 12.18 7.99 6.52
+console idle: 94658 s
+  PID STAT  %CPU USER             COMM
+78373 R+   1783.8 matt             .venv/bin/python
+  203 Rs     5.0 root             /usr/libexec/mobileassetd
+25028 Rs     3.5 root             <managed agent>
+  928 R      2.8 <console user>             /System/Library/PrivateFrameworks/CacheDelete.framework/deleted
+  344 Ss     0.5 root             <managed agent>
+  338 Rs     0.3 root             <managed agent>
+  352 Ss     0.1 root             <managed agent>
+  872 S      0.1 <console user>             /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+78468 S      0.0 _cmiodalassistants /System/Library/Frameworks/Contacts.framework/Support/contactsd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 18:34:43 EDT (22:34:43 UTC)
+18:34  up 1 day,  2:31, 4 users, load averages: 3.98 9.17 8.31
+console idle: 95258 s
+  PID STAT  %CPU USER             COMM
+80085 R+   100.0 matt             .venv/bin/python
+25028 Ss     3.6 root             <managed agent>
+ 1143 Ss     0.9 root             <managed agent>
+  344 Ss     0.3 root             <managed agent>
+  338 Ss     0.2 root             <managed agent>
+  336 Ss     0.1 root             <managed agent>
+  178 Ss     0.1 _windowserver    /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+79792 S      0.0 matt             /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+79791 S      0.0 matt             /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== after: 2026-10-25 18:44:12 EDT (22:44:12 UTC)
+18:44  up 1 day,  2:40, 4 users, load averages: 20.83 15.28 11.19
+console idle: 95827 s
+  PID STAT  %CPU USER             COMM
+  338 Ss    18.5 root             <managed agent>
+25028 Ss    15.1 root             <managed agent>
+  352 Ss     1.5 root             <managed agent>
+  344 Ss     0.7 root             <managed agent>
+74945 S+     0.3 matt             /bin/bash
+  336 Ss     0.2 root             <managed agent>
+  116 Ss     0.1 root             /usr/libexec/configd
+  172 Ss     0.1 root             /usr/sbin/notifyd
+56244 Ss     0.1 root             /usr/sbin/bluetoothd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
