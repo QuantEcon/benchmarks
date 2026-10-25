@@ -1,0 +1,98 @@
+== pausing: 838 852   30122   30198
+30868
+30877
+33087
+48839
+16:45:42 about_jax cpu rep 1: exit 0, 0.0 s, cells ok True, float32
+16:45:48 aiyagari_jax cpu rep 1: exit 0, 6.4 s, cells ok True, float64
+16:45:55 arellano_jax cpu rep 1: exit 0, 6.6 s, cells ok True, float64
+16:45:57 autodiff cpu rep 1: exit 0, 1.9 s, cells ok True, float32
+16:46:42 hopenhayn cpu rep 1: exit 0, 45.1 s, cells ok True, float64
+16:46:47 ifp_dl cpu rep 1: exit 0, 3.8 s, cells ok True, float32
+16:47:29 ifp_egm_jax cpu rep 1: exit 0, 42.4 s, cells ok True, float64
+16:47:31 inventory_dynamics_jax cpu rep 1: exit 0, 2.2 s, cells ok True, float32
+16:47:35 inventory_ssd cpu rep 1: exit 0, 3.7 s, cells ok True, float64
+16:47:44 jax_intro_jax cpu rep 1: exit 0, 8.2 s, cells ok False, float64
+16:47:54 jax_nn cpu rep 1: exit 0, 10.1 s, cells ok True, float32
+16:47:55 job_search cpu rep 1: exit 0, 1.0 s, cells ok True, float64
+16:47:58 keras cpu rep 1: exit 0, 2.2 s, cells ok True, float32
+16:48:21 kesten_processes_jax cpu rep 1: exit 0, 22.8 s, cells ok True, float32
+16:48:26 lucas_model_jax cpu rep 1: exit 0, 5.1 s, cells ok True, float32
+16:48:30 markov_asset_jax cpu rep 1: exit 0, 3.6 s, cells ok True, float64
+16:48:34 mle_jax cpu rep 1: exit 0, 4.0 s, cells ok True, float64
+16:49:38 newtons_method cpu rep 1: exit 0, 63.7 s, cells ok True, float64
+16:50:47 opt_invest cpu rep 1: exit 0, 68.7 s, cells ok True, float64
+16:50:53 opt_savings_1 cpu rep 1: exit 0, 5.8 s, cells ok True, float64
+16:51:18 opt_savings_2 cpu rep 1: exit 0, 24.9 s, cells ok True, float64
+16:59:02 overborrowing cpu rep 1: exit 0, 463.1 s, cells ok True, float32
+16:59:03 schelling_jax_parallel cpu rep 1: exit 0, 1.1 s, cells ok True, float32
+16:59:04 schelling_jax cpu rep 1: exit 0, 1.0 s, cells ok True, float32
+16:59:06 schelling_numpy cpu rep 1: exit 0, 1.5 s, cells ok True, float32
+16:59:11 schelling_python cpu rep 1: exit 0, 5.2 s, cells ok True, float32
+17:00:36 schelling_shocks cpu rep 1: exit 0, 84.2 s, cells ok True, float32
+17:00:36 short_path_jax cpu rep 1: exit 0, 0.4 s, cells ok True, float32
+17:07:06 wealth_dynamics_jax cpu rep 1: exit 0, 389.2 s, cells ok True, float32
+17:07:06 about_jax cpu rep 2: exit 0, 0.0 s, cells ok True, float32
+17:07:11 aiyagari_jax cpu rep 2: exit 0, 5.1 s, cells ok True, float64
+17:07:17 arellano_jax cpu rep 2: exit 0, 5.4 s, cells ok True, float64
+17:07:19 autodiff cpu rep 2: exit 0, 1.4 s, cells ok True, float32
+17:08:05 hopenhayn cpu rep 2: exit 0, 45.5 s, cells ok True, float64
+17:08:08 ifp_dl cpu rep 2: exit 0, 3.6 s, cells ok True, float32
+17:08:51 ifp_egm_jax cpu rep 2: exit 0, 42.4 s, cells ok True, float64
+17:08:53 inventory_dynamics_jax cpu rep 2: exit 0, 2.2 s, cells ok True, float32
+17:08:57 inventory_ssd cpu rep 2: exit 0, 3.8 s, cells ok True, float64
+17:09:06 jax_intro_jax cpu rep 2: exit 0, 8.3 s, cells ok False, float64
+17:09:11 jax_nn cpu rep 2: exit 0, 4.4 s, cells ok True, float32
+17:09:12 job_search cpu rep 2: exit 0, 1.0 s, cells ok True, float64
+17:09:14 keras cpu rep 2: exit 0, 2.2 s, cells ok True, float32
+17:09:37 kesten_processes_jax cpu rep 2: exit 0, 22.9 s, cells ok True, float32
+17:09:43 lucas_model_jax cpu rep 2: exit 0, 5.3 s, cells ok True, float32
+17:09:47 markov_asset_jax cpu rep 2: exit 0, 3.6 s, cells ok True, float64
+17:09:49 mle_jax cpu rep 2: exit 0, 2.0 s, cells ok True, float64
+17:10:56 newtons_method cpu rep 2: exit 0, 66.3 s, cells ok True, float64
+17:12:04 opt_invest cpu rep 2: exit 0, 68.2 s, cells ok True, float64
+17:12:10 opt_savings_1 cpu rep 2: exit 0, 6.1 s, cells ok True, float64
+17:12:36 opt_savings_2 cpu rep 2: exit 0, 25.8 s, cells ok True, float64
+17:19:59 overborrowing cpu rep 2: exit 0, 442.7 s, cells ok True, float32
+17:20:01 schelling_jax_parallel cpu rep 2: exit 0, 1.2 s, cells ok True, float32
+17:20:02 schelling_jax cpu rep 2: exit 0, 1.1 s, cells ok True, float32
+17:20:04 schelling_numpy cpu rep 2: exit 0, 1.5 s, cells ok True, float32
+17:20:09 schelling_python cpu rep 2: exit 0, 5.4 s, cells ok True, float32
+17:21:36 schelling_shocks cpu rep 2: exit 0, 86.2 s, cells ok True, float32
+17:21:36 short_path_jax cpu rep 2: exit 0, 0.4 s, cells ok True, float32
+17:28:08 wealth_dynamics_jax cpu rep 2: exit 0, 391.4 s, cells ok True, float32
+17:28:08 about_jax cpu rep 3: exit 0, 0.0 s, cells ok True, float32
+17:28:14 aiyagari_jax cpu rep 3: exit 0, 5.1 s, cells ok True, float64
+17:28:19 arellano_jax cpu rep 3: exit 0, 5.4 s, cells ok True, float64
+17:28:21 autodiff cpu rep 3: exit 0, 1.4 s, cells ok True, float32
+17:29:07 hopenhayn cpu rep 3: exit 0, 45.7 s, cells ok True, float64
+17:29:11 ifp_dl cpu rep 3: exit 0, 3.7 s, cells ok True, float32
+17:29:54 ifp_egm_jax cpu rep 3: exit 0, 42.7 s, cells ok True, float64
+17:29:56 inventory_dynamics_jax cpu rep 3: exit 0, 2.2 s, cells ok True, float32
+17:30:00 inventory_ssd cpu rep 3: exit 0, 3.9 s, cells ok True, float64
+17:30:09 jax_intro_jax cpu rep 3: exit 0, 8.3 s, cells ok False, float64
+17:30:13 jax_nn cpu rep 3: exit 0, 4.5 s, cells ok True, float32
+17:30:15 job_search cpu rep 3: exit 0, 1.0 s, cells ok True, float64
+17:30:17 keras cpu rep 3: exit 0, 2.2 s, cells ok True, float32
+17:30:40 kesten_processes_jax cpu rep 3: exit 0, 22.9 s, cells ok True, float32
+17:30:46 lucas_model_jax cpu rep 3: exit 0, 5.3 s, cells ok True, float32
+17:30:50 markov_asset_jax cpu rep 3: exit 0, 3.6 s, cells ok True, float64
+17:30:52 mle_jax cpu rep 3: exit 0, 2.0 s, cells ok True, float64
+17:31:58 newtons_method cpu rep 3: exit 0, 66.3 s, cells ok True, float64
+17:33:08 opt_invest cpu rep 3: exit 0, 69.3 s, cells ok True, float64
+17:33:14 opt_savings_1 cpu rep 3: exit 0, 6.0 s, cells ok True, float64
+17:33:40 opt_savings_2 cpu rep 3: exit 0, 25.9 s, cells ok True, float64
+17:40:50 overborrowing cpu rep 3: exit 0, 429.6 s, cells ok True, float32
+17:40:52 schelling_jax_parallel cpu rep 3: exit 0, 1.1 s, cells ok True, float32
+17:40:53 schelling_jax cpu rep 3: exit 0, 1.1 s, cells ok True, float32
+17:40:54 schelling_numpy cpu rep 3: exit 0, 1.5 s, cells ok True, float32
+17:41:00 schelling_python cpu rep 3: exit 0, 5.4 s, cells ok True, float32
+17:42:26 schelling_shocks cpu rep 3: exit 0, 86.2 s, cells ok True, float32
+17:42:27 short_path_jax cpu rep 3: exit 0, 0.4 s, cells ok True, float32
+17:49:00 wealth_dynamics_jax cpu rep 3: exit 0, 392.7 s, cells ok True, float32
+ALLDONE
+== resumed: 838 852   30122   30198
+30868
+30877
+33087
+48839 at 17:49:00
