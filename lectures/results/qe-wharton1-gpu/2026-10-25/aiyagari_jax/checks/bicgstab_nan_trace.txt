@@ -1,0 +1,66 @@
+# nan_check.py and bicgstab_jit_trace.py on qe-wharton1-gpu, the TITAN RTX at 0b:00.0, float32, a_size 5000, 2026-10-25 (UTC)
+# Output as printed.
+
+## nan_check.py: the lecture's Howard policy iteration, stepped by hand
+float32 on NVIDIA TITAN RTX, a_size 5000, jax 0.12.0.1
+  start: v finite True
+  loop 1: policy points changed 9995, r_σ finite True, v finite True, error 1.160e+01, error > 1e-4: True
+  loop 2: policy points changed 9987, r_σ finite True, v finite False, error nan, error > 1e-4: False
+  non-finite values: 10000 of 10000; r_σ range [-2.3, 1.48]; initial residual norm 87.1
+    bicgstab with maxiter   5: finite True
+    bicgstab with maxiter  10: finite True
+    bicgstab with maxiter  20: finite True
+    bicgstab with maxiter  50: finite False
+    bicgstab with maxiter 100: finite False
+    bicgstab with maxiter 200: finite False
+  jax_debug_nans: no error raised
+
+## bicgstab_jit_trace.py: JAX's bicgstab body, compiled, on loop 2's system
+  0 |r|^2        2126  rho_        8256  <rhat,q_>        1249  alpha_        6.61  <t,t>        1729  omega_      0.5655  x finite True
+  1 |r|^2        2536  rho_      -230.6  <rhat,q_>       168.7  alpha_      -1.367  <t,t>        2007  omega_      0.5598  x finite True
+  2 |r|^2        8145  rho_      -287.7  <rhat,q_>      -59.84  alpha_       4.808  <t,t>        8189  omega_      0.5795  x finite True
+  3 |r|^2        3686  rho_      -282.2  <rhat,q_>       583.8  alpha_     -0.4834  <t,t>        3014  omega_      0.5609  x finite True
+  4 |r|^2       367.2  rho_      -275.6  <rhat,q_>        -216  alpha_       1.276  <t,t>       261.8  omega_      0.7351  x finite True
+  5 |r|^2        1406  rho_      -14.16  <rhat,q_>       4.819  alpha_      -2.938  <t,t>        1337  omega_      0.6827  x finite True
+  6 |r|^2       974.1  rho_       10.65  <rhat,q_>       181.8  alpha_     0.05861  <t,t>       660.6  omega_      0.6335  x finite True
+  7 |r|^2       147.8  rho_      -76.95  <rhat,q_>       32.57  alpha_      -2.363  <t,t>       23.09  omega_      0.5247  x finite True
+  8 |r|^2       128.9  rho_       10.25  <rhat,q_>       9.706  alpha_       1.056  <t,t>       19.65  omega_      0.4062  x finite True
+  9 |r|^2       127.3  rho_    -0.06356  <rhat,q_>      -3.396  alpha_     0.01871  <t,t>       14.93  omega_      0.3099  x finite True
+ 10 |r|^2       168.7  rho_       1.016  <rhat,q_>     0.01856  alpha_       54.75  <t,t>       3.676  omega_      -1.307  x finite True
+ 11 |r|^2       134.5  rho_      0.7583  <rhat,q_>      0.9871  alpha_      0.7683  <t,t>       5.633  omega_     -0.4625  x finite True
+ 12 |r|^2       131.1  rho_     -0.2243  <rhat,q_>    -0.09997  alpha_       2.244  <t,t>       19.15  omega_      0.3856  x finite True
+ 13 |r|^2         176  rho_     -0.4689  <rhat,q_>       1.309  alpha_     -0.3583  <t,t>       24.86  omega_      0.3118  x finite True
+ 14 |r|^2         275  rho_     -0.0549  <rhat,q_>    0.007951  alpha_      -6.904  <t,t>       240.1  omega_      0.6728  x finite True
+ 15 |r|^2       147.7  rho_      0.4927  <rhat,q_>       8.408  alpha_      0.0586  <t,t>       20.51  omega_      0.2936  x finite True
+ 16 |r|^2       50.42  rho_    -0.04842  <rhat,q_>    -0.01345  alpha_         3.6  <t,t>        6.76  omega_      0.3826  x finite True
+ 17 |r|^2       40.72  rho_    -0.01145  <rhat,q_>    -0.04307  alpha_      0.2658  <t,t>       4.495  omega_      0.3354  x finite True
+ 18 |r|^2        37.1  rho_    0.005279  <rhat,q_>    -0.01379  alpha_     -0.3827  <t,t>       4.522  omega_       0.391  x finite True
+ 19 |r|^2       47.42  rho_    0.002837  <rhat,q_>   -0.002101  alpha_       -1.35  <t,t>        6.85  omega_      0.4476  x finite True
+ 20 |r|^2       25.52  rho_    0.008305  <rhat,q_>     -0.0184  alpha_     -0.4513  <t,t>       2.965  omega_      0.4495  x finite True
+ 21 |r|^2       23.11  rho_    0.002162  <rhat,q_>    0.004773  alpha_      0.4529  <t,t>       3.482  omega_      0.5912  x finite True
+ 22 |r|^2       28.94  rho_    0.006811  <rhat,q_>    -0.02368  alpha_     -0.2876  <t,t>       2.894  omega_      0.4214  x finite True
+ 23 |r|^2       46.62  rho_     0.00526  <rhat,q_>    0.006441  alpha_      0.8166  <t,t>        4.46  omega_      0.3799  x finite True
+ 24 |r|^2       35.24  rho_    0.002656  <rhat,q_>   -0.005922  alpha_     -0.4485  <t,t>       3.261  omega_       0.382  x finite True
+ 25 |r|^2       289.5  rho_    0.004804  <rhat,q_>   0.0008883  alpha_       5.408  <t,t>       21.83  omega_      0.2603  x finite True
+ 26 |r|^2       302.9  rho_   0.0005226  <rhat,q_>     0.01167  alpha_     0.04479  <t,t>       20.31  omega_      0.2181  x finite True
+ 27 |r|^2       62.42  rho_   -0.001818  <rhat,q_>   -0.001296  alpha_       1.403  <t,t>       2.859  omega_    0.009392  x finite True
+ 28 |r|^2       26.44  rho_   5.817e-05  <rhat,q_>  -0.0006371  alpha_    -0.09132  <t,t>       1.322  omega_       0.109  x finite True
+ 29 |r|^2         300  rho_    0.001338  <rhat,q_>    -0.06689  alpha_       -0.02  <t,t>       16.59  omega_      0.1162  x finite True
+ 30 |r|^2       146.3  rho_   -0.001684  <rhat,q_>    -0.04333  alpha_     0.03886  <t,t>       6.876  omega_     0.01332  x finite True
+ 31 |r|^2       106.2  rho_   4.196e-05  <rhat,q_>   -0.000227  alpha_     -0.1849  <t,t>        5.06  omega_     0.02729  x finite True
+ 32 |r|^2       82.28  rho_   1.431e-05  <rhat,q_>   0.0002594  alpha_     0.05515  <t,t>       3.864  omega_     0.02037  x finite True
+ 33 |r|^2       56.41  rho_   2.289e-05  <rhat,q_>    0.001419  alpha_     0.01613  <t,t>       2.599  omega_     0.01283  x finite True
+ 34 |r|^2       80.25  rho_   2.289e-05  <rhat,q_>   -0.001923  alpha_     -0.0119  <t,t>       3.736  omega_     0.01439  x finite True
+ 35 |r|^2       105.1  rho_   2.575e-05  <rhat,q_>    0.002258  alpha_      0.0114  <t,t>        4.91  omega_      0.0133  x finite True
+ 36 |r|^2       313.4  rho_   3.719e-05  <rhat,q_>   0.0007019  alpha_     0.05299  <t,t>        14.9  omega_     0.01573  x finite True
+ 37 |r|^2       28.87  rho_   0.0001259  <rhat,q_>    -0.01636  alpha_   -0.007696  <t,t>       1.323  omega_     0.02417  x finite True
+ 38 |r|^2       29.29  rho_   2.384e-06  <rhat,q_>  -0.0005875  alpha_   -0.004058  <t,t>       1.332  omega_     0.01815  x finite True
+ 39 |r|^2       34.68  rho_   1.907e-05  <rhat,q_>   0.0006886  alpha_      0.0277  <t,t>       1.578  omega_      0.0139  x finite True
+ 40 |r|^2       55.53  rho_   1.907e-05  <rhat,q_>   0.0004196  alpha_     0.04545  <t,t>       2.539  omega_    0.007261  x finite True
+ 41 |r|^2       50.11  rho_   1.335e-05  <rhat,q_>   -0.005402  alpha_   -0.002472  <t,t>       2.282  omega_    0.006028  x finite True
+ 42 |r|^2       39.29  rho_   1.144e-05  <rhat,q_>   0.0007477  alpha_     0.01531  <t,t>        1.77  omega_    0.002873  x finite True
+ 43 |r|^2       43.27  rho_   7.153e-06  <rhat,q_>   -0.004074  alpha_   -0.001756  <t,t>       1.955  omega_    0.002922  x finite True
+ 44 |r|^2       46.74  rho_    9.06e-06  <rhat,q_>      0.0047  alpha_    0.001928  <t,t>       2.115  omega_    0.002507  x finite True
+ 45 |r|^2       41.81  rho_   7.153e-06  <rhat,q_>   -0.001572  alpha_   -0.004551  <t,t>       1.886  omega_     0.00259  x finite True
+ 46 |r|^2         nan  rho_   8.106e-06  <rhat,q_>           0  alpha_         inf  <t,t>         nan  omega_         nan  x finite False
+stopped with k = 47; x finite False

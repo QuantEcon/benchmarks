@@ -12,6 +12,7 @@ The lecture is `lectures/aiyagari_jax.md` from [lecture-jax](https://github.com/
 | [`aiyagari_scale.py`](aiyagari_scale.py) | The lecture's household operators, warm, at asset grids from 200 (the lecture's) to 10,000; three processes per configuration. It adds one variant the lecture doesn't have: the greedy step over a stored reward array, which reads memory where the lecture's step computes logs |
 | [`hpi_check.py`](hpi_check.py) | Howard iterations per solve over the lecture's 50 capital values, by precision |
 | [`bicgstab_check.py`](bicgstab_check.py) | Whether `get_value`'s bicgstab solve runs to its iteration cap, by precision |
+| [`nan_check.py`](nan_check.py), [`bicgstab_jit_trace.py`](bicgstab_jit_trace.py) | Where float32 goes NaN on the card at a 5,000-point grid. At policy-iteration loop 2, JAX's bicgstab stalls, and at its 46th step `⟨r̂, q⟩` rounds to exactly zero, so `alpha` is infinite and `omega` NaN. Its breakdown test checks only for exact zeros, so the NaN is returned; the lecture's `while error > tol` then stops, because NaN > tol is false. Output in `checks/bicgstab_nan_trace.txt` |
 | [`summarise_runs.py`](summarise_runs.py), [`summarise_scale.py`](summarise_scale.py), [`policy_gap.py`](policy_gap.py) | The tables and the fidelity checks, from the results |
 | [`run_set.sh`](run_set.sh), [`scale_set.sh`](scale_set.sh) | The drivers, as run inside `tmux` on the machine (paths are that machine's) |
 

@@ -58,6 +58,11 @@ Each cell appends one JSON line to `results/<host>/<date>.jsonl`, carrying the c
 
 ## Caveats
 
-- **JAX's CPU backend does not use Apple's matrix unit.** On an M1 Pro, NumPy's float64 matmul (through Accelerate) runs at 441 GFLOPS against JAX's 251, so a Mac running JAX gets less from its CPU than its specifications suggest.
+- **JAX's CPU backend makes only partial use of Apple's matrix unit.**
+    - On an M1 Pro, NumPy's float64 matmul (through Accelerate) runs at 441 GFLOPS, against JAX's 251.
+    - On the M6 with JAX 0.12.0.1, float32 matmul goes through XLA's YNNPACK fusion. It reaches about 2 TFLOPS at n = 1,024, which suggests the matrix unit is in use there, and falls to about 900 GFLOPS from n = 4,096.
+    - Float64 stays near 400 GFLOPS throughout, against 545 from NumPy with Accelerate at n = 4,096.
+    - So a Mac running JAX gets less from its CPU than its specifications suggest.
+- **On Apple Silicon, each small float32 matrix product costs about 1 µs.** XLA's YNNPACK fusion takes every product from 8 × 8 up. On the M6 a call costs about 1.1 µs in float32, against 0.16 µs in float64, so a recursion of small products, such as the `kalman` workload, runs about 3.5× slower in float32. `XLA_FLAGS=--xla_cpu_experimental_ynn_fusion_type=` turns the fusion off: the Kalman filter then runs at the same speed in both precisions, but large float32 matmuls lose up to 2.4×. The results here use the default, as a lecture would. The diagnosis is in [`runs/2026-10-25/checks/`](runs/2026-10-25/checks/).
 - **float32 matmul on Ampere and later may use TF32 by default**, which flatters float32 against float64. Turing has no TF32, but the A10G (`g5`) and L4 (`g6`) do. The default is what a lecture gets; to measure full float32 as well, repeat the run with `JAX_DEFAULT_MATMUL_PRECISION=highest` and a `--label`.
 - **Written as one broadcast, the recomputing Bellman step saves no memory on CPU**: XLA materialises the full m × m array. That is why it works in blocks.
