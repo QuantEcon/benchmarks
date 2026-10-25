@@ -44,6 +44,20 @@ on:
         options:
           - cuda13
           - cuda12
+      run_lectures:
+        description: 'Run every lecture-jax lecture as written, three times, on the GPU and its host CPU (#4; RunsOn, incurs costs)'
+        required: false
+        default: false
+        type: boolean
+      lectures_instance:
+        description: "Whole lectures: EC2 instance (g4dn: T4, the lectures' CI instance; g5: A10G; g6: L4)"
+        required: false
+        default: 'g4dn.2xlarge'
+        type: choice
+        options:
+          - g4dn.2xlarge
+          - g5.2xlarge
+          - g6.2xlarge
 
 jobs:
   # =============================================================================
@@ -205,3 +219,59 @@ jobs:
         with:
           name: benchmark-results-precision-${{ inputs.precision_instance }}-${{ inputs.precision_cuda }}
           path: results/
+
+  # =============================================================================
+  # Whole lectures, as used - every lecture-jax lecture on the GPU and its host CPU
+  # See lectures/whole/README.md
+  # =============================================================================
+  benchmark-lectures:
+    name: Whole Lectures
+    if: inputs.run_lectures == true
+    runs-on: "runs-on=${{ github.run_id }}/family=${{ inputs.lectures_instance }}/image=quantecon_ubuntu2404/volume=80gb/spot=false"
+    # Three runs take about 3.5 hours on a g4dn.2xlarge (USD 0.75 an hour); this caps the cost
+    timeout-minutes: 300
+    env:
+      HOST: runson-${{ inputs.lectures_instance }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install the TITAN RTX run's packages
+        run: |
+          # The exact versions qe-wharton1-gpu ran with, so that the two compare
+          pip install -r lectures/results/qe-wharton1-gpu/2026-10-25/whole/environment.txt
+          nvidia-smi
+          python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}'); assert jax.devices()[0].platform == 'gpu', 'JAX sees no GPU'"
+
+      - name: Fetch the lectures
+        run: |
+          # lecture-jax at 4b939ec, as on the other machines
+          mkdir -p "$RUNNER_TEMP/lectures-all/lectures"
+          cp lectures/whole/lectures.txt "$RUNNER_TEMP/lectures-all/"
+          for lecture in $(cat lectures/whole/lectures.txt); do
+            curl -fsSL -o "$RUNNER_TEMP/lectures-all/lectures/$lecture.md" \
+              "https://raw.githubusercontent.com/QuantEcon/lecture-jax/4b939ec49a7f1901245f68749c1b1e18e3454d34/lectures/$lecture.md"
+          done
+
+      - name: Run every lecture
+        run: |
+          out="$GITHUB_WORKSPACE/lectures/results/$HOST/$(date -u +%F)/whole"
+          mkdir -p "$out"
+          pip freeze > "$out/environment.txt"
+          ROOT="$RUNNER_TEMP/lectures-all" PY="$(which python)" RUNNER="$GITHUB_WORKSPACE/lectures/run_lecture.py" \
+            ENV_INFO="$GITHUB_WORKSPACE/precision" bash lectures/whole/lectures_set.sh "$out" 3 cuda cpu | tee "$out/lectures-set.log"
+          find "$out" -name '*.err' -empty -delete
+          python lectures/whole/summarise_whole.py "$out" --lectures "$RUNNER_TEMP/lectures-all/lectures" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: whole-lectures-${{ inputs.lectures_instance }}
+          path: lectures/results/runson-*/
