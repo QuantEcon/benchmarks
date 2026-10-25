@@ -50,7 +50,7 @@ on:
         default: false
         type: boolean
       lectures_instance:
-        description: 'Whole lectures: EC2 instance (g4dn: T4, the lectures CI instance)'
+        description: "Whole lectures: EC2 instance (g4dn: T4, the lectures' CI instance; g5: A10G; g6: L4)"
         required: false
         default: 'g4dn.2xlarge'
         type: choice
