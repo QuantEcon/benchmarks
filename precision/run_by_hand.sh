@@ -39,8 +39,8 @@ if [ "${driver%%.*}" -ge 580 ]; then CUDA=cuda13; LABEL=""; else CUDA=cuda12; LA
 echo "driver $driver: jax[$CUDA]"
 
 echo "== Python 3.12 and JAX"
-command -v uv > /dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
+command -v uv > /dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
 uv venv -q -p 3.12 .venv-phase2
 source .venv-phase2/bin/activate
 uv pip install -q "jax[$CUDA]" -c precision/constraints.txt
@@ -67,6 +67,7 @@ for lecture in $LECTURES aiyagari_jax ifp_egm_jax; do
   curl -fsSL -o "$LDIR/$lecture.md" "$LECTURE_JAX/$lecture.md"
 done
 export CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 MPLBACKEND=Agg
+mkdir -p "$OUT/whole"
 for rep in $(seq 1 $REPS); do
   for lecture in $LECTURES; do
     mkdir -p "$OUT/whole/$lecture"
