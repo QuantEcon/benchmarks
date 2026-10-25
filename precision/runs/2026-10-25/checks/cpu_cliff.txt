@@ -1,0 +1,41 @@
+# The stored Bellman step slows 10-30x on the CPU once its float64 array passes ~2 GiB (2026-10-25)
+# Found in Phase 0, Phase 1 and the T4 run: on every CPU, bellman_stored at 20k is 7-23x slower in float64
+# than in float32. At 10k and 40k the ratio is about 1-3x. XLA's memory analysis reports no temporary
+# buffer in any of these cells, so the reduction stays fused.
+
+## The three benchmark CPUs (results/*/2026-10-25.jsonl), warm median, default label
+
+qe-mini1 (M6)            10000 float32    2.7 ms | float64    6.5 ms
+qe-mini1 (M6)            20000 float32   12.3 ms | float64   88.2 ms   <- float64 array 2.98 GiB
+qe-mini1 (M6)            40000 float32  175.8 ms | float64  566.9 ms   <- float32 array 5.96 GiB
+qe-wharton1-gpu (TR)     10000 float32    9.4 ms | float64   20.3 ms
+qe-wharton1-gpu (TR)     20000 float32   58.2 ms | float64 1136.7 ms
+qe-wharton1-gpu (TR)     40000 float32 2350.7 ms | float64 2751.0 ms
+runson-g4dn.2xlarge      10000 float32    9.9 ms | float64   20.9 ms
+runson-g4dn.2xlarge      20000 float32   42.1 ms | float64  975.2 ms
+runson-g4dn.2xlarge      40000 float32 1973.0 ms | float64 2159.0 ms
+
+## The same cells on an M1 Pro laptop (16 GB, CPU), precision/run_matrix.py, jax 0.12.0.1, as printed
+
+bellman_stored       10000 float32  cpu    warm      4.01 ms       99.8 GB/s  compile 0.01 s
+bellman_stored       10000 float64  cpu    warm      9.91 ms       80.7 GB/s  compile 0.01 s
+bellman_stored       12000 float64  cpu    warm     14.27 ms       80.8 GB/s  compile 0.01 s
+bellman_stored       13000 float64  cpu    warm     16.46 ms       82.2 GB/s  compile 0.01 s
+bellman_stored       14000 float64  cpu    warm     19.58 ms       80.1 GB/s  compile 0.01 s
+bellman_stored       15000 float64  cpu    warm     22.69 ms       79.3 GB/s  compile 0.01 s
+bellman_stored       16000 float64  cpu    warm     25.93 ms       79.0 GB/s  compile 0.01 s   <- 2.05 GB, under 2^31 bytes
+bellman_stored       18000 float64  cpu    warm    214.46 ms       12.1 GB/s  compile 0.01 s   <- 2.59 GB, over 2^31 bytes
+bellman_stored       20000 float32  cpu    warm     22.60 ms       70.8 GB/s  compile 0.01 s
+bellman_stored       20000 float64  cpu    warm   1184.35 ms        2.7 GB/s  compile 0.01 s
+bellman_stored       28000 float32  cpu    warm     38.89 ms       80.6 GB/s  compile 0.01 s
+bellman_stored       28000 float64  cpu    warm   2719.87 ms        2.3 GB/s  compile 0.01 s
+bellman_stored       30000 float32  cpu    warm     44.08 ms       81.7 GB/s  compile 0.01 s
+bellman_stored       31000 float32  cpu    warm     47.71 ms       80.6 GB/s  compile 0.01 s   <- 3.84 GB, still fast
+
+## Reading
+
+In float64, throughput collapses between 16k (2.05 GB) and 18k (2.59 GB), which straddles 2^31 bytes.
+In float32 on the M1 Pro it holds to 31k (3.84 GB). On the x86 CPUs and the M6, float32 has also collapsed
+by 40k (5.96 GiB). The threshold looks like a buffer size that depends on the dtype, in XLA:CPU's
+fused reduction. Not yet traced: whether it is the reduction, the broadcast add or the -inf handling.
+Untested: whether splitting the work into blocks under the threshold (as bellman_recompute does) avoids it.
