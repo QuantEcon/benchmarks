@@ -1,6 +1,6 @@
 # Phase 0 and Phase 1 of #1, 2026-10-25
 
-The precision matrix's first full runs, from `main` at `9bd776a` (#2). The results are in [`results/qe-mini1/2026-10-25.jsonl`](../../../results/qe-mini1/2026-10-25.jsonl) and [`results/qe-wharton1-gpu/2026-10-25.jsonl`](../../../results/qe-wharton1-gpu/2026-10-25.jsonl).
+The precision matrix's first full runs, from `main` at `9bd776a` (#2), and later the M5 Pro's at `736a9ee`. The results are in [`results/qe-mini1/2026-10-25.jsonl`](../../../results/qe-mini1/2026-10-25.jsonl), [`results/qe-wharton1-gpu/2026-10-25.jsonl`](../../../results/qe-wharton1-gpu/2026-10-25.jsonl) and [`results/qe-wharton2/2026-10-25.jsonl`](../../../results/qe-wharton2/2026-10-25.jsonl).
 
 | Run | Machine | Devices | Rows | Driver and log |
 |---|---|---|---|---|
@@ -9,6 +9,7 @@ The precision matrix's first full runs, from `main` at `9bd776a` (#2). The resul
 | Phase 1, `interleave` | the same | CPU under `numactl --interleave=all` | 46 | the same |
 | Phase 1, `cuda12` | the same | as Phase 1, with `jax[cuda12]` in place of `jax[cuda13]` | 120 | the same |
 | Phase 0, the T4 | RunsOn `g4dn.2xlarge`: Tesla T4 (15 GB), Xeon Platinum 8259CL (8 threads), driver 580.105.08 | CPU and the T4, in both CUDA builds (the `cuda12` rows labelled) | 184 | workflow runs [40165642256](https://github.com/QuantEcon/benchmarks/actions/runs/40165642256) (CUDA 13) and [40165644168](https://github.com/QuantEcon/benchmarks/actions/runs/40165644168) (CUDA 12), from `main` at `963b2c2` |
+| Phase 0, the M5 Pro | `qe-wharton2`: Apple M5 Pro, 18 cores (6 super, 12 performance), 64 GB | CPU | 46, none skipped | [`wharton2_run.sh`](wharton2_run.sh), [`wharton2.log`](wharton2.log), and the state samples in [`lectures/results/qe-wharton2/2026-10-25/whole/state.txt`](../../../lectures/results/qe-wharton2/2026-10-25/whole/state.txt) |
 
 All runs used JAX 0.12.0.1 (`precision/constraints.txt`): Python 3.12.15 on the Mac, and 3.12.3 with driver 595.91.07 (CUDA 13.2) on the GPU box. The skipped cells are `bellman_stored` at 60k in float64, which needs 26.8 GiB per device: on one 24 GB card, and on the Mac's 32 GB at the default `--memory-fraction`.
 
@@ -17,6 +18,8 @@ All runs used JAX 0.12.0.1 (`precision/constraints.txt`): Python 3.12.15 on the 
 - **`qe-mini1` runs agents around the clock.** `phase0.sh` paused them (SIGSTOP), together with the console's animated wallpaper, and resumed them (SIGCONT) on exit, after 2 minutes. `phase0-state.txt` records the machine before, during and after. While paused, the busiest process was WindowServer, at 1.8% CPU.
 - **`phase0.sh` is as it ran,** with unanchored `pgrep -f` patterns. They also matched the shell that launched it, which was paused too, harmlessly for the run. [`lectures/mac_set.sh`](../../../lectures/mac_set.sh) has the anchored patterns that fix this.
 - **`qe-wharton1-gpu` ran nothing else.** No GitHub runner is registered there, and the second card drives the desktop.
+- **`qe-wharton2` is a guest machine, so nothing on it was paused.** Its console had been idle for 26 hours, and it ran on AC power with no thermal warning. Its managed endpoint agents ran throughout, at most about 14% of one core. The machine has no Xcode command-line tools, so `wharton2_run.sh` puts a user-space git first on the `PATH` for `env_info.py`'s commit.
+- **On the stored step's largest cells, the M5 Pro is far ahead of the M6:** 3.3× at 40k in float64 and 10× at 60k in float32, against 1.3× to 1.7× at the sizes below. That fits the 32 GB M6 running short of memory there, as it does on the `overborrowing` lecture (`lectures/whole/README.md`), but these cells weren't diagnosed.
 
 ## The T4's out-of-memory cell
 

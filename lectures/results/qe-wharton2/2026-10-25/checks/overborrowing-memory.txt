@@ -1,0 +1,21 @@
+# overborrowing once more on qe-wharton2's CPU after the timed runs, under /usr/bin/time -l, for its peak memory (2026-10-25, 22:4x UTC)
+# env JAX_PLATFORMS=cpu MPLBACKEND=Agg .venv/bin/python run_lecture.py lectures/overborrowing.md --dtype as-written
+as-written cpu: lecture 65.6 s, all cells ok: True, default float float32
+       65.96 real       811.74 user       102.69 sys
+         35171418112  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+            49169714  page reclaims
+                  11  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  31  voluntary context switches
+              533301  involuntary context switches
+       6427648828987  instructions retired
+       3886645989981  cycles elapsed
+         35041126152  peak memory footprint

@@ -1,0 +1,53 @@
+== precision start 2026-10-25T22:04:42Z at 736a9ee
+Writing to ~/bench/benchmarks/results/qe-wharton2/2026-10-25.jsonl
+matmul                 256 float32  cpu    warm      0.08 ms      442.7 GFLOPS  compile 0.00 s
+matmul                 256 float64  cpu    warm      0.17 ms      193.7 GFLOPS  compile 0.00 s
+matmul                 512 float32  cpu    warm      0.22 ms     1232.1 GFLOPS  compile 0.00 s
+matmul                 512 float64  cpu    warm      0.42 ms      631.8 GFLOPS  compile 0.00 s
+matmul                1024 float32  cpu    warm      0.92 ms     2346.2 GFLOPS  compile 0.00 s
+matmul                1024 float64  cpu    warm      2.97 ms      723.5 GFLOPS  compile 0.00 s
+matmul                2048 float32  cpu    warm      8.97 ms     1916.1 GFLOPS  compile 0.00 s
+matmul                2048 float64  cpu    warm     21.47 ms      800.2 GFLOPS  compile 0.00 s
+matmul                4096 float32  cpu    warm     85.40 ms     1609.4 GFLOPS  compile 0.00 s
+matmul                4096 float64  cpu    warm    197.27 ms      696.7 GFLOPS  compile 0.00 s
+matmul                8192 float32  cpu    warm    663.83 ms     1656.3 GFLOPS  compile 0.00 s
+matmul                8192 float64  cpu    warm   2084.25 ms      527.5 GFLOPS  compile 0.00 s
+bellman_stored        1000 float32  cpu    warm      0.10 ms       39.7 GB/s  compile 0.01 s
+bellman_stored        1000 float64  cpu    warm      0.11 ms       75.8 GB/s  compile 0.01 s
+bellman_stored        2000 float32  cpu    warm      0.13 ms      122.2 GB/s  compile 0.01 s
+bellman_stored        2000 float64  cpu    warm      0.21 ms      152.4 GB/s  compile 0.01 s
+bellman_stored        5000 float32  cpu    warm      0.49 ms      204.0 GB/s  compile 0.00 s
+bellman_stored        5000 float64  cpu    warm      0.92 ms      217.4 GB/s  compile 0.00 s
+bellman_stored       10000 float32  cpu    warm      1.74 ms      230.2 GB/s  compile 0.00 s
+bellman_stored       10000 float64  cpu    warm      3.82 ms      209.3 GB/s  compile 0.00 s
+bellman_stored       20000 float32  cpu    warm      7.39 ms      216.5 GB/s  compile 0.00 s
+bellman_stored       20000 float64  cpu    warm     66.48 ms       48.1 GB/s  compile 0.00 s
+bellman_stored       40000 float32  cpu    warm    134.36 ms       47.6 GB/s  compile 0.00 s
+bellman_stored       40000 float64  cpu    warm    169.90 ms       75.3 GB/s  compile 0.00 s
+bellman_stored       60000 float32  cpu    warm    194.92 ms       73.9 GB/s  compile 0.00 s
+bellman_stored       60000 float64  cpu    warm    346.92 ms       83.0 GB/s  compile 0.00 s
+bellman_recompute     1000 float32  cpu    warm      0.31 ms        3.2 Gcells/s  compile 0.03 s
+bellman_recompute     1000 float64  cpu    warm      0.51 ms        2.0 Gcells/s  compile 0.02 s
+bellman_recompute     2000 float32  cpu    warm      0.89 ms        4.5 Gcells/s  compile 0.03 s
+bellman_recompute     2000 float64  cpu    warm      1.64 ms        2.4 Gcells/s  compile 0.03 s
+bellman_recompute     5000 float32  cpu    warm      4.41 ms        5.7 Gcells/s  compile 0.04 s
+bellman_recompute     5000 float64  cpu    warm      9.01 ms        2.8 Gcells/s  compile 0.03 s
+bellman_recompute    10000 float32  cpu    warm     16.89 ms        5.9 Gcells/s  compile 0.03 s
+bellman_recompute    10000 float64  cpu    warm     37.55 ms        2.7 Gcells/s  compile 0.03 s
+bellman_recompute    20000 float32  cpu    warm     67.20 ms        6.0 Gcells/s  compile 0.03 s
+bellman_recompute    20000 float64  cpu    warm    256.08 ms        1.6 Gcells/s  compile 0.03 s
+bellman_recompute    40000 float32  cpu    warm    496.95 ms        3.2 Gcells/s  compile 0.03 s
+bellman_recompute    40000 float64  cpu    warm    908.10 ms        1.8 Gcells/s  compile 0.03 s
+bellman_recompute    60000 float32  cpu    warm    937.98 ms        3.8 Gcells/s  compile 0.03 s
+bellman_recompute    60000 float64  cpu    warm   1842.27 ms        2.0 Gcells/s  compile 0.03 s
+kalman                1000 float32  cpu    warm      3.75 ms      266.6 ksteps/s  compile 0.14 s
+kalman                1000 float64  cpu    warm      1.58 ms      633.8 ksteps/s  compile 0.11 s
+kalman               10000 float32  cpu    warm     40.89 ms      244.6 ksteps/s  compile 0.11 s
+kalman               10000 float64  cpu    warm     17.74 ms      563.7 ksteps/s  compile 0.11 s
+kalman              100000 float32  cpu    warm    404.44 ms      247.3 ksteps/s  compile 0.11 s
+kalman              100000 float64  cpu    warm    176.39 ms      566.9 ksteps/s  compile 0.11 s
+== precision done 22:06:02
+== lectures start 2026-10-25T22:06:02Z
+== lectures done 22:44:12
+ALLDONE
+./wharton2_run.sh: line 12: 74968 Terminated: 15          sample  (wd: ~/bench)
