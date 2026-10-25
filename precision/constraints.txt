@@ -1,0 +1,6 @@
+# The JAX release every platform runs, so that their results compare (#1).
+# Install it with the extra for the platform:
+#   pip install "jax[cuda13]" -c precision/constraints.txt
+# The extras pin the CUDA plugins to the same release.
+jax==0.12.0.1
+jaxlib==0.12.0.1
