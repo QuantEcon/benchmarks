@@ -29,5 +29,6 @@ Each run writes one JSON file: the time and output tail of each cell, the total,
 | Lecture | The question | Results |
 |---|---|---|
 | [`aiyagari_jax`](aiyagari_jax/) | project-compute's: on a TITAN RTX, is float64 bound by bandwidth or by FP64 arithmetic? | [`results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/`](results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/) |
+| [`ifp_egm_jax`](ifp_egm_jax/) | The same question, for a lecture that interpolates instead of searching a dense choice grid | [`results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/`](results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/) |
 
 Results live under `lectures/results/<host>/<date>/<lecture>/`, apart from the top-level `results/`, which holds the precision benchmarks' JSON lines.

@@ -13,6 +13,7 @@ The lecture is `lectures/aiyagari_jax.md` from [lecture-jax](https://github.com/
 | [`hpi_check.py`](hpi_check.py) | Howard iterations per solve over the lecture's 50 capital values, by precision |
 | [`bicgstab_check.py`](bicgstab_check.py) | Whether `get_value`'s bicgstab solve runs to its iteration cap, by precision |
 | [`summarise_runs.py`](summarise_runs.py), [`summarise_scale.py`](summarise_scale.py), [`policy_gap.py`](policy_gap.py) | The tables and the fidelity checks, from the results |
+| [`run_set.sh`](run_set.sh), [`scale_set.sh`](scale_set.sh) | The drivers, as run inside `tmux` on the machine (paths are that machine's) |
 
 ## Where and how
 

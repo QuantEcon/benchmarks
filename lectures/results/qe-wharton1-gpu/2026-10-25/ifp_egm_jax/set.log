@@ -1,0 +1,115 @@
+float64 gpu s_size=200: 2192 iterations, converged True; solve cold 5.96 s, warm 7.18 s (3.28 ms/it), K 1.636 ms
+23:02:43 check cuda float64 1 (exit 0)
+float32 gpu s_size=200: 2209 iterations, converged True; solve cold 5.83 s, warm 4.95 s (2.24 ms/it), K 0.811 ms
+23:02:58 check cuda float32 1 (exit 0)
+float64 cpu s_size=200: 2192 iterations, converged True; solve cold 3.95 s, warm 3.31 s (1.51 ms/it), K 1.085 ms
+23:03:09 check cpu float64 1 (exit 0)
+float32 cpu s_size=200: 2207 iterations, converged True; solve cold 2.68 s, warm 2.10 s (0.95 ms/it), K 0.847 ms
+23:03:17 check cpu float32 1 (exit 0)
+float64 gpu s_size=200: 2192 iterations, converged True; solve cold 5.93 s, warm 4.95 s (2.26 ms/it), K 1.822 ms
+23:03:32 check cuda float64 2 (exit 0)
+float32 gpu s_size=200: 2209 iterations, converged True; solve cold 6.75 s, warm 4.65 s (2.11 ms/it), K 0.706 ms
+23:03:47 check cuda float32 2 (exit 0)
+float64 cpu s_size=200: 2192 iterations, converged True; solve cold 3.60 s, warm 3.06 s (1.40 ms/it), K 1.323 ms
+23:03:57 check cpu float64 2 (exit 0)
+float32 cpu s_size=200: 2207 iterations, converged True; solve cold 2.73 s, warm 2.08 s (0.94 ms/it), K 0.853 ms
+23:04:05 check cpu float32 2 (exit 0)
+float64 gpu s_size=200: 2192 iterations, converged True; solve cold 5.73 s, warm 4.84 s (2.21 ms/it), K 0.914 ms
+23:04:20 check cuda float64 3 (exit 0)
+float32 gpu s_size=200: 2209 iterations, converged True; solve cold 5.95 s, warm 5.02 s (2.27 ms/it), K 1.759 ms
+23:04:35 check cuda float32 3 (exit 0)
+float64 cpu s_size=200: 2192 iterations, converged True; solve cold 3.89 s, warm 3.23 s (1.48 ms/it), K 1.012 ms
+23:04:45 check cpu float64 3 (exit 0)
+float32 cpu s_size=200: 2207 iterations, converged True; solve cold 2.66 s, warm 2.14 s (0.97 ms/it), K 0.857 ms
+23:04:53 check cpu float32 3 (exit 0)
+float64 gpu s_size=200: K warm 0.946 ms, cold 0.52 s, finite True
+float64 gpu s_size=1000: K warm 0.969 ms, cold 0.50 s, finite True
+float64 gpu s_size=5000: K warm 2.098 ms, cold 0.48 s, finite True
+float64 gpu s_size=20000: K warm 2.834 ms, cold 0.49 s, finite True
+float64 gpu s_size=50000: K warm 5.313 ms, cold 0.49 s, finite True
+23:05:03 scale cuda float64 1 (exit 0)
+float32 gpu s_size=200: K warm 0.939 ms, cold 0.53 s, finite True
+float32 gpu s_size=1000: K warm 1.016 ms, cold 0.50 s, finite True
+float32 gpu s_size=5000: K warm 1.088 ms, cold 0.45 s, finite True
+float32 gpu s_size=20000: K warm 1.942 ms, cold 0.46 s, finite True
+float32 gpu s_size=50000: K warm 3.379 ms, cold 0.46 s, finite True
+23:05:12 scale cuda float32 1 (exit 0)
+float64 cpu s_size=200: K warm 1.317 ms, cold 0.37 s, finite True
+float64 cpu s_size=1000: K warm 4.733 ms, cold 0.34 s, finite True
+float64 cpu s_size=5000: K warm 14.248 ms, cold 0.38 s, finite True
+float64 cpu s_size=20000: K warm 71.945 ms, cold 0.45 s, finite True
+float64 cpu s_size=50000: K warm 194.865 ms, cold 0.58 s, finite True
+23:05:25 scale cpu float64 1 (exit 0)
+float32 cpu s_size=200: K warm 0.851 ms, cold 0.38 s, finite True
+float32 cpu s_size=1000: K warm 3.257 ms, cold 0.34 s, finite True
+float32 cpu s_size=5000: K warm 14.491 ms, cold 0.39 s, finite True
+float32 cpu s_size=20000: K warm 47.454 ms, cold 0.43 s, finite True
+float32 cpu s_size=50000: K warm 131.724 ms, cold 0.51 s, finite True
+23:05:37 scale cpu float32 1 (exit 0)
+float64 gpu s_size=200: K warm 0.835 ms, cold 0.54 s, finite True
+float64 gpu s_size=1000: K warm 1.054 ms, cold 0.50 s, finite True
+float64 gpu s_size=5000: K warm 2.037 ms, cold 0.49 s, finite True
+float64 gpu s_size=20000: K warm 2.287 ms, cold 0.47 s, finite True
+float64 gpu s_size=50000: K warm 5.010 ms, cold 0.49 s, finite True
+23:05:46 scale cuda float64 2 (exit 0)
+float32 gpu s_size=200: K warm 0.986 ms, cold 0.54 s, finite True
+float32 gpu s_size=1000: K warm 1.056 ms, cold 0.51 s, finite True
+float32 gpu s_size=5000: K warm 1.180 ms, cold 0.45 s, finite True
+float32 gpu s_size=20000: K warm 2.005 ms, cold 0.45 s, finite True
+float32 gpu s_size=50000: K warm 3.337 ms, cold 0.45 s, finite True
+23:05:55 scale cuda float32 2 (exit 0)
+float64 cpu s_size=200: K warm 1.378 ms, cold 0.37 s, finite True
+float64 cpu s_size=1000: K warm 4.879 ms, cold 0.35 s, finite True
+float64 cpu s_size=5000: K warm 14.294 ms, cold 0.38 s, finite True
+float64 cpu s_size=20000: K warm 69.654 ms, cold 0.45 s, finite True
+float64 cpu s_size=50000: K warm 193.820 ms, cold 0.58 s, finite True
+23:06:08 scale cpu float64 2 (exit 0)
+float32 cpu s_size=200: K warm 0.856 ms, cold 0.38 s, finite True
+float32 cpu s_size=1000: K warm 3.303 ms, cold 0.35 s, finite True
+float32 cpu s_size=5000: K warm 14.482 ms, cold 0.38 s, finite True
+float32 cpu s_size=20000: K warm 48.485 ms, cold 0.43 s, finite True
+float32 cpu s_size=50000: K warm 136.422 ms, cold 0.52 s, finite True
+23:06:20 scale cpu float32 2 (exit 0)
+float64 gpu s_size=200: K warm 1.025 ms, cold 0.53 s, finite True
+float64 gpu s_size=1000: K warm 1.393 ms, cold 0.47 s, finite True
+float64 gpu s_size=5000: K warm 2.166 ms, cold 0.48 s, finite True
+float64 gpu s_size=20000: K warm 3.180 ms, cold 0.49 s, finite True
+float64 gpu s_size=50000: K warm 5.582 ms, cold 0.49 s, finite True
+23:06:29 scale cuda float64 3 (exit 0)
+float32 gpu s_size=200: K warm 1.007 ms, cold 0.53 s, finite True
+float32 gpu s_size=1000: K warm 0.968 ms, cold 0.50 s, finite True
+float32 gpu s_size=5000: K warm 1.067 ms, cold 0.45 s, finite True
+float32 gpu s_size=20000: K warm 1.944 ms, cold 0.46 s, finite True
+float32 gpu s_size=50000: K warm 3.429 ms, cold 0.46 s, finite True
+23:06:39 scale cuda float32 3 (exit 0)
+float64 cpu s_size=200: K warm 1.318 ms, cold 0.38 s, finite True
+float64 cpu s_size=1000: K warm 5.000 ms, cold 0.35 s, finite True
+float64 cpu s_size=5000: K warm 14.626 ms, cold 0.39 s, finite True
+float64 cpu s_size=20000: K warm 69.385 ms, cold 0.47 s, finite True
+float64 cpu s_size=50000: K warm 208.152 ms, cold 0.54 s, finite True
+23:06:51 scale cpu float64 3 (exit 0)
+float32 cpu s_size=200: K warm 0.744 ms, cold 0.38 s, finite True
+float32 cpu s_size=1000: K warm 3.261 ms, cold 0.35 s, finite True
+float32 cpu s_size=5000: K warm 14.499 ms, cold 0.38 s, finite True
+float32 cpu s_size=20000: K warm 48.232 ms, cold 0.44 s, finite True
+float32 cpu s_size=50000: K warm 130.042 ms, cold 0.50 s, finite True
+23:07:03 scale cpu float32 3 (exit 0)
+float64 gpu: lecture 155.2 s, all cells ok: True, default float float64
+23:09:39 done cuda float64 ifp/as-used/cuda-float64-1.json (exit 0)
+1350 MHz, 38, 65.54 W, 0x0000000000000000
+float64 cpu: lecture 155.7 s, all cells ok: True, default float float64
+23:12:16 done cpu float64 ifp/as-used/cpu-float64-1.json (exit 0)
+300 MHz, 36, 29.78 W, 0x0000000000000001
+float64 gpu: lecture 156.0 s, all cells ok: True, default float float64
+23:14:54 done cuda float64 ifp/as-used/cuda-float64-2.json (exit 0)
+1350 MHz, 37, 65.64 W, 0x0000000000000000
+float64 cpu: lecture 152.2 s, all cells ok: True, default float float64
+23:17:27 done cpu float64 ifp/as-used/cpu-float64-2.json (exit 0)
+300 MHz, 35, 29.72 W, 0x0000000000000001
+float64 gpu: lecture 156.5 s, all cells ok: True, default float float64
+23:20:05 done cuda float64 ifp/as-used/cuda-float64-3.json (exit 0)
+1350 MHz, 37, 65.19 W, 0x0000000000000000
+float64 cpu: lecture 149.7 s, all cells ok: True, default float float64
+23:22:36 done cpu float64 ifp/as-used/cpu-float64-3.json (exit 0)
+300 MHz, 35, 29.87 W, 0x0000000000000001
+ALLDONE
