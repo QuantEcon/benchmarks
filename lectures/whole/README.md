@@ -79,6 +79,8 @@ python lectures/whole/summarise_whole.py lectures/results/*/2026-10-25/whole --l
 
 [`mac_lectures.sh`](mac_lectures.sh) pauses `qe-mini1`'s agents and wallpaper with SIGSTOP and resumes them on exit, even after a failure.
 
+On RunsOn, the workflow's `run_lectures` job runs the same set three times on the GPU and its host CPU of `lectures_instance`, by default the T4's `g4dn.2xlarge` that the lectures' CI uses. It installs the exact packages of the TITAN RTX run, from that run's `environment.txt`, and uploads the results as an artifact. It stops after five hours.
+
 ## Results files
 
 `lectures/results/<host>/2026-10-25/whole/<lecture>/<platform>-as-written-<run>.json`, one per run: every cell's time, first line, success and tail of output, with the flags, the JAX version and device, and the `env` block from `precision/env_info.py`. Beside them are each machine's `environment.txt` and `lectures-set.log`, and on `qe-mini1`, `state.txt`.
