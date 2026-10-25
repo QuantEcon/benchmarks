@@ -63,12 +63,13 @@ def main():
           + " | fastest | slowest cells, by device |")
     print("|---|---|" + "---|" * len(devices) + "---|---|")
     problems, no_code = [], []
-    totals, counts = defaultdict(float), defaultdict(int)
+    totals, counts, shown = defaultdict(float), defaultdict(int), 0
     for lecture in sorted(runs):
         by = runs[lecture]
         if not any(r["cells"] for d in by for r in by[d]):
             no_code.append(lecture)
             continue
+        shown += 1
         ok_tags = expected(args.lectures, lecture) if args.lectures else set()
         precision = sorted({r["default_float"] for d in by for r in by[d]})
         # A device with an unexpected failure in any run gets no time: the run stopped short
@@ -83,7 +84,7 @@ def main():
         for d in med:
             totals[d] += med[d]
             counts[d] += 1
-        fastest = min(med, key=med.get)
+        fastest = min(med, key=med.get) if med else "none"     # every device failed
         cells = []
         for d in devices:
             if d not in by:
@@ -98,9 +99,8 @@ def main():
         print(f"| {lecture} | {'/'.join(precision)} | "
               + " | ".join(f"{med[d]:.1f}" if d in med else "failed" if d in failed else "" for d in devices)
               + f" | {fastest} | {'; '.join(cells)} |")
-    lectures = max(counts.values())
     print("| **all lectures** | | " + " | ".join(
-        f"**{totals[d]:.0f}**" + (f", {counts[d]} lectures" if counts[d] < lectures else "") for d in devices) + " | | |")
+        f"**{totals[d]:.0f}**" + (f", {counts[d]} lectures" if counts[d] < shown else "") for d in devices) + " | | |")
     print()
     if no_code:
         print("No code cells:", ", ".join(no_code))
