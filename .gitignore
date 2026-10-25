@@ -21,6 +21,8 @@ env/
 
 # Benchmark outputs
 *.json
+# except lecture runs, which are kept as results
+!lectures/results/**/*.json
 *.nsys-rep
 *.sqlite
 
