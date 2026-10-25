@@ -15,6 +15,7 @@ benchmarks/
 │   └── matmul/            # Matrix multiplication benchmarks
 ├── hardware/              # Hardware detection and general benchmarks
 ├── notebooks/             # Jupyter notebook benchmarks
+├── lectures/              # Whole lectures run as used, timed per cell, in either precision
 └── docs/                  # Documentation and findings
 ```
 
@@ -40,6 +41,10 @@ Benchmarks that test performance through different execution pathways:
 - Direct Python execution
 - Jupyter notebook execution (nbconvert)
 - Jupyter Book execution
+
+### Lectures, run as used (`lectures/`)
+
+Whole QuantEcon lectures run cell by cell in one fresh process, with compile time counted, in float64 as written or switched to float32. Each lecture's folder holds the scripts for its questions, and `lectures/results/` holds the runs. See [`lectures/README.md`](lectures/README.md).
 
 ## Key Findings
 

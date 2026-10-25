@@ -1,0 +1,11 @@
+# hpi_check.py on qe-wharton1-gpu's CPU, 2026-10-25 (UTC), as printed.
+# for d in float64 float32:
+#   JAX_PLATFORMS=cpu XLA_PYTHON_CLIENT_PREALLOCATE=false python lectures/aiyagari_jax/hpi_check.py aiyagari_jax.md --dtype $d
+# The lecture's 50 capital values, K = 4 to 12. In float32 the first two (K = 4.0 and 4.16, the highest
+# interest rates) never bring max |v_new - v| below 1e-4 and run to the 10,000-loop cap.
+float64 on cpu: loops per solve min 12, median 15, max 23; 0 of 50 hit the 10,000 cap; total 1.6 s, 18 ms median per solve
+  loops at each K: [15, 15, 16, 15, 19, 16, 16, 14, 13, 12, 21, 16, 17, 22, 23, 18, 23, 21, 19, 16, 15, 17, 16, 16, 16, 17, 16, 15, 14, 16, 14, 14, 16, 14, 16, 14, 13, 15, 15, 15, 15, 13, 14, 15, 15, 14, 15, 15, 14, 13]
+  error at stop, median 0.0e+00, max 9.3e-05
+float32 on cpu: loops per solve min 12, median 16, max 10000; 2 of 50 hit the 10,000 cap; total 23.3 s, 16 ms median per solve
+  loops at each K: [10000, 10000, 17, 14, 19, 15, 17, 14, 13, 12, 21, 16, 17, 23, 24, 17, 23, 21, 19, 18, 16, 16, 16, 16, 16, 16, 16, 15, 14, 16, 14, 14, 15, 14, 16, 14, 14, 15, 16, 15, 13, 14, 14, 15, 15, 13, 14, 15, 14, 13]
+  error at stop, median 0.0e+00, max 2.5e-04

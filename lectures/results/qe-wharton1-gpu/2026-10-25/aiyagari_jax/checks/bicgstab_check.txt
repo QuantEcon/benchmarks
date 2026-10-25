@@ -1,0 +1,34 @@
+# bicgstab_check.py on qe-wharton1-gpu, 2026-10-25 (UTC), as printed.
+# for plat in cuda cpu; for d in float64 float32:
+#   JAX_PLATFORMS=$plat CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_PREALLOCATE=false \
+#   python lectures/aiyagari_jax/bicgstab_check.py aiyagari_jax.md --dtype $d
+# The time flattens from cap 100 in every case, so neither precision runs to the cap.
+# "(above tol 1e-5)" compares the true residual, printed rounded; the solver's own test uses its recurrence.
+float64 on gpu, grid 200 x 2, default cap 4000
+  cap    10:     1.13 ms   relative residual 6.2e-01   (above tol 1e-5)
+  cap    30:     1.94 ms   relative residual 7.7e-02   (above tol 1e-5)
+  cap   100:     2.89 ms   relative residual 1.0e-05   (meets tol 1e-5)
+  cap   300:     3.00 ms   relative residual 1.0e-05   (meets tol 1e-5)
+  cap  1000:     2.94 ms   relative residual 1.0e-05   (meets tol 1e-5)
+  cap  4000:     2.74 ms   relative residual 1.0e-05   (meets tol 1e-5)
+float32 on gpu, grid 200 x 2, default cap 4000
+  cap    10:     1.02 ms   relative residual 6.4e-01   (above tol 1e-5)
+  cap    30:     1.65 ms   relative residual 6.8e-02   (above tol 1e-5)
+  cap   100:     2.51 ms   relative residual 1.0e-05   (above tol 1e-5)
+  cap   300:     2.36 ms   relative residual 1.0e-05   (above tol 1e-5)
+  cap  1000:     2.50 ms   relative residual 1.0e-05   (above tol 1e-5)
+  cap  4000:     2.49 ms   relative residual 1.0e-05   (above tol 1e-5)
+float64 on cpu, grid 200 x 2, default cap 4000
+  cap    10:     0.31 ms   relative residual 6.2e-01   (above tol 1e-5)
+  cap    30:     0.46 ms   relative residual 7.7e-02   (above tol 1e-5)
+  cap   100:     0.65 ms   relative residual 8.5e-06   (meets tol 1e-5)
+  cap   300:     0.70 ms   relative residual 8.5e-06   (meets tol 1e-5)
+  cap  1000:     0.78 ms   relative residual 8.5e-06   (meets tol 1e-5)
+  cap  4000:     0.68 ms   relative residual 8.5e-06   (meets tol 1e-5)
+float32 on cpu, grid 200 x 2, default cap 4000
+  cap    10:     0.23 ms   relative residual 6.2e-01   (above tol 1e-5)
+  cap    30:     0.38 ms   relative residual 7.9e-02   (above tol 1e-5)
+  cap   100:     0.54 ms   relative residual 1.1e-05   (above tol 1e-5)
+  cap   300:     0.52 ms   relative residual 1.1e-05   (above tol 1e-5)
+  cap  1000:     0.47 ms   relative residual 1.1e-05   (above tol 1e-5)
+  cap  4000:     0.60 ms   relative residual 1.1e-05   (above tol 1e-5)
