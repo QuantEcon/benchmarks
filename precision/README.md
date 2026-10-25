@@ -55,7 +55,7 @@ The job stops after 60 minutes, which caps a `p4d` run at about USD 22. On a `p4
 
 ## Method
 
-- **One fresh process per cell** (workload × size × precision × device). The driver sets `JAX_ENABLE_X64`, `JAX_PLATFORMS` and `CUDA_VISIBLE_DEVICES` before the process starts, as a lecture's settings would be, and always `XLA_PYTHON_CLIENT_PREALLOCATE=false`.
+- **One fresh process per cell** (workload × size × precision × device). The driver sets `JAX_ENABLE_X64`, `JAX_PLATFORMS` and `CUDA_VISIBLE_DEVICES` before the process starts, as a lecture's settings would be, and always `XLA_PYTHON_CLIENT_PREALLOCATE=false`. GPU cells also get `XLA_PYTHON_CLIENT_MEM_FRACTION=0.95`: even without preallocation, JAX's allocator otherwise stops at 75% of the card, below the 80% that `--memory-fraction` allows (a T4 showed 10.92 GiB of 14.6 usable, against 13.84 GiB at 0.95). The T4's `bellman_stored` cell at m = 40,000 in float64, which needs 11.92 GiB, ran out of memory in both CUDA builds for that reason (`results/runson-g4dn.2xlarge/2026-10-25.jsonl`, before the change).
 - **Cold and warm are kept apart.** `backend_init_s`, `compile_s` and `first_run_s` are what a fresh process pays before its first result, and the summary's cold time is their sum. A lecture starts the backend once per process, so the cold time charges every kernel for it; it is kept as its own field so that it can be taken out. `warm_s` holds five timed runs after that, summarised by their median. `process_s` is the whole process, imports included.
 - **The result dtype is asserted**, so a silent float32 cannot pass as float64.
 - **Fidelity**: each cell keeps 64 values from fixed positions in its result, and the summary reports the largest relative difference between float32 and float64.
