@@ -28,7 +28,17 @@ Each run writes one JSON file: the time and output tail of each cell, the total,
 
 | Lecture | The question | Results |
 |---|---|---|
-| [`aiyagari_jax`](aiyagari_jax/) | project-compute's: on a TITAN RTX, is float64 bound by bandwidth or by FP64 arithmetic? | [`results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/`](results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/) |
-| [`ifp_egm_jax`](ifp_egm_jax/) | The same question, for a lecture that interpolates instead of searching a dense choice grid | [`results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/`](results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/) |
+| [`aiyagari_jax`](aiyagari_jax/) | project-compute's: on a TITAN RTX, is float64 bound by bandwidth or by FP64 arithmetic? Also, where does the card beat an Apple CPU? | [`qe-wharton1-gpu`](results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/), [`qe-mini1`](results/qe-mini1/2026-10-25/aiyagari_jax/) |
+| [`ifp_egm_jax`](ifp_egm_jax/) | The same questions, for a lecture that interpolates instead of searching a dense choice grid | [`qe-wharton1-gpu`](results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/), [`qe-mini1`](results/qe-mini1/2026-10-25/ifp_egm_jax/) |
 
 Results live under `lectures/results/<host>/<date>/<lecture>/`, apart from the top-level `results/`, which holds the precision benchmarks' JSON lines.
+
+## Comparing machines
+
+[`compare_hosts.py`](compare_hosts.py) sets the TITAN RTX, its host's Threadripper and `qe-mini1`'s M6 side by side for both lectures:
+
+```bash
+python lectures/compare_hosts.py lectures/results/qe-wharton1-gpu/2026-10-25 lectures/results/qe-mini1/2026-10-25
+```
+
+**`qe-mini1` runs agents around the clock.** [`mac_set.sh`](mac_set.sh) runs its CPU-only set with the agents and the console's animated wallpaper paused (SIGSTOP), and resumes them (SIGCONT) on exit, even after a failure. `state.txt` beside the results records the machine before, during and after the run. On 2026-10-25 the Mac idled at under 2% CPU while paused.

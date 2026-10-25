@@ -1,0 +1,47 @@
+== pausing: 838 852 30122 30198
+30868
+30877
+33087
+48839
+float64 cpu: lecture 9.1 s, all cells ok: True, default float float64
+14:56:53 aiyagari as-used float64 1 (exit 0)
+float32 cpu: lecture 43.9 s, all cells ok: True, default float float32
+14:57:37 aiyagari as-used float32 1 (exit 0)
+float64 cpu: lecture 5.1 s, all cells ok: True, default float float64
+14:57:42 aiyagari as-used float64 2 (exit 0)
+float32 cpu: lecture 44.0 s, all cells ok: True, default float float32
+14:58:26 aiyagari as-used float32 2 (exit 0)
+float64 cpu: lecture 5.1 s, all cells ok: True, default float float64
+14:58:32 aiyagari as-used float64 3 (exit 0)
+float32 cpu: lecture 43.9 s, all cells ok: True, default float float32
+14:59:16 aiyagari as-used float32 3 (exit 0)
+14:59:26 aiyagari scale float64 1 (exit 0)
+14:59:36 aiyagari scale float32 1 (exit 0)
+14:59:46 aiyagari scale float64 2 (exit 0)
+14:59:56 aiyagari scale float32 2 (exit 0)
+15:00:06 aiyagari scale float64 3 (exit 0)
+15:00:17 aiyagari scale float32 3 (exit 0)
+15:00:18 ifp check float64 1 (exit 0)
+15:00:19 ifp check float32 1 (exit 0)
+15:00:21 ifp check float64 2 (exit 0)
+15:00:22 ifp check float32 2 (exit 0)
+15:00:24 ifp check float64 3 (exit 0)
+15:00:25 ifp check float32 3 (exit 0)
+15:00:28 ifp scale float64 1 (exit 0)
+15:00:31 ifp scale float32 1 (exit 0)
+15:00:35 ifp scale float64 2 (exit 0)
+15:00:38 ifp scale float32 2 (exit 0)
+15:00:41 ifp scale float64 3 (exit 0)
+15:00:44 ifp scale float32 3 (exit 0)
+float64 cpu: lecture 43.1 s, all cells ok: True, default float float64
+15:01:27 ifp as-used float64 1 (exit 0)
+float64 cpu: lecture 42.7 s, all cells ok: True, default float float64
+15:02:10 ifp as-used float64 2 (exit 0)
+float64 cpu: lecture 42.8 s, all cells ok: True, default float float64
+15:02:53 ifp as-used float64 3 (exit 0)
+ALLDONE
+== resumed: 838 852 30122 30198
+30868
+30877
+33087
+48839 at 15:02:53

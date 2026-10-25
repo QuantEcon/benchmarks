@@ -24,6 +24,8 @@ The lecture is `lectures/aiyagari_jax.md` from [lecture-jax](https://github.com/
 | CPU | The Threadripper 2990WX beside it: `JAX_PLATFORMS=cpu`, with default NUMA placement |
 | Software | `jax[cuda13]` 0.12.0.1 on Python 3.12.3, with `XLA_PYTHON_CLIENT_PREALLOCATE=false`. The full package list is `environment.txt` beside the results |
 
+**The Mac.** The same CPU runs were made on `qe-mini1`, an M6 with 32 GB, with `jax` 0.12.0.1 on Python 3.12.15, using [`../mac_set.sh`](../mac_set.sh). Its results are under [`../results/qe-mini1/2026-10-25/aiyagari_jax/`](../results/qe-mini1/2026-10-25/aiyagari_jax/), and [`../compare_hosts.py`](../compare_hosts.py) sets the three devices side by side.
+
 `env.git_commit` in each as-used result (`91baa22`) is the benchmarks checkout that supplied `env_info.py`, not these scripts. The scripts are as committed here, except for one change to `run_lecture.py` made after these runs: skipping `!pip install` cells. This lecture has no such cell.
 
 ## Results
