@@ -222,11 +222,14 @@ jobs:
         # The A100s in a p4d are joined by NVSwitch, and CUDA won't start until the fabric manager runs
         if: startsWith(inputs.precision_instance, 'p4d')
         run: |
+          # The image's driver is from NVIDIA's CUDA repository, which has a fabric manager for each driver release
           version=$(nvidia-smi --query-gpu=driver_version --format=csv,noheader | head -1)
+          repo=https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64
+          for suffix in 1 1ubuntu1; do
+            curl -fsSLO "$repo/nvidia-fabricmanager_${version}-${suffix}_amd64.deb" && break
+          done
           sudo apt-get update -qq
-          apt-cache madison "nvidia-fabricmanager-${version%%.*}" nvidia-fabricmanager | grep -F "$version" || true
-          sudo apt-get install -y -qq "nvidia-fabricmanager-${version%%.*}=$version-*" \
-            || sudo apt-get install -y -qq "nvidia-fabricmanager=$version-*"
+          sudo apt-get install -y -qq ./nvidia-fabricmanager_"${version}"-*_amd64.deb
           sudo systemctl start nvidia-fabricmanager
           systemctl is-active nvidia-fabricmanager
           nvidia-smi -q | grep -iA2 fabric | head -8
@@ -235,7 +238,7 @@ jobs:
         run: |
           # The same JAX release as the other platforms (precision/constraints.txt)
           pip install "jax[${{ inputs.precision_cuda }}]" -c precision/constraints.txt
-          python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}')"
+          python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}'); assert jax.devices()[0].platform == 'gpu', 'JAX sees no GPU'"
           # How much of the card JAX's allocator will hand out, with preallocation off as in every cell
           limit='import jax; d = jax.devices()[0]; print(d.device_kind, "allocator limit, GiB:", round(d.memory_stats()["bytes_limit"] / 2**30, 2))'
           XLA_PYTHON_CLIENT_PREALLOCATE=false python -c "$limit"

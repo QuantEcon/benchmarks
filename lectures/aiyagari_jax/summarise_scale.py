@@ -28,7 +28,8 @@ def per_it(plat, dtype, n):
 sizes = sorted({c["a_size"] for rs in runs.values() for r in rs for c in r["sizes"]})
 reps = {k: len(v) for k, v in runs.items()}
 print("repetitions:", reps)
-for plat in ("gpu", "cpu"):
+platforms = [p for p in ("gpu", "cpu") if (p, "float64") in runs and (p, "float32") in runs]
+for plat in platforms:
     print(f"\n### {plat}: warm ms, median of runs; f64/f32 in brackets\n")
     print("| grid | cells | get_greedy (lecture) f64 · f32 | greedy over stored rewards f64 · f32 "
           "| get_value f64 · f32 | one HPI loop f64 · f32 |")
@@ -42,17 +43,18 @@ for plat in ("gpu", "cpu"):
         row.append(f"{a * 1e3:.1f} · {b * 1e3:.1f} ({a / b:.1f}×)")
         print("| " + " | ".join(row) + " |")
 
-print("\n### the card against the CPU beside it (float64, warm, CPU time / GPU time)\n")
-print("| grid | get_greedy | stored | get_value | one HPI loop |")
-print("|---|---|---|---|---|")
-for n in sizes:
+if platforms == ["gpu", "cpu"]:
+    print("\n### the card against the CPU beside it (float64, warm, CPU time / GPU time)\n")
+    print("| grid | get_greedy | stored | get_value | one HPI loop |")
+    print("|---|---|---|---|---|")
+for n in sizes if platforms == ["gpu", "cpu"] else []:
     cells = [med("cpu", "float64", n, k) / med("gpu", "float64", n, k)
              for k in ("greedy_s", "greedy_stored_s", "value_s")]
     cells.append(per_it("cpu", "float64", n) / per_it("gpu", "float64", n))
     print(f"| {n:,} | " + " | ".join(f"{x:.1f}×" for x in cells) + " |")
 
 print("\n### fidelity and convergence, every run\n")
-for plat in ("gpu", "cpu"):
+for plat in platforms:
     ref = {c["a_size"]: c for c in runs[(plat, "float64")][0]["sizes"]}
     for dtype in ("float64", "float32"):
         for i, r in enumerate(runs[(plat, dtype)]):
