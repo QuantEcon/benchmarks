@@ -1,7 +1,7 @@
 """
 Small matrix products on the CPU, by precision: per-step time inside lax.scan, and what XLA lowers the dot to.
 
-    python dot_check.py float32
+    python ynn_dot_check.py float32
 """
 import os
 import re

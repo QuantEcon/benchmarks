@@ -1,7 +1,7 @@
 """
 Which operation makes the precision benchmark's Kalman filter slower in float32 than in float64?
 
-    python kalman_check.py float32
+    python kalman_ops_check.py float32
 
 Times each kind of operation in the filter's step on its own, inside a
 lax.scan of 10,000 steps on the CPU, warm, and prints the LAPACK custom calls

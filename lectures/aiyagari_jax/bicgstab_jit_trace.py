@@ -1,7 +1,7 @@
 """
 Run JAX's bicgstab body, compiled as JAX compiles it, with a print at each step, on the system where aiyagari_jax's float32 policy iteration goes NaN.
 
-    python bicgstab_trace.py aiyagari_jax.md --a-size 5000
+    python bicgstab_jit_trace.py aiyagari_jax.md --a-size 5000
 
 Rebuilds the system from the lecture's own functions (loop 2 of Howard policy
 iteration), then repeats jax.scipy.sparse.linalg.bicgstab's body step by step,
