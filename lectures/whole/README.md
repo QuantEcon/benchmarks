@@ -1,8 +1,8 @@
 # Whole lectures, as used
 
-Every lecture in [lecture-jax](https://github.com/QuantEcon/lecture-jax), run as written in one fresh process each, timed cell by cell, on three devices. This is the first part of [#4](https://github.com/QuantEcon/benchmarks/issues/4): which lectures run faster on a CPU than on the GPU they are built on, and where each lecture's time goes.
+Every lecture in [lecture-jax](https://github.com/QuantEcon/lecture-jax), run as written in one fresh process each, timed cell by cell, on three of QuantEcon's devices and on the T4 runner that the lectures' CI uses. This is the first part of [#4](https://github.com/QuantEcon/benchmarks/issues/4): which lectures run faster on a CPU than on the GPU they are built on, and where each lecture's time goes.
 
-Still to come under #4: the JAX lectures in lecture-python.myst, `sargent_surico` among them; float32 runs of the float64 lectures; `qe-wharton2`'s M5 Pro; and the T4 that the lectures' CI uses.
+Still to come under #4: the JAX lectures in lecture-python.myst, `sargent_surico` among them; float32 runs of the float64 lectures; and `qe-wharton2`'s M5 Pro.
 
 ## Results
 
@@ -55,16 +55,61 @@ What the table shows:
 
 `summarise_whole.py` prints a fuller table with each device's two slowest cells.
 
+## The CI runner: the T4 and its own CPU
+
+The lectures' CI builds on RunsOn's `g4dn.2xlarge`: a T4, and a Xeon Platinum 8259CL with 4 cores, 8 threads and 32 GB. The same set ran there three times on each, as above. The question is the one a build faces: on this runner, which lectures would build faster with `JAX_PLATFORMS=cpu`? Times are medians in seconds. The last column is the cell that carries the most time on the slower of the two.
+
+| Lecture | Precision, as written | T4 | Xeon | Faster | Heaviest cell |
+|---|---|---|---|---|---|
+| `overborrowing` | float32 | 20.3 | out of memory | T4 | #31: 8.4 s on the T4; on the Xeon it asks for 33.4 GB |
+| `schelling_shocks` | float32 | 19.2 | 462.6 | T4 24.1× | #7: 460.1 s on the Xeon, 16.0 s on the T4 |
+| `opt_invest` | float64 | 17.8 | 194.1 | T4 10.9× | #32: 174.8 s on the Xeon, 10.5 s on the T4 |
+| `wealth_dynamics_jax` | float32 | 167.7 | 1,369.3 | T4 8.2× | #40: 161.0 s on the Xeon, 13.8 s on the T4 |
+| `markov_asset_jax` | float64 | 7.3 | 55.5 | T4 7.7× | #36: 50.3 s on the Xeon, 0.6 s on the T4 |
+| `kesten_processes_jax` | float32 | 8.0 | 57.5 | T4 7.2× | #9: 12.5 s on the Xeon, 1.3 s on the T4 |
+| `hopenhayn` | float64 | 18.5 | 124.7 | T4 6.7× | #35: 99.6 s on the Xeon, 9.2 s on the T4 |
+| `opt_savings_2` | float64 | 16.1 | 67.7 | T4 4.2× | #33: 56.7 s on the Xeon, 9.2 s on the T4 |
+| `jax_intro_jax` | float64 | 16.7 | 42.5 | T4 2.6× | #83: 11.4 s on the Xeon, 1.5 s on the T4 |
+| `inventory_ssd` | float64 | 6.8 | 16.5 | T4 2.4× | #11: 6.5 s on the Xeon, 1.2 s on the T4 |
+| `arellano_jax` | float64 | 15.9 | 31.7 | T4 2.0× | #15: 8.8 s on the Xeon, 2.9 s on the T4 |
+| `schelling_jax_parallel` | float32 | 3.7 | 4.5 | T4 1.2× | #8: 2.2 s on the Xeon, 0.7 s on the T4 |
+| `inventory_dynamics_jax` | float32 | 6.6 | 7.1 | T4 1.1× | #16: 1.2 s on the Xeon, 0.8 s on the T4 |
+| `newtons_method` | float64 | 178.7 | 187.6 | T4 1.0× | #12: 156.2 s on the Xeon, 154.9 s on the T4 |
+| `opt_savings_1` | float64 | 45.4 | 46.3 | T4 1.0× | #9: 20.1 s on the Xeon, 20.1 s on the T4 |
+| `schelling_numpy` | float32 | 2.7 | 2.7 | Xeon 1.0× | #9: 2.2 s on the T4, 2.2 s on the Xeon |
+| `schelling_python` | float32 | 18.2 | 18.1 | Xeon 1.0× | #7: 17.7 s on the T4, 17.6 s on the Xeon |
+| `ifp_egm_jax` | float64 | 139.5 | 137.1 | Xeon 1.0× | #11: 66.1 s on the T4, 66.0 s on the Xeon |
+| `lucas_model_jax` | float32 | 16.2 | 14.9 | Xeon 1.1× | #4: 6.3 s on the T4, 6.3 s on the Xeon |
+| `autodiff` | float32 | 8.7 | 6.7 | Xeon 1.3× | #6: 1.7 s on the T4, 1.3 s on the Xeon |
+| `job_search` | float64 | 6.0 | 4.4 | Xeon 1.4× | #0: 1.8 s on the T4, 1.8 s on the Xeon |
+| `mle_jax` | float64 | 9.7 | 6.7 | Xeon 1.4× | #0: 2.4 s on the T4, 2.4 s on the Xeon |
+| `short_path_jax` | float32 | 2.4 | 1.5 | Xeon 1.6× | #2: 0.6 s on the T4, 0.2 s on the Xeon |
+| `jax_nn` | float32 | 32.7 | 18.9 | Xeon 1.7× | #9: 23.6 s on the T4, 10.6 s on the Xeon |
+| `aiyagari_jax` | float64 | 66.1 | 36.7 | Xeon 1.8× | #31: 40.2 s on the T4, 16.4 s on the Xeon |
+| `keras` | float32 | 26.6 | 13.0 | Xeon 2.0× | #18: 12.1 s on the T4, 5.8 s on the Xeon |
+| `ifp_dl` | float32 | 27.0 | 11.8 | Xeon 2.3× | #26: 14.5 s on the T4, 7.1 s on the Xeon |
+| `schelling_jax` | float32 | 17.2 | 5.7 | Xeon 3.0× | #9: 14.5 s on the T4, 3.9 s on the Xeon |
+| **All 28** | | **922** | **2,946 for 27** | | |
+
+What the table shows:
+
+- **Precision doesn't decide which is faster.** Of the 13 float64 lectures, the T4 is clearly faster on 7, by 2.0× to 10.9×, and the CPU on 3, by 1.4× to 1.8×; the other 3 are within 5%. Across both precisions, the CPU wins where the work is small or sequential: training loops (`keras`, `jax_nn`, `ifp_dl`), a jitted function called once per agent from Python (`schelling_jax`), and small models (`job_search`, `mle_jax`, `short_path_jax`).
+- **Building each lecture on the faster of the two would save about 95 s of the T4's 922 s,** if the lectures ran one after another. Five lectures carry 84 s of it: `aiyagari_jax`, `ifp_dl`, `jax_nn`, `keras` and `schelling_jax`.
+- **Building everything on the CPU would take 3.3× as long, and `overborrowing` would fail.** Its cell 31 asks for 33.4 GB, more than the runner's 32 GB, though the T4 runs it in 8.4 s. Without it, the CPU takes 2,946 s against the T4's 901 s, and four lectures carry 2,151 s of that: `wealth_dynamics_jax`, `schelling_shocks`, `opt_invest` and `hopenhayn`.
+- **The T4 and the TITAN RTX take about the same time over the set,** 922 s and 873 s. The TITAN is faster on 7 lectures, the large simulations and dynamic programs among them (`wealth_dynamics_jax`, 53 s against 168 s), and the T4 on the other 21, by up to 2.2× (`schelling_jax`). These runs don't separate why.
+- **These runs are sequential.** A build executes several notebooks at once, sharing the one T4 or the 8 threads, which this doesn't measure.
+
 ## Method
 
 - **The lectures:** lecture-jax at `4b939ec` (2026-10-12), all 29 lectures except `intro`, `status`, `troubleshooting` and `zreferences`, listed in [`lectures.txt`](lectures.txt). Nothing in them was changed.
 - **The runner:** [`../run_lecture.py`](../run_lecture.py) with `--dtype as-written`, so each lecture runs at the precision it sets. Every code cell runs through IPython in one fresh process with matplotlib's Agg backend, and is timed. Cells that only `!pip install` are skipped; their packages were installed beforehand.
-- **Platforms:** `JAX_PLATFORMS=cuda` with `CUDA_VISIBLE_DEVICES=0` in PCI bus order for the card, and `JAX_PLATFORMS=cpu` for the CPUs, with JAX's defaults otherwise.
+- **Platforms:** `JAX_PLATFORMS=cuda` with `CUDA_VISIBLE_DEVICES=0` in PCI bus order for the cards, and `JAX_PLATFORMS=cpu` for the CPUs, with JAX's defaults otherwise.
+- **The T4 runner:** the workflow's `run_lectures` job (#10) at `8493bbf`, which is `main` with that job added, on 2026-10-25 from 09:37 to 12:55 UTC. Each lecture ran on the T4 and then on the Xeon before the next.
 - **Three runs of each lecture on each device,** interleaved: every lecture once, then again, so a slow spell on a machine spreads across lectures rather than landing on one. The tables use medians. On the M6 the first run of a few lectures was up to 2× slower than the other two (`jax_nn`: 10.1 s against 4.4 s and 4.5 s).
 - **An hour's cap on each lecture.** None reached it.
-- **Environments:** one per machine, JAX 0.12.0.1 (`precision/constraints.txt`), with `jax[cuda13]` on `qe-wharton1-gpu`, and the lectures' imports. `environment.txt` beside the results lists every package.
+- **Environments:** one per machine, JAX 0.12.0.1 (`precision/constraints.txt`), with `jax[cuda13]` on `qe-wharton1-gpu`, and the lectures' imports. The T4 runner installed the TITAN RTX run's exact packages from its `environment.txt`. `environment.txt` beside the results lists every package.
 - **`qe-mini1`'s agents and its animated wallpaper were paused** for its runs, from 16:45 to 17:49 AEDT on 2026-10-25, and resumed after. `state.txt` records the machine before, during and after. No GitHub runner process was on `qe-wharton1-gpu`.
-- **Expected errors:** the machines ran `run_lecture.py` as it was before it recorded each cell's tags. The cells run are the same. `summarise_whole.py` reads the tags from the lecture's source with the current `code_cells`, so a cell tagged `raises-exception` counts as expected in these runs too.
+- **Expected errors:** `qe-wharton1-gpu` and `qe-mini1` ran `run_lecture.py` as it was before it recorded each cell's tags; the T4 runner ran the current one. The cells run are the same. `summarise_whole.py` reads the tags from the lecture's source with the current `code_cells`, so a cell tagged `raises-exception` counts as expected in these runs too.
 - **No cross-device check of the outputs.** The runs didn't use `--record`, so a device that changed a lecture's answer would show only as an error. Each cell's last 3,000 characters of output are kept in the results, for a check later.
 
 ## Running it
