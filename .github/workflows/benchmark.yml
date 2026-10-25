@@ -280,6 +280,36 @@ jobs:
           pip freeze > "$out/environment.txt"
           python lectures/aiyagari_jax/summarise_scale.py "$out"/aiyagari_jax/scale/*.json | tee -a "$GITHUB_STEP_SUMMARY" || true
 
+      - name: Run five lectures as written
+        if: inputs.precision_run != 'smoke' && inputs.precision_extras
+        run: |
+          # The five lectures with the most GPU work in #4's set, as written, three times each on the
+          # card, with the TITAN RTX run's packages; precision/run_by_hand.sh does the same off RunsOn
+          lectures="overborrowing wealth_dynamics_jax schelling_shocks opt_invest hopenhayn"; reps=3
+          ${{ inputs.precision_run == 'quick' && 'lectures=schelling_shocks; reps=1' || '' }}
+          grep -vE '^(jax|jaxlib|jax-cuda[0-9]+-(plugin|pjrt)|nvidia-[a-z0-9-]+)==' \
+            lectures/results/qe-wharton1-gpu/2026-10-25/whole/environment.txt > "$RUNNER_TEMP/requirements.txt"
+          pip install -r "$RUNNER_TEMP/requirements.txt" -c precision/constraints.txt
+          for lecture in $lectures; do
+            curl -fsSL -o "$RUNNER_TEMP/$lecture.md" \
+              "https://raw.githubusercontent.com/QuantEcon/lecture-jax/4b939ec49a7f1901245f68749c1b1e18e3454d34/lectures/$lecture.md"
+          done
+          out="lectures/results/$HOST/$(date -u +%F)/whole"
+          mkdir -p "$out"
+          export CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 MPLBACKEND=Agg
+          for rep in $(seq 1 $reps); do
+            for lecture in $lectures; do
+              mkdir -p "$out/$lecture"
+              JAX_PLATFORMS=cuda timeout 3600 python lectures/run_lecture.py "$RUNNER_TEMP/$lecture.md" --dtype as-written \
+                --out "$out/$lecture/cuda-as-written-$rep.json" --env-info precision \
+                > /dev/null 2> "$out/$lecture/cuda-$rep.err" && rm -f "$out/$lecture/cuda-$rep.err" \
+                || echo "$lecture rep $rep: exit $?"
+              python -c "import json,sys; r=json.load(open(sys.argv[1])); print(f\"$lecture rep $rep: {r['lecture_s']:.1f} s, cells ok {r['all_ok']}, {r['default_float']}\")" \
+                "$out/$lecture/cuda-as-written-$rep.json" 2>/dev/null || echo "$lecture rep $rep: no result"
+            done
+          done | tee "$out/lectures-set.log"
+          pip freeze > "$out/environment.txt"
+
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()
