@@ -11,13 +11,19 @@ state() {
   pmset -g therm | grep -v '^Note'; pmset -g | grep lowpowermode; pmset -g batt | head -1
 }
 
-PAUSED="$(pgrep -f 'claude remote-control') $(pgrep -f 'claude --print --sdk-url') $(pgrep -f WallpaperAerialsExtension) $(pgrep -f VTDecoderXPCService)"
+# Each pattern is anchored to the start of its target's command line, so a shell
+# whose own command merely mentions these names (one that launched this script,
+# say) is not paused with them.
+RC='^claude remote-control'
+PAUSED="$(pgrep -f "$RC") $(pgrep -f '^[^ ]*/claude --print --sdk-url') \
+  $(pgrep -f '^/System/Library/ExtensionKit/Extensions/WallpaperAerialsExtension') \
+  $(pgrep -f '^/System/Library/Frameworks/VideoToolbox.framework/.*/VTDecoderXPCService')"
 resume() {
   kill -CONT $PAUSED 2>/dev/null; echo "== resumed: $PAUSED at $(date '+%T')"
   # Stopping Remote Control's foreground job makes its tmux shell put it in the
   # background; give it the terminal back, but only if it has lost it. The
   # 2026-10-25 run did this step by hand.
-  for p in $(pgrep -f 'claude remote-control'); do
+  for p in $(pgrep -f "$RC"); do
     case "$(ps -o stat= -p $p)" in *+*) ;; *) tmux send-keys -t rc fg Enter ;; esac
   done
   state after >> $OUT/state.txt

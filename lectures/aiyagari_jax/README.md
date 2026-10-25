@@ -28,6 +28,24 @@ The lecture is `lectures/aiyagari_jax.md` from [lecture-jax](https://github.com/
 
 `env.git_commit` in each as-used result (`91baa22`) is the benchmarks checkout that supplied `env_info.py`, not these scripts. The scripts are as committed here, except for one change to `run_lecture.py` made after these runs: skipping `!pip install` cells. This lecture has no such cell.
 
+## Reproducing a run
+
+From the repository root, with the lecture fetched as in [`../README.md`](../README.md). On the card:
+
+```bash
+DEV="JAX_PLATFORMS=cuda CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_PREALLOCATE=false MPLBACKEND=Agg"
+env $DEV python lectures/run_lecture.py aiyagari_jax.md --dtype float64 --out cuda-float64-1.json \
+    --env-info precision \
+    --record "K_star" "K_vals.tolist()" "np.asarray(σ_star).ravel().tolist()" "str(household.a_grid.dtype)"
+env $DEV python lectures/aiyagari_jax/aiyagari_scale.py aiyagari_jax.md --dtype float64 \
+    --sizes 200,1000,2000,5000,10000 --out cuda-float64-1.json
+```
+
+- **`summarise_runs.py` reads all four `--record` values.**
+- **For the CPU,** use `JAX_PLATFORMS=cpu` and drop the `CUDA_` variables.
+- **For float32,** pass `--dtype float32`.
+- **The full sets,** interleaved and repeated three times, are [`run_set.sh`](run_set.sh), [`scale_set.sh`](scale_set.sh) and [`../mac_set.sh`](../mac_set.sh).
+
 ## Results
 
 In [`../results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/`](../results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/):

@@ -24,6 +24,27 @@ As for `aiyagari_jax`: `qe-wharton1-gpu` on 2026-10-25 (UTC), the TITAN RTX at `
 
 The same CPU runs were made on `qe-mini1`'s M6 with [`../mac_set.sh`](../mac_set.sh), with the agents paused.
 
+## Reproducing a run
+
+From the repository root, with the lecture fetched at `4b939ec` and `quantecon` and `numba` installed. On the card:
+
+```bash
+DEV="JAX_PLATFORMS=cuda CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_PREALLOCATE=false MPLBACKEND=Agg"
+env $DEV python lectures/ifp_egm_jax/ifp_check.py ifp_egm_jax.md --dtype float64 --sizes 200 --out cuda-float64-1.json
+env $DEV python lectures/ifp_egm_jax/ifp_scale.py ifp_egm_jax.md --dtype float64 \
+    --sizes 200,1000,5000,20000,50000 --out cuda-float64-1.json
+env $DEV python lectures/run_lecture.py ifp_egm_jax.md --dtype float64 --out cuda-float64-1.json \
+    --env-info precision \
+    --record "jax_time_without_compile" "numba_time_without_compile" \
+             "np.asarray(σ_star_egm_jax).ravel().tolist()" "np.asarray(σ_star_egm_nb).ravel().tolist()" \
+             "str(σ_star_egm_jax.dtype)"
+```
+
+- **`summarise_ifp.py` reads the first two `--record` values.** The policies are kept for fidelity checks.
+- **For the CPU,** use `JAX_PLATFORMS=cpu` and drop the `CUDA_` variables.
+- **For float32,** pass `--dtype float32`.
+- **The full sets** are [`ifp_set.sh`](ifp_set.sh) (with [`ifp_one.sh`](ifp_one.sh)) and [`../mac_set.sh`](../mac_set.sh).
+
 ## Results
 
 In [`../results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/`](../results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/) and [`../results/qe-mini1/2026-10-25/ifp_egm_jax/`](../results/qe-mini1/2026-10-25/ifp_egm_jax/): `check/`, `scale/` and `as-used/`, one JSON file per process. To rebuild the tables from the repository root:

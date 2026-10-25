@@ -24,6 +24,8 @@ JAX_PLATFORMS=cuda CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 XLA_PYTHO
 
 Each run writes one JSON file: the time and output tail of each cell, the total, the recorded values, the device and the flags.
 
+**Each lecture's README gives the exact commands it was run with**, including the `--record` set its summary script reads. The example above records one value only.
+
 ## What is here
 
 | Lecture | The question | Results |
