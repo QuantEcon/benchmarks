@@ -1,0 +1,47 @@
+== before: 2026-10-25 16:45:06 AEDT
+16:45  up 11 days,  1:19, 3 users, load averages: 1.02 1.10 1.22
+  PID STAT  %CPU COMM
+  616 Ss    17.2 /usr/libexec/sysmond
+30122 Ss     4.8 /System/Library/ExtensionKit/Extensions/WallpaperAerialsExtension.appex/Contents/MacOS/WallpaperAerialsExtension
+  436 Ss     4.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  405 Ss     3.8 /usr/libexec/opendirectoryd
+  520 Ss     3.0 /usr/libexec/syspolicyd
+31170 Ss     2.2 /usr/libexec/trustd
+30198 Ss     1.9 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTDecoderXPCService.xpc/Contents/MacOS/VTDecoderXPCService
+  645 Ss     1.9 /opt/homebrew/opt/tailscale/bin/tailscaled
+  437 Ss     1.9 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd
+ lowpowermode         0
+Now drawing from 'AC Power'
+== pausing: 838 852   30122   30198
+30868
+30877
+33087
+48839
+== paused: 2026-10-25 16:45:36 AEDT
+16:45  up 11 days,  1:20, 3 users, load averages: 1.01 1.09 1.21
+  PID STAT  %CPU COMM
+69100 S+     2.6 macmon
+  436 Ss     1.8 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  405 Ss     0.6 /usr/libexec/opendirectoryd
+  363 Ss     0.1 /usr/libexec/logd
+72897 S      0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+72886 Ss+    0.0 /bin/bash
+72888 S+     0.0 caffeinate
+64957 Ss     0.0 /System/Library/PrivateFrameworks/CascadeSets.framework/Versions/A/XPCServices/SetStoreUpdateService.xpc/Contents/MacOS/SetStoreUpdateService
+64928 Ss     0.0 -zsh
+ lowpowermode         0
+Now drawing from 'AC Power'
+== after: 2026-10-25 17:49:00 AEDT
+17:49  up 11 days,  2:23, 3 users, load averages: 10.05 8.51 6.89
+  PID STAT  %CPU COMM
+79121 Ss     5.8 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  440 Ss     4.3 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  436 Rs     4.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+30122 Rs     2.9 /System/Library/ExtensionKit/Extensions/WallpaperAerialsExtension.appex/Contents/MacOS/WallpaperAerialsExtension
+69100 S+     1.6 macmon
+  405 Ss     0.6 /usr/libexec/opendirectoryd
+30198 Ss     0.4 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTDecoderXPCService.xpc/Contents/MacOS/VTDecoderXPCService
+  852 R+     0.4 /opt/homebrew/Caskroom/claude-code/2.1.287/claude
+72886 Ss+    0.3 /bin/bash
+ lowpowermode         0
+Now drawing from 'AC Power'

@@ -32,8 +32,9 @@ Each run writes one JSON file: the time and output tail of each cell, the total,
 |---|---|---|
 | [`aiyagari_jax`](aiyagari_jax/) | project-compute's: on a TITAN RTX, is float64 bound by bandwidth or by FP64 arithmetic? Also, where does the card beat an Apple CPU? | [`qe-wharton1-gpu`](results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/), [`qe-mini1`](results/qe-mini1/2026-10-25/aiyagari_jax/) |
 | [`ifp_egm_jax`](ifp_egm_jax/) | The same questions, for a lecture that interpolates instead of searching a dense choice grid | [`qe-wharton1-gpu`](results/qe-wharton1-gpu/2026-10-25/ifp_egm_jax/), [`qe-mini1`](results/qe-mini1/2026-10-25/ifp_egm_jax/) |
+| [`whole/`](whole/) | #4: every lecture-jax lecture as written, on the card, the Threadripper and the M6. Which lectures run faster on a CPU, and which cells carry the time? | [`qe-wharton1-gpu`](results/qe-wharton1-gpu/2026-10-25/whole/), [`qe-mini1`](results/qe-mini1/2026-10-25/whole/) |
 
-Results live under `lectures/results/<host>/<date>/<lecture>/`, apart from the top-level `results/`, which holds the precision benchmarks' JSON lines.
+Results live under `lectures/results/<host>/<date>/<lecture>/`, and the whole-lecture set under `lectures/results/<host>/<date>/whole/<lecture>/`, apart from the top-level `results/`, which holds the precision benchmarks' JSON lines.
 
 ## Comparing machines
 
