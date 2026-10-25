@@ -19,7 +19,7 @@ Still to come: the `sargent_surico` NUTS cell from [lecture-python.myst#1022](ht
 
 ## Running it
 
-Install JAX for the platform (`pip install -U "jax[cuda13]"` on NVIDIA, `pip install -U jax` elsewhere), then from the repository root:
+Install JAX at the release pinned in [`constraints.txt`](constraints.txt), the same on every platform so that results compare: `pip install "jax[cuda13]" -c precision/constraints.txt` on NVIDIA, `pip install jax -c precision/constraints.txt` elsewhere. Then from the repository root:
 
 ```bash
 python precision/run_matrix.py --quick                    # a few minutes; checks the setup
@@ -39,12 +39,14 @@ python precision/run_matrix.py --host qe-wharton1-gpu --devices cpu \
 
 Card 0 in PCI order is `0b:00.0`; card 1, `43:00.0`, drives the desktop, so `gpu` uses card 0. The second run repeats the CPU leg with memory interleaved across the 2990WX's NUMA nodes, two of which have no local memory.
 
-The workflow in `.github/workflows/benchmark.yml` runs the matrix on the RunsOn GPU instance and its host CPU when dispatched with `run_precision`.
+To compare JAX's two CUDA builds, install `jax[cuda12]` the same way in a second environment and run with `--label cuda12`. Each row's `env` block records which plugin ran.
+
+The workflow in `.github/workflows/benchmark.yml` runs the matrix on a RunsOn GPU instance and its host CPU when dispatched with `run_precision`. `precision_instance` picks the card (`g4dn`: T4, the lectures' CI instance; `g5`: A10G; `g6`: L4) and `precision_cuda` the CUDA build.
 
 ## Method
 
 - **One fresh process per cell** (workload × size × precision × device). The driver sets `JAX_ENABLE_X64`, `JAX_PLATFORMS` and `CUDA_VISIBLE_DEVICES` before the process starts, as a lecture's settings would be, and always `XLA_PYTHON_CLIENT_PREALLOCATE=false`.
-- **Cold and warm are kept apart.** `compile_s` and `first_run_s` are what a lecture pays on first use; `warm_s` holds five timed runs after that, summarised by their median. `process_s` is the whole process, imports included.
+- **Cold and warm are kept apart.** `backend_init_s`, `compile_s` and `first_run_s` are what a fresh process pays before its first result, and the summary's cold time is their sum. A lecture starts the backend once per process, so the cold time charges every kernel for it; it is kept as its own field so that it can be taken out. `warm_s` holds five timed runs after that, summarised by their median. `process_s` is the whole process, imports included.
 - **The result dtype is asserted**, so a silent float32 cannot pass as float64.
 - **Fidelity**: each cell keeps 64 values from fixed positions in its result, and the summary reports the largest relative difference between float32 and float64.
 - **Memory**: cells that would need more than `--memory-fraction` of a device's memory (80% by default) are recorded as skipped rather than run. XLA's own buffer accounting is kept as `memory_analysis`.
@@ -57,5 +59,5 @@ Each cell appends one JSON line to `results/<host>/<date>.jsonl`, carrying the c
 ## Caveats
 
 - **JAX's CPU backend does not use Apple's matrix unit.** On an M1 Pro, NumPy's float64 matmul (through Accelerate) runs at 441 GFLOPS against JAX's 251, so a Mac running JAX gets less from its CPU than its specifications suggest.
-- **float32 matmul on Ampere and later may use TF32 by default**, which flatters float32 against float64. Turing has no TF32.
+- **float32 matmul on Ampere and later may use TF32 by default**, which flatters float32 against float64. Turing has no TF32, but the A10G (`g5`) and L4 (`g6`) do. The default is what a lecture gets; to measure full float32 as well, repeat the run with `JAX_DEFAULT_MATMUL_PRECISION=highest` and a `--label`.
 - **Written as one broadcast, the recomputing Bellman step saves no memory on CPU**: XLA materialises the full m × m array. That is why it works in blocks.

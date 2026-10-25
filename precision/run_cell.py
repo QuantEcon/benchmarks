@@ -67,7 +67,11 @@ def main():
         import kernels
 
         row["import_s"] = time.perf_counter() - T_START
+
+        # Starting the backend is part of first use too, and CUDA's is slow
+        t = time.perf_counter()
         devices = jax.devices()
+        row["backend_init_s"] = time.perf_counter() - t
         row.update(
             jax=jax.__version__,
             platform=devices[0].platform,

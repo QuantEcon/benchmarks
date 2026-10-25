@@ -27,6 +27,23 @@ on:
         required: false
         default: true
         type: boolean
+      precision_instance:
+        description: 'Precision benchmarks: EC2 instance (g4dn: T4, g5: A10G, g6: L4)'
+        required: false
+        default: 'g4dn.2xlarge'
+        type: choice
+        options:
+          - g4dn.2xlarge
+          - g5.2xlarge
+          - g6.2xlarge
+      precision_cuda:
+        description: "Precision benchmarks: JAX's CUDA build"
+        required: false
+        default: 'cuda13'
+        type: choice
+        options:
+          - cuda13
+          - cuda12
 
 jobs:
   # =============================================================================
@@ -158,35 +175,33 @@ jobs:
   benchmark-precision:
     name: Precision Benchmarks
     if: inputs.run_precision == true
-    runs-on:
-      - runs-on
-      - runner=gpu
-      - image=quantecon-gpu-ubuntu2404
-      - run-id=${{ github.run_id }}
+    # The lectures' label form; the image is defined in .github/runs-on.yml
+    runs-on: "runs-on=${{ github.run_id }}/family=${{ inputs.precision_instance }}/image=quantecon_ubuntu2404/volume=80gb/spot=false"
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Install JAX
         run: |
-          eval "$(conda shell.bash hook)"
-          conda activate base
-          # The same JAX release as the other platforms, not the AMI's
-          pip install -U "jax[cuda13]"
+          # The same JAX release as the other platforms (precision/constraints.txt)
+          pip install "jax[${{ inputs.precision_cuda }}]" -c precision/constraints.txt
           nvidia-smi
           python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}')"
 
       - name: Run precision matrix
         run: |
-          eval "$(conda shell.bash hook)"
-          conda activate base
-          python precision/run_matrix.py --host runson-gpu --devices cpu,gpu ${{ inputs.precision_quick && '--quick' || '' }}
+          python precision/run_matrix.py --host runson-${{ inputs.precision_instance }} --devices cpu,gpu ${{ inputs.precision_quick && '--quick' || '' }} ${{ inputs.precision_cuda == 'cuda12' && '--label cuda12' || '' }}
           python precision/summarise.py results/ | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: benchmark-results-precision
+          name: benchmark-results-precision-${{ inputs.precision_instance }}-${{ inputs.precision_cuda }}
           path: results/

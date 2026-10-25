@@ -41,10 +41,15 @@ def rate(row):
     return f"{row['work'] / row['warm_median_s']:.3g}"
 
 
+def cold_s(row):
+    """What a fresh process pays before its first result: backend, compile, first run."""
+    return row["backend_init_s"] + row["compile_s"] + row["first_run_s"]
+
+
 def cold(row):
     if row is None or row["status"] != "ok":
         return ""
-    return f"{row['compile_s'] + row['first_run_s']:.3g}"
+    return f"{cold_s(row):.3g}"
 
 
 def fidelity(lo, hi):
@@ -111,8 +116,7 @@ def summarise(rows):
                         compared.append(s)
                         if found["warm"] is None and g["warm_median_s"] < c["warm_median_s"]:
                             found["warm"] = s
-                        g_cold = g["compile_s"] + g["first_run_s"]
-                        if found["cold"] is None and g_cold < c["compile_s"] + c["first_run_s"]:
+                        if found["cold"] is None and cold_s(g) < cold_s(c):
                             found["cold"] = s
                     never = f"not up to {compared[-1]}" if compared else "no comparison"
                     print(f"| {w} | {dtype} | {d} | {found['warm'] or never} "

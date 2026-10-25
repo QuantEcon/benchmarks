@@ -110,7 +110,9 @@ def collect():
         "packages": packages(),
         "flags": {k: v for k, v in sorted(os.environ.items()) if k.startswith(FLAG_PREFIXES)},
         "git_commit": _run(["git", "-C", str(REPO), "rev-parse", "--short", "HEAD"]),
-        "git_dirty": bool(_run(["git", "-C", str(REPO), "status", "--porcelain"])),
+        # Untracked files, such as earlier results, don't change the code that ran
+        "git_dirty": bool(_run(["git", "-C", str(REPO), "status", "--porcelain",
+                                "--untracked-files=no"])),
         "numactl": _run(["numactl", "--hardware"]),
     }
 
