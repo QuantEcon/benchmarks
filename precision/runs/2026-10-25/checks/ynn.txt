@@ -1,0 +1,83 @@
+# Why the Kalman filter runs ~3.5x slower in float32 than in float64 on qe-mini1's M6 (2026-10-25)
+# jax 0.12.0.1, JAX_PLATFORMS=cpu, the agents running (diagnostic runs, not measurements).
+# Output as printed; the scripts are beside this file.
+
+## kalman_ops_check.py: each operation in the filter's step on its own, lax.scan of 10,000 steps
+
+M6, float32:
+  matmuls (A P A', H P H')                      5.58 µs/step   -
+  solve, 3x3 with 10 right-hand sides           0.30 µs/step   lapack_sgetrf_ffi, lapack_strsm_ffi
+  solve, 3x3 with one right-hand side           0.11 µs/step   lapack_sgetrf_ffi, lapack_strsm_ffi
+  slogdet, 3x3                                  0.14 µs/step   lapack_sgetrf_ffi
+  cho_solve, 3x3 with 10 right-hand sides       0.18 µs/step   lapack_spotrf_ffi, lapack_strsm_ffi
+M6, float64:
+  matmuls (A P A', H P H')                      0.89 µs/step   -
+  solve, 3x3 with 10 right-hand sides           0.30 µs/step   lapack_dgetrf_ffi, lapack_dtrsm_ffi
+  solve, 3x3 with one right-hand side           0.11 µs/step   lapack_dgetrf_ffi, lapack_dtrsm_ffi
+  slogdet, 3x3                                  0.14 µs/step   lapack_dgetrf_ffi
+  cho_solve, 3x3 with 10 right-hand sides       0.18 µs/step   lapack_dpotrf_ffi, lapack_dtrsm_ffi
+Threadripper 2990WX (qe-wharton1-gpu), float32:
+  matmuls (A P A', H P H')                      4.49 µs/step   -
+  solve, 3x3 with 10 right-hand sides           2.39 µs/step   lapack_sgetrf_ffi, lapack_strsm_ffi
+  solve, 3x3 with one right-hand side           1.21 µs/step   lapack_sgetrf_ffi, lapack_strsm_ffi
+  slogdet, 3x3                                  0.73 µs/step   lapack_sgetrf_ffi
+  cho_solve, 3x3 with 10 right-hand sides       1.93 µs/step   lapack_spotrf_ffi, lapack_strsm_ffi
+Threadripper 2990WX, float64:
+  matmuls (A P A', H P H')                      4.04 µs/step   -
+  solve, 3x3 with 10 right-hand sides           2.52 µs/step   lapack_dgetrf_ffi, lapack_dtrsm_ffi
+  solve, 3x3 with one right-hand side           1.30 µs/step   lapack_dgetrf_ffi, lapack_dtrsm_ffi
+  slogdet, 3x3                                  0.72 µs/step   lapack_dgetrf_ffi
+  cho_solve, 3x3 with 10 right-hand sides       2.18 µs/step   lapack_dpotrf_ffi, lapack_dtrsm_ffi
+
+## ynn_dot_check.py: one n x n product per step, lax.scan of 10,000 steps, on the M6
+
+float32, default flags:
+  n=   2:   0.006 µs per product   lowering: []
+  n=   4:   0.101 µs per product   lowering: []
+  n=   8:   1.113 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  10:   1.113 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  16:   1.088 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  32:   1.288 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  64:   2.663 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n= 128:   8.572 µs per product   lowering: ['Custom', 'ynn_fusion']
+float64, default flags:
+  n=   2:   0.006 µs per product   lowering: []
+  n=   4:   0.107 µs per product   lowering: []
+  n=   8:   0.155 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  10:   0.168 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  16:   0.264 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  32:   1.161 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n=  64:   8.008 µs per product   lowering: ['Custom', 'ynn_fusion']
+  n= 128:  62.329 µs per product   lowering: ['Custom', 'ynn_fusion']
+float32, XLA_FLAGS=--xla_cpu_experimental_ynn_fusion_type= (from three runs of the script):
+  n=   8:   0.136 µs per product   lowering: []
+  n=  10:   0.163 µs per product   lowering: []
+  n=  16:   0.253 µs per product   lowering: []
+  n=  32:   0.792 µs per product   lowering: []
+  n=  64:   4.715 µs per product   lowering: []
+  n= 128:  21.689 µs per product   lowering: []
+float64, XLA_FLAGS=--xla_cpu_experimental_ynn_fusion_type=:
+  n=  10:   0.171 µs per product   lowering: []
+  n=  32:   1.428 µs per product   lowering: []
+XLA_FLAGS=--xla_cpu_use_xnnpack=false has no effect (float32 n=10: 1.114 µs, still ynn_fusion).
+
+## The harness's own cells, with and without the fusion (precision/run_matrix.py, M6)
+
+XLA_FLAGS="":
+kalman                1000 float32  cpu    warm      5.08 ms      197.0 ksteps/s  compile 0.09 s
+kalman                1000 float64  cpu    warm      1.39 ms      717.5 ksteps/s  compile 0.08 s
+kalman               10000 float32  cpu    warm     51.46 ms      194.3 ksteps/s  compile 0.09 s
+kalman               10000 float64  cpu    warm     15.65 ms      638.9 ksteps/s  compile 0.09 s
+matmul                1000 float32  cpu    warm      0.99 ms     2017.1 GFLOPS  compile 0.00 s
+matmul                1000 float64  cpu    warm      4.91 ms      407.2 GFLOPS  compile 0.00 s
+matmul               10000 float32  cpu    warm   1403.46 ms     1425.1 GFLOPS  compile 0.00 s
+matmul               10000 float64  cpu    warm   5379.33 ms      371.8 GFLOPS  compile 0.00 s
+XLA_FLAGS="--xla_cpu_experimental_ynn_fusion_type=":
+kalman                1000 float32  cpu    warm      1.42 ms      704.7 ksteps/s  compile 0.09 s
+kalman                1000 float64  cpu    warm      1.50 ms      667.8 ksteps/s  compile 0.09 s
+kalman               10000 float32  cpu    warm     15.80 ms      632.9 ksteps/s  compile 0.09 s
+kalman               10000 float64  cpu    warm     15.85 ms      630.8 ksteps/s  compile 0.09 s
+matmul                1000 float32  cpu    warm      2.35 ms      850.7 GFLOPS  compile 0.00 s
+matmul                1000 float64  cpu    warm      4.79 ms      417.4 GFLOPS  compile 0.00 s
+matmul               10000 float32  cpu    warm   2111.27 ms      947.3 GFLOPS  compile 0.00 s
+matmul               10000 float64  cpu    warm   4109.30 ms      486.7 GFLOPS  compile 0.00 s
