@@ -1,0 +1,156 @@
+# Redacted for publication: the machine is a guest's. The console user's name is <console user>, and
+# software its owner's institution manages is <managed agent>; their CPU figures are as recorded.
+== before: 2026-10-25 21:20:46 EDT (01:20:46 UTC)
+21:20  up 1 day,  5:17, 4 users, load averages: 1.23 1.27 1.31
+console idle: 105221 s
+  PID STAT  %CPU USER             COMM
+  338 Ss    16.9 root             <managed agent>
+  146 Ss     4.4 root             /usr/libexec/opendirectoryd
+ 2441 Ss+    4.1 root             login
+ 2433 Ss     4.0 matt             zsh
+ 2442 S+     2.8 matt             /bin/bash
+25028 Rs     1.7 root             <managed agent>
+  352 Ss     1.5 root             <managed agent>
+ 2425 Ss     1.2 root             sshd-session: matt [priv]
+  172 Rs     0.7 root             /usr/sbin/notifyd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== start 2026-10-26T01:20:46Z at e5b3f8f; lecture-python.myst at 087518ec0
+== sample: 2026-10-25 21:30:46 EDT (01:30:46 UTC)
+21:30  up 1 day,  5:27, 4 users, load averages: 4.78 4.34 2.85
+console idle: 105821 s
+  PID STAT  %CPU USER             COMM
+ 3445 R+   541.2 matt             .venv/bin/python
+25028 Ss    13.3 root             <managed agent>
+  235 Rs    11.2 root             /usr/libexec/airportd
+  338 Ss     8.1 root             <managed agent>
+ 3825 S      3.4 root             wdutil
+  344 Ss     1.9 root             <managed agent>
+    1 Ss     1.5 root             /sbin/launchd
+  525 Ss     1.4 root             /usr/libexec/wifivelocityd
+  376 Ss     1.3 _driverkit       /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 21:40:47 EDT (01:40:47 UTC)
+21:40  up 1 day,  5:37, 4 users, load averages: 4.45 5.04 4.09
+console idle: 106422 s
+  PID STAT  %CPU USER             COMM
+ 5020 R+   100.0 matt             .venv/bin/python
+  338 Ss    11.1 root             <managed agent>
+25028 Ss     9.9 root             <managed agent>
+  235 Ss     9.4 root             /usr/libexec/airportd
+  525 Ss     1.7 root             /usr/libexec/wifivelocityd
+  146 Ss     1.3 root             /usr/libexec/opendirectoryd
+    1 Ss     0.9 root             /sbin/launchd
+  344 Ss     0.9 root             <managed agent>
+  352 Ss     0.9 root             <managed agent>
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 21:50:47 EDT (01:50:47 UTC)
+21:50  up 1 day,  5:47, 4 users, load averages: 1.69 2.23 2.89
+console idle: 107022 s
+  PID STAT  %CPU USER             COMM
+ 6380 R+   100.0 matt             .venv/bin/python
+  338 Ss     9.3 root             <managed agent>
+  235 Ss     7.1 root             /usr/libexec/airportd
+  525 Ss     1.6 root             /usr/libexec/wifivelocityd
+ 1143 Ss     0.9 root             <managed agent>
+    1 Ss     0.7 root             /sbin/launchd
+  344 Ss     0.7 root             <managed agent>
+  352 Ss     0.6 root             <managed agent>
+  376 Ss     0.6 _driverkit       /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 22:00:47 EDT (02:00:47 UTC)
+22:00  up 1 day,  5:57, 4 users, load averages: 4.63 5.07 4.14
+console idle: 107622 s
+  PID STAT  %CPU USER             COMM
+ 6880 R+   533.6 matt             .venv/bin/python
+25028 Ss    11.1 root             <managed agent>
+  235 Ss     7.5 root             /usr/libexec/airportd
+  338 Ss     3.0 root             <managed agent>
+  525 Ss     1.4 root             /usr/libexec/wifivelocityd
+  133 Ss     0.8 root             /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  376 Ss     0.8 _driverkit       /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  344 Ss     0.8 root             <managed agent>
+  357 Ss     0.5 _mds_stores      /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 22:10:47 EDT (02:10:47 UTC)
+22:10  up 1 day,  6:07, 4 users, load averages: 1.80 2.89 3.58
+console idle: 108222 s
+  PID STAT  %CPU USER             COMM
+ 9376 R+    99.5 matt             .venv/bin/python
+25028 Ss     3.5 root             <managed agent>
+  235 Ss     3.2 root             /usr/libexec/airportd
+  338 Ss     1.8 root             <managed agent>
+  525 Ss     0.6 root             /usr/libexec/wifivelocityd
+  376 Ss     0.4 _driverkit       /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  344 Ss     0.4 root             <managed agent>
+ 1143 Ss     0.3 root             <managed agent>
+    1 Ss     0.3 root             /sbin/launchd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 22:20:47 EDT (02:20:47 UTC)
+22:20  up 1 day,  6:17, 4 users, load averages: 2.87 3.06 3.23
+console idle: 108822 s
+  PID STAT  %CPU USER             COMM
+10324 R+   428.8 matt             .venv/bin/python
+25028 Ss     8.4 root             <managed agent>
+  235 Ss     2.3 root             /usr/libexec/airportd
+  338 Ss     1.1 root             <managed agent>
+  525 Ss     0.6 root             /usr/libexec/wifivelocityd
+  352 Ss     0.4 root             <managed agent>
+  569 Ss     0.3 root             /usr/libexec/diagnosticd
+ 1143 Ss     0.3 root             <managed agent>
+  344 Ss     0.3 root             <managed agent>
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 22:30:47 EDT (02:30:47 UTC)
+22:30  up 1 day,  6:27, 4 users, load averages: 2.73 4.73 4.29
+console idle: 109422 s
+  PID STAT  %CPU USER             COMM
+12040 R+    99.8 matt             .venv/bin/python
+25028 Ss     7.6 root             <managed agent>
+  235 Ss     1.6 root             /usr/libexec/airportd
+  338 Ss     1.5 root             <managed agent>
+  116 Ss     0.3 root             /usr/libexec/configd
+  376 Ss     0.3 _driverkit       /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  525 Ss     0.2 root             /usr/libexec/wifivelocityd
+  173 Ss     0.2 root             /usr/libexec/sandboxd
+  569 Ss     0.2 root             /usr/libexec/diagnosticd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== after: 2026-10-25 22:34:35 EDT (02:34:35 UTC)
+22:34  up 1 day,  6:30, 4 users, load averages: 1.44 2.90 3.59
+console idle: 109650 s
+  PID STAT  %CPU USER             COMM
+  338 Ss    12.1 root             <managed agent>
+25028 Ss     1.4 root             <managed agent>
+  357 Ss     0.8 _mds_stores      /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  133 Ss     0.8 root             /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  352 Ss     0.7 root             <managed agent>
+  344 Ss     0.3 root             <managed agent>
+12694 S      0.1 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12779 S      0.1 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  339 Ss     0.1 root             <managed agent>
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
