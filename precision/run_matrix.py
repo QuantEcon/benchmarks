@@ -28,7 +28,8 @@ from spec import GIB, ITEMSIZE, WORKLOADS
 HERE = Path(__file__).resolve().parent
 MEMORY_FRACTION = 0.8
 CELL_FLAGS = ("JAX_PLATFORMS", "JAX_ENABLE_X64", "CUDA_VISIBLE_DEVICES",
-              "CUDA_DEVICE_ORDER", "XLA_FLAGS", "XLA_PYTHON_CLIENT_PREALLOCATE")
+              "CUDA_DEVICE_ORDER", "XLA_FLAGS", "XLA_PYTHON_CLIENT_PREALLOCATE",
+              "XLA_PYTHON_CLIENT_MEM_FRACTION")
 
 
 def parse_device(device):
@@ -53,6 +54,9 @@ def cell_env(kind, count, dtype, gpus):
         env["JAX_PLATFORMS"] = "cuda"
         env["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
         env["CUDA_VISIBLE_DEVICES"] = ",".join(gpus[:count])
+        # Even with preallocation off, JAX's allocator stops at 75% of the card by
+        # default, below --memory-fraction; this leaves that check as the only limit
+        env.setdefault("XLA_PYTHON_CLIENT_MEM_FRACTION", "0.95")
     return env
 
 
