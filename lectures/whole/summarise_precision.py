@@ -10,7 +10,8 @@ time in each precision and float64's time over float32's.
 
 It also compares what the cells print, as a first check on float32's answers. A
 printed number counts where every float64 run prints the same value in the same place,
-which leaves out timings and anything else that varies from run to run. A cell is
+which leaves out timings and anything else that varies from run to run, and cells
+that run a shell command, such as `!nvidia-smi`, are skipped. A cell is
 flagged if a float32 run prints a different count of numbers, or moves a counted one by
 more than --rtol. That includes convergence diagnostics, so a flag marks where to look,
 not an error. Only each cell's last 3,000 characters of output are kept.
@@ -45,6 +46,8 @@ def compare(f64_runs, f32_runs, rtol):
     """
     flagged, compared = [], 0
     for i in range(len(f64_runs[0]["cells"])):
+        if f64_runs[0]["cells"][i].get("first_line", "").startswith("!"):
+            continue                                # a shell command, such as !nvidia-smi, prints the machine's state
         ref = [numbers(r["cells"][i].get("output")) for r in f64_runs]
         if not ref[0] or any(len(x) != len(ref[0]) for x in ref):
             continue

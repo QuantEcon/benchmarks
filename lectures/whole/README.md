@@ -2,7 +2,7 @@
 
 Every lecture in [lecture-jax](https://github.com/QuantEcon/lecture-jax), run as written in one fresh process each, timed cell by cell, on four of QuantEcon's devices and on the T4 runner that the lectures' CI uses. This is the first part of [#4](https://github.com/QuantEcon/benchmarks/issues/4): which lectures run faster on a CPU than on the GPU they are built on, and where each lecture's time goes.
 
-Still to come under #4: the JAX lectures in lecture-python.myst, `sargent_surico` among them; and float32 runs of the float64 lectures.
+Still to come under #4: the JAX lectures in lecture-python.myst, `sargent_surico` among them.
 
 ## Results
 
@@ -104,6 +104,39 @@ What the table shows:
 - **The T4 and the TITAN RTX take about the same time over the set,** 922 s and 873 s. The TITAN is faster on 7 lectures, the large simulations and dynamic programs among them (`wealth_dynamics_jax`, 53 s against 168 s), and the T4 on the other 21, by up to 2.2× (`schelling_jax`). These runs don't separate why.
 - **These runs are sequential.** A build executes several notebooks at once, sharing the one T4 or the 8 threads, which this doesn't measure.
 
+## float32 against float64
+
+The 13 lectures that set `jax_enable_x64`, listed in [`lectures-float64.txt`](lectures-float64.txt), each ran in float64 and then in float32, three times on each device. The table gives float64's median time over float32's, so above 1× float32 is faster. The last column says what float32 changes in what the lecture prints, from [`summarise_precision.py`](summarise_precision.py).
+
+| Lecture | TITAN RTX | Threadripper | M6 | M5 Pro | What float32 changes |
+|---|---|---|---|---|---|
+| `hopenhayn` | 1.21× | 0.97× | 1.81× | 1.37× | The equilibrium price comes out 12% higher (1.53 against 1.36) |
+| `arellano_jax` | 1.19× | 1.33× | 1.65× | 1.49× | 3 cells print different numbers |
+| `inventory_ssd` | 1.09× | 1.56× | 0.91× | 1.08× | Nothing printed changes |
+| `jax_intro_jax` | 1.07× | 1.23× | 1.30× | 1.24× | 11 cells print different numbers |
+| `opt_savings_1` | 1.04× | 1.04× | 1.10× | 1.09× | Nothing printed changes |
+| `job_search` | 1.00× | 1.00× | 1.02× | 1.01× | Nothing printed changes |
+| `newtons_method` | 1.00× | 1.02× | 1.01× | 1.01× | 3 to 5 cells print different numbers |
+| `mle_jax` | 0.89× | 0.91× | 0.94× | 0.93× | 2 cells print different numbers |
+| `opt_invest` | 0.90× | 0.66× | 0.74× | 0.64× | Policy iteration never settles, and runs to its 250-loop cap |
+| `opt_savings_2` | 0.92× | 0.08× | 0.51× | 0.45× | Policy iteration never settles, and runs to its 250-loop cap |
+| `ifp_egm_jax` | 0.34× | 0.34× | 0.42× | 0.41× | The Numba solve takes 2.5× to 3× as long, in about the same number of iterations |
+| `aiyagari_jax` | 0.08× | 0.10× | 0.12× | 0.13× | Policy iteration runs to its 10,000-loop cap at some capital values |
+| `markov_asset_jax` | fails | fails | fails | fails | Its stability check fails, in every run on every device |
+| **The 12 that ran in both,** float64 → float32 | **556 → 1,850 s** | **1,140 → 3,694 s** | **278 → 397 s** | **252 → 390 s** | |
+
+What the table shows:
+
+- **float32 is not a speed-up on the card for these lectures.** The TITAN RTX gains at most 1.21× (`hopenhayn`), though float32 is 24.5× faster for it on dense matmul in the precision benchmark. At the lectures' sizes the card isn't limited by float64 arithmetic.
+- **Over the set, float32 is slower on every device:** 3.3× on the card and 1.4× on the M6. Where it is slower, a loop that stops at a tolerance takes longer or never stops, or code outside JAX slows down.
+    - In `opt_invest` and `opt_savings_2`, policy iteration counts the policy points that change. In float64 that count reaches 0 after 10 to 12 loops; in float32 it stays at 1, so the loop runs to its cap of 250. That costs the card little. On the Threadripper, `opt_savings_2` takes 13× as long, mostly in cell #33, which reruns the solvers for 15 values of m: 1,867 s against 137 s.
+    - In `aiyagari_jax`, policy iteration runs to its 10,000-loop cap at 2 of the lecture's 50 capital values ([`hpi_check.txt`](../results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/checks/hpi_check.txt), diagnosed in [`../aiyagari_jax/`](../aiyagari_jax/)). Its sweep over β slows most: cell #36 takes 714 s on the card in float32, against 24 s.
+    - In `ifp_egm_jax`, the Numba version of the solve converges in about the same number of iterations (2,203 against 2,192 on `qe-wharton1-gpu`), but takes 2.5× as long on the Macs and 3× on the Threadripper. Why is undiagnosed.
+- **`markov_asset_jax` fails in float32.** Cell #15 asserts that the model's spectral radius is below 1, using a 15-step power iteration. In float32 that estimate comes out at 1.026, against 0.905 in float64; the exact radius is 0.994 ([`checks/markov_asset-spectral-radius.txt`](../results/qe-wharton2/2026-10-25/checks/markov_asset-spectral-radius.txt)).
+- **Mostly the same cells change on every device.** Where a lecture's printed numbers move in float32, the card, the Threadripper and both Macs flag largely the same cells.
+
+A flagged cell marks where to look, not an error: the comparison counts every number a cell prints that is the same in all three float64 runs, convergence diagnostics among them. `summarise_precision.py` skips cells that run a shell command, such as `!nvidia-smi`, which print the machine's state.
+
 ## Method
 
 - **The lectures:** lecture-jax at `4b939ec` (2026-10-12), all 29 lectures except `intro`, `status`, `troubleshooting` and `zreferences`, listed in [`lectures.txt`](lectures.txt). Nothing in them was changed.
@@ -117,6 +150,7 @@ What the table shows:
 - **`qe-mini1`'s agents and its animated wallpaper were paused** for its runs, from 16:45 to 17:49 AEDT on 2026-10-25, and resumed after. `state.txt` records the machine before, during and after. No GitHub runner process was on `qe-wharton1-gpu`.
 - **`qe-wharton2` is a guest machine, so nothing on it was paused.** Its console had been idle for 26 hours and stayed idle, it ran on AC power with the lid open, and macOS reported no thermal or performance warning. Its managed endpoint agents ran throughout, at most about 14% of one of its 18 cores. `state.txt` samples it every ten minutes, with the console user's name and the managed software's names redacted.
 - **Expected errors:** `qe-wharton1-gpu` and `qe-mini1` ran `run_lecture.py` as it was before it recorded each cell's tags; the T4 runner and `qe-wharton2` ran the current one. The cells run are the same. `summarise_whole.py` reads the tags from the lecture's source with the current `code_cells`, so a cell tagged `raises-exception` counts as expected in these runs too.
+- **The float32 pass:** [`lectures_set.sh`](lectures_set.sh) at `e5b3f8f` with `DTYPES="float64 float32"` and `LIST=lectures-float64.txt`, so each lecture runs with `--dtype float64` and then `--dtype float32` on each device before the next. On `qe-mini1` from 23:17 to 23:51 UTC on 2026-10-25, with its agents paused; on `qe-wharton2` from 23:16 to 23:49 UTC, with nothing paused; and on `qe-wharton1-gpu`, card and CPU, from 23:15 UTC to 05:25 UTC on 2026-10-26, with both cards idle at the start and the end. `float32-pass-state.txt` and `lectures-set-float32.log` beside each host's results record the runs.
 - **No cross-device check of the outputs.** The runs didn't use `--record`, so a device that changed a lecture's answer would show only as an error. Each cell's last 3,000 characters of output are kept in the results, for a check later.
 
 ## Running it
@@ -136,4 +170,4 @@ On RunsOn, the workflow's `run_lectures` job runs the same set three times on th
 
 ## Results files
 
-`lectures/results/<host>/2026-10-25/whole/<lecture>/<platform>-as-written-<run>.json`, one per run: every cell's time, first line, success and tail of output, with the flags, the JAX version and device, and the `env` block from `precision/env_info.py`. Beside them are each machine's `environment.txt` and `lectures-set.log`, and on `qe-mini1` and `qe-wharton2`, `state.txt`. `qe-wharton2`'s memory check is in `checks/` beside its `whole/`.
+`lectures/results/<host>/2026-10-25/whole/<lecture>/<platform>-as-written-<run>.json`, one per run: every cell's time, first line, success and tail of output, with the flags, the JAX version and device, and the `env` block from `precision/env_info.py`. Beside them are each machine's `environment.txt` and `lectures-set.log`, and on `qe-mini1` and `qe-wharton2`, `state.txt`. `qe-wharton2`'s memory check is in `checks/` beside its `whole/`, with the `markov_asset_jax` check. The float32 pass's runs are `<platform>-float64-<run>.json` and `<platform>-float32-<run>.json`, beside the as-written ones.
