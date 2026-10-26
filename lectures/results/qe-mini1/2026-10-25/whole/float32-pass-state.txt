@@ -1,0 +1,44 @@
+== before: 2026-10-26 10:16:57 AEDT
+10:16  up 11 days, 18:51, 2 users, load averages: 1.45 1.24 1.18
+  PID STAT  %CPU COMM
+79547 Ss    12.3 /usr/libexec/sysmond
+  405 Ss     7.9 /usr/libexec/opendirectoryd
+30122 Ss     6.1 /System/Library/ExtensionKit/Extensions/WallpaperAerialsExtension.appex/Contents/MacOS/WallpaperAerialsExtension
+  436 Ss     5.5 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  645 Ss     5.4 /opt/homebrew/opt/tailscale/bin/tailscaled
+94997 Ss+    4.2 /bin/bash
+  437 Ss     3.0 /System/Library/PrivateFrameworks/TCC.framework/Support/tccd
+30198 Ss     1.9 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTDecoderXPCService.xpc/Contents/MacOS/VTDecoderXPCService
+94985 S      1.5 /usr/bin/login
+ lowpowermode         0
+Now drawing from 'AC Power'
+== pausing: 94783    30122   30198
+48839
+== paused: 2026-10-26 10:17:27 AEDT
+10:17  up 11 days, 18:52, 2 users, load averages: 1.15 1.18 1.16
+  PID STAT  %CPU COMM
+  436 Ss     2.0 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+    1 Ss     0.4 /sbin/launchd
+  430 Ss     0.3 /usr/sbin/notifyd
+  363 Ss     0.1 /usr/libexec/logd
+  405 Ss     0.1 /usr/libexec/opendirectoryd
+94986 S      0.0 -zsh
+94985 S      0.0 /usr/bin/login
+94964 S      0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+94963 S      0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ lowpowermode         0
+Now drawing from 'AC Power'
+== after: 2026-10-26 10:51:44 AEDT
+10:51  up 11 days, 19:26, 3 users, load averages: 6.56 4.32 3.58
+  PID STAT  %CPU COMM
+  436 Rs     1.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  405 Ss     0.4 /usr/libexec/opendirectoryd
+95267 S+     0.4 macmon
+  363 Ss     0.1 /usr/libexec/logd
+98412 S      0.0 /opt/homebrew/bin/claude
+98186 Ss+    0.0 claude
+97810 Ss     0.0 /usr/libexec/applekeystored
+97452 Ss     0.0 /usr/libexec/betaenrollmentd
+97451 S      0.0 /usr/libexec/betaenrollmentagent
+ lowpowermode         0
+Now drawing from 'AC Power'

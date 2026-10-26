@@ -1,0 +1,13 @@
+aiyagari_jax
+arellano_jax
+hopenhayn
+ifp_egm_jax
+inventory_ssd
+jax_intro_jax
+job_search
+markov_asset_jax
+mle_jax
+newtons_method
+opt_invest
+opt_savings_1
+opt_savings_2

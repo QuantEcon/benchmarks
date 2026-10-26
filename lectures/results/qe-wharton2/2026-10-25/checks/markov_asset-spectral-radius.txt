@@ -1,0 +1,12 @@
+# markov_asset_jax in each precision on qe-wharton2's CPU, after the float32 pass (2026-10-26), run with run_lecture.py --record:
+# the lecture's own 15-step power-iteration estimate of A's spectral radius, the exact radius of the same A, and A's dtype and shape.
+float64:
+  float(power_iteration_sr(compute_A(create_sv_model()))) = 0.9051328164755174
+  float(np.max(np.abs(np.linalg.eigvals(np.asarray(compute_A(create_sv_model()), dtype=np.float64))))) = 0.9944458946619704
+  str(compute_A(create_sv_model()).dtype) = 'float64'
+  compute_A(create_sv_model()).shape = [2744, 2744]
+float32:
+  float(power_iteration_sr(compute_A(create_sv_model()))) = 1.0256987810134888
+  float(np.max(np.abs(np.linalg.eigvals(np.asarray(compute_A(create_sv_model()), dtype=np.float64))))) = 0.9944458946619704
+  str(compute_A(create_sv_model()).dtype) = 'float64'
+  compute_A(create_sv_model()).shape = [2744, 2744]

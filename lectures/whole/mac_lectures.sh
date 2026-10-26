@@ -1,6 +1,7 @@
 #!/bin/bash
 # QuantEcon/benchmarks#4 on qe-mini1's CPU: every lecture as used, three times, with the agents and the
 # console's animated wallpaper paused (SIGSTOP) and resumed (SIGCONT) on exit, even after a failure.
+# Arguments go to lectures_set.sh, `results 3 cpu` by default; so do DTYPES and LIST.
 cd ~/bench/lectures-all
 state() {
   echo "== $1: $(date '+%F %T %Z')"; uptime
@@ -25,4 +26,4 @@ echo "== pausing: $PAUSED" | tee -a state.txt
 kill -STOP $PAUSED
 sleep 30
 state paused >> state.txt
-./lectures_set.sh results 3 cpu
+if [ $# -gt 0 ]; then ./lectures_set.sh "$@"; else ./lectures_set.sh results 3 cpu; fi
