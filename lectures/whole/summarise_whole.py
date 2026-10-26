@@ -63,23 +63,28 @@ def main():
           + " | fastest | slowest cells, by device |")
     print("|---|---|" + "---|" * len(devices) + "---|---|")
     problems, no_code = [], []
-    totals = defaultdict(float)
+    totals, counts, shown = defaultdict(float), defaultdict(int), 0
     for lecture in sorted(runs):
         by = runs[lecture]
         if not any(r["cells"] for d in by for r in by[d]):
             no_code.append(lecture)
             continue
+        shown += 1
         ok_tags = expected(args.lectures, lecture) if args.lectures else set()
-        med = {d: statistics.median(r["lecture_s"] for r in by[d]) for d in by}
+        precision = sorted({r["default_float"] for d in by for r in by[d]})
+        # A device with an unexpected failure in any run gets no time: the run stopped short
+        failed = set()
+        for d in by:
+            bad = [[c["index"] for c in r["cells"] if not c["ok"] and c["index"] not in ok_tags] for r in by[d]]
+            if any(bad):
+                failed.add(d)
+                problems.append(f"{lecture} on {d}: cells {next(b for b in bad if b)} failed, "
+                                f"in {sum(map(bool, bad))} of {len(bad)} runs")
+        med = {d: statistics.median(r["lecture_s"] for r in by[d]) for d in by if d not in failed}
         for d in med:
             totals[d] += med[d]
-        precision = sorted({r["default_float"] for d in by for r in by[d]})
-        for d in by:
-            for r in by[d]:
-                bad = [c["index"] for c in r["cells"] if not c["ok"] and c["index"] not in ok_tags]
-                if bad:
-                    problems.append(f"{lecture} on {d}: cells {bad} failed")
-        fastest = min(med, key=med.get)
+            counts[d] += 1
+        fastest = min(med, key=med.get) if med else "none"     # every device failed
         cells = []
         for d in devices:
             if d not in by:
@@ -92,9 +97,10 @@ def main():
             cells.append(f"{d.split()[0]}: " + ", ".join(
                 f"#{i} {statistics.median(s):.1f} s" for (i, _), s in top))
         print(f"| {lecture} | {'/'.join(precision)} | "
-              + " | ".join(f"{med[d]:.1f}" if d in med else "" for d in devices)
+              + " | ".join(f"{med[d]:.1f}" if d in med else "failed" if d in failed else "" for d in devices)
               + f" | {fastest} | {'; '.join(cells)} |")
-    print("| **all lectures** | | " + " | ".join(f"**{totals[d]:.0f}**" for d in devices) + " | | |")
+    print("| **all lectures** | | " + " | ".join(
+        f"**{totals[d]:.0f}**" + (f", {counts[d]} lectures" if counts[d] < shown else "") for d in devices) + " | | |")
     print()
     if no_code:
         print("No code cells:", ", ".join(no_code))
