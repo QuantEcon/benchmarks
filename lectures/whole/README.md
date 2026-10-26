@@ -2,7 +2,7 @@
 
 Every lecture in [lecture-jax](https://github.com/QuantEcon/lecture-jax), run as written in one fresh process each, timed cell by cell, on four of QuantEcon's devices and on the T4 runner that the lectures' CI uses. This is the first part of [#4](https://github.com/QuantEcon/benchmarks/issues/4): which lectures run faster on a CPU than on the GPU they are built on, and where each lecture's time goes.
 
-Still to come under #4: the JAX lectures in lecture-python.myst, `sargent_surico` among them; and float32 runs of the float64 lectures.
+Still to come under #4: lecture-python.myst's JAX lectures on the other platforms (the M5 Pro's are below); and float32 runs of the float64 lectures.
 
 ## Results
 
@@ -104,6 +104,20 @@ What the table shows:
 - **The T4 and the TITAN RTX take about the same time over the set,** 922 s and 873 s. The TITAN is faster on 7 lectures, the large simulations and dynamic programs among them (`wealth_dynamics_jax`, 53 s against 168 s), and the T4 on the other 21, by up to 2.2× (`schelling_jax`). These runs don't separate why.
 - **These runs are sequential.** A build executes several notebooks at once, sharing the one T4 or the 8 threads, which this doesn't measure.
 
+## lecture-python.myst, on the M5 Pro
+
+The 33 lectures in [lecture-python.myst](https://github.com/QuantEcon/lecture-python.myst) at `087518ec0` (2026-10-26) that import JAX, `sargent_surico` among them, listed in [`lectures-python.txt`](lectures-python.txt): as written, three runs each, on `qe-wharton2`'s M5 Pro so far.
+
+| | M5 Pro |
+|---|---|
+| All 33, median of three runs | 1,463 s |
+| The heaviest | `imp_sample` 783 s, `ifp_advanced` 161 s, `sargent_surico` 158 s, `aiyagari_egm` 61 s, `ak_aiyagari` 45 s |
+| Under 5 s | 15 lectures |
+
+Every run finished without an unexpected error. `sargent_surico`'s 158 s matches the laptop figure in QuantEcon/lecture-python.myst#1022 (157 s), against over 2,400 s on the T4 there.
+
+**Its environment** is lecture-jax's exact packages, JAX 0.12.0.1 among them, plus what these lectures install: NumPyro 0.22.0, ArviZ 1.3.0, PyMC 6.3.2 (PyTensor 3.3.4), pandas-datareader 0.11.1, yfinance 1.7.0, plotly 7.1.0 with kaleido, seaborn, scikit-learn, xarray and myst-nb (`environment.txt`). Some lectures download their data when they run, FRED series through pandas-datareader and a Stata file from QuantEcon/data-lectures, and that time counts. The run is `run.sh` beside the results, from 01:20 to 02:34 UTC on 2026-10-26; `state.txt` samples the machine every ten minutes, redacted as for its lecture-jax run.
+
 ## Method
 
 - **The lectures:** lecture-jax at `4b939ec` (2026-10-12), all 29 lectures except `intro`, `status`, `troubleshooting` and `zreferences`, listed in [`lectures.txt`](lectures.txt). Nothing in them was changed.
@@ -127,6 +141,7 @@ What the table shows:
 ./lectures_set.sh results 3 cuda cpu     # qe-wharton1-gpu: the card and the CPU beside it
 ./mac_lectures.sh                        # qe-mini1: pauses the agents, then ./lectures_set.sh results 3 cpu
 ./lectures_set.sh results 3 cpu          # qe-wharton2, from precision/runs/2026-10-25/wharton2_run.sh
+ROOT=~/bench/lectures-python ./lectures_set.sh results 3 cpu   # lecture-python.myst, from lectures-python.txt
 python lectures/whole/summarise_whole.py lectures/results/*/2026-10-25/whole --lectures <directory of the lectures' .md files>
 ```
 
