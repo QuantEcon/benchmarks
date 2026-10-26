@@ -1,0 +1,88 @@
+# Redacted for publication: the machine is a guest's. The console user's name is <console user>, and
+# software its owner's institution manages is <managed agent>; their CPU figures are as recorded.
+== before: 2026-10-25 19:16:08 EDT (23:16:08 UTC)
+19:16  up 1 day,  3:12, 4 users, load averages: 1.34 1.26 2.38
+console idle:  console idle: 
+  PID STAT  %CPU USER             COMM
+  505 Ss    29.5 root             /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService
+  338 Ss    20.6 root             <managed agent>
+25028 Ss     5.7 root             <managed agent>
+  189 Ss     4.8 _trustd          /usr/libexec/trustd
+  291 Ss     3.8 root             /usr/libexec/syspolicyd
+  498 S      3.3 root             powermetrics
+  347 Ss     2.8 _traps_panw      <managed agent>
+  146 Ss     1.3 root             /usr/libexec/opendirectoryd
+85115 Ss     1.2 matt             zsh
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== start 2026-10-25T23:16:08Z at e5b3f8f
+== sample: 2026-10-25 19:26:08 EDT (23:26:08 UTC)
+19:26  up 1 day,  3:22, 4 users, load averages: 8.39 4.73 3.47
+console idle:  console idle: 
+  PID STAT  %CPU USER             COMM
+86776 R+   603.6 matt             .venv/bin/python
+86794 S      6.6 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86801 S      6.5 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86800 S      6.1 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86802 S      6.1 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  338 Ss     5.9 root             <managed agent>
+86803 S      5.8 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86796 S      5.2 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86799 S      5.2 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 19:36:08 EDT (23:36:08 UTC)
+19:36  up 1 day,  3:32, 4 users, load averages: 7.28 4.10 3.56
+console idle:  console idle: 
+  PID STAT  %CPU USER             COMM
+88377 R+   711.5 matt             .venv/bin/python
+25028 Ss     3.4 root             <managed agent>
+  376 Ss     0.4 _driverkit       /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  235 Ss     0.4 root             /usr/libexec/airportd
+  357 Ss     0.2 _mds_stores      /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  133 Ss     0.1 root             /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  338 Ss     0.1 root             <managed agent>
+ 1143 Ss     0.1 root             <managed agent>
+88348 S      0.0 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== sample: 2026-10-25 19:46:08 EDT (23:46:08 UTC)
+19:46  up 1 day,  3:42, 4 users, load averages: 3.81 2.94 3.30
+console idle:  console idle: 
+  PID STAT  %CPU USER             COMM
+89974 R+   680.4 matt             .venv/bin/python
+25028 Ss    12.7 root             <managed agent>
+  338 Ss     3.6 root             <managed agent>
+85150 S+     0.6 matt             /bin/bash
+  352 Ss     0.6 root             <managed agent>
+90030 R+     0.6 root             ps
+90031 S+     0.4 matt             head
+  172 Ss     0.1 root             /usr/sbin/notifyd
+  357 Ss     0.1 _mds_stores      /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
+== after: 2026-10-25 19:48:55 EDT (23:48:55 UTC)
+19:48  up 1 day,  3:45, 4 users, load averages: 7.74 5.19 4.18
+console idle:  console idle: 
+  PID STAT  %CPU USER             COMM
+  338 Ss    19.3 root             <managed agent>
+90434 S     11.9 _spotlight       /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+25028 Ss    10.9 root             <managed agent>
+  133 Ss     1.3 root             /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  357 Ss     1.0 _mds_stores      /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  352 Ss     0.8 root             <managed agent>
+    1 Ss     0.6 root             /sbin/launchd
+  172 Ss     0.2 root             /usr/sbin/notifyd
+  146 Ss     0.2 root             /usr/libexec/opendirectoryd
+ powermode            0
+ -InternalBattery-0 (id=7733347)	80%; AC attached; not charging present: true
+  |   "AppleClamshellState" = No
+System-wide memory free percentage: 95%
