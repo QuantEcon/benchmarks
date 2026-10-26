@@ -22,13 +22,17 @@ on:
         required: false
         default: false
         type: boolean
-      precision_quick:
-        description: 'Precision benchmarks: quick sizes only'
+      precision_run:
+        description: 'Precision benchmarks: smoke (describe the GPU and driver only), quick sizes, or the full matrix'
         required: false
-        default: true
-        type: boolean
+        default: 'quick'
+        type: choice
+        options:
+          - smoke
+          - quick
+          - full
       precision_instance:
-        description: 'Precision benchmarks: EC2 instance (g4dn: T4, g5: A10G, g6: L4)'
+        description: 'Precision benchmarks: EC2 instance (g4dn: T4, g5: A10G, g6: L4, g7e: RTX PRO 6000 Blackwell, p4d: 8x A100 40 GB, p5: H100)'
         required: false
         default: 'g4dn.2xlarge'
         type: choice
@@ -36,6 +40,9 @@ on:
           - g4dn.2xlarge
           - g5.2xlarge
           - g6.2xlarge
+          - g7e.2xlarge
+          - p4d.24xlarge
+          - p5.4xlarge
       precision_cuda:
         description: "Precision benchmarks: JAX's CUDA build"
         required: false
@@ -58,6 +65,16 @@ on:
           - g4dn.2xlarge
           - g5.2xlarge
           - g6.2xlarge
+      precision_devices:
+        description: 'Precision benchmarks: devices, e.g. cpu,gpu, or gpu,gpu:2 to shard the Bellman workloads over two cards'
+        required: false
+        default: 'cpu,gpu'
+        type: string
+      precision_extras:
+        description: 'Precision benchmarks: also run matmul at full float32 precision (no TF32), and the aiyagari_jax and ifp_egm_jax scale scripts on the GPU'
+        required: false
+        default: false
+        type: boolean
 
 jobs:
   # =============================================================================
@@ -191,6 +208,11 @@ jobs:
     if: inputs.run_precision == true
     # The lectures' label form; the image is defined in .github/runs-on.yml
     runs-on: "runs-on=${{ github.run_id }}/family=${{ inputs.precision_instance }}/image=quantecon_ubuntu2404/volume=80gb/spot=false"
+    # A cap on spend: p4d.24xlarge bills about USD 22 an hour
+    timeout-minutes: 60
+    env:
+      HOST: runson-${{ inputs.precision_instance }}
+      LABEL: ${{ inputs.precision_cuda == 'cuda12' && 'cuda12' || '' }}
 
     steps:
       - name: Checkout
@@ -201,24 +223,115 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Describe the GPU and its driver
+        run: |
+          nvidia-smi || true
+          nvidia-smi -q | grep -iE "product name|fabric|state|addressing mode" | sort | uniq -c || true
+          # "Dual MIT/GPL" is NVIDIA's open kernel module, which Blackwell needs; "NVIDIA" is the proprietary one
+          echo "nvidia module: $(modinfo -F version nvidia 2>/dev/null), licence $(modinfo -F license nvidia 2>/dev/null)"
+          dpkg-query -W -f '${Package} ${Version}\n' | grep -iE "^(nvidia|libnvidia-nscq|linux-modules-nvidia)" || true
+          sudo dmesg | grep -iE "nvrm|nvidia" | tail -20 || true
+
+      - name: Start NVIDIA's fabric manager
+        # The A100s in a p4d are joined by NVSwitch, and CUDA won't start until the fabric manager runs
+        if: startsWith(inputs.precision_instance, 'p4d')
+        run: |
+          # The image's driver is from NVIDIA's CUDA repository, which has a fabric manager for each driver release
+          version=$(nvidia-smi --query-gpu=driver_version --format=csv,noheader | head -1)
+          repo=https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64
+          for suffix in 1 1ubuntu1; do
+            curl -fsSLO "$repo/nvidia-fabricmanager_${version}-${suffix}_amd64.deb" && break
+          done
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ./nvidia-fabricmanager_"${version}"-*_amd64.deb
+          sudo systemctl start nvidia-fabricmanager
+          systemctl is-active nvidia-fabricmanager
+          nvidia-smi -q | grep -iA2 fabric | head -8
+
       - name: Install JAX
         run: |
           # The same JAX release as the other platforms (precision/constraints.txt)
           pip install "jax[${{ inputs.precision_cuda }}]" -c precision/constraints.txt
-          nvidia-smi
-          python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}')"
+          python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}'); assert jax.devices()[0].platform == 'gpu', 'JAX sees no GPU'"
+          # How much of the card JAX's allocator will hand out, with preallocation off as in every cell
+          limit='import jax; d = jax.devices()[0]; print(d.device_kind, "allocator limit, GiB:", round(d.memory_stats()["bytes_limit"] / 2**30, 2))'
+          XLA_PYTHON_CLIENT_PREALLOCATE=false python -c "$limit"
+          XLA_PYTHON_CLIENT_PREALLOCATE=false XLA_PYTHON_CLIENT_MEM_FRACTION=0.95 python -c "$limit"
 
       - name: Run precision matrix
+        if: inputs.precision_run != 'smoke'
         run: |
-          python precision/run_matrix.py --host runson-${{ inputs.precision_instance }} --devices cpu,gpu ${{ inputs.precision_quick && '--quick' || '' }} ${{ inputs.precision_cuda == 'cuda12' && '--label cuda12' || '' }}
+          # Every card in PCI bus order, so that gpu uses the first and gpu:N the first N
+          gpus=$(nvidia-smi --query-gpu=index --format=csv,noheader | paste -sd, -)
+          python precision/run_matrix.py --host "$HOST" --devices ${{ inputs.precision_devices }} --gpus "$gpus" \
+            ${{ inputs.precision_run == 'quick' && '--quick' || '' }} ${LABEL:+--label "$LABEL"}
+          if ${{ inputs.precision_extras }}; then
+            # Ampere and later run float32 matmul in TF32 by default; this pass turns it off
+            JAX_DEFAULT_MATMUL_PRECISION=highest python precision/run_matrix.py --host "$HOST" --devices gpu \
+              --workloads matmul ${{ inputs.precision_run == 'quick' && '--quick' || '' }} --label "${LABEL:+$LABEL-}highest"
+          fi
           python precision/summarise.py results/ | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Run the lecture scale scripts
+        if: inputs.precision_run != 'smoke' && inputs.precision_extras
+        run: |
+          # The lectures as Phase 1 ran them: lecture-jax at 4b939ec
+          pip install matplotlib quantecon==0.13.1 -c precision/constraints.txt
+          for lecture in aiyagari_jax ifp_egm_jax; do
+            curl -fsSL -o "lectures/$lecture/$lecture.md" \
+              "https://raw.githubusercontent.com/QuantEcon/lecture-jax/4b939ec49a7f1901245f68749c1b1e18e3454d34/lectures/$lecture.md"
+          done
+          echo "3ec2c8f04521cc9af6739d3950c2fa61b1bf15913566a5ee1e5019c41808cc95  lectures/aiyagari_jax/aiyagari_jax.md" | sha256sum -c
+          out="lectures/results/$HOST/$(date -u +%F)"
+          mkdir -p "$out/aiyagari_jax/scale" "$out/ifp_egm_jax/scale"
+          export JAX_PLATFORMS=cuda CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 XLA_PYTHON_CLIENT_PREALLOCATE=false MPLBACKEND=Agg
+          for dtype in float64 float32; do
+            timeout 900 python lectures/aiyagari_jax/aiyagari_scale.py lectures/aiyagari_jax/aiyagari_jax.md --dtype $dtype \
+              --sizes 200,1000,2000,5000,10000 --out "$out/aiyagari_jax/scale/cuda-$dtype-1.json" || echo "aiyagari_jax $dtype: exit $?"
+            timeout 900 python lectures/ifp_egm_jax/ifp_scale.py lectures/ifp_egm_jax/ifp_egm_jax.md --dtype $dtype \
+              --sizes 200,1000,5000,20000,50000 --out "$out/ifp_egm_jax/scale/cuda-$dtype-1.json" || echo "ifp_egm_jax $dtype: exit $?"
+          done
+          pip freeze > "$out/environment.txt"
+          python lectures/aiyagari_jax/summarise_scale.py "$out"/aiyagari_jax/scale/*.json | tee -a "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Run five lectures as written
+        if: inputs.precision_run != 'smoke' && inputs.precision_extras
+        run: |
+          # The five lectures with the most GPU work in #4's set, as written, three times each on the
+          # card, with the TITAN RTX run's packages; precision/run_by_hand.sh does the same off RunsOn
+          lectures="overborrowing wealth_dynamics_jax schelling_shocks opt_invest hopenhayn"; reps=3
+          ${{ inputs.precision_run == 'quick' && 'lectures=schelling_shocks; reps=1' || '' }}
+          grep -vE '^(jax|jaxlib|jax-cuda[0-9]+-(plugin|pjrt)|nvidia-[a-z0-9-]+)==' \
+            lectures/results/qe-wharton1-gpu/2026-10-25/whole/environment.txt > "$RUNNER_TEMP/requirements.txt"
+          pip install -r "$RUNNER_TEMP/requirements.txt" -c precision/constraints.txt
+          for lecture in $lectures; do
+            curl -fsSL -o "$RUNNER_TEMP/$lecture.md" \
+              "https://raw.githubusercontent.com/QuantEcon/lecture-jax/4b939ec49a7f1901245f68749c1b1e18e3454d34/lectures/$lecture.md"
+          done
+          out="lectures/results/$HOST/$(date -u +%F)/whole"
+          mkdir -p "$out"
+          export CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0 MPLBACKEND=Agg
+          for rep in $(seq 1 $reps); do
+            for lecture in $lectures; do
+              mkdir -p "$out/$lecture"
+              JAX_PLATFORMS=cuda timeout 3600 python lectures/run_lecture.py "$RUNNER_TEMP/$lecture.md" --dtype as-written \
+                --out "$out/$lecture/cuda-as-written-$rep.json" --env-info precision \
+                > /dev/null 2> "$out/$lecture/cuda-$rep.err" && rm -f "$out/$lecture/cuda-$rep.err" \
+                || echo "$lecture rep $rep: exit $?"
+              python -c "import json,sys; r=json.load(open(sys.argv[1])); print(f\"$lecture rep $rep: {r['lecture_s']:.1f} s, cells ok {r['all_ok']}, {r['default_float']}\")" \
+                "$out/$lecture/cuda-as-written-$rep.json" 2>/dev/null || echo "$lecture rep $rep: no result"
+            done
+          done | tee "$out/lectures-set.log"
+          pip freeze > "$out/environment.txt"
 
       - name: Upload results
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: benchmark-results-precision-${{ inputs.precision_instance }}-${{ inputs.precision_cuda }}
-          path: results/
+          path: |
+            results/runson-*/
+            lectures/results/runson-*/
 
   # =============================================================================
   # Whole lectures, as used - every lecture-jax lecture on the GPU and its host CPU
