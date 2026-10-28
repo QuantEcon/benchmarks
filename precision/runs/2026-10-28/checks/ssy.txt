@@ -1,0 +1,13 @@
+1. T w, against the authors' T_ssy on the same w
+   2x3x4x5: largest relative difference 1.9e-16
+   4x2x5x3: largest relative difference 1.8e-16
+2. The solution of w = T w from w = 800, by Newton's method with autodiff, against the authors' two solvers
+   2x3x4x5: 5 Newton steps; w from 741.61 to 973.59; largest residual |T w - w| 2.3e-05
+      against their newton: largest difference 1.2e-05 (1e-08 relative)
+      against their successive_approx: largest difference 4.0e-03 (4e-06 relative)
+3. The Jacobian-vector product (ssy_jvp), against the whole Jacobian and a central difference
+   (2, 3, 4, 5): relative difference 7.2e-16 from jacfwd, 3.0e-10 from the difference
+4. float32
+   theta = -16.02; 800^theta = 0.0e+00 in float32, whose smallest normal number is 1.2e-38
+   T w at w = 800, where the solution lies (584 to 924): 1296 of 1296 values are inf
+   T w at the benchmark's w: 1296 of 1296 finite, and float32 is 8.2e-08 from float64 (relative)

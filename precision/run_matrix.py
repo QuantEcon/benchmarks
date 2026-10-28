@@ -152,10 +152,12 @@ def main():
             if count > 1 and not spec["shardable"]:
                 continue
             device = kind if count == 1 else f"{kind}:{count}"
+            # A workload can say that the CPU needs more than a GPU does
+            memory = spec["memory_cpu"] if kind == "cpu" and "memory_cpu" in spec else spec["memory"]
             for size in sizes:
                 for dtype in dtypes:
                     s = ITEMSIZE[dtype]
-                    need = spec["memory"](size, s, count)
+                    need = memory(size, s, count)
                     row = dict(base, timestamp=datetime.now(timezone.utc).isoformat(),
                                workload=name, bound=spec["bound"], size=size, dtype=dtype,
                                device=device, unit=spec["unit"], work=spec["work"](size, s))
