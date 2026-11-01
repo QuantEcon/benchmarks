@@ -1,0 +1,16 @@
+== autotuner: default
+Writing to /home/ubuntu/benchmarks/results/lambda-gpu_1x_a10/2026-11-01.jsonl
+bellman_stored       20000 float64  gpu    warm     13.23 ms      241.9 GB/s  compile 1.17 s
+bellman_stored       20000 float32  gpu    warm      3.50 ms      457.4 GB/s  compile 0.18 s
+bellman_stored       40000 float64  gpu    error (JaxRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 11.94GiB with allocator GPU_0_bfc on devic
+bellman_stored       40000 float32  gpu    warm     13.19 ms      485.4 GB/s  compile 0.38 s
+bellman_stored       60000 float64  gpu    skipped (needs ~26.8 GiB per device, limit 18.0 GiB)
+bellman_stored       60000 float32  gpu    error (JaxRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13.43GiB with allocator GPU_0_bfc on devic
+== autotuner: 0
+Writing to /home/ubuntu/benchmarks/results/lambda-gpu_1x_a10/2026-11-01.jsonl
+bellman_stored       20000 float64  gpu    warm     13.17 ms      242.9 GB/s  compile 0.05 s
+bellman_stored       20000 float32  gpu    warm      3.49 ms      459.0 GB/s  compile 0.04 s
+bellman_stored       40000 float64  gpu    warm     51.20 ms      250.0 GB/s  compile 0.05 s
+bellman_stored       40000 float32  gpu    warm     13.30 ms      481.4 GB/s  compile 0.04 s
+bellman_stored       60000 float64  gpu    skipped (needs ~26.8 GiB per device, limit 18.0 GiB)
+bellman_stored       60000 float32  gpu    warm     29.14 ms      494.2 GB/s  compile 0.04 s
