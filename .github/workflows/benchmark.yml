@@ -52,10 +52,14 @@ on:
           - cuda13
           - cuda12
       run_lectures:
-        description: 'Run every lecture-jax lecture as written, three times, on the GPU and its host CPU (#4; RunsOn, incurs costs)'
+        description: 'Run a lecture set as written, three times, on the GPU and its host CPU (#4; RunsOn, incurs costs): lecture-jax at 4b939ec, or lecture-python.myst at 087518ec0'
         required: false
-        default: false
-        type: boolean
+        default: 'no'
+        type: choice
+        options:
+          - 'no'
+          - lecture-jax
+          - lecture-python
       lectures_instance:
         description: "Whole lectures: EC2 instance (g4dn: T4, the lectures' CI instance; g5: A10G; g6: L4)"
         required: false
@@ -334,17 +338,26 @@ jobs:
             lectures/results/runson-*/
 
   # =============================================================================
-  # Whole lectures, as used - every lecture-jax lecture on the GPU and its host CPU
+  # Whole lectures, as used - a lecture set on the GPU and its host CPU
   # See lectures/whole/README.md
   # =============================================================================
   benchmark-lectures:
-    name: Whole Lectures
-    if: inputs.run_lectures == true
+    name: Whole Lectures (${{ inputs.run_lectures }}, ${{ matrix.platforms }})
+    if: inputs.run_lectures != 'no'
+    # lecture-jax runs on the card and the CPU in one job, as in its T4 run. lecture-python.myst takes
+    # about three times as long, so the card and the CPU each get their own instance, in parallel
+    strategy:
+      matrix:
+        platforms: ${{ fromJSON(inputs.run_lectures == 'lecture-python' && '["cuda", "cpu"]' || '["cuda cpu"]') }}
     runs-on: "runs-on=${{ github.run_id }}/family=${{ inputs.lectures_instance }}/image=quantecon_ubuntu2404/volume=80gb/spot=false"
-    # Three runs take about 3.5 hours on a g4dn.2xlarge (USD 0.75 an hour); this caps the cost
-    timeout-minutes: 300
+    # lecture-jax's three runs took 3.3 hours on a g4dn.2xlarge (USD 0.75 an hour); lecture-python.myst's
+    # are estimated at 4 to 5.5 hours on each platform. This caps the cost
+    timeout-minutes: ${{ inputs.run_lectures == 'lecture-python' && 600 || 300 }}
     env:
       HOST: runson-${{ inputs.lectures_instance }}
+      SET: ${{ inputs.run_lectures }}
+      # imp_sample took 783 s on the M5 Pro, so lecture-python.myst's lectures get two hours on the 4-core Xeon
+      CAP: ${{ inputs.run_lectures == 'lecture-python' && 7200 || 3600 }}
 
     steps:
       - name: Checkout
@@ -359,26 +372,40 @@ jobs:
         run: |
           # The exact versions qe-wharton1-gpu ran with, so that the two compare
           pip install -r lectures/results/qe-wharton1-gpu/2026-10-25/whole/environment.txt
+          if [ "$SET" = lecture-python ]; then
+            # And what lecture-python.myst's lectures add, at the M5 Pro run's versions (appnope is macOS-only)
+            grep -v '^appnope==' lectures/results/qe-wharton2/2026-10-26/lecture-python/environment.txt > "$RUNNER_TEMP/python-extras.txt"
+            pip install -r "$RUNNER_TEMP/python-extras.txt"
+          fi
           nvidia-smi
           python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}'); assert jax.devices()[0].platform == 'gpu', 'JAX sees no GPU'"
 
       - name: Fetch the lectures
         run: |
-          # lecture-jax at 4b939ec, as on the other machines
+          # lecture-jax at 4b939ec, or lecture-python.myst at 087518ec0, as on the other machines
+          if [ "$SET" = lecture-python ]; then
+            list=lectures/whole/lectures-python.txt
+            base=https://raw.githubusercontent.com/QuantEcon/lecture-python.myst/087518ec0d1a73807fb7cd77c6f7b59d882fb3bc/lectures
+          else
+            list=lectures/whole/lectures.txt
+            base=https://raw.githubusercontent.com/QuantEcon/lecture-jax/4b939ec49a7f1901245f68749c1b1e18e3454d34/lectures
+          fi
           mkdir -p "$RUNNER_TEMP/lectures-all/lectures"
-          cp lectures/whole/lectures.txt "$RUNNER_TEMP/lectures-all/"
-          for lecture in $(cat lectures/whole/lectures.txt); do
-            curl -fsSL -o "$RUNNER_TEMP/lectures-all/lectures/$lecture.md" \
-              "https://raw.githubusercontent.com/QuantEcon/lecture-jax/4b939ec49a7f1901245f68749c1b1e18e3454d34/lectures/$lecture.md"
+          cp "$list" "$RUNNER_TEMP/lectures-all/lectures.txt"
+          for lecture in $(cat "$list"); do
+            curl -fsSL -o "$RUNNER_TEMP/lectures-all/lectures/$lecture.md" "$base/$lecture.md"
           done
 
       - name: Run every lecture
         run: |
-          out="$GITHUB_WORKSPACE/lectures/results/$HOST/$(date -u +%F)/whole"
+          # lecture-jax's results go in whole/, as before; lecture-python.myst's in lecture-python/, as the M5 Pro's
+          out="$GITHUB_WORKSPACE/lectures/results/$HOST/$(date -u +%F)/$([ "$SET" = lecture-python ] && echo lecture-python || echo whole)"
+          platforms="${{ matrix.platforms }}"
+          log="$out/lectures-set$([ "$SET" = lecture-python ] && echo "-$platforms" || true).log"
           mkdir -p "$out"
           pip freeze > "$out/environment.txt"
           ROOT="$RUNNER_TEMP/lectures-all" PY="$(which python)" RUNNER="$GITHUB_WORKSPACE/lectures/run_lecture.py" \
-            ENV_INFO="$GITHUB_WORKSPACE/precision" bash lectures/whole/lectures_set.sh "$out" 3 cuda cpu | tee "$out/lectures-set.log"
+            ENV_INFO="$GITHUB_WORKSPACE/precision" bash lectures/whole/lectures_set.sh "$out" 3 $platforms | tee "$log"
           find "$out" -name '*.err' -empty -delete
           python lectures/whole/summarise_whole.py "$out" --lectures "$RUNNER_TEMP/lectures-all/lectures" | tee -a "$GITHUB_STEP_SUMMARY"
 
@@ -386,5 +413,5 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: whole-lectures-${{ inputs.lectures_instance }}
+          name: whole-lectures-${{ inputs.run_lectures }}-${{ inputs.lectures_instance }}-${{ strategy.job-index }}
           path: lectures/results/runson-*/

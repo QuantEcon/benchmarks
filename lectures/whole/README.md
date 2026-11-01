@@ -183,7 +183,14 @@ python lectures/whole/summarise_whole.py lectures/results/*/2026-10-25/whole --l
 
 [`mac_lectures.sh`](mac_lectures.sh) pauses `qe-mini1`'s agents and wallpaper with SIGSTOP and resumes them on exit, even after a failure.
 
-On RunsOn, the workflow's `run_lectures` job runs the same set three times on the GPU and its host CPU of `lectures_instance`, by default the T4's `g4dn.2xlarge` that the lectures' CI uses. It installs the exact packages of the TITAN RTX run, from that run's `environment.txt`, and uploads the results as an artifact. It stops after five hours.
+On RunsOn, the workflow's `run_lectures` job runs a lecture set three times on the GPU and its host CPU of `lectures_instance`, by default the T4's `g4dn.2xlarge` that the lectures' CI uses. It installs the exact packages of the TITAN RTX run, from that run's `environment.txt`, and uploads the results as an artifact.
+
+| `run_lectures` | Lectures | Packages added | Jobs | Each lecture's cap | The job's cap |
+|---|---|---|---|---|---|
+| `lecture-jax` | `lectures.txt`, lecture-jax at `4b939ec` | None | One: the card, then the CPU, lecture by lecture | One hour | Five hours |
+| `lecture-python` | `lectures-python.txt`, lecture-python.myst at `087518ec0` | The M5 Pro run's, from its `environment.txt` without the macOS-only `appnope` | Two in parallel, the card and the CPU on an instance each | Two hours | Ten hours |
+
+`lectures_set.sh` takes the cap per lecture from `CAP`, in seconds.
 
 ## Results files
 
