@@ -1,0 +1,12 @@
+# The releases every platform runs, so that their results compare (#5).
+# Install them with the extra for the platform:
+#   pip install "jax[cuda13]" numba scipy -c problems/constraints.txt   # NVIDIA
+#   pip install jax numba scipy -c problems/constraints.txt              # elsewhere
+# JAX's release is precision/constraints.txt's. Numba needs SciPy for its
+# BLAS and LAPACK calls (`@`, np.linalg).
+jax==0.12.0.1
+jaxlib==0.12.0.1
+numpy==2.5.4
+scipy==1.18.1
+numba==0.68.1
+llvmlite==0.50.0
