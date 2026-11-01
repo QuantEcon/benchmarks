@@ -13,8 +13,8 @@ from importlib import metadata
 from pathlib import Path
 
 PACKAGES = ["jax", "jaxlib", "jax-cuda13-plugin", "jax-cuda13-pjrt",
-            "jax-cuda12-plugin", "jax-cuda12-pjrt", "numpy", "scipy"]
-FLAG_PREFIXES = ("JAX_", "XLA_", "CUDA_", "OMP_", "MKL_", "OPENBLAS_")
+            "jax-cuda12-plugin", "jax-cuda12-pjrt", "numpy", "scipy", "numba", "llvmlite"]
+FLAG_PREFIXES = ("JAX_", "XLA_", "CUDA_", "OMP_", "MKL_", "OPENBLAS_", "NUMBA_")
 REPO = Path(__file__).resolve().parent.parent
 
 
