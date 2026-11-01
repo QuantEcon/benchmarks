@@ -1,0 +1,116 @@
+# Why float32 changes what seven lecture-jax lectures print: each check swaps one ingredient between the precisions (2026-11-01).
+# An Apple M1 Pro laptop with 16 GB, on its CPU: diagnostic runs, not measurements. Python 3.12.13, jax 0.12.0.1, jaxlib 0.12.0.1, NumPy 2.5.4, Numba 0.68.1, QuantEcon 0.13.1.
+# lecture-jax at 4b939ec, the commit the float32 pass ran. Each script executes the lecture's own cells unchanged.
+#   ./run_checks.sh <lecture-jax's lectures/> > float32.txt
+# Output as printed; the scripts are beside this file.
+
+## mle_jax, cell #19: Newton-Raphson, with x and y drawn in one precision and solved in another
+x float64: max |x| 4.593; y int64: max 9779
+x float32: max |x| 5.220; y int32: max 250341
+data drawn in float64, solved in float64:
+  X float64; cond(H) at the start 8.61
+  iteration 0: β [-1.582  0.339  0.871], logL -2.32365e+08
+  iteration 1: β [-2.556  0.339  0.87 ], logL -8.48994e+07
+  iterations 13, β_hat [-2.50364268  0.25227463  0.49976458]
+data drawn in float64, solved in float32:
+  X float32; cond(H) at the start 8.61
+  iteration 0: β [-1.583  0.339  0.872], logL -2.33615e+08
+  iteration 1: β [-2.527  0.339  0.869], logL -8.54121e+07
+  iterations 13, β_hat [-2.5036428   0.25227463  0.4997646 ]
+data drawn in float32, solved in float64:
+  X float64; cond(H) at the start 8.52
+  iteration 0: β [-5.35   1.153  4.098], logL -6.17305e+48
+  iteration 1: β [-6.35   1.153  4.098], logL -2.27077e+48
+  iterations 100, β_hat [-2.8262797   0.28244709  0.54533224]
+data drawn in float32, solved in float32:
+  X float32; cond(H) at the start 8.52
+  iteration 0: β [-5.352  1.153  4.1  ], logL nan
+  iteration 1: β [nan nan nan], logL nan
+  iterations 2, β_hat [nan nan nan]
+
+## hopenhayn, cell #26: the equilibrium price p*, with the Monte Carlo draws made in one precision and the model solved in another
+draws float64: mean E 2.80440, mean A 1.00836
+draws float32: mean E 2.72040, mean A 0.99024
+draws in float64, solved in float64:
+  solved in float64: p* = 1.363800; VFI at p* from zero: 195 iterations, last error 9.97e-07, max |v| 23.5
+draws in float64, solved in float32:
+  solved in float32: p* = 1.363800; VFI at p* from zero: 208 iterations, last error 9.54e-07, max |v| 23.5
+draws in float32, solved in float64:
+  solved in float64: p* = 1.528107; VFI at p* from zero: 140 iterations, last error 9.84e-07, max |v| 27.5
+draws in float32, solved in float32:
+  solved in float32: p* = 1.528107; VFI at p* from zero: 153 iterations, last error 4.77e-07, max |v| 27.5
+
+## markov_asset_jax, cell #15: the 15-step power-iteration estimate of the spectral radius, from each precision's start vector
+start vector drawn in float64, iterated in float64:
+  A float64 (2744, 2744): estimate 0.9051 (the lecture's own function: 0.9051)
+start vector drawn in float64, iterated in float32:
+  A float32 (2744, 2744): estimate 0.9051
+start vector drawn in float32, iterated in float64:
+  A float64 (2744, 2744): estimate 1.0257
+start vector drawn in float32, iterated in float32:
+  A float32 (2744, 2744): estimate 1.0257 (the lecture's own function: 1.0257)
+
+## arellano_jax: the solution in float32 against float64, and float64 at other tolerances against its own at the lecture's 1e-8
+  float64, tol = 1e-08: Terminating at iteration 399.
+  float32, tol = 1e-08: Terminating at iteration 361.
+float32 against float64, both at the lecture's tol = 1e-8:
+  v_c: largest gap 8.41e-03, largest |value| 25.3
+  v_d: largest gap 9.86e-03, largest |value| 23.7
+  q: largest gap 9.83e-01, largest |value| 0.983
+  q: gap above 0.01 at 276 of 12801 states, above 0.1 at 113
+  B_star: differs at 4222 of 12801 states, by at most 8 grid steps
+  default region (v_d > v_c): differs at 34 of 12801 states
+  float64, tol = 1e-05: Terminating at iteration 256.
+float64 at tol = 1e-5 against float64 at 1e-8:
+  v_c: largest gap 9.70e-05, largest |value| 25.3
+  v_d: largest gap 9.70e-05, largest |value| 23.7
+  q: largest gap 0.00e+00, largest |value| 0.983
+  q: gap above 0.01 at 0 of 12801 states, above 0.1 at 0
+  B_star: differs at 0 of 12801 states, by at most 0 grid steps
+  default region (v_d > v_c): differs at 0 of 12801 states
+  float64, tol = 1e-06: Terminating at iteration 303.
+float64 at tol = 1e-6 against float64 at 1e-8:
+  v_c: largest gap 1.00e-05, largest |value| 25.3
+  v_d: largest gap 1.00e-05, largest |value| 23.7
+  q: largest gap 0.00e+00, largest |value| 0.983
+  q: gap above 0.01 at 0 of 12801 states, above 0.1 at 0
+  B_star: differs at 0 of 12801 states, by at most 0 grid steps
+  default region (v_d > v_c): differs at 0 of 12801 states
+  float64, tol = 1e-10: Terminating at iteration 495.
+float64 at tol = 1e-10 against float64 at 1e-8:
+  v_c: largest gap 9.84e-08, largest |value| 25.3
+  v_d: largest gap 9.84e-08, largest |value| 23.7
+  q: largest gap 0.00e+00, largest |value| 0.983
+  q: gap above 0.01 at 0 of 12801 states, above 0.1 at 0
+  B_star: differs at 0 of 12801 states, by at most 0 grid steps
+  default region (v_d > v_c): differs at 0 of 12801 states
+
+## opt_invest: Howard policy iteration (HPI), VFI and OPI with m = 10, in each precision, against float64's HPI
+  float64: HPI 12 loops; v dtype float64
+  float32: HPI 250 loops; v dtype float32
+  float64 HPI: 12 loops; float32 HPI: 250 loops
+  float64 hpi: differs from float64 HPI at 0 of 15000 states, by at most 0 grid steps
+  float32 hpi: differs from float64 HPI at 1 of 15000 states, by at most 1 grid steps
+  float64 vfi: differs from float64 HPI at 2 of 15000 states, by at most 1 grid steps
+  float32 vfi: differs from float64 HPI at 1 of 15000 states, by at most 1 grid steps
+  float64 opi: differs from float64 HPI at 2 of 15000 states, by at most 1 grid steps
+  float32 opi: differs from float64 HPI at 1 of 15000 states, by at most 1 grid steps
+  value of each precision's HPI policy: max |v32 - v64| 4.83e-02, relative 2.01e-05
+
+## opt_savings_2: Howard policy iteration (HPI), VFI and OPI with m = 10, in each precision, against float64's HPI
+  float64: HPI 10 loops; v dtype float64
+  float32: HPI 250 loops; v dtype float32
+  float64 HPI: 10 loops; float32 HPI: 250 loops
+  float64 hpi: differs from float64 HPI at 0 of 15000 states, by at most 0 grid steps
+  float32 hpi: differs from float64 HPI at 70 of 15000 states, by at most 1 grid steps
+  float64 vfi: differs from float64 HPI at 7 of 15000 states, by at most 1 grid steps
+  float32 vfi: differs from float64 HPI at 61 of 15000 states, by at most 1 grid steps
+  float64 opi: differs from float64 HPI at 7 of 15000 states, by at most 1 grid steps
+  float32 opi: differs from float64 HPI at 64 of 15000 states, by at most 1 grid steps
+  value of each precision's HPI policy: max |v32 - v64| 3.30e-04, relative 5.72e-06
+
+## ifp_egm_jax, cells #11 and #14: one application of the lecture's Numba operator K_egm_nb, on float64 and float32 arrays
+  float64  np.interp     19.64 ms per application
+  float64  hand interp    4.93 ms per application
+  float32  np.interp     44.26 ms per application
+  float32  hand interp    5.49 ms per application
