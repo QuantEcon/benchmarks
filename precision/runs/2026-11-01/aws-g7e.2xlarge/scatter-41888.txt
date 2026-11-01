@@ -1,0 +1,24 @@
+-- jax 0.12.0.1, jax[cuda13]
+jax 0.12.0.1; jax-cuda13-pjrt 0.12.0.1; jax-cuda13-plugin 0.12.0.1; jaxlib 0.12.0.1; nvidia-cublas 13.8.2.12; nvidia-cuda-runtime 13.4.92
+0.12.0.1 NVIDIA RTX PRO 6000 Blackwell Server Edition
+4 x 237501, 237500 indices: 0
+16 x 200001, 6641 indices:  0
+same, with hints:           0 0
+-- jax 0.12.0.1, jax[cuda12]
+jax 0.12.0.1; jax-cuda12-pjrt 0.12.0.1; jax-cuda12-plugin 0.12.0.1; jaxlib 0.12.0.1; nvidia-cublas-cu12 12.9.3.13; nvidia-cuda-runtime-cu12 12.9.79
+0.12.0.1 NVIDIA RTX PRO 6000 Blackwell Server Edition
+4 x 237501, 237500 indices: 0
+16 x 200001, 6641 indices:  0
+same, with hints:           0 0
+-- jax 0.11.2, jax[cuda13]
+jax 0.11.2; jax-cuda13-pjrt 0.11.2; jax-cuda13-plugin 0.11.2; jaxlib 0.11.2; nvidia-cublas 13.8.2.12; nvidia-cuda-runtime 13.4.92
+0.11.2 NVIDIA RTX PRO 6000 Blackwell Server Edition
+4 x 237501, 237500 indices: 237500
+16 x 200001, 6641 indices:  0
+same, with hints:           0 0
+-- jax 0.11.2, jax[cuda12]
+jax 0.11.2; jax-cuda12-pjrt 0.11.2; jax-cuda12-plugin 0.11.2; jaxlib 0.11.2; nvidia-cublas-cu12 12.9.3.13; nvidia-cuda-runtime-cu12 12.9.79
+0.11.2 NVIDIA RTX PRO 6000 Blackwell Server Edition
+4 x 237501, 237500 indices: 0
+16 x 200001, 6641 indices:  0
+same, with hints:           0 0

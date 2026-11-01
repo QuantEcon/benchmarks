@@ -1,0 +1,28 @@
+HloModule jit_matmul, is_scheduled=true, entry_computation_layout={(f64[2048,2048]{1,0}, f64[2048,2048]{1,0})->f64[2048,2048]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}, frontend_attributes={fingerprint_before_lhs="b2d76eaacde9a0fcd2aafde762ff62b8"}
+
+FileNames
+1 "<stdin>"
+
+FunctionNames
+1 "<module>"
+
+FileLocations
+1 {file_name_id=1 function_name_id=1 line=4 end_line=4 column=4 end_column=35}
+
+StackFrames
+1 {file_location_id=1 parent_frame_id=1}
+
+
+%fused_computation.gemm_fusion_dot_general.1_computation (param_0: f64[2048,2048], param_1: f64[2048,2048]) -> f64[2048,2048] {
+  %param_0 = f64[2048,2048]{1,0} parameter(0)
+  %param_1 = f64[2048,2048]{1,0} parameter(1)
+  ROOT %dot_general.0 = f64[2048,2048]{1,0} dot(%param_0, %param_1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_name="jit(matmul)/dot_general" stack_frame_id=1}, backend_config={"sizes":["32"]}
+}
+
+ENTRY %main.1 (a.1: f64[2048,2048], b.1: f64[2048,2048]) -> f64[2048,2048] {
+  %b.1 = f64[2048,2048]{1,0} parameter(1), metadata={op_name="b"}
+  %a.1 = f64[2048,2048]{1,0} parameter(0), metadata={op_name="a"}
+  ROOT %gemm_fusion_dot_general.1 = f64[2048,2048]{1,0} fusion(%a.1, %b.1), kind=kCustom, calls=%fused_computation.gemm_fusion_dot_general.1_computation, metadata={op_name="jit(matmul)/dot_general" stack_frame_id=1}, backend_config={"device_type":"DEVICE_TYPE_INVALID","force_earliest_schedule":false,"fusion_backend_config":{"block_level_fusion_config":{"group_size":0,"is_tma_allowed":false,"is_warp_specialization_allowed":false,"num_ctas":1,"num_stages":3,"num_tiles_per_pid":0,"num_warps":"4","output_tiles":[{"sizes":["32","64"]}],"waves_per_eu":0},"kind":"__triton_nested_gemm_fusion"},"operation_queue_id":"0","reification_cost":[]}
+}
+
+

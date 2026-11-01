@@ -1,0 +1,23 @@
+HloModule jit_matmul, is_scheduled=true, entry_computation_layout={(f64[2048,2048]{1,0}, f64[2048,2048]{1,0})->f64[2048,2048]{1,0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}, frontend_attributes={fingerprint_before_lhs="1bd4891832c09de7a3034ab51b536247"}
+
+FileNames
+1 "<stdin>"
+
+FunctionNames
+1 "<module>"
+
+FileLocations
+1 {file_name_id=1 function_name_id=1 line=4 end_line=4 column=4 end_column=35}
+
+StackFrames
+1 {file_location_id=1 parent_frame_id=1}
+
+
+ENTRY %main.1 (a.1: f64[2048,2048], b.1: f64[2048,2048]) -> f64[2048,2048] {
+  %b.1 = f64[2048,2048]{1,0} parameter(1), metadata={op_name="b"}
+  %a.1 = f64[2048,2048]{1,0} parameter(0), metadata={op_name="a"}
+  %custom-call.1 = (f64[2048,2048]{1,0}, s8[33554432]{0}) custom-call(%a.1, %b.1), custom_call_target="__cublas$lt$matmul", metadata={op_name="jit(matmul)/dot_general" stack_frame_id=1}, backend_config={"device_type":"DEVICE_TYPE_INVALID","force_earliest_schedule":false,"gemm_backend_config":{"alpha_imag":0,"alpha_real":1,"autotune_workspace_size":"33554432","beta":0,"damax_output":false,"dot_dimension_numbers":{"lhs_batch_dimensions":[],"lhs_contracting_dimensions":["1"],"rhs_batch_dimensions":[],"rhs_contracting_dimensions":["0"]},"epilogue":"DEFAULT","grad_x":false,"grad_y":false,"lhs_stride":"4194304","precision_config":{"algorithm":"ALG_UNSET","operand_precision":["DEFAULT","DEFAULT"]},"rhs_stride":"4194304","scale_mode":0,"selected_algorithm":"1"},"operation_queue_id":"0","reification_cost":[]}
+  ROOT %get-tuple-element.1 = f64[2048,2048]{1,0} get-tuple-element(%custom-call.1), index=0, metadata={op_name="jit(matmul)/dot_general" stack_frame_id=1}
+}
+
+
