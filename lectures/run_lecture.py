@@ -105,7 +105,15 @@ def main():
             row["record"][expr] = f"{type(e).__name__}: {e}"
     import jax
     import jax.numpy as jnp
-    devices = jax.devices()
+    try:
+        devices = jax.devices()
+    except RuntimeError as e:
+        # The lecture asked for a platform this run leaves out: sargent_surico sets
+        # jax_platform_name to cpu, which JAX_PLATFORMS=cuda withholds. The cells
+        # that needed it are already recorded as failed, so keep the row
+        row["platform_error"] = str(e)
+        jax.config.update("jax_platform_name", "")
+        devices = jax.devices()
     row.update(jax=jax.__version__, platform=devices[0].platform,
                device_kind=devices[0].device_kind,
                default_float=jnp.zeros(()).dtype.name,

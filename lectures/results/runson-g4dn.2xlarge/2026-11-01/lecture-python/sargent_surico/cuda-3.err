@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/runner/_work/benchmarks/benchmarks/lectures/run_lecture.py", line 126, in <module>
+    main()
+  File "/home/runner/_work/benchmarks/benchmarks/lectures/run_lecture.py", line 108, in main
+    devices = jax.devices()
+              ^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/jax/_src/xla_bridge.py", line 1049, in devices
+    return get_backend(backend).devices()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/jax/_src/xla_bridge.py", line 983, in get_backend
+    return _get_backend_uncached(platform)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/jax/_src/xla_bridge.py", line 971, in _get_backend_uncached
+    raise RuntimeError(
+RuntimeError: Unknown backend cpu. Available backends are ['cuda']
