@@ -36,7 +36,7 @@ Phase 2 found float64 compiles of 19 s to 460 s on the A10, the A100, the H100 a
 | 20k, float32 | 5.41 s, 0.76 ms | 0.10 s, 0.74 ms |
 | 40k, float32 | 12.06 s, 2.34 ms | 0.12 s, 2.35 ms |
 
-**The long compiles are the autotuner, and here it buys nothing:** the warm times agree to within 3%. The float64 matrix product below shows the same, more sharply: at n = 16,384 its first call takes 509 s with the autotuner on and 5.5 s with it off, and both run at 1.71 TFLOPS.
+**The long compiles are the autotuner, and here it buys nothing:** the warm times agree to within 3%. The float64 matrix product below shows the same, more sharply: at n = 16,384 its first call takes 509 s with the autotuner on and 5.5 s with it off, and they run at 1.72 and 1.71 TFLOPS.
 
 ## jax-ml/jax#41888 on `sm_120`
 
