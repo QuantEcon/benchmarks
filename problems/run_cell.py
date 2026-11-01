@@ -6,15 +6,12 @@ environment before this process starts, so JAX sees them at import, as a
 lecture would. Only the cell's own stack is imported: a NumPy cell never
 loads JAX or Numba. Prints one JSON object on stdout.
 """
-import time
-
-T_START = time.perf_counter()
-
 import argparse
 import importlib
 import importlib.util
 import json
 import statistics
+import time
 import traceback
 from pathlib import Path
 
