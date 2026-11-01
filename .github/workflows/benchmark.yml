@@ -401,7 +401,7 @@ jobs:
           # lecture-jax's results go in whole/, as before; lecture-python.myst's in lecture-python/, as the M5 Pro's
           out="$GITHUB_WORKSPACE/lectures/results/$HOST/$(date -u +%F)/$([ "$SET" = lecture-python ] && echo lecture-python || echo whole)"
           platforms="${{ matrix.platforms }}"
-          log="$out/lectures-set$([ "$SET" = lecture-python ] && echo "-$platforms").log"
+          log="$out/lectures-set$([ "$SET" = lecture-python ] && echo "-$platforms" || true).log"
           mkdir -p "$out"
           pip freeze > "$out/environment.txt"
           ROOT="$RUNNER_TEMP/lectures-all" PY="$(which python)" RUNNER="$GITHUB_WORKSPACE/lectures/run_lecture.py" \
