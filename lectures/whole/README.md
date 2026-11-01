@@ -106,23 +106,23 @@ What the table shows:
 
 ## float32 against float64
 
-The 13 lectures that set `jax_enable_x64`, listed in [`lectures-float64.txt`](lectures-float64.txt), each ran in float64 and then in float32, three times on each device. The table gives float64's median time over float32's, so above 1× float32 is faster. The last column says what float32 changes in what the lecture prints, from [`summarise_precision.py`](summarise_precision.py).
+The 13 lectures that set `jax_enable_x64`, listed in [`lectures-float64.txt`](lectures-float64.txt), each ran in float64 and then in float32, three times on each device. The table gives float64's median time over float32's, so above 1× float32 is faster. The last column says what float32 changes in what the lecture prints, from [`summarise_precision.py`](summarise_precision.py), and why, from the checks in [`checks/`](checks/).
 
 | Lecture | TITAN RTX | Threadripper | M6 | M5 Pro | What float32 changes |
 |---|---|---|---|---|---|
-| `hopenhayn` | 1.21× | 0.97× | 1.81× | 1.37× | The equilibrium price comes out 12% higher (1.53 against 1.36) |
-| `arellano_jax` | 1.19× | 1.33× | 1.65× | 1.49× | 3 cells print different numbers |
+| `hopenhayn` | 1.21× | 0.97× | 1.81× | 1.37× | The equilibrium price comes out 12% higher (1.53 against 1.36), because float32 draws a different Monte Carlo sample. On float64's draws, float32 gives float64's price |
+| `arellano_jax` | 1.19× | 1.33× | 1.65× | 1.49× | It stops sooner (342 to 361 iterations, against 399) at a different solution: the default region, bond prices and borrowing policy change |
 | `inventory_ssd` | 1.09× | 1.56× | 0.91× | 1.08× | Nothing printed changes |
-| `jax_intro_jax` | 1.07× | 1.23× | 1.30× | 1.24× | 11 cells print different numbers |
+| `jax_intro_jax` | 1.07× | 1.23× | 1.30× | 1.24× | 11 cells print different numbers: different random draws, and arrays half the size |
 | `opt_savings_1` | 1.04× | 1.04× | 1.10× | 1.09× | Nothing printed changes |
 | `job_search` | 1.00× | 1.00× | 1.02× | 1.01× | Nothing printed changes |
-| `newtons_method` | 1.00× | 1.02× | 1.01× | 1.01× | 3 to 5 cells print different numbers |
-| `mle_jax` | 0.89× | 0.91× | 0.94× | 0.93× | 2 cells print different numbers |
-| `opt_invest` | 0.90× | 0.66× | 0.74× | 0.64× | Policy iteration never settles, and runs to its 250-loop cap |
-| `opt_savings_2` | 0.92× | 0.08× | 0.51× | 0.45× | Policy iteration never settles, and runs to its 250-loop cap |
-| `ifp_egm_jax` | 0.34× | 0.34× | 0.42× | 0.41× | The Numba solve takes 2.5× to 3× as long, in about the same number of iterations |
-| `aiyagari_jax` | 0.08× | 0.10× | 0.12× | 0.13× | Policy iteration runs to its 10,000-loop cap at some capital values |
-| `markov_asset_jax` | fails | fails | fails | fails | Its stability check fails, in every run on every device |
+| `newtons_method` | 1.00× | 1.02× | 1.01× | 1.01× | Newton's method converges in as many iterations or one fewer; only its printed errors differ |
+| `mle_jax` | 0.89× | 0.91× | 0.94× | 0.93× | Newton–Raphson ends at NaN after 2 iterations, without an error, because float32 draws a different sample. On float64's sample, float32 gives float64's estimate |
+| `opt_invest` | 0.90× | 0.66× | 0.74× | 0.64× | Policy iteration never settles, and runs to its 250-loop cap. Its policy is float64's at all but 1 of 15,000 states |
+| `opt_savings_2` | 0.92× | 0.08× | 0.51× | 0.45× | Policy iteration never settles, and runs to its 250-loop cap. Its policy is float64's at all but 70 of 15,000 states |
+| `ifp_egm_jax` | 0.34× | 0.34× | 0.42× | 0.41× | The Numba solve takes 2.5× to 3× as long, in about the same number of iterations: Numba's `np.interp` is slower on float32 arrays |
+| `aiyagari_jax` | 0.08× | 0.10× | 0.12× | 0.13× | Policy iteration runs to its 10,000-loop cap at some capital values. Equilibrium capital is 8.092 (8.0937 on the Threadripper), against 8.0918 |
+| `markov_asset_jax` | fails | fails | fails | fails | Its stability check fails, in every run on every device, because float32 draws a different start vector. From float64's start vector, float32 passes |
 | **The 12 that ran in both,** float64 → float32 | **556 → 1,850 s** | **1,140 → 3,694 s** | **278 → 397 s** | **252 → 390 s** | |
 
 What the table shows:
@@ -131,8 +131,10 @@ What the table shows:
 - **Over the set, float32 is slower on every device:** 3.3× on the card and 1.4× on the M6. Where it is slower, a loop that stops at a tolerance takes longer or never stops, or code outside JAX slows down.
     - In `opt_invest` and `opt_savings_2`, policy iteration counts the policy points that change. In float64 that count reaches 0 after 10 to 12 loops; in float32 it stays at 1, so the loop runs to its cap of 250. That costs the card little. On the Threadripper, `opt_savings_2` takes 13× as long, mostly in cell #33, which reruns the solvers for 15 values of m: 1,867 s against 137 s.
     - In `aiyagari_jax`, policy iteration runs to its 10,000-loop cap at 2 of the lecture's 50 capital values ([`hpi_check.txt`](../results/qe-wharton1-gpu/2026-10-25/aiyagari_jax/checks/hpi_check.txt), diagnosed in [`../aiyagari_jax/`](../aiyagari_jax/)). Its sweep over β slows most: cell #36 takes 714 s on the card in float32, against 24 s.
-    - In `ifp_egm_jax`, the Numba version of the solve converges in about the same number of iterations (2,203 against 2,192 on `qe-wharton1-gpu`), but takes 2.5× as long on the Macs and 3× on the Threadripper. Why is undiagnosed.
+    - In `ifp_egm_jax`, the Numba version of the solve converges in about the same number of iterations (2,203 against 2,192 on `qe-wharton1-gpu`), but takes 2.5× as long on the Macs and 3× on the Threadripper. The time goes in Numba's `np.interp`: on an M1 Pro, one application of the lecture's operator takes 2.2× as long on float32 arrays, and with a hand-written interpolation in its place the two precisions are within 11% ([`checks/float32.txt`](checks/float32.txt)).
 - **`markov_asset_jax` fails in float32.** Cell #15 asserts that the model's spectral radius is below 1, using a 15-step power iteration. In float32 that estimate comes out at 1.026, against 0.905 in float64; the exact radius is 0.994 ([`checks/markov_asset-spectral-radius.txt`](../results/qe-wharton2/2026-10-25/checks/markov_asset-spectral-radius.txt)).
+- **Three of the changes come from the random sample, not the arithmetic.** `jax.random` draws a different sample in float32 from the same key. Swapping only the sample between precisions moves `hopenhayn`'s price, `mle_jax`'s estimate and `markov_asset_jax`'s spectral-radius estimate with it, and float32 arithmetic on float64's sample gives float64's answers ([`checks/float32.txt`](checks/float32.txt)).
+- **`arellano_jax` is the one lecture whose answer float32 arithmetic changes.** Its solve uses no random numbers. float64's solution is the same at tolerances from 1e-5 to 1e-10, but float32's borrowing policy differs at 4,222 of 12,801 states, by up to 8 grid steps, and its default region at 34 ([`checks/float32.txt`](checks/float32.txt)).
 - **Mostly the same cells change on every device.** Where a lecture's printed numbers move in float32, the card, the Threadripper and both Macs flag largely the same cells.
 
 A flagged cell marks where to look, not an error: the comparison counts every number a cell prints that is the same in all three float64 runs, convergence diagnostics among them. `summarise_precision.py` skips cells that run a shell command, such as `!nvidia-smi`, which print the machine's state.
