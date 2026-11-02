@@ -2,7 +2,7 @@
 
 Every lecture in [lecture-jax](https://github.com/QuantEcon/lecture-jax), run as written in one fresh process each, timed cell by cell, on four of QuantEcon's devices and on the T4 runner that the lectures' CI uses. This is the first part of [#4](https://github.com/QuantEcon/benchmarks/issues/4): which lectures run faster on a CPU than on the GPU they are built on, and where each lecture's time goes.
 
-Still to come under #4: lecture-python.myst's JAX lectures on the TITAN RTX and the Threadripper (the M5 Pro's, the M6's and the CI runner's are below).
+The second part, lecture-python.myst's 33 JAX lectures on the same four devices and on the CI runner, is [below](#lecture-pythonmyst-on-the-same-devices-and-the-ci-runner).
 
 ## Results
 
@@ -139,48 +139,48 @@ What the table shows:
 
 A flagged cell marks where to look, not an error: the comparison counts every number a cell prints that is the same in all three float64 runs, convergence diagnostics among them. `summarise_precision.py` skips cells that run a shell command, such as `!nvidia-smi`, which print the machine's state.
 
-## lecture-python.myst, on the M5 Pro, the M6 and the CI runner
+## lecture-python.myst, on the same devices and the CI runner
 
-The 33 lectures in [lecture-python.myst](https://github.com/QuantEcon/lecture-python.myst) at `087518ec0` (2026-10-26) that import JAX, `sargent_surico` among them, listed in [`lectures-python.txt`](lectures-python.txt): as written, three runs each, on `qe-wharton2`'s M5 Pro, on `qe-mini1`'s M6, and on the lectures' CI runner, RunsOn's `g4dn.2xlarge`, on its T4 and on its own Xeon. Times are medians in seconds. The last column is the cell that carries the most time on the slower of the runner's two devices.
+The 33 lectures in [lecture-python.myst](https://github.com/QuantEcon/lecture-python.myst) at `087518ec0` (2026-10-26) that import JAX, `sargent_surico` among them, listed in [`lectures-python.txt`](lectures-python.txt): as written, three runs each, on `qe-wharton1-gpu`'s TITAN RTX and the Threadripper beside it, on `qe-wharton2`'s M5 Pro, on `qe-mini1`'s M6, and on the lectures' CI runner, RunsOn's `g4dn.2xlarge`, on its T4 and on its own Xeon. Times are medians in seconds. The last column is the cell that carries the most time on the slower of the runner's two devices.
 
-| Lecture | Precision, as written | T4 | Xeon | M5 Pro | M6 | Faster on the runner | Heaviest cell on the runner |
-|---|---|---|---|---|---|---|---|
-| `imp_sample` | float64 | 104.3 | 4,050.3 | 782.8 | 1,049.6 | T4 38.8× | #19: 2,510.1 s on the Xeon, 29.1 s on the T4 |
-| `kesten_processes` | float32 | 5.0 | 153.3 | 39.1 | 40.7 | T4 30.4× | #8: 149.7 s on the Xeon, 0.1 s on the T4 |
-| `ifp_advanced` | float32 | 22.3 | 596.5 | 161.4 | 140.5 | T4 26.8× | #13: 261.7 s on the Xeon, 7.2 s on the T4 |
-| `aiyagari_egm` | float64 | 15.0 | 273.3 | 60.8 | 55.6 | T4 18.2× | #18: 131.6 s on the Xeon, 2.0 s on the T4 |
-| `ak_aiyagari` | float32 | 28.2 | 236.1 | 45.4 | 47.9 | T4 8.4× | #60: 126.0 s on the Xeon, 7.4 s on the T4 |
-| `mccall_model` | float32 | 9.0 | 72.0 | 26.7 | 23.4 | T4 8.0× | #21: 67.2 s on the Xeon, 1.5 s on the T4 |
-| `ifp_opi` | float32 | 5.6 | 32.8 | 9.5 | 10.7 | T4 5.8× | #21: 13.5 s on the Xeon, 0.9 s on the T4 |
-| `ifp_egm_transient_shocks` | float32 | 14.4 | 57.8 | 19.0 | 16.1 | T4 4.0× | #19: 38.6 s on the Xeon, 2.7 s on the T4 |
-| `mccall_persist_trans` | float32 | 7.5 | 16.5 | 5.4 | 4.8 | T4 2.2× | #8: 4.6 s on the Xeon, 2.2 s on the T4 |
-| `ifp_egm` | float32 | 7.4 | 13.8 | 3.6 | 3.4 | T4 1.9× | #18: 8.3 s on the Xeon, 1.3 s on the T4 |
-| `mccall_model_with_sep_markov` | float32 | 23.2 | 40.9 | 11.3 | 9.6 | T4 1.8× | #26: 28.7 s on the Xeon, 2.1 s on the T4 |
-| `ifp_discrete` | float64 | 9.7 | 15.9 | 3.0 | 3.4 | T4 1.6× | #9: 9.1 s on the Xeon, 2.4 s on the T4 |
-| `mccall_risk` | float32 | 10.9 | 15.6 | 4.0 | 3.7 | T4 1.4× | #2: 5.4 s on the Xeon, 3.4 s on the T4 |
-| `inventory_dynamics` | float32 | 12.1 | 13.0 | 4.4 | 3.8 | T4 1.1× | #16: 4.0 s on the Xeon, 0.8 s on the T4 |
-| `career` | float32 | 5.9 | 5.4 | 1.6 | 1.3 | Xeon 1.1× | #0: 1.9 s on the T4, 2.0 s on the Xeon |
-| `mix_model` | float64 | 86.0 | 76.7 | 19.4 | 18.3 | Xeon 1.1× | #17: 48.9 s on the T4, 19.9 s on the Xeon |
-| `newton_method` | float64 | 49.4 | 44.1 | 16.2 | 15.5 | Xeon 1.1× | #40: 35.3 s on the T4, 34.7 s on the Xeon |
-| `jv` | float32 | 8.9 | 7.4 | 2.4 | 2.3 | Xeon 1.2× | #8: 3.6 s on the T4, 2.5 s on the Xeon |
-| `os_egm_jax` | float32 | 3.7 | 3.0 | 0.9 | 0.7 | Xeon 1.2× | #0: 1.9 s on the T4, 2.0 s on the Xeon |
-| `lake_model` | float32 | 6.0 | 4.5 | 1.3 | 1.0 | Xeon 1.3× | #0: 2.0 s on the T4, 2.0 s on the Xeon |
-| `aiyagari` | float64 | 12.5 | 9.1 | 2.5 | 2.4 | Xeon 1.4× | #27: 3.9 s on the T4, 2.6 s on the Xeon |
-| `mle` | float32 | 10.0 | 7.0 | 2.4 | 2.6 | Xeon 1.4× | #0: 2.6 s on the T4, 2.7 s on the Xeon |
-| `bayes_nonconj` | float32 | 44.8 | 28.1 | 6.8 | 5.9 | Xeon 1.6× | #4: 10.3 s on the T4, 8.3 s on the Xeon |
-| `ar1_turningpts` | float32 | 200.5 | 115.7 | 29.7 | 24.9 | Xeon 1.7× | #11: 83.2 s on the T4, 48.3 s on the Xeon |
-| `mccall_model_with_separation` | float32 | 10.0 | 5.3 | 1.4 | 1.1 | Xeon 1.9× | #7: 3.2 s on the T4, 1.3 s on the Xeon |
-| `two_computation` | float64 | 38.3 | 20.2 | 4.5 | 4.1 | Xeon 1.9× | #66: 8.0 s on the T4, 3.2 s on the Xeon |
-| `unemployment_linear` | float32 | 25.1 | 13.1 | 3.4 | 3.0 | Xeon 1.9× | #6: 14.4 s on the T4, 5.5 s on the Xeon |
-| `unemployment_shocks` | float32 | 47.7 | 22.1 | 5.9 | 5.2 | Xeon 2.2× | #6: 28.1 s on the T4, 10.7 s on the Xeon |
-| `mccall_fitted_vfi` | float32 | 42.8 | 19.4 | 4.0 | 3.5 | Xeon 2.2× | #16: 27.1 s on the T4, 9.1 s on the Xeon |
-| `ar1_bayes` | float32 | 204.5 | 87.1 | 15.7 | 14.7 | Xeon 2.3× | #22: 61.5 s on the T4, 1.7 s on the Xeon |
-| `back_prop` | float32 | 60.3 | 23.5 | 6.0 | 5.6 | Xeon 2.6× | #19: 18.2 s on the T4, 5.8 s on the Xeon |
-| `endogenous_lake` | float32 | 498.8 | 24.0 | 5.0 | 4.1 | Xeon 20.8× | #14: 480.2 s on the T4, 19.4 s on the Xeon |
-| `sargent_surico` | float64 | — | 874.2 | 158.0 | — | Xeon, as the lecture pins | The lecture pins JAX to the CPU, so the CPU's time is the runner's |
-| **All** | | **1,630 for 32** | **6,978** | **1,463** | **1,529 for 32** | | |
+| Lecture | Precision, as written | T4 | Xeon | TITAN RTX | Threadripper | M5 Pro | M6 | Faster on the runner | Heaviest cell on the runner |
+|---|---|---|---|---|---|---|---|---|---|
+| `imp_sample` | float64 | 104.3 | 4,050.3 | 60.7 | 4,036.9 | 782.8 | 1,049.6 | T4 38.8× | #19: 2,510.1 s on the Xeon, 29.1 s on the T4 |
+| `kesten_processes` | float32 | 5.0 | 153.3 | 6.6 | 160.5 | 39.1 | 40.7 | T4 30.4× | #8: 149.7 s on the Xeon, 0.1 s on the T4 |
+| `ifp_advanced` | float32 | 22.3 | 596.5 | 18.5 | 740.4 | 161.4 | 140.5 | T4 26.8× | #13: 261.7 s on the Xeon, 7.2 s on the T4 |
+| `aiyagari_egm` | float64 | 15.0 | 273.3 | 17.7 | 329.8 | 60.8 | 55.6 | T4 18.2× | #18: 131.6 s on the Xeon, 2.0 s on the T4 |
+| `ak_aiyagari` | float32 | 28.2 | 236.1 | 26.8 | 287.9 | 45.4 | 47.9 | T4 8.4× | #60: 126.0 s on the Xeon, 7.4 s on the T4 |
+| `mccall_model` | float32 | 9.0 | 72.0 | 11.5 | 118.3 | 26.7 | 23.4 | T4 8.0× | #21: 67.2 s on the Xeon, 1.5 s on the T4 |
+| `ifp_opi` | float32 | 5.6 | 32.8 | 6.1 | 59.6 | 9.5 | 10.7 | T4 5.8× | #21: 13.5 s on the Xeon, 0.9 s on the T4 |
+| `ifp_egm_transient_shocks` | float32 | 14.4 | 57.8 | 16.6 | 87.5 | 19.0 | 16.1 | T4 4.0× | #19: 38.6 s on the Xeon, 2.7 s on the T4 |
+| `mccall_persist_trans` | float32 | 7.5 | 16.5 | 9.8 | 18.6 | 5.4 | 4.8 | T4 2.2× | #8: 4.6 s on the Xeon, 2.2 s on the T4 |
+| `ifp_egm` | float32 | 7.4 | 13.8 | 9.1 | 19.6 | 3.6 | 3.4 | T4 1.9× | #18: 8.3 s on the Xeon, 1.3 s on the T4 |
+| `mccall_model_with_sep_markov` | float32 | 23.2 | 40.9 | 30.6 | 51.0 | 11.3 | 9.6 | T4 1.8× | #26: 28.7 s on the Xeon, 2.1 s on the T4 |
+| `ifp_discrete` | float64 | 9.7 | 15.9 | 9.8 | 13.5 | 3.0 | 3.4 | T4 1.6× | #9: 9.1 s on the Xeon, 2.4 s on the T4 |
+| `mccall_risk` | float32 | 10.9 | 15.6 | 14.1 | 18.2 | 4.0 | 3.7 | T4 1.4× | #2: 5.4 s on the Xeon, 3.4 s on the T4 |
+| `inventory_dynamics` | float32 | 12.1 | 13.0 | 15.9 | 16.3 | 4.4 | 3.8 | T4 1.1× | #16: 4.0 s on the Xeon, 0.8 s on the T4 |
+| `career` | float32 | 5.9 | 5.4 | 8.0 | 6.3 | 1.6 | 1.3 | Xeon 1.1× | #0: 1.9 s on the T4, 2.0 s on the Xeon |
+| `mix_model` | float64 | 86.0 | 76.7 | 103.9 | 86.3 | 19.4 | 18.3 | Xeon 1.1× | #17: 48.9 s on the T4, 19.9 s on the Xeon |
+| `newton_method` | float64 | 49.4 | 44.1 | 50.8 | 39.8 | 16.2 | 15.5 | Xeon 1.1× | #40: 35.3 s on the T4, 34.7 s on the Xeon |
+| `jv` | float32 | 8.9 | 7.4 | 12.5 | 8.8 | 2.4 | 2.3 | Xeon 1.2× | #8: 3.6 s on the T4, 2.5 s on the Xeon |
+| `os_egm_jax` | float32 | 3.7 | 3.0 | 4.8 | 3.6 | 0.9 | 0.7 | Xeon 1.2× | #0: 1.9 s on the T4, 2.0 s on the Xeon |
+| `lake_model` | float32 | 6.0 | 4.5 | 7.8 | 5.4 | 1.3 | 1.0 | Xeon 1.3× | #0: 2.0 s on the T4, 2.0 s on the Xeon |
+| `aiyagari` | float64 | 12.5 | 9.1 | 12.9 | 14.3 | 2.5 | 2.4 | Xeon 1.4× | #27: 3.9 s on the T4, 2.6 s on the Xeon |
+| `mle` | float32 | 10.0 | 7.0 | 13.1 | 8.0 | 2.4 | 2.6 | Xeon 1.4× | #0: 2.6 s on the T4, 2.7 s on the Xeon |
+| `bayes_nonconj` | float32 | 44.8 | 28.1 | 54.6 | 33.0 | 6.8 | 5.9 | Xeon 1.6× | #4: 10.3 s on the T4, 8.3 s on the Xeon |
+| `ar1_turningpts` | float32 | 200.5 | 115.7 | 236.6 | 149.8 | 29.7 | 24.9 | Xeon 1.7× | #11: 83.2 s on the T4, 48.3 s on the Xeon |
+| `mccall_model_with_separation` | float32 | 10.0 | 5.3 | 15.7 | 6.5 | 1.4 | 1.1 | Xeon 1.9× | #7: 3.2 s on the T4, 1.3 s on the Xeon |
+| `two_computation` | float64 | 38.3 | 20.2 | 37.0 | 25.8 | 4.5 | 4.1 | Xeon 1.9× | #66: 8.0 s on the T4, 3.2 s on the Xeon |
+| `unemployment_linear` | float32 | 25.1 | 13.1 | 30.5 | 16.4 | 3.4 | 3.0 | Xeon 1.9× | #6: 14.4 s on the T4, 5.5 s on the Xeon |
+| `unemployment_shocks` | float32 | 47.7 | 22.1 | 56.3 | 26.2 | 5.9 | 5.2 | Xeon 2.2× | #6: 28.1 s on the T4, 10.7 s on the Xeon |
+| `mccall_fitted_vfi` | float32 | 42.8 | 19.4 | 56.7 | 23.5 | 4.0 | 3.5 | Xeon 2.2× | #16: 27.1 s on the T4, 9.1 s on the Xeon |
+| `ar1_bayes` | float32 | 204.5 | 87.1 | — | — | 15.7 | 14.7 | Xeon 2.3× | #22: 61.5 s on the T4, 1.7 s on the Xeon |
+| `back_prop` | float32 | 60.3 | 23.5 | 73.5 | 26.5 | 6.0 | 5.6 | Xeon 2.6× | #19: 18.2 s on the T4, 5.8 s on the Xeon |
+| `endogenous_lake` | float32 | 498.8 | 24.0 | 587.2 | 38.9 | 5.0 | 4.1 | Xeon 20.8× | #14: 480.2 s on the T4, 19.4 s on the Xeon |
+| `sargent_surico` | float64 | — | 874.2 | — | 833.5 | 158.0 | — | Xeon, as the lecture pins | The lecture pins JAX to the CPU, so the CPU's time is the runner's |
+| **All** | | **1,630 for 32** | **6,978** | **1,616 for 31** | **7,311 for 32** | **1,463** | **1,529 for 32** | | |
 
-Every run finished without an unexpected error, except the T4's and the M6's three runs of `sargent_surico`, below.
+Every run finished without an unexpected error, except the three runs of `sargent_surico` on the T4, the TITAN RTX and the M6, and those of `ar1_bayes` on the TITAN RTX and the Threadripper, below.
 
 What the table shows:
 
@@ -189,13 +189,16 @@ What the table shows:
 - **Building each lecture on the faster of the two would save about 840 s, if the lectures ran one after another, and `endogenous_lake` carries 475 s of it.** Its cell 14 runs a Python bisection 1,200 times, over 8 separation rates and 150 levels of compensation, and each bisection step calls a jitted McCall solve whose `lax.while_loop` runs up to 2,000 small iterations. Each pays the card's launch and sync latency: the cell takes 480 s on the T4, 19 s on the Xeon and 3.6 s on the M5 Pro.
 - **`sargent_surico` runs its JAX on the CPU on any machine,** because the cell that first imports JAX sets `jax_platform_name` to `cpu`, and the cells before it are NumPy. So its time on the runner is the Xeon's: 874 s, close to the 14m52s that QuantEcon/lecture-python.myst#1022 reports for the lecture on this runner once pinned to the CPU.
     - Under the card's `JAX_PLATFORMS=cuda` there is no CPU backend, so the lecture's JAX cells couldn't run, and `run_lecture.py` then failed at its own `jax.devices()` and wrote no result. The three runs' tracebacks are the `cuda-*.err` files beside the results.
-    - `run_lecture.py` now resets the platform in that case, records the error as `platform_error`, and keeps the row with its failed cells.
+    - `run_lecture.py` now resets the platform in that case, records the error as `platform_error`, and keeps the row with its failed cells. The TITAN RTX's runs used it: 13 cells fail, from cell 34 on, in all three, and the table leaves their time out.
 - **The M5 Pro is faster than the T4 on 24 of the 32,** and over those 32 takes 1,305 s against the T4's 1,630 s. The T4 leads on the eight with one large computation, among them `imp_sample` (7.5×) and `kesten_processes` (7.8×).
 - **On the M5 Pro, `sargent_surico` takes 158 s, 67 s of it in its NUTS cell.** QuantEcon/lecture-python.myst#1022 reports 309 s for the lecture on a laptop, 157 s of it in that cell, and the cell timing out after 2,400 s on the T4 before the lecture pinned JAX to the CPU.
 - **The M6 is faster than the M5 Pro on 26 of the 32 lectures that ran on both, but slower over all of them: 1,529 s against 1,305 s, because of `imp_sample`.** That lecture takes 1,050 s on the M6 against 783 s on the M5 Pro, 638 s of it in cell 19 against 488 s. Without it, the M6 takes 480 s against the M5 Pro's 522 s. The M5 Pro has 18 cores to the M6's 12.
 - **`sargent_surico` fails on the M6 from cell 15 on, in all three runs.** The lecture's solver calls SciPy's `ordqz` with `output='complex'`, which raises "the transformed matrix pair (A, B) would be too far from generalized Schur form; the problem is very ill-conditioned", and 27 cells fail in all. The M5 Pro ran the same packages without an error. SciPy 1.18.1 here uses Accelerate's LAPACK (`scipy.show_config()`), which comes with the OS, and the M6 runs macOS 27.0.1 where the M5 Pro runs 26.7.1. So the cause is in macOS 27's Accelerate or in the M6 itself; these runs can't tell which. The table leaves its time out.
+- **On `qe-wharton1-gpu`, the card and its CPU split the lectures much as the runner's do.** The TITAN RTX is ahead of the Threadripper by more than 2× on 9 lectures, 8 of them among the T4's 9, and the Threadripper is ahead by more than 2× on 5, 4 of them among the Xeon's 5.
+- **The TITAN RTX is slower than the T4 on 27 of the 31 lectures both ran, by a median of 22%, and takes 1,616 s over them against the T4's 1,425 s.** It is faster on four: `imp_sample` (60.7 s against 104.3 s), `ifp_advanced` (18.5 s against 22.3 s), `ak_aiyagari` and `two_computation`. The Threadripper is slower than the Xeon by about as much, a median of 20%, on 28 of their 32, though it has 32 cores to the Xeon's 4. So the host may be what makes the difference on the card, but these runs don't separate it.
+- **`ar1_bayes` fails on both of `qe-wharton1-gpu`'s devices, in all three runs, from cell 8, its first PyMC sample, on.** PyTensor compiles a C module with `g++`, which needs Python's headers, and the environment's Python is Ubuntu's own 3.12.3 (`/usr/bin/python3.12`), whose headers (`python3.12-dev`) aren't installed. 8 cells fail in all. The runner's Python has its headers. The table leaves its times out.
 
-**Its environment** is lecture-jax's exact packages, JAX 0.12.0.1 among them, plus what these lectures install: NumPyro 0.22.0, ArviZ 1.3.0, PyMC 6.3.2 (PyTensor 3.3.4), pandas-datareader 0.11.1, yfinance 1.7.0, plotly 7.1.0 with kaleido, seaborn, scikit-learn, xarray and myst-nb (`environment.txt`). Some lectures download their data when they run, FRED series through pandas-datareader and a Stata file from QuantEcon/data-lectures, and that time counts. The run is `run.sh` beside the results, from 01:20 to 02:34 UTC on 2026-10-26; `state.txt` samples the machine every ten minutes, redacted as for its lecture-jax run. The M6 ran the same packages (its `environment.txt` is identical) from 07:20 to 08:38 UTC on 2026-11-02, from the `run.sh` one level up, which first ran the check below and the problem-type suite (#5).
+**Its environment** is lecture-jax's exact packages, JAX 0.12.0.1 among them, plus what these lectures install: NumPyro 0.22.0, ArviZ 1.3.0, PyMC 6.3.2 (PyTensor 3.3.4), pandas-datareader 0.11.1, yfinance 1.7.0, plotly 7.1.0 with kaleido, seaborn, scikit-learn, xarray and myst-nb (`environment.txt`). Some lectures download their data when they run, FRED series through pandas-datareader and a Stata file from QuantEcon/data-lectures, and that time counts. The run is `run.sh` beside the results, from 01:20 to 02:34 UTC on 2026-10-26; `state.txt` samples the machine every ten minutes, redacted as for its lecture-jax run. The M6 ran the same packages (its `environment.txt` is identical) from 07:20 to 08:38 UTC on 2026-11-02, from the `run.sh` one level up, which first ran the check below and the problem-type suite (#5). `qe-wharton1-gpu` ran the T4 runner's packages (its `environment.txt` lists the same packages at the same versions, once names are normalised) from 14:28 to 22:31 UTC on 2026-11-02, from the `run.sh` one level up, which first ran the problem-type suite; `setup.sh` beside it built the environment.
 
 ## Method
 
@@ -204,6 +207,7 @@ What the table shows:
 - **Platforms:** `JAX_PLATFORMS=cuda` with `CUDA_VISIBLE_DEVICES=0` in PCI bus order for the cards, and `JAX_PLATFORMS=cpu` for the CPUs, with JAX's defaults otherwise.
 - **`qe-wharton2`:** `main` at `736a9ee`, on 2026-10-25 from 22:06 to 22:44 UTC, with the M6's exact packages and the current `run_lecture.py`. Before the runs the new environment's bytecode was compiled and each package imported once: on this machine the first imports took 48 s, against 1.6 s after, while its security software checked the new files.
 - **The CI runner, for lecture-python.myst:** the workflow's `run_lectures` job with `lecture-python` (#19), [run 41271786393](https://github.com/QuantEcon/benchmarks/actions/runs/41271786393) at `5d022e1` on that PR's branch, on 2026-11-01: the T4's job from 04:07 to 05:57 UTC, and the Xeon's, on a second instance, from 04:07 to 10:03 UTC. Both installed the M5 Pro run's packages without `appnope`, and their `environment.txt` files are identical.
+- **`qe-wharton1-gpu`, for lecture-python.myst:** [`run.sh`](../results/qe-wharton1-gpu/2026-11-02/run.sh) at `5fbf033`, under project-econ-on-ai-hardware's machine lock, on 2026-11-02 from 14:28 to 22:31 UTC. Each lecture ran on the card and then on the CPU before the next, and each had the runner's cap of two hours. No GitHub runner was on the machine, and nothing else used either card: the benchmark was the only process on the card at `0b:00.0`, and the desktop's card at `43:00.0` was at 0% in all 76 samples in `state.txt`.
 - **The T4 runner:** the workflow's `run_lectures` job (#10) at `8493bbf`, which is `main` with that job added, on 2026-10-25 from 09:37 to 12:55 UTC. Each lecture ran on the T4 and then on the Xeon before the next.
 - **Three runs of each lecture on each device,** interleaved: every lecture once, then again, so a slow spell on a machine spreads across lectures rather than landing on one. The tables use medians. On the M6 the first run of a few lectures was up to 2× slower than the other two (`jax_nn`: 10.1 s against 4.4 s and 4.5 s).
 - **An hour's cap on each lecture.** None reached it.
@@ -226,6 +230,7 @@ What the table shows:
 ./mac_lectures.sh                        # qe-mini1: pauses the agents, then ./lectures_set.sh results 3 cpu
 ./lectures_set.sh results 3 cpu          # qe-wharton2, from precision/runs/2026-10-25/wharton2_run.sh
 ROOT=~/bench/lectures-python ./lectures_set.sh results 3 cpu   # lecture-python.myst, from lectures-python.txt
+ROOT=~/bench/lectures-python CAP=7200 ./lectures_set.sh results 3 cuda cpu   # the same on qe-wharton1-gpu
 python lectures/whole/summarise_whole.py lectures/results/*/2026-10-25/whole --lectures <directory of the lectures' .md files>
 ```
 
