@@ -1,0 +1,1256 @@
+== 06:01:44
+17:01  up 19 days,  1:36, 2 users, load averages: 7.15 2.85 1.75
+88226  12.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88128   5.0 claude
+77997   3.8 claude
+10346   0.2 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+88059   0.2 .venv/bin/python
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 06:02:44
+17:02  up 19 days,  1:37, 2 users, load averages: 5.24 3.09 1.91
+88341 100.0 .venv/bin/python
+71492   0.8 macmon
+44098   0.4 claude
+  405   0.1 /usr/libexec/opendirectoryd
+88345   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+88344   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+== 06:03:44
+17:03  up 19 days,  1:38, 2 users, load averages: 4.44 3.24 2.05
+88484 518.0 .venv/bin/python
+71492   2.6 macmon
+44098   0.6 claude
+  405   0.5 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  430   0.1 /usr/sbin/notifyd
+== 06:04:44
+17:04  up 19 days,  1:39, 2 users, load averages: 5.26 3.79 2.34
+88679 100.0 .venv/bin/python
+71492   0.5 macmon
+88579   0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  393   0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  584   0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+88580   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+== 06:05:44
+17:05  up 19 days,  1:40, 2 users, load averages: 4.54 3.74 2.41
+88819 518.9 .venv/bin/python
+71492   2.3 macmon
+  405   0.8 /usr/libexec/opendirectoryd
+77997   0.1 claude
+88714   0.0 sleep
+88697   0.0 sleep
+== 06:06:44
+17:06  up 19 days,  1:41, 2 users, load averages: 5.42 4.17 2.66
+88987 118.6 .venv/bin/python
+  506   2.0 /usr/libexec/airportd
+  490   1.3 /usr/sbin/mDNSResponder
+  377   0.5 /usr/libexec/configd
+  624   0.4 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+10642   0.4 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 06:07:44
+17:07  up 19 days,  1:42, 2 users, load averages: 3.04 3.73 2.60
+89125 361.3 .venv/bin/python
+71492   3.7 macmon
+  405   0.7 /usr/libexec/opendirectoryd
+89127   0.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89128   0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  430   0.1 /usr/sbin/notifyd
+== 06:08:44
+17:08  up 19 days,  1:43, 2 users, load averages: 3.82 3.97 2.77
+89335  90.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+89317   1.5 .venv/bin/python
+71492   0.3 macmon
+  680   0.1 /usr/sbin/distnoted
+  645   0.1 /opt/homebrew/opt/tailscale/bin/tailscaled
+88992   0.1 /usr/libexec/sysmond
+== 06:09:44
+17:09  up 19 days,  1:44, 2 users, load averages: 2.43 3.57 2.70
+89455  99.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.4 macmon
+88128   1.2 claude
+  405   1.1 /usr/libexec/opendirectoryd
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.2 claude
+== 06:10:44
+17:10  up 19 days,  1:45, 2 users, load averages: 1.52 3.10 2.58
+89530 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88128   0.2 claude
+  420   0.1 /usr/sbin/distnoted
+71492   0.1 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+77997   0.1 claude
+== 06:11:44
+17:11  up 19 days,  1:46, 2 users, load averages: 1.31 2.75 2.48
+89637  99.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.3 macmon
+  405   0.3 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+89596   0.0 sleep
+89575   0.0 sleep
+== 06:12:44
+17:12  up 19 days,  1:47, 2 users, load averages: 1.14 2.44 2.38
+89726 923.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.1 claude
+44098   0.1 claude
+77997   0.1 claude
+71492   0.1 macmon
+== 06:13:44
+17:13  up 19 days,  1:48, 2 users, load averages: 2.53 2.74 2.51
+89766 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.2 macmon
+77997   0.4 claude
+  405   0.3 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+89653   0.0 sleep
+== 06:14:44
+17:14  up 19 days,  1:49, 2 users, load averages: 1.60 2.44 2.41
+89898 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+89903   2.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89905   0.2 sleep
+ 2474   0.1 /bin/zsh
+30100   0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+  846   0.1 /usr/libexec/secd
+== 06:15:44
+17:15  up 19 days,  1:50, 2 users, load averages: 1.33 2.20 2.32
+89898 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+10642   3.0 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   1.1 macmon
+  405   0.3 /usr/libexec/opendirectoryd
+89905   0.0 sleep
+89901   0.0 sleep
+== 06:16:44
+17:16  up 19 days,  1:51, 2 users, load averages: 5.00 2.90 2.56
+90049 1127.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.9 macmon
+10642   0.9 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   0.7 /usr/libexec/opendirectoryd
+90056   0.5 gh
+88054   0.1 bash
+== 06:17:44
+17:17  up 19 days,  1:52, 2 users, load averages: 3.86 3.11 2.67
+90083  99.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   3.0 claude
+88128   2.0 claude
+71492   0.5 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+89933   0.0 sleep
+== 06:18:44
+17:18  up 19 days,  1:53, 2 users, load averages: 2.13 2.74 2.56
+90083 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.8 macmon
+  405   1.2 /usr/libexec/opendirectoryd
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  645   0.2 /opt/homebrew/opt/tailscale/bin/tailscaled
+  430   0.1 /usr/sbin/notifyd
+== 06:19:44
+17:19  up 19 days,  1:54, 2 users, load averages: 1.45 2.45 2.46
+90287  99.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.2 macmon
+88054   0.1 bash
+90299   0.1 sleep
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+90214   0.0 sleep
+== 06:20:44
+17:20  up 19 days,  1:55, 2 users, load averages: 1.40 2.24 2.38
+90287 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.3 macmon
+  405   1.2 /usr/libexec/opendirectoryd
+77997   0.3 claude
+  430   0.1 /usr/sbin/notifyd
+90245   0.0 sleep
+== 06:21:44
+17:21  up 19 days,  1:56, 2 users, load averages: 1.71 2.17 2.34
+90287 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88128   2.8 claude
+77997   0.4 claude
+71492   0.1 macmon
+90325   0.0 sleep
+90299   0.0 sleep
+== 06:22:45
+17:22  up 19 days,  1:57, 2 users, load averages: 3.60 2.55 2.47
+90497 924.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.4 macmon
+10642   0.7 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   0.2 /usr/libexec/opendirectoryd
+77997   0.1 claude
+90384   0.0 sleep
+== 06:23:45
+17:23  up 19 days,  1:58, 2 users, load averages: 8.66 4.07 3.03
+90577 1171.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88054   0.2 bash
+44098   0.1 claude
+77997   0.1 claude
+88128   0.1 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 06:24:45
+17:24  up 19 days,  1:59, 2 users, load averages: 6.86 4.52 3.28
+90685 134.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.7 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   0.1 /usr/libexec/opendirectoryd
+90638   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+90625   0.0 sleep
+== 06:25:45
+17:25  up 19 days, 2 hrs, 2 users, load averages: 3.52 3.97 3.15
+90763 157.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+90779   0.0 ps
+90740   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+90729   0.0 sleep
+90710   0.0 sleep
+90695   0.0 sleep
+== 06:26:45
+17:26  up 19 days,  2:01, 2 users, load averages: 3.77 4.07 3.25
+90837  99.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88128   2.1 claude
+10642   1.5 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   1.0 claude
+71492   0.3 macmon
+90710   0.0 sleep
+== 06:27:45
+17:27  up 19 days,  2:02, 2 users, load averages: 2.20 3.56 3.12
+90837 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.8 macmon
+  405   1.0 /usr/libexec/opendirectoryd
+  430   0.1 /usr/sbin/notifyd
+90865   0.0 sleep
+90797   0.0 sleep
+== 06:28:45
+17:28  up 19 days,  2:03, 2 users, load averages: 1.82 3.19 3.00
+90941  99.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.4 macmon
+90908   0.0 sleep
+90879   0.0 sleep
+90865   0.0 sleep
+90797   0.0 sleep
+== 06:29:45
+17:29  up 19 days,  2:04, 2 users, load averages: 3.63 3.41 3.09
+91047 151.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.8 macmon
+  405   0.6 /usr/libexec/opendirectoryd
+77997   0.1 claude
+91062   0.0 sleep
+91048   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+== 06:30:45
+17:30  up 19 days,  2:05, 2 users, load averages: 4.60 3.79 3.26
+91162 164.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+44098   0.9 claude
+77997   0.2 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   0.1 macmon
+91098   0.0 sleep
+== 06:31:45
+17:31  up 19 days,  2:06, 2 users, load averages: 2.98 3.47 3.17
+91162 164.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.1 macmon
+  405   0.3 /usr/libexec/opendirectoryd
+77997   0.2 claude
+44098   0.1 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 06:32:45
+17:32  up 19 days,  2:07, 2 users, load averages: 3.19 3.45 3.18
+91299  99.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.5 macmon
+44098   0.1 claude
+91301   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+91193   0.0 sleep
+91133   0.0 sleep
+== 06:33:45
+17:33  up 19 days,  2:08, 2 users, load averages: 2.17 3.12 3.08
+91299  99.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+44098   0.7 claude
+71492   0.7 macmon
+77997   0.7 claude
+  405   0.1 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 06:34:45
+17:34  up 19 days,  2:09, 2 users, load averages: 1.95 2.88 2.99
+91299 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.8 macmon
+91487   0.0 sleep
+91474   0.0 sleep
+91356   0.0 sleep
+91344   0.0 sleep
+== 06:35:45
+17:35  up 19 days,  2:10, 2 users, load averages: 1.66 2.63 2.89
+91498 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  506   3.7 /usr/libexec/airportd
+  490   3.7 /usr/sbin/mDNSResponder
+  377   1.0 /usr/libexec/configd
+  624   0.7 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  657   0.4 /usr/libexec/wifip2pd
+== 06:36:45
+17:36  up 19 days,  2:11, 2 users, load averages: 1.75 2.47 2.81
+91498  99.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.0 macmon
+  405   0.7 /usr/libexec/opendirectoryd
+44098   0.6 claude
+77997   0.2 claude
+  846   0.1 /usr/libexec/secd
+== 06:37:45
+17:37  up 19 days,  2:12, 2 users, load averages: 3.45 2.76 2.89
+91655 166.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   0.2 claude
+71492   0.2 macmon
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+91657   0.0 sleep
+91591   0.0 sleep
+== 06:38:45
+17:38  up 19 days,  2:13, 2 users, load averages: 2.42 2.59 2.81
+91775 173.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.1 macmon
+77997   0.2 claude
+  405   0.2 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.1 claude
+== 06:39:45
+17:39  up 19 days,  2:14, 2 users, load averages: 2.00 2.43 2.74
+91775 174.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.2 macmon
+  490   0.1 /usr/sbin/mDNSResponder
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+91872   0.0 sleep
+91820   0.0 sleep
+== 06:40:45
+17:40  up 19 days,  2:15, 2 users, load averages: 2.31 2.43 2.71
+91775 171.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.9 macmon
+77997   0.2 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88054   0.1 bash
+91872   0.0 sleep
+== 06:41:45
+17:41  up 19 days,  2:16, 2 users, load averages: 4.14 2.93 2.88
+92103  99.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+10642   3.5 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   1.1 macmon
+  645   0.8 /opt/homebrew/opt/tailscale/bin/tailscaled
+77997   0.1 claude
+91885   0.0 sleep
+== 06:42:45
+17:42  up 19 days,  2:17, 2 users, load averages: 5.17 3.39 3.05
+92181 150.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.7 macmon
+77997   0.1 claude
+92151   0.0 sleep
+92004   0.0 sleep
+91926   0.0 sleep
+== 06:43:45
+17:43  up 19 days,  2:18, 2 users, load averages: 2.87 3.08 2.96
+92215  99.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.6 macmon
+  645   0.2 /opt/homebrew/opt/tailscale/bin/tailscaled
+88128   0.2 claude
+77997   0.1 claude
+92004   0.0 sleep
+== 06:44:45
+17:44  up 19 days,  2:19, 2 users, load averages: 1.75 2.72 2.83
+92291  99.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+44098   0.8 claude
+71492   0.6 macmon
+  405   0.1 /usr/libexec/opendirectoryd
+77997   0.1 claude
+92239   0.0 sleep
+== 06:45:45
+17:45  up 19 days,  2:20, 2 users, load averages: 3.88 3.10 2.96
+92392 196.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   1.3 claude
+88128   1.0 claude
+44098   1.0 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   0.1 macmon
+== 06:46:45
+17:46  up 19 days,  2:21, 2 users, load averages: 3.14 3.00 2.92
+92475 156.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+10642   1.8 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   1.5 claude
+71492   0.4 macmon
+77997   0.3 claude
+  645   0.1 /opt/homebrew/opt/tailscale/bin/tailscaled
+== 06:47:45
+17:47  up 19 days,  2:22, 2 users, load averages: 2.74 2.94 2.91
+92612 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.7 macmon
+  405   1.2 /usr/libexec/opendirectoryd
+77997   0.1 claude
+30100   0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+    1   0.1 /sbin/launchd
+== 06:48:45
+17:48  up 19 days,  2:23, 2 users, load averages: 1.78 2.64 2.80
+92612  99.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.0 macmon
+88054   0.2 bash
+88128   0.1 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  430   0.1 /usr/sbin/notifyd
+== 06:49:45
+17:49  up 19 days,  2:24, 2 users, load averages: 1.38 2.37 2.68
+92738 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.5 macmon
+  405   1.1 /usr/libexec/opendirectoryd
+77997   0.3 claude
+  430   0.1 /usr/sbin/notifyd
+  363   0.1 /usr/libexec/logd
+== 06:50:45
+17:50  up 19 days,  2:25, 2 users, load averages: 1.14 2.12 2.56
+92738  99.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.0 macmon
+77997   0.5 claude
+92797   0.0 sleep
+92785   0.0 sleep
+92687   0.0 sleep
+== 06:51:45
+17:51  up 19 days,  2:26, 2 users, load averages: 2.01 2.17 2.55
+92899 204.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.9 macmon
+  405   1.2 /usr/libexec/opendirectoryd
+77997   0.2 claude
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+44098   0.1 claude
+== 06:52:45
+17:52  up 19 days,  2:27, 2 users, load averages: 2.68 2.37 2.60
+92997 152.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+44098   1.4 claude
+77997   0.2 claude
+71492   0.2 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+92797   0.0 sleep
+== 06:53:45
+17:53  up 19 days,  2:28, 2 users, load averages: 2.81 2.46 2.61
+92997 154.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.4 macmon
+  405   0.4 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.1 claude
+92797   0.0 sleep
+== 06:54:45
+17:54  up 19 days,  2:29, 2 users, load averages: 2.80 2.53 2.63
+92997 153.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.2 macmon
+77997   0.1 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+93125   0.0 sleep
+93096   0.0 sleep
+== 06:55:46
+17:55  up 19 days,  2:30, 2 users, load averages: 2.82 2.60 2.65
+93252  99.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.6 macmon
+  405   0.4 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.1 claude
+88128   0.1 claude
+== 06:56:46
+17:56  up 19 days,  2:31, 2 users, load averages: 3.43 2.83 2.73
+93317 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   0.1 claude
+88128   0.1 claude
+71492   0.1 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+93178   0.0 sleep
+== 06:57:46
+17:57  up 19 days,  2:32, 2 users, load averages: 2.38 2.63 2.66
+93377 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.6 macmon
+77997   0.9 claude
+  441   0.3 /usr/libexec/runningboardd
+  405   0.3 /usr/libexec/opendirectoryd
+88128   0.1 claude
+== 06:58:46
+17:58  up 19 days,  2:33, 2 users, load averages: 1.71 2.41 2.57
+93377 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+10642   5.0 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  846   0.4 /usr/libexec/secd
+30100   0.3 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+77997   0.2 claude
+44098   0.1 claude
+== 06:59:46
+17:59  up 19 days,  2:34, 2 users, load averages: 1.30 2.16 2.47
+93501 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.5 macmon
+  405   0.3 /usr/libexec/opendirectoryd
+77997   0.1 claude
+93512   0.0 sleep
+93372   0.0 sleep
+== 07:00:46
+18:00  up 19 days,  2:35, 2 users, load averages: 1.55 2.08 2.42
+93501 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   0.1 claude
+71492   0.1 macmon
+93608   0.0 sleep
+93580   0.0 sleep
+93574   0.0 sleep
+== 07:01:46
+18:01  up 19 days,  2:36, 2 users, load averages: 8.66 3.74 2.99
+93691 1188.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   5.8 claude
+44098   1.3 claude
+71492   0.5 macmon
+  645   0.1 /opt/homebrew/opt/tailscale/bin/tailscaled
+88128   0.1 claude
+== 07:02:46
+18:02  up 19 days,  2:37, 2 users, load averages: 8.26 4.68 3.40
+93770 605.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.9 macmon
+  405   0.6 /usr/libexec/opendirectoryd
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.1 claude
+  363   0.1 /usr/libexec/logd
+== 07:03:46
+18:03  up 19 days,  2:38, 2 users, load averages: 7.49 5.17 3.68
+93770 530.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+44098   0.4 claude
+77997   0.2 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.1 claude
+71492   0.1 macmon
+== 07:04:46
+18:04  up 19 days,  2:39, 2 users, load averages: 4.87 4.93 3.69
+93943  99.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.8 macmon
+  405   1.0 /usr/libexec/opendirectoryd
+  645   0.7 /opt/homebrew/opt/tailscale/bin/tailscaled
+77997   0.1 claude
+  430   0.1 /usr/sbin/notifyd
+== 07:05:46
+18:05  up 19 days,  2:40, 2 users, load averages: 2.76 4.33 3.54
+94029  99.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88128   1.3 claude
+71492   0.3 macmon
+77997   0.1 claude
+93975   0.0 sleep
+93925   0.0 sleep
+== 07:06:46
+18:06  up 19 days,  2:41, 2 users, load averages: 1.96 3.81 3.40
+94029 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.4 macmon
+  405   0.9 /usr/libexec/opendirectoryd
+  430   0.1 /usr/sbin/notifyd
+    1   0.1 /sbin/launchd
+44098   0.1 claude
+== 07:07:46
+18:07  up 19 days,  2:42, 2 users, load averages: 1.78 3.42 3.28
+94142 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.3 macmon
+44098   0.3 claude
+93979   0.0 sleep
+93975   0.0 sleep
+93925   0.0 sleep
+== 07:08:46
+18:08  up 19 days,  2:43, 2 users, load averages: 1.84 3.15 3.19
+94142 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.6 macmon
+  405   1.3 /usr/libexec/opendirectoryd
+  430   0.1 /usr/sbin/notifyd
+77997   0.1 claude
+    1   0.1 /sbin/launchd
+== 07:09:46
+18:09  up 19 days,  2:44, 2 users, load averages: 7.30 4.16 3.54
+94316 1174.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.9 macmon
+88054   0.3 bash
+77997   0.2 claude
+  430   0.1 /usr/sbin/notifyd
+44098   0.1 claude
+== 07:10:46
+18:10  up 19 days,  2:45, 2 users, load averages: 6.61 4.70 3.80
+94393 182.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.0 macmon
+  405   0.3 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+94361   0.0 sleep
+94358   0.0 sleep
+== 07:11:46
+18:11  up 19 days,  2:46, 2 users, load averages: 3.55 4.17 3.66
+94519  31.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+44098   1.3 claude
+71492   1.3 macmon
+77997   0.3 claude
+89317   0.3 .venv/bin/python
+  645   0.1 /opt/homebrew/opt/tailscale/bin/tailscaled
+== 07:12:46
+18:12  up 19 days,  2:47, 2 users, load averages: 2.64 3.80 3.56
+94569 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.7 macmon
+  490   0.2 /usr/sbin/mDNSResponder
+  405   0.1 /usr/libexec/opendirectoryd
+94467   0.0 sleep
+94417   0.0 sleep
+== 07:13:46
+18:13  up 19 days,  2:48, 2 users, load averages: 1.86 3.35 3.40
+94644 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.0 macmon
+44098   0.4 claude
+77997   0.1 claude
+  366   0.1 /usr/libexec/UserEventAgent
+94417   0.0 sleep
+== 07:14:46
+18:14  up 19 days,  2:49, 2 users, load averages: 1.84 3.08 3.30
+94644 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   0.8 claude
+71492   0.7 macmon
+  405   0.3 /usr/libexec/opendirectoryd
+94739   0.0 sleep
+94550   0.0 sleep
+== 07:15:46
+18:15  up 19 days,  2:50, 2 users, load averages: 3.15 3.37 3.40
+94842 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   3.0 macmon
+10642   1.9 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   1.1 /usr/libexec/opendirectoryd
+  430   0.1 /usr/sbin/notifyd
+94750   0.0 sleep
+== 07:16:46
+18:16  up 19 days,  2:51, 2 users, load averages: 2.22 3.09 3.29
+94880  99.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   0.2 macmon
+  645   0.2 /opt/homebrew/opt/tailscale/bin/tailscaled
+94787   0.0 sleep
+94758   0.0 sleep
+94750   0.0 sleep
+== 07:17:46
+18:17  up 19 days,  2:52, 2 users, load averages: 1.45 2.71 3.13
+94964  99.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.5 macmon
+10642   1.7 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   0.8 /usr/libexec/opendirectoryd
+88054   0.1 bash
+    1   0.1 /sbin/launchd
+== 07:18:46
+18:18  up 19 days,  2:53, 2 users, load averages: 1.34 2.46 3.01
+95064 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+95066   8.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+88128   1.1 claude
+  405   0.7 /usr/libexec/opendirectoryd
+71492   0.3 macmon
+  393   0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+== 07:19:46
+18:19  up 19 days,  2:54, 2 users, load averages: 2.77 2.80 3.11
+95156 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   2.0 macmon
+10642   1.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   1.1 /usr/libexec/opendirectoryd
+77997   0.4 claude
+95150   0.0 bash
+== 07:20:46
+18:20  up 19 days,  2:55, 2 users, load averages: 1.65 2.47 2.96
+95284  42.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+71492   1.7 macmon
+89317   0.2 .venv/bin/python
+10346   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+77997   0.1 claude
+== 07:21:46
+18:21  up 19 days,  2:56, 2 users, load averages: 1.35 2.24 2.84
+95319  99.4 .venv/bin/python
+10642   1.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   1.1 macmon
+  405   0.9 /usr/libexec/opendirectoryd
+77997   0.4 claude
+  430   0.1 /usr/sbin/notifyd
+== 07:22:46
+18:22  up 19 days,  2:57, 2 users, load averages: 2.16 2.35 2.84
+95514  49.4 .venv/bin/python
+  520  11.4 /usr/libexec/syspolicyd
+69137   9.8 /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XPCServices/XprotectService.xpc/Contents/MacOS/XprotectService
+95516   9.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+95517   8.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+10642   1.4 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 07:23:47
+18:23  up 19 days,  2:58, 2 users, load averages: 3.23 2.57 2.88
+95703  51.0 /Users/mmcky/Library/Application Support/choreographer/deps/chrome-mac-arm64/Google Chrome for Testing.app/Contents/Frameworks/Google Chrome for Testing Framework.framework/Versions/142.0.7444.175/Helpers/Google Chrome for Testing Helper (Renderer).app/Contents/MacOS/Google Chrome for Testing Helper (Renderer)
+95707  36.2 /System/Library/PrivateFrameworks/WorkflowKit.framework/XPCServices/BackgroundShortcutRunner.xpc/Contents/MacOS/BackgroundShortcutRunner
+88666   7.4 /System/Library/PrivateFrameworks/VoiceShortcuts.framework/Versions/A/Support/siriactionsd
+95691   5.8 /Users/mmcky/Library/Application Support/choreographer/deps/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+30095   4.0 /usr/libexec/linkd
+95643   2.8 .venv/bin/python
+== 07:24:47
+18:24  up 19 days,  2:59, 2 users, load averages: 2.51 2.48 2.83
+88565 174.1 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+95810 100.0 .venv/bin/python
+95870   6.9 gh
+77997   0.5 claude
+44098   0.5 claude
+95871   0.4 paste
+== 07:25:47
+18:25  up 19 days, 3 hrs, 2 users, load averages: 1.91 2.35 2.75
+95810 100.0 .venv/bin/python
+71492   0.7 macmon
+10642   0.6 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.2 claude
+  405   0.2 /usr/libexec/opendirectoryd
+77997   0.1 claude
+== 07:26:47
+18:26  up 19 days,  3:01, 2 users, load averages: 1.71 2.18 2.66
+96108 524.0 .venv/bin/python
+77997   0.1 claude
+71492   0.1 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+95989   0.0 sleep
+95917   0.0 sleep
+== 07:27:47
+18:27  up 19 days,  3:02, 2 users, load averages: 5.59 3.12 2.97
+96146 457.5 .venv/bin/python
+10642   0.7 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   0.4 macmon
+77997   0.3 claude
+88128   0.1 claude
+44098   0.1 claude
+== 07:28:47
+18:28  up 19 days,  3:03, 2 users, load averages: 6.79 3.86 3.26
+96146 595.6 .venv/bin/python
+77997   5.6 claude
+71492   3.0 macmon
+  405   0.7 /usr/libexec/opendirectoryd
+10642   0.6 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.2 claude
+== 07:29:47
+18:29  up 19 days,  3:04, 2 users, load averages: 6.81 4.34 3.47
+96146 560.9 .venv/bin/python
+10642   1.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.4 claude
+71492   0.4 macmon
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+88128   0.1 claude
+== 07:30:47
+18:30  up 19 days,  3:05, 2 users, load averages: 5.56 4.40 3.55
+96146 660.0 .venv/bin/python
+71492   1.8 macmon
+  405   0.4 /usr/libexec/opendirectoryd
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.3 claude
+77997   0.2 claude
+== 07:31:47
+18:31  up 19 days,  3:06, 2 users, load averages: 4.70 4.33 3.58
+96146 522.1 .venv/bin/python
+44098   5.0 claude
+10642   2.0 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+77997   0.3 claude
+88128   0.2 claude
+  405   0.1 /usr/libexec/opendirectoryd
+== 07:32:47
+18:32  up 19 days,  3:07, 2 users, load averages: 7.12 5.16 3.94
+96146 482.9 .venv/bin/python
+71492   1.5 macmon
+  405   0.4 /usr/libexec/opendirectoryd
+77997   0.4 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+== 07:33:47
+18:33  up 19 days,  3:08, 2 users, load averages: 6.32 5.23 4.04
+96146 385.4 .venv/bin/python
+10642   6.0 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.4 claude
+  846   0.2 /usr/libexec/secd
+44098   0.2 claude
+77997   0.2 claude
+== 07:34:47
+18:34  up 19 days,  3:09, 2 users, load averages: 6.90 5.59 4.25
+96146 388.9 .venv/bin/python
+77997   1.3 claude
+71492   0.7 macmon
+44098   0.5 claude
+10642   0.4 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   0.2 /usr/libexec/opendirectoryd
+== 07:35:47
+18:35  up 19 days,  3:10, 2 users, load averages: 7.43 5.92 4.46
+96146 612.3 .venv/bin/python
+10642   0.4 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.3 claude
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+77997   0.1 claude
+88128   0.1 claude
+== 07:36:47
+18:36  up 19 days,  3:11, 2 users, load averages: 6.40 5.93 4.57
+96146 552.6 .venv/bin/python
+71492   0.4 macmon
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.2 claude
+44098   0.2 claude
+77997   0.2 claude
+== 07:37:47
+18:37  up 19 days,  3:12, 2 users, load averages: 5.53 5.74 4.59
+96146 516.3 .venv/bin/python
+71492   2.1 macmon
+77997   0.6 claude
+  405   0.6 /usr/libexec/opendirectoryd
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+== 07:38:47
+18:38  up 19 days,  3:13, 2 users, load averages: 5.95 5.87 4.72
+96146 469.4 .venv/bin/python
+88128   1.5 claude
+71492   0.6 macmon
+44098   0.3 claude
+77997   0.3 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 07:39:47
+18:39  up 19 days,  3:14, 2 users, load averages: 6.29 6.00 4.84
+96146 498.5 .venv/bin/python
+71492   2.7 macmon
+88054   0.7 bash
+77997   0.6 claude
+  405   0.5 /usr/libexec/opendirectoryd
+44098   0.4 claude
+== 07:40:47
+18:40  up 19 days,  3:15, 2 users, load averages: 4.98 5.68 4.80
+96146 550.8 .venv/bin/python
+77997   0.8 claude
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.3 claude
+71492   0.2 macmon
+88128   0.2 claude
+== 07:41:47
+18:41  up 19 days,  3:16, 2 users, load averages: 5.64 5.69 4.85
+96146 351.4 .venv/bin/python
+71492   2.5 macmon
+  645   0.7 /opt/homebrew/opt/tailscale/bin/tailscaled
+10642   0.4 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+77997   0.3 claude
+44098   0.3 claude
+== 07:42:47
+18:42  up 19 days,  3:17, 2 users, load averages: 5.40 5.65 4.90
+96146 693.1 .venv/bin/python
+44098   0.3 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+88128   0.1 claude
+== 07:43:47
+18:43  up 19 days,  3:18, 2 users, load averages: 5.41 5.63 4.94
+96146 380.3 .venv/bin/python
+71492   2.1 macmon
+77997   0.5 claude
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   0.2 /usr/libexec/opendirectoryd
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+== 07:44:47
+18:44  up 19 days,  3:19, 2 users, load averages: 5.18 5.62 4.99
+97513  99.0 .venv/bin/python
+10642   3.4 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   1.9 macmon
+  405   1.3 /usr/libexec/opendirectoryd
+  846   0.2 /usr/libexec/secd
+77997   0.2 claude
+== 07:45:47
+18:45  up 19 days,  3:20, 2 users, load averages: 2.98 4.91 4.77
+97704 100.0 .venv/bin/python
+    1   5.4 /sbin/launchd
+77997   1.7 claude
+71492   0.9 macmon
+  441   0.1 /usr/libexec/runningboardd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 07:46:47
+18:46  up 19 days,  3:21, 2 users, load averages: 2.10 4.32 4.55
+97883 155.4 .venv/bin/python
+    1  25.0 /sbin/launchd
+71492   2.6 macmon
+44098   2.1 claude
+  405   1.0 /usr/libexec/opendirectoryd
+  430   0.1 /usr/sbin/notifyd
+== 07:47:47
+18:47  up 19 days,  3:22, 2 users, load averages: 2.19 3.99 4.42
+98058 100.0 .venv/bin/python
+    1  19.8 /sbin/launchd
+71492   0.7 macmon
+88128   0.3 claude
+44098   0.1 claude
+  645   0.1 /opt/homebrew/opt/tailscale/bin/tailscaled
+== 07:48:47
+18:48  up 19 days,  3:23, 2 users, load averages: 3.54 4.09 4.42
+98171 100.0 .venv/bin/python
+    1  18.0 /sbin/launchd
+71492   1.5 macmon
+  405   0.5 /usr/libexec/opendirectoryd
+77997   0.3 claude
+44098   0.1 claude
+== 07:49:48
+18:49  up 19 days,  3:24, 2 users, load averages: 2.53 3.73 4.27
+98410 168.7 .venv/bin/python
+    1  24.6 /sbin/launchd
+71492   0.6 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+77997   0.1 claude
+  490   0.1 /usr/sbin/mDNSResponder
+== 07:50:48
+18:50  up 19 days,  3:25, 2 users, load averages: 2.08 3.43 4.12
+98509  99.7 .venv/bin/python
+    1  31.2 /sbin/launchd
+71492   0.9 macmon
+  405   0.3 /usr/libexec/opendirectoryd
+77997   0.2 claude
+44098   0.1 claude
+== 07:51:48
+18:51  up 19 days,  3:26, 2 users, load averages: 1.44 3.00 3.91
+98509 100.0 .venv/bin/python
+    1  30.7 /sbin/launchd
+71492   0.2 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.1 claude
+98486   0.0 sleep
+== 07:52:48
+18:52  up 19 days,  3:27, 2 users, load averages: 2.11 2.84 3.79
+98790 502.1 .venv/bin/python
+    1  13.6 /sbin/launchd
+10642   5.5 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   0.9 macmon
+88128   0.1 claude
+98591   0.0 sleep
+== 07:53:48
+18:53  up 19 days,  3:28, 2 users, load averages: 6.33 3.89 4.11
+98849 360.1 .venv/bin/python
+    1  33.2 /sbin/launchd
+44098   1.9 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+== 07:54:48
+18:54  up 19 days,  3:29, 2 users, load averages: 6.26 4.22 4.21
+98849 476.9 .venv/bin/python
+    1  22.9 /sbin/launchd
+71492   0.8 macmon
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.2 claude
+  405   0.2 /usr/libexec/opendirectoryd
+== 07:55:48
+18:55  up 19 days,  3:30, 2 users, load averages: 7.33 5.04 4.52
+98849 544.8 .venv/bin/python
+    1  22.8 /sbin/launchd
+71492   3.2 macmon
+  405   0.7 /usr/libexec/opendirectoryd
+44098   0.4 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 07:56:48
+18:56  up 19 days,  3:31, 2 users, load averages: 7.02 5.38 4.69
+98849 352.4 .venv/bin/python
+    1  16.8 /sbin/launchd
+10642   2.6 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   0.7 macmon
+44098   0.2 claude
+88128   0.1 claude
+== 07:57:48
+18:57  up 19 days,  3:32, 2 users, load averages: 5.57 5.24 4.68
+98849 407.1 .venv/bin/python
+    1  14.1 /sbin/launchd
+71492   1.8 macmon
+  405   0.6 /usr/libexec/opendirectoryd
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+77997   0.1 claude
+== 07:58:48
+18:58  up 19 days,  3:33, 2 users, load averages: 6.48 5.55 4.83
+98849 518.6 .venv/bin/python
+    1  17.1 /sbin/launchd
+71492   1.4 macmon
+88128   0.2 claude
+44098   0.2 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 07:59:48
+18:59  up 19 days,  3:34, 2 users, load averages: 4.54 5.23 4.76
+98849 538.2 .venv/bin/python
+    1  14.2 /sbin/launchd
+71492   1.2 macmon
+77997   0.2 claude
+88128   0.1 claude
+  405   0.1 /usr/libexec/opendirectoryd
+== 08:00:48
+19:00  up 19 days,  3:35, 2 users, load averages: 4.55 5.17 4.77
+98849 599.3 .venv/bin/python
+    1   8.4 /sbin/launchd
+71492   0.8 macmon
+88054   0.4 bash
+77997   0.3 claude
+44098   0.3 claude
+== 08:01:48
+19:01  up 19 days,  3:36, 2 users, load averages: 5.63 5.38 4.88
+98849 330.6 .venv/bin/python
+    1   7.7 /sbin/launchd
+71492   0.7 macmon
+44098   0.3 claude
+88128   0.1 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 08:02:48
+19:02  up 19 days,  3:37, 2 users, load averages: 8.31 6.15 5.20
+98849 524.9 .venv/bin/python
+    1   6.7 /sbin/launchd
+71492   3.2 macmon
+  405   0.9 /usr/libexec/opendirectoryd
+  430   0.1 /usr/sbin/notifyd
+44098   0.1 claude
+== 08:03:48
+19:03  up 19 days,  3:38, 2 users, load averages: 6.50 6.00 5.20
+98849 508.5 .venv/bin/python
+    1   7.3 /sbin/launchd
+71492   0.5 macmon
+44098   0.3 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128   0.2 claude
+== 08:04:48
+19:04  up 19 days,  3:39, 2 users, load averages: 5.78 5.86 5.20
+98849 605.8 .venv/bin/python
+    1   6.9 /sbin/launchd
+71492   2.9 macmon
+88128   1.8 claude
+  405   0.8 /usr/libexec/opendirectoryd
+77997   0.3 claude
+== 08:05:48
+19:05  up 19 days,  3:40, 2 users, load averages: 7.84 6.38 5.43
+98849 518.9 .venv/bin/python
+    1   6.1 /sbin/launchd
+77997   0.2 claude
+  441   0.2 /usr/libexec/runningboardd
+88128   0.1 claude
+44098   0.1 claude
+== 08:06:48
+19:06  up 19 days,  3:41, 2 users, load averages: 6.78 6.40 5.51
+98849 576.6 .venv/bin/python
+    1   4.5 /sbin/launchd
+71492   2.0 macmon
+10349   0.7 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+  405   0.4 /usr/libexec/opendirectoryd
+88128   0.2 claude
+== 08:07:48
+19:07  up 19 days,  3:42, 2 users, load averages: 5.50 6.05 5.43
+98849 615.5 .venv/bin/python
+    1   4.8 /sbin/launchd
+44098   0.3 claude
+88128   0.2 claude
+71492   0.2 macmon
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 08:08:48
+19:08  up 19 days,  3:43, 2 users, load averages: 4.62 5.72 5.35
+98849 538.4 .venv/bin/python
+    1   2.7 /sbin/launchd
+71492   1.0 macmon
+88128   0.1 claude
+44098   0.1 claude
+  405   0.1 /usr/libexec/opendirectoryd
+== 08:09:48
+19:09  up 19 days,  3:44, 2 users, load averages: 6.66 6.05 5.49
+98849 676.2 .venv/bin/python
+    1   2.6 /sbin/launchd
+71492   1.3 macmon
+88128   0.9 claude
+  405   0.6 /usr/libexec/opendirectoryd
+30156   0.3 /System/Library/PrivateFrameworks/IMCore.framework/imagent.app/Contents/MacOS/imagent
+== 08:10:48
+19:10  up 19 days,  3:45, 2 users, load averages: 3.82 5.34 5.26
+  362 204.1 .venv/bin/python
+    1   2.2 /sbin/launchd
+71492   1.1 macmon
+ 4660   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+44098   0.1 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 08:11:48
+19:11  up 19 days,  3:46, 2 users, load averages: 3.19 4.85 5.08
+  612  99.1 .venv/bin/python
+71492   2.5 macmon
+    1   1.6 /sbin/launchd
+  405   1.0 /usr/libexec/opendirectoryd
+77997   0.6 claude
+  420   0.1 /usr/sbin/distnoted
+== 08:12:48
+19:12  up 19 days,  3:47, 2 users, load averages: 2.41 4.34 4.87
+  804  99.4 .venv/bin/python
+    1   1.5 /sbin/launchd
+77997   1.0 claude
+71492   0.6 macmon
+  680   0.1 /usr/sbin/distnoted
+  429   0.1 /usr/sbin/bluetoothd
+== 08:13:48
+19:13  up 19 days,  3:48, 2 users, load averages: 1.82 3.83 4.64
+  986 100.0 .venv/bin/python
+71492   2.6 macmon
+  405   1.1 /usr/libexec/opendirectoryd
+    1   1.1 /sbin/launchd
+  430   0.1 /usr/sbin/notifyd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 08:14:48
+19:14  up 19 days,  3:49, 2 users, load averages: 2.66 3.68 4.53
+ 1101 100.0 .venv/bin/python
+88128   1.3 claude
+    1   1.2 /sbin/launchd
+71492   0.6 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  754   0.0 sleep
+== 08:15:48
+19:15  up 19 days,  3:50, 2 users, load averages: 2.33 3.42 4.37
+ 1363 134.1 .venv/bin/python
+  506   5.6 /usr/libexec/airportd
+  490   4.0 /usr/sbin/mDNSResponder
+71492   3.0 macmon
+  377   1.7 /usr/libexec/configd
+  624   1.0 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+== 08:16:49
+19:16  up 19 days,  3:51, 2 users, load averages: 1.85 3.11 4.19
+ 1446 100.0 .venv/bin/python
+    1   0.7 /sbin/launchd
+71492   0.1 macmon
+  490   0.1 /usr/sbin/mDNSResponder
+88128   0.1 claude
+  754   0.0 sleep
+== 08:17:49
+19:17  up 19 days,  3:52, 2 users, load averages: 1.44 2.77 3.99
+ 1446  99.9 .venv/bin/python
+10346  24.5 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+71492   2.1 macmon
+    1   0.7 /sbin/launchd
+  405   0.4 /usr/libexec/opendirectoryd
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 08:18:49
+19:18  up 19 days,  3:53, 2 users, load averages: 2.89 2.88 3.95
+ 1731 475.5 .venv/bin/python
+88128   1.8 claude
+    1   0.3 /sbin/launchd
+ 1601   0.0 sleep
+ 1569   0.0 sleep
+ 1214   0.0 sleep
+== 08:19:49
+19:19  up 19 days,  3:54, 2 users, load averages: 4.75 3.30 4.02
+ 1776 466.1 .venv/bin/python
+71492   1.3 macmon
+    1   0.6 /sbin/launchd
+  645   0.4 /opt/homebrew/opt/tailscale/bin/tailscaled
+  405   0.2 /usr/libexec/opendirectoryd
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+== 08:20:49
+19:20  up 19 days,  3:55, 2 users, load averages: 5.72 3.82 4.16
+ 1776 506.1 .venv/bin/python
+10642   5.5 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+    1   0.6 /sbin/launchd
+71492   0.1 macmon
+88128   0.1 claude
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+== 08:21:49
+19:21  up 19 days,  3:56, 2 users, load averages: 4.32 3.72 4.10
+ 1776 472.7 .venv/bin/python
+71492   1.4 macmon
+    1   0.6 /sbin/launchd
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  405   0.2 /usr/libexec/opendirectoryd
+44098   0.2 claude
+== 08:22:49
+19:22  up 19 days,  3:57, 2 users, load averages: 4.07 3.68 4.05
+ 1776 537.5 .venv/bin/python
+    1   0.4 /sbin/launchd
+77997   0.3 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 2039   0.0 sleep
+== 08:23:49
+19:23  up 19 days,  3:58, 2 users, load averages: 5.28 4.09 4.18
+ 1776 641.6 .venv/bin/python
+71492   0.5 macmon
+    1   0.3 /sbin/launchd
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+44098   0.1 claude
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+== 08:24:49
+19:24  up 19 days,  3:59, 2 users, load averages: 4.77 4.20 4.21
+ 1776 447.4 .venv/bin/python
+71492   1.3 macmon
+  405   0.5 /usr/libexec/opendirectoryd
+    1   0.3 /sbin/launchd
+  379   0.2 /System/Library/CoreServices/powerd.bundle/powerd
+88128   0.2 claude
+== 08:25:49
+19:25  up 19 days, 4 hrs, 2 users, load averages: 5.69 4.56 4.34
+ 1776 623.7 .venv/bin/python
+88128   0.3 claude
+10642   0.3 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+71492   0.3 macmon
+77997   0.2 claude
+    1   0.2 /sbin/launchd
+== 08:26:49
+19:26  up 19 days,  4:01, 2 users, load averages: 5.77 4.79 4.44
+ 1776 500.6 .venv/bin/python
+71492   1.1 macmon
+  379   0.3 /System/Library/CoreServices/powerd.bundle/powerd
+77997   0.3 claude
+    1   0.3 /sbin/launchd
+  405   0.2 /usr/libexec/opendirectoryd
+== 08:27:49
+19:27  up 19 days,  4:02, 2 users, load averages: 4.98 4.82 4.48
+ 1776 486.8 .venv/bin/python
+77997   2.0 claude
+71492   0.4 macmon
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  510   0.1 /usr/libexec/symptomsd
+  490   0.1 /usr/sbin/mDNSResponder
+== 08:28:49
+19:28  up 19 days,  4:03, 2 users, load averages: 5.13 4.99 4.57
+ 1776 496.8 .venv/bin/python
+71492   0.5 macmon
+88128   0.4 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+77997   0.2 claude
+  379   0.1 /System/Library/CoreServices/powerd.bundle/powerd
+== 08:29:49
+19:29  up 19 days,  4:04, 2 users, load averages: 6.16 5.33 4.73
+ 1776 290.8 .venv/bin/python
+71492   2.3 macmon
+  405   0.7 /usr/libexec/opendirectoryd
+    1   0.2 /sbin/launchd
+88128   0.1 claude
+44098   0.1 claude
+== 08:30:49
+19:30  up 19 days,  4:05, 2 users, load averages: 6.58 5.54 4.84
+ 1776 598.3 .venv/bin/python
+71492   1.4 macmon
+10642   0.8 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+77997   0.3 claude
+88128   0.2 claude
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+== 08:31:49
+19:31  up 19 days,  4:06, 2 users, load averages: 6.48 5.67 4.94
+ 1776 409.4 .venv/bin/python
+71492   1.4 macmon
+  405   0.1 /usr/libexec/opendirectoryd
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+    1   0.1 /sbin/launchd
+44098   0.1 claude
+== 08:32:49
+19:32  up 19 days,  4:07, 2 users, load averages: 6.14 5.70 4.99
+ 1776 505.4 .venv/bin/python
+71492   0.6 macmon
+88054   0.3 bash
+88128   0.2 claude
+77997   0.1 claude
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+== 08:33:49
+19:33  up 19 days,  4:08, 2 users, load averages: 7.28 6.14 5.21
+ 1776 576.0 .venv/bin/python
+71492   0.7 macmon
+77997   0.3 claude
+  405   0.2 /usr/libexec/opendirectoryd
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+== 08:34:49
+19:34  up 19 days,  4:09, 2 users, load averages: 7.60 6.48 5.40
+ 1776 610.8 .venv/bin/python
+88128   1.5 claude
+71492   0.8 macmon
+  436   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+77997   0.1 claude
+88522   0.1 /System/Library/PrivateFrameworks/SkyLight.framework//Versions/A/Resources/AquaAppearanceHelper.app/Contents/MacOS/AquaAppearanceHelper
+== 08:35:49
+19:35  up 19 days,  4:10, 2 users, load averages: 6.11 6.17 5.35
+ 1776 478.7 .venv/bin/python
+71492   0.5 macmon
+77997   0.2 claude
+10642   0.2 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+ 4662   0.1 /Users/mmcky/.vscode-server/cli/servers/Stable-2c33b50b16c472efe58357d1d2a8a5414bc23fbf/server/node
+88128   0.1 claude
+== 08:36:49
+19:36  up 19 days,  4:11, 2 users, load averages: 3.82 5.53 5.17
+ 3341 105.9 .venv/bin/python
+71492   0.5 macmon
+10642   0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+30108   0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+77997   0.1 claude
+ 3093   0.0 sleep
+== 08:37:49
+19:37  up 19 days,  4:12, 2 users, load averages: 2.66 4.89 4.95
+ 3495 105.3 .venv/bin/python
+88128   2.8 claude
+71492   0.7 macmon
+  846   0.4 /usr/libexec/secd
+30100   0.3 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+  405   0.2 /usr/libexec/opendirectoryd
