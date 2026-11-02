@@ -1,0 +1,19 @@
+17:02:48 kesten_processes_jax cpu as-written rep 1: exit 0, 23.9 s, cells ok True, float32
+17:03:30 ifp_egm_jax cpu as-written rep 1: exit 0, 42.4 s, cells ok True, float64
+17:04:16 hopenhayn cpu as-written rep 1: exit 0, 45.2 s, cells ok True, float64
+17:04:24 jax_intro_jax cpu as-written rep 1: exit 0, 8.2 s, cells ok True, float64
+17:04:28 markov_asset_jax cpu as-written rep 1: exit 0, 3.6 s, cells ok True, float64
+17:04:31 inventory_dynamics_jax cpu as-written rep 1: exit 0, 2.2 s, cells ok True, float32
+17:04:54 kesten_processes_jax cpu as-written rep 2: exit 0, 22.8 s, cells ok True, float32
+17:05:36 ifp_egm_jax cpu as-written rep 2: exit 0, 42.4 s, cells ok True, float64
+17:06:22 hopenhayn cpu as-written rep 2: exit 0, 45.2 s, cells ok True, float64
+17:06:30 jax_intro_jax cpu as-written rep 2: exit 0, 8.3 s, cells ok True, float64
+17:06:34 markov_asset_jax cpu as-written rep 2: exit 0, 3.6 s, cells ok True, float64
+17:06:37 inventory_dynamics_jax cpu as-written rep 2: exit 0, 2.2 s, cells ok True, float32
+17:07:00 kesten_processes_jax cpu as-written rep 3: exit 0, 22.8 s, cells ok True, float32
+17:07:43 ifp_egm_jax cpu as-written rep 3: exit 0, 42.8 s, cells ok True, float64
+17:08:29 hopenhayn cpu as-written rep 3: exit 0, 45.4 s, cells ok True, float64
+17:08:37 jax_intro_jax cpu as-written rep 3: exit 0, 8.3 s, cells ok True, float64
+17:08:41 markov_asset_jax cpu as-written rep 3: exit 0, 3.6 s, cells ok True, float64
+17:08:43 inventory_dynamics_jax cpu as-written rep 3: exit 0, 2.2 s, cells ok True, float32
+ALLDONE
