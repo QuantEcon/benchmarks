@@ -161,7 +161,8 @@ def collect():
         "python": platform.python_version(),
         **cpu(),
         "memory_bytes": memory_bytes(),
-        "gpu": "; ".join(f"{c['name']}, {c['memory_total_mib']} MiB" for c in cards) or None,
+        "gpu": "; ".join(f"{c['name']}, {c['memory_total_mib']} MiB" if c["memory_total_mib"]
+                         else str(c["name"]) for c in cards) or None,
         "gpus": cards,
         # The JAX platform that runs the cards: cuda for NVIDIA's, rocm for AMD's
         "gpu_platform": gpu_platform if cards else None,

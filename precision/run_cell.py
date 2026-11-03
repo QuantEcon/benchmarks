@@ -40,10 +40,12 @@ def amd_telemetry(ids):
 
 def gpu_telemetry():
     """Clocks, temperature and power of the cards in use, read just after timing."""
+    if os.environ.get("JAX_PLATFORMS") == "rocm":
+        ids = os.environ.get("HIP_VISIBLE_DEVICES")
+        return amd_telemetry(ids) if ids else None
     ids = os.environ.get("CUDA_VISIBLE_DEVICES")
     if not ids:
-        amd = os.environ.get("HIP_VISIBLE_DEVICES")
-        return amd_telemetry(amd) if amd else None
+        return None
     for fields in (TELEMETRY + ",clocks_event_reasons.active", TELEMETRY):
         try:
             out = subprocess.run(

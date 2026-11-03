@@ -32,7 +32,7 @@ LECTURES="overborrowing wealth_dynamics_jax schelling_shocks opt_invest hopenhay
 REPS=3; AIYAGARI=200,1000,2000,5000,10000; IFP=200,1000,5000,20000,50000
 [ "$QUICK" = --quick ] && { LECTURES=schelling_shocks; REPS=1; AIYAGARI=200,1000; IFP=200,1000; }
 mkdir -p "results/$HOST" "$OUT"
-if command -v nvidia-smi > /dev/null; then PLATFORM=cuda; else PLATFORM=rocm; fi
+if [ -n "$(nvidia-smi --query-gpu=index --format=csv,noheader 2> /dev/null)" ]; then PLATFORM=cuda; else PLATFORM=rocm; fi
 
 echo "== The machine"
 if [ $PLATFORM = cuda ]; then
@@ -77,7 +77,8 @@ else
   CONSTRAINTS=precision/constraints-rocm.txt
   if [ -n "${ROCM_INDEX:-}" ]; then
     # ROCm's packages carry device code for the cards named, by gfx target; GFX overrides amd-smi's
-    GFX=${GFX:-$(python -c 'import sys; sys.path.insert(0, "precision"); import env_info; print(env_info.amd_gpus()[0]["gfx_target"])')}
+    GFX=${GFX:-$(python -c 'import sys; sys.path.insert(0, "precision"); import env_info; print(next((c["gfx_target"] for c in env_info.amd_gpus() if c["gfx_target"]), ""))')}
+    [ -n "$GFX" ] || { echo "amd-smi gave no gfx target: set GFX, e.g. GFX=gfx942"; exit 1; }
     uv pip install -q --index-url "$ROCM_INDEX" "rocm[libraries,device-$GFX]"
   fi
   uv pip install -q jax "jax-rocm$ROCM_MAJOR-plugin" "jax-rocm$ROCM_MAJOR-pjrt" -c $CONSTRAINTS
@@ -104,7 +105,12 @@ LDIR=$(mktemp -d)
 for lecture in $LECTURES aiyagari_jax ifp_egm_jax; do
   curl -fsSL -o "$LDIR/$lecture.md" "$LECTURE_JAX/$lecture.md"
 done
-if [ $PLATFORM = cuda ]; then export CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0; else export HIP_VISIBLE_DEVICES=0; fi
+# HIP also reads CUDA_VISIBLE_DEVICES, so each platform's lectures see only its own selection
+if [ $PLATFORM = cuda ]; then
+  unset HIP_VISIBLE_DEVICES; export CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=0
+else
+  unset CUDA_VISIBLE_DEVICES CUDA_DEVICE_ORDER; export HIP_VISIBLE_DEVICES=0
+fi
 export MPLBACKEND=Agg
 mkdir -p "$OUT/whole"
 for rep in $(seq 1 $REPS); do

@@ -46,10 +46,12 @@ def cell_env(kind, count, dtype, gpus, platform="cuda"):
     env = dict(os.environ)
     env["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
     env["JAX_ENABLE_X64"] = "1" if dtype == "float64" else "0"
+    # A cell sees only the cards it is given. HIP also reads CUDA_VISIBLE_DEVICES,
+    # so none of these may be inherited from the shell
+    for name in ("CUDA_VISIBLE_DEVICES", "CUDA_DEVICE_ORDER", "HIP_VISIBLE_DEVICES"):
+        env.pop(name, None)
     if kind == "cpu":
         env["JAX_PLATFORMS"] = "cpu"
-        env.pop("CUDA_VISIBLE_DEVICES", None)
-        env.pop("HIP_VISIBLE_DEVICES", None)
         if count > 1:
             flag = f"--xla_force_host_platform_device_count={count}"
             env["XLA_FLAGS"] = f"{env.get('XLA_FLAGS', '')} {flag}".strip()
