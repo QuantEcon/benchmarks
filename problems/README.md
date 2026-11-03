@@ -92,14 +92,14 @@ The tables give each device's fastest stack at each size in float64, in seconds.
 | 100 | **0.0267** `numba` | 0.387 `jax-cpu` | 0.32 | **0.034** `numpy` | 0.431 `numpy` | 1.49 |
 | 200 | **0.107** `numba` | 1.11 `numpy` | 0.494 | **0.11** `numpy` | 1.12 `numpy` | 1.7 |
 
-float32, on the three problems that allow it, changes each device's fastest warm time at the largest size like this, in seconds. The fastest stack can change with the precision: on the M6, P7's state sweep goes from `numba` to `numpy`, and on the Threadripper P3 goes from `numpy` to `numba-parallel`.
+float32, on the three problems that allow it, changes each device's fastest warm time at the largest size like this, in seconds, with the stack that set it; the TITAN RTX's is `jax-gpu`. The fastest stack can change with the precision: on the M6, P7's state sweep goes from `numba` to `numpy`, and on the Threadripper P3 goes from `numpy` to `numba-parallel`.
 
 | Problem, at its largest size | M6 | Threadripper | TITAN RTX |
 |---|---|---|---|
-| P3 `egm`, 50,000 | 33.4 → 20.4 (1.6×) | 282 → 200 (1.4×) | 7.4 → 5.11 (1.4×) |
-| P4 `wealth`, 10,000,000 | 10.3 → 8.31 (1.2×) | 5.28 → 4.83 (1.1×) | 2.34 → 0.0542 (43×) |
-| P7 `kalman`, batch 10,000 | 2.28 → 2.37 (0.96×) | 47.8 → 41.3 (1.2×) | 3.15 → 0.518 (6.1×) |
-| P7 `kalman`, state 200 | 0.107 → 0.0577 (1.8×) | 1.11 → 0.712 (1.6×) | 0.494 → 0.115 (4.3×) |
+| P3 `egm`, 50,000 | 33.4 → 20.4 (1.6×), `numba-parallel` | 282 `numpy` → 200 `numba-parallel` (1.4×) | 7.4 → 5.11 (1.4×) |
+| P4 `wealth`, 10,000,000 | 10.3 → 8.31 (1.2×), `numba-parallel` | 5.28 → 4.83 (1.1×), `numba-parallel` | 2.34 → 0.0542 (43×) |
+| P7 `kalman`, batch 10,000 | 2.28 → 2.37 (0.96×), `numba-parallel` | 47.8 → 41.3 (1.2×), `numpy` | 3.15 → 0.518 (6.1×) |
+| P7 `kalman`, state 200 | 0.107 `numba` → 0.0577 `numpy` (1.8×) | 1.11 → 0.712 (1.6×), `numpy` | 0.494 → 0.115 (4.3×) |
 
 What the tables show:
 
