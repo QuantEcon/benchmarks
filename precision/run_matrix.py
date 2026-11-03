@@ -9,7 +9,9 @@ Each appends one JSON line to results/<host>/<date>.jsonl.
 
 Devices are `cpu`, `gpu` (one card) and `gpu:N` (N cards, sharded; only
 for the workloads that shard). `cpu:N` forces N host devices, which tests
-the sharded code path on a laptop but measures nothing useful.
+the sharded code path on a laptop but measures nothing useful. The cards
+are NVIDIA's under CUDA if nvidia-smi lists any, and otherwise AMD's under
+ROCm.
 """
 import argparse
 import json
@@ -28,8 +30,8 @@ from spec import GIB, ITEMSIZE, WORKLOADS
 HERE = Path(__file__).resolve().parent
 MEMORY_FRACTION = 0.8
 CELL_FLAGS = ("JAX_PLATFORMS", "JAX_ENABLE_X64", "CUDA_VISIBLE_DEVICES",
-              "CUDA_DEVICE_ORDER", "XLA_FLAGS", "XLA_PYTHON_CLIENT_PREALLOCATE",
-              "XLA_PYTHON_CLIENT_MEM_FRACTION")
+              "CUDA_DEVICE_ORDER", "HIP_VISIBLE_DEVICES", "XLA_FLAGS",
+              "XLA_PYTHON_CLIENT_PREALLOCATE", "XLA_PYTHON_CLIENT_MEM_FRACTION")
 
 
 def parse_device(device):
@@ -39,7 +41,7 @@ def parse_device(device):
     return kind, int(count or 1)
 
 
-def cell_env(kind, count, dtype, gpus):
+def cell_env(kind, count, dtype, gpus, platform="cuda"):
     """The environment a cell's process starts with: precision and device."""
     env = dict(os.environ)
     env["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
@@ -47,13 +49,18 @@ def cell_env(kind, count, dtype, gpus):
     if kind == "cpu":
         env["JAX_PLATFORMS"] = "cpu"
         env.pop("CUDA_VISIBLE_DEVICES", None)
+        env.pop("HIP_VISIBLE_DEVICES", None)
         if count > 1:
             flag = f"--xla_force_host_platform_device_count={count}"
             env["XLA_FLAGS"] = f"{env.get('XLA_FLAGS', '')} {flag}".strip()
+    elif platform == "rocm":
+        env["JAX_PLATFORMS"] = "rocm"
+        env["HIP_VISIBLE_DEVICES"] = ",".join(gpus[:count])
     else:
         env["JAX_PLATFORMS"] = "cuda"
         env["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
         env["CUDA_VISIBLE_DEVICES"] = ",".join(gpus[:count])
+    if kind != "cpu":
         # Even with preallocation off, JAX's allocator stops at 75% of the card by
         # default, below --memory-fraction; this leaves that check as the only limit
         env.setdefault("XLA_PYTHON_CLIENT_MEM_FRACTION", "0.95")
@@ -68,7 +75,10 @@ def capacity(kind, count, gpus, environment):
     used = [cards[i] for i in gpus[:count] if i in cards]
     if len(used) < count:
         raise SystemExit(f"asked for {count} GPU(s) from --gpus {','.join(gpus)}, "
-                         f"but nvidia-smi lists {sorted(cards) or 'none'}")
+                         f"but nvidia-smi and amd-smi list {sorted(cards) or 'none'}")
+    if any(c["memory_total_mib"] is None for c in used):
+        raise SystemExit(f"no memory size for GPU(s) {','.join(gpus[:count])}; "
+                         "see `amd-smi static`")
     return min(c["memory_total_mib"] for c in used) * 2**20
 
 
@@ -110,7 +120,8 @@ def main():
     parser.add_argument("--quick", action="store_true", help="the small sizes only")
     parser.add_argument("--reps", type=int, default=5)
     parser.add_argument("--gpus", default="0",
-                        help="GPU indices in PCI bus order; gpu uses the first, gpu:N the first N")
+                        help="GPU indices, in PCI bus order on NVIDIA and amd-smi's order on AMD; "
+                             "gpu uses the first, gpu:N the first N")
     parser.add_argument("--prefix", default="",
                         help="command to wrap each cell in, e.g. 'numactl --interleave=all'")
     parser.add_argument("--label", default="", help="tag for this run, e.g. interleave")
@@ -159,7 +170,8 @@ def main():
                     row = dict(base, timestamp=datetime.now(timezone.utc).isoformat(),
                                workload=name, bound=spec["bound"], size=size, dtype=dtype,
                                device=device, unit=spec["unit"], work=spec["work"](size, s))
-                    env = cell_env(kind, count, dtype, gpus)
+                    env = cell_env(kind, count, dtype, gpus,
+                                   environment["gpu_platform"] or "cuda")
                     row["cell_flags"] = {k: env[k] for k in CELL_FLAGS if k in env}
                     limit = args.memory_fraction * available[(kind, count)]
                     if need > limit:

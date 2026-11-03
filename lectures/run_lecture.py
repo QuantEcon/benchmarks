@@ -76,7 +76,7 @@ def main():
     shell = InteractiveShell.instance()
     row = {"lecture": os.path.basename(args.lecture), "dtype": args.dtype,
            "flags": {k: v for k, v in sorted(os.environ.items())
-                     if k.startswith(("JAX_", "XLA_", "CUDA_"))},
+                     if k.startswith(("JAX_", "XLA_", "CUDA_", "HIP_"))},
            "skipped": installs, "cells": []}
     row["startup_s"] = time.perf_counter() - T0
     for i, (source, tags) in enumerate(cells):

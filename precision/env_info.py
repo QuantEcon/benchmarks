@@ -4,6 +4,7 @@ Describe the machine a benchmark ran on, without importing JAX.
 A superset of the `system` block in hardware/benchmark_hardware.py, so the
 two outputs can be read together.
 """
+import json
 import os
 import platform
 import re
@@ -12,18 +13,28 @@ import sys
 from importlib import metadata
 from pathlib import Path
 
+# `rocm` is ROCm's own Python package, for a machine that takes ROCm from pip, not /opt/rocm
 PACKAGES = ["jax", "jaxlib", "jax-cuda13-plugin", "jax-cuda13-pjrt",
-            "jax-cuda12-plugin", "jax-cuda12-pjrt", "numpy", "scipy", "numba", "llvmlite"]
-FLAG_PREFIXES = ("JAX_", "XLA_", "CUDA_", "OMP_", "MKL_", "OPENBLAS_", "NUMBA_")
+            "jax-cuda12-plugin", "jax-cuda12-pjrt", "jax-rocm7-plugin", "jax-rocm7-pjrt",
+            "jax-rocm10-plugin", "jax-rocm10-pjrt", "rocm", "numpy", "scipy", "numba", "llvmlite"]
+FLAG_PREFIXES = ("JAX_", "XLA_", "CUDA_", "HIP_", "ROCR_", "HSA_", "OMP_", "MKL_", "OPENBLAS_",
+                 "NUMBA_")
 REPO = Path(__file__).resolve().parent.parent
 
 
-def _run(cmd):
+def _run(cmd, timeout=10):
     try:
-        out = subprocess.run(cmd, capture_output=True, text=True, timeout=10)
+        out = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
     except (OSError, subprocess.SubprocessError):
         return None
     return out.stdout.strip() if out.returncode == 0 else None
+
+
+def _read(path):
+    try:
+        return Path(path).read_text().strip()
+    except OSError:
+        return None
 
 
 def memory_bytes():
@@ -67,7 +78,7 @@ def cpu():
     return info
 
 
-def gpus():
+def nvidia_gpus():
     out = _run(["nvidia-smi", "--query-gpu=index,name,pci.bus_id,memory.total,driver_version",
                 "--format=csv,noheader,nounits"])
     if not out:
@@ -80,8 +91,52 @@ def gpus():
     return cards
 
 
+def _number(value):
+    """The number in an amd-smi value: 196592, "196592 MB" or {"value": 196592, "unit": "MB"}."""
+    if isinstance(value, dict):
+        value = value.get("value")
+    match = re.match(r"\s*(\d+)", str(value))
+    return int(match.group(1)) if match else None
+
+
+def amd_gpus():
+    """AMD's cards from amd-smi, in the form nvidia_gpus() gives, with each card's gfx target."""
+    try:
+        data = json.loads(_run(["amd-smi", "static", "--json"], timeout=60) or "[]")
+    except ValueError:
+        return []
+    # amd-smi lists the cards, or in later versions puts the list under gpu_data
+    if isinstance(data, dict):
+        data = data.get("gpu_data", [data])
+    cards = []
+    for i, card in enumerate(data if isinstance(data, list) else []):
+        if not isinstance(card, dict):
+            continue
+        asic, bus = card.get("asic") or {}, card.get("bus") or {}
+        # amd-smi's MB are MiB
+        memory = _number((card.get("vram") or {}).get("size"))
+        if memory is None and bus.get("bdf"):
+            # The kernel driver's own count, in bytes
+            total = _read(f"/sys/bus/pci/devices/{bus['bdf']}/mem_info_vram_total")
+            memory = int(total) // 2**20 if total and total.isdigit() else None
+        cards.append({"index": card.get("gpu", i), "name": asic.get("market_name"),
+                      "pci_bus_id": bus.get("bdf"), "memory_total_mib": memory,
+                      "driver_version": (card.get("driver") or {}).get("version"),
+                      "gfx_target": asic.get("target_graphics_version")})
+    return cards
+
+
 def cuda_version():
     match = re.search(r"CUDA Version:\s*([\d.]+)", _run(["nvidia-smi"]) or "")
+    return match.group(1) if match else None
+
+
+def rocm_version():
+    """The ROCm in /opt/rocm, or else the one amd-smi reports. ROCm from pip is in `packages`."""
+    version = _read("/opt/rocm/.info/version")
+    if version:
+        return version
+    match = re.search(r"ROCm version:\s*([\w.-]+)", _run(["amd-smi", "version"], timeout=60) or "")
     return match.group(1) if match else None
 
 
@@ -96,7 +151,9 @@ def packages():
 
 
 def collect():
-    cards = gpus()
+    cards, gpu_platform = nvidia_gpus(), "cuda"
+    if not cards:
+        cards, gpu_platform = amd_gpus(), "rocm"
     return {
         "platform": platform.platform(),
         "processor": platform.processor(),
@@ -106,7 +163,10 @@ def collect():
         "memory_bytes": memory_bytes(),
         "gpu": "; ".join(f"{c['name']}, {c['memory_total_mib']} MiB" for c in cards) or None,
         "gpus": cards,
-        "cuda_version": cuda_version() if cards else None,
+        # The JAX platform that runs the cards: cuda for NVIDIA's, rocm for AMD's
+        "gpu_platform": gpu_platform if cards else None,
+        "cuda_version": cuda_version() if cards and gpu_platform == "cuda" else None,
+        "rocm_version": rocm_version() if cards and gpu_platform == "rocm" else None,
         "packages": packages(),
         "flags": {k: v for k, v in sorted(os.environ.items()) if k.startswith(FLAG_PREFIXES)},
         "git_commit": _run(["git", "-C", str(REPO), "rev-parse", "--short", "HEAD"]),
@@ -118,5 +178,4 @@ def collect():
 
 
 if __name__ == "__main__":
-    import json
     print(json.dumps(collect(), indent=2))
