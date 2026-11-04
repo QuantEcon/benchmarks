@@ -19,7 +19,7 @@ Still to come: the `sargent_surico` NUTS cell from [lecture-python.myst#1022](ht
 
 ## Running it
 
-Install JAX at the release pinned in [`constraints.txt`](constraints.txt), the same on every platform so that results compare: `pip install "jax[cuda13]" -c precision/constraints.txt` on NVIDIA, `pip install jax -c precision/constraints.txt` elsewhere. Then from the repository root:
+Install JAX at the release pinned in [`constraints.txt`](constraints.txt), the same on every platform so that results compare: `pip install "jax[cuda13]" -c precision/constraints.txt` on NVIDIA, `pip install jax -c precision/constraints.txt` elsewhere. AMD's cards are the exception: there is no ROCm build of that release, so ROCm runs pin 0.12.0 in [`constraints-rocm.txt`](constraints-rocm.txt), which differs from 0.12.0.1 only in a Windows CPU build. Install `pip install jax jax-rocm7-plugin jax-rocm7-pjrt -c precision/constraints-rocm.txt` on ROCm 7, or the `rocm10` packages on ROCm 10. Then from the repository root:
 
 ```bash
 python precision/run_matrix.py --quick                    # a few minutes; checks the setup
@@ -27,7 +27,7 @@ python precision/run_matrix.py --devices cpu,gpu          # the full matrix, GPU
 python precision/summarise.py results/                    # markdown tables
 ```
 
-`--devices` takes `cpu`, `gpu` (one card) and `gpu:N` (N cards, sharded by rows; the Bellman workloads only). `--gpus` picks cards by index in PCI bus order. `--workloads`, `--dtypes` and `--sizes` narrow the matrix, `--host` names the machine in the output, and `--dry-run` shows what would run and what would be skipped for memory. `--memory-fraction` (default 0.8) sets how much of a device's memory a cell may need; lower it on a machine that is in use, since a cell that swaps measures the disk. `cpu:N` forces N host devices, which tests the sharded path on a laptop but measures nothing useful.
+`--devices` takes `cpu`, `gpu` (one card) and `gpu:N` (N cards, sharded by rows; the Bellman workloads only). `--gpus` picks cards by index, in PCI bus order on NVIDIA and in `amd-smi`'s order on AMD. The cards are NVIDIA's, run under CUDA, if `nvidia-smi` lists any, and otherwise AMD's, run under ROCm. `--workloads`, `--dtypes` and `--sizes` narrow the matrix, `--host` names the machine in the output, and `--dry-run` shows what would run and what would be skipped for memory. `--memory-fraction` (default 0.8) sets how much of a device's memory a cell may need; lower it on a machine that is in use, since a cell that swaps measures the disk. `cpu:N` forces N host devices, which tests the sharded path on a laptop but measures nothing useful.
 
 On `qe-wharton1-gpu`, inside `tmux`, with the GitHub runner paused:
 
@@ -40,6 +40,8 @@ python precision/run_matrix.py --host qe-wharton1-gpu --devices cpu \
 Card 0 in PCI order is `0b:00.0`; card 1, `43:00.0`, drives the desktop, so `gpu` uses card 0. The second run repeats the CPU leg with memory interleaved across the 2990WX's NUMA nodes, two of which have no local memory.
 
 To compare JAX's two CUDA builds, install `jax[cuda12]` the same way in a second environment and run with `--label cuda12`. Each row's `env` block records which plugin ran.
+
+On a rented machine, NVIDIA or AMD, [`run_by_hand.sh`](run_by_hand.sh) does what the workflow's precision job does, and adds five lectures. Its header says how to run it.
 
 The workflow in `.github/workflows/benchmark.yml` runs the matrix on a RunsOn GPU instance when dispatched with `run_precision`. Its inputs:
 
@@ -55,16 +57,16 @@ The job stops after 60 minutes, which caps a `p4d` run at about USD 22. On a `p4
 
 ## Method
 
-- **One fresh process per cell** (workload × size × precision × device). The driver sets `JAX_ENABLE_X64`, `JAX_PLATFORMS` and `CUDA_VISIBLE_DEVICES` before the process starts, as a lecture's settings would be, and always `XLA_PYTHON_CLIENT_PREALLOCATE=false`. GPU cells also get `XLA_PYTHON_CLIENT_MEM_FRACTION=0.95`: even without preallocation, JAX's allocator otherwise stops at 75% of the card, below the 80% that `--memory-fraction` allows (a T4 showed 10.92 GiB of 14.6 usable, against 13.84 GiB at 0.95). The T4's `bellman_stored` cell at m = 40,000 in float64, which needs 11.92 GiB, ran out of memory in both CUDA builds for that reason (`results/runson-g4dn.2xlarge/2026-10-25.jsonl`, before the change).
+- **One fresh process per cell** (workload × size × precision × device). The driver sets `JAX_ENABLE_X64`, `JAX_PLATFORMS` and `CUDA_VISIBLE_DEVICES` (`HIP_VISIBLE_DEVICES` on AMD) before the process starts, as a lecture's settings would be, and always `XLA_PYTHON_CLIENT_PREALLOCATE=false`. GPU cells also get `XLA_PYTHON_CLIENT_MEM_FRACTION=0.95`: even without preallocation, JAX's allocator otherwise stops at 75% of the card, below the 80% that `--memory-fraction` allows (a T4 showed 10.92 GiB of 14.6 usable, against 13.84 GiB at 0.95). The T4's `bellman_stored` cell at m = 40,000 in float64, which needs 11.92 GiB, ran out of memory in both CUDA builds for that reason (`results/runson-g4dn.2xlarge/2026-10-25.jsonl`, before the change).
 - **Cold and warm are kept apart.** `backend_init_s`, `compile_s` and `first_run_s` are what a fresh process pays before its first result, and the summary's cold time is their sum. A lecture starts the backend once per process, so the cold time charges every kernel for it; it is kept as its own field so that it can be taken out. `warm_s` holds five timed runs after that, summarised by their median. `process_s` is the whole process, imports included.
 - **The result dtype is asserted**, so a silent float32 cannot pass as float64.
-- **Fidelity**: each cell keeps 64 values from fixed positions in its result, and the summary reports the largest relative difference between float32 and float64.
+- **Fidelity**: each cell keeps 64 values from fixed positions in its result. The summary reports the largest relative difference between float32 and float64, and between each GPU's results and the CPU's. A card and the CPU get the same inputs, so in float64 their results should differ only by rounding, which builds up over the Kalman filter's recursion. On the H100 SXM5, the largest differences were 6e-15 on matmul and the Bellman steps, and 9e-7 on the Kalman filter (`results/lambda-gpu_1x_h100_sxm5/2026-10-26.jsonl`).
 - **Memory**: cells that would need more than `--memory-fraction` of a device's memory (80% by default) are recorded as skipped rather than run. XLA's own buffer accounting is kept as `memory_analysis`.
-- **GPU telemetry**: clocks, temperature, power and clock-event reasons are read just after timing, since stacked cards can throttle.
+- **GPU telemetry**: clocks, temperature, power and clock-event reasons are read just after timing, since stacked cards can throttle. On AMD, `amd-smi metric`'s output is kept as it comes, since its fields vary between versions.
 
 ## Output
 
-Each cell appends one JSON line to `results/<host>/<date>.jsonl`, carrying the cell's timings and an `env` block: CPU, cores (with Apple's performance levels), memory, GPUs, driver, CUDA, package versions, flags, the commit and `numactl --hardware`. The `env` block is a superset of the `system` block in `hardware/benchmark_hardware.py`.
+Each cell appends one JSON line to `results/<host>/<date>.jsonl`, carrying the cell's timings and an `env` block: CPU, cores (with Apple's performance levels), memory, GPUs (with each AMD card's gfx target), driver, CUDA or ROCm, package versions, flags, the commit and `numactl --hardware`. The `env` block is a superset of the `system` block in `hardware/benchmark_hardware.py`.
 
 ## Caveats
 

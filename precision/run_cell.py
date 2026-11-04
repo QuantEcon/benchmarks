@@ -22,8 +22,27 @@ SAMPLES = 64
 TELEMETRY = "index,pci.bus_id,clocks.sm,clocks.mem,temperature.gpu,power.draw,utilization.gpu"
 
 
+def amd_telemetry(ids):
+    """amd-smi's metrics for the cards in use, as it writes them: its fields vary by version."""
+    for fields in (["--power", "--clock", "--temperature", "--usage"], []):
+        try:
+            out = subprocess.run(["amd-smi", "metric", "--gpu", *ids.split(","), *fields, "--json"],
+                                 capture_output=True, text=True, timeout=30)
+        except (OSError, subprocess.SubprocessError):
+            return None
+        if out.returncode == 0:
+            try:
+                return json.loads(out.stdout)
+            except ValueError:
+                return None
+    return None
+
+
 def gpu_telemetry():
     """Clocks, temperature and power of the cards in use, read just after timing."""
+    if os.environ.get("JAX_PLATFORMS") == "rocm":
+        ids = os.environ.get("HIP_VISIBLE_DEVICES")
+        return amd_telemetry(ids) if ids else None
     ids = os.environ.get("CUDA_VISIBLE_DEVICES")
     if not ids:
         return None

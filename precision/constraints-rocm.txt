@@ -1,0 +1,10 @@
+# The JAX release a ROCm run uses. There is no ROCm build of 0.12.0.1, which constraints.txt
+# pins for every other platform; 0.12.0.1 changed only a Windows CPU build, so the two compare.
+# Install it with the plugin for the machine's ROCm major version, 7 or 10:
+#   pip install jax jax-rocm7-plugin jax-rocm7-pjrt -c precision/constraints-rocm.txt
+jax==0.12.0
+jaxlib==0.12.0
+jax-rocm7-plugin==0.12.0
+jax-rocm7-pjrt==0.12.0
+jax-rocm10-plugin==0.12.0
+jax-rocm10-pjrt==0.12.0
