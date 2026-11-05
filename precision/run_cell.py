@@ -71,6 +71,12 @@ def memory_analysis(compiled):
         return None
 
 
+def device_memory(devices):
+    """The allocator's counts on each card, read after timing. The CPU keeps none."""
+    stats = [d.memory_stats() for d in devices]
+    return stats if any(stats) else None
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workload", required=True)
@@ -126,6 +132,8 @@ def main():
             jax.block_until_ready(compiled(*inputs))
             warm.append(time.perf_counter() - t)
         row["gpu_telemetry"] = gpu_telemetry()
+        # peak_bytes_in_use is the most the cell held at once
+        row["memory_stats"] = device_memory(devices)
         row.update(warm_s=warm, warm_median_s=statistics.median(warm), warm_min_s=min(warm))
 
         # Fixed positions in the result, for comparing float32 with float64

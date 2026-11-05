@@ -69,6 +69,8 @@ def main():
         cell = {"s_size": n, "y_size": y_size, "elements": n * y_size * y_size,
                 "K_cold_s": cold, "K_s": statistics.median(times), "reps": len(times),
                 "sigma_sum": float(jnp.sum(σ)), "finite": bool(jnp.all(jnp.isfinite(σ)))}
+        # The allocator's running peak, so this size's when the sizes rise; None on the CPU
+        cell["peak_bytes_in_use"] = (devices[0].memory_stats() or {}).get("peak_bytes_in_use")
         row["sizes"].append(cell)
         with open(args.out, "w") as f:
             json.dump(row, f)

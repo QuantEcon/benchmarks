@@ -111,6 +111,8 @@ def main():
         cell["value_s"], _ = timed(lambda: get_value(σ, household, prices))
         cell["policy"] = jnp.ravel(σ).tolist()
         cell["v_sum"] = float(jnp.sum(v))
+        # The allocator's running peak, so this size's when the sizes rise; None on the CPU
+        cell["peak_bytes_in_use"] = (devices[0].memory_stats() or {}).get("peak_bytes_in_use")
         row["sizes"].append(cell)
         row["process_s"] = time.perf_counter() - T0
         with open(args.out, "w") as f:          # after each size, so a slow one loses nothing

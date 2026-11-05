@@ -106,8 +106,12 @@ def main():
             warm.append(time.perf_counter() - t)
         row.update(warm_s=warm, warm_median_s=statistics.median(warm), warm_min_s=min(warm))
 
-        if args.backend == "jax-gpu":
-            row["gpu_telemetry"] = precision_helpers().gpu_telemetry()
+        if stack == "jax":
+            helpers = precision_helpers()
+            if args.backend == "jax-gpu":
+                row["gpu_telemetry"] = helpers.gpu_telemetry()
+            # peak_bytes_in_use is the most the cell held at once; None on the CPU, as in precision/
+            row["memory_stats"] = helpers.device_memory(devices)
         if stack == "numba":
             row["numba_threads"] = numba.config.NUMBA_NUM_THREADS
             if variant == "parallel":
