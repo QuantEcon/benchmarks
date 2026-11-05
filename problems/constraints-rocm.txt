@@ -1,6 +1,6 @@
 # constraints.txt for AMD's cards: the same releases, but JAX at 0.12.0, since there is no ROCm
-# build of 0.12.0.1. JAX's release and plugins are precision/constraints-rocm.txt's, and the
-# others constraints.txt's, so keep the three files in step.
+# build of 0.12.0.1. JAX's release and its plugins come from precision/constraints-rocm.txt, and
+# the other releases from constraints.txt, so keep the three files in step.
 # Install it with the plugin for the machine's ROCm major version, 7 or 10:
 #   pip install jax jax-rocm7-plugin jax-rocm7-pjrt numba scipy -c problems/constraints-rocm.txt
 jax==0.12.0
