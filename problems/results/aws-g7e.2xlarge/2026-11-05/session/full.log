@@ -1,0 +1,61 @@
+6b42b04 Docs: take out the instance prices (#34)
+full start 2026-11-05T06:52:15Z
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CudaDevice(id=0)]
+== The suite on the card
+Writing to /home/ubuntu/benchmarks/problems/results/aws-g7e.2xlarge/2026-11-05.jsonl
+P1 vfi     grid             100 float64  jax-gpu         warm     0.032 s  cold     4.952 s     572 iterations
+P1 vfi     grid             200 float64  jax-gpu         warm     0.040 s  cold     5.102 s     572 iterations
+P1 vfi     grid             400 float64  jax-gpu         warm     0.084 s  cold     5.150 s     572 iterations
+P1 vfi     grid             700 float64  jax-gpu         warm     0.272 s  cold     5.392 s     572 iterations
+P1 vfi     grid            1000 float64  jax-gpu         warm     0.480 s  cold     5.571 s     572 iterations
+P1 vfi     grid            1500 float64  jax-gpu         warm     1.042 s  cold     6.016 s     572 iterations
+P3 egm     grid             200 float64  jax-gpu         warm     0.339 s  cold     1.587 s    2192 iterations
+P3 egm     grid            1000 float64  jax-gpu         warm     0.389 s  cold     1.749 s    2190 iterations
+P3 egm     grid            5000 float64  jax-gpu         warm     0.529 s  cold     1.932 s    2190 iterations
+P3 egm     grid           20000 float64  jax-gpu         warm     1.022 s  cold     2.383 s    2190 iterations
+P3 egm     grid           50000 float64  jax-gpu         warm     1.651 s  cold     3.064 s    2190 iterations
+P3 egm     grid             200 float32  jax-gpu         warm     0.097 s  cold     1.167 s     809 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.145 s  cold     1.241 s    1005 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.196 s  cold     1.305 s    1086 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.316 s  cold     1.454 s    1117 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     0.464 s  cold     1.623 s    1381 iterations
+P4 wealth  households      1000 float64  jax-gpu         warm     0.003 s  cold     0.539 s     200 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.003 s  cold     0.571 s     200 iterations
+P4 wealth  households    100000 float64  jax-gpu         warm     0.011 s  cold     0.676 s     200 iterations
+P4 wealth  households   1000000 float64  jax-gpu         warm     0.081 s  cold     0.959 s     200 iterations
+P4 wealth  households  10000000 float64  jax-gpu         warm     0.750 s  cold     1.635 s     200 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.001 s  cold     0.475 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.470 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.001 s  cold     0.496 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.003 s  cold     0.623 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.015 s  cold     0.613 s     200 iterations
+P7 kalman  batch              1 float64  jax-gpu         warm     0.087 s  cold     0.883 s    1000 iterations
+P7 kalman  batch             10 float64  jax-gpu         warm     0.075 s  cold     1.141 s    1000 iterations
+P7 kalman  batch            100 float64  jax-gpu         warm     0.073 s  cold     1.191 s    1000 iterations
+P7 kalman  batch           1000 float64  jax-gpu         warm     0.118 s  cold     1.457 s    1000 iterations
+P7 kalman  batch          10000 float64  jax-gpu         warm     0.602 s  cold     1.908 s    1000 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.071 s  cold     0.798 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.078 s  cold     1.055 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.076 s  cold     1.083 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.077 s  cold     1.215 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.103 s  cold     1.244 s    1000 iterations
+P7 kalman  state              2 float64  jax-gpu         warm     0.088 s  cold     0.812 s    1000 iterations
+P7 kalman  state              5 float64  jax-gpu         warm     0.091 s  cold     0.775 s    1000 iterations
+P7 kalman  state             10 float64  jax-gpu         warm     0.089 s  cold     0.887 s    1000 iterations
+P7 kalman  state             20 float64  jax-gpu         warm     0.080 s  cold     2.522 s    1000 iterations
+P7 kalman  state             50 float64  jax-gpu         warm     0.078 s  cold    10.186 s    1000 iterations
+P7 kalman  state            100 float64  jax-gpu         warm     0.084 s  cold    16.965 s    1000 iterations
+P7 kalman  state            200 float64  jax-gpu         warm     0.111 s  cold     8.537 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.074 s  cold     0.569 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.075 s  cold     0.553 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.071 s  cold     0.798 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.094 s  cold     1.852 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.084 s  cold     5.041 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.084 s  cold     8.644 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.062 s  cold     4.368 s    1000 iterations
+== Done: aws-g7e.2xlarge-2026-11-05-problems.tgz. Copy it off the machine, then terminate the machine.
+full end 2026-11-05T06:55:50Z, wall 215 s, exit 0
