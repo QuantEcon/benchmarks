@@ -4,7 +4,7 @@ The suite's `jax-gpu` backend on one RTX PRO 6000 Blackwell Server Edition, run 
 
 | | |
 |---|---|
-| Instance | EC2 `g7e.2xlarge`, on demand, in us-east-2b after us-east-2a refused it for capacity. It was launched from a laptop's AWS CLI, with a key pair and an SSH-only security group made for it and deleted after |
+| Instance | EC2 `g7e.2xlarge`, on demand, in us-east-2b after us-east-2a refused it for capacity. It was launched from a laptop's AWS CLI, with a key pair and an SSH-only security group made for it and deleted afterwards |
 | Image | Deep Learning Base OSS Nvidia Driver GPU AMI (Ubuntu 24.04), 20261103 (`ami-0f9eff726a7654780`) |
 | Card | RTX PRO 6000 Blackwell Server Edition, 97,887 MiB, power limit 600 W, driver 595.112.07 (`machine.txt`) |
 | Software | JAX 0.12.0.1 with `jax[cuda13]`, Python 3.12.3 (`environment.txt`) |
