@@ -2,13 +2,14 @@
 Does TF32's rounding of EGM's one matrix product explain P3's float32 answers on a TF32 card?
 
 On NVIDIA cards from Ampere on, XLA does a float32 matrix product in TF32 by default: each operand
-keeps 10 of its 23 fraction bits, and the products are summed in float32. This runs egm.py's NumPy
-solve in float32 on the CPU, with the expectation's product sigma_next**(-gamma) @ P.T done on
-operands rounded that way, and compares the answer with float64's, as summarise.py does: the largest
-difference, relative to the float64 answer's largest value. Each case also prints the last few
-iterations' changes, to show whether the iterate stops moving.
+keeps 10 of its 23 fraction bits, and the products are summed in float32. This runs a copy of
+egm.py's NumPy solve in float32 on the CPU, with the expectation's product
+sigma_next**(-gamma) @ P.T done on operands rounded that way, and compares the answer with
+float64's, as summarise.py does: the largest difference, relative to the float64 answer's largest
+value. Each case also prints the last few iterations' changes, to show whether the iterate stops
+moving.
 
-    python problems/checks/tf32_egm.py [sizes]        # 200,1000,5000,20000,50000 by default
+    python problems/checks/tf32_egm.py [n,n,...]      # 200,1000,5000,20000,50000 by default
 """
 import platform
 import sys
@@ -20,11 +21,14 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import egm  # noqa: E402
 
-SIZES = [int(n) for n in (sys.argv[1] if len(sys.argv) > 1 else "200,1000,5000,20000,50000").split(",")]
+SIZES = [int(n) for n in
+         (sys.argv[1] if len(sys.argv) > 1 else "200,1000,5000,20000,50000").split(",")]
 
 
 def tf32(x, mode):
     """x in float32, its fraction cut to TF32's 10 bits: to nearest (ties to even), or truncated."""
+    if mode not in ("nearest", "truncate"):
+        raise ValueError(f"mode is 'nearest' or 'truncate', not {mode!r}")
     b = np.ascontiguousarray(x, np.float32).view(np.uint32)
     if mode == "nearest":
         b = b + np.uint32(0x0FFF) + ((b >> 13) & np.uint32(1))
@@ -32,7 +36,7 @@ def tf32(x, mode):
 
 
 def solve(m, dtype, rounding=None, which=None):
-    """egm.py's NumPy solve, with the product's operands rounded to TF32 if asked."""
+    """A copy of egm.py's NumPy solve, with the product's operands rounded to TF32 if asked."""
     t = np.dtype(dtype).type
     s, y, P = (m[k].astype(dtype) for k in ("s", "y", "P"))
     R, BETA, GAMMA, TOL = t(egm.R), t(egm.BETA), t(egm.GAMMA), t(egm.TOL)

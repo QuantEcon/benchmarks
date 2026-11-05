@@ -1,7 +1,6 @@
 # Does TF32's rounding of EGM's one matrix product explain P3's float32 answers on the RTX PRO 6000 (#36)? (2026-11-05)
 # qe-mini1's M6, on its CPU: a diagnostic run, not a measurement. The card's own answers are in problems/results/aws-g7e.2xlarge/.
-#   python problems/checks/tf32_egm.py > problems/checks/tf32_egm.txt
-# Output as printed; the script is beside this file.
+# From the next line on, the output of `python problems/checks/tf32_egm.py`, as printed. The script is beside this file.
 # 2026-11-05: NumPy 2.5.4, Python 3.12.15, macOS-27.0.1-arm64-arm-64bit
 P's row sums less 1, in float32: -2.5e-08 to +3.2e-08, mean +8.2e-10; 1 - beta R is 1.0e-04
 P's row sums less 1, in TF32: -2.4e-04 to +1.7e-04, mean -7.8e-05; 1 - beta R is 1.0e-04
