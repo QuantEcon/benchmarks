@@ -1,0 +1,37 @@
+# Does TF32's rounding of EGM's one matrix product explain P3's float32 answers on the RTX PRO 6000 (#36)? (2026-11-05)
+# qe-mini1's M6, on its CPU: a diagnostic run, not a measurement. The card's own answers are in problems/results/aws-g7e.2xlarge/.
+#   python problems/checks/tf32_egm.py > problems/checks/tf32_egm.txt
+# Output as printed; the script is beside this file.
+# 2026-11-05: NumPy 2.5.4, Python 3.12.15, macOS-27.0.1-arm64-arm-64bit
+P's row sums less 1, in float32: -2.5e-08 to +3.2e-08, mean +8.2e-10; 1 - beta R is 1.0e-04
+P's row sums less 1, in TF32: -2.4e-04 to +1.7e-04, mean -7.8e-05; 1 - beta R is 1.0e-04
+== 200 points: float64 takes 2,192 iterations
+  float32                                 2,208 iterations, relative difference 0.00014; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, both operands            809 iterations, relative difference 0.12; last changes 3.6e-04, 2.7e-04, 2.6e-04, 0.0e+00
+  TF32 truncated, both operands             559 iterations, relative difference 0.26; last changes 4.4e-04, 4.9e-04, 5.8e-04, 0.0e+00
+  TF32 to nearest, P only                 1,774 iterations, relative difference 0.039; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, sigma**(-gamma) only     823 iterations, relative difference 0.091; last changes 3.1e-04, 2.3e-04, 3.7e-04, 0.0e+00
+== 1,000 points: float64 takes 2,190 iterations
+  float32                                 2,206 iterations, relative difference 0.00014; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, both operands            998 iterations, relative difference 0.11; last changes 2.4e-04, 2.4e-04, 2.4e-04, 0.0e+00
+  TF32 truncated, both operands             629 iterations, relative difference 0.25; last changes 3.4e-04, 3.4e-04, 3.5e-04, 0.0e+00
+  TF32 to nearest, P only                 1,776 iterations, relative difference 0.039; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, sigma**(-gamma) only     932 iterations, relative difference 0.085; last changes 2.5e-04, 2.4e-04, 2.3e-04, 0.0e+00
+== 5,000 points: float64 takes 2,190 iterations
+  float32                                 2,210 iterations, relative difference 0.00018; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, both operands          1,080 iterations, relative difference 0.11; last changes 3.5e-04, 3.3e-04, 3.0e-04, 0.0e+00
+  TF32 truncated, both operands             816 iterations, relative difference 0.25; last changes 2.6e-04, 2.7e-04, 2.7e-04, 0.0e+00
+  TF32 to nearest, P only                 1,776 iterations, relative difference 0.039; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, sigma**(-gamma) only     971 iterations, relative difference 0.083; last changes 3.2e-04, 2.1e-04, 2.2e-04, 0.0e+00
+== 20,000 points: float64 takes 2,190 iterations
+  float32                                 2,210 iterations, relative difference 0.00018; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, both operands          1,118 iterations, relative difference 0.11; last changes 2.8e-04, 2.9e-04, 2.7e-04, 0.0e+00
+  TF32 truncated, both operands             878 iterations, relative difference 0.25; last changes 2.5e-04, 2.5e-04, 2.2e-04, 0.0e+00
+  TF32 to nearest, P only                 1,776 iterations, relative difference 0.039; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, sigma**(-gamma) only   1,154 iterations, relative difference 0.082; last changes 4.0e-04, 3.4e-04, 4.1e-04, 0.0e+00
+== 50,000 points: float64 takes 2,190 iterations
+  float32                                 2,210 iterations, relative difference 0.00018; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, both operands          1,505 iterations, relative difference 0.11; last changes 2.7e-04, 2.7e-04, 2.7e-04, 0.0e+00
+  TF32 truncated, both operands             913 iterations, relative difference 0.25; last changes 3.4e-04, 3.4e-04, 3.4e-04, 0.0e+00
+  TF32 to nearest, P only                 1,778 iterations, relative difference 0.039; last changes 1.0e-05, 1.0e-05, 1.0e-05, 9.9e-06
+  TF32 to nearest, sigma**(-gamma) only   1,410 iterations, relative difference 0.082; last changes 4.1e-04, 3.4e-04, 4.1e-04, 0.0e+00
