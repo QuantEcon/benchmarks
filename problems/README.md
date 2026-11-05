@@ -131,6 +131,8 @@ python problems/summarise.py problems/results/             # markdown tables
 
 On `qe-wharton1-gpu`, inside `tmux`, with the GitHub runner paused, the card at `0b:00.0` is `--gpus 0`.
 
+On a rented machine, NVIDIA's or AMD's, [`run_by_hand.sh`](run_by_hand.sh) records the machine, installs the pinned releases and runs `jax-gpu` alone, every size in both precisions, after a `--quick` check. Its header says how to run it.
+
 ## Method
 
 - **One fresh process per cell** (problem × size × backend × precision). The driver sets `JAX_ENABLE_X64` and `JAX_PLATFORMS` before the process starts, as a lecture's settings would be, and for the GPU `CUDA_VISIBLE_DEVICES` (`HIP_VISIBLE_DEVICES` on AMD) and `XLA_PYTHON_CLIENT_MEM_FRACTION=0.95`, as in `precision/`. A cell imports only its own stack, so a NumPy cell never loads JAX or Numba.
