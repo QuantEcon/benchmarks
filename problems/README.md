@@ -29,7 +29,7 @@ Phase 1 has four of #5's eight problem types. Each takes its model and parameter
 | `numba` | Numba, `njit` with `parallel=False`, on the CPU |
 | `numba-parallel` | The same Numba source with `parallel=True`, so its `prange` loops use every core |
 | `jax-cpu` | JAX on the CPU |
-| `jax-gpu` | JAX on one GPU |
+| `jax-gpu` | JAX on one GPU: NVIDIA's under CUDA, or AMD's under ROCm |
 
 Serial Numba is kept beside parallel because a parallel region costs microseconds to start, which a small problem doesn't repay.
 
@@ -118,7 +118,7 @@ What the tables show:
 
 ## Running it
 
-Install the releases pinned in [`constraints.txt`](constraints.txt), the same on every platform: `pip install "jax[cuda13]" numba scipy -c problems/constraints.txt` on NVIDIA, `pip install jax numba scipy -c problems/constraints.txt` elsewhere. Then from the repository root:
+Install the releases pinned in [`constraints.txt`](constraints.txt), the same on every platform: `pip install "jax[cuda13]" numba scipy -c problems/constraints.txt` on NVIDIA, `pip install jax numba scipy -c problems/constraints.txt` elsewhere. AMD's cards are the exception, as in [`precision/`](../precision/): there is no ROCm build of that JAX release, so [`constraints-rocm.txt`](constraints-rocm.txt) pins 0.12.0 with the same other releases. Install `pip install jax jax-rocm7-plugin jax-rocm7-pjrt numba scipy -c problems/constraints-rocm.txt` on ROCm 7, or the `rocm10` packages on ROCm 10. Then from the repository root:
 
 ```bash
 python problems/run_suite.py --quick                       # a minute or two; checks the setup
@@ -127,13 +127,15 @@ python problems/run_suite.py --backends numpy,numba,numba-parallel,jax-cpu,jax-g
 python problems/summarise.py problems/results/             # markdown tables
 ```
 
-`--problems`, `--sweeps`, `--backends`, `--dtypes` and `--sizes` narrow the suite; a problem runs only in the precisions it allows. `--gpus` picks the card for `jax-gpu` by index in PCI bus order, `--host` names the machine in the output, and `--dry-run` shows what would run and what would be skipped for memory. `--prefix` wraps each cell's process, for example in `numactl --interleave=all`. `--timeout` (900 s) bounds a cell, `--reps` (5) and `--budget` (60 s) its warm runs.
+`--problems`, `--sweeps`, `--backends`, `--dtypes` and `--sizes` narrow the suite; a problem runs only in the precisions it allows. `--gpus` picks the card for `jax-gpu` by index, in PCI bus order on NVIDIA and in `amd-smi`'s order on AMD; the card is NVIDIA's, run under CUDA, if `nvidia-smi` lists any, and otherwise AMD's, run under ROCm. `--host` names the machine in the output, and `--dry-run` shows what would run and what would be skipped for memory. `--prefix` wraps each cell's process, for example in `numactl --interleave=all`. `--timeout` (900 s) bounds a cell, `--reps` (5) and `--budget` (60 s) its warm runs.
 
 On `qe-wharton1-gpu`, inside `tmux`, with the GitHub runner paused, the card at `0b:00.0` is `--gpus 0`.
 
+On a rented machine, NVIDIA's or AMD's, [`run_by_hand.sh`](run_by_hand.sh) records the machine, installs the pinned releases and runs `jax-gpu` alone, every size in both precisions, after a `--quick` check. Its header says how to run it.
+
 ## Method
 
-- **One fresh process per cell** (problem × size × backend × precision). The driver sets `JAX_ENABLE_X64` and `JAX_PLATFORMS` before the process starts, as a lecture's settings would be, and for the GPU `CUDA_VISIBLE_DEVICES` and `XLA_PYTHON_CLIENT_MEM_FRACTION=0.95`, as in `precision/`. A cell imports only its own stack, so a NumPy cell never loads JAX or Numba.
+- **One fresh process per cell** (problem × size × backend × precision). The driver sets `JAX_ENABLE_X64` and `JAX_PLATFORMS` before the process starts, as a lecture's settings would be, and for the GPU `CUDA_VISIBLE_DEVICES` (`HIP_VISIBLE_DEVICES` on AMD) and `XLA_PYTHON_CLIENT_MEM_FRACTION=0.95`, as in `precision/`. A cell imports only its own stack, so a NumPy cell never loads JAX or Numba.
 - **Each size runs every backend before the next size starts,** so a slow spell on the machine lands on one size rather than on one backend. Once a backend times out, its larger sizes in that sweep are recorded as skipped.
 - **Cold and warm are kept apart.** The cold time is what a fresh process pays from its inputs to its first answer: for JAX, starting the backend, compiling and the first run; for Numba, the first call, which compiles; for NumPy, the first call. Each stack's import is timed separately as `import_s`. Then up to five warm runs, stopping once they have taken 60 s, summarised by their median.
 - **The result dtype is asserted.** Numba promotes a float32 array to float64 when it meets a Python float, so each Numba version takes its constants in the cell's precision.

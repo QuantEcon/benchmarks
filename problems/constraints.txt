@@ -3,7 +3,8 @@
 #   pip install "jax[cuda13]" numba scipy -c problems/constraints.txt   # NVIDIA
 #   pip install jax numba scipy -c problems/constraints.txt              # elsewhere
 # JAX's release is precision/constraints.txt's. Numba needs SciPy for its
-# BLAS and LAPACK calls (`@`, np.linalg).
+# BLAS and LAPACK calls (`@`, np.linalg). AMD's cards take constraints-rocm.txt,
+# since there is no ROCm build of this JAX release.
 jax==0.12.0.1
 jaxlib==0.12.0.1
 numpy==2.5.4

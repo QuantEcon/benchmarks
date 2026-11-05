@@ -11,6 +11,9 @@ Each appends one JSON line to problems/results/<host>/<date>.jsonl.
 At each size every backend runs before the next size starts, so a slow
 spell on the machine lands on one size rather than on one backend. Once a
 backend times out, its larger sizes in that sweep are recorded as skipped.
+
+jax-gpu runs on NVIDIA's card under CUDA if nvidia-smi lists any, and
+otherwise on AMD's under ROCm.
 """
 import argparse
 import json
@@ -33,23 +36,31 @@ import env_info  # noqa: E402
 
 MEMORY_FRACTION = 0.8
 CELL_FLAGS = ("JAX_PLATFORMS", "JAX_ENABLE_X64", "CUDA_VISIBLE_DEVICES",
-              "CUDA_DEVICE_ORDER", "XLA_FLAGS", "XLA_PYTHON_CLIENT_PREALLOCATE",
-              "XLA_PYTHON_CLIENT_MEM_FRACTION", "NUMBA_NUM_THREADS")
+              "CUDA_DEVICE_ORDER", "HIP_VISIBLE_DEVICES", "XLA_FLAGS",
+              "XLA_PYTHON_CLIENT_PREALLOCATE", "XLA_PYTHON_CLIENT_MEM_FRACTION",
+              "NUMBA_NUM_THREADS")
 
 
-def cell_env(backend, dtype, gpus):
+def cell_env(backend, dtype, gpus, platform="cuda"):
     """The environment a cell's process starts with: precision and device, for JAX."""
     env = dict(os.environ)
+    # A cell sees only the card it is given. HIP also reads CUDA_VISIBLE_DEVICES,
+    # so none of these may be inherited from the shell
+    for name in ("CUDA_VISIBLE_DEVICES", "CUDA_DEVICE_ORDER", "HIP_VISIBLE_DEVICES"):
+        env.pop(name, None)
     if backend.startswith("jax"):
         env["XLA_PYTHON_CLIENT_PREALLOCATE"] = "false"
         env["JAX_ENABLE_X64"] = "1" if dtype == "float64" else "0"
     if backend == "jax-cpu":
         env["JAX_PLATFORMS"] = "cpu"
-        env.pop("CUDA_VISIBLE_DEVICES", None)
     elif backend == "jax-gpu":
-        env["JAX_PLATFORMS"] = "cuda"
-        env["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-        env["CUDA_VISIBLE_DEVICES"] = gpus[0]
+        if platform == "rocm":
+            env["JAX_PLATFORMS"] = "rocm"
+            env["HIP_VISIBLE_DEVICES"] = gpus[0]
+        else:
+            env["JAX_PLATFORMS"] = "cuda"
+            env["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+            env["CUDA_VISIBLE_DEVICES"] = gpus[0]
         # As in precision/: JAX's allocator otherwise stops at 75% of the card
         env.setdefault("XLA_PYTHON_CLIENT_MEM_FRACTION", "0.95")
     return env
@@ -62,7 +73,9 @@ def capacity(backend, gpus, environment):
     cards = {str(c["index"]): c for c in environment["gpus"]}
     if gpus[0] not in cards:
         raise SystemExit(f"jax-gpu asks for GPU {gpus[0]}, "
-                         f"but nvidia-smi lists {sorted(cards) or 'none'}")
+                         f"but nvidia-smi and amd-smi list {sorted(cards) or 'none'}")
+    if cards[gpus[0]]["memory_total_mib"] is None:
+        raise SystemExit(f"no memory size for GPU {gpus[0]}; see `amd-smi static`")
     return cards[gpus[0]]["memory_total_mib"] * 2**20
 
 
@@ -117,7 +130,9 @@ def main():
     parser.add_argument("--reps", type=int, default=5, help="warm runs at most")
     parser.add_argument("--budget", type=float, default=60,
                         help="seconds of warm runs a cell may take, after at least one")
-    parser.add_argument("--gpus", default="0", help="the GPU index, in PCI bus order, for jax-gpu")
+    parser.add_argument("--gpus", default="0",
+                        help="the GPU index for jax-gpu, in PCI bus order on NVIDIA and "
+                             "amd-smi's order on AMD")
     parser.add_argument("--prefix", default="",
                         help="command to wrap each cell in, e.g. 'numactl --interleave=all'")
     parser.add_argument("--label", default="", help="tag for this run")
@@ -166,7 +181,8 @@ def main():
                                     backend=backend, dtype=dtype)
                         row = dict(base, timestamp=datetime.now(timezone.utc).isoformat(),
                                    problem_type=spec["label"], **cell)
-                        env = cell_env(backend, dtype, gpus)
+                        env = cell_env(backend, dtype, gpus,
+                                       environment["gpu_platform"] or "cuda")
                         row["cell_flags"] = {k: env[k] for k in CELL_FLAGS if k in env}
                         need = spec["memory"](sweep, size, ITEMSIZE[dtype])
                         limit = args.memory_fraction * available[backend]
