@@ -118,6 +118,9 @@ def main():
                device_kind=devices[0].device_kind,
                default_float=jnp.zeros(()).dtype.name,
                x64=bool(jax.config.jax_enable_x64))
+    # The allocator's counts over the whole lecture, on a card; the CPU keeps none
+    stats = [d.memory_stats() for d in devices]
+    row["memory_stats"] = stats if any(stats) else None
     if args.env_info:
         sys.path.insert(0, args.env_info)
         import env_info

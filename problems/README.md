@@ -138,7 +138,7 @@ On `qe-wharton1-gpu`, inside `tmux`, with the GitHub runner paused, the card at 
 - **Cold and warm are kept apart.** The cold time is what a fresh process pays from its inputs to its first answer: for JAX, starting the backend, compiling and the first run; for Numba, the first call, which compiles; for NumPy, the first call. Each stack's import is timed separately as `import_s`. Then up to five warm runs, stopping once they have taken 60 s, summarised by their median.
 - **The result dtype is asserted.** Numba promotes a float32 array to float64 when it meets a Python float, so each Numba version takes its constants in the cell's precision.
 - **Every answer is checked against NumPy's in float64** at the same size. P1, P3 and P7 keep values at fixed positions in the answer and must agree to within a relative 1e-8 in float64 and 1e-3 in float32. P4 keeps the share of households above seven wealth levels, from the 10th to the 99th percentile, and each share must be within five binomial standard errors of NumPy's. The summary also flags a cell that took a different number of iterations.
-- **Memory:** a cell that would need more than 80% of the device's memory (`--memory-fraction`) is recorded as skipped. XLA's own buffer accounting is kept as `memory_analysis`, and GPU telemetry is read after timing, as in `precision/`.
+- **Memory:** a cell that would need more than 80% of the device's memory (`--memory-fraction`) is recorded as skipped. XLA's own buffer accounting is kept as `memory_analysis`. On a card, so is the allocator's, as `memory_stats`: its `peak_bytes_in_use` is the most the cell held at once. Both it and the GPU telemetry are read after timing, as in `precision/`.
 
 ## Output
 
