@@ -13,9 +13,8 @@ All ran JAX 0.12.0.1 (`precision/constraints.txt`) with Python 3.12. `6faf2df` a
 
 ## Where they ran
 
-- **Lambda,** at USD 1.99 (A100), 4.29 (H100) and 1.29 (A10) an hour, through [`precision/lambda.sh`](../../lambda.sh). A 1× A100 showed free at 11:16 AEDT, and a launch a minute later was refused for capacity; a loop launched one at 11:18.
-- **The Blackwell card on EC2, outside RunsOn.** RunsOn's subnets are in us-west-2a and 2b only, and on 2026-10-26 its launches of `g7e.2xlarge` there failed for capacity again (run [40253580690](https://github.com/QuantEcon/benchmarks/actions/runs/40253580690), cancelled before it launched), as on 2026-10-25 (#9). AWS scored `g7e` spot capacity at 1 of 10 in every us-west-2 zone and 9 in one us-east-2 zone. An on-demand instance (USD 3.36 an hour) from AWS's Deep Learning Base OSS Nvidia Driver GPU AMI (Ubuntu 24.04, 20261016) was refused in us-east-2b and launched in us-east-2a, from the laptop's AWS CLI, with a key pair and an SSH-only security group made for it and deleted after.
-- **About USD 6 in all:** roughly 1.9 (H100), 1.4 (A10), 1.3 (A100) and 1.6 (Blackwell), launch to termination.
+- **Lambda,** through [`precision/lambda.sh`](../../lambda.sh). A 1× A100 showed free at 11:16 AEDT, and a launch a minute later was refused for capacity; a loop launched one at 11:18.
+- **The Blackwell card on EC2, outside RunsOn.** RunsOn's subnets are in us-west-2a and 2b only, and on 2026-10-26 its launches of `g7e.2xlarge` there failed for capacity again (run [40253580690](https://github.com/QuantEcon/benchmarks/actions/runs/40253580690), cancelled before it launched), as on 2026-10-25 (#9). AWS scored `g7e` spot capacity at 1 of 10 in every us-west-2 zone and 9 in one us-east-2 zone. An on-demand instance from AWS's Deep Learning Base OSS Nvidia Driver GPU AMI (Ubuntu 24.04, 20261016) was refused in us-east-2b and launched in us-east-2a, from the laptop's AWS CLI, with a key pair and an SSH-only security group made for it and deleted after.
 
 ## What didn't run
 

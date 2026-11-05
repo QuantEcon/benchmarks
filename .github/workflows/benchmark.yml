@@ -212,7 +212,7 @@ jobs:
     if: inputs.run_precision == true
     # The lectures' label form; the image is defined in .github/runs-on.yml
     runs-on: "runs-on=${{ github.run_id }}/family=${{ inputs.precision_instance }}/image=quantecon_ubuntu2404/volume=80gb/spot=false"
-    # A cap on spend: p4d.24xlarge bills about USD 22 an hour
+    # 60 minutes caps the spend, even on a p4d.24xlarge
     timeout-minutes: 60
     env:
       HOST: runson-${{ inputs.precision_instance }}
@@ -350,7 +350,7 @@ jobs:
       matrix:
         platforms: ${{ fromJSON(inputs.run_lectures == 'lecture-python' && '["cuda", "cpu"]' || '["cuda cpu"]') }}
     runs-on: "runs-on=${{ github.run_id }}/family=${{ inputs.lectures_instance }}/image=quantecon_ubuntu2404/volume=80gb/spot=false"
-    # lecture-jax's three runs took 3.3 hours on a g4dn.2xlarge (USD 0.75 an hour); lecture-python.myst's
+    # lecture-jax's three runs took 3.3 hours on a g4dn.2xlarge; lecture-python.myst's
     # are estimated at 4 to 5.5 hours on each platform. This caps the cost
     timeout-minutes: ${{ inputs.run_lectures == 'lecture-python' && 600 || 300 }}
     env:
