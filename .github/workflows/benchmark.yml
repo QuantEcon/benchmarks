@@ -212,7 +212,7 @@ jobs:
     if: inputs.run_precision == true
     # The lectures' label form; the image is defined in .github/runs-on.yml
     runs-on: "runs-on=${{ github.run_id }}/family=${{ inputs.precision_instance }}/image=quantecon_ubuntu2404/volume=80gb/spot=false"
-    # A cap on spend: an hour, even on a p4d.24xlarge
+    # 60 minutes caps the spend, even on a p4d.24xlarge
     timeout-minutes: 60
     env:
       HOST: runson-${{ inputs.precision_instance }}
