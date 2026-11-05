@@ -33,7 +33,7 @@ Copy the example workflow to your repository's `.github/workflows/` directory an
 
 - **GitHub Actions (CPU)**: Free for public repositories
 - **RunsOn (GPU)**: Pay-per-use based on AWS instance costs
-  - `g4dn.xlarge`: ~$0.526/hour (1 GPU, good for most benchmarks)
-  - `g4dn.2xlarge`: ~$0.752/hour (1 GPU, more CPU/RAM)
+  - `g4dn.xlarge`: 1 GPU, good for most benchmarks
+  - `g4dn.2xlarge`: 1 GPU, more CPU/RAM
 
 Use the `if: github.event_name == 'workflow_dispatch'` pattern to make GPU runs manual-only and avoid unexpected costs.

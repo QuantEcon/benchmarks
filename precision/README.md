@@ -53,7 +53,7 @@ The workflow in `.github/workflows/benchmark.yml` runs the matrix on a RunsOn GP
 | `precision_cuda` | The CUDA build |
 | `precision_extras` | A second matmul pass with `JAX_DEFAULT_MATMUL_PRECISION=highest`, labelled `highest`, and the `aiyagari_jax` and `ifp_egm_jax` scale scripts on the card, from lecture-jax at `4b939ec` |
 
-The job stops after 60 minutes, which caps a `p4d` run at about USD 22. On a `p4d` it first installs and starts NVIDIA's fabric manager, which CUDA needs on a machine whose cards are joined by NVSwitch.
+The job stops after 60 minutes, which caps its cost. On a `p4d` it first installs and starts NVIDIA's fabric manager, which CUDA needs on a machine whose cards are joined by NVSwitch.
 
 ## Method
 
