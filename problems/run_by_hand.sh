@@ -55,7 +55,8 @@ fi
 echo "== Python 3.12, JAX, Numba and SciPy"
 export PATH="$HOME/.local/bin:$PATH"
 command -v uv > /dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv -q -p 3.12 .venv-problems
+# The full run after --quick keeps the check's environment: uv won't replace one unasked
+[ -d .venv-problems ] || uv venv -q -p 3.12 .venv-problems
 source .venv-problems/bin/activate
 if [ $PLATFORM = cuda ]; then
   uv pip install -q "jax[$CUDA]" numba scipy -c problems/constraints.txt

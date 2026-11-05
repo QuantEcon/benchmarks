@@ -68,7 +68,8 @@ fi
 echo "== Python 3.12 and JAX"
 export PATH="$HOME/.local/bin:$PATH"
 command -v uv > /dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
-uv venv -q -p 3.12 .venv-phase2
+# The full run after --quick keeps the check's environment: uv won't replace one unasked
+[ -d .venv-phase2 ] || uv venv -q -p 3.12 .venv-phase2
 source .venv-phase2/bin/activate
 if [ $PLATFORM = cuda ]; then
   CONSTRAINTS=precision/constraints.txt
