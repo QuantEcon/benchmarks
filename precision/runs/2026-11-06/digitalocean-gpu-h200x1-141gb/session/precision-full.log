@@ -1,0 +1,155 @@
+== precision-full: start 2026-11-06 01:33:48 UTC; cmd: bash precision/run_by_hand.sh digitalocean-gpu-h200x1-141gb cpu,gpu
+== The machine
+driver 580.196.07: jax[cuda13]
+== Python 3.12 and JAX
+JAX 0.12.0.1: [CudaDevice(id=0)]
+NVIDIA H200 allocator limit, GiB: 104.85
+NVIDIA H200 allocator limit, GiB: 132.81
+== The precision matrix
+Writing to /root/benchmarks/results/digitalocean-gpu-h200x1-141gb/2026-11-06.jsonl
+matmul                 256 float32  cpu    warm      0.17 ms      192.3 GFLOPS  compile 0.01 s
+matmul                 256 float64  cpu    warm      0.15 ms      220.3 GFLOPS  compile 0.01 s
+matmul                 512 float32  cpu    warm      0.30 ms      883.9 GFLOPS  compile 0.01 s
+matmul                 512 float64  cpu    warm      0.39 ms      693.8 GFLOPS  compile 0.01 s
+matmul                1024 float32  cpu    warm      1.06 ms     2035.3 GFLOPS  compile 0.01 s
+matmul                1024 float64  cpu    warm      1.57 ms     1364.3 GFLOPS  compile 0.01 s
+matmul                2048 float32  cpu    warm      5.26 ms     3266.4 GFLOPS  compile 0.01 s
+matmul                2048 float64  cpu    warm     18.68 ms      919.7 GFLOPS  compile 0.01 s
+matmul                4096 float32  cpu    warm     55.54 ms     2474.5 GFLOPS  compile 0.01 s
+matmul                4096 float64  cpu    warm     95.18 ms     1443.9 GFLOPS  compile 0.01 s
+matmul                8192 float32  cpu    warm    341.18 ms     3222.6 GFLOPS  compile 0.01 s
+matmul                8192 float64  cpu    warm    646.36 ms     1701.1 GFLOPS  compile 0.01 s
+matmul                 256 float32  gpu    warm      0.09 ms      385.8 GFLOPS  compile 0.35 s
+matmul                 256 float64  gpu    warm      0.11 ms      315.5 GFLOPS  compile 0.39 s
+matmul                 512 float32  gpu    warm      0.08 ms     3254.3 GFLOPS  compile 0.57 s
+matmul                 512 float64  gpu    warm      0.09 ms     3032.5 GFLOPS  compile 0.51 s
+matmul                1024 float32  gpu    warm      0.11 ms    19304.4 GFLOPS  compile 0.40 s
+matmul                1024 float64  gpu    warm      0.25 ms     8610.5 GFLOPS  compile 0.52 s
+matmul                2048 float32  gpu    warm      0.22 ms    79098.5 GFLOPS  compile 0.41 s
+matmul                2048 float64  gpu    warm      0.45 ms    37949.0 GFLOPS  compile 0.53 s
+matmul                4096 float32  gpu    warm      0.52 ms   263487.9 GFLOPS  compile 0.50 s
+matmul                4096 float64  gpu    warm      2.36 ms    58291.5 GFLOPS  compile 0.59 s
+matmul                8192 float32  gpu    warm      2.76 ms   397742.4 GFLOPS  compile 0.73 s
+matmul                8192 float64  gpu    warm     17.58 ms    62529.0 GFLOPS  compile 1.17 s
+bellman_stored        1000 float32  cpu    warm      0.20 ms       20.3 GB/s  compile 0.02 s
+bellman_stored        1000 float64  cpu    warm      0.21 ms       37.5 GB/s  compile 0.02 s
+bellman_stored        2000 float32  cpu    warm      0.17 ms       93.6 GB/s  compile 0.02 s
+bellman_stored        2000 float64  cpu    warm      0.29 ms      111.6 GB/s  compile 0.02 s
+bellman_stored        5000 float32  cpu    warm      0.49 ms      204.6 GB/s  compile 0.01 s
+bellman_stored        5000 float64  cpu    warm      0.89 ms      224.0 GB/s  compile 0.01 s
+bellman_stored       10000 float32  cpu    warm      1.96 ms      204.1 GB/s  compile 0.01 s
+bellman_stored       10000 float64  cpu    warm      4.19 ms      190.8 GB/s  compile 0.01 s
+bellman_stored       20000 float32  cpu    warm      8.46 ms      189.1 GB/s  compile 0.01 s
+bellman_stored       20000 float64  cpu    warm    556.13 ms        5.8 GB/s  compile 0.01 s
+bellman_stored       40000 float32  cpu    warm   1158.99 ms        5.5 GB/s  compile 0.01 s
+bellman_stored       40000 float64  cpu    warm    745.05 ms       17.2 GB/s  compile 0.01 s
+bellman_stored       60000 float32  cpu    warm   1267.11 ms       11.4 GB/s  compile 0.01 s
+bellman_stored       60000 float64  cpu    warm   1088.10 ms       26.5 GB/s  compile 0.01 s
+bellman_stored        1000 float32  gpu    warm      0.09 ms       45.6 GB/s  compile 0.15 s
+bellman_stored        1000 float64  gpu    warm      0.17 ms       48.1 GB/s  compile 0.25 s
+bellman_stored        2000 float32  gpu    warm      0.17 ms       96.4 GB/s  compile 0.15 s
+bellman_stored        2000 float64  gpu    warm      0.20 ms      162.4 GB/s  compile 0.38 s
+bellman_stored        5000 float32  gpu    warm      0.25 ms      407.2 GB/s  compile 0.12 s
+bellman_stored        5000 float64  gpu    warm      0.23 ms      857.6 GB/s  compile 0.18 s
+bellman_stored       10000 float32  gpu    warm      0.28 ms     1450.9 GB/s  compile 0.12 s
+bellman_stored       10000 float64  gpu    warm      0.39 ms     2049.3 GB/s  compile 0.18 s
+bellman_stored       20000 float32  gpu    warm      0.55 ms     2918.7 GB/s  compile 0.14 s
+bellman_stored       20000 float64  gpu    warm      0.92 ms     3495.8 GB/s  compile 0.32 s
+bellman_stored       40000 float32  gpu    warm      1.64 ms     3908.2 GB/s  compile 0.25 s
+bellman_stored       40000 float64  gpu    warm      3.26 ms     3924.1 GB/s  compile 0.73 s
+bellman_stored       60000 float32  gpu    warm      3.50 ms     4112.2 GB/s  compile 0.44 s
+bellman_stored       60000 float64  gpu    warm      6.92 ms     4161.7 GB/s  compile 1.01 s
+bellman_recompute     1000 float32  cpu    warm      0.38 ms        2.7 Gcells/s  compile 0.06 s
+bellman_recompute     1000 float64  cpu    warm      1.55 ms        0.6 Gcells/s  compile 0.05 s
+bellman_recompute     2000 float32  cpu    warm      1.14 ms        3.5 Gcells/s  compile 0.08 s
+bellman_recompute     2000 float64  cpu    warm      5.89 ms        0.7 Gcells/s  compile 0.07 s
+bellman_recompute     5000 float32  cpu    warm      6.95 ms        3.6 Gcells/s  compile 0.07 s
+bellman_recompute     5000 float64  cpu    warm     31.35 ms        0.8 Gcells/s  compile 0.07 s
+bellman_recompute    10000 float32  cpu    warm     24.24 ms        4.1 Gcells/s  compile 0.07 s
+bellman_recompute    10000 float64  cpu    warm    148.88 ms        0.7 Gcells/s  compile 0.07 s
+bellman_recompute    20000 float32  cpu    warm     85.11 ms        4.7 Gcells/s  compile 0.08 s
+bellman_recompute    20000 float64  cpu    warm   1484.99 ms        0.3 Gcells/s  compile 0.07 s
+bellman_recompute    40000 float32  cpu    warm   2406.00 ms        0.7 Gcells/s  compile 0.07 s
+bellman_recompute    40000 float64  cpu    warm   4156.74 ms        0.4 Gcells/s  compile 0.06 s
+bellman_recompute    60000 float32  cpu    warm   3985.18 ms        0.9 Gcells/s  compile 0.07 s
+bellman_recompute    60000 float64  cpu    warm   7697.13 ms        0.5 Gcells/s  compile 0.06 s
+bellman_recompute     1000 float32  gpu    warm      0.09 ms       10.8 Gcells/s  compile 0.24 s
+bellman_recompute     1000 float64  gpu    warm      0.10 ms       10.3 Gcells/s  compile 0.33 s
+bellman_recompute     2000 float32  gpu    warm      0.15 ms       27.5 Gcells/s  compile 0.40 s
+bellman_recompute     2000 float64  gpu    warm      0.18 ms       22.8 Gcells/s  compile 0.51 s
+bellman_recompute     5000 float32  gpu    warm      0.22 ms      115.9 Gcells/s  compile 0.32 s
+bellman_recompute     5000 float64  gpu    warm      0.35 ms       72.3 Gcells/s  compile 0.48 s
+bellman_recompute    10000 float32  gpu    warm      0.43 ms      231.5 Gcells/s  compile 0.44 s
+bellman_recompute    10000 float64  gpu    warm      0.73 ms      137.7 Gcells/s  compile 0.80 s
+bellman_recompute    20000 float32  gpu    warm      1.12 ms      358.4 Gcells/s  compile 4.64 s
+bellman_recompute    20000 float64  gpu    warm      2.30 ms      173.5 Gcells/s  compile 1.59 s
+bellman_recompute    40000 float32  gpu    warm      3.30 ms      484.6 Gcells/s  compile 13.53 s
+bellman_recompute    40000 float64  gpu    warm      8.35 ms      191.6 Gcells/s  compile 83.99 s
+bellman_recompute    60000 float32  gpu    warm      5.81 ms      619.9 Gcells/s  compile 0.96 s
+bellman_recompute    60000 float64  gpu    warm     16.84 ms      213.8 Gcells/s  compile 82.17 s
+kalman                1000 float32  cpu    warm      4.43 ms      225.6 ksteps/s  compile 0.24 s
+kalman                1000 float64  cpu    warm      3.96 ms      252.3 ksteps/s  compile 0.24 s
+kalman               10000 float32  cpu    warm     50.05 ms      199.8 ksteps/s  compile 0.23 s
+kalman               10000 float64  cpu    warm     45.10 ms      221.7 ksteps/s  compile 0.24 s
+kalman              100000 float32  cpu    warm    495.83 ms      201.7 ksteps/s  compile 0.23 s
+kalman              100000 float64  cpu    warm    456.30 ms      219.2 ksteps/s  compile 0.24 s
+kalman                1000 float32  gpu    warm     85.14 ms       11.7 ksteps/s  compile 0.36 s
+kalman                1000 float64  gpu    warm     86.14 ms       11.6 ksteps/s  compile 0.31 s
+kalman               10000 float32  gpu    warm    836.56 ms       12.0 ksteps/s  compile 0.35 s
+kalman               10000 float64  gpu    warm    881.05 ms       11.4 ksteps/s  compile 0.32 s
+kalman              100000 float32  gpu    warm   8505.78 ms       11.8 ksteps/s  compile 0.54 s
+kalman              100000 float64  gpu    warm   8700.24 ms       11.5 ksteps/s  compile 0.47 s
+Writing to /root/benchmarks/results/digitalocean-gpu-h200x1-141gb/2026-11-06.jsonl
+matmul                 256 float32  gpu    warm      0.08 ms      397.3 GFLOPS  compile 1.16 s
+matmul                 256 float64  gpu    warm      0.09 ms      374.1 GFLOPS  compile 0.38 s
+matmul                 512 float32  gpu    warm      0.11 ms     2553.6 GFLOPS  compile 3.14 s
+matmul                 512 float64  gpu    warm      0.09 ms     2948.0 GFLOPS  compile 0.52 s
+matmul                1024 float32  gpu    warm      0.25 ms     8498.0 GFLOPS  compile 3.14 s
+matmul                1024 float64  gpu    warm      0.20 ms    10780.9 GFLOPS  compile 0.52 s
+matmul                2048 float32  gpu    warm      0.54 ms    31792.9 GFLOPS  compile 3.25 s
+matmul                2048 float64  gpu    warm      0.48 ms    35530.5 GFLOPS  compile 0.52 s
+matmul                4096 float32  gpu    warm      2.86 ms    48051.4 GFLOPS  compile 3.36 s
+matmul                4096 float64  gpu    warm      2.34 ms    58726.1 GFLOPS  compile 0.59 s
+matmul                8192 float32  gpu    warm     21.97 ms    50051.5 GFLOPS  compile 3.83 s
+matmul                8192 float64  gpu    warm     17.52 ms    62759.9 GFLOPS  compile 1.15 s
+== The lectures' packages, as the TITAN RTX run had them
+Using Python 3.12.3 environment at: .venv-phase2
+== Five lectures as written, on the card
+overborrowing rep 1: 15.8 s, cells ok True, float32
+wealth_dynamics_jax rep 1: 28.4 s, cells ok True, float32
+schelling_shocks rep 1: 6.9 s, cells ok True, float32
+opt_invest rep 1: 8.1 s, cells ok True, float64
+hopenhayn rep 1: 11.1 s, cells ok True, float64
+overborrowing rep 2: 14.4 s, cells ok True, float32
+wealth_dynamics_jax rep 2: 28.7 s, cells ok True, float32
+schelling_shocks rep 2: 6.9 s, cells ok True, float32
+opt_invest rep 2: 8.1 s, cells ok True, float64
+hopenhayn rep 2: 11.0 s, cells ok True, float64
+overborrowing rep 3: 14.2 s, cells ok True, float32
+wealth_dynamics_jax rep 3: 30.6 s, cells ok True, float32
+schelling_shocks rep 3: 7.2 s, cells ok True, float32
+opt_invest rep 3: 8.1 s, cells ok True, float64
+hopenhayn rep 3: 11.0 s, cells ok True, float64
+== The scale scripts, on the card
+float64 gpu a_size=200: hpi warm 0.028 s (13 it), greedy 0.13 ms, stored 0.09 ms, value 1.80 ms
+float64 gpu a_size=1000: hpi warm 0.032 s (15 it), greedy 0.19 ms, stored 0.14 ms, value 1.67 ms
+float64 gpu a_size=2000: hpi warm 0.029 s (14 it), greedy 0.22 ms, stored 0.19 ms, value 1.63 ms
+float64 gpu a_size=5000: hpi warm 0.028 s (11 it), greedy 0.41 ms, stored 0.25 ms, value 1.92 ms
+float64 gpu a_size=10000: hpi warm 0.033 s (12 it), greedy 0.82 ms, stored 0.60 ms, value 1.73 ms
+float64 gpu s_size=200: K warm 0.333 ms, cold 0.36 s, finite True
+float64 gpu s_size=1000: K warm 0.415 ms, cold 0.31 s, finite True
+float64 gpu s_size=5000: K warm 0.390 ms, cold 0.23 s, finite True
+float64 gpu s_size=20000: K warm 0.508 ms, cold 0.23 s, finite True
+float64 gpu s_size=50000: K warm 0.659 ms, cold 0.25 s, finite True
+float32 gpu a_size=200: hpi warm 0.029 s (13 it), greedy 0.12 ms, stored 0.09 ms, value 1.84 ms
+float32 gpu a_size=1000: hpi warm 0.051 s (21 it), greedy 0.14 ms, stored 0.09 ms, value 1.66 ms
+float32 gpu a_size=2000: hpi warm 0.031 s (13 it), greedy 0.20 ms, stored 0.15 ms, value 1.63 ms
+float32 gpu a_size=5000: hpi warm 0.006 s (2 it), greedy 0.31 ms, stored 0.20 ms, value 1.56 ms
+float32 gpu a_size=10000: hpi warm 0.038 s (14 it), greedy 0.57 ms, stored 0.36 ms, value 1.66 ms
+float32 gpu s_size=200: K warm 0.316 ms, cold 0.31 s, finite True
+float32 gpu s_size=1000: K warm 0.391 ms, cold 0.24 s, finite True
+float32 gpu s_size=5000: K warm 0.372 ms, cold 0.21 s, finite True
+float32 gpu s_size=20000: K warm 0.609 ms, cold 0.22 s, finite True
+float32 gpu s_size=50000: K warm 0.599 ms, cold 0.21 s, finite True
+== Done: digitalocean-gpu-h200x1-141gb-2026-11-06.tgz. Copy it off the machine, then terminate the machine.
+== precision-full: end 2026-11-06 01:48:48 UTC; exit 0; wall 900 s
