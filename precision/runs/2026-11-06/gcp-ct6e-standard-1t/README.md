@@ -13,7 +13,7 @@ This was one rented session, started from a laptop for QuantEcon/project-benchma
 | On the machine (UTC) | 03:15 to 04:47, creation to deletion. Spot reclaimed it 56 s after creation, it was started again by 03:19, and it wasn't reclaimed again |
 
 **Where the results are,** all in this folder:
-- **`probe/`:** the probe, `tpu_f64_probe.py`, as attached to QuantEcon/project-benchmarks-jax#38, with its sha256 in `probe-sha256.txt`. It's the same file the MI300X ran in [`../digitalocean-gpu-mi300x1-192gb/tpu-probe/`](../digitalocean-gpu-mi300x1-192gb/README.md). Its output is `probe.txt`, beside the pip freeze, `devices.txt` and `machine.txt`.
+- **`probe/`:** the probe, `tpu_f64_probe.py`, as attached to QuantEcon/project-benchmarks-jax#38, with its sha256 in `probe-sha256.txt`. It's the same file the MI300X ran, in [`../digitalocean-gpu-mi300x1-192gb/tpu-probe/`](../digitalocean-gpu-mi300x1-192gb/tpu-probe/). Its output is `probe.txt`, beside the pip freeze, `devices.txt` and `machine.txt`.
 - **`cells/`:** `tpu-cells.jsonl`, 52 rows, and `tpu_cells.sh`, the loop that ran them.
 - **`lectures/`:** `tpu_lectures.sh`, the packages, `whole/`, the scale scripts' JSON and `aiyagari-summary.md`.
 - **`session/`:** the instance's set-up script, each step's log and `.done` file, and `laptop/`, the scripts that created, synced, watched and deleted the instance.
@@ -41,6 +41,9 @@ Each step ran in tmux, one process at a time, since one process holds the chip.
 
 ## What they show
 
+- **How to read the probe:** it prints `OK` for any check that runs without raising, so an `OK` with `nan` errors is a mismatch, not a pass. It means the result differs from the CPU's in which values are finite.
+    - **Two lines show it:** `1e20*1e20`, which overflows to inf on the TPU where the CPU gives 1e40, and `det, slogdet` at n = 256.
+    - **Its int64 checks compare through complex128,** so they can't show a difference in the low bits of values above 2^53. These notes draw nothing from them but the int64 matrix product's failure.
 - **float64 is emulated, as a pair of float32s** (`probe/probe.txt`, section 1).
     - **Precision:** a round trip keeps 49 bits, against IEEE float64's 52.
     - **Range:** float32's. 1e-300 becomes 0, and 3.5e38 becomes inf, while subnormals down to 1.4e-45 survive.
