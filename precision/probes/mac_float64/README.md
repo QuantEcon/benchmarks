@@ -23,12 +23,13 @@ A probe for QuantEcon/project-benchmarks-jax#48. JAX's CPU backend doesn't call 
 
 ## Running it
 
-From the root of a checkout, with the benchmarks venv (built from `precision/constraints.txt`) and a separate MLX venv built from `requirements-mlx.txt`:
+From the root of a checkout, with the benchmarks venv (built from `precision/constraints.txt`) and a separate MLX venv built from `precision/probes/mac_float64/requirements-mlx.txt`:
 
 ```
 PROBE_HOST=<host> MLXPY=<the MLX venv>/bin/python bash precision/probes/mac_float64/run.sh precision/runs/<date>/<host>/mac-float64
 ```
 
 - **`--quick`** runs small sizes, as a check that everything runs, not a measurement.
+- **A step that fails** is logged in `run.log` and the run goes on to the others; it ends with a nonzero exit, and `run.log`'s last line names the failed steps.
 - **`summary.md`** tabulates a run.
 - **These are CPU timings,** so the machine should be quiet.

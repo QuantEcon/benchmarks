@@ -53,16 +53,19 @@ def jax_cpu(variant):
 
 
 def timed(call, budget=10.0, least=3, most=20):
-    """The first call's time, then warm calls' times: at least `least`, then until `budget` is spent."""
+    """
+    The first call's time, then warm calls' times (at least `least`, then until `budget` is spent),
+    and the last call's result, so that checking an answer costs no extra call.
+    """
     t = time.perf_counter()
-    call()
+    out = call()
     first = time.perf_counter() - t
     warm, start = [], time.perf_counter()
     while len(warm) < most and (len(warm) < least or time.perf_counter() - start < budget):
         t = time.perf_counter()
-        call()
+        out = call()
         warm.append(time.perf_counter() - t)
-    return first, warm
+    return first, warm, out
 
 
 def rel_diff(out, ref):
@@ -77,12 +80,13 @@ def ynn(f, *args):
 
 
 def versions(*names):
+    """Installed versions, from package metadata, so that a NumPy-only process never loads JAX."""
+    from importlib import metadata
     found = {"python": platform.python_version()}
     for name in names:
         try:
-            module = __import__(name)
-            found[name] = getattr(module, "__version__", "?")
-        except ImportError:
+            found[name] = metadata.version(name)
+        except metadata.PackageNotFoundError:
             pass
     return found
 
@@ -128,16 +132,16 @@ def matmul(variant, sizes):
         f = jax.jit(jnp.dot)
     for n in sizes:
         a, b = rng.uniform(-1, 1, (n, n)), rng.uniform(-1, 1, (n, n))
-        ref = a @ b
-        if variant == "numpy":
-            first, warm = timed(lambda: np.dot(a, b))
-            out, lowering = np.dot(a, b), "accelerate"
+        if variant == "numpy":  # the reference itself
+            first, warm, _ = timed(lambda: np.dot(a, b))
+            diff, lowering = 0.0, "accelerate"
         else:
+            ref = a @ b
             A, B = jnp.asarray(a), jnp.asarray(b)
-            first, warm = timed(lambda: f(A, B).block_until_ready())
-            out, lowering = f(A, B), "ynn" if ynn(f, A, B) else "xla"
+            first, warm, out = timed(lambda: f(A, B).block_until_ready())
+            diff, lowering = rel_diff(out, ref), "ynn" if ynn(f, A, B) else "xla"
         emit(step="matmul", variant=variant, size=n, first=first, warm=warm,
-             gflops=2 * n ** 3 / statistics.median(warm) / 1e9, max_rel_diff=rel_diff(out, ref),
+             gflops=2 * n ** 3 / statistics.median(warm) / 1e9, max_rel_diff=diff,
              lowering=lowering, versions=versions("numpy", "jax", "jaxlib"))
         if n > 64:
             continue
@@ -151,28 +155,28 @@ def matmul(variant, sizes):
             for _ in range(STEPS):
                 X = M @ X * 0.9 + M
             return X
-        ref = recurrence_np()
         extra = {}
-        if variant == "numpy":
-            first, warm = timed(recurrence_np)
-            out = recurrence_np()
+        if variant == "numpy":  # the reference itself
+            first, warm, _ = timed(recurrence_np)
+            diff = 0.0
             X, buf = np.eye(n), np.empty((n, n))
 
             def bare():
                 for _ in range(STEPS):
                     np.dot(M, X, out=buf)
-            _, bare_warm = timed(bare)
+            _, bare_warm, _ = timed(bare)
             extra["bare_dot_us"] = statistics.median(bare_warm) / STEPS * 1e6
         else:
+            ref = recurrence_np()
             Mj = jnp.asarray(M)
             run = jax.jit(lambda X0: jax.lax.scan(lambda X, _: (Mj @ X * 0.9 + Mj, None), X0, None,
                                                   length=STEPS)[0])
             X0 = jnp.eye(n)
-            first, warm = timed(lambda: run(X0).block_until_ready())
-            out = run(X0)
+            first, warm, out = timed(lambda: run(X0).block_until_ready())
+            diff = rel_diff(out, ref)
             extra["lowering"] = "ynn" if ynn(run, X0) else "xla"
         emit(step="recurrence", variant=variant, size=n, first=first, warm=warm,
-             per_product_us=statistics.median(warm) / STEPS * 1e6, max_rel_diff=rel_diff(out, ref),
+             per_product_us=statistics.median(warm) / STEPS * 1e6, max_rel_diff=diff,
              versions=versions("numpy", "jax", "jaxlib"), **extra)
 
 
@@ -188,7 +192,7 @@ def cliff(variant, sizes):
     f = jax.jit(kernels[variant])
     for m in sizes:
         R, v = jnp.full((m, m), -1.0, jnp.float64), jnp.zeros(m, jnp.float64)
-        first, warm = timed(lambda: f(R, v).block_until_ready(), least=3, most=5)
+        first, warm, _ = timed(lambda: f(R, v).block_until_ready(), least=3, most=5)
         emit(step="cliff", variant=variant, size=m, first=first, warm=warm, gib=R.nbytes / 2 ** 30,
              gbps=R.nbytes / statistics.median(warm) / 1e9, lowering="ynn" if ynn(f, R, v) else "xla",
              versions=versions("numpy", "jax", "jaxlib"))
@@ -228,13 +232,15 @@ def step(framework, kernel, sizes):
             if framework == "jax":
                 args = [jnp.asarray(x) for x in inputs]
                 call = lambda: f(*args).block_until_ready()
-                result = lambda: f(*args)
             else:
                 args = [mx.array(x, dtype=mx.float64) for x in inputs]
-                call = lambda: mx.eval(f(*args))
-                result = lambda: np.array(f(*args))
-            first, warm = timed(call)
-            out = result()
+
+                def call():
+                    y = f(*args)
+                    mx.eval(y)
+                    return y
+            first, warm, out = timed(call)
+            out = np.array(out)
         except Exception as e:  # an operation MLX lacks in float64, say
             print(json.dumps(dict(step=f"step-{kernel}", variant=framework, size=n, status="error",
                                   error=f"{type(e).__name__}: {str(e).splitlines()[0][:200]}")), flush=True)
