@@ -16,6 +16,10 @@ This is the suite's `jax-gpu` backend on one H100 SXM 80 GB. It was run by hand 
 - **The full run,** 00:34 to 00:36, `run_id` 20261106T003420Z: every size in both precisions, 50 cells, all `ok` (`session/chain37.sh`, `run.log`).
 - **Every float32 sweep again with `JAX_DEFAULT_MATMUL_PRECISION=highest`,** 00:36 to 00:38, `run_id` 20261106T003637Z: 22 cells, all `ok` (`session/highest.sh`, `run-highest.log`). It's labelled `cuda12-highest`, the script's label with `-highest` after it, as `precision/run_by_hand.sh` labels its own pass.
 
+- **How each step ran:** through `session/step.sh`, whose log for the step ends with its exit status and wall time.
+- **Every step exited 0:** the check in 34 s, the full run in 137 s, and the `highest` pass in 67 s.
+- **The scripts in `session/`** are kept as they ran, beside the logs they wrote.
+
 `summary.md` is this host's tables, from `python problems/summarise.py problems/results/` once the `--quick` rows were left out. It adds the `highest` tables to what the run wrote.
 
 ## What they show
