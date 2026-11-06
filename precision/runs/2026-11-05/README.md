@@ -72,6 +72,11 @@ This was one rented session, started from a laptop for QuantEcon/project-benchma
     - On the RTX PRO 6000, TF32 cut them to 809 to 1,381.
 - **The Kalman filter is slow on the card:** 3.6 to 4.1 thousand steps a second, against 286 to 342 thousand on the droplet's CPU. P7 takes 0.24 s to 0.33 s warm for a filter of 1,000 steps, at every state size and for batches up to 1,000.
 - **The five lectures** ran three times each, with every cell ok (`whole/lectures-set.log`). `opt_invest`'s first run took 30.4 s, and its others 11.8 s.
-- **The reproducers** come from ROCm/jax#895 and ROCm/jax#896, which report both bugs on an MI355X, the other `gfx950` part, and not on an MI300A. They ran through `repro/run_repro.sh`:
+- **The reproducers** come from ROCm/jax#895 and ROCm/jax#896, which report both bugs on an MI355X, the other `gfx950` part, and not on an MI300A.
+    - **How they ran:** through `repro/run_repro.sh`, which fetched each issue's script from its body at run time.
+    - **The saved scripts:** those fetched scripts are saved beside it as `rocm-jax-895.py` and `rocm-jax-896.py`. Each matches its issue's body, last edited on 2026-10-21, before the run (sha256 `b8abbe75d297…` and `7f76e190e096…`).
+    - **To re-run them,** use the saved copies rather than fetching again, since an issue's body can change.
+
+  The results:
     - **ROCm/jax#895's three-operand sort** was wrong in 19 of 100 calls. Through `jnp.argsort(x, stable=True)`, the two-operand sort, it was wrong in 0 of 100 (`repro/argsort.py`).
     - **ROCm/jax#896's scatter-add** was right in all 100 calls at the default. It was wrong in 3 of 100 calls with `--xla_gpu_enable_scatter_determinism_expander=true`, by up to 0.20, and in 3 of 100 with `--xla_gpu_deterministic_ops=true`, by up to 0.19.
