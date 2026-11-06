@@ -1,0 +1,13 @@
+== features 08:02:15
+== matmul numpy 08:02:15
+== matmul jax-ynn 08:02:22
+== matmul jax-xla-dot 08:02:33
+== cliff default 08:02:42
+== cliff no-reduce-fusion 08:02:43
+== cliff add 08:02:44
+== cliff rowmax 08:02:45
+== step jax bellman 08:02:45
+== step mlx bellman 08:02:47
+== step jax pv 08:02:52
+== step mlx pv 08:03:00
+== done, every step ok 08:03:05
