@@ -47,8 +47,11 @@ Each step ran in tmux, one process at a time, since one process holds the chip.
 - **float64 is emulated, as a pair of float32s** (`probe/probe.txt`, section 1).
     - **Precision:** a round trip keeps 49 bits, against IEEE float64's 52.
     - **Range:** float32's. 1e-300 becomes 0, and 3.5e38 becomes inf, while subnormals down to 1.4e-45 survive.
-    - **Operations:** most keep 45 to 49 bits normwise. The worst elementwise are cos and tan at 34.5 bits, subtraction at 34.9, log at 36.1 and `gammaln` at 27.7.
+    - **Outside linear algebra:** most operations keep 45 to 49 bits normwise. Of the elementwise functions (`probe/probe.txt`, section 2), the worst by the elementwise measure are `gammaln` at 27.7 bits, `cos` and `tan` at 34.5, `sin` on [-30, 30] at 34.6, subtraction at 34.9 and `log` at 36.1.
     - **Matrix products:** float64 ones keep 48.4 bits normwise, and `precision` changes nothing.
+    - **Linear algebra keeps less, without raising an error** (`probe/probe.txt`, section 5, at n = 256). The same probe on the MI300X, whose float64 is IEEE ([`../digitalocean-gpu-mi300x1-192gb/tpu-probe/probe-mi300x.txt`](../digitalocean-gpu-mi300x1-192gb/tpu-probe/probe-mi300x.txt)), shows what the test matrices themselves allow.
+        - **About float32's accuracy:** normwise, `lstsq` keeps 25.1 bits and `eigh`'s residual 24.4, against 47.9 and 49.5 on the MI300X.
+        - **Less lost:** normwise, `eigh`'s eigenvalues under its default implementation keep 33.8 bits, against 50.7, and `inv`, `svd` and `cholesky` lose 5.6 to 6.6 bits.
     - **What fails in float64:** `nextafter`, FFTs of float64 or complex128, int64 matrix products, and the `F64_F64_F64` dot algorithm.
 - **float32 matrix products default to one bfloat16 pass:** 8.6 bits normwise at n = 1,024. `high` makes it three passes, at 16.2 bits, and `highest` six, at 22.6.
 - **In float64, the precision cells agree with a CPU** as closely as Phase 2's H100 did with its own.
