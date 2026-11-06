@@ -6,6 +6,8 @@ This was one rented session, started from a laptop for QuantEcon/project-benchma
 
 The same day an MI300X ran, for QuantEcon/project-benchmarks-jax#32. Its notes are in [`digitalocean-gpu-mi300x1-192gb/`](digitalocean-gpu-mi300x1-192gb/README.md).
 
+A TPU v6e on Google Cloud ran QuantEcon/project-benchmarks-jax#38's diagnostic too: its float64 probe, the precision set's cells and the lectures. Its notes are in [`gcp-ct6e-standard-1t/`](gcp-ct6e-standard-1t/README.md).
+
 | | |
 |---|---|
 | Host | `digitalocean-gpu-h200x1-141gb`: DigitalOcean's `gpu-h200x1-141gb` droplet in atl1, on demand, with 24 vCPUs of an Intel Xeon Platinum 8592+ and 235 GiB. It was the first on-demand GPU size DigitalOcean listed that day, after none had listed a region from 09:52 AEDT |
