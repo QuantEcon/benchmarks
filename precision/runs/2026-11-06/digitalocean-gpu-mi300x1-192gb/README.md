@@ -41,9 +41,14 @@ The droplet was destroyed once its results were copied off.
 | Added: #38's TPU probe, standalone | 03:39:13 | 68 s | | `tpu-probe/` |
 
 - **How each step ran:** through `session/step.sh`, whose log for the step ends with its exit status and wall time. Every step exited 0.
-    - `session/chain34-mi300x.sh` ran the two checks, then `session/full.sh`.
+    - `session/chain34-mi300x.sh` ran the two checks, then `session/full.sh` once both had exited 0.
     - `session/extras-mi300x.sh` ran the additions.
-- **The precision tarball** was re-packed after the additions. Its sha256 before and after is in `session/`.
+    - `full.sh` and `extras-mi300x.sh` don't check a step's exit before starting the next, so each step's log is the record of how it ended.
+- **The scripts in this folder** are kept as they ran, beside the logs they wrote.
+- **The precision tarball** was re-packed after the additions. Its sha256 before and after is in `session/`. `extras-mi300x.sh` named it by the UTC date, as `precision/run_by_hand.sh` does, and both ran on 2026-11-06 UTC. So both hashes are of the precision run's `digitalocean-gpu-mi300x1-192gb-2026-11-06.tgz`.
+- **How the reproducers ran:** through `repro/run_repro.sh`, which fetched ROCm/jax#895's and ROCm/jax#896's scripts from the issues' bodies at run time.
+    - **The saved scripts:** the fetched scripts are saved beside it, and they're the MI350X's, byte for byte. [Its notes](../../2026-11-05/README.md) give their sha256. Neither body has changed since 2026-10-21, before both runs.
+    - **To re-run them,** use the saved copies rather than fetching again, since an issue's body can change.
 - **Both summaries were regenerated** once the `--quick` rows came out:
     - `precision-summary.md` has the `autotune0` rows, which the run's own summary predates;
     - `summary.md` has the `highest` tables.
