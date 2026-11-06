@@ -1,0 +1,6 @@
+jax 0.12.0  AMD Instinct MI350X VF  XLA_FLAGS=''
+  sort call 0: 32 output rows are not the input row their iota points to; 32 iota values appear more than once
+  sort call 10: 32 output rows are not the input row their iota points to; 32 iota values appear more than once
+  sort call 15: 64 output rows are not the input row their iota points to; 64 iota values appear more than once
+lax.sort((s32, f64, iota)) of 3145728 rows: 54 ms per call incl. checks; wrong in 19 of 100 calls
+RESULT WRONG

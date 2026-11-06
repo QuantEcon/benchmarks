@@ -1,0 +1,18 @@
+######## after gfx950 packages, XLA_FLAGS default
+jax 0.12.0  AMD Instinct MI350X VF  XLA_FLAGS=''
+ok    float32 matmul 256  max rel err vs NumPy 5.8e-07
+ok    float32 matvec 256  max rel err vs NumPy 9.5e-08
+ok    float32 batched matmul 64x8x8
+ok    float32 lu_factor
+ok    float32 solve  max rel err vs NumPy 1.0e-05
+ok    float32 inv
+ok    float32 cholesky
+ok    float32 solve_triangular
+ok    float64 matmul 256  max rel err vs NumPy 1.7e-15
+ok    float64 matvec 256  max rel err vs NumPy 3.7e-16
+ok    float64 batched matmul 64x8x8
+ok    float64 lu_factor
+ok    float64 solve  max rel err vs NumPy 5.2e-14
+ok    float64 inv
+ok    float64 cholesky
+ok    float64 solve_triangular

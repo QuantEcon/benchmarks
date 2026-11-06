@@ -1,0 +1,16 @@
+#!/bin/bash
+# highest.sh <host>: the organiser's highest pass after the default problem-type run (#34), then a
+# re-pack with run_by_hand.sh's own tar line, so the tarball carries both passes. <date> is the
+# directory the default run wrote, its UTC date at start, not the local date.
+set -euo pipefail
+H=$1
+cd ~/benchmarks
+D=$(basename "$(ls -d problems/results/$H/20*/ | sort | tail -1)")
+[ -f "$H-$D-problems.tgz" ] || { echo "no $H-$D-problems.tgz: the default run's date isn't $D"; exit 1; }
+echo "default run's date: $D"
+export PATH="$HOME/.local/bin:$PATH"
+source .venv-problems/bin/activate
+JAX_DEFAULT_MATMUL_PRECISION=highest python problems/run_suite.py --backends jax-gpu --host $H --dtypes float32 --label highest 2>&1 \
+  | tee problems/results/$H/$D/run-highest.log
+tar czf "$H-$D-problems.tgz" "problems/results/$H"
+echo "re-packed $H-$D-problems.tgz"
