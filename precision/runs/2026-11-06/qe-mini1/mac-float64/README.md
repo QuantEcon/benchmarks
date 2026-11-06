@@ -28,7 +28,7 @@ For QuantEcon/project-benchmarks-jax#48: `precision/probes/mac_float64/` at `380
 
 **Three notes on the files:**
 - **Run 1's folder was renamed** after it ran, so its cliff rows' `xla_flags` name the dump at `2026-11-06-qe-mini1/xla-dump/`.
-- **`session/m6_probe.sh` is the script as runs 2 and 3 ran it.** Run 1 ran it before it took a label, and sampled every 30 s rather than every 5 s.
+- **`session/m6_probe.sh` is the script as runs 2 and 3 ran it.** Run 1 ran it before it took a label, and sampled every 30 s rather than every 5 s. Its header still says 30 s, from run 1.
 - **The control** ran `run.sh`'s two `probe.py step` lines for each framework by hand, at the full sizes: `bellman 2000,8000,14000` and `pv 1000,4000`.
 
 ## What they show
