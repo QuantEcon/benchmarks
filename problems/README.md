@@ -41,6 +41,8 @@ On 2026-11-05 `jax-gpu` also ran on an RTX PRO 6000 Blackwell Server Edition, EC
 
 On 2026-11-05 `jax-gpu` also ran on an AMD Instinct MI350X under ROCm 10.1, DigitalOcean's `gpu-mi350x1-288gb-spot` ([notes](results/digitalocean-gpu-mi350x1-288gb-spot/2026-11-05/README.md)), and isn't in the tables below yet. Every answer agreed with NumPy's float64 answer at JAX's default precision, and P3's float32 iteration counts were the same under `highest`: on that card a float32 matrix product is full float32 by default.
 
+On 2026-11-06 `jax-gpu` also ran on an H100 SXM 80 GB, Lambda's `gpu_1x_h100_sxm5` ([notes](results/lambda-gpu_1x_h100_sxm5/2026-11-06/README.md)), and isn't in the tables below yet. TF32 shows the same way there: at XLA's default, P3's float32 answers were 11% to 12% off, after the same iteration counts as on the RTX PRO 6000, and with `highest` they agreed. Every other answer agreed at the default.
+
 The tables give each device's fastest stack at each size in float64, in seconds. Warm is the median of the warm runs. Cold is what a fresh process pays from its inputs to its first answer, compile included. The fastest device in each row is in bold, for warm and for cold separately. The TITAN RTX's columns are `jax-gpu`, the only stack on it. Every number here is in a table that `python problems/summarise.py problems/results/` prints, with every backend at every size and in both precisions.
 
 **P1 `vfi`, by grid size:**
