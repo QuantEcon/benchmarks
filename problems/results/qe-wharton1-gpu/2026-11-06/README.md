@@ -6,7 +6,7 @@ For QuantEcon/project-benchmarks-jax#46, which asks why this machine's Threadrip
 |---|---|
 | Host | `qe-wharton1-gpu`: an AMD Ryzen Threadripper 2990WX, with 32 cores and 64 threads, and 125 GiB, on Linux 7.0.0-34 (Ubuntu 24.04). Core boost is off (`cpufreq` boost 0), so the cores run at 2.2 to 3.2 GHz (`layout.log`) |
 | Memory | Four NUMA nodes of eight cores each. Nodes 0 and 2 have the memory, 64 GB each; nodes 1 and 3 have none, so their cores reach memory only across the fabric. `numactl` puts another node at a distance of 16, against 10 for a node's own. `numa_balancing` is on, transparent huge pages are `madvise`, and the governor is `schedutil`. The BIOS's memory interleave setting can't be read without root |
-| Software | The run checkout's `.venv`: Python 3.12.3, JAX 0.12.0.1, Numba 0.68.1, and NumPy 2.5.4 with OpenBLAS 0.3.34 (`environment.txt`) |
+| Software | The run checkout's `.venv`: JAX 0.12.0.1, Numba 0.68.1 and NumPy 2.5.4 (`environment.txt`). Each row's `env` records Python 3.12.3 and NumPy's BLAS, OpenBLAS 0.3.34 (`numpy_blas`) |
 | Threads | None is set. OpenBLAS, Numba and XLA each size their pools to the CPUs a placement allows |
 | When | 2026-11-06, 07:08:45 to 10:29:34 UTC, under the machine's lock, in tmux |
 
