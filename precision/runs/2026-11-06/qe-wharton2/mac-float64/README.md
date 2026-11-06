@@ -7,7 +7,7 @@ For QuantEcon/project-benchmarks-jax#48: `precision/probes/mac_float64/` at `380
 | Host | `qe-wharton2`: an Apple M5 Pro, with 18 cores (6 Super and 12 Performance) and 64 GB, on macOS 26.7.1 (25G241), on AC power with Low Power Mode off |
 | Software | The problem-type suite's venv: JAX 0.12.0.1 and NumPy 2.5.4, whose BLAS and LAPACK are Accelerate's, on Python 3.12.15. MLX 0.32.4, with NumPy 2.5.4, in a venv of its own from `requirements-mlx.txt` |
 | When | 2026-11-06, 14:49:16 to 14:51:15 UTC, straight after the problem-type suite (`problems/results/qe-wharton2/2026-11-06/`), in the same window |
-| Scripts | `session/probe48_setup.sh` put the probe's commit in a worktree and MLX in its venv, and warmed the imports. Then `session/probe48.sh` ran `run.sh` twice, and step 4 alone as a control, sampling the machine every 5 s into each folder's `state.txt` |
+| Scripts | `session/probe48_setup.sh` put the probe's commit in a worktree and MLX in its venv, and warmed the imports. Then `session/probe48.sh` ran `run.sh` twice, and step 4 alone as a control, sampling the machine every 5 s into each folder's `state.txt`. Both are kept as they ran |
 
 **Where the results are:**
 - **`run1/` and `run2/`:** two full runs, back to back, from 14:49:23 and 14:50:09 UTC.
