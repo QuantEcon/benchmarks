@@ -17,7 +17,7 @@ For QuantEcon/project-benchmarks-jax#48: `precision/probes/mac_float64/` at `380
 - **`session/`:** the two scripts and their logs.
 
 **A guest machine, so nothing on it was paused:**
-- **Its managed endpoint agents** took up to 17% of a core in each run. Their names are redacted in the `state.txt` files.
+- **Its managed endpoint agents** took up to 17% of a core in each run. Their names are redacted in the `state.txt` files. The run's own account, `matt`, isn't, as in the machine's earlier runs.
 - **Spotlight's `mds_stores`** took 50% of a core at one sample in run 1, at 14:49:53, during step 4, just after the cliff wrote its XLA dump. In run 2 it took 12%.
 - **The control** came within 2% of the two runs' times, except MLX's `P @ V` at 1,000, 11% slower, and its Bellman step at 2,000, 6% faster.
 - **Between runs,** 29 of the 39 cells agree within 5%. The other ten:
