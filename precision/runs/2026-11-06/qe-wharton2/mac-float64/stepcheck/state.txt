@@ -1,0 +1,19 @@
+# Redacted for publication: the machine is a guest's, and software its owner's institution manages is shown as <managed agent>, with its CPU figures as recorded.
+== 14:50:59
+52034 100.4 /Users/matt/bench/probe48/mlx-venv/bin/python
+  317   4.0 <managed agent>
+  843   0.9 <managed agent>
+  318   0.3 <managed agent>
+  478   0.2 powermetrics
+== 14:51:04
+52056 1762.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.3 <managed agent>
+  843   0.8 <managed agent>
+  324   0.2 <managed agent>
+  184   0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+== 14:51:10
+52071  99.8 /Users/matt/bench/probe48/mlx-venv/bin/python
+  317  10.6 <managed agent>
+  318   5.6 <managed agent>
+    1   0.7 /sbin/launchd
+  332   0.6 <managed agent>
