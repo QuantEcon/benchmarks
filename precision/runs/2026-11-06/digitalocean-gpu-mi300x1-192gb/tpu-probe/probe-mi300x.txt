@@ -1,0 +1,119 @@
+jax 0.12.0 | jaxlib 0.12.0 | device: gpu AMD Instinct MI300X VF | n devices: 1
+jax_default_matmul_precision = None
+
+== 1. storage and range (host f64 -> device -> host)
+dtype on device: float64 | round-trip max rel err 0.0e+00 (inf bits)
+            np.float64(1e-30) -> np.float64(1e-30)
+            np.float64(1e-37) -> np.float64(1e-37)
+          np.float64(1.2e-38) -> np.float64(1.2e-38)
+            np.float64(1e-39) -> np.float64(1e-39)
+            np.float64(1e-45) -> np.float64(1e-45)
+           np.float64(1e-300) -> np.float64(1e-300)
+           np.float64(5e-324) -> np.float64(5e-324)
+          np.float64(3.4e+38) -> np.float64(3.4e+38)
+          np.float64(3.5e+38) -> np.float64(3.5e+38)
+           np.float64(1e+300) -> np.float64(1e+300)
+   np.float64(1.7976931348623157e+308) -> np.float64(1.7976931348623157e+308)
+on-device 1e20*1e20 (IEEE: 1e40)   OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+on-device 1e-20*1e-20 (IEEE:1e-40) OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+(1 + 1e-10) - 1 (f32 gives 0)      OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+compiled HLO for a*b+a: 'f64[' x16, 'f32[' x0
+
+== 2. elementwise and transcendentals (inputs in [0.5, 2) unless noted)
+add                                OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+sub                                OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+mul                                OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+div                                OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+power                              OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.1e-16 (53.0 bits)
+arctan2                            OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.7e-16 (52.4 bits)
+sqrt                               OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+exp                                OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.2e-16 (52.9 bits)
+log                                OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.6e-16 (52.5 bits)
+log1p                              OK   float64    elem=2.7e-16 (51.7 bits)  norm=2.0e-16 (52.1 bits)
+expm1                              OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.4e-16 (52.7 bits)
+sin                                OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.1e-16 (53.0 bits)
+cos                                OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.3e-16 (52.8 bits)
+tan                                OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.6e-19 (62.5 bits)
+tanh                               OK   float64    elem=4.3e-16 (51.0 bits)  norm=3.5e-16 (51.4 bits)
+erf                                OK   float64    elem=2.1e-16 (52.1 bits)  norm=1.1e-16 (53.0 bits)
+gammaln                            OK   float64    elem=4.7e-11 (34.3 bits)  norm=3.1e-15 (48.2 bits)
+logistic                           OK   float64    elem=3.1e-16 (51.5 bits)  norm=2.5e-16 (51.8 bits)
+exp on [-30, 30]                   OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.8e-16 (52.3 bits)
+sin on [-30, 30]                   OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.1e-16 (53.0 bits)
+lax.fma                            OK   float64    elem=2.2e-16 (52.0 bits)  norm=1.5e-16 (52.6 bits)
+nextafter                          OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+view as int64 (bitcast)            OK   int64      elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+float64 -> float32 -> float64      OK   float64    elem=5.8e-08 (24.0 bits)  norm=3.0e-08 (25.0 bits)
+
+== 3. reductions, scans, control flow, indexing
+sum 1e6                            OK   float64    elem=1.2e-16 (52.9 bits)  norm=1.2e-16 (52.9 bits)
+cumsum 1e6                         OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+max, argmax                        OK   float64,int64 elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+sort                               OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+argsort                            OK   int64      elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+searchsorted                       OK   int32      elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+gather x[idx]                      OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+scatter-add x.at[idx].add          OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+while_loop (Newton sqrt, 60 it)    OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+scan AR(1) 10k steps               OK   float64    elem=2.4e-12 (38.6 bits)  norm=4.1e-16 (51.1 bits)
+random.uniform f64                 OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+random.normal f64                  OK   float64    elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+
+== 4. dot / matmul in float64 (does `precision` change anything?)
+matmul f64 precision=None          OK   float64    elem=1.5e-10 (32.6 bits)  norm=1.8e-15 (48.9 bits)
+matmul f64 precision=default       OK   float64    elem=1.5e-10 (32.6 bits)  norm=1.8e-15 (48.9 bits)
+matmul f64 precision=highest       OK   float64    elem=1.5e-10 (32.6 bits)  norm=1.8e-15 (48.9 bits)
+matmul f64 preset F64_F64_F64      OK   float64    elem=1.5e-10 (32.6 bits)  norm=1.8e-15 (48.9 bits)
+einsum f64                         OK   float64    elem=1.5e-10 (32.6 bits)  norm=1.8e-15 (48.9 bits)
+
+== 5. jnp.linalg / lax.linalg in float64 (n=256)
+cholesky                           OK   float64    elem=8.7e-12 (36.7 bits)  norm=4.6e-16 (51.0 bits)
+solve (LU)                         OK   float64    elem=3.8e-12 (37.9 bits)  norm=8.2e-14 (43.5 bits)
+inv                                OK   float64    elem=2.5e-09 (28.6 bits)  norm=2.7e-14 (45.1 bits)
+det, slogdet                       OK   float64,float64 elem=2.3e-13 (42.0 bits)  norm=2.3e-13 (42.0 bits)
+lu_factor                          OK   float64    elem=6.3e-10 (30.6 bits)  norm=2.0e-14 (45.5 bits)
+triangular_solve                   OK   float64    elem=6.7e-14 (43.8 bits)  norm=7.6e-16 (50.2 bits)
+qr (Q@R reconstruct)               OK   float64    elem=1.3e-10 (32.8 bits)  norm=2.0e-15 (48.8 bits)
+eigh eigenvalues (default)         OK   float64    elem=1.7e-15 (49.1 bits)  norm=5.5e-16 (50.7 bits)
+eigh residual |SV-VW|/|S| (norm=abs) OK   float64    elem=0.0e+00 ( inf bits)  norm=1.3e-15 (49.5 bits)
+eigh JACOBI eigenvalues            OK   float64    elem=1.1e-13 (43.1 bits)  norm=1.0e-13 (43.2 bits)
+svd singular values                OK   float64    elem=5.6e-14 (44.0 bits)  norm=5.4e-14 (44.1 bits)
+lstsq                              OK   float64    elem=2.3e-12 (38.7 bits)  norm=3.8e-15 (47.9 bits)
+
+== 6. FFT, complex128, int64
+fft f64 (-> complex128)            OK   complex128 elem=9.6e-14 (43.2 bits)  norm=4.9e-17 (54.2 bits)
+rfft f64                           OK   complex128 elem=7.3e-14 (43.6 bits)  norm=2.9e-16 (51.6 bits)
+complex128 mul/abs/exp             OK   complex128,float64,complex128 elem=3.8e-16 (51.2 bits)  norm=2.5e-16 (51.8 bits)
+complex128 matmul                  OK   complex128 elem=2.3e-16 (52.0 bits)  norm=1.4e-16 (52.7 bits)
+int64 arith (*3, //7, %7)          OK   int64,int64,int64 elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+int64 sum, cumsum                  OK   int64,int64 elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+int64 matmul                       OK   int64      elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+
+== 7. float32 matmul precision levels (n=1024; error vs CPU float64)
+   precision=None               normwise rel err 8.2e-04 (10.3 bits)
+   precision=bfloat16           normwise rel err 8.2e-04 (10.3 bits)
+   precision=default            normwise rel err 8.2e-04 (10.3 bits)
+   precision=high               normwise rel err 8.2e-04 (10.3 bits)
+   precision=highest            normwise rel err 1.6e-06 (19.3 bits)
+   precision=BF16_BF16_F32      normwise rel err 2.5e-03 ( 8.6 bits)
+   precision=BF16_BF16_F32_X3   normwise rel err 4.7e-06 (17.7 bits)
+   precision=BF16_BF16_F32_X6   normwise rel err 1.3e-07 (22.9 bits)
+   precision=BF16_BF16_F32_X9   normwise rel err 8.2e-04 (10.3 bits)
+   precision=F32_F32_F32        normwise rel err 1.4e-06 (19.5 bits)
+   precision=TF32_TF32_F32      normwise rel err 8.2e-04 (10.3 bits)
+   f32 inputs, preferred_element_type=float32: dtype float32, rel err 8.2e-04
+   f32 inputs, preferred_element_type=float64: dtype float64, rel err 8.2e-04
+   jax.default_matmul_precision('highest') context: rel err 1.6e-06
+   fft->ifft f32 round trip max abs err 9.5e-07
+
+== 8. timing (warm, median of 5; seconds)
+   exp+log, 2^24 elems     f32: 1.48e-04  f64: 2.49e-04
+   matmul n=1024  f32 default: 1.55e-04  f32 high: 1.57e-04  f32 highest: 1.66e-04  f64: 3.18e-04
+   matmul n=4096  f32 default: 8.66e-04  f32 high: 8.72e-04  f32 highest: 1.45e-03  f64: 7.26e-03
+   serial recursion 1e5 steps on accelerator f32: 6.86e-01  f64: 6.93e-01
+   serial recursion 1e5 steps on host CPU    f32: 4.14e-04  f64: 3.61e-04
+
+LAST (compile hung ~20 min on TPU in 2022, jax#10145):
+random.randint (f64 maxval)        OK   int64      elem=0.0e+00 ( inf bits)  norm=0.0e+00 ( inf bits)
+
+host CPU: 20 logical CPUs; model name	: INTEL(R) XEON(R) PLATINUM 8568Y+

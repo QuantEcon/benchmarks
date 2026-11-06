@@ -4,6 +4,8 @@ This was one rented session, started from a laptop for QuantEcon/project-benchma
 - **What ran:** the problem-type suite, then Phase 2's precision set, which @mmcky added while the droplet was up.
 - **Afterwards:** the droplet was destroyed once its results were copied off.
 
+The same day an MI300X ran, for QuantEcon/project-benchmarks-jax#32. Its notes are in [`digitalocean-gpu-mi300x1-192gb/`](digitalocean-gpu-mi300x1-192gb/README.md).
+
 | | |
 |---|---|
 | Host | `digitalocean-gpu-h200x1-141gb`: DigitalOcean's `gpu-h200x1-141gb` droplet in atl1, on demand, with 24 vCPUs of an Intel Xeon Platinum 8592+ and 235 GiB. It was the first on-demand GPU size DigitalOcean listed that day, after none had listed a region from 09:52 AEDT |

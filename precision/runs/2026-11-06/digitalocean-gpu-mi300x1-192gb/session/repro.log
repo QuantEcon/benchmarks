@@ -1,0 +1,16 @@
+== repro: start 2026-11-06 03:27:21 UTC; cmd: bash /root/repro/run_repro.sh
+jax 0.12.0  AMD Instinct MI300X VF  XLA_FLAGS=''
+lax.sort((s32, f64, iota)) of 3145728 rows: 67 ms per call incl. checks; wrong in 0 of 100 calls
+RESULT OK
+jax 0.12.0  AMD Instinct MI300X VF
+jnp.argsort(stable=True) of 3145728 keys: 8 ms per call incl. checks; wrong in 0 of 100 calls
+jax 0.12.0  AMD Instinct MI300X VF  XLA_FLAGS=''
+200 scatter-adds of 3145728 updates per call, 16 ms per call; wrong in 0 of 100 calls (max rel. error 1.5e-15); 100 distinct results for 2 inputs
+RESULT OK
+jax 0.12.0  AMD Instinct MI300X VF  XLA_FLAGS='--xla_gpu_enable_scatter_determinism_expander=true'
+200 scatter-adds of 3145728 updates per call, 481 ms per call; wrong in 0 of 100 calls (max rel. error 6.8e-16); 2 distinct results for 2 inputs
+RESULT OK
+jax 0.12.0  AMD Instinct MI300X VF  XLA_FLAGS='--xla_gpu_deterministic_ops=true'
+200 scatter-adds of 3145728 updates per call, 479 ms per call; wrong in 0 of 100 calls (max rel. error 6.8e-16); 2 distinct results for 2 inputs
+RESULT OK
+== repro: end 2026-11-06 03:29:59 UTC; exit 0; wall 158 s
