@@ -1,0 +1,36 @@
+https://symbolize.stripped_domain/r/?trace=72caad91e9dd,72caad84251f,72c9b2993cf6,72c9b2993e0d,72c9b29943bc,72c9b29946e8,72c9b2996ae3,72c9af4d6b8e,72c9af4d711f,72c9af3a8174,72c9af3d6140,72c9af507f0a,16178e0,16713dd,167398b,161b85e,167fb8f,167fa96,161b61f,16713dd,16b2256,1832c44,183248d,1832289,1832214,183211c,18db1f4,1787a8e,17878f5,72caad829d8f&map= 
+*** SIGTERM received by PID 28423 (TID 28423) on cpu 24, si_code=0, from PID 28422; stack trace: ***
+PC: @     0x72caad91e9dd  (unknown)  syscall
+    @     0x72c9a6d00137       1888  FailureSignalHandler()
+    @     0x72caad842520  1237390768  (unknown)
+    @     0x72c9b2993cf7         48  absl::lts_20260526::synchronization_internal::FutexWaiter::Wait()
+    @     0x72c9b2993e0e         32  AbslInternalPerThreadSemWait_lts_20260526
+    @     0x72c9b29943bd         48  absl::lts_20260526::Mutex::Block()
+    @     0x72c9b29946e9        128  absl::lts_20260526::Mutex::LockSlowWithDeadline()
+    @     0x72c9b2996ae4         96  absl::lts_20260526::Notification::WaitForNotificationWithTimeout()
+    @     0x72c9af4d6b8f         96  jax::BlockUntilReadyWithCancel()
+    @     0x72c9af4d7120        144  jax::AwaitBuffersReady()
+    @     0x72c9af3a8175        112  jax::PyArray::BlockUntilReady()
+    @     0x72c9af3d6141         64  nanobind::detail::func_create<>()::{lambda()#1}::__invoke()
+    @     0x72c9af507f0b        144  nanobind::detail::nb_func_vectorcall_simple_1()
+    @          0x16178e1       1072  _PyEval_EvalFrameDefault
+    @          0x16713de        112  PyEval_EvalCode
+    @          0x167398c        112  builtin_exec
+    @          0x161b85f       1072  _PyEval_EvalFrameDefault
+    @          0x167fb90         64  gen_send_ex2
+    @          0x167fa97         32  gen_send_ex
+    @          0x161b620       1072  _PyEval_EvalFrameDefault
+    @          0x16713de        112  PyEval_EvalCode
+    @          0x16b2257         64  run_mod
+    @          0x1832c45         80  pyrun_file
+    @          0x183248e         80  _PyRun_SimpleFileObject
+    @          0x183228a         64  _PyRun_AnyFileObject
+    @          0x1832215        208  pymain_run_file_obj
+    @          0x183211d         48  pymain_run_file
+    @          0x18db1f5        208  Py_RunMain.warm
+    @          0x1787a8f        608  pymain_main
+    @          0x17878f6         48  main
+    @     0x72caad829d90  (unknown)  (unknown)
+https://symbolize.stripped_domain/r/?trace=72caad91e9dd,72c9a6d00136,72caad84251f,72c9b2993cf6,72c9b2993e0d,72c9b29943bc,72c9b29946e8,72c9b2996ae3,72c9af4d6b8e,72c9af4d711f,72c9af3a8174,72c9af3d6140,72c9af507f0a,16178e0,16713dd,167398b,161b85e,167fb8f,167fa96,161b61f,16713dd,16b2256,1832c44,183248d,1832289,1832214,183211c,18db1f4,1787a8e,17878f5,72caad829d8f&map= 
+E1106 03:57:28.697281   28423 coredump_hook.cc:250] RAW: Remote crash gathering disabled for SIGTERM.
+E1106 03:57:29.092417   28423 process_state.cc:794] RAW: Raising signal 15 with default behavior
