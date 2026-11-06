@@ -1,0 +1,21 @@
+== problems-quick: start 2026-11-05 23:06:07 UTC; cmd: bash problems/run_by_hand.sh digitalocean-gpu-mi350x1-288gb-spot --quick
+== The machine
+ROCm none: jax-rocm10-plugin
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0: [RocmDevice(id=0)]
+== The suite on the card
+Writing to /root/benchmarks/problems/results/digitalocean-gpu-mi350x1-288gb-spot/2026-11-05.jsonl
+P1 vfi     grid             100 float64  jax-gpu         error (JaxRuntimeError: INTERNAL: All backends failed to find supported configs:
+ - INTERNAL: error: HipblasLt error 3)
+P3 egm     grid             200 float64  jax-gpu         error (JaxRuntimeError: INTERNAL: All backends failed to find supported configs:
+ - INTERNAL: error: HipblasLt error 3)
+P3 egm     grid             200 float32  jax-gpu         warm     0.356 s  cold    19.236 s    2212 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.005 s  cold     0.419 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.005 s  cold     0.342 s     200 iterations
+P7 kalman  batch             10 float64  jax-gpu         error (JaxRuntimeError: INTERNAL: Failed to get configs for: 5 out of 23 instructions. See logs for all failures. Example fai
+P7 kalman  batch             10 float32  jax-gpu         error (JaxRuntimeError: INTERNAL: jaxlib/gpu/linalg_kernels.cc:115: operation gpuGetLastError() failed: invalid kernel file [
+P7 kalman  state             10 float64  jax-gpu         error (JaxRuntimeError: INTERNAL: Failed to get configs for: 5 out of 20 instructions. See logs for all failures. Example fai
+P7 kalman  state             10 float32  jax-gpu         error (JaxRuntimeError: INTERNAL: jaxlib/gpu/linalg_kernels.cc:115: operation gpuGetLastError() failed: invalid kernel file [
+== Done: digitalocean-gpu-mi350x1-288gb-spot-2026-11-05-problems.tgz. Copy it off the machine, then terminate the machine.
+== problems-quick: end 2026-11-05 23:07:18 UTC; exit 0; wall 71 s
