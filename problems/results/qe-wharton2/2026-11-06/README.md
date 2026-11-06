@@ -19,7 +19,7 @@ This is the suite's four CPU backends on an Apple M5 Pro, every size in both pre
 **`qe-wharton2` is a guest machine, so nothing on it was paused.**
 - It ran on AC power, and macOS reported no thermal or performance warning.
 - Its managed endpoint agents ran throughout. `machine.txt`, `state-before.txt` and `state-after.txt` record the busiest processes at the start, and before and after the full run. In them, the agents took at most about 15% of one of the 18 cores.
-- In those records the managed software's names are redacted.
+- In those records the managed software's names are redacted. The run's own account, `matt`, isn't, as in the machine's earlier runs.
 
 **The files:**
 - `summary.md`: this host's tables, from `python problems/summarise.py problems/results/`;
