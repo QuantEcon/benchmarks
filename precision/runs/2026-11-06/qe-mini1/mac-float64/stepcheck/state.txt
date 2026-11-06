@@ -1,0 +1,45 @@
+== 08:04:58
+50959  72.5 /Users/mmcky/bench/mlx/.venv/bin/python
+88128   1.9 claude
+91786   0.6 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  430   0.1 /usr/sbin/notifyd
+== 08:05:00
+50959 101.3 /Users/mmcky/bench/mlx/.venv/bin/python
+  440   5.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  436   4.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+88529   3.6 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+== 08:05:02
+91786   5.1 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+88128   1.5 claude
+  440   0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+44098   0.3 claude
+== 08:05:04
+50970 1127.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+77997   7.6 claude
+88128   3.9 claude
+95606   0.7 claude
+== 08:05:06
+50970 1158.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88128   4.9 claude
+66110   4.7 /opt/homebrew/bin/claude
+  416   2.3 /usr/libexec/dasd
+== 08:05:08
+50970 1174.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88128   2.8 claude
+95606   0.7 claude
+  436   0.6 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+== 08:05:10
+50988 149.3 /Users/mmcky/bench/mlx/.venv/bin/python
+44098   3.3 claude
+88128   1.3 claude
+66110   0.2 /opt/homebrew/bin/claude
+== 08:05:12
+50988 173.8 /Users/mmcky/bench/mlx/.venv/bin/python
+91786   1.8 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+88128   1.3 claude
+77997   0.1 claude
+== 08:05:15
+50988 200.0 /Users/mmcky/bench/mlx/.venv/bin/python
+77997   4.1 claude
+88128   1.3 claude
+91786   0.7 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
