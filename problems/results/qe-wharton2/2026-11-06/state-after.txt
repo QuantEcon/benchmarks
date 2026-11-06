@@ -1,0 +1,30 @@
+# Redacted for publication: the machine is a guest's, and software its owner's institution manages is shown as <managed agent>, with its CPU figures as recorded.
+== state-after: start 2026-11-06 14:49:16 UTC; cmd: bash /Users/matt/bench/pbj-m5pro/state.sh
+2026-11-06 14:49:16 UTC
+ 9:49  up 16:57, 3 users, load averages: 2.38 3.47 3.31
+Now drawing from 'AC Power'
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+ powermode            0
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+There is a screen on:
+	37702.pbj-m5pro	(Detached)
+1 Socket in /var/folders/f_/0m_h5njx3yvddfxy7c5bs6f80000gq/T/.screen.
+
+  PID  %CPU %MEM    RSS COMM
+  317   2.2  0.4 246560 <managed agent>
+  324   0.3  0.1  72256 <managed agent>
+  318   0.3  0.6 409344 <managed agent>
+51482   0.0  0.0   2016 bash
+51477   0.0  0.0   2064 bash
+51364   0.0  0.0  18784 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51363   0.0  0.0  18848 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51357   0.0  0.0  18880 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51362   0.0  0.0  18944 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51361   0.0  0.0  18848 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51358   0.0  0.0  18880 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51359   0.0  0.0  18896 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51360   0.0  0.0  18992 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+51356   0.0  0.0  18928 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+== state-after: end 2026-11-06 14:49:16 UTC; exit 0; wall 0 s
