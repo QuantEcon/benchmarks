@@ -1,0 +1,62 @@
+== precision-quick: start 2026-11-06 02:57:10 UTC; cmd: bash precision/run_by_hand.sh digitalocean-gpu-mi300x1-192gb cpu,gpu --quick
+== The machine
+ROCm none: jax-rocm10-plugin
+== Python 3.12 and JAX
+downloading uv 0.13.7 x86_64-unknown-linux-gnu
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+JAX 0.12.0: [RocmDevice(id=0)]
+AMD Instinct MI300X VF allocator limit, GiB: 143.77
+AMD Instinct MI300X VF allocator limit, GiB: 182.1
+== The precision matrix
+Writing to /root/benchmarks/results/digitalocean-gpu-mi300x1-192gb/2026-11-06.jsonl
+matmul                 256 float32  cpu    warm      0.18 ms      185.4 GFLOPS  compile 0.01 s
+matmul                 256 float64  cpu    warm      0.17 ms      203.3 GFLOPS  compile 0.01 s
+matmul                1024 float32  cpu    warm      1.05 ms     2051.6 GFLOPS  compile 0.01 s
+matmul                1024 float64  cpu    warm      1.74 ms     1237.3 GFLOPS  compile 0.01 s
+matmul                 256 float32  gpu    warm      0.15 ms      228.1 GFLOPS  compile 3.25 s
+matmul                 256 float64  gpu    warm      0.15 ms      218.4 GFLOPS  compile 6.79 s
+matmul                1024 float32  gpu    warm      0.16 ms    13372.4 GFLOPS  compile 2.83 s
+matmul                1024 float64  gpu    warm      0.23 ms     9298.8 GFLOPS  compile 6.67 s
+bellman_stored        1000 float32  cpu    warm      0.16 ms       25.2 GB/s  compile 0.02 s
+bellman_stored        1000 float64  cpu    warm      0.17 ms       48.3 GB/s  compile 0.02 s
+bellman_stored        5000 float32  cpu    warm      0.50 ms      201.2 GB/s  compile 0.01 s
+bellman_stored        5000 float64  cpu    warm      0.92 ms      216.4 GB/s  compile 0.01 s
+bellman_stored        1000 float32  gpu    warm      0.16 ms       24.4 GB/s  compile 0.12 s
+bellman_stored        1000 float64  gpu    warm      0.08 ms      101.2 GB/s  compile 0.13 s
+bellman_stored        5000 float32  gpu    warm      0.16 ms      614.7 GB/s  compile 0.14 s
+bellman_stored        5000 float64  gpu    warm      0.16 ms     1289.5 GB/s  compile 0.19 s
+bellman_recompute     1000 float32  cpu    warm      0.46 ms        2.2 Gcells/s  compile 0.07 s
+bellman_recompute     1000 float64  cpu    warm      1.44 ms        0.7 Gcells/s  compile 0.05 s
+bellman_recompute     5000 float32  cpu    warm      6.86 ms        3.6 Gcells/s  compile 0.09 s
+bellman_recompute     5000 float64  cpu    warm     27.53 ms        0.9 Gcells/s  compile 0.06 s
+bellman_recompute     1000 float32  gpu    warm      0.16 ms        6.3 Gcells/s  compile 0.16 s
+bellman_recompute     1000 float64  gpu    warm      0.16 ms        6.4 Gcells/s  compile 0.17 s
+bellman_recompute     5000 float32  gpu    warm      0.26 ms       96.1 Gcells/s  compile 0.21 s
+bellman_recompute     5000 float64  gpu    warm      0.40 ms       63.1 Gcells/s  compile 0.31 s
+kalman                1000 float32  cpu    warm      4.18 ms      239.2 ksteps/s  compile 0.36 s
+kalman                1000 float64  cpu    warm      4.28 ms      233.5 ksteps/s  compile 0.23 s
+kalman                1000 float32  gpu    warm    136.15 ms        7.3 ksteps/s  compile 6.80 s
+kalman                1000 float64  gpu    warm    162.49 ms        6.2 ksteps/s  compile 19.01 s
+Writing to /root/benchmarks/results/digitalocean-gpu-mi300x1-192gb/2026-11-06.jsonl
+matmul                 256 float32  gpu    warm      0.15 ms      230.3 GFLOPS  compile 2.85 s
+matmul                 256 float64  gpu    warm      0.15 ms      225.1 GFLOPS  compile 6.76 s
+matmul                1024 float32  gpu    warm      0.18 ms    12070.5 GFLOPS  compile 2.86 s
+matmul                1024 float64  gpu    warm      0.23 ms     9223.3 GFLOPS  compile 6.71 s
+== The lectures' packages, as the TITAN RTX run had them
+Using Python 3.12.3 environment at: .venv-phase2
+== Five lectures as written, on the card
+schelling_shocks rep 1: 10.7 s, cells ok True, float32
+== The scale scripts, on the card
+float64 gpu a_size=200: hpi warm 0.041 s (13 it), greedy 0.33 ms, stored 0.17 ms, value 2.46 ms
+float64 gpu a_size=1000: hpi warm 0.050 s (15 it), greedy 0.33 ms, stored 0.17 ms, value 2.38 ms
+float64 gpu s_size=200: K warm 0.570 ms, cold 0.31 s, finite True
+float64 gpu s_size=1000: K warm 0.392 ms, cold 0.25 s, finite True
+float32 gpu a_size=200: hpi warm 0.042 s (13 it), greedy 0.34 ms, stored 0.17 ms, value 2.38 ms
+float32 gpu a_size=1000: hpi warm 0.048 s (14 it), greedy 0.34 ms, stored 0.17 ms, value 2.31 ms
+float32 gpu s_size=200: K warm 0.351 ms, cold 0.28 s, finite True
+float32 gpu s_size=1000: K warm 0.369 ms, cold 0.30 s, finite True
+== Done: digitalocean-gpu-mi300x1-192gb-2026-11-06.tgz. Copy it off the machine, then terminate the machine.
+== precision-quick: end 2026-11-06 02:59:49 UTC; exit 0; wall 159 s

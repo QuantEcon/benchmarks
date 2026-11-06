@@ -1,0 +1,2 @@
+jax 0.12.0  AMD Instinct MI300X VF
+jnp.argsort(stable=True) of 3145728 keys: 8 ms per call incl. checks; wrong in 0 of 100 calls

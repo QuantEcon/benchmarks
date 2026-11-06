@@ -1,0 +1,50 @@
+== autotune0: start 2026-11-06 03:30:24 UTC; cmd: env XLA_FLAGS=--xla_gpu_autotune_level=0 python precision/run_matrix.py --host digitalocean-gpu-mi300x1-192gb --devices gpu --gpus 0 --label autotune0
+Writing to /root/benchmarks/results/digitalocean-gpu-mi300x1-192gb/2026-11-06.jsonl
+matmul                 256 float32  gpu    warm      0.10 ms      352.9 GFLOPS  compile 0.88 s
+matmul                 256 float64  gpu    warm      0.16 ms      214.4 GFLOPS  compile 6.68 s
+matmul                 512 float32  gpu    warm      0.16 ms     1665.2 GFLOPS  compile 0.92 s
+matmul                 512 float64  gpu    warm      0.16 ms     1686.0 GFLOPS  compile 6.80 s
+matmul                1024 float32  gpu    warm      0.17 ms    12814.2 GFLOPS  compile 1.01 s
+matmul                1024 float64  gpu    warm      0.25 ms     8553.8 GFLOPS  compile 6.64 s
+matmul                2048 float32  gpu    warm      0.61 ms    28058.8 GFLOPS  compile 0.99 s
+matmul                2048 float64  gpu    warm      1.18 ms    14504.0 GFLOPS  compile 6.60 s
+matmul                4096 float32  gpu    warm      3.66 ms    37556.8 GFLOPS  compile 1.00 s
+matmul                4096 float64  gpu    warm      6.50 ms    21130.2 GFLOPS  compile 6.71 s
+matmul                8192 float32  gpu    warm     27.73 ms    39648.1 GFLOPS  compile 1.01 s
+matmul                8192 float64  gpu    warm     54.21 ms    20283.2 GFLOPS  compile 6.59 s
+bellman_stored        1000 float32  gpu    warm      0.09 ms       43.6 GB/s  compile 0.05 s
+bellman_stored        1000 float64  gpu    warm      0.13 ms       63.9 GB/s  compile 0.05 s
+bellman_stored        2000 float32  gpu    warm      0.16 ms      100.3 GB/s  compile 0.05 s
+bellman_stored        2000 float64  gpu    warm      0.10 ms      333.4 GB/s  compile 0.06 s
+bellman_stored        5000 float32  gpu    warm      0.16 ms      619.0 GB/s  compile 0.05 s
+bellman_stored        5000 float64  gpu    warm      0.16 ms     1270.2 GB/s  compile 0.05 s
+bellman_stored       10000 float32  gpu    warm      0.25 ms     1576.4 GB/s  compile 0.05 s
+bellman_stored       10000 float64  gpu    warm      0.35 ms     2277.8 GB/s  compile 0.07 s
+bellman_stored       20000 float32  gpu    warm      0.88 ms     1822.1 GB/s  compile 0.04 s
+bellman_stored       20000 float64  gpu    warm      1.19 ms     2686.2 GB/s  compile 0.04 s
+bellman_stored       40000 float32  gpu    warm      2.51 ms     2547.2 GB/s  compile 0.04 s
+bellman_stored       40000 float64  gpu    warm      4.47 ms     2862.2 GB/s  compile 0.05 s
+bellman_stored       60000 float32  gpu    warm      4.99 ms     2884.3 GB/s  compile 0.04 s
+bellman_stored       60000 float64  gpu    warm      9.30 ms     3096.8 GB/s  compile 0.05 s
+bellman_recompute     1000 float32  gpu    warm      0.18 ms        5.5 Gcells/s  compile 0.07 s
+bellman_recompute     1000 float64  gpu    warm      0.17 ms        5.9 Gcells/s  compile 0.09 s
+bellman_recompute     2000 float32  gpu    warm      0.23 ms       17.7 Gcells/s  compile 0.09 s
+bellman_recompute     2000 float64  gpu    warm      0.31 ms       13.0 Gcells/s  compile 0.13 s
+bellman_recompute     5000 float32  gpu    warm      0.25 ms      100.8 Gcells/s  compile 0.09 s
+bellman_recompute     5000 float64  gpu    warm      0.50 ms       50.3 Gcells/s  compile 0.12 s
+bellman_recompute    10000 float32  gpu    warm      0.67 ms      150.2 Gcells/s  compile 0.09 s
+bellman_recompute    10000 float64  gpu    warm      1.07 ms       93.4 Gcells/s  compile 0.18 s
+bellman_recompute    20000 float32  gpu    warm      1.16 ms      345.1 Gcells/s  compile 0.10 s
+bellman_recompute    20000 float64  gpu    warm      3.00 ms      133.5 Gcells/s  compile 0.10 s
+bellman_recompute    40000 float32  gpu    warm      3.84 ms      416.5 Gcells/s  compile 0.18 s
+bellman_recompute    40000 float64  gpu    warm      9.23 ms      173.3 Gcells/s  compile 0.14 s
+bellman_recompute    60000 float32  gpu    warm      6.63 ms      543.1 Gcells/s  compile 0.14 s
+bellman_recompute    60000 float64  gpu    warm     17.41 ms      206.8 Gcells/s  compile 0.13 s
+kalman                1000 float32  gpu    warm    240.83 ms        4.2 ksteps/s  compile 1.97 s
+kalman                1000 float64  gpu    warm    264.97 ms        3.8 ksteps/s  compile 19.21 s
+kalman               10000 float32  gpu    warm   2322.36 ms        4.3 ksteps/s  compile 2.06 s
+kalman               10000 float64  gpu    warm   2572.27 ms        3.9 ksteps/s  compile 19.35 s
+kalman              100000 float32  gpu    warm  23098.35 ms        4.3 ksteps/s  compile 2.07 s
+kalman              100000 float64  gpu    warm  25536.69 ms        3.9 ksteps/s  compile 19.32 s
+== autotune0: end 2026-11-06 03:38:57 UTC; exit 0; wall 513 s
+re-packed digitalocean-gpu-mi300x1-192gb-2026-11-06.tgz
