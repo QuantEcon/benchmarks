@@ -9,7 +9,7 @@
 #   3. the run: each cell under each placement, cell by cell so that any drift falls on all
 #      three alike, into problems/results/qe-wharton1-gpu/;
 #   4. the single-threaded stacks on a node without memory;
-#   5. last: an optional EGM run for project-econ-on-ai-hardware, cut from this copy.
+#   5. last, at econ-ai's request: their EGM equilibrium at 1M points, on the memory nodes only.
 # Nodes 0 and 2 have the memory, 64 GB each; nodes 1 and 3 have none. OpenBLAS, Numba and XLA
 # all size their thread pools to the bound CPUs (checked on 2026-11-06), so no thread count is set.
 set -u
@@ -125,13 +125,24 @@ remote() {
   done
 }
 
-# 5. Cut from this copy: an optional EGM run for project-econ-on-ai-hardware, at their
-# request, which reports it there. It ran from their checkout after step 4, and wrote
-# nothing to problems/results/.
+egm1m() {
+  # #46's optional item: econ-ai's EGM equilibrium at 1M points, from their item4/ (646d7c5), in
+  # their command, at their request: pinned to the memory nodes only, since its default was
+  # measured twice (stationary_s 410.15 s on 2026-10-30). Run from ~/econ-ai, which it only
+  # reads; the record's path stays relative, since the record stores argv
+  local out=../${R#$HOME/}/EGM-1000000-numa-memory-nodes.json s
+  cd ~/econ-ai || return 1
+  git -C item4 log -1 --format='item4 at %h: %s' 2>/dev/null
+  env JAX_PLATFORMS=cpu CUDA_VISIBLE_DEVICES= XLA_PYTHON_CLIENT_PREALLOCATE=false MPLBACKEND=Agg \
+    timeout 7200 numactl --cpunodebind=0,2 --membind=0,2 .venv/bin/python item4/cost-classes/run.py \
+    aiyagari_jax.md --benchmarks benchmarks --method EGM --size 1000000 --out $out
+  s=$?; cd $B; return $s
+}
 
 step setup setup || { echo "== set-up failed; stopping" >> $R/state.txt; exit 1; }
 step layout layout
 step check check || { echo "== the check failed; stopping" >> $R/state.txt; exit 1; }
 run
 remote
+step egm-1000000-numa-memory-nodes egm1m
 echo ALLDONE >> $R/state.txt

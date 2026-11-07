@@ -8,7 +8,7 @@ For QuantEcon/project-benchmarks-jax#46, which asks why this machine's Threadrip
 | Memory | Four NUMA nodes of eight cores each. Nodes 0 and 2 have the memory, 64 GB each; nodes 1 and 3 have none, so their cores reach memory only across the fabric. `numactl` puts another node at a distance of 16, against 10 for a node's own. `numa_balancing` is on, transparent huge pages are `madvise`, and the governor is `schedutil`. The BIOS's memory interleave setting can't be read without root |
 | Software | The run checkout's `.venv`: JAX 0.12.0.1, Numba 0.68.1 and NumPy 2.5.4 (`environment.txt`). Each row's `env` records Python 3.12.3 and NumPy's BLAS, OpenBLAS 0.3.34 (`numpy_blas`) |
 | Threads | None is set. OpenBLAS, Numba and XLA each size their pools to the CPUs a placement allows |
-| When | 2026-11-06, 07:08:45 to 10:29:34 UTC, under the machine's lock, in tmux |
+| When | 2026-11-06, 07:08:45 to 11:19:10 UTC, under the machine's lock, in tmux: the suite's cells to 10:29:34, then project-econ-on-ai-hardware's EGM run |
 
 **The placements,** each under its own `--label`:
 
@@ -39,7 +39,11 @@ For QuantEcon/project-benchmarks-jax#46, which asks why this machine's Threadrip
 - **The run,** 07:13:31 to 10:06:37: cell by cell, each under the three placements in turn, so that any drift would fall on all three alike. 39 rows.
 - **On a node without memory,** 10:06:37 to 10:29:34: 4 rows.
 - **Every step exited 0,** and all 43 rows are ok. `state.txt` logs each step's start, end and exit status, and samples the machine every 10 minutes.
-- **Afterwards, an optional EGM run was done for project-econ-on-ai-hardware,** which reports it. `state.txt` stops before it, and this copy of `numa46.sh` has that step cut. Otherwise it's the script as it ran.
+- **Last, at project-econ-on-ai-hardware's request, their EGM equilibrium,** 10:29:34 to 11:19:10: `aiyagari_jax`'s stationary equilibrium by the endogenous grid method, on an asset grid of 1,000,000 points, in their own command and pinned to the two memory nodes (`--cpunodebind=0,2 --membind=0,2`). It ran from their checkout, with their code at `646d7c5` (the record's `experiment_commit`), and wrote no suite rows.
+    - **Its answers didn't move.** `K_star` is 8.086658477783203 at a tolerance of 1e-4 and 8.086591970641166 at 1e-8, and the policy's SHA-256 starts `e50db8521f20`. All three are identical to their run of 2026-10-30 at the default placement, from the same code, and project-econ-on-ai-hardware checked that all 33 bisection calls' policy hashes match that run too.
+    - **Pinning gained nothing there.** Across the 33 calls, the stationary distributions took 413.46 s in all on the memory nodes (`stationary_s`), against 410.15 s at the default on 2026-10-30. The whole equilibrium took 2,687.7 s. The script's comment says the default was measured twice, but project-econ-on-ai-hardware says the other figure, 410.19 s on 2026-10-27, came from a different run, with the TITAN RTX. Only 2026-10-30's is like for like.
+    - **The record** is `EGM-1000000-numa-memory-nodes.json`, with SHA-256 `3401835ecc1e4cc5cd3e9ba262e8c089f0005c11b392dc810b69996368865679`, and its log is `logs/egm-1000000-numa-memory-nodes.log`. project-econ-on-ai-hardware keeps the same file as `experiments/cost-classes/results/qe-wharton1-gpu/2026-11-06/cpu-numa/EGM-1000000-1.json` at their `d0b8987`.
+    - **These notes first left it out,** at their request, until its publication was agreed on 2026-11-07. Now `numa46.sh` is the script as it ran, and `state.txt` runs to the lock's release at 11:19:11.
 
 **The machine was quiet:** in `state.txt`'s samples no process outside the run took more than 1.3% of a core, and both cards stayed at 0%. Another user's name in its process lists is replaced by `(other)`.
 
@@ -48,6 +52,7 @@ For QuantEcon/project-benchmarks-jax#46, which asks why this machine's Threadrip
 - `layout.log`: `numactl --hardware`, `lscpu`, `free`, the kernel's NUMA, huge-page and frequency settings, and each placement's `numactl --show`;
 - `environment.txt`: the `.venv`'s packages;
 - `summary.md`: the tables `python problems/summarise.py problems/results/` prints for the four labels;
+- `EGM-1000000-numa-memory-nodes.json`: project-econ-on-ai-hardware's record of the EGM run;
 - `logs/`: each step's output.
 
 ## What they show

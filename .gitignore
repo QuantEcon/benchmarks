@@ -25,6 +25,7 @@ env/
 !lectures/results/**/*.json
 # and what a run's notes keep, such as a diagnostic's lecture runs
 !precision/runs/**/*.json
+!problems/results/**/*.json
 *.nsys-rep
 *.sqlite
 
