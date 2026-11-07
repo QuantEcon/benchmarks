@@ -10,6 +10,8 @@ A TPU v6e on Google Cloud ran QuantEcon/project-benchmarks-jax#38's diagnostic t
 
 `qe-mini1`'s M6 ran QuantEcon/project-benchmarks-jax#48's probe of float64 on Apple Silicon's CPU, Accelerate against XLA. Its notes are in [`qe-mini1/mac-float64/`](qe-mini1/mac-float64/README.md).
 
+`qe-wharton2`'s M5 Pro ran the same probe, at the same commit, after the problem-type suite. Its notes are in [`qe-wharton2/mac-float64/`](qe-wharton2/mac-float64/README.md).
+
 | | |
 |---|---|
 | Host | `digitalocean-gpu-h200x1-141gb`: DigitalOcean's `gpu-h200x1-141gb` droplet in atl1, on demand, with 24 vCPUs of an Intel Xeon Platinum 8592+ and 235 GiB. It was the first on-demand GPU size DigitalOcean listed that day, after none had listed a region from 09:52 AEDT |

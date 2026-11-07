@@ -1,0 +1,8 @@
+== probe48: start 2026-11-06 14:49:23 UTC; cmd: bash /Users/matt/bench/pbj-m5pro/probe48.sh
+/Users/matt/bench/pbj-m5pro/probe48.sh: line 11: 51581 Terminated: 15          ( while sleep 5; do
+    echo "== $(date -u +%T)"; ps -Ao pid,pcpu,comm -r | sed -n '2,6p';
+done ) > $f/state.txt
+/Users/matt/bench/pbj-m5pro/probe48.sh: line 11: 51801 Terminated: 15          ( while sleep 5; do
+    echo "== $(date -u +%T)"; ps -Ao pid,pcpu,comm -r | sed -n '2,6p';
+done ) > $f/state.txt
+== probe48: end 2026-11-06 14:51:15 UTC; exit 0; wall 112 s
