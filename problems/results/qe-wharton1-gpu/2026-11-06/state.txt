@@ -396,3 +396,103 @@ node 1 free: 0 MB
 node 2 free: 12460 MB
 node 3 free: 0 MB
 == numa-remote-memory-egm done 10:29:34, exit 0
+== egm-1000000-numa-memory-nodes start 10:29:34
+== sample: 2026-11-06 05:38:49 EST (10:38:49 UTC)
+ 05:38:49 up 39 days, 12:57,  2 users,  load average: 1.01, 2.25, 6.04
+0, 00000000:0B:00.0, 300 MHz, 36, 29.12 W, 0 %, 7 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 27.33 W, 0 %, 204 MiB
+    PID USER     STAT %CPU COMMAND
+ 332453 mamckay  Sl    144 python
+  27678 (other)  Sl    1.3 code
+ 290948 root     I     1.3 kworker/u256:0-atlantic
+  29633 (other)  Sl    0.5 firefox
+  27848 (other)  Sl    0.2 code
+ 883500 root     Ssl   0.1 tailscaled
+   4224 (other)  Ssl   0.1 gnome-shell
+node 0 free: 10390 MB
+node 1 free: 0 MB
+node 2 free: 11916 MB
+node 3 free: 0 MB
+== sample: 2026-11-06 05:48:49 EST (10:48:49 UTC)
+ 05:48:49 up 39 days, 13:07,  2 users,  load average: 1.07, 1.46, 3.83
+0, 00000000:0B:00.0, 300 MHz, 36, 29.29 W, 0 %, 7 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 27.81 W, 0 %, 214 MiB
+    PID USER     STAT %CPU COMMAND
+ 332453 mamckay  Sl    142 python
+  27678 (other)  Sl    1.3 code
+ 290948 root     I     1.3 kworker/u256:0-atlantic
+  29633 (other)  Sl    0.5 firefox
+  27848 (other)  Sl    0.2 code
+ 883500 root     Ssl   0.1 tailscaled
+   4224 (other)  Ssl   0.1 gnome-shell
+node 0 free: 10368 MB
+node 1 free: 0 MB
+node 2 free: 11917 MB
+node 3 free: 0 MB
+== sample: 2026-11-06 05:58:49 EST (10:58:49 UTC)
+ 05:58:49 up 39 days, 13:17,  2 users,  load average: 3.07, 2.32, 3.05
+0, 00000000:0B:00.0, 300 MHz, 36, 29.41 W, 0 %, 7 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 27.84 W, 0 %, 204 MiB
+    PID USER     STAT %CPU COMMAND
+ 333994 mamckay  R+    500 ps
+ 332453 mamckay  Sl    141 python
+  27678 (other)  Sl    1.3 code
+ 290948 root     I     1.3 kworker/u256:0-atlantic
+  29633 (other)  Sl    0.5 firefox
+  27848 (other)  Sl    0.2 code
+ 883500 root     Ssl   0.1 tailscaled
+node 0 free: 10387 MB
+node 1 free: 0 MB
+node 2 free: 11911 MB
+node 3 free: 0 MB
+== sample: 2026-11-06 06:08:50 EST (11:08:50 UTC)
+ 06:08:50 up 39 days, 13:27,  2 users,  load average: 1.22, 1.62, 2.32
+0, 00000000:0B:00.0, 300 MHz, 36, 29.43 W, 0 %, 7 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.94 W, 0 %, 204 MiB
+    PID USER     STAT %CPU COMMAND
+ 332453 mamckay  Sl    141 python
+  27678 (other)  Sl    1.3 code
+ 290948 root     I     1.3 kworker/u256:0-atlantic
+  29633 (other)  Sl    0.5 firefox
+  27848 (other)  Sl    0.2 code
+ 883500 root     Ssl   0.1 tailscaled
+   4224 (other)  Ssl   0.1 gnome-shell
+node 0 free: 10362 MB
+node 1 free: 0 MB
+node 2 free: 11947 MB
+node 3 free: 0 MB
+== sample: 2026-11-06 06:18:50 EST (11:18:50 UTC)
+ 06:18:50 up 39 days, 13:37,  2 users,  load average: 1.68, 1.52, 1.91
+0, 00000000:0B:00.0, 300 MHz, 36, 29.52 W, 0 %, 7 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.45 W, 0 %, 214 MiB
+    PID USER     STAT %CPU COMMAND
+ 341403 mamckay  R+    400 ps
+ 332453 mamckay  Sl    140 python
+  27678 (other)  Sl    1.3 code
+ 290948 root     I     1.3 kworker/u256:0-atlantic
+  29633 (other)  Sl    0.5 firefox
+  27848 (other)  Sl    0.2 code
+ 883500 root     Ssl   0.1 tailscaled
+node 0 free: 10402 MB
+node 1 free: 0 MB
+node 2 free: 11980 MB
+node 3 free: 0 MB
+== egm-1000000-numa-memory-nodes done 11:19:10, exit 0
+ALLDONE
+== after: 2026-11-06 06:19:10 EST (11:19:10 UTC)
+ 06:19:10 up 39 days, 13:37,  2 users,  load average: 1.48, 1.49, 1.89
+0, 00000000:0B:00.0, 300 MHz, 36, 29.49 W, 0 %, 7 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.44 W, 0 %, 214 MiB
+    PID USER     STAT %CPU COMMAND
+ 341416 mamckay  R+    400 ps
+  27678 (other)  Sl    1.3 code
+ 290948 root     I     1.3 kworker/u256:0-atlantic
+  29633 (other)  Sl    0.5 firefox
+  27848 (other)  Sl    0.2 code
+ 883500 root     Ssl   0.1 tailscaled
+   4224 (other)  Ssl   0.1 gnome-shell
+node 0 free: 10529 MB
+node 1 free: 0 MB
+node 2 free: 12466 MB
+node 3 free: 0 MB
+== lock released 11:19:11
