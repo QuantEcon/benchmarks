@@ -1,0 +1,2 @@
+Writing to /home/mamckay/bench/benchmarks/problems/results/qe-wharton1-gpu/2026-11-06.jsonl
+P4 wealth  households  10000000 float64  numpy           warm   141.710 s  cold   141.604 s     200 iterations

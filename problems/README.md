@@ -47,6 +47,8 @@ On 2026-11-06 `jax-gpu` also ran on an H200, DigitalOcean's `gpu-h200x1-141gb` (
 
 On 2026-11-06 `jax-gpu` also ran on an AMD Instinct MI300X under ROCm 10.1, DigitalOcean's `gpu-mi300x1-192gb` ([notes](results/digitalocean-gpu-mi300x1-192gb/2026-11-06/README.md)), and isn't in the tables below yet. There P3's float32 answers were 25% to 26% off at JAX's default, after 494 to 901 iterations, because on that card float32 matrix products are rounded to TF32's precision by truncation. With `highest` they agreed, and every other answer agreed at the default.
 
+On 2026-11-06 four CPU cells also ran on `qe-wharton1-gpu` under four NUMA placements, for QuantEcon/project-benchmarks-jax#46 ([notes](results/qe-wharton1-gpu/2026-11-06/README.md)): P1, P3, P4 and P7 at one size each, in float64. Those rows are labelled `numa-default`, `numa-one-node`, `numa-memory-nodes` and `numa-remote-memory`, and aren't in the tables below. Pinned to the two nodes with memory, no cell gained more than 20%. On one node's 8 cores, P7's parallel stacks ran faster than on all 32, while P4's parallel Numba took four times as long. Every answer agreed with NumPy's.
+
 The tables give each device's fastest stack at each size in float64, in seconds. Warm is the median of the warm runs. Cold is what a fresh process pays from its inputs to its first answer, compile included. The fastest device in each row is in bold, for warm and for cold separately. The TITAN RTX's columns are `jax-gpu`, the only stack on it. Every number here is in a table that `python problems/summarise.py problems/results/` prints, with every backend at every size and in both precisions.
 
 **P1 `vfi`, by grid size:**
