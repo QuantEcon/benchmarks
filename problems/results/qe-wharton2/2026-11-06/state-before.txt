@@ -1,0 +1,30 @@
+# Redacted for publication: the machine is a guest's, and software its owner's institution manages is shown as <managed agent>, with its CPU figures as recorded.
+== state-before: start 2026-11-06 13:35:46 UTC; cmd: bash /Users/matt/bench/pbj-m5pro/state.sh
+2026-11-06 13:35:46 UTC
+ 8:35  up 15:43, 3 users, load averages: 1.20 1.31 2.04
+Now drawing from 'AC Power'
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+ powermode            0
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+There is a screen on:
+	37702.pbj-m5pro	(Detached)
+1 Socket in /var/folders/f_/0m_h5njx3yvddfxy7c5bs6f80000gq/T/.screen.
+
+  PID  %CPU %MEM    RSS COMM
+  318   6.6  0.7 441152 <managed agent>
+  332   2.4  0.1  62976 <managed agent>
+  317   1.5  0.4 244848 <managed agent>
+  122   0.6  0.0  12640 /usr/libexec/configd
+  843   0.5  0.1  45632 <managed agent>
+38086   0.4  0.0   2064 bash
+  657   0.1  0.1  67328 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  178   0.1  0.0   4544 /usr/sbin/notifyd
+  324   0.1  0.1  72144 <managed agent>
+38016   0.0  0.0  18352 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+38015   0.0  0.0  18416 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+38017   0.0  0.0  19184 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+37927   0.0  0.0  13008 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+37925   0.0  0.0  13008 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+== state-before: end 2026-11-06 13:35:46 UTC; exit 0; wall 0 s
