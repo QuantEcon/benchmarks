@@ -1,6 +1,6 @@
 # `aws-c8a.4xlarge`, 2026-11-09: the CPU stacks on 16 cores of an EPYC 9R45
 
-The problem-type suite's CPU stacks (`numpy`, `numba`, `numba-parallel` and `jax-cpu`) and the precision suite's CPU column, on 16 cores of AMD's EPYC 9R45 (Zen 5), run by hand through [`problems/run_by_hand.sh`](../../../run_by_hand.sh) `--cpu`, for QuantEcon/project-benchmarks-jax#47. Two Intel instances ran the same the same day, [`aws-c7i.8xlarge`](../../aws-c7i.8xlarge/2026-11-09/README.md) and [`aws-c8i.8xlarge`](../../aws-c8i.8xlarge/2026-11-09/README.md).
+The problem-type suite's CPU stacks (`numpy`, `numba`, `numba-parallel` and `jax-cpu`) and the precision suite's CPU column, on 16 cores of AMD's EPYC 9R45 (Zen 5), run by hand through [`problems/run_by_hand.sh`](../../../run_by_hand.sh) `--cpu`, for QuantEcon/project-benchmarks-jax#47. Two Intel instances ran the same runs that day, [`aws-c7i.8xlarge`](../../aws-c7i.8xlarge/2026-11-09/README.md) and [`aws-c8i.8xlarge`](../../aws-c8i.8xlarge/2026-11-09/README.md).
 
 | | |
 |---|---|

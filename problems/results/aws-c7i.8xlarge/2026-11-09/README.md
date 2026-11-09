@@ -1,6 +1,6 @@
 # `aws-c7i.8xlarge`, 2026-11-09: the CPU stacks on 16 cores of a Xeon Platinum 8488C
 
-The problem-type suite's CPU stacks (`numpy`, `numba`, `numba-parallel` and `jax-cpu`) and the precision suite's CPU column, on 16 cores of Intel's Xeon Platinum 8488C (Sapphire Rapids), run by hand through [`problems/run_by_hand.sh`](../../../run_by_hand.sh) `--cpu`, for QuantEcon/project-benchmarks-jax#47. [`aws-c8a.4xlarge`](../../aws-c8a.4xlarge/2026-11-09/README.md) and [`aws-c8i.8xlarge`](../../aws-c8i.8xlarge/2026-11-09/README.md) ran the same the same day, and the c8a's notes describe the runs and files that all three share.
+The problem-type suite's CPU stacks (`numpy`, `numba`, `numba-parallel` and `jax-cpu`) and the precision suite's CPU column, on 16 cores of Intel's Xeon Platinum 8488C (Sapphire Rapids), run by hand through [`problems/run_by_hand.sh`](../../../run_by_hand.sh) `--cpu`, for QuantEcon/project-benchmarks-jax#47. [`aws-c8a.4xlarge`](../../aws-c8a.4xlarge/2026-11-09/README.md) and [`aws-c8i.8xlarge`](../../aws-c8i.8xlarge/2026-11-09/README.md) ran the same runs that day, and the c8a's notes describe the runs and files that all three share.
 
 | | |
 |---|---|
