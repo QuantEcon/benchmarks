@@ -1,0 +1,42 @@
+== blas-default-numa-default numba-parallel start 06:48:05
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    32.316 s  cold    36.555 s     572 iterations
+== blas-default-numa-default numba-parallel done, exit 0 06:49:47
+== blas1-numa-default numba-parallel start 06:49:47
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    22.417 s  cold    25.535 s     572 iterations
+== blas1-numa-default numba-parallel done, exit 0 06:51:20
+== blas-default-numa-one-node numba-parallel start 06:51:20
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    47.982 s  cold    51.895 s     572 iterations
+== blas-default-numa-one-node numba-parallel done, exit 0 06:53:49
+== blas1-numa-one-node numba-parallel start 06:53:49
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    34.906 s  cold    38.578 s     572 iterations
+== blas1-numa-one-node numba-parallel done, exit 0 06:55:38
+== blas-default-numa-default numba-parallel start 06:55:38
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    33.560 s  cold    39.478 s     572 iterations
+== blas-default-numa-default numba-parallel done, exit 0 06:57:25
+== blas1-numa-default numba-parallel start 06:57:25
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    22.485 s  cold    28.692 s     572 iterations
+== blas1-numa-default numba-parallel done, exit 0 06:59:05
+== blas-default-numa-one-node numba-parallel start 06:59:05
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    48.397 s  cold    51.745 s     572 iterations
+== blas-default-numa-one-node numba-parallel done, exit 0 07:01:34
+== blas1-numa-one-node numba-parallel start 07:01:34
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba-parallel  warm    34.892 s  cold    38.634 s     572 iterations
+== blas1-numa-one-node numba-parallel done, exit 0 07:03:24
+== blas-default-numa-default numba start 07:03:24
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba           warm   136.576 s  cold   138.826 s     572 iterations
+== blas-default-numa-default numba done, exit 0 07:08:00
+== blas1-numa-default numba start 07:08:00
+Writing to /home/mamckay/bench/blas47/run-20261109T064804Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P1 vfi     grid            1500 float64  numba           warm   134.070 s  cold   136.934 s     572 iterations
+== blas1-numa-default numba done, exit 0 07:12:32
+== ALLDONE 07:12:32
+EXIT 0

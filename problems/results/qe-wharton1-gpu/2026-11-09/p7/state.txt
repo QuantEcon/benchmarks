@@ -1,0 +1,33 @@
+== before: 2026-11-09 02:13:42 EST (07:13:42 UTC)
+ 02:13:42 up  8:23,  2 users,  load average: 0.44, 8.34, 16.89
+0, 00000000:0B:00.0, 300 MHz, 31, 21.20 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 37, 26.80 W, 0 %, 60 MiB
+    PID USER     STAT %CPU COMMAND
+  15366 mamckay  Ss    6.6 tmux: server
+  15122 mamckay  Ss    3.6 systemd
+  15142 mamckay  Ssl   2.6 user-session-he
+  15144 mamckay  Ssl   0.8 wireplumber
+  15311 root     Ss    0.5 sshd
+  11216 root     I     0.4 kworker/u256:2-atlantic
+  12589 root     I     0.3 kworker/u256:1-ipv6_addrconf
+node 0 free: 62881 MB
+node 1 free: 0 MB
+node 2 free: 62562 MB
+node 3 free: 0 MB
+== after: 2026-11-09 02:31:21 EST (07:31:21 UTC)
+ 02:31:21 up  8:41,  2 users,  load average: 1.84, 23.18, 31.14
+0, 00000000:0B:00.0, 300 MHz, 31, 20.53 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 38, 27.06 W, 0 %, 59 MiB
+    PID USER     STAT %CPU COMMAND
+  17137 mamckay  R+    300 ps
+  11216 root     I     0.4 kworker/u256:2-atlantic
+  15383 mamckay  S+    0.2 python3
+   2697 gdm      Sl+   0.2 gnome-shell
+  12589 root     I     0.2 kworker/u256:1-ipv6_addrconf
+   1924 root     Ssl   0.0 tailscaled
+   1629 root     Ssl   0.0 NetworkManager
+node 0 free: 62902 MB
+node 1 free: 0 MB
+node 2 free: 62559 MB
+node 3 free: 0 MB
+== lock released 07:31:24
