@@ -23,4 +23,4 @@ For QuantEcon/project-benchmarks-jax#47: [`problems/checks/stream_triad.py`](../
 | 18 | 0.0249 s | 258.4 |
 
 - **Four threads take all the bandwidth the M5 Pro's memory delivers,** 255 to 265 GB/s, about twice the M6's. One thread gets half of that, about as much as on the M6.
-- **The check:** with `NUMBA_NUM_THREADS=1`, so that Numba's whole pool is one thread, the triad gave 131.3 GB/s (`check-pool1.jsonl`), the same as the one-thread row.
+- **The check:** with `NUMBA_NUM_THREADS=1`, so that Numba's whole pool is one thread and that thread first touched the arrays too, the triad gave 131.3 GB/s (`check-pool1.jsonl`), the same as the one-thread row.
