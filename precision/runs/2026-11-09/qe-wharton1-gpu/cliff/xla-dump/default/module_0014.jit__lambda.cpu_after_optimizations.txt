@@ -1,0 +1,56 @@
+HloModule jit__lambda, is_scheduled=true, entry_computation_layout={(f64[18000,18000]{1,0}, f64[18000]{0})->f64[18000]{0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+FileNames
+1 "/home/mamckay/bench/cliff7/probe.py"
+
+FunctionNames
+1 "<module>"
+2 "cliff"
+3 "timed"
+4 "cliff.<locals>.<lambda>"
+
+FileLocations
+1 {file_name_id=1 function_name_id=1 line=315 end_line=315 column=8 end_column=38}
+2 {file_name_id=1 function_name_id=2 line=195 end_line=195 column=25 end_column=84}
+3 {file_name_id=1 function_name_id=3 line=61 end_line=61 column=10 end_column=16}
+4 {file_name_id=1 function_name_id=4 line=195 end_line=195 column=39 end_column=46}
+5 {file_name_id=1 function_name_id=4 line=187 end_line=187 column=32 end_column=70}
+6 {file_name_id=1 function_name_id=4 line=187 end_line=187 column=44 end_column=61}
+7 {file_name_id=1 function_name_id=4 line=187 end_line=187 column=51 end_column=61}
+8 {file_name_id=1 function_name_id=4 line=187 end_line=187 column=40 end_column=61}
+
+StackFrames
+1 {file_location_id=1 parent_frame_id=1}
+2 {file_location_id=2 parent_frame_id=2}
+3 {file_location_id=3 parent_frame_id=3}
+4 {file_location_id=4 parent_frame_id=4}
+5 {file_location_id=5 parent_frame_id=5}
+6 {file_location_id=6 parent_frame_id=5}
+7 {file_location_id=7 parent_frame_id=5}
+8 {file_location_id=8 parent_frame_id=5}
+
+
+%region_0.1 (reduce_max.3: f64[], reduce_max.4: f64[]) -> f64[] {
+  %reduce_max.3 = f64[] parameter(0), metadata={op_name="reduce_max"}
+  %reduce_max.4 = f64[] parameter(1), metadata={op_name="reduce_max"}
+  ROOT %reduce_max.5 = f64[] maximum(%reduce_max.3, %reduce_max.4), metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+%fused_computation (param_0.2: f64[18000,18000], param_1.4: f64[18000]) -> f64[18000] {
+  %param_0.2 = f64[18000,18000]{1,0} parameter(0)
+  %param_1.4 = f64[18000]{0} parameter(1)
+  %constant.1 = f64[] constant(0.96)
+  %broadcast.3 = f64[18000]{0} broadcast(%constant.1), dimensions={}, metadata={op_name="jit(<lambda>)/mul" stack_frame_id=6}
+  %mul.1 = f64[18000]{0} multiply(%param_1.4, %broadcast.3), metadata={op_name="jit(<lambda>)/mul" stack_frame_id=6}
+  %add.1 = f64[18000,18000]{1,0} broadcast(%mul.1), dimensions={1}, metadata={op_name="jit(<lambda>)/add" stack_frame_id=8}
+  %add.0 = f64[18000,18000]{1,0} add(%param_0.2, %add.1), metadata={op_name="jit(<lambda>)/add" stack_frame_id=8}
+  %constant.0 = f64[] constant(-inf)
+  ROOT %reduce_max.0 = f64[18000]{0} reduce(%add.0, %constant.0), dimensions={1}, to_apply=%region_0.1, metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+ENTRY %main.2 (R.1: f64[18000,18000], v.1: f64[18000]) -> f64[18000] {
+  %R.1 = f64[18000,18000]{1,0} parameter(0), metadata={op_name="R"}
+  %v.1 = f64[18000]{0} parameter(1), metadata={op_name="v"}
+  ROOT %ynn_fusion = f64[18000]{0} fusion(%R.1, %v.1), kind=kCustom, calls=%fused_computation, metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+}
+
