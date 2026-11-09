@@ -1,0 +1,680 @@
+ProductName:		macOS
+ProductVersion:		27.2
+BuildVersion:		26B123
+== before: 2026-11-09 13:33:46 AEDT (02:33:46 UTC)
+13:33  up  2:48, 1 user, load averages: 4.71 6.55 5.57
+  PID  %CPU %MEM COMM
+ 1376  14.1  1.8 claude
+ 1390  10.1  2.1 /opt/homebrew/bin/claude
+ 1374   4.8  1.8 claude
+26771   2.8  0.3 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+26846   1.3  0.2 /usr/libexec/avconferenced
+  447   1.0  0.1 /usr/sbin/bluetoothd
+26937   0.8  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+ 1401   0.7  1.6 /opt/homebrew/bin/claude
+  422   0.7  0.1 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:33:51 AEDT (02:33:51 UTC)
+13:33  up  2:48, 1 user, load averages: 4.41 6.46 5.54
+  PID  %CPU %MEM COMM
+27343 100.0  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   2.1  0.2 /usr/libexec/avconferenced
+26937   1.9  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+24958   0.6  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26753   0.5  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+ 1390   0.4  2.1 /opt/homebrew/bin/claude
+ 1376   0.3  1.8 claude
+  623   0.2  0.2 /usr/sbin/coreaudiod
+26765   0.1  0.3 /usr/libexec/sharingd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:33:56 AEDT (02:33:56 UTC)
+13:33  up  2:48, 1 user, load averages: 4.38 6.42 5.53
+  PID  %CPU %MEM COMM
+27361 181.2  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  58.6  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   3.1  0.2 /usr/libexec/avconferenced
+26937   2.7  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+27340   1.8  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+27342   1.2  0.0 /usr/libexec/spotlightknowledged.importer
+26753   0.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.5  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1376   0.4  1.8 claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:01 AEDT (02:34:01 UTC)
+13:34  up  2:48, 1 user, load averages: 4.11 6.33 5.51
+  PID  %CPU %MEM COMM
+26754  97.6  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   2.8  0.2 /usr/libexec/avconferenced
+27342   2.5  0.0 /usr/libexec/spotlightknowledged.importer
+26937   1.7  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  568   1.4  0.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+26753   1.4  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   1.2  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1376   0.8  1.8 claude
+27339   0.7  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:06 AEDT (02:34:06 UTC)
+13:34  up  2:49, 1 user, load averages: 4.90 6.45 5.55
+  PID  %CPU %MEM COMM
+27412 1175.0  9.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.3  0.2 /usr/libexec/avconferenced
+26937   0.7  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   0.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.6  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  448   0.4  0.0 /usr/sbin/notifyd
+27333   0.3  0.0 /bin/zsh
+ 1376   0.2  1.8 claude
+27432   0.2  0.0 sleep
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:11 AEDT (02:34:11 UTC)
+13:34  up  2:49, 1 user, load averages: 5.47 6.54 5.59
+  PID  %CPU %MEM COMM
+27412 1163.6  9.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.5  0.2 /usr/libexec/avconferenced
+26753   1.2  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   1.0  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26937   0.8  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.2  0.2 /usr/sbin/coreaudiod
+ 1376   0.2  1.8 claude
+ 1401   0.1  1.6 /opt/homebrew/bin/claude
+  447   0.1  0.1 /usr/sbin/bluetoothd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:16 AEDT (02:34:16 UTC)
+13:34  up  2:49, 1 user, load averages: 6.31 6.70 5.65
+  PID  %CPU %MEM COMM
+27449 1169.4  9.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+24958   4.4  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26753   1.3  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+26846   1.1  0.2 /usr/libexec/avconferenced
+  623   0.3  0.2 /usr/sbin/coreaudiod
+ 1376   0.3  1.8 claude
+ 1390   0.3  2.1 /opt/homebrew/bin/claude
+ 1374   0.2  1.8 claude
+26937   0.2  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:22 AEDT (02:34:22 UTC)
+13:34  up  2:49, 1 user, load averages: 6.77 6.79 5.69
+  PID  %CPU %MEM COMM
+27449 1161.9 12.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1401   1.4  1.6 /opt/homebrew/bin/claude
+26846   0.5  0.2 /usr/libexec/avconferenced
+ 1378   0.4  1.5 claude
+  623   0.3  0.2 /usr/sbin/coreaudiod
+ 1390   0.3  2.1 /opt/homebrew/bin/claude
+ 1376   0.3  1.8 claude
+26937   0.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  761   0.1  0.0 /usr/sbin/cfprefsd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:27 AEDT (02:34:27 UTC)
+13:34  up  2:49, 1 user, load averages: 7.43 6.93 5.74
+  PID  %CPU %MEM COMM
+27449 1188.4 12.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1378   1.4  1.5 claude
+26846   0.6  0.2 /usr/libexec/avconferenced
+  623   0.4  0.2 /usr/sbin/coreaudiod
+ 1376   0.3  1.8 claude
+  447   0.1  0.1 /usr/sbin/bluetoothd
+26937   0.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+ 1390   0.1  2.1 /opt/homebrew/bin/claude
+26765   0.1  0.3 /usr/libexec/sharingd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:32 AEDT (02:34:32 UTC)
+13:34  up  2:49, 1 user, load averages: 7.87 7.03 5.79
+  PID  %CPU %MEM COMM
+27449 1185.7 12.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26728   1.2  0.1 /usr/libexec/replayd
+26846   0.6  0.2 /usr/libexec/avconferenced
+ 1376   0.3  1.8 claude
+ 1401   0.3  1.6 /opt/homebrew/bin/claude
+  623   0.3  0.2 /usr/sbin/coreaudiod
+24958   0.2  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1390   0.2  2.1 /opt/homebrew/bin/claude
+ 1374   0.2  1.8 claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:37 AEDT (02:34:37 UTC)
+13:34  up  2:49, 1 user, load averages: 8.28 7.12 5.83
+  PID  %CPU %MEM COMM
+27449 1179.1 12.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   0.6  0.2 /usr/libexec/avconferenced
+26937   0.3  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.3  0.2 /usr/sbin/coreaudiod
+ 1376   0.2  1.8 claude
+ 1374   0.2  1.8 claude
+ 1401   0.1  1.6 /opt/homebrew/bin/claude
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1378   0.1  1.5 claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:42 AEDT (02:34:42 UTC)
+13:34  up  2:49, 1 user, load averages: 8.58 7.21 5.86
+  PID  %CPU %MEM COMM
+27449 1170.5 12.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1390   2.7  2.1 /opt/homebrew/bin/claude
+26846   0.9  0.2 /usr/libexec/avconferenced
+26937   0.4  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.4  0.2 /usr/sbin/coreaudiod
+26728   0.4  0.1 /usr/libexec/replayd
+ 1378   0.2  1.5 claude
+ 1374   0.2  1.8 claude
+24958   0.2  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:47 AEDT (02:34:47 UTC)
+13:34  up  2:49, 1 user, load averages: 8.85 7.29 5.90
+  PID  %CPU %MEM COMM
+27546  69.6  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26753   2.2  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+26754   2.0  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   1.0  0.2 /usr/libexec/avconferenced
+26937   0.7  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  447   0.5  0.1 /usr/sbin/bluetoothd
+  425   0.3  0.0 /System/Library/CoreServices/launchservicesd
+  623   0.3  0.2 /usr/sbin/coreaudiod
+26765   0.3  0.3 /usr/libexec/sharingd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:52 AEDT (02:34:52 UTC)
+13:34  up  2:49, 1 user, load averages: 9.27 7.40 5.95
+  PID  %CPU %MEM COMM
+27557 1108.6  8.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  31.9  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   1.0  0.2 /usr/libexec/avconferenced
+26753   0.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+26937   0.5  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26728   0.2  0.1 /usr/libexec/replayd
+  623   0.2  0.2 /usr/sbin/coreaudiod
+  447   0.2  0.1 /usr/sbin/bluetoothd
+ 1390   0.1  2.1 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:34:58 AEDT (02:34:58 UTC)
+13:34  up  2:49, 1 user, load averages: 9.72 7.52 6.00
+  PID  %CPU %MEM COMM
+27557 1112.6  8.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.2  0.2 /usr/libexec/avconferenced
+26937   0.8  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+ 1376   0.4  1.8 claude
+26753   0.4  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+ 1390   0.2  2.1 /opt/homebrew/bin/claude
+ 1374   0.1  1.8 claude
+  623   0.1  0.2 /usr/sbin/coreaudiod
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:03 AEDT (02:35:03 UTC)
+13:35  up  2:50, 1 user, load averages: 10.15 7.65 6.05
+  PID  %CPU %MEM COMM
+27574 1089.5 10.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.3  0.2 /usr/libexec/avconferenced
+26937   0.8  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+27327   0.4  0.0 bash
+26753   0.4  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.3  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  623   0.3  0.2 /usr/sbin/coreaudiod
+26728   0.2  0.1 /usr/libexec/replayd
+ 1390   0.2  2.1 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:08 AEDT (02:35:08 UTC)
+13:35  up  2:50, 1 user, load averages: 10.37 7.74 6.09
+  PID  %CPU %MEM COMM
+27574 1175.4 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1374   7.9  1.8 claude
+26846   2.1  0.2 /usr/libexec/avconferenced
+26937   1.5  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   0.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.4  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  447   0.3  0.1 /usr/sbin/bluetoothd
+  623   0.2  0.2 /usr/sbin/coreaudiod
+ 1390   0.1  2.1 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:13 AEDT (02:35:13 UTC)
+13:35  up  2:50, 1 user, load averages: 10.66 7.84 6.14
+  PID  %CPU %MEM COMM
+27574 1186.1 12.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1378   4.5  1.5 claude
+26846   1.8  0.2 /usr/libexec/avconferenced
+26937   1.3  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   0.5  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.4  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1374   0.2  1.8 claude
+  623   0.2  0.2 /usr/sbin/coreaudiod
+ 1401   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:18 AEDT (02:35:18 UTC)
+13:35  up  2:50, 1 user, load averages: 10.53 7.86 6.16
+  PID  %CPU %MEM COMM
+27574 1182.1 12.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.8  0.2 /usr/libexec/avconferenced
+26937   1.3  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+ 1390   1.0  2.1 /opt/homebrew/bin/claude
+26753   0.7  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.7  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1376   0.4  1.8 claude
+  623   0.2  0.2 /usr/sbin/coreaudiod
+ 1401   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:23 AEDT (02:35:23 UTC)
+13:35  up  2:50, 1 user, load averages: 10.65 7.93 6.19
+  PID  %CPU %MEM COMM
+27574 1167.7 12.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1376   2.7  1.8 claude
+ 1378   0.4  1.5 claude
+26846   0.3  0.2 /usr/libexec/avconferenced
+26753   0.2  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  623   0.1  0.2 /usr/sbin/coreaudiod
+ 1374   0.1  1.8 claude
+ 1401   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:28 AEDT (02:35:28 UTC)
+13:35  up  2:50, 1 user, load averages: 10.92 8.03 6.24
+  PID  %CPU %MEM COMM
+27674  97.6  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+    1   6.0  0.1 /sbin/launchd
+ 1401   1.4  1.6 /opt/homebrew/bin/claude
+26846   0.4  0.2 /usr/libexec/avconferenced
+  652   0.3  0.0 /usr/libexec/sysmond
+  623   0.2  0.2 /usr/sbin/coreaudiod
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26937   0.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   0.1  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:33 AEDT (02:35:33 UTC)
+13:35  up  2:50, 1 user, load averages: 10.28 7.94 6.22
+  PID  %CPU %MEM COMM
+27674 197.7  1.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+24958   2.6  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26753   1.4  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+ 1374   1.2  1.8 claude
+26846   1.0  0.2 /usr/libexec/avconferenced
+  652   0.6  0.0 /usr/libexec/sysmond
+26706   0.2  0.1 /System/Library/CoreServices/RemoteManagement/ScreensharingAgent.bundle/Contents/MacOS/ScreensharingAgent
+  447   0.1  0.1 /usr/sbin/bluetoothd
+26937   0.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:38 AEDT (02:35:38 UTC)
+13:35  up  2:50, 1 user, load averages: 9.54 7.83 6.19
+  PID  %CPU %MEM COMM
+27705 1143.4  3.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  652   0.7  0.0 /usr/libexec/sysmond
+26846   0.7  0.2 /usr/libexec/avconferenced
+26753   0.5  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+27327   0.4  0.0 bash
+26937   0.4  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.3  0.2 /usr/sbin/coreaudiod
+24958   0.3  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1390   0.2  2.1 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:43 AEDT (02:35:43 UTC)
+13:35  up  2:50, 1 user, load averages: 10.30 8.01 6.26
+  PID  %CPU %MEM COMM
+27705 1155.5  3.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.2  0.2 /usr/libexec/avconferenced
+26753   0.8  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  652   0.6  0.0 /usr/libexec/sysmond
+ 1378   0.6  1.5 claude
+24958   0.4  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26937   0.4  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.3  0.2 /usr/sbin/coreaudiod
+27327   0.3  0.0 bash
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:49 AEDT (02:35:49 UTC)
+13:35  up  2:50, 1 user, load averages: 10.59 8.11 6.31
+  PID  %CPU %MEM COMM
+27756 715.8  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.0  0.2 /usr/libexec/avconferenced
+26937   0.6  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   0.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  652   0.6  0.0 /usr/libexec/sysmond
+27327   0.5  0.0 bash
+27771   0.4  0.0 ps
+24958   0.4  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  448   0.3  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:54 AEDT (02:35:54 UTC)
+13:35  up  2:50, 1 user, load averages: 10.86 8.21 6.35
+  PID  %CPU %MEM COMM
+27756 1095.1  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754   2.5  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+ 1401   1.9  1.6 /opt/homebrew/bin/claude
+26846   1.0  0.2 /usr/libexec/avconferenced
+26753   1.0  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  652   0.9  0.0 /usr/libexec/sysmond
+ 1175   0.6  0.1 /usr/libexec/modelmanagerd
+27327   0.5  0.0 bash
+26937   0.5  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:35:59 AEDT (02:35:59 UTC)
+13:35  up  2:50, 1 user, load averages: 10.15 8.11 6.32
+  PID  %CPU %MEM COMM
+27816 354.2 14.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  99.9  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   4.2  0.2 /usr/libexec/avconferenced
+  652   3.3  0.0 /usr/libexec/sysmond
+26937   2.6  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   2.5  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   2.3  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+27799   2.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+27794   2.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:04 AEDT (02:36:04 UTC)
+13:36  up  2:51, 1 user, load averages: 9.82 8.07 6.32
+  PID  %CPU %MEM COMM
+26754 120.4  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+27829  99.8 32.4 /Users/mmcky/bench/mlx/.venv/bin/python
+26846   4.4  0.2 /usr/libexec/avconferenced
+  652   3.7  0.0 /usr/libexec/sysmond
+26937   3.2  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   2.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   2.4  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+27342   1.1  0.0 /usr/libexec/spotlightknowledged.importer
+  623   0.4  0.2 /usr/sbin/coreaudiod
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:09 AEDT (02:36:09 UTC)
+13:36  up  2:51, 1 user, load averages: 9.44 8.02 6.31
+  PID  %CPU %MEM COMM
+27865 1136.5  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  22.3  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26753   3.9  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+26846   3.5  0.2 /usr/libexec/avconferenced
+  652   3.0  0.0 /usr/libexec/sysmond
+24958   2.5  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26937   2.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.3  0.2 /usr/sbin/coreaudiod
+ 1390   0.2  2.1 /opt/homebrew/bin/claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:14 AEDT (02:36:14 UTC)
+13:36  up  2:51, 1 user, load averages: 9.88 8.14 6.37
+  PID  %CPU %MEM COMM
+27894  31.1  0.7 /Users/mmcky/bench/mlx/.venv/bin/python
+26754  17.4  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+  652   9.5  0.0 /usr/libexec/sysmond
+26753   6.9  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  568   5.2  0.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+24958   2.0  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26846   1.2  0.2 /usr/libexec/avconferenced
+ 1390   1.0  2.1 /opt/homebrew/bin/claude
+  410   0.7  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:19 AEDT (02:36:19 UTC)
+13:36  up  2:51, 1 user, load averages: 9.33 8.05 6.35
+  PID  %CPU %MEM COMM
+27894 100.0  3.0 /Users/mmcky/bench/mlx/.venv/bin/python
+ 1376   2.5  1.8 claude
+27915   1.5  0.0 /usr/libexec/mdmclient
+27913   1.4  0.0 /usr/libexec/mdmclient
+27914   1.3  0.0 /System/Library/CoreServices/ManagedClient.app/Contents/MacOS/ManagedClient
+    1   0.8  0.1 /sbin/launchd
+  447   0.7  0.1 /usr/sbin/bluetoothd
+  424   0.4  0.2 /System/Library/PrivateFrameworks/ApplePushService.framework/apsd
+  524   0.4  0.1 /System/Library/Frameworks/Security.framework/Versions/A/XPCServices/authd.xpc/Contents/MacOS/authd
+System-wide memory free percentage: 92%
+== sample: 2026-11-09 13:36:24 AEDT (02:36:24 UTC)
+13:36  up  2:51, 1 user, load averages: 8.82 7.97 6.33
+  PID  %CPU %MEM COMM
+27973 198.3  1.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   0.4  0.2 /usr/libexec/avconferenced
+  447   0.2  0.1 /usr/sbin/bluetoothd
+26765   0.1  0.3 /usr/libexec/sharingd
+  623   0.1  0.2 /usr/sbin/coreaudiod
+26754   0.1  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26937   0.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+27913   0.0  0.0 /usr/libexec/mdmclient
+System-wide memory free percentage: 92%
+== sample: 2026-11-09 13:36:29 AEDT (02:36:29 UTC)
+13:36  up  2:51, 1 user, load averages: 8.36 7.88 6.31
+  PID  %CPU %MEM COMM
+27994 450.2  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26738   1.3  0.1 /System/Library/CoreServices/talagentd
+26846   0.6  0.2 /usr/libexec/avconferenced
+  502   0.4  0.1 /usr/libexec/airportd
+26937   0.4  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+24958   0.2  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  623   0.2  0.2 /usr/sbin/coreaudiod
+ 1374   0.2  1.8 claude
+26753   0.1  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:35 AEDT (02:36:35 UTC)
+13:36  up  2:51, 1 user, load averages: 8.81 7.98 6.35
+  PID  %CPU %MEM COMM
+27994 1160.0  3.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   0.8  0.2 /usr/libexec/avconferenced
+26937   0.4  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.3  0.2 /usr/sbin/coreaudiod
+ 1390   0.3  2.1 /opt/homebrew/bin/claude
+26754   0.3  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+ 1376   0.1  1.8 claude
+ 1401   0.1  1.6 /opt/homebrew/bin/claude
+ 1374   0.1  1.8 claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:40 AEDT (02:36:40 UTC)
+13:36  up  2:51, 1 user, load averages: 9.30 8.10 6.40
+  PID  %CPU %MEM COMM
+28054  99.1  0.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1390   1.1  2.1 /opt/homebrew/bin/claude
+27802   1.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+26846   1.0  0.2 /usr/libexec/avconferenced
+26937   0.6  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  447   0.4  0.1 /usr/sbin/bluetoothd
+26765   0.3  0.3 /usr/libexec/sharingd
+  623   0.2  0.2 /usr/sbin/coreaudiod
+  410   0.2  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+System-wide memory free percentage: 92%
+== sample: 2026-11-09 13:36:45 AEDT (02:36:45 UTC)
+13:36  up  2:51, 1 user, load averages: 8.91 8.05 6.40
+  PID  %CPU %MEM COMM
+28054 1117.2  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   0.8  0.2 /usr/libexec/avconferenced
+26937   0.5  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.2  0.2 /usr/sbin/coreaudiod
+  507   0.2  0.0 /usr/sbin/mDNSResponder
+ 1376   0.1  1.8 claude
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1390   0.1  2.1 /opt/homebrew/bin/claude
+ 1374   0.1  1.8 claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:50 AEDT (02:36:50 UTC)
+13:36  up  2:51, 1 user, load averages: 8.59 8.00 6.39
+  PID  %CPU %MEM COMM
+26754 119.8  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   4.5  0.2 /usr/libexec/avconferenced
+28093   3.7  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+28095   3.2  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  410   3.0  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+26937   2.9  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+28092   2.7  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+28096   2.5  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+28094   1.9  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:36:55 AEDT (02:36:55 UTC)
+13:36  up  2:51, 1 user, load averages: 8.07 7.90 6.37
+  PID  %CPU %MEM COMM
+26754 120.1  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+28127  99.7 19.7 /Users/mmcky/bench/mlx/.venv/bin/python
+26846   4.0  0.2 /usr/libexec/avconferenced
+26937   3.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+27342   1.4  0.1 /usr/libexec/spotlightknowledged.importer
+ 1374   1.0  1.8 claude
+24958   0.7  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26753   0.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  623   0.4  0.2 /usr/sbin/coreaudiod
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:00 AEDT (02:37:00 UTC)
+13:37  up  2:51, 1 user, load averages: 8.62 8.02 6.42
+  PID  %CPU %MEM COMM
+28147 1126.2  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  20.3  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26738   3.9  0.1 /System/Library/CoreServices/talagentd
+26846   2.1  0.2 /usr/libexec/avconferenced
+26937   1.2  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+24958   1.0  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1378   0.7  1.5 claude
+27327   0.4  0.0 bash
+26753   0.4  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:05 AEDT (02:37:05 UTC)
+13:37  up  2:52, 1 user, load averages: 9.45 8.20 6.49
+  PID  %CPU %MEM COMM
+28147 1121.5  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  22.1  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   3.2  0.2 /usr/libexec/avconferenced
+26937   2.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+27327   0.6  0.0 bash
+24958   0.6  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+28184   0.4  0.0 head
+26753   0.4  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  448   0.4  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:10 AEDT (02:37:10 UTC)
+13:37  up  2:52, 1 user, load averages: 8.94 8.11 6.47
+  PID  %CPU %MEM COMM
+28197 197.2  3.0 /Users/mmcky/bench/mlx/.venv/bin/python
+ 1378   1.3  1.5 claude
+26846   1.2  0.2 /usr/libexec/avconferenced
+24958   1.0  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26937   0.7  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+26753   0.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  447   0.4  0.1 /usr/sbin/bluetoothd
+26765   0.2  0.3 /usr/libexec/sharingd
+  623   0.1  0.2 /usr/sbin/coreaudiod
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:15 AEDT (02:37:15 UTC)
+13:37  up  2:52, 1 user, load averages: 8.54 8.04 6.46
+  PID  %CPU %MEM COMM
+28268 191.3  1.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  31.0  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+ 1401   2.6  1.6 /opt/homebrew/bin/claude
+26753   1.0  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  568   0.3  0.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+26846   0.3  0.2 /usr/libexec/avconferenced
+  623   0.1  0.2 /usr/sbin/coreaudiod
+28202   0.0  0.0 sleep
+28179   0.0  0.0 sleep
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:20 AEDT (02:37:20 UTC)
+13:37  up  2:52, 1 user, load averages: 7.94 7.93 6.42
+  PID  %CPU %MEM COMM
+28286  89.4  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  447   0.7  0.1 /usr/sbin/bluetoothd
+26846   0.5  0.2 /usr/libexec/avconferenced
+26754   0.5  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26765   0.3  0.3 /usr/libexec/sharingd
+  623   0.2  0.2 /usr/sbin/coreaudiod
+  448   0.2  0.0 /usr/sbin/notifyd
+  380   0.1  0.2 /usr/libexec/logd
+26937   0.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:25 AEDT (02:37:25 UTC)
+13:37  up  2:52, 1 user, load averages: 8.58 8.06 6.48
+  PID  %CPU %MEM COMM
+28286 1140.4  3.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  31.7  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   0.6  0.2 /usr/libexec/avconferenced
+ 1376   0.4  1.8 claude
+  623   0.3  0.2 /usr/sbin/coreaudiod
+28303   0.3  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  448   0.3  0.0 /usr/sbin/notifyd
+ 1390   0.3  2.1 /opt/homebrew/bin/claude
+26937   0.2  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:31 AEDT (02:37:31 UTC)
+13:37  up  2:52, 1 user, load averages: 8.93 8.14 6.52
+  PID  %CPU %MEM COMM
+28286 1123.9  3.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  18.4  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+ 1378   5.0  1.5 claude
+  502   2.6  0.1 /usr/libexec/airportd
+ 1374   1.5  1.8 claude
+ 1376   1.5  1.8 claude
+  507   1.4  0.0 /usr/sbin/mDNSResponder
+  394   0.7  0.0 /usr/libexec/configd
+26846   0.7  0.2 /usr/libexec/avconferenced
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:36 AEDT (02:37:36 UTC)
+13:37  up  2:52, 1 user, load averages: 9.26 8.22 6.56
+  PID  %CPU %MEM COMM
+28332 1054.5  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   0.9  0.2 /usr/libexec/avconferenced
+26937   0.4  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.2  0.2 /usr/sbin/coreaudiod
+21303   0.1  0.0 /bin/zsh
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1390   0.1  2.1 /opt/homebrew/bin/claude
+  434   0.1  0.1 /usr/libexec/dasd
+ 1378   0.1  1.5 claude
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:41 AEDT (02:37:41 UTC)
+13:37  up  2:52, 1 user, load averages: 9.48 8.28 6.59
+  PID  %CPU %MEM COMM
+28374  34.2  0.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26846   1.1  0.2 /usr/libexec/avconferenced
+  447   0.8  0.1 /usr/sbin/bluetoothd
+26937   0.5  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+ 1378   0.3  1.5 claude
+26765   0.3  0.3 /usr/libexec/sharingd
+  623   0.3  0.2 /usr/sbin/coreaudiod
+24958   0.3  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  448   0.3  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:46 AEDT (02:37:46 UTC)
+13:37  up  2:52, 1 user, load averages: 8.88 8.18 6.56
+  PID  %CPU %MEM COMM
+28408 318.8 20.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754 105.9  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+27687   9.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+26846   4.0  0.2 /usr/libexec/avconferenced
+26937   2.9  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+27683   1.9  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  410   1.7  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+24958   1.7  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+27342   1.4  0.1 /usr/libexec/spotlightknowledged.importer
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:51 AEDT (02:37:51 UTC)
+13:37  up  2:52, 1 user, load averages: 8.41 8.09 6.54
+  PID  %CPU %MEM COMM
+26754 120.5  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+26846   3.4  0.2 /usr/libexec/avconferenced
+26937   2.5  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+27342   1.9  0.1 /usr/libexec/spotlightknowledged.importer
+26753   1.6  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   1.0  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1390   0.9  2.1 /opt/homebrew/bin/claude
+  623   0.3  0.2 /usr/sbin/coreaudiod
+  652   0.1  0.0 /usr/libexec/sysmond
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:37:56 AEDT (02:37:56 UTC)
+13:37  up  2:52, 1 user, load averages: 8.86 8.19 6.58
+  PID  %CPU %MEM COMM
+28433 1122.5  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26754  28.5  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+ 1374   5.0  1.8 claude
+26846   2.1  0.2 /usr/libexec/avconferenced
+26937   1.3  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+ 1376   1.0  1.8 claude
+26753   0.7  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+24958   0.3  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  448   0.3  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 91%
+== sample: 2026-11-09 13:38:01 AEDT (02:38:01 UTC)
+13:38  up  2:52, 1 user, load averages: 8.63 8.15 6.58
+  PID  %CPU %MEM COMM
+28467 180.6  3.0 /Users/mmcky/bench/mlx/.venv/bin/python
+26754 113.7  0.8 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+24958   2.5  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26846   1.2  0.2 /usr/libexec/avconferenced
+26753   1.1  0.3 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+26937   0.5  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  447   0.3  0.1 /usr/sbin/bluetoothd
+  623   0.3  0.2 /usr/sbin/coreaudiod
+ 1376   0.3  1.8 claude
+System-wide memory free percentage: 91%
+== after: 2026-11-09 13:38:05 AEDT (02:38:05 UTC)
+13:38  up  2:53, 1 user, load averages: 8.02 8.04 6.55
+  PID  %CPU %MEM COMM
+26846   0.4  0.2 /usr/libexec/avconferenced
+24958   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+26937   0.1  0.1 /System/Library/Frameworks/VideoToolbox.framework/Versions/A/XPCServices/VTEncoderXPCService.xpc/Contents/MacOS/VTEncoderXPCService
+  623   0.1  0.2 /usr/sbin/coreaudiod
+28423   0.0  0.0 sleep
+28391   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+28390   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+28388   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+28387   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 91%
+== ended 02:38:05

@@ -1,0 +1,28 @@
+== before: 2026-11-08 20:26:22 EST (01:26:22 UTC)
+ 20:26:22 up  2:36,  2 users,  load average: 0.11, 0.04, 0.01
+    PID %CPU %MEM COMMAND
+   5992  1.8  0.0 systemd
+     12  1.5  0.0 kworker/u256:0-atlantic
+   6285  1.2  0.0 tmux: server
+   6016  1.0  0.0 user-session-he
+   6226  0.5  0.0 sshd
+   6018  0.4  0.0 wireplumber
+   2697  0.2  0.2 gnome-shell
+   6022  0.1  0.0 pipewire-pulse
+   6011  0.1  0.0 pipewire
+00000000:0B:00.0, 6 MiB, 0 %
+00000000:43:00.0, 59 MiB, 0 %
+== after: 2026-11-08 20:27:18 EST (01:27:18 UTC)
+ 20:27:18 up  2:37,  2 users,  load average: 2.03, 0.59, 0.20
+    PID %CPU %MEM COMMAND
+     12  1.5  0.0 kworker/u256:0-atlantic
+   5992  0.3  0.0 systemd
+   2697  0.2  0.2 gnome-shell
+   6016  0.2  0.0 user-session-he
+   6018  0.1  0.0 wireplumber
+   1924  0.0  0.0 tailscaled
+   1629  0.0  0.0 NetworkManager
+      1  0.0  0.0 systemd
+   6022  0.0  0.0 pipewire-pulse
+00000000:0B:00.0, 6 MiB, 0 %
+00000000:43:00.0, 60 MiB, 0 %

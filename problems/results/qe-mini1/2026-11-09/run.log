@@ -1,0 +1,7 @@
+read       best   0.0228 s  median   0.0229 s    78.83 GB/s  cpu0 None MHz
+copy       best   0.0296 s  median   0.0296 s   121.81 GB/s  cpu0 None MHz
+numpy      best   0.1291 s  median   0.1297 s    41.83 GB/s  cpu0 None MHz
+numpy-out  best   0.1302 s  median   0.1302 s    41.47 GB/s  cpu0 None MHz
+numba      best   0.0913 s  median   0.0913 s    19.71 GB/s  cpu0 None MHz
+numba-evT  best   0.0912 s  median   0.0914 s    19.74 GB/s  cpu0 None MHz
+== exit 0 04:36:44
