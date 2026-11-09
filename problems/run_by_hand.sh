@@ -1,8 +1,9 @@
 #!/bin/bash
-# The problem-type suite on a rented GPU machine, NVIDIA's or AMD's, run by hand.
+# The problem-type suite on a rented machine, run by hand: on its GPU, NVIDIA's or AMD's, or with
+# --cpu on its CPU alone.
 #
 #   git clone https://github.com/QuantEcon/benchmarks.git && cd benchmarks
-#   bash problems/run_by_hand.sh <host> [--quick]
+#   bash problems/run_by_hand.sh <host> [--quick] [--cpu]
 #
 # <host> names the machine in the results as <provider>-<instance>, e.g. aws-g7e.2xlarge.
 # --quick runs each sweep's small sizes, to check the machine; run it first.
@@ -15,16 +16,41 @@
 # card alone (--backends jax-gpu), in both precisions. The card needn't run the CPU backends:
 # summarise.py checks each answer against NumPy's float64 answer from the CPU runs already in
 # problems/results/. Results go to problems/results/<host>/, packed into <host>-<date>-problems.tgz.
+#
+# --cpu runs the four CPU backends instead (numpy, numba, numba-parallel and jax-cpu), every
+# size in both precisions, as qe-mini1's and qe-wharton1-gpu's runs did, and ignores any GPU.
+# It records the CPU in full: lscpu, whether SMT is on, numactl --hardware where it is installed,
+# and /proc/meminfo. It installs jax, numba and scipy under problems/constraints.txt, checks that
+# JAX runs on the CPU, and records the threads the stacks will start with: the CPUs the process
+# may use, to which XLA's and NumPy's BLAS's pools size themselves, and Numba's thread count.
+# For the precision matrix's CPU column on the same machine, run this afterwards, in the same
+# environment:
+#   .venv-problems/bin/python precision/run_matrix.py --host <host> --devices cpu [--quick]
 set -euo pipefail
-HOST=$1; QUICK=${2:-}
-case $QUICK in ""|--quick) ;; *) echo "usage: bash problems/run_by_hand.sh <host> [--quick]"; exit 1 ;; esac
+USAGE="usage: bash problems/run_by_hand.sh <host> [--quick] [--cpu]"
+HOST=${1:?$USAGE}; shift; QUICK=""; CPU=""
+for arg in "$@"; do
+  case $arg in --quick) QUICK=--quick ;; --cpu) CPU=1 ;; *) echo "$USAGE"; exit 1 ;; esac
+done
 DATE=$(date -u +%F)
 OUT="problems/results/$HOST/$DATE"
 mkdir -p "$OUT"
-if [ -n "$(nvidia-smi --query-gpu=index --format=csv,noheader 2> /dev/null)" ]; then PLATFORM=cuda; else PLATFORM=rocm; fi
+if [ -n "$CPU" ]; then PLATFORM=cpu
+elif [ -n "$(nvidia-smi --query-gpu=index --format=csv,noheader 2> /dev/null)" ]; then PLATFORM=cuda
+else PLATFORM=rocm; fi
 
 echo "== The machine"
-if [ $PLATFORM = cuda ]; then
+if [ $PLATFORM = cpu ]; then
+  LABEL=""
+  {
+    head -4 /etc/os-release
+    echo "kernel $(uname -r)"
+    lscpu
+    echo "SMT active: $(cat /sys/devices/system/cpu/smt/active 2>/dev/null || echo unknown)"
+    numactl --hardware || echo "numactl isn't installed; lscpu's NUMA lines are above"
+    cat /proc/meminfo
+  } > "$OUT/machine.txt" 2>&1 || true
+elif [ $PLATFORM = cuda ]; then
   {
     nvidia-smi
     nvidia-smi --query-gpu=index,name,driver_version,memory.total,pci.bus_id,power.limit --format=csv
@@ -59,7 +85,9 @@ command -v uv > /dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh
 # One without its activate script is a half-made one, from an interrupted run, so make it again
 [ -f .venv-problems/bin/activate ] || { rm -rf .venv-problems && uv venv -q -p 3.12 .venv-problems; }
 source .venv-problems/bin/activate
-if [ $PLATFORM = cuda ]; then
+if [ $PLATFORM = cpu ]; then
+  uv pip install -q jax numba scipy -c problems/constraints.txt
+elif [ $PLATFORM = cuda ]; then
   uv pip install -q "jax[$CUDA]" numba scipy -c problems/constraints.txt
 else
   if [ -n "${ROCM_INDEX:-}" ]; then
@@ -72,10 +100,25 @@ else
     -c problems/constraints-rocm.txt
 fi
 uv pip freeze > "$OUT/environment.txt"
-JAX_PLATFORMS=$PLATFORM python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}'); assert jax.devices()[0].platform == 'gpu', 'JAX sees no GPU'"
+if [ $PLATFORM = cpu ]; then
+  JAX_PLATFORMS=cpu python - << 'EOF' | tee -a "$OUT/machine.txt"
+import os
+import jax
+import numba
+assert jax.devices()[0].platform == "cpu", "JAX isn't on the CPU"
+usable = len(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else None
+print(f"JAX {jax.__version__}: {jax.devices()}")
+print(f"threads: {os.cpu_count()} logical CPUs, {usable} this process may use, "
+      f"Numba {numba.config.NUMBA_NUM_THREADS}")
+EOF
+  BACKENDS=numpy,numba,numba-parallel,jax-cpu; WHERE="the CPU"
+else
+  JAX_PLATFORMS=$PLATFORM python -c "import jax; print(f'JAX {jax.__version__}: {jax.devices()}'); assert jax.devices()[0].platform == 'gpu', 'JAX sees no GPU'"
+  BACKENDS=jax-gpu; WHERE="the card"
+fi
 
-echo "== The suite on the card"
-python problems/run_suite.py --backends jax-gpu --host "$HOST" ${QUICK:+--quick} ${LABEL:+--label "$LABEL"} \
+echo "== The suite on $WHERE"
+python problems/run_suite.py --backends $BACKENDS --host "$HOST" ${QUICK:+--quick} ${LABEL:+--label "$LABEL"} \
   | tee -a "$OUT/run.log"
 # This host's tables, with any answer that differs from NumPy's in float64 listed below each
 python problems/summarise.py problems/results/ | awk -v h="on $HOST" '/^### /{keep = index($0, h) > 0} keep' \
