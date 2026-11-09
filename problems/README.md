@@ -145,7 +145,7 @@ python problems/summarise.py problems/results/             # markdown tables
 
 On `qe-wharton1-gpu`, inside `tmux`, with the GitHub runner paused, the card at `0b:00.0` is `--gpus 0`.
 
-On a rented machine, NVIDIA's or AMD's, [`run_by_hand.sh`](run_by_hand.sh) records the machine, installs the pinned releases and runs `jax-gpu` alone, every size in both precisions, after a `--quick` check. Its header says how to run it.
+On a rented machine, NVIDIA's or AMD's, [`run_by_hand.sh`](run_by_hand.sh) records the machine, installs the pinned releases and runs `jax-gpu` alone, every size in both precisions, after a `--quick` check. With `--cpu` it runs the four CPU backends instead, on a machine with no GPU, and records the CPU in full: `lscpu`, whether SMT is on, the NUMA layout, `/proc/meminfo`, and the threads each stack will start with. Its header says how to run it, and how to add the precision matrix's CPU column in the same environment.
 
 ## Method
 

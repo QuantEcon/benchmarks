@@ -43,7 +43,11 @@ def memory_bytes():
 
 def cpu():
     info = {"cpu_count": os.cpu_count(), "cpu_model": None, "cpu_mhz": None,
-            "cpu_physical": None, "cpu_core_types": None}
+            "cpu_physical": None, "cpu_core_types": None,
+            # The CPUs this process may run on, to which XLA's and the BLAS's thread pools size
+            # themselves, and whether the cores run two threads each (Linux only)
+            "cpu_usable": len(os.sched_getaffinity(0)) if hasattr(os, "sched_getaffinity") else None,
+            "smt_active": _read("/sys/devices/system/cpu/smt/active")}
     if sys.platform == "darwin":
         info["cpu_model"] = _run(["sysctl", "-n", "machdep.cpu.brand_string"])
         physical = _run(["sysctl", "-n", "hw.physicalcpu"])
