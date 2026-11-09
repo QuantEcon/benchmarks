@@ -1,6 +1,6 @@
 # The float64 cliff on qe-wharton1-gpu's Threadripper, 2026-11-09
 
-For QuantEcon/project-benchmarks-jax#7: whether the stored Bellman step's cliff past about 2 GiB comes from YNNPACK's reduce on x86 too, as on [the M6 and the M5 Pro](../../../2026-11-06/qe-mini1/mac-float64/README.md). The step is `precision/probes/mac_float64/probe.py`'s `cliff`, from `main` at `ba58764` (the same file as at `3806db6`, sha256 `391eb052…`), in its four variants at 16,000, 18,000 and 20,000, in float64, on the CPU only.
+For QuantEcon/project-benchmarks-jax#7: whether the stored Bellman step's cliff past about 2 GiB comes from YNNPACK's reduce on x86 too, as on [the M6](../../../2026-11-06/qe-mini1/mac-float64/README.md) and [the M5 Pro](../../../2026-11-06/qe-wharton2/mac-float64/README.md). The step is `precision/probes/mac_float64/probe.py`'s `cliff`, from `main` at `ba58764` (the same file as at `3806db6`, sha256 `391eb052…`), in its four variants at 16,000, 18,000 and 20,000, in float64, on the CPU only.
 
 | | |
 |---|---|
