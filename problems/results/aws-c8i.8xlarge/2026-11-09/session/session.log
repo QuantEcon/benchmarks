@@ -1,0 +1,330 @@
+== The machine
+== Python 3.12, JAX, Numba and SciPy
+downloading uv 0.13.7 x86_64-unknown-linux-gnu
+installing to /home/ubuntu/.local/bin
+  uv
+  uvx
+everything's installed!
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CpuDevice(id=0)]
+threads: 16 logical CPUs, 16 this process may use, Numba 16
+== The suite on the CPU
+Writing to /home/ubuntu/benchmarks/problems/results/aws-c8i.8xlarge/2026-11-09.jsonl
+P1 vfi     grid             100 float64  numpy           warm     0.909 s  cold     0.911 s     572 iterations
+P1 vfi     grid             100 float64  numba           warm     0.515 s  cold     2.237 s     572 iterations
+P1 vfi     grid             100 float64  numba-parallel  warm     0.110 s  cold     2.504 s     572 iterations
+P1 vfi     grid             100 float64  jax-cpu         warm     0.054 s  cold     0.106 s     572 iterations
+P3 egm     grid             200 float64  numpy           warm     0.270 s  cold     0.272 s    2192 iterations
+P3 egm     grid             200 float64  numba           warm     0.360 s  cold     3.835 s    2192 iterations
+P3 egm     grid             200 float64  numba-parallel  warm     0.415 s  cold     4.055 s    2192 iterations
+P3 egm     grid             200 float64  jax-cpu         warm     0.509 s  cold     0.638 s    2192 iterations
+P3 egm     grid             200 float32  numpy           warm     0.240 s  cold     0.241 s    2208 iterations
+P3 egm     grid             200 float32  numba           warm     0.240 s  cold     3.830 s    2205 iterations
+P3 egm     grid             200 float32  numba-parallel  warm     0.294 s  cold     4.084 s    2205 iterations
+P3 egm     grid             200 float32  jax-cpu         warm     0.353 s  cold     0.507 s    2205 iterations
+P4 wealth  households     10000 float64  numpy           warm     0.049 s  cold     0.049 s     200 iterations
+P4 wealth  households     10000 float64  numba           warm     0.131 s  cold     0.634 s     200 iterations
+P4 wealth  households     10000 float64  numba-parallel  warm     0.012 s  cold     0.797 s     200 iterations
+P4 wealth  households     10000 float64  jax-cpu         warm     0.073 s  cold     0.263 s     200 iterations
+P4 wealth  households     10000 float32  numpy           warm     0.041 s  cold     0.042 s     200 iterations
+P4 wealth  households     10000 float32  numba           warm     0.114 s  cold     0.611 s     200 iterations
+P4 wealth  households     10000 float32  numba-parallel  warm     0.011 s  cold     0.794 s     200 iterations
+P4 wealth  households     10000 float32  jax-cpu         warm     0.023 s  cold     0.192 s     200 iterations
+P7 kalman  batch             10 float64  numpy           warm     0.040 s  cold     0.040 s    1000 iterations
+P7 kalman  batch             10 float64  numba           warm     0.028 s  cold     6.984 s    1000 iterations
+P7 kalman  batch             10 float64  numba-parallel  warm     0.031 s  cold    10.616 s    1000 iterations
+P7 kalman  batch             10 float64  jax-cpu         warm     0.018 s  cold     0.275 s    1000 iterations
+P7 kalman  batch             10 float32  numpy           warm     0.042 s  cold     0.043 s    1000 iterations
+P7 kalman  batch             10 float32  numba           warm     0.026 s  cold     7.053 s    1000 iterations
+P7 kalman  batch             10 float32  numba-parallel  warm     0.032 s  cold    10.749 s    1000 iterations
+P7 kalman  batch             10 float32  jax-cpu         warm     0.017 s  cold     0.277 s    1000 iterations
+P7 kalman  state             10 float64  numpy           warm     0.023 s  cold     0.023 s    1000 iterations
+P7 kalman  state             10 float64  numba           warm     0.003 s  cold     6.952 s    1000 iterations
+P7 kalman  state             10 float64  numba-parallel  warm     0.003 s  cold    10.596 s    1000 iterations
+P7 kalman  state             10 float64  jax-cpu         warm     0.004 s  cold     0.261 s    1000 iterations
+P7 kalman  state             10 float32  numpy           warm     0.026 s  cold     0.027 s    1000 iterations
+P7 kalman  state             10 float32  numba           warm     0.003 s  cold     7.018 s    1000 iterations
+P7 kalman  state             10 float32  numba-parallel  warm     0.003 s  cold    10.581 s    1000 iterations
+P7 kalman  state             10 float32  jax-cpu         warm     0.004 s  cold     0.256 s    1000 iterations
+== Done: aws-c8i.8xlarge-2026-11-09-problems.tgz. Copy it off the machine, then terminate the machine.
+== The machine
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CpuDevice(id=0)]
+threads: 16 logical CPUs, 16 this process may use, Numba 16
+== The suite on the CPU
+Writing to /home/ubuntu/benchmarks/problems/results/aws-c8i.8xlarge/2026-11-09.jsonl
+P1 vfi     grid             100 float64  numpy           warm     0.858 s  cold     0.864 s     572 iterations
+P1 vfi     grid             100 float64  numba           warm     0.519 s  cold     1.883 s     572 iterations
+P1 vfi     grid             100 float64  numba-parallel  warm     0.111 s  cold     2.517 s     572 iterations
+P1 vfi     grid             100 float64  jax-cpu         warm     0.056 s  cold     0.110 s     572 iterations
+P1 vfi     grid             200 float64  numpy           warm     3.071 s  cold     3.096 s     572 iterations
+P1 vfi     grid             200 float64  numba           warm     2.484 s  cold     3.856 s     572 iterations
+P1 vfi     grid             200 float64  numba-parallel  warm     0.394 s  cold     2.800 s     572 iterations
+P1 vfi     grid             200 float64  jax-cpu         warm     0.131 s  cold     0.191 s     572 iterations
+P1 vfi     grid             400 float64  numpy           warm    20.696 s  cold    20.457 s     572 iterations
+P1 vfi     grid             400 float64  numba           warm    12.321 s  cold    13.819 s     572 iterations
+P1 vfi     grid             400 float64  numba-parallel  warm     6.576 s  cold     8.481 s     572 iterations
+P1 vfi     grid             400 float64  jax-cpu         warm     0.397 s  cold     0.453 s     572 iterations
+P1 vfi     grid             700 float64  numpy           warm    68.999 s  cold    68.847 s     572 iterations
+P1 vfi     grid             700 float64  numba           warm    37.703 s  cold    39.113 s     572 iterations
+P1 vfi     grid             700 float64  numba-parallel  warm    14.731 s  cold    16.389 s     572 iterations
+P1 vfi     grid             700 float64  jax-cpu         warm     1.342 s  cold     1.412 s     572 iterations
+P1 vfi     grid            1000 float64  numpy           warm   156.327 s  cold   156.343 s     572 iterations
+P1 vfi     grid            1000 float64  numba           warm    77.548 s  cold    78.940 s     572 iterations
+P1 vfi     grid            1000 float64  numba-parallel  warm    21.134 s  cold    23.362 s     572 iterations
+P1 vfi     grid            1000 float64  jax-cpu         warm     2.839 s  cold     2.866 s     572 iterations
+P1 vfi     grid            1500 float64  numpy           warm   361.863 s  cold   361.803 s     572 iterations
+P1 vfi     grid            1500 float64  numba           warm   204.210 s  cold   208.206 s     572 iterations
+P1 vfi     grid            1500 float64  numba-parallel  warm    50.115 s  cold    44.424 s     572 iterations
+P1 vfi     grid            1500 float64  jax-cpu         warm     6.909 s  cold     6.910 s     572 iterations
+P3 egm     grid             200 float64  numpy           warm     0.270 s  cold     0.271 s    2192 iterations
+P3 egm     grid             200 float64  numba           warm     0.357 s  cold     3.872 s    2192 iterations
+P3 egm     grid             200 float64  numba-parallel  warm     0.411 s  cold     3.992 s    2192 iterations
+P3 egm     grid             200 float64  jax-cpu         warm     0.509 s  cold     0.639 s    2192 iterations
+P3 egm     grid            1000 float64  numpy           warm     0.910 s  cold     0.908 s    2190 iterations
+P3 egm     grid            1000 float64  numba           warm     1.782 s  cold     5.293 s    2190 iterations
+P3 egm     grid            1000 float64  numba-parallel  warm     1.622 s  cold     5.211 s    2190 iterations
+P3 egm     grid            1000 float64  jax-cpu         warm     2.422 s  cold     2.539 s    2190 iterations
+P3 egm     grid            5000 float64  numpy           warm     6.304 s  cold     6.288 s    2190 iterations
+P3 egm     grid            5000 float64  numba           warm     9.789 s  cold    13.266 s    2190 iterations
+P3 egm     grid            5000 float64  numba-parallel  warm     9.488 s  cold    12.594 s    2190 iterations
+P3 egm     grid            5000 float64  jax-cpu         warm    15.772 s  cold    15.974 s    2190 iterations
+P3 egm     grid           20000 float64  numpy           warm    32.182 s  cold    31.927 s    2190 iterations
+P3 egm     grid           20000 float64  numba           warm    43.082 s  cold    50.556 s    2190 iterations
+P3 egm     grid           20000 float64  numba-parallel  warm    41.551 s  cold    45.770 s    2190 iterations
+P3 egm     grid           20000 float64  jax-cpu         warm    76.644 s  cold    76.659 s    2190 iterations
+P3 egm     grid           50000 float64  numpy           warm    76.117 s  cold    76.148 s    2190 iterations
+P3 egm     grid           50000 float64  numba           warm   118.679 s  cold   122.276 s    2190 iterations
+P3 egm     grid           50000 float64  numba-parallel  warm   115.428 s  cold   118.737 s    2190 iterations
+P3 egm     grid           50000 float64  jax-cpu         warm   203.333 s  cold   203.528 s    2190 iterations
+P3 egm     grid             200 float32  numpy           warm     0.239 s  cold     0.239 s    2208 iterations
+P3 egm     grid             200 float32  numba           warm     0.241 s  cold     3.808 s    2205 iterations
+P3 egm     grid             200 float32  numba-parallel  warm     0.294 s  cold     4.057 s    2205 iterations
+P3 egm     grid             200 float32  jax-cpu         warm     0.353 s  cold     0.504 s    2205 iterations
+P3 egm     grid            1000 float32  numpy           warm     0.700 s  cold     0.700 s    2210 iterations
+P3 egm     grid            1000 float32  numba           warm     1.181 s  cold     4.782 s    2206 iterations
+P3 egm     grid            1000 float32  numba-parallel  warm     1.047 s  cold     4.840 s    2206 iterations
+P3 egm     grid            1000 float32  jax-cpu         warm     1.699 s  cold     1.836 s    2206 iterations
+P3 egm     grid            5000 float32  numpy           warm     3.811 s  cold     3.778 s    2211 iterations
+P3 egm     grid            5000 float32  numba           warm     6.352 s  cold     9.960 s    2210 iterations
+P3 egm     grid            5000 float32  numba-parallel  warm     5.583 s  cold     9.474 s    2210 iterations
+P3 egm     grid            5000 float32  jax-cpu         warm    11.069 s  cold    11.304 s    2210 iterations
+P3 egm     grid           20000 float32  numpy           warm    23.421 s  cold    23.443 s    2210 iterations
+P3 egm     grid           20000 float32  numba           warm    27.350 s  cold    30.990 s    2210 iterations
+P3 egm     grid           20000 float32  numba-parallel  warm    27.634 s  cold    28.700 s    2210 iterations
+P3 egm     grid           20000 float32  jax-cpu         warm    58.980 s  cold    59.112 s    2210 iterations
+P3 egm     grid           50000 float32  numpy           warm    58.482 s  cold    58.955 s    2213 iterations
+P3 egm     grid           50000 float32  numba           warm    81.659 s  cold    85.842 s    2210 iterations
+P3 egm     grid           50000 float32  numba-parallel  warm    69.024 s  cold    72.449 s    2210 iterations
+P3 egm     grid           50000 float32  jax-cpu         warm   158.146 s  cold   158.515 s    2210 iterations
+P4 wealth  households      1000 float64  numpy           warm     0.006 s  cold     0.006 s     200 iterations
+P4 wealth  households      1000 float64  numba           warm     0.013 s  cold     0.501 s     200 iterations
+P4 wealth  households      1000 float64  numba-parallel  warm     0.002 s  cold     0.782 s     200 iterations
+P4 wealth  households      1000 float64  jax-cpu         warm     0.007 s  cold     0.200 s     200 iterations
+P4 wealth  households     10000 float64  numpy           warm     0.050 s  cold     0.049 s     200 iterations
+P4 wealth  households     10000 float64  numba           warm     0.132 s  cold     0.629 s     200 iterations
+P4 wealth  households     10000 float64  numba-parallel  warm     0.012 s  cold     0.803 s     200 iterations
+P4 wealth  households     10000 float64  jax-cpu         warm     0.073 s  cold     0.264 s     200 iterations
+P4 wealth  households    100000 float64  numpy           warm     0.487 s  cold     0.487 s     200 iterations
+P4 wealth  households    100000 float64  numba           warm     1.311 s  cold     1.806 s     200 iterations
+P4 wealth  households    100000 float64  numba-parallel  warm     0.079 s  cold     0.868 s     200 iterations
+P4 wealth  households    100000 float64  jax-cpu         warm     0.830 s  cold     1.030 s     200 iterations
+P4 wealth  households   1000000 float64  numpy           warm     5.130 s  cold     5.128 s     200 iterations
+P4 wealth  households   1000000 float64  numba           warm    13.062 s  cold    13.549 s     200 iterations
+P4 wealth  households   1000000 float64  numba-parallel  warm     0.780 s  cold     1.576 s     200 iterations
+P4 wealth  households   1000000 float64  jax-cpu         warm     9.105 s  cold     9.292 s     200 iterations
+P4 wealth  households  10000000 float64  numpy           warm    69.461 s  cold    69.604 s     200 iterations
+P4 wealth  households  10000000 float64  numba           warm   131.682 s  cold   132.180 s     200 iterations
+P4 wealth  households  10000000 float64  numba-parallel  warm     7.812 s  cold     8.575 s     200 iterations
+P4 wealth  households  10000000 float64  jax-cpu         warm    52.476 s  cold    53.177 s     200 iterations
+P4 wealth  households      1000 float32  numpy           warm     0.006 s  cold     0.006 s     200 iterations
+P4 wealth  households      1000 float32  numba           warm     0.011 s  cold     0.507 s     200 iterations
+P4 wealth  households      1000 float32  numba-parallel  warm     0.001 s  cold     0.790 s     200 iterations
+P4 wealth  households      1000 float32  jax-cpu         warm     0.002 s  cold     0.173 s     200 iterations
+P4 wealth  households     10000 float32  numpy           warm     0.041 s  cold     0.041 s     200 iterations
+P4 wealth  households     10000 float32  numba           warm     0.115 s  cold     0.610 s     200 iterations
+P4 wealth  households     10000 float32  numba-parallel  warm     0.011 s  cold     0.787 s     200 iterations
+P4 wealth  households     10000 float32  jax-cpu         warm     0.023 s  cold     0.194 s     200 iterations
+P4 wealth  households    100000 float32  numpy           warm     0.404 s  cold     0.419 s     200 iterations
+P4 wealth  households    100000 float32  numba           warm     1.153 s  cold     1.644 s     200 iterations
+P4 wealth  households    100000 float32  numba-parallel  warm     0.079 s  cold     0.878 s     200 iterations
+P4 wealth  households    100000 float32  jax-cpu         warm     0.332 s  cold     0.503 s     200 iterations
+P4 wealth  households   1000000 float32  numpy           warm     4.211 s  cold     4.242 s     200 iterations
+P4 wealth  households   1000000 float32  numba           warm    11.864 s  cold    12.404 s     200 iterations
+P4 wealth  households   1000000 float32  numba-parallel  warm     0.704 s  cold     1.505 s     200 iterations
+P4 wealth  households   1000000 float32  jax-cpu         warm     4.125 s  cold     4.293 s     200 iterations
+P4 wealth  households  10000000 float32  numpy           warm    50.941 s  cold    51.108 s     200 iterations
+P4 wealth  households  10000000 float32  numba           warm   115.242 s  cold   115.645 s     200 iterations
+P4 wealth  households  10000000 float32  numba-parallel  warm     6.913 s  cold     7.684 s     200 iterations
+P4 wealth  households  10000000 float32  jax-cpu         warm    41.936 s  cold    42.500 s     200 iterations
+P7 kalman  batch              1 float64  numpy           warm     0.024 s  cold     0.025 s    1000 iterations
+P7 kalman  batch              1 float64  numba           warm     0.003 s  cold     7.004 s    1000 iterations
+P7 kalman  batch              1 float64  numba-parallel  warm     0.003 s  cold    10.685 s    1000 iterations
+P7 kalman  batch              1 float64  jax-cpu         warm     0.004 s  cold     0.261 s    1000 iterations
+P7 kalman  batch             10 float64  numpy           warm     0.040 s  cold     0.041 s    1000 iterations
+P7 kalman  batch             10 float64  numba           warm     0.028 s  cold     7.050 s    1000 iterations
+P7 kalman  batch             10 float64  numba-parallel  warm     0.030 s  cold    10.734 s    1000 iterations
+P7 kalman  batch             10 float64  jax-cpu         warm     0.018 s  cold     0.277 s    1000 iterations
+P7 kalman  batch            100 float64  numpy           warm     0.175 s  cold     0.175 s    1000 iterations
+P7 kalman  batch            100 float64  numba           warm     0.282 s  cold     7.345 s    1000 iterations
+P7 kalman  batch            100 float64  numba-parallel  warm     0.305 s  cold    10.979 s    1000 iterations
+P7 kalman  batch            100 float64  jax-cpu         warm     0.157 s  cold     0.420 s    1000 iterations
+P7 kalman  batch           1000 float64  numpy           warm     1.580 s  cold     1.633 s    1000 iterations
+P7 kalman  batch           1000 float64  numba           warm     2.837 s  cold     9.886 s    1000 iterations
+P7 kalman  batch           1000 float64  numba-parallel  warm     2.993 s  cold    13.727 s    1000 iterations
+P7 kalman  batch           1000 float64  jax-cpu         warm     1.075 s  cold     1.334 s    1000 iterations
+P7 kalman  batch          10000 float64  numpy           warm    15.200 s  cold    15.480 s    1000 iterations
+P7 kalman  batch          10000 float64  numba           warm    28.363 s  cold    35.401 s    1000 iterations
+P7 kalman  batch          10000 float64  numba-parallel  warm    30.819 s  cold    41.443 s    1000 iterations
+P7 kalman  batch          10000 float64  jax-cpu         warm    17.378 s  cold    17.626 s    1000 iterations
+P7 kalman  batch              1 float32  numpy           warm     0.026 s  cold     0.027 s    1000 iterations
+P7 kalman  batch              1 float32  numba           warm     0.003 s  cold     7.110 s    1000 iterations
+P7 kalman  batch              1 float32  numba-parallel  warm     0.003 s  cold    10.711 s    1000 iterations
+P7 kalman  batch              1 float32  jax-cpu         warm     0.004 s  cold     0.262 s    1000 iterations
+P7 kalman  batch             10 float32  numpy           warm     0.043 s  cold     0.043 s    1000 iterations
+P7 kalman  batch             10 float32  numba           warm     0.026 s  cold     7.049 s    1000 iterations
+P7 kalman  batch             10 float32  numba-parallel  warm     0.031 s  cold    10.693 s    1000 iterations
+P7 kalman  batch             10 float32  jax-cpu         warm     0.017 s  cold     0.277 s    1000 iterations
+P7 kalman  batch            100 float32  numpy           warm     0.167 s  cold     0.167 s    1000 iterations
+P7 kalman  batch            100 float32  numba           warm     0.261 s  cold     7.271 s    1000 iterations
+P7 kalman  batch            100 float32  numba-parallel  warm     0.301 s  cold    10.945 s    1000 iterations
+P7 kalman  batch            100 float32  jax-cpu         warm     0.129 s  cold     0.389 s    1000 iterations
+P7 kalman  batch           1000 float32  numpy           warm     1.406 s  cold     1.415 s    1000 iterations
+P7 kalman  batch           1000 float32  numba           warm     2.647 s  cold     9.653 s    1000 iterations
+P7 kalman  batch           1000 float32  numba-parallel  warm     3.029 s  cold    13.726 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-cpu         warm     0.956 s  cold     1.227 s    1000 iterations
+P7 kalman  batch          10000 float32  numpy           warm    13.754 s  cold    13.776 s    1000 iterations
+P7 kalman  batch          10000 float32  numba           warm    26.419 s  cold    33.301 s    1000 iterations
+P7 kalman  batch          10000 float32  numba-parallel  warm    29.516 s  cold    40.117 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-cpu         warm    15.657 s  cold    15.921 s    1000 iterations
+P7 kalman  state              2 float64  numpy           warm     0.022 s  cold     0.023 s    1000 iterations
+P7 kalman  state              2 float64  numba           warm     0.002 s  cold     7.094 s    1000 iterations
+P7 kalman  state              2 float64  numba-parallel  warm     0.002 s  cold    10.752 s    1000 iterations
+P7 kalman  state              2 float64  jax-cpu         warm     0.002 s  cold     0.247 s    1000 iterations
+P7 kalman  state              5 float64  numpy           warm     0.023 s  cold     0.023 s    1000 iterations
+P7 kalman  state              5 float64  numba           warm     0.002 s  cold     7.067 s    1000 iterations
+P7 kalman  state              5 float64  numba-parallel  warm     0.002 s  cold    10.760 s    1000 iterations
+P7 kalman  state              5 float64  jax-cpu         warm     0.003 s  cold     0.254 s    1000 iterations
+P7 kalman  state             10 float64  numpy           warm     0.023 s  cold     0.024 s    1000 iterations
+P7 kalman  state             10 float64  numba           warm     0.003 s  cold     7.069 s    1000 iterations
+P7 kalman  state             10 float64  numba-parallel  warm     0.003 s  cold    10.720 s    1000 iterations
+P7 kalman  state             10 float64  jax-cpu         warm     0.004 s  cold     0.263 s    1000 iterations
+P7 kalman  state             20 float64  numpy           warm     0.026 s  cold     0.026 s    1000 iterations
+P7 kalman  state             20 float64  numba           warm     0.005 s  cold     7.098 s    1000 iterations
+P7 kalman  state             20 float64  numba-parallel  warm     0.005 s  cold    10.727 s    1000 iterations
+P7 kalman  state             20 float64  jax-cpu         warm     0.006 s  cold     0.262 s    1000 iterations
+P7 kalman  state             50 float64  numpy           warm     0.038 s  cold     0.039 s    1000 iterations
+P7 kalman  state             50 float64  numba           warm     0.016 s  cold     7.046 s    1000 iterations
+P7 kalman  state             50 float64  numba-parallel  warm     0.016 s  cold    10.756 s    1000 iterations
+P7 kalman  state             50 float64  jax-cpu         warm     0.021 s  cold     0.280 s    1000 iterations
+P7 kalman  state            100 float64  numpy           warm     0.104 s  cold     0.108 s    1000 iterations
+P7 kalman  state            100 float64  numba           warm     0.070 s  cold     7.134 s    1000 iterations
+P7 kalman  state            100 float64  numba-parallel  warm     0.068 s  cold    10.778 s    1000 iterations
+P7 kalman  state            100 float64  jax-cpu         warm     0.098 s  cold     0.366 s    1000 iterations
+P7 kalman  state            200 float64  numpy           warm     0.232 s  cold     0.232 s    1000 iterations
+P7 kalman  state            200 float64  numba           warm     0.199 s  cold     7.224 s    1000 iterations
+P7 kalman  state            200 float64  numba-parallel  warm     0.200 s  cold    10.908 s    1000 iterations
+P7 kalman  state            200 float64  jax-cpu         warm     0.487 s  cold     0.749 s    1000 iterations
+P7 kalman  state              2 float32  numpy           warm     0.026 s  cold     0.026 s    1000 iterations
+P7 kalman  state              2 float32  numba           warm     0.002 s  cold     7.014 s    1000 iterations
+P7 kalman  state              2 float32  numba-parallel  warm     0.002 s  cold    10.677 s    1000 iterations
+P7 kalman  state              2 float32  jax-cpu         warm     0.002 s  cold     0.246 s    1000 iterations
+P7 kalman  state              5 float32  numpy           warm     0.026 s  cold     0.027 s    1000 iterations
+P7 kalman  state              5 float32  numba           warm     0.002 s  cold     7.023 s    1000 iterations
+P7 kalman  state              5 float32  numba-parallel  warm     0.002 s  cold    10.597 s    1000 iterations
+P7 kalman  state              5 float32  jax-cpu         warm     0.004 s  cold     0.270 s    1000 iterations
+P7 kalman  state             10 float32  numpy           warm     0.027 s  cold     0.027 s    1000 iterations
+P7 kalman  state             10 float32  numba           warm     0.003 s  cold     7.041 s    1000 iterations
+P7 kalman  state             10 float32  numba-parallel  warm     0.003 s  cold    10.722 s    1000 iterations
+P7 kalman  state             10 float32  jax-cpu         warm     0.004 s  cold     0.260 s    1000 iterations
+P7 kalman  state             20 float32  numpy           warm     0.028 s  cold     0.028 s    1000 iterations
+P7 kalman  state             20 float32  numba           warm     0.004 s  cold     7.049 s    1000 iterations
+P7 kalman  state             20 float32  numba-parallel  warm     0.004 s  cold    10.687 s    1000 iterations
+P7 kalman  state             20 float32  jax-cpu         warm     0.005 s  cold     0.264 s    1000 iterations
+P7 kalman  state             50 float32  numpy           warm     0.035 s  cold     0.035 s    1000 iterations
+P7 kalman  state             50 float32  numba           warm     0.011 s  cold     7.081 s    1000 iterations
+P7 kalman  state             50 float32  numba-parallel  warm     0.011 s  cold    10.691 s    1000 iterations
+P7 kalman  state             50 float32  jax-cpu         warm     0.017 s  cold     0.277 s    1000 iterations
+P7 kalman  state            100 float32  numpy           warm     0.082 s  cold     0.082 s    1000 iterations
+P7 kalman  state            100 float32  numba           warm     0.048 s  cold     7.114 s    1000 iterations
+P7 kalman  state            100 float32  numba-parallel  warm     0.047 s  cold    10.721 s    1000 iterations
+P7 kalman  state            100 float32  jax-cpu         warm     0.063 s  cold     0.326 s    1000 iterations
+P7 kalman  state            200 float32  numpy           warm     0.168 s  cold     0.172 s    1000 iterations
+P7 kalman  state            200 float32  numba           warm     0.153 s  cold     7.166 s    1000 iterations
+P7 kalman  state            200 float32  numba-parallel  warm     0.143 s  cold    10.826 s    1000 iterations
+P7 kalman  state            200 float32  jax-cpu         warm     0.260 s  cold     0.519 s    1000 iterations
+Traceback (most recent call last):
+  File "/home/ubuntu/benchmarks/problems/summarise.py", line 123, in <module>
+    main()
+  File "/home/ubuntu/benchmarks/problems/summarise.py", line 82, in main
+    latest = load(args.paths)
+             ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/benchmarks/problems/summarise.py", line 26, in load
+    key = (row["host"], row.get("label", ""), row["problem"], row["sweep"],
+           ~~~^^^^^^^^
+KeyError: 'host'
+== Done: aws-c8i.8xlarge-2026-11-09-problems.tgz. Copy it off the machine, then terminate the machine.
+Writing to /home/ubuntu/benchmarks/results/aws-c8i.8xlarge/2026-11-09.jsonl
+matmul                 256 float32  cpu    warm      0.16 ms      209.5 GFLOPS  compile 0.01 s
+matmul                 256 float64  cpu    warm      0.15 ms      229.9 GFLOPS  compile 0.01 s
+matmul                 512 float32  cpu    warm      0.24 ms     1135.8 GFLOPS  compile 0.01 s
+matmul                 512 float64  cpu    warm      0.33 ms      822.0 GFLOPS  compile 0.01 s
+matmul                1024 float32  cpu    warm      0.90 ms     2396.4 GFLOPS  compile 0.01 s
+matmul                1024 float64  cpu    warm      1.83 ms     1174.6 GFLOPS  compile 0.01 s
+matmul                2048 float32  cpu    warm      6.08 ms     2825.8 GFLOPS  compile 0.01 s
+matmul                2048 float64  cpu    warm     21.04 ms      816.6 GFLOPS  compile 0.01 s
+matmul                4096 float32  cpu    warm     62.66 ms     2193.2 GFLOPS  compile 0.01 s
+matmul                4096 float64  cpu    warm    127.20 ms     1080.5 GFLOPS  compile 0.01 s
+matmul                8192 float32  cpu    warm    457.35 ms     2404.1 GFLOPS  compile 0.01 s
+matmul                8192 float64  cpu    warm   1025.21 ms     1072.5 GFLOPS  compile 0.01 s
+bellman_stored        1000 float32  cpu    warm      0.06 ms       64.7 GB/s  compile 0.02 s
+bellman_stored        1000 float64  cpu    warm      0.09 ms       86.8 GB/s  compile 0.02 s
+bellman_stored        2000 float32  cpu    warm      0.11 ms      144.0 GB/s  compile 0.02 s
+bellman_stored        2000 float64  cpu    warm      0.20 ms      157.8 GB/s  compile 0.02 s
+bellman_stored        5000 float32  cpu    warm      0.60 ms      166.9 GB/s  compile 0.01 s
+bellman_stored        5000 float64  cpu    warm      1.24 ms      160.9 GB/s  compile 0.01 s
+bellman_stored       10000 float32  cpu    warm      2.57 ms      155.7 GB/s  compile 0.01 s
+bellman_stored       10000 float64  cpu    warm      5.48 ms      146.0 GB/s  compile 0.01 s
+bellman_stored       20000 float32  cpu    warm     10.68 ms      149.8 GB/s  compile 0.01 s
+bellman_stored       20000 float64  cpu    warm    496.49 ms        6.4 GB/s  compile 0.01 s
+bellman_stored       40000 float32  cpu    warm    990.34 ms        6.5 GB/s  compile 0.01 s
+bellman_stored       40000 float64  cpu    warm    689.88 ms       18.6 GB/s  compile 0.01 s
+bellman_stored       60000 float32  cpu    warm   1159.06 ms       12.4 GB/s  compile 0.01 s
+bellman_stored       60000 float64  cpu    warm   1028.19 ms       28.0 GB/s  compile 0.01 s
+bellman_recompute     1000 float32  cpu    warm      0.35 ms        2.9 Gcells/s  compile 0.05 s
+bellman_recompute     1000 float64  cpu    warm      1.30 ms        0.8 Gcells/s  compile 0.05 s
+bellman_recompute     2000 float32  cpu    warm      0.86 ms        4.6 Gcells/s  compile 0.06 s
+bellman_recompute     2000 float64  cpu    warm      4.75 ms        0.8 Gcells/s  compile 0.06 s
+bellman_recompute     5000 float32  cpu    warm      4.19 ms        6.0 Gcells/s  compile 0.06 s
+bellman_recompute     5000 float64  cpu    warm     30.39 ms        0.8 Gcells/s  compile 0.06 s
+bellman_recompute    10000 float32  cpu    warm     15.17 ms        6.6 Gcells/s  compile 0.06 s
+bellman_recompute    10000 float64  cpu    warm    120.03 ms        0.8 Gcells/s  compile 0.06 s
+bellman_recompute    20000 float32  cpu    warm     61.75 ms        6.5 Gcells/s  compile 0.06 s
+bellman_recompute    20000 float64  cpu    warm   1379.34 ms        0.3 Gcells/s  compile 0.06 s
+bellman_recompute    40000 float32  cpu    warm   2210.79 ms        0.7 Gcells/s  compile 0.06 s
+bellman_recompute    40000 float64  cpu    warm   4065.83 ms        0.4 Gcells/s  compile 0.06 s
+bellman_recompute    60000 float32  cpu    warm   3731.98 ms        1.0 Gcells/s  compile 0.06 s
+bellman_recompute    60000 float64  cpu    warm   7704.00 ms        0.5 Gcells/s  compile 0.06 s
+kalman                1000 float32  cpu    warm      4.28 ms      233.4 ksteps/s  compile 0.22 s
+kalman                1000 float64  cpu    warm      4.03 ms      248.4 ksteps/s  compile 0.22 s
+kalman               10000 float32  cpu    warm     48.80 ms      204.9 ksteps/s  compile 0.22 s
+kalman               10000 float64  cpu    warm     46.80 ms      213.7 ksteps/s  compile 0.22 s
+kalman              100000 float32  cpu    warm    497.50 ms      201.0 ksteps/s  compile 0.22 s
+kalman              100000 float64  cpu    warm    465.61 ms      214.8 ksteps/s  compile 0.22 s
+Writing to /home/ubuntu/benchmarks/problems/results/aws-c8i.8xlarge/2026-11-09.jsonl
+P1 vfi     grid            1000 float64  jax-cpu         warm    45.560 s  cold    45.426 s     572 iterations
+P1 vfi     grid            1500 float64  jax-cpu         warm   102.811 s  cold   102.582 s     572 iterations
+EXIT 0
+read       best   0.0849 s  median   0.0851 s    21.19 GB/s  cpu0 3900 MHz
+copy       best   0.1283 s  median   0.1284 s    28.06 GB/s  cpu0 3900 MHz
+numpy      best   0.6293 s  median   0.6307 s     8.58 GB/s  cpu0 3900 MHz
+numpy-out  best   0.4686 s  median   0.4690 s    11.52 GB/s  cpu0 3803 MHz
+numba      best   0.3552 s  median   0.3552 s     5.07 GB/s  cpu0 3900 MHz
+numba-evT  best   0.4461 s  median   0.4467 s     4.03 GB/s  cpu0 3899 MHz
+triad  1 threads  best  0.3227 s  median  0.3328 s    19.96 GB/s
+triad  2 threads  best  0.1686 s  median  0.1693 s    38.21 GB/s
+triad  4 threads  best  0.0933 s  median  0.0936 s    69.02 GB/s
+triad  8 threads  best  0.0592 s  median  0.0610 s   108.85 GB/s
+triad 16 threads  best  0.0399 s  median  0.0412 s   161.63 GB/s
+EXIT 0
