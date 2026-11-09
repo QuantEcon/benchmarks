@@ -1,0 +1,6 @@
+triad  1 threads  best  0.0478 s  median  0.0479 s   134.81 GB/s
+triad  2 threads  best  0.0464 s  median  0.0474 s   138.80 GB/s
+triad  4 threads  best  0.0480 s  median  0.0483 s   134.27 GB/s
+triad  8 threads  best  0.0471 s  median  0.0476 s   136.70 GB/s
+triad 12 threads  best  0.0478 s  median  0.0482 s   134.88 GB/s
+== exit 0 05:27:03
