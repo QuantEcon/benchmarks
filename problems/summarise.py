@@ -10,6 +10,7 @@ size, or which took a different number of iterations.
 """
 import argparse
 import json
+import re
 from math import sqrt
 from pathlib import Path
 
@@ -21,6 +22,8 @@ def load(paths):
     latest = {}
     for root in paths:
         for f in sorted(Path(root).rglob("*.jsonl")):
+            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}\.jsonl", f.name):
+                continue  # a run's own records, such as a clock or bandwidth log
             for line in f.read_text().splitlines():
                 row = json.loads(line)
                 key = (row["host"], row.get("label", ""), row["problem"], row["sweep"],
