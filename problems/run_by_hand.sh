@@ -26,6 +26,12 @@
 # For the precision matrix's CPU column on the same machine, run this afterwards, in the same
 # environment:
 #   .venv-problems/bin/python precision/run_matrix.py --host <host> --devices cpu [--quick]
+#
+# To run part of the suite, set PROBLEMS, SWEEPS, TIMEOUT or RUN_LABEL, which pass to run_suite.py
+# as --problems, --sweeps, --timeout and --label. #58's Kalman sweeps on a card, for example:
+#   PROBLEMS=kalman SWEEPS=batch,state,batch20,batch50,batch100 TIMEOUT=1800 RUN_LABEL=kalman-grid \
+#     bash problems/run_by_hand.sh <host>
+# On a machine that gets the cuda12 label, the label becomes <RUN_LABEL>-cuda12.
 set -euo pipefail
 USAGE="usage: bash problems/run_by_hand.sh <host> [--quick] [--cpu]"
 HOST=${1:?$USAGE}; shift; QUICK=""; CPU=""
@@ -118,7 +124,9 @@ else
 fi
 
 echo "== The suite on $WHERE"
+LABEL=${RUN_LABEL:-}${LABEL:+${RUN_LABEL:+-}$LABEL}
 python problems/run_suite.py --backends $BACKENDS --host "$HOST" ${QUICK:+--quick} ${LABEL:+--label "$LABEL"} \
+  ${PROBLEMS:+--problems "$PROBLEMS"} ${SWEEPS:+--sweeps "$SWEEPS"} ${TIMEOUT:+--timeout "$TIMEOUT"} \
   | tee -a "$OUT/run.log"
 # This host's tables, with any answer that differs from NumPy's in float64 listed below each
 python problems/summarise.py problems/results/ | awk -v h="on $HOST" '/^### /{keep = index($0, h) > 0} keep' \
