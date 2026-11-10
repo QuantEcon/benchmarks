@@ -1,0 +1,2669 @@
+ProductName:		macOS
+ProductVersion:		27.2.1
+BuildVersion:		26B131
+== before: 2026-11-10 20:01:01 AEDT (09:01:01 UTC), console mmcky
+20:01  up 11:16, 2 users, load averages: 1.47 1.15 1.13
+  PID  %CPU %MEM COMM
+ 1877  20.9  1.8 claude
+ 1591  17.5  1.6 /opt/homebrew/bin/claude
+  624   5.1  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+ 7834   4.7  1.8 /opt/homebrew/bin/claude
+ 3779   3.7  2.0 claude
+17743   3.5  0.1 macmon
+  620   3.2  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+18196   2.8  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  588   1.7  0.1 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:01:35 AEDT (09:01:35 UTC), console mmcky
+20:01  up 11:17, 2 users, load averages: 2.21 1.34 1.19
+  PID  %CPU %MEM COMM
+18419 110.8  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+    1  27.1  0.1 /sbin/launchd
+17743   3.4  0.1 macmon
+  588   1.3  0.1 /usr/libexec/opendirectoryd
+52383   0.9  1.8 /opt/homebrew/bin/claude
+ 1877   0.5  1.8 claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:02:07 AEDT (09:02:07 UTC), console mmcky
+20:02  up 11:17, 2 users, load averages: 1.88 1.35 1.20
+  PID  %CPU %MEM COMM
+18594  97.8  0.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.5  0.1 macmon
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+ 3779   0.1  2.0 claude
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+18512   0.0  0.0 sleep
+18510   0.0  0.0 /bin/zsh
+18248   0.0  0.0 bash
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:02:39 AEDT (09:02:39 UTC), console mmcky
+20:02  up 11:18, 2 users, load averages: 2.42 1.49 1.25
+  PID  %CPU %MEM COMM
+18778 100.0  0.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.4  0.1 macmon
+ 3779   0.5  2.0 claude
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+ 1872   0.1  1.5 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+18556   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:03:12 AEDT (09:03:12 UTC), console mmcky
+20:03  up 11:18, 2 users, load averages: 1.86 1.45 1.25
+  PID  %CPU %MEM COMM
+18778  99.8  0.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.5  0.1 macmon
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+ 1874   0.1  1.6 claude
+ 1872   0.1  1.5 claude
+18248   0.1  0.0 bash
+78221   0.1  1.9 /opt/homebrew/bin/claude
+18556   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:03:44 AEDT (09:03:44 UTC), console mmcky
+20:03  up 11:19, 2 users, load averages: 1.59 1.43 1.24
+  PID  %CPU %MEM COMM
+19011 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.2  0.1 macmon
+ 4365   0.7  1.7 claude
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+  935   0.4  0.1 /usr/libexec/secd
+  972   0.3  0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+ 3779   0.1  2.0 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:04:16 AEDT (09:04:16 UTC), console mmcky
+20:04  up 11:19, 2 users, load averages: 1.41 1.39 1.24
+  PID  %CPU %MEM COMM
+19011 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.1  0.1 macmon
+ 1874   0.7  1.6 claude
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+18248   0.2  0.0 bash
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+18556   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:04:48 AEDT (09:04:48 UTC), console mmcky
+20:04  up 11:20, 2 users, load averages: 1.31 1.37 1.24
+  PID  %CPU %MEM COMM
+19011 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   3.1  1.9 /opt/homebrew/bin/claude
+17743   1.9  0.1 macmon
+ 3779   1.2  2.0 claude
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+ 1877   0.1  1.8 claude
+18865   0.0  0.0 sleep
+18556   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:05:21 AEDT (09:05:21 UTC), console mmcky
+20:05  up 11:20, 2 users, load averages: 3.04 1.73 1.37
+  PID  %CPU %MEM COMM
+19397 1171.1  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   3.2  1.8 /opt/homebrew/bin/claude
+17743   1.6  0.1 macmon
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+18248   0.5  0.0 bash
+ 1872   0.1  1.5 claude
+ 4365   0.1  1.7 claude
+  614   0.1  0.0 /usr/sbin/notifyd
+    1   0.1  0.1 /sbin/launchd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:05:53 AEDT (09:05:53 UTC), console mmcky
+20:05  up 11:21, 2 users, load averages: 3.56 2.06 1.50
+  PID  %CPU %MEM COMM
+19568  73.3  0.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   3.0  0.1 macmon
+ 1591   1.1  1.6 /opt/homebrew/bin/claude
+  588   0.9  0.1 /usr/libexec/opendirectoryd
+ 1872   0.4  1.5 claude
+  614   0.3  0.0 /usr/sbin/notifyd
+  546   0.1  0.2 /usr/libexec/logd
+18522   0.1  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   0.1  1.8 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:06:25 AEDT (09:06:25 UTC), console mmcky
+20:06  up 11:21, 2 users, load averages: 2.76 2.01 1.50
+  PID  %CPU %MEM COMM
+19729 210.9  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+19747   5.9  0.1 gh
+17743   1.7  0.1 macmon
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+ 3779   0.4  2.0 claude
+19748   0.3  0.0 jq
+19724   0.2  0.0 bash
+ 1872   0.1  1.5 claude
+  676   0.1  0.0 /usr/sbin/mDNSResponder
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:06:57 AEDT (09:06:57 UTC), console mmcky
+20:06  up 11:22, 2 users, load averages: 2.48 2.01 1.52
+  PID  %CPU %MEM COMM
+19777 100.0  0.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.7  0.1 macmon
+  588   0.6  0.1 /usr/libexec/opendirectoryd
+ 3779   0.2  2.0 claude
+18248   0.1  0.0 bash
+19673   0.0  0.0 sleep
+19380   0.0  0.0 sleep
+18865   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:07:30 AEDT (09:07:30 UTC), console mmcky
+20:07  up 11:22, 2 users, load averages: 1.89 1.91 1.50
+  PID  %CPU %MEM COMM
+19777 100.0  0.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.7  0.1 macmon
+78221   1.6  1.9 /opt/homebrew/bin/claude
+  588   1.1  0.1 /usr/libexec/opendirectoryd
+  614   0.1  0.0 /usr/sbin/notifyd
+ 1874   0.1  1.6 claude
+ 3779   0.1  2.0 claude
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:08:02 AEDT (09:08:02 UTC), console mmcky
+20:08  up 11:23, 2 users, load averages: 1.65 1.85 1.49
+  PID  %CPU %MEM COMM
+20032 100.0  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.7  0.1 macmon
+  588   1.2  0.1 /usr/libexec/opendirectoryd
+  624   0.9  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  620   0.3  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+    1   0.1  0.1 /sbin/launchd
+  614   0.1  0.0 /usr/sbin/notifyd
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:08:34 AEDT (09:08:34 UTC), console mmcky
+20:08  up 11:24, 2 users, load averages: 1.36 1.75 1.47
+  PID  %CPU %MEM COMM
+20032 100.0  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.6  0.1 macmon
+  676   0.6  0.0 /usr/sbin/mDNSResponder
+  690   0.4  0.1 /usr/libexec/airportd
+  560   0.2  0.0 /usr/libexec/configd
+  614   0.1  0.0 /usr/sbin/notifyd
+  811   0.1  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+18865   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:09:06 AEDT (09:09:06 UTC), console mmcky
+20:09  up 11:24, 2 users, load averages: 1.33 1.71 1.47
+  PID  %CPU %MEM COMM
+20398 1167.5  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.6  0.1 macmon
+  588   0.8  0.1 /usr/libexec/opendirectoryd
+18248   0.4  0.0 bash
+  614   0.2  0.0 /usr/sbin/notifyd
+  546   0.1  0.2 /usr/libexec/logd
+ 4365   0.1  1.7 claude
+    1   0.1  0.1 /sbin/launchd
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:09:39 AEDT (09:09:39 UTC), console mmcky
+20:09  up 11:25, 2 users, load averages: 3.60 2.31 1.70
+  PID  %CPU %MEM COMM
+20531 100.0  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.7  0.1 macmon
+  588   1.2  0.1 /usr/libexec/opendirectoryd
+  614   0.1  0.0 /usr/sbin/notifyd
+  600   0.1  0.1 /usr/libexec/dasd
+20145   0.0  0.0 sleep
+18865   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:10:11 AEDT (09:10:11 UTC), console mmcky
+20:10  up 11:25, 2 users, load averages: 2.65 2.20 1.68
+  PID  %CPU %MEM COMM
+20672  89.0  0.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.0  0.1 macmon
+  588   1.6  0.1 /usr/libexec/opendirectoryd
+ 7834   1.3  1.8 /opt/homebrew/bin/claude
+  614   0.3  0.0 /usr/sbin/notifyd
+  546   0.1  0.2 /usr/libexec/logd
+    1   0.1  0.1 /sbin/launchd
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:10:43 AEDT (09:10:43 UTC), console mmcky
+20:10  up 11:26, 2 users, load averages: 2.07 2.10 1.66
+  PID  %CPU %MEM COMM
+20859 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.8  0.1 macmon
+ 1877   0.1  1.8 claude
+ 3779   0.1  2.0 claude
+20725   0.0  0.0 sleep
+20603   0.0  0.0 sleep
+20145   0.0  0.0 sleep
+18865   0.0  0.0 sleep
+18522   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:11:15 AEDT (09:11:15 UTC), console mmcky
+20:11  up 11:26, 2 users, load averages: 1.60 1.98 1.63
+  PID  %CPU %MEM COMM
+21032  96.6  0.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.6  0.1 macmon
+ 4365   0.3  1.7 claude
+18248   0.1  0.0 bash
+20929   0.0  0.0 sleep
+20832   0.0  0.0 sleep
+20725   0.0  0.0 sleep
+18865   0.0  0.0 sleep
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:11:47 AEDT (09:11:47 UTC), console mmcky
+20:11  up 11:27, 2 users, load averages: 1.87 1.99 1.65
+  PID  %CPU %MEM COMM
+21162 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.2  0.1 macmon
+21030   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+20929   0.0  0.0 sleep
+20832   0.0  0.0 sleep
+20725   0.0  0.0 sleep
+18865   0.0  0.0 sleep
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:12:19 AEDT (09:12:19 UTC), console mmcky
+20:12  up 11:27, 2 users, load averages: 3.08 2.29 1.77
+  PID  %CPU %MEM COMM
+21304  80.9  0.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   0.9  2.0 claude
+ 1872   0.8  1.5 claude
+  546   0.4  0.2 /usr/libexec/logd
+17743   0.3  0.1 macmon
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+  614   0.3  0.0 /usr/sbin/notifyd
+    1   0.1  0.1 /sbin/launchd
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:12:52 AEDT (09:12:52 UTC), console mmcky
+20:12  up 11:28, 2 users, load averages: 2.16 2.15 1.73
+  PID  %CPU %MEM COMM
+21495  41.5  0.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.3  0.1 macmon
+  614   0.1  0.0 /usr/sbin/notifyd
+18248   0.1  0.0 bash
+21004   0.1  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+21208   0.0  0.0 sleep
+21030   0.0  0.0 sleep
+18865   0.0  0.0 sleep
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:13:24 AEDT (09:13:24 UTC), console mmcky
+20:13  up 11:28, 2 users, load averages: 1.84 2.07 1.72
+  PID  %CPU %MEM COMM
+21598 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.5  0.1 macmon
+ 1872   0.5  1.5 claude
+ 3779   0.1  2.0 claude
+21444   0.0  0.0 sleep
+21327   0.0  0.0 sleep
+21030   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:13:56 AEDT (09:13:56 UTC), console mmcky
+20:13  up 11:29, 2 users, load averages: 2.22 2.14 1.76
+  PID  %CPU %MEM COMM
+21746  90.3  0.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+  586   0.2  0.0 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored
+18248   0.1  0.0 bash
+21444   0.0  0.0 sleep
+21327   0.0  0.0 sleep
+21030   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:14:28 AEDT (09:14:28 UTC), console mmcky
+20:14  up 11:29, 2 users, load averages: 1.80 2.04 1.74
+  PID  %CPU %MEM COMM
+21850 100.0  0.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   0.7  1.7 claude
+17743   0.4  0.1 macmon
+ 1877   0.3  1.8 claude
+ 3779   0.1  2.0 claude
+21545   0.0  0.0 sleep
+21444   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:15:01 AEDT (09:15:01 UTC), console mmcky
+20:15  up 11:30, 2 users, load averages: 2.44 2.15 1.79
+  PID  %CPU %MEM COMM
+22058  90.4  0.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  624   4.8  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  620   2.7  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+17743   0.3  0.1 macmon
+  613   0.1  0.1 /usr/sbin/bluetoothd
+21862   0.0  0.0 sleep
+21843   0.0  0.0 sleep
+21545   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:15:33 AEDT (09:15:33 UTC), console mmcky
+20:15  up 11:31, 2 users, load averages: 2.47 2.19 1.81
+  PID  %CPU %MEM COMM
+22175 114.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+52383   0.7  1.8 /opt/homebrew/bin/claude
+17743   0.6  0.1 macmon
+ 4365   0.5  1.7 claude
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+21843   0.0  0.0 sleep
+21545   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:16:05 AEDT (09:16:05 UTC), console mmcky
+20:16  up 11:31, 2 users, load averages: 3.89 2.52 1.94
+  PID  %CPU %MEM COMM
+22275 864.4  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+    1  15.7  0.1 /sbin/launchd
+ 1591   4.0  1.6 /opt/homebrew/bin/claude
+17743   0.9  0.1 macmon
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+ 1877   0.1  1.8 claude
+ 1874   0.1  1.6 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:16:37 AEDT (09:16:37 UTC), console mmcky
+20:16  up 11:32, 2 users, load averages: 3.19 2.52 1.97
+  PID  %CPU %MEM COMM
+22336 108.5  0.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.3  0.1 macmon
+52383   0.4  1.8 /opt/homebrew/bin/claude
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+ 4365   0.3  1.7 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+21545   0.0  0.0 sleep
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:17:10 AEDT (09:17:10 UTC), console mmcky
+20:17  up 11:32, 2 users, load averages: 2.40 2.39 1.94
+  PID  %CPU %MEM COMM
+22541 113.4  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.9  0.1 macmon
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+22540   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+22531   0.0  0.0 sleep
+22417   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+22388   0.0  0.0 sleep
+21843   0.0  0.0 sleep
+21545   0.0  0.0 sleep
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:17:42 AEDT (09:17:42 UTC), console mmcky
+20:17  up 11:33, 2 users, load averages: 2.00 2.29 1.92
+  PID  %CPU %MEM COMM
+22721 100.0  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.6  0.1 macmon
+78221   1.3  1.9 /opt/homebrew/bin/claude
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+ 1874   0.1  1.6 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:18:14 AEDT (09:18:14 UTC), console mmcky
+20:18  up 11:33, 2 users, load averages: 5.82 3.25 2.28
+  PID  %CPU %MEM COMM
+22804 892.3  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   1.9  1.8 claude
+17743   0.6  0.1 macmon
+  614   0.3  0.0 /usr/sbin/notifyd
+ 3779   0.2  2.0 claude
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+ 4365   0.2  1.7 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:18:46 AEDT (09:18:46 UTC), console mmcky
+20:18  up 11:34, 2 users, load averages: 5.74 3.45 2.38
+  PID  %CPU %MEM COMM
+22804 886.9  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.3  0.1 macmon
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+18248   0.3  0.0 bash
+ 3779   0.3  2.0 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+  546   0.1  0.2 /usr/libexec/logd
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:19:18 AEDT (09:19:18 UTC), console mmcky
+20:19  up 11:34, 2 users, load averages: 4.42 3.37 2.40
+  PID  %CPU %MEM COMM
+23125 120.2  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   3.4  2.0 claude
+ 1877   0.2  1.8 claude
+17743   0.2  0.1 macmon
+22905   0.0  0.0 sleep
+22670   0.0  0.0 sleep
+21545   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:19:50 AEDT (09:19:50 UTC), console mmcky
+20:19  up 11:35, 2 users, load averages: 5.06 3.64 2.53
+  PID  %CPU %MEM COMM
+23252 117.2  0.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.9  0.1 macmon
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+22670   0.0  0.0 sleep
+21545   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18513   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:20:22 AEDT (09:20:22 UTC), console mmcky
+20:20  up 11:35, 2 users, load averages: 3.66 3.45 2.50
+  PID  %CPU %MEM COMM
+23336 118.7  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.0  0.1 macmon
+  623   0.6  0.0 /usr/sbin/cfprefsd
+  546   0.3  0.2 /usr/libexec/logd
+  613   0.1  0.1 /usr/sbin/bluetoothd
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+22670   0.0  0.0 sleep
+21545   0.0  0.0 sleep
+21004   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:20:54 AEDT (09:20:54 UTC), console mmcky
+20:20  up 11:36, 2 users, load averages: 5.11 3.76 2.65
+  PID  %CPU %MEM COMM
+23484 1158.1  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.9  0.1 macmon
+23555   0.5  0.1 gh
+18248   0.4  0.0 bash
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+  614   0.1  0.0 /usr/sbin/notifyd
+ 1877   0.1  1.8 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:21:26 AEDT (09:21:26 UTC), console mmcky
+20:21  up 11:36, 2 users, load averages: 5.84 4.11 2.81
+  PID  %CPU %MEM COMM
+23644 729.9  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1874   0.1  1.6 claude
+ 1872   0.1  1.5 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+17743   0.1  0.1 macmon
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:21:58 AEDT (09:21:58 UTC), console mmcky
+20:21  up 11:37, 2 users, load averages: 5.18 4.15 2.88
+  PID  %CPU %MEM COMM
+23826 100.0  0.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.9  0.1 macmon
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+ 1877   0.1  1.8 claude
+ 1872   0.1  1.5 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+21545   0.0  0.0 sleep
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:22:30 AEDT (09:22:30 UTC), console mmcky
+20:22  up 11:37, 2 users, load averages: 4.86 4.13 2.91
+  PID  %CPU %MEM COMM
+23938 1179.4  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   1.2  1.6 /opt/homebrew/bin/claude
+52383   0.4  1.8 /opt/homebrew/bin/claude
+18248   0.2  0.0 bash
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23600   0.0  0.0 sleep
+23447   0.0  0.0 sleep
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+21545   0.0  0.0 sleep
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:23:03 AEDT (09:23:03 UTC), console mmcky
+20:23  up 11:38, 2 users, load averages: 4.59 4.17 2.98
+  PID  %CPU %MEM COMM
+24050 100.0  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.6  0.1 macmon
+ 3779   0.4  2.0 claude
+24152   0.1  0.0 sleep
+  624   0.1  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+ 4365   0.1  1.7 claude
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23447   0.0  0.0 sleep
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 91%
+== sample: 2026-11-10 20:23:35 AEDT (09:23:35 UTC), console mmcky
+20:23  up 11:39, 2 users, load averages: 3.38 3.92 2.92
+  PID  %CPU %MEM COMM
+24050 100.0  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.6  0.1 macmon
+ 1877   0.1  1.8 claude
+ 3779   0.1  2.0 claude
+24142   0.0  0.0 sleep
+24078   0.0  0.0 sleep
+23972   0.0  0.0 sleep
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:24:07 AEDT (09:24:07 UTC), console mmcky
+20:24  up 11:39, 2 users, load averages: 2.67 3.68 2.87
+  PID  %CPU %MEM COMM
+24050 100.0  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.9  0.1 macmon
+ 4365   0.9  1.7 claude
+ 7834   0.6  1.8 /opt/homebrew/bin/claude
+24152   0.0  0.0 sleep
+24142   0.0  0.0 sleep
+23972   0.0  0.0 sleep
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:24:39 AEDT (09:24:39 UTC), console mmcky
+20:24  up 11:40, 2 users, load averages: 6.29 4.40 3.16
+  PID  %CPU %MEM COMM
+24415 1189.8  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+ 1877   0.1  1.8 claude
+18248   0.1  0.0 bash
+24354   0.0  0.0 sleep
+24287   0.0  0.0 sleep
+24152   0.0  0.0 sleep
+24142   0.0  0.0 sleep
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:25:11 AEDT (09:25:12 UTC), console mmcky
+20:25  up 11:40, 2 users, load averages: 7.14 4.83 3.36
+  PID  %CPU %MEM COMM
+24590 669.6  1.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   3.3  1.6 /opt/homebrew/bin/claude
+17743   0.4  0.1 macmon
+ 1877   0.2  1.8 claude
+ 4365   0.2  1.7 claude
+18248   0.2  0.0 bash
+40730   0.2  0.0 /usr/libexec/PerfPowerServices
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:25:44 AEDT (09:25:44 UTC), console mmcky
+20:25  up 11:41, 2 users, load averages: 7.69 5.24 3.57
+  PID  %CPU %MEM COMM
+24590 672.6  1.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.5  0.1 macmon
+ 4365   0.2  1.7 claude
+ 1872   0.1  1.5 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:26:16 AEDT (09:26:16 UTC), console mmcky
+20:26  up 11:41, 2 users, load averages: 5.28 4.88 3.50
+  PID  %CPU %MEM COMM
+24901 100.0  0.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.6  0.1 macmon
+  623   0.5  0.0 /usr/sbin/cfprefsd
+  596   0.2  0.1 /usr/libexec/locationd
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+  935   0.1  0.1 /usr/libexec/secd
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:26:48 AEDT (09:26:48 UTC), console mmcky
+20:26  up 11:42, 2 users, load averages: 4.54 4.71 3.48
+  PID  %CPU %MEM COMM
+25024 1189.6  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   3.6  1.8 claude
+ 7834   2.3  1.8 /opt/homebrew/bin/claude
+17743   0.5  0.1 macmon
+ 3779   0.1  2.0 claude
+ 4365   0.1  1.7 claude
+ 1872   0.1  1.5 claude
+24152   0.0  0.0 sleep
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:27:20 AEDT (09:27:20 UTC), console mmcky
+20:27  up 11:42, 2 users, load averages: 3.97 4.56 3.48
+  PID  %CPU %MEM COMM
+25119 100.0  0.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.3  0.1 macmon
+ 1877   1.1  1.8 claude
+ 1591   1.1  1.6 /opt/homebrew/bin/claude
+ 1872   0.9  1.5 claude
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+  614   0.1  0.0 /usr/sbin/notifyd
+25232   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+25225   0.0  0.0 sleep
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:27:53 AEDT (09:27:53 UTC), console mmcky
+20:27  up 11:43, 2 users, load averages: 3.08 4.30 3.42
+  PID  %CPU %MEM COMM
+25119 100.0  0.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   2.1  1.6 /opt/homebrew/bin/claude
+17743   1.6  0.1 macmon
+ 1877   0.2  1.8 claude
+ 1872   0.1  1.5 claude
+ 4365   0.1  1.7 claude
+25225   0.0  0.0 sleep
+25134   0.0  0.0 caffeinate
+25103   0.0  0.0 sleep
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:28:25 AEDT (09:28:25 UTC), console mmcky
+20:28  up 11:43, 2 users, load averages: 2.39 3.99 3.34
+  PID  %CPU %MEM COMM
+25119 100.0  0.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   6.7  1.8 claude
+ 1591   5.1  1.6 /opt/homebrew/bin/claude
+ 1874   4.2  1.6 claude
+17743   1.8  0.1 macmon
+ 1872   1.4  1.5 claude
+52383   0.9  1.8 /opt/homebrew/bin/claude
+ 1590   0.1  0.0 /opt/homebrew/bin/tmux
+ 3779   0.1  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:28:57 AEDT (09:28:57 UTC), console mmcky
+20:28  up 11:44, 2 users, load averages: 5.38 4.56 3.57
+  PID  %CPU %MEM COMM
+25863 702.0  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   2.6  1.6 /opt/homebrew/bin/claude
+17743   0.2  0.1 macmon
+ 3779   0.1  2.0 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+ 1872   0.1  1.5 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:29:30 AEDT (09:29:30 UTC), console mmcky
+20:29  up 11:44, 2 users, load averages: 5.00 4.55 3.60
+  PID  %CPU %MEM COMM
+25863 699.4  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.2  0.1 macmon
+  588   0.9  0.1 /usr/libexec/opendirectoryd
+18248   0.7  0.0 bash
+  614   0.3  0.0 /usr/sbin/notifyd
+ 1877   0.3  1.8 claude
+ 1872   0.3  1.5 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+    1   0.2  0.1 /sbin/launchd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:30:02 AEDT (09:30:02 UTC), console mmcky
+20:30  up 11:45, 2 users, load averages: 3.42 4.21 3.51
+  PID  %CPU %MEM COMM
+26097 100.0  0.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   2.4  1.7 claude
+17743   2.0  0.1 macmon
+  624   1.4  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+ 1874   0.6  1.6 claude
+  620   0.6  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 3779   0.3  2.0 claude
+ 1872   0.2  1.5 claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:30:34 AEDT (09:30:34 UTC), console mmcky
+20:30  up 11:46, 2 users, load averages: 5.16 4.57 3.66
+  PID  %CPU %MEM COMM
+26277 772.9  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+26324   3.4  0.1 gh
+ 1877   0.5  1.8 claude
+ 7834   0.4  1.8 /opt/homebrew/bin/claude
+ 1872   0.3  1.5 claude
+ 1874   0.3  1.6 claude
+17743   0.2  0.1 macmon
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:31:06 AEDT (09:31:06 UTC), console mmcky
+20:31  up 11:46, 2 users, load averages: 5.16 4.67 3.74
+  PID  %CPU %MEM COMM
+26387 100.0  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.7  0.1 macmon
+  588   0.4  0.1 /usr/libexec/opendirectoryd
+    1   0.2  0.1 /sbin/launchd
+  604   0.1  0.0 /usr/sbin/distnoted
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+  614   0.1  0.0 /usr/sbin/notifyd
+  546   0.1  0.2 /usr/libexec/logd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:31:39 AEDT (09:31:39 UTC), console mmcky
+20:31  up 11:47, 2 users, load averages: 3.57 4.33 3.65
+  PID  %CPU %MEM COMM
+26387 100.0  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   1.0  1.8 claude
+17743   0.8  0.1 macmon
+ 4365   0.3  1.7 claude
+ 1872   0.1  1.5 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+18510   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:32:11 AEDT (09:32:11 UTC), console mmcky
+20:32  up 11:47, 2 users, load averages: 2.68 4.02 3.56
+  PID  %CPU %MEM COMM
+26387 100.0  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+ 1877   0.2  1.8 claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+ 1872   0.1  1.5 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:32:43 AEDT (09:32:43 UTC), console mmcky
+20:32  up 11:48, 2 users, load averages: 5.67 4.60 3.79
+  PID  %CPU %MEM COMM
+26768 1194.3  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+  614   0.2  0.0 /usr/sbin/notifyd
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+ 1874   0.1  1.6 claude
+ 3779   0.1  2.0 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:33:15 AEDT (09:33:15 UTC), console mmcky
+20:33  up 11:48, 2 users, load averages: 8.72 5.43 4.12
+  PID  %CPU %MEM COMM
+26921 757.1  1.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   1.0  1.5 claude
+ 1591   0.5  1.6 /opt/homebrew/bin/claude
+17743   0.5  0.1 macmon
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 3779   0.2  2.0 claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+  620   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:33:47 AEDT (09:33:47 UTC), console mmcky
+20:33  up 11:49, 2 users, load averages: 7.89 5.63 4.24
+  PID  %CPU %MEM COMM
+26921 758.9  1.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.5  0.1 macmon
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+  623   0.5  0.0 /usr/sbin/cfprefsd
+ 4365   0.3  1.7 claude
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+  614   0.1  0.0 /usr/sbin/notifyd
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:34:19 AEDT (09:34:19 UTC), console mmcky
+20:34  up 11:49, 2 users, load averages: 6.80 5.61 4.28
+  PID  %CPU %MEM COMM
+27267 100.0  2.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.7  0.1 macmon
+ 1874   0.6  1.6 claude
+ 1877   0.1  1.8 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+  546   0.1  0.2 /usr/libexec/logd
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:34:51 AEDT (09:34:51 UTC), console mmcky
+20:34  up 11:50, 2 users, load averages: 4.30 5.11 4.15
+  PID  %CPU %MEM COMM
+27267 100.0  2.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.7  0.1 macmon
+ 1872   0.3  1.5 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:35:23 AEDT (09:35:23 UTC), console mmcky
+20:35  up 11:50, 2 users, load averages: 3.07 4.73 4.05
+  PID  %CPU %MEM COMM
+27267 100.0  2.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+27567   6.9  0.1 gh
+ 1874   1.8  1.6 claude
+17743   0.7  0.1 macmon
+27568   0.6  0.0 jq
+ 1591   0.5  1.6 /opt/homebrew/bin/claude
+ 3779   0.5  2.0 claude
+27545   0.3  0.0 bash
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:35:56 AEDT (09:35:56 UTC), console mmcky
+20:35  up 11:51, 2 users, load averages: 2.31 4.39 3.95
+  PID  %CPU %MEM COMM
+27267 100.0  2.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   3.2  0.1 macmon
+  588   1.3  0.1 /usr/libexec/opendirectoryd
+ 1874   0.1  1.6 claude
+ 1872   0.1  1.5 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+    1   0.1  0.1 /sbin/launchd
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:36:28 AEDT (09:36:28 UTC), console mmcky
+20:36  up 11:51, 2 users, load averages: 1.79 4.03 3.83
+  PID  %CPU %MEM COMM
+27267 100.0  2.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   3.4  0.1 macmon
+ 4365   1.8  1.7 claude
+  588   1.1  0.1 /usr/libexec/opendirectoryd
+ 3779   0.3  2.0 claude
+ 1874   0.3  1.6 claude
+ 1872   0.2  1.5 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:37:00 AEDT (09:37:00 UTC), console mmcky
+20:37  up 11:52, 2 users, load averages: 1.55 3.75 3.74
+  PID  %CPU %MEM COMM
+27267 100.0  2.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  624   5.2  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  620   2.8  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+17743   1.9  0.1 macmon
+ 1874   1.2  1.6 claude
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+52383   0.4  1.8 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+18248   0.1  0.0 bash
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:37:33 AEDT (09:37:33 UTC), console mmcky
+20:37  up 11:53, 2 users, load averages: 5.67 4.48 4.00
+  PID  %CPU %MEM COMM
+27969 1190.3  1.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.5  0.1 macmon
+ 1874   0.4  1.6 claude
+ 4365   0.4  1.7 claude
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+18248   0.2  0.0 bash
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:38:05 AEDT (09:38:05 UTC), console mmcky
+20:38  up 11:53, 2 users, load averages: 8.62 5.31 4.31
+  PID  %CPU %MEM COMM
+27969 1182.3  1.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+    1   1.2  0.1 /sbin/launchd
+78221   0.6  1.9 /opt/homebrew/bin/claude
+17743   0.4  0.1 macmon
+ 3779   0.3  2.0 claude
+18248   0.3  0.0 bash
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+18510   0.0  0.0 /bin/zsh
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:38:38 AEDT (09:38:38 UTC), console mmcky
+20:38  up 11:54, 2 users, load averages: 9.41 5.88 4.56
+  PID  %CPU %MEM COMM
+28337 767.0  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.9  0.1 macmon
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+ 3779   0.4  2.0 claude
+ 4365   0.3  1.7 claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 1874   0.2  1.6 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:39:10 AEDT (09:39:10 UTC), console mmcky
+20:39  up 11:54, 2 users, load averages: 8.60 6.05 4.67
+  PID  %CPU %MEM COMM
+28337 782.7  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   2.5  1.8 /opt/homebrew/bin/claude
+ 1591   1.0  1.6 /opt/homebrew/bin/claude
+ 3779   0.4  2.0 claude
+17743   0.3  0.1 macmon
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+  620   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1872   0.1  1.5 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:39:42 AEDT (09:39:42 UTC), console mmcky
+20:39  up 11:55, 2 users, load averages: 9.70 6.55 4.90
+  PID  %CPU %MEM COMM
+28337 772.2  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.7  0.1 macmon
+  935   0.5  0.1 /usr/libexec/secd
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+  972   0.2  0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+ 3779   0.1  2.0 claude
+  620   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:40:14 AEDT (09:40:14 UTC), console mmcky
+20:40  up 11:55, 2 users, load averages: 8.95 6.71 5.02
+  PID  %CPU %MEM COMM
+28337 792.4  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   1.4  1.5 claude
+ 1874   1.2  1.6 claude
+17743   0.6  0.1 macmon
+  588   0.4  0.1 /usr/libexec/opendirectoryd
+ 3779   0.3  2.0 claude
+  614   0.3  0.0 /usr/sbin/notifyd
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:40:46 AEDT (09:40:46 UTC), console mmcky
+20:40  up 11:56, 2 users, load averages: 9.96 7.15 5.24
+  PID  %CPU %MEM COMM
+28337 785.4  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   3.0  0.1 macmon
+ 1874   1.2  1.6 claude
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+18248   0.3  0.0 bash
+ 3779   0.3  2.0 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:41:18 AEDT (09:41:18 UTC), console mmcky
+20:41  up 11:56, 2 users, load averages: 9.42 7.36 5.39
+  PID  %CPU %MEM COMM
+29003 100.0  0.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.2  0.1 macmon
+ 4365   0.5  1.7 claude
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+ 1872   0.5  1.5 claude
+ 3779   0.3  2.0 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:41:51 AEDT (09:41:51 UTC), console mmcky
+20:41  up 11:57, 2 users, load averages: 7.04 6.95 5.31
+  PID  %CPU %MEM COMM
+29163 1190.0  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.2  0.1 macmon
+ 1874   0.8  1.6 claude
+ 1872   0.4  1.5 claude
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+26948   0.0  0.0 sleep
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:42:23 AEDT (09:42:23 UTC), console mmcky
+20:42  up 11:57, 2 users, load averages: 5.61 6.64 5.26
+  PID  %CPU %MEM COMM
+29269 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.3  0.1 macmon
+  588   0.6  0.1 /usr/libexec/opendirectoryd
+ 4365   0.4  1.7 claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+ 3779   0.2  2.0 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:42:55 AEDT (09:42:55 UTC), console mmcky
+20:42  up 11:58, 2 users, load averages: 3.57 6.02 5.08
+  PID  %CPU %MEM COMM
+29269 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   2.4  1.9 /opt/homebrew/bin/claude
+17743   1.5  0.1 macmon
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+ 3779   0.1  2.0 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+28746   0.0  0.0 /usr/libexec/biomesyncd
+26948   0.0  0.0 sleep
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:43:28 AEDT (09:43:28 UTC), console mmcky
+20:43  up 11:58, 2 users, load averages: 2.56 5.54 4.94
+  PID  %CPU %MEM COMM
+29269 100.0  0.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.4  0.1 macmon
+  676   1.0  0.0 /usr/sbin/mDNSResponder
+  690   0.8  0.1 /usr/libexec/airportd
+  588   0.4  0.1 /usr/libexec/opendirectoryd
+  560   0.3  0.0 /usr/libexec/configd
+  811   0.2  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:44:00 AEDT (09:44:00 UTC), console mmcky
+20:44  up 11:59, 2 users, load averages: 5.11 5.78 5.05
+  PID  %CPU %MEM COMM
+29633 1172.1  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  624   2.5  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+ 3779   1.8  2.0 claude
+  620   1.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+52383   1.0  1.8 /opt/homebrew/bin/claude
+18248   0.6  0.0 bash
+17743   0.4  0.1 macmon
+ 1877   0.1  1.8 claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:44:32 AEDT (09:44:32 UTC), console mmcky
+20:44  up 12 hrs, 2 users, load averages: 6.41 6.07 5.18
+  PID  %CPU %MEM COMM
+29757 743.9  1.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.6  0.1 macmon
+ 1874   0.2  1.6 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+ 4365   0.1  1.7 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:45:04 AEDT (09:45:04 UTC), console mmcky
+20:45  up 12 hrs, 2 users, load averages: 6.55 6.16 5.24
+  PID  %CPU %MEM COMM
+29969  64.5  2.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.6  0.1 macmon
+18248   0.3  0.0 bash
+ 4365   0.1  1.7 claude
+ 3779   0.1  2.0 claude
+23733   0.1  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+ 1874   0.1  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:45:37 AEDT (09:45:37 UTC), console mmcky
+20:45  up 12:01, 2 users, load averages: 4.27 5.63 5.09
+  PID  %CPU %MEM COMM
+29969 100.0  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   2.0  2.0 claude
+17743   0.5  0.1 macmon
+ 1874   0.2  1.6 claude
+18248   0.1  0.0 bash
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+28746   0.0  0.0 /usr/libexec/biomesyncd
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:46:09 AEDT (09:46:09 UTC), console mmcky
+20:46  up 12:01, 2 users, load averages: 2.98 5.19 4.94
+  PID  %CPU %MEM COMM
+29969  99.6  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   0.3  1.8 claude
+17743   0.2  0.1 macmon
+52383   0.1  1.8 /opt/homebrew/bin/claude
+18248   0.1  0.0 bash
+ 4365   0.1  1.7 claude
+28746   0.0  0.0 /usr/libexec/biomesyncd
+23733   0.0  0.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+23352   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:46:41 AEDT (09:46:41 UTC), console mmcky
+20:46  up 12:02, 2 users, load averages: 3.96 5.17 4.94
+  PID  %CPU %MEM COMM
+  883 149.1  0.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+30328 100.7  0.1 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorMRTv3
+29969  99.5  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  675  91.1  0.3 /usr/libexec/mobileassetd
+  576  82.8  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+30394  49.0  0.1 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorCardboardCutout
+ 1096  34.8  0.1 /usr/libexec/trustd
+  957  24.7  0.1 /usr/libexec/trustd
+  551  15.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:47:14 AEDT (09:47:14 UTC), console mmcky
+20:47  up 12:02, 2 users, load averages: 3.79 5.01 4.89
+  PID  %CPU %MEM COMM
+29969 100.0  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  675  74.6  0.3 /usr/libexec/mobileassetd
+30515  67.6  0.3 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorPirrit
+30534  61.4  0.4 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorPirrit
+  576  26.5  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  747  21.0  0.0 /usr/libexec/triald_system
+ 1071  20.7  0.1 /System/Library/PrivateFrameworks/CacheDelete.framework/deleted
+  982  19.0  0.0 /usr/libexec/triald
+  546  18.1  0.2 /usr/libexec/logd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:47:46 AEDT (09:47:46 UTC), console mmcky
+20:47  up 12:03, 2 users, load averages: 6.55 5.47 5.06
+  PID  %CPU %MEM COMM
+30640 1146.1  2.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+30672  21.8  0.1 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorMRTv3
+30710   7.6  0.1 gh
+30711   1.1  0.0 jq
+78221   0.8  1.9 /opt/homebrew/bin/claude
+15397   0.5  0.0 bash
+ 1874   0.5  1.6 claude
+17743   0.3  0.1 macmon
+18248   0.3  0.0 bash
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:48:18 AEDT (09:48:18 UTC), console mmcky
+20:48  up 12:03, 2 users, load averages: 9.50 6.29 5.37
+  PID  %CPU %MEM COMM
+30640 1171.5  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+52383   7.0  1.8 /opt/homebrew/bin/claude
+30860   6.7  0.1 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorBundlore
+ 1096   5.0  0.1 /usr/libexec/trustd
+ 1872   2.9  1.5 claude
+17743   0.2  0.1 macmon
+ 3779   0.2  2.0 claude
+ 4365   0.2  1.7 claude
+  614   0.2  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:48:51 AEDT (09:48:51 UTC), console mmcky
+20:48  up 12:04, 2 users, load averages: 11.06 6.97 5.65
+  PID  %CPU %MEM COMM
+30640 1170.8  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+30980  23.2  0.3 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorAdload
+ 1096   1.6  0.1 /usr/libexec/trustd
+  614   0.2  0.0 /usr/sbin/notifyd
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+  701   0.1  0.2 /usr/libexec/syspolicyd
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+    1   0.1  0.1 /sbin/launchd
+ 1874   0.1  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:49:23 AEDT (09:49:23 UTC), console mmcky
+20:49  up 12:04, 2 users, load averages: 10.91 7.44 5.87
+  PID  %CPU %MEM COMM
+31033 746.0  2.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+30980  54.3  0.3 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorAdload
+ 1096   3.5  0.1 /usr/libexec/trustd
+ 1591   1.8  1.6 /opt/homebrew/bin/claude
+    1   0.4  0.1 /sbin/launchd
+  546   0.3  0.2 /usr/libexec/logd
+  701   0.3  0.2 /usr/libexec/syspolicyd
+ 3779   0.2  2.0 claude
+17743   0.2  0.1 macmon
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:49:55 AEDT (09:49:55 UTC), console mmcky
+20:49  up 12:05, 2 users, load averages: 10.32 7.60 5.98
+  PID  %CPU %MEM COMM
+31033 744.0  2.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+31166  57.4  0.2 /Library/Apple/System/Library/CoreServices/XProtect.app/Contents/MacOS/XProtectRemediatorDolittle
+    1   0.7  0.1 /sbin/launchd
+ 3779   0.5  2.0 claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+17743   0.2  0.1 macmon
+ 1872   0.2  1.5 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+18248   0.1  0.0 bash
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:50:27 AEDT (09:50:27 UTC), console mmcky
+20:50  up 12:05, 2 users, load averages: 9.32 7.67 6.07
+  PID  %CPU %MEM COMM
+31033 750.0  2.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 1877   0.2  1.8 claude
+ 1872   0.2  1.5 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:50:59 AEDT (09:50:59 UTC), console mmcky
+20:50  up 12:06, 2 users, load averages: 7.32 7.38 6.02
+  PID  %CPU %MEM COMM
+31479 106.6  1.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.5  0.1 macmon
+ 1872   0.3  1.5 claude
+ 1874   0.1  1.6 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+ 1877   0.1  1.8 claude
+30668   0.0  0.0 /System/Library/PrivateFrameworks/PodcastServices.framework/XPCServices/PodcastContentService.xpc/Contents/MacOS/PodcastContentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:51:32 AEDT (09:51:32 UTC), console mmcky
+20:51  up 12:07, 2 users, load averages: 4.97 6.79 5.87
+  PID  %CPU %MEM COMM
+31479 107.3  1.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.5  0.1 macmon
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+ 1877   0.2  1.8 claude
+ 3779   0.1  2.0 claude
+ 4365   0.1  1.7 claude
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+30668   0.0  0.0 /System/Library/PrivateFrameworks/PodcastServices.framework/XPCServices/PodcastContentService.xpc/Contents/MacOS/PodcastContentService
+30661   0.0  0.1 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPLibraryAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:52:04 AEDT (09:52:04 UTC), console mmcky
+20:52  up 12:07, 2 users, load averages: 3.53 6.27 5.71
+  PID  %CPU %MEM COMM
+31479 108.3  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1165   4.5  0.1 /usr/libexec/duetexpertd
+28746   1.1  0.0 /usr/libexec/biomesyncd
+ 4365   0.6  1.7 claude
+52383   0.3  1.8 /opt/homebrew/bin/claude
+17743   0.1  0.1 macmon
+18248   0.1  0.0 bash
+ 1874   0.1  1.6 claude
+ 1877   0.1  1.8 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:52:36 AEDT (09:52:36 UTC), console mmcky
+20:52  up 12:08, 2 users, load averages: 7.12 6.80 5.91
+  PID  %CPU %MEM COMM
+31876 1158.5  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.1  0.1 macmon
+31828   0.0  0.0 sleep
+31819   0.0  0.0 sleep
+31512   0.0  0.0 sleep
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+30668   0.0  0.0 /System/Library/PrivateFrameworks/PodcastServices.framework/XPCServices/PodcastContentService.xpc/Contents/MacOS/PodcastContentService
+30661   0.0  0.1 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPLibraryAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:53:08 AEDT (09:53:08 UTC), console mmcky
+20:53  up 12:08, 2 users, load averages: 10.26 7.61 6.24
+  PID  %CPU %MEM COMM
+31876 1193.8  1.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   1.0  1.7 claude
+ 3779   0.2  2.0 claude
+17743   0.1  0.1 macmon
+32029   0.0  0.0 sleep
+31981   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+31819   0.0  0.0 sleep
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:53:41 AEDT (09:53:41 UTC), console mmcky
+20:53  up 12:09, 2 users, load averages: 10.77 7.97 6.42
+  PID  %CPU %MEM COMM
+32151 896.3  1.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   0.4  1.8 /opt/homebrew/bin/claude
+ 1877   0.3  1.8 claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+17743   0.1  0.1 macmon
+ 1874   0.1  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:54:12 AEDT (09:54:12 UTC), console mmcky
+20:54  up 12:09, 2 users, load averages: 11.03 8.35 6.62
+  PID  %CPU %MEM COMM
+32151 892.5  1.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.8  0.1 macmon
+ 7834   1.1  1.8 /opt/homebrew/bin/claude
+  588   0.9  0.1 /usr/libexec/opendirectoryd
+52383   0.3  1.8 /opt/homebrew/bin/claude
+18248   0.3  0.0 bash
+ 1874   0.2  1.6 claude
+ 3779   0.2  2.0 claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:54:44 AEDT (09:54:44 UTC), console mmcky
+20:54  up 12:10, 2 users, load averages: 9.61 8.29 6.66
+  PID  %CPU %MEM COMM
+32151 878.7  1.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   5.3  1.8 /opt/homebrew/bin/claude
+ 1874   1.6  1.6 claude
+18248   0.8  0.0 bash
+ 1877   0.2  1.8 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 3779   0.2  2.0 claude
+ 4365   0.1  1.7 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:55:16 AEDT (09:55:16 UTC), console mmcky
+20:55  up 12:10, 2 users, load averages: 7.28 7.88 6.56
+  PID  %CPU %MEM COMM
+32578 105.7  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   2.3  1.5 claude
+  739   0.9  0.0 /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Resources/backgroundtaskmanagementd
+17743   0.3  0.1 macmon
+52383   0.3  1.8 /opt/homebrew/bin/claude
+ 1877   0.3  1.8 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+  923   0.1  0.0 /usr/sbin/distnoted
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:55:49 AEDT (09:55:49 UTC), console mmcky
+20:55  up 12:11, 2 users, load averages: 4.92 7.23 6.38
+  PID  %CPU %MEM COMM
+32578 106.0  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   3.1  1.5 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+17743   0.1  0.1 macmon
+78221   0.1  1.9 /opt/homebrew/bin/claude
+32347   0.0  0.0 sleep
+32083   0.0  0.0 sleep
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:56:21 AEDT (09:56:21 UTC), console mmcky
+20:56  up 12:11, 2 users, load averages: 3.64 6.70 6.22
+  PID  %CPU %MEM COMM
+32578 105.6  3.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+ 3779   0.2  2.0 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:56:53 AEDT (09:56:53 UTC), console mmcky
+20:56  up 12:12, 2 users, load averages: 2.61 6.10 6.02
+  PID  %CPU %MEM COMM
+32578 106.5  3.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   1.0  1.6 /opt/homebrew/bin/claude
+ 3779   0.7  2.0 claude
+  936   0.3  0.0 /usr/sbin/cfprefsd
+17743   0.2  0.1 macmon
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:57:25 AEDT (09:57:25 UTC), console mmcky
+20:57  up 12:12, 2 users, load averages: 3.22 5.88 5.94
+  PID  %CPU %MEM COMM
+33180 1196.1  2.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1874   1.0  1.6 claude
+ 3779   0.1  2.0 claude
+ 1872   0.1  1.5 claude
+32917   0.0  0.0 sleep
+32083   0.0  0.0 sleep
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+30668   0.0  0.0 /System/Library/PrivateFrameworks/PodcastServices.framework/XPCServices/PodcastContentService.xpc/Contents/MacOS/PodcastContentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:57:58 AEDT (09:57:58 UTC), console mmcky
+20:57  up 12:13, 2 users, load averages: 7.63 6.70 6.23
+  PID  %CPU %MEM COMM
+33180 1183.1  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18248   0.2  0.0 bash
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+33090   0.0  0.0 sleep
+32917   0.0  0.0 sleep
+32083   0.0  0.0 sleep
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+30668   0.0  0.0 /System/Library/PrivateFrameworks/PodcastServices.framework/XPCServices/PodcastContentService.xpc/Contents/MacOS/PodcastContentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:58:29 AEDT (09:58:29 UTC), console mmcky
+20:58  up 12:13, 2 users, load averages: 10.31 7.47 6.53
+  PID  %CPU %MEM COMM
+33180 1194.2  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1874   2.5  1.6 claude
+ 7834   0.4  1.8 /opt/homebrew/bin/claude
+  676   0.2  0.0 /usr/sbin/mDNSResponder
+17743   0.2  0.1 macmon
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+  560   0.1  0.0 /usr/libexec/configd
+  614   0.1  0.0 /usr/sbin/notifyd
+ 1877   0.1  1.8 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:59:02 AEDT (09:59:02 UTC), console mmcky
+20:59  up 12:14, 2 users, load averages: 11.85 8.12 6.80
+  PID  %CPU %MEM COMM
+33180 1172.4  1.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   3.4  1.6 /opt/homebrew/bin/claude
+  624   1.4  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+18248   0.6  0.0 bash
+  620   0.5  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1877   0.1  1.8 claude
+17743   0.1  0.1 macmon
+ 1874   0.1  1.6 claude
+  614   0.1  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 20:59:34 AEDT (09:59:34 UTC), console mmcky
+20:59  up 12:15, 2 users, load averages: 10.19 8.12 6.85
+  PID  %CPU %MEM COMM
+33643 891.2  4.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   1.7  1.7 claude
+ 3779   1.4  2.0 claude
+ 1877   0.5  1.8 claude
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+17743   0.2  0.1 macmon
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:00:06 AEDT (10:00:06 UTC), console mmcky
+21:00  up 12:15, 2 users, load averages: 9.08 8.05 6.87
+  PID  %CPU %MEM COMM
+33643 893.4  4.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   2.1  1.8 /opt/homebrew/bin/claude
+18248   0.9  0.0 bash
+ 3779   0.3  2.0 claude
+78221   0.3  1.9 /opt/homebrew/bin/claude
+    1   0.2  0.1 /sbin/launchd
+  620   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+17743   0.1  0.1 macmon
+  614   0.1  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:00:38 AEDT (10:00:38 UTC), console mmcky
+21:00  up 12:16, 2 users, load averages: 9.87 8.36 7.02
+  PID  %CPU %MEM COMM
+33643 877.5  4.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34044   3.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+17743   1.0  0.1 macmon
+  614   0.3  0.0 /usr/sbin/notifyd
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+    1   0.3  0.1 /sbin/launchd
+ 3779   0.2  2.0 claude
+ 1877   0.2  1.8 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:01:10 AEDT (10:01:10 UTC), console mmcky
+21:01  up 12:16, 2 users, load averages: 8.80 8.24 7.03
+  PID  %CPU %MEM COMM
+33643 891.1  4.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.2  0.1 macmon
+ 4365   1.8  1.7 claude
+78221   0.4  1.9 /opt/homebrew/bin/claude
+ 3779   0.4  2.0 claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+ 1877   0.3  1.8 claude
+52383   0.3  1.8 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:01:43 AEDT (10:01:43 UTC), console mmcky
+21:01  up 12:17, 2 users, load averages: 8.61 8.28 7.09
+  PID  %CPU %MEM COMM
+33643 881.6  4.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   5.9  1.5 claude
+ 1591   1.9  1.6 /opt/homebrew/bin/claude
+17743   1.1  0.1 macmon
+  935   0.5  0.1 /usr/libexec/secd
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+  972   0.3  0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+ 1874   0.1  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:02:15 AEDT (10:02:15 UTC), console mmcky
+21:02  up 12:17, 2 users, load averages: 9.01 8.40 7.18
+  PID  %CPU %MEM COMM
+33643 894.2  4.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34424   3.0  0.1 gh
+17743   0.6  0.1 macmon
+78221   0.3  1.9 /opt/homebrew/bin/claude
+ 3779   0.3  2.0 claude
+ 1877   0.2  1.8 claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+  620   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:02:47 AEDT (10:02:47 UTC), console mmcky
+21:02  up 12:18, 2 users, load averages: 7.18 8.03 7.09
+  PID  %CPU %MEM COMM
+34527 104.5 10.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.0  0.1 macmon
+ 7834   1.1  1.8 /opt/homebrew/bin/claude
+18248   0.2  0.0 bash
+78221   0.1  1.9 /opt/homebrew/bin/claude
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+ 4365   0.1  1.7 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:03:19 AEDT (10:03:19 UTC), console mmcky
+21:03  up 12:18, 2 users, load averages: 4.81 7.38 6.88
+  PID  %CPU %MEM COMM
+34527 104.7  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+52383   2.4  1.8 /opt/homebrew/bin/claude
+17743   2.1  0.1 macmon
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+  614   0.2  0.0 /usr/sbin/notifyd
+ 1877   0.2  1.8 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:03:52 AEDT (10:03:52 UTC), console mmcky
+21:03  up 12:19, 2 users, load averages: 3.62 6.78 6.68
+  PID  %CPU %MEM COMM
+34527 103.1  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   1.5  1.9 /opt/homebrew/bin/claude
+17743   1.1  0.1 macmon
+ 4365   1.0  1.7 claude
+ 1872   0.8  1.5 claude
+ 1874   0.1  1.6 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:04:24 AEDT (10:04:24 UTC), console mmcky
+21:04  up 12:19, 2 users, load averages: 2.77 6.28 6.50
+  PID  %CPU %MEM COMM
+34527 104.2  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1874   1.9  1.6 claude
+17743   0.4  0.1 macmon
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 1877   0.2  1.8 claude
+18248   0.1  0.0 bash
+ 4365   0.1  1.7 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:04:56 AEDT (10:04:56 UTC), console mmcky
+21:04  up 12:20, 2 users, load averages: 2.13 5.72 6.29
+  PID  %CPU %MEM COMM
+34527 103.4  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   1.0  1.8 claude
+17743   0.9  0.1 macmon
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:05:29 AEDT (10:05:29 UTC), console mmcky
+21:05  up 12:20, 2 users, load averages: 1.88 5.32 6.12
+  PID  %CPU %MEM COMM
+34527 104.2  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.6  0.1 macmon
+ 1874   0.3  1.6 claude
+ 3779   0.2  2.0 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:06:01 AEDT (10:06:01 UTC), console mmcky
+21:06  up 12:21, 2 users, load averages: 1.71 4.89 5.93
+  PID  %CPU %MEM COMM
+34527 105.4  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  624   4.7  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  620   2.9  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1128   0.6  0.2 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter
+  676   0.6  0.0 /usr/sbin/mDNSResponder
+17743   0.4  0.1 macmon
+  690   0.3  0.1 /usr/libexec/airportd
+ 3779   0.3  2.0 claude
+  560   0.2  0.0 /usr/libexec/configd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:06:33 AEDT (10:06:33 UTC), console mmcky
+21:06  up 12:22, 2 users, load averages: 1.77 4.60 5.79
+  PID  %CPU %MEM COMM
+34527 104.0  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.5  0.1 macmon
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+ 4365   0.2  1.7 claude
+  614   0.2  0.0 /usr/sbin/notifyd
+ 3779   0.1  2.0 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+  546   0.1  0.2 /usr/libexec/logd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:07:06 AEDT (10:07:06 UTC), console mmcky
+21:07  up 12:22, 2 users, load averages: 1.84 4.34 5.66
+  PID  %CPU %MEM COMM
+34527 105.9  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   1.2  1.8 /opt/homebrew/bin/claude
+    1   0.9  0.1 /sbin/launchd
+  667   0.3  0.0 /usr/libexec/clocksyncd
+78221   0.1  1.9 /opt/homebrew/bin/claude
+18248   0.1  0.0 bash
+17743   0.1  0.1 macmon
+ 3779   0.1  2.0 claude
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:07:38 AEDT (10:07:38 UTC), console mmcky
+21:07  up 12:23, 2 users, load averages: 1.72 4.04 5.49
+  PID  %CPU %MEM COMM
+34527 104.1  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   2.3  1.7 claude
+78221   0.5  1.9 /opt/homebrew/bin/claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+17743   0.1  0.1 macmon
+ 3779   0.1  2.0 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:08:10 AEDT (10:08:10 UTC), console mmcky
+21:08  up 12:23, 2 users, load averages: 1.85 3.84 5.37
+  PID  %CPU %MEM COMM
+34527 102.2  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18248   0.6  0.0 bash
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+  614   0.1  0.0 /usr/sbin/notifyd
+17743   0.1  0.1 macmon
+  546   0.1  0.2 /usr/libexec/logd
+ 4365   0.1  1.7 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+    1   0.1  0.1 /sbin/launchd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:08:42 AEDT (10:08:42 UTC), console mmcky
+21:08  up 12:24, 2 users, load averages: 1.64 3.57 5.21
+  PID  %CPU %MEM COMM
+34527 104.7  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   1.8  1.6 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+17743   0.1  0.1 macmon
+18248   0.1  0.0 bash
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:09:15 AEDT (10:09:15 UTC), console mmcky
+21:09  up 12:24, 2 users, load averages: 1.56 3.37 5.08
+  PID  %CPU %MEM COMM
+34527 104.6  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   0.3  2.0 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+ 1874   0.1  1.6 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:09:47 AEDT (10:09:47 UTC), console mmcky
+21:09  up 12:25, 2 users, load averages: 1.46 3.18 4.95
+  PID  %CPU %MEM COMM
+34527 103.8  9.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+17743   0.1  0.1 macmon
+ 4365   0.1  1.7 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+18248   0.1  0.0 bash
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:10:19 AEDT (10:10:19 UTC), console mmcky
+21:10  up 12:25, 2 users, load averages: 4.80 3.76 5.08
+  PID  %CPU %MEM COMM
+36363 1191.9  4.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   2.2  1.7 claude
+ 1591   1.3  1.6 /opt/homebrew/bin/claude
+ 1877   0.3  1.8 claude
+ 3779   0.1  2.0 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:10:51 AEDT (10:10:51 UTC), console mmcky
+21:10  up 12:26, 2 users, load averages: 8.33 4.70 5.38
+  PID  %CPU %MEM COMM
+36363 1196.0  3.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18248   0.2  0.0 bash
+36573   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+36558   0.0  0.0 sleep
+36379   0.0  0.0 sleep
+36155   0.0  0.0 sleep
+34671   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:11:23 AEDT (10:11:23 UTC), console mmcky
+21:11  up 12:26, 2 users, load averages: 10.39 5.63 5.69
+  PID  %CPU %MEM COMM
+36363 1182.6  3.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+18248   0.3  0.0 bash
+ 1872   0.1  1.5 claude
+36659   0.0  0.0 sleep
+36558   0.0  0.0 sleep
+34671   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:11:55 AEDT (10:11:55 UTC), console mmcky
+21:11  up 12:27, 2 users, load averages: 11.85 6.44 5.98
+  PID  %CPU %MEM COMM
+36363 937.0  3.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   0.2  1.7 claude
+17743   0.1  0.1 macmon
+  614   0.1  0.0 /usr/sbin/notifyd
+78221   0.1  1.9 /opt/homebrew/bin/claude
+34671   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:12:27 AEDT (10:12:27 UTC), console mmcky
+21:12  up 12:27, 2 users, load averages: 12.55 7.12 6.24
+  PID  %CPU %MEM COMM
+36363 1177.8  3.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.7  0.1 macmon
+18248   0.6  0.0 bash
+  588   0.6  0.1 /usr/libexec/opendirectoryd
+ 3779   0.1  2.0 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:12:59 AEDT (10:12:59 UTC), console mmcky
+21:12  up 12:28, 2 users, load averages: 13.53 7.97 6.59
+  PID  %CPU %MEM COMM
+36363 1187.7  3.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.3  0.1 macmon
+ 7834   0.4  1.8 /opt/homebrew/bin/claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+ 4365   0.2  1.7 claude
+ 1877   0.1  1.8 claude
+  546   0.1  0.2 /usr/libexec/logd
+ 3779   0.1  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:13:31 AEDT (10:13:31 UTC), console mmcky
+21:13  up 12:28, 2 users, load averages: 13.89 8.59 6.86
+  PID  %CPU %MEM COMM
+36363 1187.4  3.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.7  0.1 macmon
+  588   0.6  0.1 /usr/libexec/opendirectoryd
+37178   0.0  0.0 sleep
+37167   0.0  0.0 sleep
+37078   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:14:03 AEDT (10:14:03 UTC), console mmcky
+21:14  up 12:29, 2 users, load averages: 12.96 8.99 7.07
+  PID  %CPU %MEM COMM
+37350 961.1 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.3  0.1 macmon
+  588   0.9  0.1 /usr/libexec/opendirectoryd
+ 4365   0.5  1.7 claude
+ 1874   0.4  1.6 claude
+  546   0.4  0.2 /usr/libexec/logd
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+  614   0.3  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:14:36 AEDT (10:14:36 UTC), console mmcky
+21:14  up 12:30, 2 users, load averages: 10.82 8.83 7.08
+  PID  %CPU %MEM COMM
+37350 841.2 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779  11.2  2.0 claude
+17743   3.4  0.1 macmon
+    1   2.3  0.1 /sbin/launchd
+  588   0.9  0.1 /usr/libexec/opendirectoryd
+18248   0.3  0.0 bash
+ 1874   0.3  1.6 claude
+ 7834   0.2  1.8 /opt/homebrew/bin/claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:15:08 AEDT (10:15:08 UTC), console mmcky
+21:15  up 12:30, 2 users, load averages: 10.29 8.91 7.17
+  PID  %CPU %MEM COMM
+37350 956.7 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.7  0.1 macmon
+18248   1.4  0.0 bash
+  588   1.0  0.1 /usr/libexec/opendirectoryd
+  614   0.6  0.0 /usr/sbin/notifyd
+52383   0.4  1.8 /opt/homebrew/bin/claude
+    1   0.3  0.1 /sbin/launchd
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:15:40 AEDT (10:15:40 UTC), console mmcky
+21:15  up 12:31, 2 users, load averages: 10.40 9.09 7.31
+  PID  %CPU %MEM COMM
+37350 903.2 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   2.4  1.8 /opt/homebrew/bin/claude
+17743   1.4  0.1 macmon
+18248   0.9  0.0 bash
+ 1872   0.8  1.5 claude
+ 1874   0.7  1.6 claude
+ 3779   0.6  2.0 claude
+ 4365   0.5  1.7 claude
+52383   0.4  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:16:13 AEDT (10:16:13 UTC), console mmcky
+21:16  up 12:31, 2 users, load averages: 8.75 8.85 7.28
+  PID  %CPU %MEM COMM
+37350 966.0 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.0  0.1 macmon
+ 4365   0.7  1.7 claude
+ 7834   0.7  1.8 /opt/homebrew/bin/claude
+  600   0.7  0.1 /usr/libexec/dasd
+  588   0.4  0.1 /usr/libexec/opendirectoryd
+  699   0.4  0.0 /usr/libexec/eligibilityd
+ 3779   0.3  2.0 claude
+78221   0.3  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:16:45 AEDT (10:16:45 UTC), console mmcky
+21:16  up 12:32, 2 users, load averages: 9.71 9.07 7.42
+  PID  %CPU %MEM COMM
+37350 947.2 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+38056  10.3  0.1 gh
+ 3779   1.3  2.0 claude
+17743   1.0  0.1 macmon
+38057   0.8  0.0 jq
+ 7834   0.5  1.8 /opt/homebrew/bin/claude
+15397   0.5  0.0 bash
+ 1877   0.3  1.8 claude
+78221   0.3  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:17:18 AEDT (10:17:18 UTC), console mmcky
+21:17  up 12:32, 2 users, load averages: 10.43 9.29 7.56
+  PID  %CPU %MEM COMM
+37350 832.4 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.3  0.1 macmon
+  588   1.3  0.1 /usr/libexec/opendirectoryd
+ 1872   0.8  1.5 claude
+52383   0.6  1.8 /opt/homebrew/bin/claude
+ 3779   0.4  2.0 claude
+18248   0.3  0.0 bash
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+ 4365   0.2  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:17:50 AEDT (10:17:50 UTC), console mmcky
+21:17  up 12:33, 2 users, load averages: 10.22 9.35 7.65
+  PID  %CPU %MEM COMM
+37350 894.4 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.2  0.1 macmon
+ 7834   0.7  1.8 /opt/homebrew/bin/claude
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+18248   0.4  0.0 bash
+ 1874   0.4  1.6 claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:18:22 AEDT (10:18:22 UTC), console mmcky
+21:18  up 12:33, 2 users, load averages: 10.17 9.41 7.73
+  PID  %CPU %MEM COMM
+37350 882.5 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.5  0.1 macmon
+ 1874   1.0  1.6 claude
+18248   0.7  0.0 bash
+78221   0.7  1.9 /opt/homebrew/bin/claude
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+ 7834   0.4  1.8 /opt/homebrew/bin/claude
+52383   0.3  1.8 /opt/homebrew/bin/claude
+ 3779   0.3  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:18:55 AEDT (10:18:55 UTC), console mmcky
+21:18  up 12:34, 2 users, load averages: 9.69 9.37 7.78
+  PID  %CPU %MEM COMM
+37350 783.6 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   8.0  1.8 claude
+17743   3.5  0.1 macmon
+  588   1.1  0.1 /usr/libexec/opendirectoryd
+ 1591   1.0  1.6 /opt/homebrew/bin/claude
+ 3779   0.4  2.0 claude
+ 1874   0.3  1.6 claude
+ 4365   0.3  1.7 claude
+78221   0.3  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:19:27 AEDT (10:19:27 UTC), console mmcky
+21:19  up 12:34, 2 users, load averages: 9.33 9.30 7.81
+  PID  %CPU %MEM COMM
+37350 843.1 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   9.0  1.5 claude
+17743   3.1  0.1 macmon
+  588   1.2  0.1 /usr/libexec/opendirectoryd
+18248   1.1  0.0 bash
+ 4365   0.3  1.7 claude
+ 1874   0.3  1.6 claude
+52383   0.3  1.8 /opt/homebrew/bin/claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:19:59 AEDT (10:19:59 UTC), console mmcky
+21:19  up 12:35, 2 users, load averages: 8.29 9.07 7.78
+  PID  %CPU %MEM COMM
+37350 951.5 12.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.7  0.1 macmon
+52383   1.3  1.8 /opt/homebrew/bin/claude
+  588   0.8  0.1 /usr/libexec/opendirectoryd
+ 4365   0.6  1.7 claude
+ 3779   0.4  2.0 claude
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+ 1874   0.3  1.6 claude
+78221   0.3  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:20:31 AEDT (10:20:31 UTC), console mmcky
+21:20  up 12:36, 2 users, load averages: 8.12 8.96 7.79
+  PID  %CPU %MEM COMM
+37350 790.2 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   7.5  1.5 claude
+78221   4.6  1.9 /opt/homebrew/bin/claude
+17743   3.4  0.1 macmon
+  588   1.0  0.1 /usr/libexec/opendirectoryd
+ 1877   0.9  1.8 claude
+52383   0.6  1.8 /opt/homebrew/bin/claude
+ 7834   0.4  1.8 /opt/homebrew/bin/claude
+ 1874   0.4  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:21:04 AEDT (10:21:04 UTC), console mmcky
+21:21  up 12:36, 2 users, load averages: 8.36 8.92 7.81
+  PID  %CPU %MEM COMM
+37350 955.8 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.8  0.1 macmon
+18248   1.3  0.0 bash
+ 3779   1.0  2.0 claude
+ 4365   0.9  1.7 claude
+  614   0.4  0.0 /usr/sbin/notifyd
+  588   0.4  0.1 /usr/libexec/opendirectoryd
+ 1591   0.4  1.6 /opt/homebrew/bin/claude
+ 1874   0.3  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:21:36 AEDT (10:21:36 UTC), console mmcky
+21:21  up 12:37, 2 users, load averages: 9.60 9.18 7.95
+  PID  %CPU %MEM COMM
+37350 804.3 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   2.1  1.9 /opt/homebrew/bin/claude
+17743   1.8  0.1 macmon
+ 3779   0.4  2.0 claude
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+    1   0.3  0.1 /sbin/launchd
+18248   0.3  0.0 bash
+ 4365   0.3  1.7 claude
+52383   0.3  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:22:08 AEDT (10:22:08 UTC), console mmcky
+21:22  up 12:37, 2 users, load averages: 9.48 9.21 8.00
+  PID  %CPU %MEM COMM
+37350 791.5 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   2.8  1.7 claude
+ 7834   0.5  1.8 /opt/homebrew/bin/claude
+ 3779   0.3  2.0 claude
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+17743   0.3  0.1 macmon
+ 1877   0.3  1.8 claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+ 1874   0.2  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:22:40 AEDT (10:22:40 UTC), console mmcky
+21:22  up 12:38, 2 users, load averages: 9.45 9.24 8.06
+  PID  %CPU %MEM COMM
+37350 848.5 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   4.3  1.9 /opt/homebrew/bin/claude
+ 3779   2.7  2.0 claude
+17743   2.7  0.1 macmon
+39546   1.9  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+ 1874   0.5  1.6 claude
+40730   0.5  0.1 /usr/libexec/PerfPowerServices
+ 1877   0.4  1.8 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:23:13 AEDT (10:23:13 UTC), console mmcky
+21:23  up 12:38, 2 users, load averages: 10.31 9.44 8.18
+  PID  %CPU %MEM COMM
+37350 800.2 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1151   4.1  1.3 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+17743   3.3  0.1 macmon
+  883   1.4  0.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+ 4365   1.3  1.7 claude
+  576   1.2  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  588   1.2  0.1 /usr/libexec/opendirectoryd
+40730   0.7  0.1 /usr/libexec/PerfPowerServices
+ 4869   0.7  0.0 /System/Library/PrivateFrameworks/MediaAnalysisAccess.framework/Versions/A/XPCServices/mediaanalysisd-access.xpc/Contents/MacOS/mediaanalysisd-access
+System-wide memory free percentage: 91%
+== sample: 2026-11-10 21:23:45 AEDT (10:23:45 UTC), console mmcky
+21:23  up 12:39, 2 users, load averages: 10.33 9.51 8.25
+  PID  %CPU %MEM COMM
+37350 783.1 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.3  0.1 macmon
+  588   0.8  0.1 /usr/libexec/opendirectoryd
+ 3779   0.6  2.0 claude
+18248   0.6  0.0 bash
+ 1872   0.4  1.5 claude
+ 1877   0.4  1.8 claude
+78221   0.3  1.9 /opt/homebrew/bin/claude
+52383   0.3  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:24:17 AEDT (10:24:17 UTC), console mmcky
+21:24  up 12:39, 2 users, load averages: 9.77 9.42 8.26
+  PID  %CPU %MEM COMM
+37350 880.7 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   5.0  1.8 /opt/homebrew/bin/claude
+17743   1.5  0.1 macmon
+  588   0.6  0.1 /usr/libexec/opendirectoryd
+18248   0.4  0.0 bash
+ 3779   0.3  2.0 claude
+78221   0.3  1.9 /opt/homebrew/bin/claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:24:49 AEDT (10:24:49 UTC), console mmcky
+21:24  up 12:40, 2 users, load averages: 10.32 9.59 8.36
+  PID  %CPU %MEM COMM
+37350 893.5 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   0.8  2.0 claude
+ 1872   0.6  1.5 claude
+17743   0.4  0.1 macmon
+ 4365   0.3  1.7 claude
+ 1874   0.3  1.6 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 1877   0.2  1.8 claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:25:21 AEDT (10:25:21 UTC), console mmcky
+21:25  up 12:40, 2 users, load averages: 9.34 9.44 8.35
+  PID  %CPU %MEM COMM
+37350 788.6 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4365   1.6  1.7 claude
+ 1877   0.3  1.8 claude
+17743   0.3  0.1 macmon
+18248   0.3  0.0 bash
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+  604   0.2  0.0 /usr/sbin/distnoted
+52383   0.2  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:25:54 AEDT (10:25:54 UTC), console mmcky
+21:25  up 12:41, 2 users, load averages: 9.13 9.36 8.36
+  PID  %CPU %MEM COMM
+37350 779.2 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.5  0.1 macmon
+ 3779   1.0  2.0 claude
+ 1591   0.7  1.6 /opt/homebrew/bin/claude
+ 4365   0.5  1.7 claude
+18248   0.4  0.0 bash
+78221   0.2  1.9 /opt/homebrew/bin/claude
+ 1874   0.2  1.6 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:26:26 AEDT (10:26:26 UTC), console mmcky
+21:26  up 12:41, 2 users, load averages: 9.55 9.46 8.43
+  PID  %CPU %MEM COMM
+37350 917.1 12.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.5  0.1 macmon
+18248   0.5  0.0 bash
+ 1877   0.5  1.8 claude
+ 4365   0.4  1.7 claude
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+ 1872   0.3  1.5 claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:26:59 AEDT (10:26:59 UTC), console mmcky
+21:26  up 12:42, 2 users, load averages: 6.55 8.76 8.22
+  PID  %CPU %MEM COMM
+40545 113.6  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  588   1.6  0.1 /usr/libexec/opendirectoryd
+17743   0.7  0.1 macmon
+  614   0.3  0.0 /usr/sbin/notifyd
+  546   0.2  0.2 /usr/libexec/logd
+    1   0.2  0.1 /sbin/launchd
+ 4365   0.1  1.7 claude
+ 1877   0.1  1.8 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:27:31 AEDT (10:27:31 UTC), console mmcky
+21:27  up 12:42, 2 users, load averages: 4.52 8.06 7.98
+  PID  %CPU %MEM COMM
+40545 114.3  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   3.2  0.1 macmon
+  588   1.0  0.1 /usr/libexec/opendirectoryd
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+18248   0.1  0.0 bash
+  614   0.1  0.0 /usr/sbin/notifyd
+ 1877   0.1  1.8 claude
+ 1874   0.1  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:28:03 AEDT (10:28:03 UTC), console mmcky
+21:28  up 12:43, 2 users, load averages: 7.01 8.20 8.03
+  PID  %CPU %MEM COMM
+40874 1170.2  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   1.4  2.0 claude
+52383   0.4  1.8 /opt/homebrew/bin/claude
+ 4365   0.4  1.7 claude
+17743   0.3  0.1 macmon
+ 1874   0.2  1.6 claude
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:28:34 AEDT (10:28:34 UTC), console mmcky
+21:28  up 12:44, 2 users, load averages: 9.50 8.66 8.20
+  PID  %CPU %MEM COMM
+40874 1195.4  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   3.8  1.8 /opt/homebrew/bin/claude
+17743   0.3  0.1 macmon
+ 3779   0.2  2.0 claude
+  600   0.2  0.1 /usr/libexec/dasd
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+39711   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:29:06 AEDT (10:29:06 UTC), console mmcky
+21:29  up 12:44, 2 users, load averages: 11.64 9.25 8.43
+  PID  %CPU %MEM COMM
+40874 1197.5  0.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+ 3779   0.2  2.0 claude
+  935   0.1  0.1 /usr/libexec/secd
+    1   0.1  0.1 /sbin/launchd
+40764   0.0  0.0 sleep
+39711   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:29:38 AEDT (10:29:38 UTC), console mmcky
+21:29  up 12:45, 2 users, load averages: 12.09 9.59 8.58
+  PID  %CPU %MEM COMM
+41207 747.2  1.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   1.9  1.8 /opt/homebrew/bin/claude
+17743   1.4  0.1 macmon
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+18248   0.3  0.0 bash
+ 1877   0.1  1.8 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+  600   0.1  0.1 /usr/libexec/dasd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:30:10 AEDT (10:30:10 UTC), console mmcky
+21:30  up 12:45, 2 users, load averages: 9.59 9.26 8.50
+  PID  %CPU %MEM COMM
+41207 755.7  1.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   0.9  1.6 /opt/homebrew/bin/claude
+17743   0.7  0.1 macmon
+ 1877   0.5  1.8 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+ 1872   0.1  1.5 claude
+ 3779   0.1  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:30:42 AEDT (10:30:42 UTC), console mmcky
+21:30  up 12:46, 2 users, load averages: 7.69 8.84 8.38
+  PID  %CPU %MEM COMM
+41570 110.8  2.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.2  0.1 macmon
+ 1874   0.3  1.6 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:31:15 AEDT (10:31:15 UTC), console mmcky
+21:31  up 12:46, 2 users, load averages: 4.86 8.01 8.09
+  PID  %CPU %MEM COMM
+41570 112.9  2.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.5  0.1 macmon
+ 1877   0.1  1.8 claude
+ 3779   0.1  2.0 claude
+ 4365   0.1  1.7 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+  625   0.1  0.1 /usr/libexec/runningboardd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:31:47 AEDT (10:31:47 UTC), console mmcky
+21:31  up 12:47, 2 users, load averages: 3.56 7.40 7.87
+  PID  %CPU %MEM COMM
+41570 111.3  2.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   3.4  0.1 macmon
+  588   1.0  0.1 /usr/libexec/opendirectoryd
+ 7834   0.9  1.8 /opt/homebrew/bin/claude
+ 1874   0.6  1.6 claude
+ 3779   0.1  2.0 claude
+ 1877   0.1  1.8 claude
+ 4365   0.1  1.7 claude
+  546   0.1  0.2 /usr/libexec/logd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:32:19 AEDT (10:32:19 UTC), console mmcky
+21:32  up 12:47, 2 users, load averages: 2.60 6.73 7.60
+  PID  %CPU %MEM COMM
+41570 109.4  2.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   5.2  2.0 claude
+  588   1.4  0.1 /usr/libexec/opendirectoryd
+17743   0.4  0.1 macmon
+  614   0.3  0.0 /usr/sbin/notifyd
+  546   0.2  0.2 /usr/libexec/logd
+    1   0.2  0.1 /sbin/launchd
+ 1877   0.1  1.8 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:32:51 AEDT (10:32:51 UTC), console mmcky
+21:32  up 12:48, 2 users, load averages: 6.71 7.30 7.77
+  PID  %CPU %MEM COMM
+42039 1187.7  1.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1874   1.2  1.6 claude
+17743   0.4  0.1 macmon
+ 1877   0.2  1.8 claude
+ 4365   0.1  1.7 claude
+41767   0.0  0.0 sleep
+39711   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:33:22 AEDT (10:33:22 UTC), console mmcky
+21:33  up 12:48, 2 users, load averages: 9.86 8.00 8.01
+  PID  %CPU %MEM COMM
+42039 1171.5  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+42298   6.1  0.1 gh
+52383   4.5  1.8 /opt/homebrew/bin/claude
+ 3779   1.3  2.0 claude
+42299   0.4  0.0 jq
+15397   0.3  0.0 bash
+78221   0.3  1.9 /opt/homebrew/bin/claude
+  614   0.1  0.0 /usr/sbin/notifyd
+  676   0.1  0.0 /usr/sbin/mDNSResponder
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:33:54 AEDT (10:33:54 UTC), console mmcky
+21:33  up 12:49, 2 users, load averages: 10.84 8.44 8.17
+  PID  %CPU %MEM COMM
+42039 1186.0  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.8  0.1 macmon
+ 3779   1.1  2.0 claude
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+18248   0.3  0.0 bash
+ 1591   0.3  1.6 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:34:25 AEDT (10:34:25 UTC), console mmcky
+21:34  up 12:49, 2 users, load averages: 12.90 9.24 8.47
+  PID  %CPU %MEM COMM
+42039 1168.8  1.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   2.7  2.0 claude
+18248   0.5  0.0 bash
+17743   0.3  0.1 macmon
+ 1877   0.1  1.8 claude
+42217   0.0  0.0 caffeinate
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:34:57 AEDT (10:34:57 UTC), console mmcky
+21:34  up 12:50, 2 users, load averages: 11.63 9.27 8.51
+  PID  %CPU %MEM COMM
+42692 770.7  2.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.8  0.1 macmon
+ 4365   0.6  1.7 claude
+18248   0.3  0.0 bash
+ 1874   0.2  1.6 claude
+ 1877   0.1  1.8 claude
+ 1872   0.1  1.5 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:35:29 AEDT (10:35:29 UTC), console mmcky
+21:35  up 12:50, 2 users, load averages: 9.20 8.94 8.42
+  PID  %CPU %MEM COMM
+42692 769.4  2.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.5  0.1 macmon
+ 1874   0.5  1.6 claude
+ 3779   0.4  2.0 claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 1872   0.1  1.5 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+  620   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:36:01 AEDT (10:36:01 UTC), console mmcky
+21:36  up 12:51, 2 users, load averages: 8.60 8.79 8.38
+  PID  %CPU %MEM COMM
+42692 761.0  2.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  624   6.0  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  620   3.7  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+17743   2.9  0.1 macmon
+ 1128   1.0  0.2 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter
+ 1591   1.0  1.6 /opt/homebrew/bin/claude
+78221   0.5  1.9 /opt/homebrew/bin/claude
+ 1874   0.5  1.6 claude
+  588   0.4  0.1 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:36:33 AEDT (10:36:33 UTC), console mmcky
+21:36  up 12:52, 2 users, load averages: 8.20 8.64 8.34
+  PID  %CPU %MEM COMM
+42692 768.7  2.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   4.6  1.9 /opt/homebrew/bin/claude
+ 3779   1.5  2.0 claude
+  676   0.5  0.0 /usr/sbin/mDNSResponder
+  690   0.2  0.1 /usr/libexec/airportd
+  620   0.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+52383   0.1  1.8 /opt/homebrew/bin/claude
+17743   0.1  0.1 macmon
+ 1872   0.1  1.5 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:37:05 AEDT (10:37:05 UTC), console mmcky
+21:37  up 12:52, 2 users, load averages: 6.53 8.21 8.19
+  PID  %CPU %MEM COMM
+43243 108.2  7.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+    1  29.5  0.1 /sbin/launchd
+ 1591   1.4  1.6 /opt/homebrew/bin/claude
+52383   0.3  1.8 /opt/homebrew/bin/claude
+17743   0.2  0.1 macmon
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+ 1874   0.1  1.6 claude
+ 1872   0.1  1.5 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:37:37 AEDT (10:37:37 UTC), console mmcky
+21:37  up 12:53, 2 users, load averages: 4.20 7.44 7.91
+  PID  %CPU %MEM COMM
+43243 107.6  7.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   0.3  0.1 macmon
+ 3779   0.3  2.0 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+ 1874   0.1  1.6 claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+30668   0.0  0.0 /System/Library/PrivateFrameworks/PodcastServices.framework/XPCServices/PodcastContentService.xpc/Contents/MacOS/PodcastContentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:38:09 AEDT (10:38:09 UTC), console mmcky
+21:38  up 12:53, 2 users, load averages: 3.28 6.90 7.70
+  PID  %CPU %MEM COMM
+43243 109.6  7.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+52383   8.8  1.8 /opt/homebrew/bin/claude
+ 7834   0.4  1.8 /opt/homebrew/bin/claude
+17743   0.4  0.1 macmon
+ 1877   0.3  1.8 claude
+ 1872   0.1  1.5 claude
+ 1874   0.1  1.6 claude
+ 3779   0.1  2.0 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:38:42 AEDT (10:38:42 UTC), console mmcky
+21:38  up 12:54, 2 users, load averages: 2.40 6.28 7.44
+  PID  %CPU %MEM COMM
+43243 108.4  7.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+43748  13.1  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+    1   0.6  0.1 /sbin/launchd
+  576   0.3  0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+17743   0.2  0.1 macmon
+  614   0.1  0.0 /usr/sbin/notifyd
+52383   0.1  1.8 /opt/homebrew/bin/claude
+  623   0.1  0.0 /usr/sbin/cfprefsd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:39:14 AEDT (10:39:14 UTC), console mmcky
+21:39  up 12:54, 2 users, load averages: 2.10 5.84 7.24
+  PID  %CPU %MEM COMM
+43243 107.9  7.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+52383   0.4  1.8 /opt/homebrew/bin/claude
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+78221   0.2  1.9 /opt/homebrew/bin/claude
+17743   0.2  0.1 macmon
+ 3779   0.1  2.0 claude
+ 1877   0.1  1.8 claude
+ 4365   0.1  1.7 claude
+18248   0.1  0.0 bash
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:39:46 AEDT (10:39:46 UTC), console mmcky
+21:39  up 12:55, 2 users, load averages: 1.67 5.38 7.02
+  PID  %CPU %MEM COMM
+43243 110.6  7.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   2.7  1.6 /opt/homebrew/bin/claude
+ 1877   1.4  1.8 claude
+ 1872   0.5  1.5 claude
+17743   0.3  0.1 macmon
+ 3779   0.2  2.0 claude
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+ 1874   0.1  1.6 claude
+  614   0.1  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:40:18 AEDT (10:40:18 UTC), console mmcky
+21:40  up 12:55, 2 users, load averages: 1.50 4.92 6.79
+  PID  %CPU %MEM COMM
+43243 109.4  7.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   0.6  1.8 /opt/homebrew/bin/claude
+ 1872   0.4  1.5 claude
+17743   0.2  0.1 macmon
+ 1874   0.1  1.6 claude
+ 1877   0.1  1.8 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:40:51 AEDT (10:40:51 UTC), console mmcky
+21:40  up 12:56, 2 users, load averages: 2.78 4.86 6.70
+  PID  %CPU %MEM COMM
+44253 1192.8  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   1.8  1.5 claude
+78221   0.5  1.9 /opt/homebrew/bin/claude
+17743   0.3  0.1 macmon
+ 1874   0.1  1.6 claude
+44015   0.0  0.0 sleep
+43916   0.0  0.0 sleep
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:41:22 AEDT (10:41:22 UTC), console mmcky
+21:41  up 12:56, 2 users, load averages: 8.71 6.11 7.08
+  PID  %CPU %MEM COMM
+44253 1167.3  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   5.4  2.0 claude
+17743   1.4  0.1 macmon
+ 7834   0.9  1.8 /opt/homebrew/bin/claude
+  588   0.8  0.1 /usr/libexec/opendirectoryd
+18248   0.6  0.0 bash
+  546   0.1  0.2 /usr/libexec/logd
+  614   0.1  0.0 /usr/sbin/notifyd
+    1   0.1  0.1 /sbin/launchd
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:41:54 AEDT (10:41:54 UTC), console mmcky
+21:41  up 12:57, 2 users, load averages: 11.76 7.10 7.40
+  PID  %CPU %MEM COMM
+44253 1167.6  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+17743   0.1  0.1 macmon
+44351   0.0  0.0 sleep
+44129   0.0  0.0 /usr/libexec/biomesyncd
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:42:26 AEDT (10:42:26 UTC), console mmcky
+21:42  up 12:57, 2 users, load averages: 12.79 7.79 7.64
+  PID  %CPU %MEM COMM
+44253 1164.9  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 7834   2.2  1.8 /opt/homebrew/bin/claude
+17743   1.1  0.1 macmon
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+78221   0.1  1.9 /opt/homebrew/bin/claude
+18248   0.1  0.0 bash
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:42:58 AEDT (10:42:58 UTC), console mmcky
+21:42  up 12:58, 2 users, load averages: 13.55 8.45 7.88
+  PID  %CPU %MEM COMM
+44253 1203.7  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   2.1  1.9 /opt/homebrew/bin/claude
+ 1877   0.1  1.8 claude
+44638   0.0  0.0 sleep
+44543   0.0  0.0 sleep
+44435   0.0  0.0 sleep
+44129   0.0  0.0 /usr/libexec/biomesyncd
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:43:29 AEDT (10:43:29 UTC), console mmcky
+21:43  up 12:58, 2 users, load averages: 14.04 9.12 8.15
+  PID  %CPU %MEM COMM
+44253 1183.5  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   1.7  1.6 /opt/homebrew/bin/claude
+17743   0.7  0.1 macmon
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+44129   0.0  0.0 /usr/libexec/biomesyncd
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:44:01 AEDT (10:44:01 UTC), console mmcky
+21:44  up 12:59, 2 users, load averages: 14.48 9.69 8.39
+  PID  %CPU %MEM COMM
+44253 1184.3  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   3.5  1.9 /opt/homebrew/bin/claude
+  624   1.9  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  620   1.1  0.4 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+ 1128   0.4  0.2 /System/Library/CoreServices/NotificationCenter.app/Contents/MacOS/NotificationCenter
+17743   0.1  0.1 macmon
+ 3779   0.1  2.0 claude
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:44:32 AEDT (10:44:32 UTC), console mmcky
+21:44  up 13 hrs, 2 users, load averages: 15.33 10.35 8.67
+  PID  %CPU %MEM COMM
+44253 1186.3  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   4.2  1.9 /opt/homebrew/bin/claude
+17743   2.2  0.1 macmon
+  588   0.8  0.1 /usr/libexec/opendirectoryd
+  546   0.1  0.2 /usr/libexec/logd
+44129   0.0  0.0 /usr/libexec/biomesyncd
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+30669   0.0  0.0 /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/XPCServices/com.apple.BKAgentService.xpc/Contents/MacOS/com.apple.BKAgentService
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:45:04 AEDT (10:45:04 UTC), console mmcky
+21:45  up 13 hrs, 2 users, load averages: 15.39 10.91 8.94
+  PID  %CPU %MEM COMM
+44253 1181.4  2.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1872   3.0  1.5 claude
+78221   2.1  1.9 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 3779   0.1  2.0 claude
+17743   0.1  0.1 macmon
+44129   0.0  0.0 /usr/libexec/biomesyncd
+33882   0.0  0.0 /System/Library/PrivateFrameworks/CoreParsec.framework/parsec-fbf
+30671   0.0  0.0 /System/Library/PrivateFrameworks/AMPLibrary.framework/Versions/A/Support/AMPArtworkAgent
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:45:36 AEDT (10:45:36 UTC), console mmcky
+21:45  up 13:01, 2 users, load averages: 13.34 10.85 8.99
+  PID  %CPU %MEM COMM
+45424 745.4  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+78221   2.2  1.9 /opt/homebrew/bin/claude
+ 1874   1.3  1.6 claude
+17743   1.1  0.1 macmon
+ 1591   0.9  1.6 /opt/homebrew/bin/claude
+  588   0.5  0.1 /usr/libexec/opendirectoryd
+    1   0.4  0.1 /sbin/launchd
+  614   0.3  0.0 /usr/sbin/notifyd
+ 1872   0.3  1.5 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:46:08 AEDT (10:46:08 UTC), console mmcky
+21:46  up 13:01, 2 users, load averages: 10.55 10.39 8.89
+  PID  %CPU %MEM COMM
+45424 769.5  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1591   4.3  1.6 /opt/homebrew/bin/claude
+17743   3.4  0.1 macmon
+78221   0.9  1.9 /opt/homebrew/bin/claude
+ 3779   0.7  2.0 claude
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+ 7834   0.6  1.8 /opt/homebrew/bin/claude
+ 1872   0.3  1.5 claude
+ 1874   0.1  1.6 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:46:40 AEDT (10:46:40 UTC), console mmcky
+21:46  up 13:02, 2 users, load averages: 9.61 10.12 8.84
+  PID  %CPU %MEM COMM
+45424 759.6  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+52383   4.8  1.8 /opt/homebrew/bin/claude
+ 1874   0.4  1.6 claude
+ 1872   0.4  1.5 claude
+ 1877   0.3  1.8 claude
+ 4365   0.2  1.7 claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 7834   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:47:12 AEDT (10:47:12 UTC), console mmcky
+21:47  up 13:02, 2 users, load averages: 8.12 9.69 8.73
+  PID  %CPU %MEM COMM
+45424 804.2  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   1.6  1.8 claude
+17743   1.4  0.1 macmon
+ 1874   1.3  1.6 claude
+ 4365   0.2  1.7 claude
+ 1872   0.2  1.5 claude
+  588   0.1  0.1 /usr/libexec/opendirectoryd
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:47:44 AEDT (10:47:44 UTC), console mmcky
+21:47  up 13:03, 2 users, load averages: 7.53 9.33 8.63
+  PID  %CPU %MEM COMM
+45424 762.7  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.7  0.1 macmon
+ 1874   0.9  1.6 claude
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+78221   0.6  1.9 /opt/homebrew/bin/claude
+ 4365   0.3  1.7 claude
+  614   0.2  0.0 /usr/sbin/notifyd
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 3779   0.2  2.0 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:48:16 AEDT (10:48:16 UTC), console mmcky
+21:48  up 13:03, 2 users, load averages: 8.65 9.37 8.66
+  PID  %CPU %MEM COMM
+45424 756.7  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 1877   0.4  1.8 claude
+78221   0.4  1.9 /opt/homebrew/bin/claude
+17743   0.2  0.1 macmon
+ 3779   0.2  2.0 claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 4365   0.2  1.7 claude
+52383   0.1  1.8 /opt/homebrew/bin/claude
+18248   0.1  0.0 bash
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:48:48 AEDT (10:48:48 UTC), console mmcky
+21:48  up 13:04, 2 users, load averages: 8.76 9.33 8.67
+  PID  %CPU %MEM COMM
+45424 760.6  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   1.2  0.1 macmon
+ 1872   0.2  1.5 claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+ 3779   0.2  2.0 claude
+  588   0.2  0.1 /usr/libexec/opendirectoryd
+52383   0.1  1.8 /opt/homebrew/bin/claude
+78221   0.1  1.9 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:49:20 AEDT (10:49:20 UTC), console mmcky
+21:49  up 13:04, 2 users, load averages: 9.39 9.40 8.72
+  PID  %CPU %MEM COMM
+45424 811.0  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17743   2.3  0.1 macmon
+ 1877   0.9  1.8 claude
+  588   0.7  0.1 /usr/libexec/opendirectoryd
+18248   0.4  0.0 bash
+ 7834   0.3  1.8 /opt/homebrew/bin/claude
+ 1874   0.2  1.6 claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+ 1591   0.2  1.6 /opt/homebrew/bin/claude
+System-wide memory free percentage: 92%
+== sample: 2026-11-10 21:49:51 AEDT (10:49:51 UTC), console mmcky
+21:49  up 13:05, 2 users, load averages: 8.56 9.16 8.66
+  PID  %CPU %MEM COMM
+45424 755.8  6.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 3779   2.3  2.0 claude
+ 1872   1.7  1.5 claude
+18248   0.4  0.0 bash
+78221   0.3  1.9 /opt/homebrew/bin/claude
+52383   0.2  1.8 /opt/homebrew/bin/claude
+17743   0.2  0.1 macmon
+ 1591   0.1  1.6 /opt/homebrew/bin/claude
+ 4365   0.1  1.7 claude
+System-wide memory free percentage: 92%
+== after: 2026-11-10 21:50:11 AEDT (10:50:11 UTC), console mmcky
+21:50  up 13:05, 2 users, load averages: 8.65 9.14 8.66
+  PID  %CPU %MEM COMM
+ 4365   3.2  1.7 claude
+ 1165   2.8  0.2 /usr/libexec/duetexpertd
+17743   1.4  0.1 macmon
+ 7834   0.5  1.8 /opt/homebrew/bin/claude
+  588   0.3  0.1 /usr/libexec/opendirectoryd
+ 1872   0.3  1.5 claude
+ 1877   0.2  1.8 claude
+ 3779   0.1  2.0 claude
+ 1874   0.1  1.6 claude
+System-wide memory free percentage: 92%
+== ended 10:50:11
