@@ -1,6 +1,7 @@
 #!/bin/bash
 # aiyagari_jax and ifp_egm_jax on qe-mini1's M6 CPU, both precisions, with the console's animated
-# wallpaper paused (SIGSTOP) for the run and resumed (SIGCONT) after, even on failure. qe-mini1's
+# wallpaper and its video decoder (VTDecoderXPCService) paused (SIGSTOP) for the run and resumed
+# (SIGCONT) after, even on failure. qe-mini1's
 # Claude sessions are left running: stopped for long, they lose Remote Control and exit, so agree a
 # quiet window with them before the run instead.
 cd ~/bench/lectures
