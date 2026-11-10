@@ -229,14 +229,14 @@ What the table shows:
 
 ```bash
 ./lectures_set.sh results 3 cuda cpu     # qe-wharton1-gpu: the card and the CPU beside it
-./mac_lectures.sh                        # qe-mini1: pauses the agents, then ./lectures_set.sh results 3 cpu
+./mac_lectures.sh                        # qe-mini1: pauses the wallpaper and its decoder, then ./lectures_set.sh results 3 cpu
 ./lectures_set.sh results 3 cpu          # qe-wharton2, from precision/runs/2026-10-25/wharton2_run.sh
 ROOT=~/bench/lectures-python ./lectures_set.sh results 3 cpu   # lecture-python.myst, from lectures-python.txt
 ROOT=~/bench/lectures-python CAP=7200 ./lectures_set.sh results 3 cuda cpu   # the same on qe-wharton1-gpu
 python lectures/whole/summarise_whole.py lectures/results/*/2026-10-25/whole --lectures <directory of the lectures' .md files>
 ```
 
-[`mac_lectures.sh`](mac_lectures.sh) pauses `qe-mini1`'s agents and wallpaper with SIGSTOP and resumes them on exit, even after a failure.
+[`mac_lectures.sh`](mac_lectures.sh) pauses `qe-mini1`'s animated wallpaper and its video decoder (`VTDecoderXPCService`) with SIGSTOP and resumes them on exit, even after a failure. It paused the agents too on 2026-10-25, but no longer does: they're left running, as on 2026-11-02, so agree a quiet window with them before the run.
 
 On RunsOn, the workflow's `run_lectures` job runs a lecture set three times on the GPU and its host CPU of `lectures_instance`, by default the T4's `g4dn.2xlarge` that the lectures' CI uses. It installs the exact packages of the TITAN RTX run, from that run's `environment.txt`, and uploads the results as an artifact.
 
