@@ -121,7 +121,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--problems", default=",".join(PROBLEMS))
-    parser.add_argument("--sweeps", help="only these sweeps, e.g. batch,state")
+    parser.add_argument("--sweeps", help="only these sweeps, e.g. batch,state; "
+                        "an optional sweep runs only when named here")
     parser.add_argument("--backends", default="numpy,numba,numba-parallel,jax-cpu")
     parser.add_argument("--dtypes", default="float64,float32",
                         help="each problem runs only in the precisions it allows")
@@ -166,10 +167,14 @@ def main():
         path.parent.mkdir(parents=True, exist_ok=True)
         print(f"Writing to {path}")
 
+    named = [s.strip() for s in args.sweeps.split(",")] if args.sweeps else None
     for name in problems:
         spec = PROBLEMS[name]
         for sweep, plan in spec["sweeps"].items():
-            if args.sweeps and sweep not in args.sweeps.split(","):
+            # With --sweeps, only the sweeps it names; without, every sweep but the optional ones
+            if named is not None and sweep not in named:
+                continue
+            if named is None and plan.get("optional"):
                 continue
             sizes = ([int(s) for s in args.sizes.split(",")] if args.sizes
                      else plan["quick"] if args.quick else plan["sizes"])
