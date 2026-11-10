@@ -1,6 +1,8 @@
 #!/bin/bash
-# aiyagari_jax and ifp_egm_jax on qe-mini1's M6 CPU, both precisions, with the agents and the
-# console's animated wallpaper paused (SIGSTOP) for the run and resumed (SIGCONT) after, even on failure.
+# aiyagari_jax and ifp_egm_jax on qe-mini1's M6 CPU, both precisions, with the console's animated
+# wallpaper paused (SIGSTOP) for the run and resumed (SIGCONT) after, even on failure. qe-mini1's
+# Claude sessions are left running: stopped for long, they lose Remote Control and exit, so agree a
+# quiet window with them before the run instead.
 cd ~/bench/lectures
 OUT=mac
 mkdir -p $OUT/aiyagari/as-used $OUT/aiyagari/scale $OUT/ifp/check $OUT/ifp/scale $OUT/ifp/as-used
@@ -14,18 +16,10 @@ state() {
 # Each pattern is anchored to the start of its target's command line, so a shell
 # whose own command merely mentions these names (one that launched this script,
 # say) is not paused with them.
-RC='^claude remote-control'
-PAUSED="$(pgrep -f "$RC") $(pgrep -f '^[^ ]*/claude --print --sdk-url') \
-  $(pgrep -f '^/System/Library/ExtensionKit/Extensions/WallpaperAerialsExtension') \
+PAUSED="$(pgrep -f '^/System/Library/ExtensionKit/Extensions/WallpaperAerialsExtension') \
   $(pgrep -f '^/System/Library/Frameworks/VideoToolbox.framework/.*/VTDecoderXPCService')"
 resume() {
   kill -CONT $PAUSED 2>/dev/null; echo "== resumed: $PAUSED at $(date '+%T')"
-  # Stopping Remote Control's foreground job makes its tmux shell put it in the
-  # background; give it the terminal back, but only if it has lost it. The
-  # 2026-10-25 run did this step by hand.
-  for p in $(pgrep -f "$RC"); do
-    case "$(ps -o stat= -p $p)" in *+*) ;; *) tmux send-keys -t rc fg Enter ;; esac
-  done
   state after >> $OUT/state.txt
 }
 trap resume EXIT
