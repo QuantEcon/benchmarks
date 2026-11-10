@@ -1,0 +1,20 @@
+== rest 04:06:30
+== start plain 1 04:07:15
+== end plain 1 (346 dump files) 04:07:22
+== start noindex 1 04:08:07
+== end noindex 1 (346 dump files) 04:08:11
+== start nodump 1 04:08:56
+== end nodump 1 (0 dump files) 04:08:59
+== start plain 2 04:09:44
+== end plain 2 (346 dump files) 04:09:48
+== start noindex 2 04:10:33
+== end noindex 2 (346 dump files) 04:10:36
+== start nodump 2 04:11:22
+== end nodump 2 (0 dump files) 04:11:25
+== start plain 3 04:12:10
+== end plain 3 (346 dump files) 04:12:14
+== start noindex 3 04:12:59
+== end noindex 3 (346 dump files) 04:13:02
+== start nodump 3 04:13:47
+== end nodump 3 (0 dump files) 04:13:51
+== done 04:14:36

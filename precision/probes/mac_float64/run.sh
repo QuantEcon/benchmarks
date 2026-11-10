@@ -38,14 +38,16 @@ for v in numpy jax-ynn jax-xla-dot; do
   "$PY" "$P" matmul $v $MM >> "$OUT/matmul.jsonl" 2>> "$OUT/run.log" || failed "matmul $v"
 done
 
+# The dump goes in a .noindex folder: in an ordinary one, its few hundred files woke macOS's
+# mediaanalysisd for about half a minute of a core (precision/runs/2026-11-10/qe-mini1/noindex/)
 for v in default no-reduce-fusion add rowmax; do
   log cliff $v
-  PROBE_DUMP="$OUT/xla-dump/$v" "$PY" "$P" cliff $v $CL >> "$OUT/cliff.jsonl" 2>> "$OUT/run.log" \
+  PROBE_DUMP="$OUT/xla-dump.noindex/$v" "$PY" "$P" cliff $v $CL >> "$OUT/cliff.jsonl" 2>> "$OUT/run.log" \
     || failed "cliff $v"
 done
 # Of the dump, only the optimised modules say which ops YNNPACK took
-if [ -d "$OUT/xla-dump" ]; then
-  find "$OUT/xla-dump" -type f ! -name '*after_optimizations.txt' -delete
+if [ -d "$OUT/xla-dump.noindex" ]; then
+  find "$OUT/xla-dump.noindex" -type f ! -name '*after_optimizations.txt' -delete
 fi
 
 for k in bellman pv; do

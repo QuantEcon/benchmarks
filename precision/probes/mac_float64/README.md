@@ -11,7 +11,7 @@ A probe for QuantEcon/project-benchmarks-jax#48. JAX's CPU backend doesn't call 
     - **At n = 8 and 64,** each variant also runs the recurrence from QuantEcon/project-benchmarks-jax#4, one product a step for 10,000 steps, timed per product. NumPy's time includes Python's dispatch, so its bare `np.dot` call is timed as well.
 3. **The cliff** of QuantEcon/project-benchmarks-jax#7, at m = 16,000 and 18,000 (`cliff.jsonl`).
     - **What:** `max(R + 0.96 v)` over the rows of a float64 m × m array, at the defaults and with YNNPACK's reduce fusion off (`--xla_cpu_experimental_ynn_fusion_type=-reduce`), then its two halves: the add alone and the row max alone.
-    - **Which ops YNNPACK took:** each row says, and an `--xla_dump_to` dump keeps each variant's optimised modules (`xla-dump/`).
+    - **Which ops YNNPACK took:** each row says, and an `--xla_dump_to` dump keeps each variant's optimised modules (`xla-dump.noindex/`; `xla-dump/` in runs before 2026-11-10). The `.noindex` name keeps Spotlight and macOS's media analysis away from the dump's files, which [woke `mediaanalysisd`](../../runs/2026-11-10/qe-mini1/noindex/README.md) in an ordinary folder.
 4. **MLX as a float64 engine** (`step.jsonl`): the stored Bellman step at m = 2,000, 8,000 and 14,000, and a dense `P @ V` at n = 1,000 and 4,000, in MLX on its CPU device under `mx.compile`, against JAX. Each must agree with NumPy's answer within 1e-12.
 
 ## Method
