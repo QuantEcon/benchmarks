@@ -1,6 +1,6 @@
 # A `.noindex` folder for XLA's dump on qe-mini1's M6, 2026-11-10
 
-On 2026-11-06 and 2026-11-09, macOS's media-analysis daemon, `mediaanalysisd`, woke within about 3 s of [#48's probe](../../../../probes/mac_float64/README.md)'s cliff step, which writes an XLA dump ([2026-11-09's notes](../../../2026-11-09/qe-mini1/mac-float64/README.md)). This check asks whether a folder whose name ends in `.noindex`, which Spotlight leaves alone, stops that.
+On 2026-11-06 and 2026-11-09, macOS's media-analysis daemon, `mediaanalysisd`, woke within about 3 s of the cliff step of [QuantEcon/project-benchmarks-jax#48's probe](../../../../probes/mac_float64/README.md), which writes an XLA dump ([2026-11-09's notes](../../../2026-11-09/qe-mini1/mac-float64/README.md)). This check asks whether a folder whose name ends in `.noindex`, which Spotlight leaves alone, stops that.
 
 It ran on `qe-mini1`'s M6 on macOS 27.2.1 (26B131), from 04:06:30 to 04:14:36 UTC, with the account logged in at the screen. The window was agreed with the Claude sessions on the Mac, which stayed running and held builds, tests and other file-heavy work. The script is [`session/noindex_check.sh`](session/noindex_check.sh).
 
