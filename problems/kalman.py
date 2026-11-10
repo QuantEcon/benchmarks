@@ -7,11 +7,13 @@ products and solves, and no step can start before the last ends, so the
 series' length only scales every stack's time in proportion. What moves a
 crossover is the work in each step, so there are two sweeps:
 
-- `batch`: how many independent filters run together, at K_BATCH states.
+- `batch`: how many independent filters run together, at 10 states.
   Each has its own transition matrix A and all read the same data, as when
   a likelihood is evaluated across parameter values. JAX runs them with
   `vmap`, NumPy as one batched array, and Numba as a loop over filters
-  (`prange` when parallel).
+  (`prange` when parallel). `batch20`, `batch50` and `batch100` are the
+  same at 20, 50 and 100 states, for benchmarks#58, and run only when
+  named; spec.KALMAN_BATCH_STATES maps each sweep to its states.
 - `state`: the number of states K, for one filter. Each step's products cost
   about K^3.
 
@@ -20,11 +22,13 @@ near 0.93 at every K; at K = 10 this is precision's matrix.
 """
 import numpy as np
 
-T_STEPS, P_OBS, K_BATCH = 1_000, 3, 10
+from spec import KALMAN_BATCH_STATES
+
+T_STEPS, P_OBS = 1_000, 3
 
 
 def model(sweep, size, dtype):
-    n, k = (size, K_BATCH) if sweep == "batch" else (1, size)
+    n, k = (size, KALMAN_BATCH_STATES[sweep]) if sweep in KALMAN_BATCH_STATES else (1, size)
     rng = np.random.default_rng(0)
     draw = lambda *shape: rng.standard_normal(shape, dtype=np.float32)
     A = 0.9 * np.eye(k, dtype=np.float32) + 0.01 * np.sqrt(10 / k) * draw(n, k, k)

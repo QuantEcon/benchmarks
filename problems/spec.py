@@ -8,13 +8,18 @@ cannot fit, without starting either.
 GIB = 2**30
 ITEMSIZE = {"float32": 4, "float64": 8}
 
+# P7's batch sweeps and the states each filter has. `batch` is Phase 1's; the
+# others are benchmarks#58's, to find where the crossover lies as both grow.
+KALMAN_BATCH_STATES = {"batch": 10, "batch20": 20, "batch50": 50, "batch100": 100}
+
 # A backend is a stack on a device. NumPy and Numba run on the CPU only.
 # `numba` is the Numba source compiled with parallel=False, so its prange
 # loops run in order; `numba-parallel` is the same source with parallel=True.
 BACKENDS = ["numpy", "numba", "numba-parallel", "jax-cpu", "jax-gpu"]
 
 # Each problem gives its label in benchmarks#5, the lecture its model comes
-# from, the precisions it runs in, its sweeps, roughly how many bytes a cell
+# from, the precisions it runs in, its sweeps (an `optional` one runs only
+# when --sweeps names it), roughly how many bytes a cell
 # needs on one device (`n` is the size and `s` the item size), and how its
 # answer is checked against NumPy's in float64 at the same size:
 #   close   the largest difference in the sampled answer, over the largest
@@ -57,8 +62,12 @@ PROBLEMS = {
         lecture=None,  # precision/kernels.py's kalman
         dtypes=["float64", "float32"],
         sweeps={"batch": dict(sizes=[1, 10, 100, 1_000, 10_000], quick=[10]),
-                "state": dict(sizes=[2, 5, 10, 20, 50, 100, 200], quick=[10])},
-        memory=lambda sweep, n, s: (20 * n * 10 * 10 if sweep == "batch" else 20 * n * n) * s,
+                "state": dict(sizes=[2, 5, 10, 20, 50, 100, 200], quick=[10]),
+                **{name: dict(sizes=[1, 10, 100, 300, 1_000, 3_000, 10_000], quick=[10],
+                              optional=True)
+                   for name in KALMAN_BATCH_STATES if name != "batch"}},
+        memory=lambda sweep, n, s: (20 * n * KALMAN_BATCH_STATES[sweep] ** 2
+                                    if sweep in KALMAN_BATCH_STATES else 20 * n * n) * s,
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-3}),
     ),
 }

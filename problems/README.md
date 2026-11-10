@@ -20,6 +20,7 @@ Phase 1 has four of #5's eight problem types. Each takes its model and parameter
 - **P3 interpolates once per (savings, next income) pair** an iteration, since next period's assets don't depend on today's income. Numba interpolates each income state's column in one `np.interp` call, as NumPy does: a scalar call per point searches the grid afresh each time, and ran 7× slower at 20,000 points.
 - **P4's aggregate path is drawn once, by NumPy, and shared,** so given it the households are independent. Each stack draws the households' shocks with its own generator, inside the timed solve.
 - **P7 sweeps the work in each step,** not the series' length, which only scales every stack's time in proportion. Every GPU measured in `precision/` pays about 90 to 160 µs a Kalman step, against about 1.4 µs on the M6, so the question is how much work a step needs before a GPU wins.
+- **P7 has three optional batch sweeps,** for [#58](https://github.com/QuantEcon/benchmarks/issues/58): `batch20`, `batch50` and `batch100` run 1 to 10,000 filters, with 300 and 3,000 between, at 20, 50 and 100 states. They run only when `--sweeps` names them, so a default run is Phase 1's. `spec.py`'s `KALMAN_BATCH_STATES` gives each batch sweep's states.
 
 ## Backends
 
