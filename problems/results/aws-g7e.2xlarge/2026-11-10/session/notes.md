@@ -6,6 +6,6 @@
 - Card: NVIDIA RTX PRO 6000 Blackwell Server Edition, driver 595.112.07, power limit 600 W; driver line "driver 595.112.07: jax[cuda13]", label kalman-grid
 - Check (--quick, SWEEPS=batch20,batch50,batch100): 20:48:28 to 20:49:55 UTC, 6 cells ok
 - Full (SWEEPS=batch,state,batch20,batch50,batch100, TIMEOUT=1800): 20:50:19 to 21:05:27 UTC, 66 cells ok
-- 2026-11-10.jsonl holds 72 rows: the check's 6 then the full run's 66
+- 2026-11-10.jsonl held 72 rows on the card: the check's 6 then the full run's 66. The committed `.jsonl` keeps the full run's 66 only, as the README says
 - summary.md: no lines under any kalman-grid table
 - Shell log: shell.log (tmux pipe-pane of session "run")
