@@ -1,6 +1,6 @@
 #!/bin/bash
-# m5_ynn4.sh: QuantEcon/project-benchmarks-jax#4 on qe-wharton2's M5 Pro (Matt, 2026-11-15: "Yes please"), before
-# the machine is repurposed. Part 1 of the M6's precision/runs/2026-11-09/qe-mini1/mac-float64/session/m6_window.sh,
+# m5_ynn4.sh: QuantEcon/project-benchmarks-jax#4 on qe-wharton2's M5 Pro (Matt, 2026-11-15: "Yes please").
+# Part 1 of the M6's precision/runs/2026-11-09/qe-mini1/mac-float64/session/m6_window.sh,
 # unchanged but for the host: the 2026-10-25 ynn_dot_check.py and #4's reproducer, each in float32, float64 and
 # float32 with YNNPACK's fusion cleared; then run_matrix.py's kalman and matmul at 1,000 and 10,000, with and
 # without it, from a worktree at 5fbf033, the M6's runs commit. #48's probe already ran here on 2026-11-06.

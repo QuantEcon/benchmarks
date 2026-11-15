@@ -1,6 +1,6 @@
 # Small float32 products on qe-wharton2's M5 Pro, on macOS 26.7.2, 2026-11-15
 
-For QuantEcon/project-benchmarks-jax#4: [the M6's checks of 2026-11-09](../../../2026-11-09/qe-mini1/checks/README.md), run on the M5 Pro from 19:57:31 to 19:59:04 UTC. The script is `session/m5_ynn4.sh`, part 1 of the M6's `m6_window.sh` unchanged but for the host and the paths. #48's probe, its part 2, already ran here on 2026-11-06 ([`../../../2026-11-06/qe-wharton2/`](../../../2026-11-06/qe-wharton2/), #49).
+For QuantEcon/project-benchmarks-jax#4: [the M6's checks of 2026-11-09](../../../2026-11-09/qe-mini1/checks/README.md), run on the M5 Pro from 19:57:31 to 19:59:04 UTC. The script is `session/m5_ynn4.sh`, part 1 of the M6's [`m6_window.sh`](../../../2026-11-09/qe-mini1/mac-float64/session/m6_window.sh) unchanged but for the host and the paths. Its copy here has one phrase cut from its header comment for publication, so it differs from the copy that ran, whose sha256 `run.log` gives (`a9f4881d…`); the commands are the same. #48's probe, its part 2, already ran here on 2026-11-06 ([`../../../2026-11-06/qe-wharton2/`](../../../2026-11-06/qe-wharton2/), #49).
 
 | File | What ran |
 |---|---|
