@@ -1,0 +1,12 @@
+== setup: worktree at 5fbf033 19:57:31
+run_matrix at 5fbf033: Problem types: Phase 1's harness, in NumPy, Numba and JAX (#24)
+7eacfd22a8b3aa5a7cb0d2fd5857b46a71138b6142ca0a9e964d57a7de6b4ca0  /Users/matt/bench/ynn4/repro4.py
+d94bc0fe610129a2137884236a5a1e472be6e26996896f4d56ea55b3cccf23bb  /Users/matt/bench/ynn4/ynn_dot_check.py
+a9f4881da39b321ea32d9b381e1a5a42a27279c27b4f97a6e149803561dae904  /Users/matt/bench/ynn4/m5_ynn4.sh
+python 3.12.15 jax 0.12.0.1 numpy 2.5.4 scipy 1.18.1
+== ynn_dot_check, default 19:57:35
+== ynn_dot_check, fusion cleared, float32 three times 19:57:45
+== #4's reproducer 19:57:53
+== run_matrix, kalman and matmul, default 19:57:54
+== run_matrix, kalman and matmul, ynn-cleared 19:58:33
+== done 19:59:04

@@ -1,0 +1,20 @@
+Writing to /Users/matt/bench/ynn4/out-2026-11-15/matrix-default/qe-wharton2/2026-11-15.jsonl
+kalman                1000 float32  cpu    warm      4.08 ms      245.4 ksteps/s  compile 0.50 s
+kalman                1000 float64  cpu    warm      1.69 ms      592.7 ksteps/s  compile 0.13 s
+kalman               10000 float32  cpu    warm     42.45 ms      235.6 ksteps/s  compile 0.12 s
+kalman               10000 float64  cpu    warm     18.18 ms      550.0 ksteps/s  compile 0.12 s
+matmul                1000 float32  cpu    warm      0.93 ms     2141.2 GFLOPS  compile 0.00 s
+matmul                1000 float64  cpu    warm      3.14 ms      636.9 GFLOPS  compile 0.00 s
+matmul               10000 float32  cpu    warm   1031.54 ms     1938.8 GFLOPS  compile 0.00 s
+matmul               10000 float64  cpu    warm   4083.50 ms      489.8 GFLOPS  compile 0.00 s
+== exit 0 (default)
+Writing to /Users/matt/bench/ynn4/out-2026-11-15/matrix-ynn-cleared/qe-wharton2/2026-11-15.jsonl
+kalman                1000 float32  cpu    warm      1.96 ms      509.7 ksteps/s  compile 0.12 s
+kalman                1000 float64  cpu    warm      1.65 ms      606.2 ksteps/s  compile 0.11 s
+kalman               10000 float32  cpu    warm     19.02 ms      525.8 ksteps/s  compile 0.12 s
+kalman               10000 float64  cpu    warm     18.32 ms      545.8 ksteps/s  compile 0.14 s
+matmul                1000 float32  cpu    warm      1.84 ms     1089.0 GFLOPS  compile 0.00 s
+matmul                1000 float64  cpu    warm      3.05 ms      656.0 GFLOPS  compile 0.00 s
+matmul               10000 float32  cpu    warm   1416.25 ms     1412.2 GFLOPS  compile 0.00 s
+matmul               10000 float64  cpu    warm   2868.79 ms      697.2 GFLOPS  compile 0.00 s
+== exit 0 (ynn-cleared)
