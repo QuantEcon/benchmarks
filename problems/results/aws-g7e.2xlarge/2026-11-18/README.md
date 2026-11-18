@@ -8,7 +8,7 @@ For QuantEcon/project-benchmarks-jax#64: the problem types and the precision mat
 | `../../../../results/aws-g7e.2xlarge/2026-11-18.jsonl` | The precision matrix at 300 W: 46 `pl300` rows and 12 `pl300-highest`, all ok |
 | `run.log`, `run-pl300-highest.log`, `environment.txt`, `machine.txt` | The problem types' log, the `highest` pass's, the packages, and `nvidia-smi` at the start, under the cap |
 | `summary.md` | `problems/summarise.py`'s tables for the `pl300` labels |
-| `card/` | The card's record (`card.csv`, `nvidia-smi-q.txt`, `host.txt`), the commit, the cap test (`pl-test.txt`), `nvidia-smi` once a second under the cap (`smi-pl300.csv`) and the limit read back afterwards (`power-after.txt`). The card's serial number and UUID are redacted in `nvidia-smi-q.txt` |
+| `card/` | The card's record (`card.csv`, `nvidia-smi-q.txt`, `host.txt`), the commit, the cap test (`pl-test.txt`), `nvidia-smi` once a second under the cap (`smi-pl300.csv`) and the limit read back afterwards (`power-after.txt`). The files are nvidia-smi's output as given |
 | `session/run.log` | The whole session's log, the checks at 600 W included |
 
 **The card:** an NVIDIA RTX PRO 6000 Blackwell Server Edition, 97,887 MiB, VBIOS 98.02.9E.00.03, on driver 595.112.07 with CUDA 13.2. Its limit can be set from 300 to 600 W, and is 600 W by default. JAX 0.12.0.1 with `jax[cuda13]`, Python 3.12.3.
