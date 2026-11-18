@@ -1,8 +1,8 @@
 # Two jobs on one TITAN RTX, qe-wharton1-gpu, 2026-11-18
 
-For QuantEcon/project-compute#148, by way of QuantEcon/project-benchmarks-jax: how JAX jobs fare when two share one card without MIG, as two users of one workstation card would. It ran on the TITAN RTX at `0b:00.0` (the suite's `--gpus 0`), from QuantEcon/benchmarks at `f085c6d` with `jax[cuda13]` 0.12.0.1, from 01:32 to 02:12 UTC. It ran under econ-on-ai-hardware's machine lock, with nothing else on the card. The same window then ran the card's sustained load, in [`precision/runs/2026-11-18/qe-wharton1-gpu/`](../../../../precision/runs/2026-11-18/qe-wharton1-gpu/README.md).
+For QuantEcon/project-compute#148, by way of QuantEcon/project-benchmarks-jax: how JAX jobs fare when two share one card without MIG, as two users of one workstation card would. It ran on the TITAN RTX at `0b:00.0` (the suite's `--gpus 0`), from QuantEcon/benchmarks at `f085c6d` with `jax[cuda13]` 0.12.0.1, from 01:32 to 02:12 UTC. It ran under econ-on-ai-hardware's machine lock, with nothing else computing on the card. Xorg, the display server, held 4 MiB on it, as `card-q.txt`'s process list in the sustained run shows. The same window then ran the card's sustained load, in [`precision/runs/2026-11-18/qe-wharton1-gpu/`](../../../../precision/runs/2026-11-18/qe-wharton1-gpu/README.md).
 
-Every JAX process in steps 1 to 4 had 45% of the card's memory (`XLA_PYTHON_CLIENT_MEM_FRACTION=0.45`, and `--memory-fraction 0.45` so that each job admits the same cells). The card at `43:00.0` drives the desktop and wasn't used. The script is `session/titan_shared65.sh`.
+Every JAX process in steps 1 to 4 had 45% of the card's memory (`XLA_PYTHON_CLIENT_MEM_FRACTION=0.45`, and `--memory-fraction 0.45` so that each job admits the same cells). The card at `43:00.0` drives the desktop and wasn't used. The script is `session/titan_shared65.sh`. The plan its header mentions isn't published.
 
 | Step | Label in `../2026-11-18.jsonl` | What ran |
 |---|---|---|
@@ -16,9 +16,9 @@ All 209 rows are ok. `gpu.csv` samples both cards every 5 s, `state.txt` records
 
 ## What they show
 
-- **A second process with JAX's defaults starts, but quietly gets less.** With the first holding 18,190 MiB, the second's 17.60 GiB preallocation failed with `CUDA_ERROR_OUT_OF_MEMORY`. XLA retried at 0.9 of the size each time, logging each failure, until a pool fit. It then ran a 4 GiB array, while still reporting the full `bytes_limit` (`trap/b-default.txt`). With `XLA_PYTHON_CLIENT_PREALLOCATE=false` it started cleanly (`trap/b-nopreallocate.txt`). So two users of one card should each set that, or a memory fraction.
-- **Most small cells don't notice the other job.** Of the 28 cells taking under 0.2 s warm alone, the median took 1.02× as long with the other job running. The exception is `vfi`: at grids of 100 to 400 it took 2.4–3.1× as long, the most of any cell. It runs hundreds of short iterations, and each probably waits its turn on the card.
-- **Large cells about double.** The 9 cells taking over 1 s took 1.95–2.34× as long, a median of 2.27×. For example:
+- **A second process with JAX's defaults starts, but quietly gets less.** With the first holding 18,190 MiB, the second's 17.60 GiB preallocation failed with `CUDA_ERROR_OUT_OF_MEMORY`. XLA retried at 0.9 of the size each time, logging each failure, until a pool fit. It then ran a 4 GiB array (`trap/b-default.txt`). With `XLA_PYTHON_CLIENT_PREALLOCATE=false` it started cleanly (`trap/b-nopreallocate.txt`). So two users of one card should each set that, or a memory fraction.
+- **When the two jobs run the same cells together, most small cells don't notice.** Jobs A and B ran the same cells in step: each cell started within 1.86 s of its twin, with a median gap of 0.65 s. Of the 28 cells taking under 0.2 s warm alone, the median took 1.02× as long. Beside a job that keeps the card busy, small cells do slow, as step 4 shows: `wealth` at 10,000,000 in float32 took 2.29× as long, and `kalman`'s state sweep at 200 in float32 1.57×. The exception is `vfi`: at grids of 100 to 400 it took 2.4–3.1× as long, the most of any cell. It runs hundreds of short iterations, and each probably waits its turn on the card.
+- **Large cells about double.** The 9 cells taking over 1 s took 1.95–2.34× as long, with a median of 2.26× over both jobs. For example:
 
   | Cell | Alone, warm s | Shared: job A, job B | Beside the `matmul` |
   |---|---:|---:|---:|
