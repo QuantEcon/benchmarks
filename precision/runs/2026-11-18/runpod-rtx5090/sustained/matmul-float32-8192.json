@@ -1,0 +1,80 @@
+{
+  "workload": "matmul",
+  "dtype": "float32",
+  "size": 8192,
+  "minutes": 60.0,
+  "bound": "compute",
+  "unit": "GFLOPS",
+  "matmul_precision": "default",
+  "jax": "0.12.0.1",
+  "platform": "gpu",
+  "device_kind": "NVIDIA GeForce RTX 5090",
+  "setup_s": 0.2363843750063097,
+  "compile_s": 3.8888213189929957,
+  "first_run_s": 0.00909026300359983,
+  "start_utc": "2026-11-18T02:37:11Z",
+  "start_epoch": 1794969431.6119988,
+  "end_utc": "2026-11-18T03:37:11Z",
+  "end_epoch": 1794973031.6164205,
+  "steps": 382005,
+  "memory_stats": {
+    "num_allocs": 764235,
+    "bytes_in_use": 536870912,
+    "peak_bytes_in_use": 1711276288,
+    "largest_alloc_size": 285212672,
+    "bytes_limit": 31987859456,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 1073741824,
+    "pool_bytes": 2149580800,
+    "peak_pool_bytes": 2149580800
+  },
+  "env": {
+    "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "cpu_count": 32,
+    "cpu_model": "AMD Ryzen 9 9950X 16-Core Processor",
+    "cpu_mhz": "5258.512",
+    "cpu_physical": 16,
+    "cpu_core_types": null,
+    "cpu_usable": 32,
+    "smt_active": "1",
+    "memory_bytes": 132536160256,
+    "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5090",
+        "pci_bus_id": "00000000:02:00.0",
+        "memory_total_mib": 32607,
+        "driver_version": "595.112.07"
+      }
+    ],
+    "gpu_platform": "cuda",
+    "cuda_version": "13.2",
+    "rocm_version": null,
+    "packages": {
+      "jax": "0.12.0.1",
+      "jaxlib": "0.12.0.1",
+      "jax-cuda13-plugin": "0.12.0.1",
+      "jax-cuda13-pjrt": "0.12.0.1",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "numba": "0.68.0",
+      "llvmlite": "0.50.0"
+    },
+    "flags": {
+      "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+      "CUDA_VISIBLE_DEVICES": "0",
+      "JAX_ENABLE_X64": "0",
+      "JAX_PLATFORMS": "cuda",
+      "XLA_PYTHON_CLIENT_MEM_FRACTION": "0.95",
+      "XLA_PYTHON_CLIENT_PREALLOCATE": "false"
+    },
+    "git_commit": "f085c6d",
+    "git_dirty": false,
+    "numactl": null
+  }
+}
