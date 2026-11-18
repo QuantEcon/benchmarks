@@ -9,7 +9,7 @@ For QuantEcon/project-benchmarks-jax#60, items 3 and 6, on the GeForce RTX 5090 
 
 ## The sustained load
 
-The card held its clocks for both hours, with a datacentre's cooling. That's what this shows, not how the card would do in an office case.
+The card held its clocks for both hours, with a datacentre's cooling. It shows whether the card holds its clocks in that host, not in another case.
 
 | An hour each | Last 30 min ÷ first 5, step time | SM clock | Power | Temperature | Clock-event reasons |
 |---|---:|---|---|---|---|
@@ -32,7 +32,7 @@ cuBLAS's float64 emulation runs on this GeForce card, as it did on the RTX PRO 6
 | | 16,384 | 1.81, 2.77 | **29.26**, 0.06 |
 | Lognormal, σ = 5 | 2,048 to 16,384 | 1.56–1.81, 65–438 | 1.56–1.80, 57–412 |
 
-At n = 16,384 the emulation is about 17 times native, with a smaller error. With lognormal inputs at σ = 5, the plain `lognormal` kind, it falls back to native speed and native error, as on the Server Edition. The emulation picks its mantissa bits from the inputs' range of exponents, and σ = 5 spreads them too far. Across σ at n = 8,192 it stays emulated up to σ = 4:
+At n = 16,384 the emulation is 16–17 times native, with a smaller error. With lognormal inputs at σ = 5, the plain `lognormal` kind, it falls back to native speed and native error, as on the Server Edition. The emulation needs the inputs' exponents to stay within a range, and σ = 5 spreads them too far. Across σ at n = 8,192 it stays emulated up to σ = 4:
 
 | σ | 0.5 | 1 | 2 | 3 | 4 |
 |---|---:|---:|---:|---:|---:|
