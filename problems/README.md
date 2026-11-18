@@ -66,6 +66,8 @@ On 2026-11-18 `jax-gpu` ran again on the RTX PRO 6000 Blackwell Server Edition i
 
 On 2026-11-18 `jax-gpu` also ran on one MIG 1g.24gb slice of an RTX PRO 6000 Blackwell Server Edition, rented on RunPod, for QuantEcon/project-benchmarks-jax#63 ([notes](results/runpod-rtxpro6000-mig1g24/2026-11-18/README.md)), and isn't in the tables below yet. The slice has 46 of the card's 188 SMs and a quarter of its memory. At the largest size of 8 of the 9 sweeps it took 2.2–4.3× as long as the whole card, and the latency-bound cells took about as long. P3's float32 answers showed TF32 as on the whole card, 11–12% off at XLA's default precision and right under `highest`.
 
+On 2026-11-18 two `jax-gpu` jobs shared `qe-wharton1-gpu`'s TITAN RTX at `0b:00.0`, each with 45% of its memory, against one job alone before and after, for QuantEcon/project-compute#148 ([notes](results/qe-wharton1-gpu/2026-11-18/README.md)). The rows are labelled `shared-solo`, `shared-a`, `shared-b`, `shared-solo2` and `neighbour-busy`, and aren't in the tables below. The large cells took about twice as long shared, most small cells didn't notice, and the two jobs together did 1.21× the work of one.
+
 The tables give each device's fastest stack at each size in float64, in seconds. Warm is the median of the warm runs. Cold is what a fresh process pays from its inputs to its first answer, compile included. The fastest device in each row is in bold, for warm and for cold separately. The TITAN RTX's columns are `jax-gpu`, the only stack on it. Every number here is in a table that `python problems/summarise.py problems/results/` prints, with every backend at every size and in both precisions.
 
 **P1 `vfi`, by grid size:**

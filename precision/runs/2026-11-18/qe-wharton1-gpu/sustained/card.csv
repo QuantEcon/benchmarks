@@ -1,0 +1,2 @@
+name, pci.bus_id, pci.sub_device_id, vbios_version, driver_version, memory.total [MiB], power.limit [W], power.default_limit [W], power.min_limit [W], power.max_limit [W], clocks.max.sm [MHz], clocks.max.memory [MHz], pcie.link.gen.max, pcie.link.width.max
+NVIDIA TITAN RTX, 00000000:0B:00.0, 0x12A310DE, 90.02.23.00.01, 595.99.02, 24576 MiB, 280.00 W, 280.00 W, 100.00 W, 320.00 W, 2100 MHz, 7001 MHz, 3, 16

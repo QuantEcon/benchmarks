@@ -1,0 +1,14 @@
+Writing to /home/mamckay/bench/shared65/run-20261118T013232Z/busy/qe-wharton1-gpu/2026-11-18.jsonl
+P1 vfi     grid            1500 float64  jax-gpu         warm     9.420 s  cold    10.402 s     572 iterations
+Writing to /home/mamckay/bench/shared65/run-20261118T013232Z/busy/qe-wharton1-gpu/2026-11-18.jsonl
+P3 egm     grid           50000 float64  jax-gpu         warm    18.486 s  cold    19.628 s    2190 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm    15.898 s  cold    16.950 s    2214 iterations
+Writing to /home/mamckay/bench/shared65/run-20261118T013232Z/busy/qe-wharton1-gpu/2026-11-18.jsonl
+P4 wealth  households  10000000 float64  jax-gpu         warm     5.898 s  cold     7.888 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.128 s  cold     1.698 s     200 iterations
+Writing to /home/mamckay/bench/shared65/run-20261118T013232Z/busy/qe-wharton1-gpu/2026-11-18.jsonl
+P7 kalman  batch          10000 float64  jax-gpu         warm     7.733 s  cold     9.062 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     1.319 s  cold     2.586 s    1000 iterations
+Writing to /home/mamckay/bench/shared65/run-20261118T013232Z/busy/qe-wharton1-gpu/2026-11-18.jsonl
+P7 kalman  state            200 float64  jax-gpu         warm     1.193 s  cold     2.457 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.192 s  cold     1.634 s    1000 iterations

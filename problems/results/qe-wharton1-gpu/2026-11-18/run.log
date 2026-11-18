@@ -1,0 +1,21 @@
+== 0 trap start 2026-11-18T01:32:33Z
+== 0 trap done 2026-11-18T01:33:36Z
+== 1 solo start 2026-11-18T01:34:06Z
+== 1 solo done, exit 0 2026-11-18T01:39:46Z
+== 2 shared start 2026-11-18T01:40:16Z
+shared-a exit 0 2026-11-18T01:49:43Z
+shared-b exit 0 2026-11-18T01:49:43Z
+== 2 shared done 2026-11-18T01:49:43Z
+== 3 solo2 start 2026-11-18T01:50:13Z
+== 3 solo2 done, exit 0 2026-11-18T01:56:01Z
+== 4 busy start 2026-11-18T01:56:31Z
+busy vfi:grid:1500 exit 0 2026-11-18T01:59:30Z
+busy egm:grid:50000 exit 0 2026-11-18T02:02:27Z
+busy wealth:households:10000000 exit 0 2026-11-18T02:03:10Z
+busy kalman:batch:10000 exit 0 2026-11-18T02:04:10Z
+busy kalman:state:200 exit 0 2026-11-18T02:04:23Z
+== 4 busy cells done; the neighbour runs on alone 2026-11-18T02:04:23Z
+== 4 busy done, neighbour exit 0 2026-11-18T02:11:34Z
+== 5 sustained start 2026-11-18T02:11:34Z
+== 5 sustained done, exit 0 2026-11-18T04:32:47Z
+== done 2026-11-18T04:32:47Z

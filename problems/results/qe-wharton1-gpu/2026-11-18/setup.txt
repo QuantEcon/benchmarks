@@ -1,0 +1,26 @@
+benchmarks at f085c6d: Precision: a sustained-load script, timing every step for an hour while nvidia-smi logs the card (#65)
+0, 00000000:0B:00.0, NVIDIA TITAN RTX, 595.99.02, 24576 MiB, 280.00 W
+1, 00000000:43:00.0, NVIDIA TITAN RTX, 595.99.02, 24576 MiB, 280.00 W
+7.0.0-43-generic
+libc6:amd64	2.39-0ubuntu8.12
+jax 0.12.0.1 | jaxlib 0.12.0.1 | numpy 2.5.4
+jax 0.12.0.1
+jax-cuda13-pjrt 0.12.0.1
+jax-cuda13-plugin 0.12.0.1
+jaxlib 0.12.0.1
+nvidia-cublas 13.8.1.7
+nvidia-cuda-cccl 13.3.4.3.1
+nvidia-cuda-crt 13.4.92
+nvidia-cuda-cupti 13.4.92
+nvidia-cuda-nvcc 13.4.92
+nvidia-cuda-nvrtc 13.4.92
+nvidia-cuda-runtime 13.4.92
+nvidia-cudnn-cu13 9.27.0.42
+nvidia-cufft 12.4.0.43
+nvidia-cusolver 12.3.5.3
+nvidia-cusparse 12.8.6.72
+nvidia-nccl-cu13 2.32.3
+nvidia-nvjitlink 13.4.92
+nvidia-nvshmem-cu13 3.8.0
+nvidia-nvvm 13.4.92
+20dad0d98d01a6e873fa92fefd45e87fb40434486d0bfc9e632e1a4b71ff4724  /home/mamckay/bench/titan_shared65.sh
