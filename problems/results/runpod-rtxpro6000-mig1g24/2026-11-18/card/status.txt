@@ -1,0 +1,13 @@
+2026-11-18T01:17:44Z M start
+2026-11-18T01:18:24Z M problems-quick exit 1
+2026-11-18T01:18:38Z M precision-quick exit 1
+2026-11-18T01:18:38Z M stop: problems quick has none cells not ok
+2026-11-18T01:22:59Z M restart from 8d777d6 (QuantEcon/benchmarks#66)
+2026-11-18T01:22:59Z M start
+2026-11-18T01:23:45Z M problems-quick exit 0
+2026-11-18T01:26:16Z M precision-quick exit 0
+2026-11-18T01:26:16Z M quick done
+2026-11-18T01:34:47Z M problems-full exit 0
+2026-11-18T01:37:58Z M highest exit 0
+2026-11-18T02:17:42Z M precision-full exit 0
+2026-11-18T02:17:42Z M done

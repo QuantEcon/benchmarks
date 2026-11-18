@@ -1,0 +1,2 @@
+GPU 0: NVIDIA RTX PRO 6000 Blackwell Server Edition (UUID: GPU-e2ed6dc0-9964-bd1d-4c34-18c3f665b5e2)
+  MIG 1g.24gb     Device  0: (UUID: MIG-473ebec1-0589-583d-af51-ea48c85789b3)
