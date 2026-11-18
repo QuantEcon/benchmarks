@@ -1,0 +1,80 @@
+{
+  "workload": "bellman_stored",
+  "dtype": "float64",
+  "size": 40000,
+  "minutes": 60.0,
+  "bound": "memory",
+  "unit": "GB/s",
+  "matmul_precision": "default",
+  "jax": "0.12.0.1",
+  "platform": "gpu",
+  "device_kind": "NVIDIA GeForce RTX 5090",
+  "setup_s": 0.27750207700592,
+  "compile_s": 0.4893259950040374,
+  "first_run_s": 0.01238155399914831,
+  "start_utc": "2026-11-18T01:27:06Z",
+  "start_epoch": 1794965226.7050493,
+  "end_utc": "2026-11-18T02:27:06Z",
+  "end_epoch": 1794968826.7116337,
+  "steps": 296887,
+  "memory_stats": {
+    "num_allocs": 593797,
+    "bytes_in_use": 12800320000,
+    "peak_bytes_in_use": 25778971648,
+    "largest_alloc_size": 12816777216,
+    "bytes_limit": 31987859456,
+    "bytes_reserved": 0,
+    "peak_bytes_reserved": 0,
+    "largest_free_block_bytes": 14805893120,
+    "pool_bytes": 31987859456,
+    "peak_pool_bytes": 31987859456
+  },
+  "env": {
+    "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "cpu_count": 32,
+    "cpu_model": "AMD Ryzen 9 9950X 16-Core Processor",
+    "cpu_mhz": "5590.629",
+    "cpu_physical": 16,
+    "cpu_core_types": null,
+    "cpu_usable": 32,
+    "smt_active": "1",
+    "memory_bytes": 132536160256,
+    "gpu": "NVIDIA GeForce RTX 5090, 32607 MiB",
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5090",
+        "pci_bus_id": "00000000:02:00.0",
+        "memory_total_mib": 32607,
+        "driver_version": "595.112.07"
+      }
+    ],
+    "gpu_platform": "cuda",
+    "cuda_version": "13.2",
+    "rocm_version": null,
+    "packages": {
+      "jax": "0.12.0.1",
+      "jaxlib": "0.12.0.1",
+      "jax-cuda13-plugin": "0.12.0.1",
+      "jax-cuda13-pjrt": "0.12.0.1",
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "numba": "0.68.0",
+      "llvmlite": "0.50.0"
+    },
+    "flags": {
+      "CUDA_DEVICE_ORDER": "PCI_BUS_ID",
+      "CUDA_VISIBLE_DEVICES": "0",
+      "JAX_ENABLE_X64": "1",
+      "JAX_PLATFORMS": "cuda",
+      "XLA_PYTHON_CLIENT_MEM_FRACTION": "0.95",
+      "XLA_PYTHON_CLIENT_PREALLOCATE": "false"
+    },
+    "git_commit": "f085c6d",
+    "git_dirty": false,
+    "numactl": null
+  }
+}

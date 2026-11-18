@@ -1,0 +1,15 @@
+2026-11-18T01:00:15Z A start
+2026-11-18T01:00:49Z A problems-quick exit 0
+2026-11-18T01:01:47Z A precision-quick exit 0
+2026-11-18T01:01:47Z A done
+2026-11-18T01:03:04Z B start
+2026-11-18T01:05:27Z B problems-full exit 0
+2026-11-18T01:06:22Z B highest exit 0
+2026-11-18T01:06:22Z B problems-tgz exit 0
+2026-11-18T01:17:04Z B precision-full exit 0
+2026-11-18T03:37:11Z B sustained exit 0
+2026-11-18T03:43:07Z B dot64-native exit 0
+2026-11-18T03:47:09Z B dot64-emulate exit 0
+2026-11-18T03:47:36Z B dot64-native-sigma exit 0
+2026-11-18T03:47:46Z B dot64-emulate-sigma exit 0
+2026-11-18T03:47:46Z B done
