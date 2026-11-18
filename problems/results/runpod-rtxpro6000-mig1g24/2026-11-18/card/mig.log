@@ -1,0 +1,246 @@
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CudaDevice(id=0)]
+== The suite on the card
+Writing to /root/benchmarks/problems/results/runpod-rtxpro6000-mig1g24/2026-11-18.jsonl
+P1 vfi     grid             100 float64  jax-gpu         warm     0.055 s  cold    10.889 s     572 iterations
+P3 egm     grid             200 float64  jax-gpu         warm     0.289 s  cold     2.426 s    2192 iterations
+P3 egm     grid             200 float32  jax-gpu         warm     0.078 s  cold     1.879 s     809 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.006 s  cold     1.034 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.784 s     200 iterations
+P7 kalman  batch             10 float64  jax-gpu         warm     0.059 s  cold     2.224 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.058 s  cold     1.855 s    1000 iterations
+P7 kalman  state             10 float64  jax-gpu         warm     0.074 s  cold     1.534 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.056 s  cold     1.147 s    1000 iterations
+== Done: runpod-rtxpro6000-mig1g24-2026-11-18-problems.tgz. Copy it off the machine, then terminate the machine.
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12 and JAX
+JAX 0.12.0.1: [CudaDevice(id=0)]
+NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit, GiB: 17.72
+NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit, GiB: 22.45
+== The precision matrix
+Writing to /root/benchmarks/results/runpod-rtxpro6000-mig1g24/2026-11-18.jsonl
+matmul                 256 float32  gpu    warm      0.11 ms      312.6 GFLOPS  compile 2.41 s
+matmul                 256 float64  gpu    warm      0.20 ms      166.8 GFLOPS  compile 4.42 s
+matmul                1024 float32  gpu    warm      0.16 ms    13401.0 GFLOPS  compile 7.28 s
+matmul                1024 float64  gpu    warm      5.25 ms      408.9 GFLOPS  compile 10.97 s
+bellman_stored        1000 float32  gpu    warm      0.13 ms       30.2 GB/s  compile 0.17 s
+bellman_stored        1000 float64  gpu    warm      0.15 ms       54.6 GB/s  compile 0.25 s
+bellman_stored        5000 float32  gpu    warm      0.41 ms      241.7 GB/s  compile 0.16 s
+bellman_stored        5000 float64  gpu    warm      0.85 ms      236.6 GB/s  compile 0.22 s
+bellman_recompute     1000 float32  gpu    warm      0.16 ms        6.2 Gcells/s  compile 0.36 s
+bellman_recompute     1000 float64  gpu    warm      0.36 ms        2.8 Gcells/s  compile 0.51 s
+bellman_recompute     5000 float32  gpu    warm      0.25 ms      100.5 Gcells/s  compile 1.22 s
+bellman_recompute     5000 float64  gpu    warm      5.57 ms        4.5 Gcells/s  compile 1.99 s
+kalman                1000 float32  gpu    warm     54.32 ms       18.4 ksteps/s  compile 0.53 s
+kalman                1000 float64  gpu    warm     72.02 ms       13.9 ksteps/s  compile 0.52 s
+Writing to /root/benchmarks/results/runpod-rtxpro6000-mig1g24/2026-11-18.jsonl
+matmul                 256 float32  gpu    warm      0.10 ms      337.6 GFLOPS  compile 3.43 s
+matmul                 256 float64  gpu    warm      0.22 ms      151.6 GFLOPS  compile 4.53 s
+matmul                1024 float32  gpu    warm      0.24 ms     9009.2 GFLOPS  compile 14.60 s
+matmul                1024 float64  gpu    warm      5.33 ms      402.9 GFLOPS  compile 13.49 s
+== The lectures' packages, as the TITAN RTX run had them
+Using Python 3.12.3 environment at: .venv-phase2
+== Five lectures as written, on the card
+schelling_shocks rep 1: 10.3 s, cells ok True, float32
+== The scale scripts, on the card
+float64 gpu a_size=200: hpi warm 0.036 s (13 it), greedy 0.31 ms, stored 0.19 ms, value 1.66 ms
+float64 gpu a_size=1000: hpi warm 0.051 s (15 it), greedy 0.56 ms, stored 0.29 ms, value 2.29 ms
+float64 gpu s_size=200: K warm 0.385 ms, cold 0.44 s, finite True
+float64 gpu s_size=1000: K warm 0.602 ms, cold 0.38 s, finite True
+float32 gpu a_size=200: hpi warm 0.035 s (13 it), greedy 0.21 ms, stored 0.12 ms, value 1.78 ms
+float32 gpu a_size=1000: hpi warm 0.058 s (22 it), greedy 0.17 ms, stored 0.18 ms, value 1.62 ms
+float32 gpu s_size=200: K warm 0.359 ms, cold 0.30 s, finite True
+float32 gpu s_size=1000: K warm 0.382 ms, cold 0.22 s, finite True
+== Done: runpod-rtxpro6000-mig1g24-2026-11-18.tgz. Copy it off the machine, then terminate the machine.
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CudaDevice(id=0)]
+== The suite on the card
+Writing to /root/benchmarks/problems/results/runpod-rtxpro6000-mig1g24/2026-11-18.jsonl
+P1 vfi     grid             100 float64  jax-gpu         warm     0.055 s  cold    10.624 s     572 iterations
+P1 vfi     grid             200 float64  jax-gpu         warm     0.105 s  cold    10.107 s     572 iterations
+P1 vfi     grid             400 float64  jax-gpu         warm     0.295 s  cold    10.569 s     572 iterations
+P1 vfi     grid             700 float64  jax-gpu         warm     1.038 s  cold    11.310 s     572 iterations
+P1 vfi     grid            1000 float64  jax-gpu         warm     1.891 s  cold    13.468 s     572 iterations
+P1 vfi     grid            1500 float64  jax-gpu         warm     4.180 s  cold    13.646 s     572 iterations
+P3 egm     grid             200 float64  jax-gpu         warm     0.282 s  cold     2.052 s    2192 iterations
+P3 egm     grid            1000 float64  jax-gpu         warm     0.380 s  cold     2.627 s    2190 iterations
+P3 egm     grid            5000 float64  jax-gpu         warm     0.733 s  cold     2.721 s    2190 iterations
+P3 egm     grid           20000 float64  jax-gpu         warm     2.316 s  cold     4.264 s    2190 iterations
+P3 egm     grid           50000 float64  jax-gpu         warm     5.827 s  cold     7.965 s    2190 iterations
+P3 egm     grid             200 float32  jax-gpu         warm     0.078 s  cold     1.896 s     809 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.117 s  cold     2.076 s    1005 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.189 s  cold     2.019 s    1086 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.402 s  cold     2.133 s    1117 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     1.137 s  cold     2.871 s    1381 iterations
+P4 wealth  households      1000 float64  jax-gpu         warm     0.003 s  cold     1.012 s     200 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.006 s  cold     1.044 s     200 iterations
+P4 wealth  households    100000 float64  jax-gpu         warm     0.038 s  cold     1.337 s     200 iterations
+P4 wealth  households   1000000 float64  jax-gpu         warm     0.309 s  cold     1.648 s     200 iterations
+P4 wealth  households  10000000 float64  jax-gpu         warm     3.195 s  cold     4.584 s     200 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.001 s  cold     0.947 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.917 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.002 s  cold     2.867 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.007 s  cold     1.041 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.058 s  cold     1.132 s     200 iterations
+P7 kalman  batch              1 float64  jax-gpu         warm     0.070 s  cold     1.490 s    1000 iterations
+P7 kalman  batch             10 float64  jax-gpu         warm     0.070 s  cold     2.587 s    1000 iterations
+P7 kalman  batch            100 float64  jax-gpu         warm     0.070 s  cold     2.680 s    1000 iterations
+P7 kalman  batch           1000 float64  jax-gpu         warm     0.279 s  cold     3.802 s    1000 iterations
+P7 kalman  batch          10000 float64  jax-gpu         warm     2.273 s  cold     5.552 s    1000 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.062 s  cold     1.161 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.066 s  cold     2.158 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.064 s  cold     2.668 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.064 s  cold     3.372 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.223 s  cold     3.681 s    1000 iterations
+P7 kalman  state              2 float64  jax-gpu         warm     0.074 s  cold     1.226 s    1000 iterations
+P7 kalman  state              5 float64  jax-gpu         warm     0.067 s  cold     1.288 s    1000 iterations
+P7 kalman  state             10 float64  jax-gpu         warm     0.074 s  cold     1.553 s    1000 iterations
+P7 kalman  state             20 float64  jax-gpu         warm     0.062 s  cold     8.894 s    1000 iterations
+P7 kalman  state             50 float64  jax-gpu         warm     0.072 s  cold    28.246 s    1000 iterations
+P7 kalman  state            100 float64  jax-gpu         warm     0.089 s  cold    38.101 s    1000 iterations
+P7 kalman  state            200 float64  jax-gpu         warm     0.243 s  cold    26.051 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.057 s  cold     0.862 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.064 s  cold     0.884 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.063 s  cold     1.319 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.081 s  cold     7.302 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.072 s  cold    19.921 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.074 s  cold    22.513 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.070 s  cold    16.346 s    1000 iterations
+== Done: runpod-rtxpro6000-mig1g24-2026-11-18-problems.tgz. Copy it off the machine, then terminate the machine.
+Writing to /root/benchmarks/problems/results/runpod-rtxpro6000-mig1g24/2026-11-18.jsonl
+P3 egm     grid             200 float32  jax-gpu         warm     0.237 s  cold     2.277 s    2211 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.283 s  cold     2.280 s    2213 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.431 s  cold     2.507 s    2209 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.792 s  cold     2.613 s    2208 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     1.872 s  cold     3.701 s    2214 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.001 s  cold     0.809 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.836 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.002 s  cold     1.015 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.007 s  cold     1.043 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.058 s  cold     1.017 s     200 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.054 s  cold     1.164 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.057 s  cold     2.349 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.071 s  cold     2.581 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.074 s  cold     3.802 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.361 s  cold     4.189 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.064 s  cold     0.893 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.057 s  cold     0.911 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.063 s  cold     1.211 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.071 s  cold    10.926 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.066 s  cold    27.586 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.064 s  cold    45.073 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.080 s  cold    24.217 s    1000 iterations
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12 and JAX
+JAX 0.12.0.1: [CudaDevice(id=0)]
+NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit, GiB: 17.72
+NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit, GiB: 22.45
+== The precision matrix
+Writing to /root/benchmarks/results/runpod-rtxpro6000-mig1g24/2026-11-18.jsonl
+matmul                 256 float32  gpu    warm      0.13 ms      264.4 GFLOPS  compile 2.68 s
+matmul                 256 float64  gpu    warm      0.21 ms      160.7 GFLOPS  compile 4.93 s
+matmul                 512 float32  gpu    warm      0.13 ms     2011.5 GFLOPS  compile 8.05 s
+matmul                 512 float64  gpu    warm      0.84 ms      317.9 GFLOPS  compile 12.46 s
+matmul                1024 float32  gpu    warm      0.18 ms    11773.0 GFLOPS  compile 9.17 s
+matmul                1024 float64  gpu    warm      5.34 ms      402.0 GFLOPS  compile 12.79 s
+matmul                2048 float32  gpu    warm      0.60 ms    28732.3 GFLOPS  compile 9.08 s
+matmul                2048 float64  gpu    warm     40.92 ms      419.8 GFLOPS  compile 11.12 s
+matmul                4096 float32  gpu    warm      3.51 ms    39117.6 GFLOPS  compile 7.35 s
+matmul                4096 float64  gpu    warm    323.41 ms      425.0 GFLOPS  compile 39.17 s
+matmul                8192 float32  gpu    warm     21.37 ms    51451.6 GFLOPS  compile 21.63 s
+matmul                8192 float64  gpu    warm   2573.80 ms      427.2 GFLOPS  compile 259.25 s
+bellman_stored        1000 float32  gpu    warm      0.19 ms       21.3 GB/s  compile 0.20 s
+bellman_stored        1000 float64  gpu    warm      0.19 ms       41.6 GB/s  compile 0.34 s
+bellman_stored        2000 float32  gpu    warm      0.18 ms       88.0 GB/s  compile 1.78 s
+bellman_stored        2000 float64  gpu    warm      0.31 ms      102.2 GB/s  compile 0.32 s
+bellman_stored        5000 float32  gpu    warm      0.42 ms      239.7 GB/s  compile 0.17 s
+bellman_stored        5000 float64  gpu    warm      0.98 ms      204.0 GB/s  compile 0.24 s
+bellman_stored       10000 float32  gpu    warm      1.24 ms      322.9 GB/s  compile 0.17 s
+bellman_stored       10000 float64  gpu    warm      3.50 ms      228.4 GB/s  compile 0.29 s
+bellman_stored       20000 float32  gpu    warm      4.60 ms      348.0 GB/s  compile 0.24 s
+bellman_stored       20000 float64  gpu    warm     14.70 ms      217.6 GB/s  compile 0.74 s
+bellman_stored       40000 float32  gpu    warm     17.43 ms      367.1 GB/s  compile 0.55 s
+bellman_stored       40000 float64  gpu    error (JaxRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 11.94GiB with allocator GPU_0_bfc on devic
+bellman_stored       60000 float32  gpu    error (JaxRuntimeError: RESOURCE_EXHAUSTED: Out of memory while trying to allocate 13.43GiB with allocator GPU_0_bfc on devic
+bellman_stored       60000 float64  gpu    skipped (needs ~26.8 GiB per device, limit 18.9 GiB)
+bellman_recompute     1000 float32  gpu    warm      0.11 ms        9.1 Gcells/s  compile 0.35 s
+bellman_recompute     1000 float64  gpu    warm      0.39 ms        2.6 Gcells/s  compile 0.52 s
+bellman_recompute     2000 float32  gpu    warm      0.37 ms       10.8 Gcells/s  compile 0.49 s
+bellman_recompute     2000 float64  gpu    warm      1.13 ms        3.5 Gcells/s  compile 0.84 s
+bellman_recompute     5000 float32  gpu    warm      0.38 ms       65.9 Gcells/s  compile 1.28 s
+bellman_recompute     5000 float64  gpu    warm      5.68 ms        4.4 Gcells/s  compile 2.04 s
+bellman_recompute    10000 float32  gpu    warm      1.08 ms       92.5 Gcells/s  compile 86.21 s
+bellman_recompute    10000 float64  gpu    warm     27.04 ms        3.7 Gcells/s  compile 325.52 s
+bellman_recompute    20000 float32  gpu    warm      1.99 ms      201.2 Gcells/s  compile 11.73 s
+bellman_recompute    20000 float64  gpu    warm     82.72 ms        4.8 Gcells/s  compile 81.85 s
+bellman_recompute    40000 float32  gpu    warm      7.26 ms      220.4 Gcells/s  compile 11.77 s
+bellman_recompute    40000 float64  gpu    warm    360.71 ms        4.4 Gcells/s  compile 82.12 s
+bellman_recompute    60000 float32  gpu    warm     14.55 ms      247.4 Gcells/s  compile 11.89 s
+bellman_recompute    60000 float64  gpu    warm    734.91 ms        4.9 Gcells/s  compile 81.40 s
+kalman                1000 float32  gpu    warm     66.46 ms       15.0 ksteps/s  compile 0.50 s
+kalman                1000 float64  gpu    warm     72.07 ms       13.9 ksteps/s  compile 0.74 s
+kalman               10000 float32  gpu    warm    528.82 ms       18.9 ksteps/s  compile 0.60 s
+kalman               10000 float64  gpu    warm    716.93 ms       13.9 ksteps/s  compile 0.77 s
+kalman              100000 float32  gpu    warm   5233.60 ms       19.1 ksteps/s  compile 0.76 s
+kalman              100000 float64  gpu    warm   7166.96 ms       14.0 ksteps/s  compile 1.01 s
+Writing to /root/benchmarks/results/runpod-rtxpro6000-mig1g24/2026-11-18.jsonl
+matmul                 256 float32  gpu    warm      0.13 ms      251.7 GFLOPS  compile 4.31 s
+matmul                 256 float64  gpu    warm      0.19 ms      178.6 GFLOPS  compile 4.62 s
+matmul                 512 float32  gpu    warm      0.12 ms     2199.6 GFLOPS  compile 14.04 s
+matmul                 512 float64  gpu    warm      0.81 ms      332.5 GFLOPS  compile 12.77 s
+matmul                1024 float32  gpu    warm      0.24 ms     8776.2 GFLOPS  compile 13.85 s
+matmul                1024 float64  gpu    warm      5.33 ms      403.2 GFLOPS  compile 12.09 s
+matmul                2048 float32  gpu    warm      1.16 ms    14873.7 GFLOPS  compile 13.50 s
+matmul                2048 float64  gpu    warm     40.91 ms      420.0 GFLOPS  compile 11.43 s
+matmul                4096 float32  gpu    warm      7.43 ms    18490.9 GFLOPS  compile 14.39 s
+matmul                4096 float64  gpu    warm    323.60 ms      424.7 GFLOPS  compile 39.25 s
+matmul                8192 float32  gpu    warm     54.91 ms    20022.7 GFLOPS  compile 28.66 s
+matmul                8192 float64  gpu    warm   2574.04 ms      427.2 GFLOPS  compile 258.65 s
+== The lectures' packages, as the TITAN RTX run had them
+Using Python 3.12.3 environment at: .venv-phase2
+== Five lectures as written, on the card
+overborrowing rep 1: 21.5 s, cells ok True, float32
+wealth_dynamics_jax rep 1: 123.7 s, cells ok True, float32
+schelling_shocks rep 1: 9.3 s, cells ok True, float32
+opt_invest rep 1: 12.9 s, cells ok True, float64
+hopenhayn rep 1: 15.6 s, cells ok True, float64
+overborrowing rep 2: 18.8 s, cells ok True, float32
+wealth_dynamics_jax rep 2: 126.5 s, cells ok True, float32
+schelling_shocks rep 2: 9.2 s, cells ok True, float32
+opt_invest rep 2: 13.4 s, cells ok True, float64
+hopenhayn rep 2: 14.6 s, cells ok True, float64
+overborrowing rep 3: 18.6 s, cells ok True, float32
+wealth_dynamics_jax rep 3: 123.3 s, cells ok True, float32
+schelling_shocks rep 3: 9.1 s, cells ok True, float32
+opt_invest rep 3: 12.9 s, cells ok True, float64
+hopenhayn rep 3: 15.4 s, cells ok True, float64
+== The scale scripts, on the card
+float64 gpu a_size=200: hpi warm 0.038 s (13 it), greedy 0.30 ms, stored 0.18 ms, value 1.96 ms
+float64 gpu a_size=1000: hpi warm 0.051 s (15 it), greedy 0.54 ms, stored 0.26 ms, value 2.35 ms
+float64 gpu a_size=2000: hpi warm 0.057 s (14 it), greedy 1.41 ms, stored 0.51 ms, value 2.36 ms
+float64 gpu a_size=5000: hpi warm 0.111 s (11 it), greedy 6.93 ms, stored 1.66 ms, value 2.85 ms
+float64 gpu a_size=10000: hpi warm 0.349 s (12 it), greedy 26.34 ms, stored 6.67 ms, value 2.17 ms
+float64 gpu s_size=200: K warm 0.462 ms, cold 0.38 s, finite True
+float64 gpu s_size=1000: K warm 0.539 ms, cold 0.36 s, finite True
+float64 gpu s_size=5000: K warm 0.757 ms, cold 0.27 s, finite True
+float64 gpu s_size=20000: K warm 1.412 ms, cold 0.28 s, finite True
+float64 gpu s_size=50000: K warm 3.423 ms, cold 0.26 s, finite True
+float32 gpu a_size=200: hpi warm 0.039 s (13 it), greedy 0.32 ms, stored 0.20 ms, value 1.76 ms
+float32 gpu a_size=1000: hpi warm 0.056 s (22 it), greedy 0.23 ms, stored 0.22 ms, value 1.60 ms
+float32 gpu a_size=2000: hpi warm 0.032 s (13 it), greedy 0.31 ms, stored 0.18 ms, value 1.81 ms
+float32 gpu a_size=5000: hpi warm 0.047 s (16 it), greedy 0.46 ms, stored 0.83 ms, value 1.78 ms
+float32 gpu a_size=10000: hpi warm 0.043 s (14 it), greedy 1.03 ms, stored 2.40 ms, value 1.79 ms
+float32 gpu s_size=200: K warm 0.364 ms, cold 0.27 s, finite True
+float32 gpu s_size=1000: K warm 0.410 ms, cold 0.26 s, finite True
+float32 gpu s_size=5000: K warm 0.442 ms, cold 0.26 s, finite True
+float32 gpu s_size=20000: K warm 0.728 ms, cold 0.26 s, finite True
+float32 gpu s_size=50000: K warm 1.176 ms, cold 0.25 s, finite True
+== Done: runpod-rtxpro6000-mig1g24-2026-11-18.tgz. Copy it off the machine, then terminate the machine.

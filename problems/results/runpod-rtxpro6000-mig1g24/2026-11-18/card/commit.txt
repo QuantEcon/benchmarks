@@ -1,0 +1,1 @@
+8d777d6 Precision: read a MIG slice's memory when nvidia-smi withholds the card's

@@ -1,0 +1,2 @@
+name, pci.bus_id, pci.sub_device_id, vbios_version, driver_version, memory.total [MiB], power.limit [W], power.default_limit [W], power.min_limit [W], power.max_limit [W], clocks.max.sm [MHz], clocks.max.memory [MHz], pcie.link.gen.max, pcie.link.width.max, mig.mode.current
+NVIDIA RTX PRO 6000 Blackwell Server Edition, 00000000:23:00.0, 0x204E10DE, 98.02.8D.00.01, 595.112.07, [Insufficient Permissions], 600.00 W, 600.00 W, 300.00 W, 600.00 W, 2430 MHz, 12481 MHz, 5, 16, Enabled

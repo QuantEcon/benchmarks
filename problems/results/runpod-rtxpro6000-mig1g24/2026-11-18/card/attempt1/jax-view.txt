@@ -1,0 +1,2 @@
+default: [CudaDevice(id=0)] NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit GiB 17.72
+0.95: [CudaDevice(id=0)] NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit GiB 22.45

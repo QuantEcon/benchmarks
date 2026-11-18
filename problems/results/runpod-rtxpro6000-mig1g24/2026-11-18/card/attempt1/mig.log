@@ -1,0 +1,32 @@
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CudaDevice(id=0)]
+== The suite on the card
+Traceback (most recent call last):
+  File "/root/benchmarks/problems/run_suite.py", line 215, in <module>
+    main()
+  File "/root/benchmarks/problems/run_suite.py", line 158, in main
+    environment = env_info.collect()
+                  ^^^^^^^^^^^^^^^^^^
+  File "/root/benchmarks/precision/env_info.py", line 167, in collect
+    cards, gpu_platform = nvidia_gpus(), "cuda"
+                          ^^^^^^^^^^^^^
+  File "/root/benchmarks/precision/env_info.py", line 103, in nvidia_gpus
+    "memory_total_mib": int(memory), "driver_version": driver})
+                        ^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '[Insufficient Permissions]'
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12 and JAX
+JAX 0.12.0.1: [CudaDevice(id=0)]
+NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit, GiB: 17.72
+NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 1g.24gb allocator limit, GiB: 22.45
+== The precision matrix
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/root/benchmarks/precision/env_info.py", line 103, in nvidia_gpus
+    "memory_total_mib": int(memory), "driver_version": driver})
+                        ^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '[Insufficient Permissions]'
