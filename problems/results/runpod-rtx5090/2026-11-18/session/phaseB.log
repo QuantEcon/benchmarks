@@ -1,0 +1,237 @@
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CudaDevice(id=0)]
+== The suite on the card
+Writing to /root/benchmarks/problems/results/runpod-rtx5090/2026-11-18.jsonl
+P1 vfi     grid             100 float64  jax-gpu         warm     0.025 s  cold     2.840 s     572 iterations
+P1 vfi     grid             200 float64  jax-gpu         warm     0.032 s  cold     2.943 s     572 iterations
+P1 vfi     grid             400 float64  jax-gpu         warm     0.074 s  cold     2.894 s     572 iterations
+P1 vfi     grid             700 float64  jax-gpu         warm     0.228 s  cold     3.126 s     572 iterations
+P1 vfi     grid            1000 float64  jax-gpu         warm     0.406 s  cold     3.229 s     572 iterations
+P1 vfi     grid            1500 float64  jax-gpu         warm     0.879 s  cold     3.938 s     572 iterations
+P3 egm     grid             200 float64  jax-gpu         warm     0.212 s  cold     0.993 s    2192 iterations
+P3 egm     grid            1000 float64  jax-gpu         warm     0.241 s  cold     1.021 s    2190 iterations
+P3 egm     grid            5000 float64  jax-gpu         warm     0.340 s  cold     1.135 s    2190 iterations
+P3 egm     grid           20000 float64  jax-gpu         warm     0.706 s  cold     1.579 s    2190 iterations
+P3 egm     grid           50000 float64  jax-gpu         warm     1.436 s  cold     2.297 s    2190 iterations
+P3 egm     grid             200 float32  jax-gpu         warm     0.060 s  cold     0.739 s     809 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.097 s  cold     0.783 s    1005 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.126 s  cold     0.821 s    1086 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.209 s  cold     0.899 s    1117 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     0.389 s  cold     1.062 s    1381 iterations
+P4 wealth  households      1000 float64  jax-gpu         warm     0.002 s  cold     0.437 s     200 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.002 s  cold     0.444 s     200 iterations
+P4 wealth  households    100000 float64  jax-gpu         warm     0.008 s  cold     0.510 s     200 iterations
+P4 wealth  households   1000000 float64  jax-gpu         warm     0.067 s  cold     0.692 s     200 iterations
+P4 wealth  households  10000000 float64  jax-gpu         warm     0.633 s  cold     1.258 s     200 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.001 s  cold     0.376 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.385 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.001 s  cold     0.387 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.003 s  cold     0.481 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.013 s  cold     0.521 s     200 iterations
+P7 kalman  batch              1 float64  jax-gpu         warm     0.054 s  cold     0.545 s    1000 iterations
+P7 kalman  batch             10 float64  jax-gpu         warm     0.045 s  cold     0.699 s    1000 iterations
+P7 kalman  batch            100 float64  jax-gpu         warm     0.047 s  cold     0.698 s    1000 iterations
+P7 kalman  batch           1000 float64  jax-gpu         warm     0.093 s  cold     0.861 s    1000 iterations
+P7 kalman  batch          10000 float64  jax-gpu         warm     0.504 s  cold     1.258 s    1000 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.041 s  cold     0.508 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.045 s  cold     0.670 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.045 s  cold     0.676 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.044 s  cold     0.707 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.086 s  cold     0.754 s    1000 iterations
+P7 kalman  state              2 float64  jax-gpu         warm     0.050 s  cold     0.509 s    1000 iterations
+P7 kalman  state              5 float64  jax-gpu         warm     0.054 s  cold     0.501 s    1000 iterations
+P7 kalman  state             10 float64  jax-gpu         warm     0.054 s  cold     0.545 s    1000 iterations
+P7 kalman  state             20 float64  jax-gpu         warm     0.048 s  cold     1.336 s    1000 iterations
+P7 kalman  state             50 float64  jax-gpu         warm     0.056 s  cold     4.801 s    1000 iterations
+P7 kalman  state            100 float64  jax-gpu         warm     0.064 s  cold     7.715 s    1000 iterations
+P7 kalman  state            200 float64  jax-gpu         warm     0.093 s  cold     3.998 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.044 s  cold     0.415 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.044 s  cold     0.404 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.042 s  cold     0.523 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.054 s  cold     1.076 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.056 s  cold     2.458 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.056 s  cold     4.115 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.050 s  cold     2.155 s    1000 iterations
+== Done: runpod-rtx5090-2026-11-18-problems.tgz. Copy it off the machine, then terminate the machine.
+Writing to /root/benchmarks/problems/results/runpod-rtx5090/2026-11-18.jsonl
+P3 egm     grid             200 float32  jax-gpu         warm     0.161 s  cold     0.926 s    2211 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.204 s  cold     0.965 s    2213 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.253 s  cold     1.027 s    2209 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.416 s  cold     1.190 s    2208 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     0.638 s  cold     1.453 s    2214 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.001 s  cold     0.381 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.388 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.001 s  cold     0.382 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.003 s  cold     0.467 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.013 s  cold     0.505 s     200 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.041 s  cold     0.514 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.045 s  cold     0.684 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.044 s  cold     0.721 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.044 s  cold     0.834 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.106 s  cold     0.863 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.045 s  cold     0.427 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.045 s  cold     0.404 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.042 s  cold     0.504 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.055 s  cold     1.317 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.056 s  cold     4.599 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.056 s  cold     8.846 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.052 s  cold     3.748 s    1000 iterations
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12 and JAX
+JAX 0.12.0.1: [CudaDevice(id=0)]
+NVIDIA GeForce RTX 5090 allocator limit, GiB: 23.52
+NVIDIA GeForce RTX 5090 allocator limit, GiB: 29.79
+== The precision matrix
+Writing to /root/benchmarks/results/runpod-rtx5090/2026-11-18.jsonl
+matmul                 256 float32  gpu    warm      0.08 ms      405.2 GFLOPS  compile 0.49 s
+matmul                 256 float64  gpu    warm      0.09 ms      389.7 GFLOPS  compile 1.30 s
+matmul                 512 float32  gpu    warm      0.10 ms     2741.0 GFLOPS  compile 0.81 s
+matmul                 512 float64  gpu    warm      0.21 ms     1275.9 GFLOPS  compile 2.43 s
+matmul                1024 float32  gpu    warm      0.08 ms    28322.7 GFLOPS  compile 0.96 s
+matmul                1024 float64  gpu    warm      1.13 ms     1898.4 GFLOPS  compile 2.99 s
+matmul                2048 float32  gpu    warm      0.22 ms    77186.2 GFLOPS  compile 1.09 s
+matmul                2048 float64  gpu    warm      8.50 ms     2021.9 GFLOPS  compile 4.05 s
+matmul                4096 float32  gpu    warm      1.29 ms   106604.9 GFLOPS  compile 1.56 s
+matmul                4096 float64  gpu    warm     68.39 ms     2009.5 GFLOPS  compile 9.02 s
+matmul                8192 float32  gpu    warm      8.82 ms   124653.3 GFLOPS  compile 3.94 s
+matmul                8192 float64  gpu    warm    535.29 ms     2054.1 GFLOPS  compile 54.80 s
+bellman_stored        1000 float32  gpu    warm      0.12 ms       33.7 GB/s  compile 0.09 s
+bellman_stored        1000 float64  gpu    warm      0.05 ms      169.0 GB/s  compile 0.12 s
+bellman_stored        2000 float32  gpu    warm      0.05 ms      351.2 GB/s  compile 0.09 s
+bellman_stored        2000 float64  gpu    warm      0.10 ms      313.9 GB/s  compile 0.17 s
+bellman_stored        5000 float32  gpu    warm      0.06 ms     1768.2 GB/s  compile 0.08 s
+bellman_stored        5000 float64  gpu    warm      0.21 ms      954.0 GB/s  compile 0.13 s
+bellman_stored       10000 float32  gpu    warm      0.33 ms     1227.3 GB/s  compile 0.10 s
+bellman_stored       10000 float64  gpu    warm      0.75 ms     1060.7 GB/s  compile 0.13 s
+bellman_stored       20000 float32  gpu    warm      1.03 ms     1559.3 GB/s  compile 0.13 s
+bellman_stored       20000 float64  gpu    warm      3.06 ms     1045.3 GB/s  compile 0.28 s
+bellman_stored       40000 float32  gpu    warm      3.93 ms     1629.2 GB/s  compile 0.19 s
+bellman_stored       40000 float64  gpu    warm     12.09 ms     1058.8 GB/s  compile 0.50 s
+bellman_stored       60000 float32  gpu    warm      8.72 ms     1651.2 GB/s  compile 0.27 s
+bellman_stored       60000 float64  gpu    skipped (needs ~26.8 GiB per device, limit 25.5 GiB)
+bellman_recompute     1000 float32  gpu    warm      0.10 ms       10.2 Gcells/s  compile 0.17 s
+bellman_recompute     1000 float64  gpu    warm      0.16 ms        6.3 Gcells/s  compile 0.24 s
+bellman_recompute     2000 float32  gpu    warm      0.12 ms       32.8 Gcells/s  compile 0.27 s
+bellman_recompute     2000 float64  gpu    warm      0.31 ms       13.1 Gcells/s  compile 0.39 s
+bellman_recompute     5000 float32  gpu    warm      0.14 ms      177.0 Gcells/s  compile 0.22 s
+bellman_recompute     5000 float64  gpu    warm      1.56 ms       16.1 Gcells/s  compile 0.35 s
+bellman_recompute    10000 float32  gpu    warm      0.28 ms      360.6 Gcells/s  compile 0.23 s
+bellman_recompute    10000 float64  gpu    warm      5.61 ms       17.8 Gcells/s  compile 0.56 s
+bellman_recompute    20000 float32  gpu    warm      0.62 ms      640.5 Gcells/s  compile 3.60 s
+bellman_recompute    20000 float64  gpu    warm     17.71 ms       22.6 Gcells/s  compile 13.26 s
+bellman_recompute    40000 float32  gpu    warm      2.03 ms      789.5 Gcells/s  compile 7.17 s
+bellman_recompute    40000 float64  gpu    warm     75.93 ms       21.1 Gcells/s  compile 13.43 s
+bellman_recompute    60000 float32  gpu    warm      4.11 ms      876.6 Gcells/s  compile 7.20 s
+bellman_recompute    60000 float64  gpu    warm    154.44 ms       23.3 Gcells/s  compile 56.72 s
+kalman                1000 float32  gpu    warm     41.40 ms       24.2 ksteps/s  compile 0.24 s
+kalman                1000 float64  gpu    warm     55.83 ms       17.9 ksteps/s  compile 0.28 s
+kalman               10000 float32  gpu    warm    412.85 ms       24.2 ksteps/s  compile 0.25 s
+kalman               10000 float64  gpu    warm    554.71 ms       18.0 ksteps/s  compile 0.27 s
+kalman              100000 float32  gpu    warm   4118.59 ms       24.3 ksteps/s  compile 0.34 s
+kalman              100000 float64  gpu    warm   5543.79 ms       18.0 ksteps/s  compile 0.36 s
+Writing to /root/benchmarks/results/runpod-rtx5090/2026-11-18.jsonl
+matmul                 256 float32  gpu    warm      0.11 ms      306.4 GFLOPS  compile 1.14 s
+matmul                 256 float64  gpu    warm      0.06 ms      535.5 GFLOPS  compile 1.30 s
+matmul                 512 float32  gpu    warm      0.04 ms     6726.9 GFLOPS  compile 2.20 s
+matmul                 512 float64  gpu    warm      0.20 ms     1337.5 GFLOPS  compile 2.52 s
+matmul                1024 float32  gpu    warm      0.07 ms    29507.7 GFLOPS  compile 3.02 s
+matmul                1024 float64  gpu    warm      1.18 ms     1824.9 GFLOPS  compile 2.96 s
+matmul                2048 float32  gpu    warm      0.29 ms    60266.7 GFLOPS  compile 2.90 s
+matmul                2048 float64  gpu    warm      8.54 ms     2011.7 GFLOPS  compile 4.04 s
+matmul                4096 float32  gpu    warm      1.89 ms    72765.2 GFLOPS  compile 3.88 s
+matmul                4096 float64  gpu    warm     68.52 ms     2005.8 GFLOPS  compile 9.05 s
+matmul                8192 float32  gpu    warm     16.57 ms    66371.7 GFLOPS  compile 8.31 s
+matmul                8192 float64  gpu    warm    535.23 ms     2054.3 GFLOPS  compile 54.99 s
+== The lectures' packages, as the TITAN RTX run had them
+Using Python 3.12.3 environment at: .venv-phase2
+== Five lectures as written, on the card
+overborrowing rep 1: 12.2 s, cells ok True, float32
+wealth_dynamics_jax rep 1: 36.8 s, cells ok True, float32
+schelling_shocks rep 1: 3.2 s, cells ok True, float32
+opt_invest rep 1: 5.5 s, cells ok True, float64
+hopenhayn rep 1: 7.1 s, cells ok True, float64
+overborrowing rep 2: 10.4 s, cells ok True, float32
+wealth_dynamics_jax rep 2: 36.5 s, cells ok True, float32
+schelling_shocks rep 2: 3.1 s, cells ok True, float32
+opt_invest rep 2: 5.6 s, cells ok True, float64
+hopenhayn rep 2: 7.0 s, cells ok True, float64
+overborrowing rep 3: 10.4 s, cells ok True, float32
+wealth_dynamics_jax rep 3: 36.0 s, cells ok True, float32
+schelling_shocks rep 3: 3.1 s, cells ok True, float32
+opt_invest rep 3: 5.6 s, cells ok True, float64
+hopenhayn rep 3: 7.0 s, cells ok True, float64
+== The scale scripts, on the card
+float64 gpu a_size=200: hpi warm 0.018 s (13 it), greedy 0.09 ms, stored 0.05 ms, value 1.28 ms
+float64 gpu a_size=1000: hpi warm 0.033 s (15 it), greedy 0.17 ms, stored 0.08 ms, value 1.73 ms
+float64 gpu a_size=2000: hpi warm 0.029 s (14 it), greedy 0.33 ms, stored 0.11 ms, value 1.72 ms
+float64 gpu a_size=5000: hpi warm 0.039 s (11 it), greedy 1.48 ms, stored 0.36 ms, value 1.88 ms
+float64 gpu a_size=10000: hpi warm 0.084 s (12 it), greedy 5.58 ms, stored 1.41 ms, value 1.37 ms
+float64 gpu s_size=200: K warm 0.174 ms, cold 0.23 s, finite True
+float64 gpu s_size=1000: K warm 0.191 ms, cold 0.19 s, finite True
+float64 gpu s_size=5000: K warm 0.245 ms, cold 0.18 s, finite True
+float64 gpu s_size=20000: K warm 0.412 ms, cold 0.16 s, finite True
+float64 gpu s_size=50000: K warm 0.770 ms, cold 0.16 s, finite True
+float32 gpu a_size=200: hpi warm 0.019 s (13 it), greedy 0.08 ms, stored 0.06 ms, value 1.20 ms
+float32 gpu a_size=1000: hpi warm 0.020 s (15 it), greedy 0.07 ms, stored 0.05 ms, value 1.10 ms
+float32 gpu a_size=2000: hpi warm 0.019 s (13 it), greedy 0.10 ms, stored 0.06 ms, value 1.12 ms
+float32 gpu a_size=5000: hpi warm 0.003 s (2 it), greedy 0.12 ms, stored 0.18 ms, value 1.11 ms
+float32 gpu a_size=10000: hpi warm 0.023 s (14 it), greedy 0.26 ms, stored 0.53 ms, value 1.11 ms
+float32 gpu s_size=200: K warm 0.132 ms, cold 0.18 s, finite True
+float32 gpu s_size=1000: K warm 0.163 ms, cold 0.13 s, finite True
+float32 gpu s_size=5000: K warm 0.198 ms, cold 0.14 s, finite True
+float32 gpu s_size=20000: K warm 0.243 ms, cold 0.14 s, finite True
+float32 gpu s_size=50000: K warm 0.349 ms, cold 0.15 s, finite True
+== Done: runpod-rtx5090-2026-11-18.tgz. Copy it off the machine, then terminate the machine.
+== The card
+name, pci.bus_id, pci.sub_device_id, vbios_version, driver_version, memory.total [MiB], power.limit [W], power.default_limit [W], power.min_limit [W], power.max_limit [W], clocks.max.sm [MHz], clocks.max.memory [MHz], pcie.link.gen.max, pcie.link.width.max
+NVIDIA GeForce RTX 5090, 00000000:02:00.0, 0x41991458, 98.02.2E.00.C9, 595.112.07, 32607 MiB, 600.00 W, 600.00 W, 400.00 W, 600.00 W, 3210 MHz, 14001 MHz, 5, 16
+== Python 3.12 and JAX
+JAX 0.12.0.1: [CudaDevice(id=0)]
+== The card's log, once a second
+== Idle, 10 minutes, from 2026-11-18T01:17:05Z
+== bellman_stored, float64, 40000: 60 minutes, from 2026-11-18T01:27:05Z
+bellman_stored-float64-40000: 296887 steps in 60.0 min
+== Idle, 10 minutes, from 2026-11-18T02:27:06Z
+== matmul, float32, 8192: 60 minutes, from 2026-11-18T02:37:06Z
+matmul-float32-8192: 382005 steps in 60.0 min
+== First minutes against last
+## bellman_stored, float64, size 40,000
+
+60.0 minutes from 2026-11-18T01:27:06Z, 296,887 steps, on NVIDIA GeForce RTX 5090, JAX 0.12.0.1, matrix-product precision default. Compile 0.49 s, first run 0.012 s.
+
+| | First 5 min | Last 30 min | Last ÷ first |
+|---|---:|---:|---:|
+| Step, ms (median) | 12.114 | 12.115 | 1.000 |
+| Rate, GB/s | 1,056.7 | 1,056.5 | 1.000 |
+| SM clock, MHz | 3,015 | 3,015 | 1.000 |
+| Memory clock, MHz | 13,801 | 13,801 | 1.000 |
+| Power, W | 472.5 | 475.3 | 1.006 |
+| Temperature, °C | 60 | 61 |  |
+| Seconds with no reason | 100% | 100% | |
+| nvidia-smi samples | 300 | 1799 | |
+
+In the last 1 min of the idle period before it, the card was at 28–28 °C, 32.0 W and 300 MHz.
+
+## matmul, float32, size 8,192
+
+60.0 minutes from 2026-11-18T02:37:11Z, 382,005 steps, on NVIDIA GeForce RTX 5090, JAX 0.12.0.1, matrix-product precision default. Compile 3.89 s, first run 0.009 s.
+
+| | First 5 min | Last 30 min | Last ÷ first |
+|---|---:|---:|---:|
+| Step, ms (median) | 9.370 | 9.414 | 1.005 |
+| Rate, GFLOPS | 117,342.5 | 116,790.2 | 0.995 |
+| SM clock, MHz | 2,782 | 2,790 | 1.003 |
+| Memory clock, MHz | 13,801 | 13,801 | 1.000 |
+| Power, W | 600.0 | 600.0 | 1.000 |
+| Temperature, °C | 69 | 70 |  |
+| Seconds with SwPowerCap | 100% | 100% | |
+| nvidia-smi samples | 300 | 1800 | |
+
+In the last 1 min of the idle period before it, the card was at 27–27 °C, 31.4 W and 300 MHz.
+
+== Done: runpod-rtx5090-2026-11-18-sustained.tgz. Copy it off the machine.
+Using Python 3.12.3 environment at: /root/venv-cupy
