@@ -230,6 +230,12 @@ def summarise(args):
         if "start_epoch" not in meta:
             continue
         label = meta_path.stem
+        # A run stopped between writing its record and opening its steps file timed nothing
+        if not (out / f"{label}.csv").exists():
+            lines += [f"## {meta['workload']}, {meta['dtype']}, size {meta['size']:,}", "",
+                      f"No step times: {label}.csv is missing, so the run stopped before it "
+                      "began timing.", ""]
+            continue
         with open(out / f"{label}.csv", newline="") as f:
             rows = list(csv.DictReader(f))
         start = meta["start_epoch"]
