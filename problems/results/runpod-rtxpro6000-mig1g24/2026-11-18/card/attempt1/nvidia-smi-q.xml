@@ -57,8 +57,8 @@
 			<current_dm>N/A</current_dm>
 			<pending_dm>N/A</pending_dm>
 		</driver_model>
-		<serial><redacted></serial>
-		<uuid>GPU-<redacted></uuid>
+		<serial>REDACTED</serial>
+		<uuid>GPU-REDACTED</uuid>
 		<pdi>0x5f5d687dc165638a</pdi>
 		<minor_number>3</minor_number>
 		<vbios_version>98.02.8D.00.01</vbios_version>
