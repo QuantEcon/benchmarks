@@ -1,0 +1,6 @@
+Power limit for GPU 00000000:2B:00.0 was set to 300.00 W from 600.00 W.
+All done.
+power.limit [W]
+300.00 W
+Power limit for GPU 00000000:2B:00.0 was set to 600.00 W from 300.00 W.
+All done.
