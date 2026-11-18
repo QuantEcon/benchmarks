@@ -1,6 +1,6 @@
 # A GeForce RTX 5090 on RunPod, 2026-11-18
 
-For QuantEcon/project-benchmarks-jax#60: the problem types, the precision matrix and the five lectures on one GeForce RTX 5090, rented on RunPod's Secure Cloud. The card's hour of sustained load and cuBLAS's float64 emulation on it are in [`precision/runs/2026-11-18/runpod-rtx5090/`](../../../../precision/runs/2026-11-18/runpod-rtx5090/README.md). It ran by hand from a laptop session, from QuantEcon/benchmarks at `f085c6d`, from 01:00 UTC.
+For QuantEcon/project-benchmarks-jax#60: the problem types, the precision matrix and the five lectures on one GeForce RTX 5090, rented on RunPod's Secure Cloud. The card's two hours of sustained load (an hour each of `bellman_stored` and `matmul`) and cuBLAS's float64 emulation on it are in [`precision/runs/2026-11-18/runpod-rtx5090/`](../../../../precision/runs/2026-11-18/runpod-rtx5090/README.md). It ran by hand from a laptop session, from QuantEcon/benchmarks at `f085c6d`, from 01:00 UTC.
 
 | File | What it holds |
 |---|---|
