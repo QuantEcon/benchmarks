@@ -43,6 +43,12 @@ To compare JAX's two CUDA builds, install `jax[cuda12]` the same way in a second
 
 On a rented machine, NVIDIA or AMD, [`run_by_hand.sh`](run_by_hand.sh) does what the workflow's precision job does, and adds five lectures. Its header says how to run it.
 
+[`sustained.sh`](sustained.sh) asks whether an NVIDIA card holds its clocks through an hour of steady work. It runs two of the workloads above, one at a time:
+- `bellman_stored` at m = 40,000 in float64;
+- `matmul` at n = 8,192 in float32.
+
+Each runs for an hour after ten idle minutes. [`sustained.py`](sustained.py) times every step, while `nvidia-smi` logs the card's clocks, power, temperature and clock-event reasons once a second. The summary compares each workload's first 5 minutes with its last 30. `--cap` repeats the run at a set power limit, where the host allows one. Its header says how to run it. Its results go to `precision/runs/<date>/<host>/sustained/`, outside `results/`. A rented card's cooling is its host's, so such a run shows whether the card holds its clocks in that host, not in another case.
+
 The workflow in `.github/workflows/benchmark.yml` runs the matrix on a RunsOn GPU instance when dispatched with `run_precision`. Its inputs:
 
 | Input | What it sets |
