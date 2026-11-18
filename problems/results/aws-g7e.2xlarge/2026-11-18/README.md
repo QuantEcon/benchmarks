@@ -14,19 +14,19 @@ For QuantEcon/project-benchmarks-jax#64: the problem types and the precision mat
 **The card:** an NVIDIA RTX PRO 6000 Blackwell Server Edition, 97,887 MiB, VBIOS 98.02.9E.00.03, on driver 595.112.07 with CUDA 13.2. Its limit can be set from 300 to 600 W, and is 600 W by default. JAX 0.12.0.1 with `jax[cuda13]`, Python 3.12.3.
 
 **The cap:** `nvidia-smi -pl 300` was allowed, and the limit read 300 W throughout. `smi-pl300.csv` samples the card once a second from 01:20:39 to 01:35:39 UTC:
-- a mean draw of 124 W, and a maximum of 317 W;
+- a mean draw of 124 W. Seven one-second samples read above 300 W, at 300.01–317.18 W; where the cap bound, the draw held at 299.8–300.0 W;
 - 18 seconds at 290 W or more;
 - 27 seconds with `SwPowerCap` among the clock-event reasons.
 
-So the cap binds only on the heaviest cells, and each row's `gpu_telemetry` shows which.
+So the cap binds only on the heaviest cells, and `smi-pl300.csv` shows when. Each row's `gpu_telemetry` is a single reading taken just after timing, so it can't show that.
 
-Afterwards the limit was set back to 600 W. `power-after.txt`, read straight after `-pl 600`, still shows 300 W, but a read a second later shows 600 W (`session/run.log`). So read a limit back after a short pause.
+Afterwards the limit was set back to 600 W, and `nvidia-smi` reported "Power limit … was set to 600.00 W from 300.00 W" (`session/run.log`). `power-after.txt`, read straight after, still shows a current and requested limit of 300 W. The session read 600 W a moment later, but that read isn't in these files. So read a limit back after a short pause.
 
 **Left out of the `.jsonl` files:** the 600 W `--quick` checks run first: 9 problem cells, and 18 precision rows, 4 of them `highest`. They're in `session/run.log`. The suite keeps the latest row for each cell, host and label, so these would have displaced the full 600 W runs below in those cells. The quick check's lecture and scale runs, under `lectures/results/`, are left out too.
 
 ## What they show
 
-The rows at 600 W that they're compared with come from the same instance type, but on another day and so a different card: the problem types of 2026-11-05 and the precision matrix of 2026-10-26, on driver 595.91.07.
+The rows at 600 W that they're compared with come from the same instance type, but on another day and so likely a different card: the problem types of 2026-11-05, on driver 595.112.07 as here, and the precision matrix of 2026-10-26, on driver 595.91.07.
 
 - **The problem types barely notice the cap.** At 300 W, 48 of the 50 warm medians are within 5% of the 600 W ones, and the median ratio is 0.997. The two exceptions are `vfi` at 1,500 in float64, 7% slower, and `wealth` at 10,000,000 in float32, 16% slower but taking only 17 ms. Under `highest`, 21 of 22 are within 5%.
 - **Neither do float64 matrix products.** At n = 4,096 and 8,192, `matmul` in float64 runs at 1,744–1,758 GFLOPS at both limits.
