@@ -91,16 +91,49 @@ def cpu():
     return info
 
 
+def mig_slices():
+    """Each card's MIG slices, by bus ID, from nvidia-smi's XML report.
+
+    In a container given one MIG slice, `--query-gpu` reports the whole card's memory as
+    "[Insufficient Permissions]", but the report still gives the slice's own memory and SMs.
+    """
+    import xml.etree.ElementTree as ET
+    out = _run(["nvidia-smi", "-q", "-x"], timeout=30)
+    try:
+        root = ET.fromstring(out) if out else None
+    except ET.ParseError:
+        return {}
+    slices = {}
+    for gpu in (root.findall("gpu") if root is not None else []):
+        found = [{"gpu_instance_id": _number(d.findtext("gpu_instance_id")),
+                  "multiprocessor_count": _number(d.findtext("device_attributes/shared/"
+                                                             "multiprocessor_count")),
+                  "memory_total_mib": _number(d.findtext("fb_memory_usage/total"))}
+                 for d in gpu.findall("mig_devices/mig_device")]
+        if found:
+            slices[gpu.get("id")] = found
+    return slices
+
+
 def nvidia_gpus():
     out = _run(["nvidia-smi", "--query-gpu=index,name,pci.bus_id,memory.total,driver_version",
                 "--format=csv,noheader,nounits"])
     if not out:
         return []
-    cards = []
+    cards, slices = [], None
     for line in out.splitlines():
         index, name, bus, memory, driver = (f.strip() for f in line.split(","))
-        cards.append({"index": int(index), "name": name, "pci_bus_id": bus,
-                      "memory_total_mib": int(memory), "driver_version": driver})
+        card = {"index": int(index), "name": name, "pci_bus_id": bus,
+                "memory_total_mib": _number(memory), "driver_version": driver}
+        if card["memory_total_mib"] is None:
+            # A MIG slice: a process sees one slice, so its memory is the limit, if only one
+            # is listed
+            slices = mig_slices() if slices is None else slices
+            mine = slices.get(bus, [])
+            card["mig_slices"] = mine
+            if len(mine) == 1:
+                card["memory_total_mib"] = mine[0]["memory_total_mib"]
+        cards.append(card)
     return cards
 
 
