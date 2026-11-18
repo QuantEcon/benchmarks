@@ -47,8 +47,8 @@ GPU 00000000:23:00.0
     Driver Model
         Current                                        : N/A
         Pending                                        : N/A
-    Serial Number                                      : <redacted>
-    GPU UUID                                           : GPU-<redacted>
+    Serial Number                                      : 1790726053493
+    GPU UUID                                           : GPU-e2ed6dc0-9964-bd1d-4c34-18c3f665b5e2
     GPU PDI                                            : 0x5f5d687dc165638a
     Minor Number                                       : 3
     VBIOS Version                                      : 98.02.8D.00.01
