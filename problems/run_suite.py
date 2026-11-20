@@ -87,6 +87,19 @@ def numpy_blas():
         return None
 
 
+def scipy_blas():
+    """
+    SciPy's BLAS, which SciPy's linear algebra and Numba's matrix products
+    run on. It can be a different build from NumPy's: Linux wheels each ship
+    their own OpenBLAS.
+    """
+    try:
+        import scipy
+        return scipy.show_config(mode="dicts")["Build Dependencies"]["blas"]
+    except Exception:
+        return None
+
+
 def run_cell(prefix, cell, reps, budget, env, timeout):
     cmd = prefix + [sys.executable, str(HERE / "run_cell.py"),
                     "--problem", cell["problem"], "--sweep", cell["sweep"],
@@ -157,6 +170,7 @@ def main():
 
     environment = env_info.collect()
     environment["numpy_blas"] = numpy_blas()
+    environment["scipy_blas"] = scipy_blas()
     # Check every device before running anything, so a missing GPU fails fast
     available = {b: capacity(b, gpus, environment) for b in backends}
     now = datetime.now(timezone.utc)
