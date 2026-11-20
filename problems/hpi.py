@@ -35,14 +35,21 @@ W_SIZE = 150            # the income sweep's wealth grid, the lecture's
 TOL = 1e-10             # BiCGSTAB's relative residual
 SOLVE_ITER = 1_000      # BiCGSTAB's iterations for one policy, at most
 MAX_ITER = 250          # rounds, the lecture's cap
-RESIDUAL = 1e-9         # the final relative residual a cell must reach
+RESIDUAL = 1e-9         # the largest relative residual, over the rounds, a cell may have
 
 
 def model(sweep, size, dtype):
+    if sweep not in ("grid", "income"):
+        raise ValueError(f"P2 has no sweep {sweep!r}")
     n, ny = (size, Y_SIZE) if sweep == "grid" else (W_SIZE, size)
     x, Q = tauchen(ny, RHO, NU)
     return dict(w=np.linspace(W_MIN, W_MAX, n).astype(dtype),
                 y=np.exp(x).astype(dtype), Q=Q.astype(dtype))
+
+
+def worst(a, b):
+    """The larger of two residuals, keeping a NaN, which max() would drop."""
+    return b if b > a or b != b else a
 
 
 def verify(row):
@@ -75,7 +82,7 @@ def numpy(m):
             v, info = spla.bicgstab(op, r, x0=v, rtol=TOL, atol=0, maxiter=SOLVE_ITER)
             if info != 0:
                 raise RuntimeError(f"BiCGSTAB stopped with info {info} in round {i + 1}")
-            residual = max(residual, np.linalg.norm(r - L(sigma, v)) / np.linalg.norm(r))
+            residual = worst(residual, np.linalg.norm(r - L(sigma, v)) / np.linalg.norm(r))
             new = np.argmax(u + BETA * (v.reshape(n, ny) @ Q.T).T[None, :, :], axis=2)
             changed = (new != sigma).any()
             sigma, i = new, i + 1
@@ -86,6 +93,8 @@ def numpy(m):
 
 def numba(m, parallel):
     import numba
+
+    worst_ = numba.njit(worst)
 
     @numba.njit(parallel=parallel)
     def rewards(w, y):
@@ -184,7 +193,7 @@ def numba(m, parallel):
             if status != 0:
                 return v, i + 1, residual, status
             apply(sigma, Qt, v, t)
-            residual = max(residual, np.sqrt(dot(r - t, r - t) / dot(r, r)))
+            residual = worst_(residual, np.sqrt(dot(r - t, r - t) / dot(r, r)))
             greedy(u, v @ Qt, new)
             changed = (new != sigma).any()
             sigma, new = new, sigma

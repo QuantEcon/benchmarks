@@ -54,29 +54,37 @@ def iteration_cap(problem):
     The problem's MAX_ITER, read from its module's source rather than by
     importing it, so the summary needs no NumPy. None if it has no cap.
     """
-    tree = ast.parse((Path(__file__).parent / f"{problem}.py").read_text())
-    for node in tree.body:
-        if isinstance(node, ast.Assign):
-            for target, value in zip_targets(node):
-                if target == "MAX_ITER":
-                    return ast.literal_eval(value)
-    return None
+    source = (Path(__file__).parent / f"{problem}.py").read_text()
+    cap = None
+    for node in ast.parse(source).body:
+        for target, value in assignments(node):
+            if target == "MAX_ITER":
+                cap = ast.literal_eval(value)  # the last one, as Python takes it
+    if cap is None and "MAX_ITER" in source:
+        # Imported, computed or assigned inside a block: don't guess
+        raise ValueError(f"{problem}.py names MAX_ITER, but not as a literal at module level")
+    return cap
 
 
-def zip_targets(node):
-    """(name, value) pairs of an assignment, `A = 1` or `A, B = 1, 2`."""
-    target = node.targets[0]
-    if isinstance(target, ast.Name):
-        return [(target.id, node.value)]
-    if isinstance(target, ast.Tuple) and isinstance(node.value, ast.Tuple):
-        return [(t.id, v) for t, v in zip(target.elts, node.value.elts)
-                if isinstance(t, ast.Name)]
-    return []
-
-
-def where(row, host):
-    """' (on host)' when a reference comes from another host."""
-    return "" if row["host"] == host else f" (on {row['host']})"
+def assignments(node):
+    """
+    (name, value) pairs of a module-level assignment: `A = 1`, `A: int = 1`,
+    `A = B = 1` or `A, B = 1, 2`.
+    """
+    if isinstance(node, ast.AnnAssign) and node.value is not None:
+        targets, value = [node.target], node.value
+    elif isinstance(node, ast.Assign):
+        targets, value = node.targets, node.value
+    else:
+        return []
+    pairs = []
+    for target in targets:
+        if isinstance(target, ast.Name):
+            pairs.append((target.id, value))
+        elif isinstance(target, ast.Tuple) and isinstance(value, ast.Tuple):
+            pairs += [(t.id, v) for t, v in zip(target.elts, value.elts)
+                      if isinstance(t, ast.Name)]
+    return pairs
 
 
 def disagreement(check, row, ref):
@@ -135,7 +143,7 @@ def main():
         print("| Size | " + " | ".join(f"`{b}`" for b in backends)
               + " | Fastest warm | Fastest cold |")
         print("|---:|" + "---:|" * len(backends) + "---|---|")
-        notes, counts = [], []
+        notes, counts, elsewhere = [], [], set()
         # A loop that stops at its cap returns as if it had converged
         cap = iteration_cap(problem)
         for size in sizes:
@@ -147,9 +155,9 @@ def main():
             # different number from float64 by design, as P3's do
             same = ref if dtype == "float64" else reference(latest, host, label, problem,
                                                             sweep, size, dtype)
+            elsewhere |= {(r["dtype"], r["host"]) for r in (ref, same) if r and r["host"] != host}
             if same and ref and same is not ref and same["iterations"] != ref["iterations"]:
-                counts.append(f"{same['iterations']:,}{where(same, host)} against "
-                              f"{ref['iterations']:,}{where(ref, host)} at {size:,}")
+                counts.append(f"{same['iterations']:,} against {ref['iterations']:,} at {size:,}")
             base = same or ref
             for b, row in rows.items():
                 if not row or row["status"] != "ok":
@@ -161,16 +169,18 @@ def main():
                     if not passes:
                         measure = ("relative difference" if spec["check"]["kind"] == "close"
                                    else "z")
-                        notes.append(f"- {size:,}, `{b}`: answer differs from NumPy's in float64"
-                                     f"{where(ref, host)} ({measure} {value:.2g})")
+                        notes.append(f"- {size:,}, `{b}`: answer differs from NumPy's in float64 "
+                                     f"({measure} {value:.2g})")
                 if base and row is not base and row["iterations"] != base["iterations"]:
                     notes.append(f"- {size:,}, `{b}`: {row['iterations']:,} iterations, against "
-                                 f"NumPy's {base['iterations']:,} in {base['dtype']}"
-                                 f"{where(base, host)}")
+                                 f"NumPy's {base['iterations']:,} in {base['dtype']}")
         print()
         if counts:
             notes.insert(0, f"- NumPy's iterations in {dtype}, against its float64 count: "
                             + "; ".join(counts))
+        if elsewhere and notes:
+            notes.insert(0, "- Where this host has no NumPy row of its own, NumPy's "
+                            + "; ".join(f"{d} is {h}'s" for d, h in sorted(elsewhere)))
         if notes:
             print("\n".join(notes) + "\n")
 
