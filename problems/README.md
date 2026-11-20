@@ -6,21 +6,23 @@ Which stack to use for which kind of problem, at what size, and on what hardware
 
 ## Problems
 
-Phase 1 has four of #5's eight problem types. Each takes its model and parameters from a lecture, and each stack's version is written as a careful author in that stack would write it, rather than copied from the lecture.
+Phase 1 has four of #5's eight problem types, and Phase 2 adds the other four, starting with P5. Each takes its model and parameters from a lecture, and each stack's version is written as a careful author in that stack would write it, rather than copied from the lecture.
 
 | | Problem | Model, from | Sweep | Sizes | Precision |
 |---|---|---|---|---|---|
 | P1 | [`vfi`](vfi.py): value function iteration on a dense grid | lecture-jax's `opt_savings_1`: savings, with income on a 100-state chain | the wealth grid | 100 to 1,500 | float64 |
 | P3 | [`egm`](egm.py): the endogenous grid method | lecture-jax's `ifp_egm_jax`: an income fluctuation problem, with income on a 25-state chain | the savings grid | 200 to 50,000 | both |
 | P4 | [`wealth`](wealth.py): Monte Carlo, parallel across paths and sequential in time | lecture-jax's `wealth_dynamics_jax`: a cross-section of households' wealth, 200 periods | households | 1,000 to 10,000,000 | both |
+| P5 | [`stationary`](stationary.py): the stationary distribution of a Markov chain, by dense and by sparse linear algebra | lecture-jax's `aiyagari_jax`: a household savings policy, with income on a 2-state chain | the asset grid, by the lecture's dense solve (`dense`) and by Young's lottery (`sparse`) | 100 to 5,000; 1,000 to 10,000,000 | both |
 | P7 | [`kalman`](kalman.py): a sequential recursion, bound by each step's latency | precision's `kalman`: a log-likelihood over 1,000 periods with 3 observations | independent filters at 10 states (`batch`); states, for one filter (`state`) | 1 to 10,000; 2 to 200 | both |
 
 - **P1 and P3 solve to the lecture's tolerance,** so a cell times the whole solve, and records the iterations it took, from which a time per iteration follows.
 - **P1 stores its rewards,** computed once inside the timed solve, and forms the expectation with one matrix product an iteration. The lecture recomputes both each time. P1 runs in float64 only, because a tolerance of 1e-5 on values near −50 is within a few units of float32's roundoff.
 - **P3 interpolates once per (savings, next income) pair** an iteration, since next period's assets don't depend on today's income. Numba interpolates each income state's column in one `np.interp` call, as NumPy does: a scalar call per point searches the grid afresh each time, and ran 7× slower at 20,000 points.
 - **P4's aggregate path is drawn once, by NumPy, and shared,** so given it the households are independent. Each stack draws the households' shocks with its own generator, inside the timed solve.
+- **P5 times the distribution, not the policy** ([#47](https://github.com/QuantEcon/benchmarks/issues/47)). NumPy computes each cell's savings policy in float64 before the cell starts: Howard policy iteration's index policy for `dense`, as the lecture does, and EGM's on the cell's own grid for `sparse`. The cell times building the transition from the policy, finding the distribution and summing out income. `dense` solves the lecture's system over every (assets, income) state as a dense matrix, so it stops at 5,000 assets, where the matrix is 800 MB in float64. `sparse` sends each state's mass to the grid points either side of its savings, and iterates until the L1 change is below 1e-10 in float64 or 1e-6 in float32. float32's rounding leaves the change at about 1e-7, so a tighter tolerance would time the iteration cap rather than the solve.
 - **P7 sweeps the work in each step,** not the series' length, which only scales every stack's time in proportion. Every GPU measured in `precision/` pays about 90 to 160 µs a Kalman step, against about 1.4 µs on the M6, so the question is how much work a step needs before a GPU wins.
-- **P7 has three optional batch sweeps,** for [#58](https://github.com/QuantEcon/benchmarks/issues/58): `batch20`, `batch50` and `batch100` run 1 to 10,000 filters, with 300 and 3,000 between, at 20, 50 and 100 states. They run only when `--sweeps` names them, so a default run is Phase 1's. `spec.py`'s `KALMAN_BATCH_STATES` gives each batch sweep's states.
+- **P7 has three optional batch sweeps,** for [#58](https://github.com/QuantEcon/benchmarks/issues/58): `batch20`, `batch50` and `batch100` run 1 to 10,000 filters, with 300 and 3,000 between, at 20, 50 and 100 states. They run only when `--sweeps` names them, so a default run leaves them out. `spec.py`'s `KALMAN_BATCH_STATES` gives each batch sweep's states.
 
 ## Backends
 
