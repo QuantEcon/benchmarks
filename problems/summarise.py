@@ -9,6 +9,8 @@ are the cells whose answers don't agree with NumPy's in float64 at the same
 size, which took a different number of iterations from NumPy's in the same
 precision, or which stopped at their problem's iteration cap. A float32 table
 also gives NumPy's float32 iteration counts where they differ from float64's.
+A companion problem, which names a `reference` in spec.py, is compared with
+its reference's NumPy rows and cap.
 """
 import argparse
 import ast

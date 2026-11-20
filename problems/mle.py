@@ -15,6 +15,8 @@ invert H. NumPy and Numba use the hand-written G and H that lecture-python's
 log-likelihood and `jax.jacfwd` of that, as both lectures do now, inside
 `lax.while_loop`. Its companion problem, `mle_hand`, runs this module's JAX
 loop with the hand-written G and H, so JAX against JAX measures autodiff.
+A second, `mle_onepass`, runs Numba with μ, G and H in one pass over the
+observations, where this problem's Numba forms G and H through BLAS.
 
 Two sweeps: `obs` grows the observations with the exercise's model,
 X = [1, x, x²] and β = (−2.5, 0.25, 0.5); `params` grows the parameters at
@@ -35,6 +37,7 @@ MAX_ITER = 100          # the lectures'
 OBS_BETA = (-2.5, 0.25, 0.5)
 PARAMS_N, PARAMS_INTERCEPT, PARAMS_SPREAD = 100_000, -2.0, 0.75
 SEED = 1234
+BLOCK = 4096            # observations a block, in `mle_onepass`'s Numba pass
 
 
 def model(sweep, size, dtype):
@@ -119,6 +122,67 @@ def numba(m, parallel):
     return solve, (m["X"], m["y"])
 
 
+def numba_onepass(m, parallel):
+    """
+    Numba with μ, G and H in one pass over the observations (`mle_onepass`).
+    Each block of BLOCK observations sums into its own G and H, and the
+    blocks' are then added up, so threads don't share cache lines and
+    float32's sums stay short.
+    """
+    import numba
+
+    t = m["X"].dtype.type
+    start, tol, inf = t(START), t(TOL), t(np.inf)
+
+    @numba.njit(parallel=parallel)
+    def derivatives(X, y, beta, Gs, Hs):
+        n, k = X.shape
+        for b in numba.prange(Gs.shape[0]):
+            g = np.zeros(k, X.dtype)
+            h = np.zeros((k, k), X.dtype)       # its lower triangle
+            for i in range(b * BLOCK, min(n, (b + 1) * BLOCK)):
+                z = X[i, 0] * beta[0]
+                for j in range(1, k):
+                    z += X[i, j] * beta[j]
+                mu = np.exp(z)
+                r = y[i] - mu
+                for p in range(k):
+                    g[p] += X[i, p] * r
+                    w = mu * X[i, p]
+                    for q in range(p + 1):
+                        h[p, q] -= w * X[i, q]
+            Gs[b] = g
+            Hs[b] = h
+
+    @numba.njit
+    def newton(X, y):
+        n, k = X.shape
+        blocks = (n + BLOCK - 1) // BLOCK
+        Gs, Hs = np.empty((blocks, k), X.dtype), np.empty((blocks, k, k), X.dtype)
+        beta = np.full(k, start)
+        i, step = 0, inf
+        while step > tol and i < MAX_ITER:
+            derivatives(X, y, beta, Gs, Hs)
+            G, H = np.zeros(k, X.dtype), np.zeros((k, k), X.dtype)
+            for b in range(blocks):
+                G += Gs[b]
+                H += Hs[b]
+            for p in range(k):
+                for q in range(p):
+                    H[q, p] = H[p, q]
+            new = beta - np.linalg.solve(H, G)
+            step = np.max(np.abs(new - beta))
+            beta = new
+            i += 1
+        return beta, i, step
+
+    def solve(X, y):
+        beta, i, step = newton(X, y)
+        return beta, i, {"last_step": step}
+
+    return solve, (m["X"], m["y"])
+
+
 def jax_newton(m, devices, autodiff):
     """JAX's Newton loop, with G and H by autodiff (P8) or by hand (`mle_hand`)."""
     import jax
@@ -137,9 +201,12 @@ def jax_newton(m, devices, autodiff):
         def derivatives(beta, X, y):
             return G(beta, X, y), H(beta, X, y)
     else:
+        # G = X'(y − μ), written as (y − μ) X: XLA's CPU backend copied X
+        # transposed every iteration for X.T @ (y − μ), and reads X as it is
+        # for this, as for jax.grad's G
         def derivatives(beta, X, y):
             mu = jnp.exp(X @ beta)
-            return X.T @ (y - mu), -(X.T @ (mu[:, None] * X))
+            return (y - mu) @ X, -(X.T @ (mu[:, None] * X))
 
     def solve(X, y):
         def cond(state):
