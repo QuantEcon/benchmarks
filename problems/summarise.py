@@ -6,9 +6,12 @@ Summarise the problem-type suite's results as markdown tables.
 For each host, problem, sweep and precision, a table gives each backend's
 warm and cold times at each size, and the fastest backend by each. Below it
 are the cells whose answers don't agree with NumPy's in float64 at the same
-size, or which took a different number of iterations.
+size, which took a different number of iterations from NumPy's in the same
+precision, or which stopped at their problem's iteration cap. A float32 table
+also gives NumPy's float32 iteration counts where they differ from float64's.
 """
 import argparse
+import importlib
 import json
 import re
 from math import sqrt
@@ -32,13 +35,13 @@ def load(paths):
     return latest
 
 
-def reference(latest, host, label, problem, sweep, size):
-    """NumPy's float64 answer at this size: this host's, or any host's."""
-    same = latest.get((host, label, problem, sweep, size, "numpy", "float64"))
+def reference(latest, host, label, problem, sweep, size, dtype="float64"):
+    """NumPy's answer at this size and precision: this host's, or any host's."""
+    same = latest.get((host, label, problem, sweep, size, "numpy", dtype))
     if same and same["status"] == "ok":
         return same
     for key, row in latest.items():
-        if (key[2:] == (problem, sweep, size, "numpy", "float64")
+        if (key[2:] == (problem, sweep, size, "numpy", dtype)
                 and row["status"] == "ok"):
             return row
     return None
@@ -100,24 +103,40 @@ def main():
         print("| Size | " + " | ".join(f"`{b}`" for b in backends)
               + " | Fastest warm | Fastest cold |")
         print("|---:|" + "---:|" * len(backends) + "---|---|")
-        notes = []
+        notes, counts = [], []
+        # A loop that stops at its cap returns as if it had converged
+        cap = getattr(importlib.import_module(problem), "MAX_ITER", None)
         for size in sizes:
             rows = {b: cells.get((host, label, problem, sweep, size, b, dtype)) for b in backends}
             print(f"| {size:,} | " + " | ".join(entry(rows[b]) for b in backends)
                   + f" | {fastest(rows, 'warm_median_s')} | {fastest(rows, 'cold_s')} |")
             ref = reference(latest, host, label, problem, sweep, size)
+            # Iterations are compared within a precision: float32 can need a
+            # different number from float64 by design, as P3's do
+            same = ref if dtype == "float64" else reference(latest, host, label, problem,
+                                                            sweep, size, dtype)
+            if same and ref and same is not ref and same["iterations"] != ref["iterations"]:
+                counts.append(f"{same['iterations']:,} against {ref['iterations']:,} at {size:,}")
             for b, row in rows.items():
-                if not row or row["status"] != "ok" or not ref or row is ref:
+                if not row or row["status"] != "ok":
+                    continue
+                if cap is not None and row["iterations"] >= cap:
+                    notes.append(f"- {size:,}, `{b}`: stopped at the cap of {cap:,} iterations")
+                if not ref or row is ref:
                     continue
                 value, passes = disagreement(spec["check"], row, ref)
                 if not passes:
                     measure = "relative difference" if spec["check"]["kind"] == "close" else "z"
                     notes.append(f"- {size:,}, `{b}`: answer differs from NumPy's in float64 "
                                  f"({measure} {value:.2g})")
-                if row["iterations"] != ref["iterations"]:
+                base = same or ref
+                if row is not base and row["iterations"] != base["iterations"]:
                     notes.append(f"- {size:,}, `{b}`: {row['iterations']:,} iterations, "
-                                 f"against NumPy's {ref['iterations']:,} in float64")
+                                 f"against NumPy's {base['iterations']:,} in {base['dtype']}")
         print()
+        if counts:
+            notes.insert(0, f"- NumPy's iterations in {dtype}, against its float64 count: "
+                            + "; ".join(counts))
         if notes:
             print("\n".join(notes) + "\n")
 

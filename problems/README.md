@@ -36,7 +36,7 @@ Serial Numba is kept beside parallel because a parallel region costs microsecond
 
 ## Results
 
-The suite has run on two machines, both on 2026-11-02 at `5fbf033`: `qe-mini1`'s M6 on the four CPU backends (#25), and `qe-wharton1-gpu` on all five, with the Threadripper 2990WX for the CPU backends and the TITAN RTX at `0b:00.0` for `jax-gpu` (#26). Every cell ran, and every answer agreed with NumPy's float64 answer at the same size. The only flags are P3's iteration counts in float32, 14 to 26 more than float64's 2,190 to 2,192.
+The suite has run on two machines, both on 2026-11-02 at `5fbf033`: `qe-mini1`'s M6 on the four CPU backends (#25), and `qe-wharton1-gpu` on all five, with the Threadripper 2990WX for the CPU backends and the TITAN RTX at `0b:00.0` for `jax-gpu` (#26). Every cell ran, and every answer agreed with NumPy's float64 answer at the same size. The only differences are P3's iteration counts in float32, 14 to 26 more than float64's 2,190 to 2,192.
 
 On 2026-11-06 the four CPU backends also ran on `qe-wharton2`'s Apple M5 Pro, every size in both precisions ([notes](results/qe-wharton2/2026-11-06/README.md)), and aren't in the tables below yet. Every cell ran, and every answer agreed, with P3's float32 iteration counts as on the other two machines. At each sweep's largest size in float64 it was 1.45× to 1.90× as fast as the M6 on P1, P4 and P7's batch, warm, and about as fast on P3.
 
