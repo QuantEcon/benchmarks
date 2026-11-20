@@ -23,7 +23,7 @@ are `brentq`'s, xtol 2e-12 and rtol 4 eps, with eps the cell's precision's. A
 root find fails where `brentq` would raise: no sign change on the bracket, a
 NaN, or no convergence in 100 iterations. That raises in NumPy and Numba; JAX
 can't raise, so it counts the failures as `unconverged`, and `verify` fails a
-cell that has any, or whose error against σ* is above 1e-4.
+cell that has any, or whose error against σ* is above 1e-5.
 
 Two sweeps: `grid` grows the grid with the lecture's 250 shocks, and
 `shocks` grows the shocks with the lecture's 120 grid points.
@@ -38,7 +38,7 @@ EDGE = 1e-10            # the bracket is (EDGE, x - EDGE), the lecture's
 TOL = 1e-5              # time iteration's, on the largest change in the policy
 MAX_ITER = 1_000        # time iteration's, the lecture's
 BRENT_ITER = 100        # brentq's maxiter
-EXACT_ERROR = 1e-4      # the largest error against σ* a cell may have; about 1.5e-6 is usual
+EXACT_ERROR = 1e-5      # the largest error against σ* a cell may have; about 1.5e-6 is usual
 # brentq's xtol and rtol, its defaults. rtol is 4 eps of the cell's precision,
 # as brentq's is of float64's, so no step is below float32's spacing
 XTOL = 2e-12
@@ -108,7 +108,7 @@ def numba(m, parallel):
     # so the constants take the cell's precision
     t = m["grid"].dtype.type
     alpha, edge, zero, half, one, two, three = t(ALPHA), t(EDGE), t(0), t(0.5), t(1), t(2), t(3)
-    xtol, rtol, neg_inf = t(XTOL), t(RTOL[m["grid"].dtype.name]), t(-np.inf)
+    xtol, rtol, inf = t(XTOL), t(RTOL[m["grid"].dtype.name]), t(np.inf)
     beta_mean = t(BETA / m["shocks"].size)      # β, and the mean's 1/n
     compensate = t is np.float32
 
@@ -129,9 +129,13 @@ def numba(m, parallel):
         k = x - c
         if k == zero:
             # In float32, x - 1e-10 rounds to x for x above 2^-9. f'(0) is
-            # infinite, which gives the sign, but would make the compensated
-            # sum NaN
-            return neg_inf
+            # infinite, so each term is infinite with its shock's sign, as
+            # NumPy finds it. They are summed plainly, since the compensated
+            # sum would turn even infinities of one sign into NaN
+            total = zero
+            for z in shocks:
+                total += inf * z / interp(zero * z, grid, sigma)
+            return one / c - beta_mean * total
         fk, dfk = k**alpha, alpha * k**(alpha - one)
         total = comp = zero
         for z in shocks:

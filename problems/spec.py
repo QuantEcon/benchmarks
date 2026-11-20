@@ -98,8 +98,9 @@ PROBLEMS = {
         sweeps={"grid": dict(sizes=[120, 1000, 5000, 20000, 50000], quick=[120]),
                 "shocks": dict(sizes=[250, 1000, 5000, 20000, 100000], quick=[250])},
         # JAX evaluates the Euler equation at every grid point and shock at
-        # once, with a few temporaries of that shape
-        memory=lambda sweep, n, s: 8 * (n * 250 if sweep == "grid" else 120 * n) * s,
+        # once. XLA's temporaries measured 94 bytes a (point, shock) pair in
+        # float64 and 66 in float32 on the M6; this allows 104 and 72
+        memory=lambda sweep, n, s: (n * 250 if sweep == "grid" else 120 * n) * (8 * s + 40),
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-3}),
     ),
     "kalman": dict(
