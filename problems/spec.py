@@ -153,5 +153,10 @@ PROBLEMS["mle_onepass"] = dict(
     PROBLEMS["mle"], backends=["numba", "numba-parallel"], reference="mle",
     sweeps={"obs": PROBLEMS["mle"]["sweeps"]["obs"],
             "params": dict(sizes=[3, 10, 30, 100, 300], quick=[10])})
-PROBLEMS["mle_blocked"] = dict(PROBLEMS["mle"], backends=["numba", "numba-parallel"],
-                               reference="mle")
+PROBLEMS["mle_blocked"] = dict(
+    PROBLEMS["mle"], backends=["numba", "numba-parallel"], reference="mle",
+    # mle's, and each block's G and H, at 256 rows a block or more: at 1,000
+    # parameters in float64 the blocks' H take 3.1 GB
+    memory=lambda sweep, n, s: (PROBLEMS["mle"]["memory"](sweep, n, s)
+                                + -(-(n if sweep == "obs" else 100_000) // 256)
+                                * (3 if sweep == "obs" else n) ** 2 * s))
