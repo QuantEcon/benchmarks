@@ -144,16 +144,19 @@ def main():
               + " | Fastest warm | Fastest cold |")
         print("|---:|" + "---:|" * len(backends) + "---|---|")
         notes, counts, elsewhere = [], [], set()
+        # A companion problem runs its reference's loop, and is checked
+        # against the reference's NumPy rows
+        ref_problem = spec.get("reference", problem)
         # A loop that stops at its cap returns as if it had converged
-        cap = iteration_cap(problem)
+        cap = iteration_cap(ref_problem)
         for size in sizes:
             rows = {b: cells.get((host, label, problem, sweep, size, b, dtype)) for b in backends}
             print(f"| {size:,} | " + " | ".join(entry(rows[b]) for b in backends)
                   + f" | {fastest(rows, 'warm_median_s')} | {fastest(rows, 'cold_s')} |")
-            ref = reference(latest, host, label, problem, sweep, size)
+            ref = reference(latest, host, label, ref_problem, sweep, size)
             # Iterations are compared within a precision: float32 can need a
             # different number from float64 by design, as P3's do
-            same = ref if dtype == "float64" else reference(latest, host, label, problem,
+            same = ref if dtype == "float64" else reference(latest, host, label, ref_problem,
                                                             sweep, size, dtype)
             elsewhere |= {(r["dtype"], r["host"]) for r in (ref, same) if r and r["host"] != host}
             if same and ref and same is not ref and same["iterations"] != ref["iterations"]:
