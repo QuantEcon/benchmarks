@@ -15,8 +15,10 @@ invert H. NumPy and Numba use the hand-written G and H that lecture-python's
 log-likelihood and `jax.jacfwd` of that, as both lectures do now, inside
 `lax.while_loop`. Its companion problem, `mle_hand`, runs this module's JAX
 loop with the hand-written G and H, so JAX against JAX measures autodiff.
-A second, `mle_onepass`, runs Numba with μ, G and H in one pass over the
-observations, where this problem's Numba forms G and H through BLAS.
+Two more, `mle_onepass` and `mle_blocked`, run Numba with μ, G and H in one
+pass over the observations, added one observation at a time or by BLAS a
+block at a time, where this problem's Numba forms G and H through BLAS over
+all of X.
 
 Two sweeps: `obs` grows the observations with the exercise's model,
 X = [1, x, x²] and β = (−2.5, 0.25, 0.5); `params` grows the parameters at
@@ -38,6 +40,8 @@ OBS_BETA = (-2.5, 0.25, 0.5)
 PARAMS_N, PARAMS_INTERCEPT, PARAMS_SPREAD = 100_000, -2.0, 0.75
 SEED = 1234
 BLOCK = 4096            # observations a block, in `mle_onepass`'s Numba pass
+# and in `mle_blocked`'s, the fastest of 256, 512 and 1,024 on the M6
+BLAS_BLOCK = {"float64": 256, "float32": 1024}
 
 
 def model(sweep, size, dtype):
@@ -124,15 +128,10 @@ def numba(m, parallel):
 
 def numba_onepass(m, parallel):
     """
-    Numba with μ, G and H in one pass over the observations (`mle_onepass`).
-    Each block of BLOCK observations sums into its own G and H, and the
-    blocks' are then added up, so threads don't share cache lines and
-    float32's sums stay short.
+    Numba with μ, G and H in one pass over the observations, added one
+    observation at a time (`mle_onepass`).
     """
     import numba
-
-    t = m["X"].dtype.type
-    start, tol, inf = t(START), t(TOL), t(np.inf)
 
     @numba.njit(parallel=parallel)
     def derivatives(X, y, beta, Gs, Hs):
@@ -154,10 +153,50 @@ def numba_onepass(m, parallel):
             Gs[b] = g
             Hs[b] = h
 
+    return numba_blocks(m, derivatives, BLOCK, lower=True)
+
+
+def numba_blocked(m, parallel):
+    """
+    Numba with μ, G and H in one pass over the observations, each block of
+    BLAS_BLOCK of them forming its own with BLAS while it is in cache
+    (`mle_blocked`).
+    """
+    import numba
+
+    block = BLAS_BLOCK[m["X"].dtype.name]
+
+    @numba.njit(parallel=parallel)
+    def derivatives(X, y, beta, Gs, Hs):
+        n = X.shape[0]
+        for b in numba.prange(Gs.shape[0]):
+            lo, hi = b * block, min(n, (b + 1) * block)
+            Xb = X[lo:hi]
+            mu = np.exp(Xb @ beta)
+            Gs[b] = Xb.T @ (y[lo:hi] - mu)
+            Hs[b] = -(Xb.T @ (mu.reshape((hi - lo, 1)) * Xb))
+
+    return numba_blocks(m, derivatives, block, lower=False)
+
+
+def numba_blocks(m, derivatives, block, lower):
+    """
+    The Newton loop of `mle_onepass` and `mle_blocked`: each block of `block`
+    observations forms its own G and H, its lower triangle if `lower`, and
+    the blocks' are then added up, so threads don't share cache lines and
+    float32's sums stay short.
+    """
+    import numba
+
+    # Numba promotes a float32 array to float64 when it meets a Python float,
+    # so the constants take the cell's precision
+    t = m["X"].dtype.type
+    start, tol, inf = t(START), t(TOL), t(np.inf)
+
     @numba.njit
     def newton(X, y):
         n, k = X.shape
-        blocks = (n + BLOCK - 1) // BLOCK
+        blocks = (n + block - 1) // block
         Gs, Hs = np.empty((blocks, k), X.dtype), np.empty((blocks, k, k), X.dtype)
         beta = np.full(k, start)
         i, step = 0, inf
@@ -167,9 +206,10 @@ def numba_onepass(m, parallel):
             for b in range(blocks):
                 G += Gs[b]
                 H += Hs[b]
-            for p in range(k):
-                for q in range(p):
-                    H[q, p] = H[p, q]
+            if lower:
+                for p in range(k):
+                    for q in range(p):
+                        H[q, p] = H[p, q]
             new = beta - np.linalg.solve(H, G)
             step = np.max(np.abs(new - beta))
             beta = new

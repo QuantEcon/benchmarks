@@ -139,16 +139,19 @@ PROBLEMS = {
         memory=lambda sweep, n, s: MLE_MEMORY * (n * 3 if sweep == "obs" else 100_000 * n) * s,
         # The largest value is the intercept, about 2, where the slopes are as
         # small as 0.06, so float32's check is tighter than the suite's 1e-3.
-        # Float32 estimates differed from float64's by 1.3e-7 at most on the M6
+        # Float32 estimates differed from float64's by 3.3e-7 at most on the M6
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-5}),
     ),
 }
 
 # P8's companions: mle's JAX loop with the hand-written derivatives, and
-# Numba with μ, G and H in one pass over the observations. The one-pass loop
-# stops at 300 parameters, where BLAS already won by 2.7 times on the M6
+# Numba with μ, G and H in one pass over the observations, added one
+# observation at a time or by BLAS a block at a time. The first stops at 300
+# parameters, where BLAS over all of X already won by 2.7 times on the M6
 PROBLEMS["mle_hand"] = dict(PROBLEMS["mle"], backends=["jax-cpu", "jax-gpu"], reference="mle")
 PROBLEMS["mle_onepass"] = dict(
     PROBLEMS["mle"], backends=["numba", "numba-parallel"], reference="mle",
     sweeps={"obs": PROBLEMS["mle"]["sweeps"]["obs"],
             "params": dict(sizes=[3, 10, 30, 100, 300], quick=[10])})
+PROBLEMS["mle_blocked"] = dict(PROBLEMS["mle"], backends=["numba", "numba-parallel"],
+                               reference="mle")
