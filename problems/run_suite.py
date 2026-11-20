@@ -38,7 +38,7 @@ MEMORY_FRACTION = 0.8
 CELL_FLAGS = ("JAX_PLATFORMS", "JAX_ENABLE_X64", "CUDA_VISIBLE_DEVICES",
               "CUDA_DEVICE_ORDER", "HIP_VISIBLE_DEVICES", "XLA_FLAGS",
               "XLA_PYTHON_CLIENT_PREALLOCATE", "XLA_PYTHON_CLIENT_MEM_FRACTION",
-              "NUMBA_NUM_THREADS", "OPENBLAS_NUM_THREADS")
+              "NUMBA_NUM_THREADS")
 
 
 def cell_env(backend, dtype, gpus, platform="cuda"):
@@ -83,6 +83,19 @@ def numpy_blas():
     """The BLAS NumPy was built against, which its linear algebra runs on."""
     try:
         return np.show_config(mode="dicts")["Build Dependencies"]["blas"]
+    except Exception:
+        return None
+
+
+def scipy_blas():
+    """
+    SciPy's BLAS, which SciPy's linear algebra and Numba's matrix products
+    run on. It can be a different build from NumPy's: Linux wheels each ship
+    their own OpenBLAS.
+    """
+    try:
+        import scipy
+        return scipy.show_config(mode="dicts")["Build Dependencies"]["blas"]
     except Exception:
         return None
 
@@ -157,6 +170,7 @@ def main():
 
     environment = env_info.collect()
     environment["numpy_blas"] = numpy_blas()
+    environment["scipy_blas"] = scipy_blas()
     # Check every device before running anything, so a missing GPU fails fast
     available = {b: capacity(b, gpus, environment) for b in backends}
     now = datetime.now(timezone.utc)

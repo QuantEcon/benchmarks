@@ -15,11 +15,12 @@ suboptimal policy. The first solve starts from zero and each later one from
 the previous policy's value. The rewards are computed once, inside the timed
 solve, and stored, as in P1.
 
-Each solve also returns the final relative residual, recomputed for the final
-policy, and `verify` fails a cell whose residual is above 1e-9 or which
-reached the lecture's cap of 250 rounds: JAX's BiCGSTAB reports no failure.
+After each round's solve, every stack recomputes its relative residual, and
+returns the largest as `residual`. `verify` fails a cell whose residual is
+above 1e-9 or which reached the lecture's cap of 250 rounds, since JAX's
+BiCGSTAB reports no failure.
 
-Two sweeps: `wealth` is P1's wealth grid with 100 income states, so P1 and P2
+Two sweeps: `grid` is P1's wealth grid with 100 income states, so P1 and P2
 compare directly; there the greedy step, n² y for n wealth points and y
 income states, outgrows the solve, n y² an application. `income` holds the
 lecture's 150 wealth points and grows the income states, so the solve grows
@@ -38,7 +39,7 @@ RESIDUAL = 1e-9         # the final relative residual a cell must reach
 
 
 def model(sweep, size, dtype):
-    n, ny = (size, Y_SIZE) if sweep == "wealth" else (W_SIZE, size)
+    n, ny = (size, Y_SIZE) if sweep == "grid" else (W_SIZE, size)
     x, Q = tauchen(ny, RHO, NU)
     return dict(w=np.linspace(W_MIN, W_MAX, n).astype(dtype),
                 y=np.exp(x).astype(dtype), Q=Q.astype(dtype))
@@ -48,7 +49,8 @@ def verify(row):
     if row["iterations"] >= MAX_ITER:
         raise RuntimeError(f"the policy was still changing after {MAX_ITER} rounds")
     if not row["residual"] <= RESIDUAL:
-        raise RuntimeError(f"final relative residual {row['residual']:.2g}, above {RESIDUAL:g}")
+        raise RuntimeError(f"a round's solve left a relative residual of "
+                           f"{row['residual']:.2g}, above {RESIDUAL:g}")
 
 
 def numpy(m):
@@ -65,19 +67,18 @@ def numpy(m):
 
         sigma = np.zeros((n, ny), np.int64)
         v = np.zeros(n * ny, w.dtype)
-        i, changed = 0, True
+        i, changed, residual = 0, True, 0.0
         while changed and i < MAX_ITER:
             op = spla.LinearOperator((n * ny, n * ny), matvec=lambda x, s=sigma: L(s, x),
                                      dtype=w.dtype)
-            v, info = spla.bicgstab(op, u[ii, jj, sigma].ravel(), x0=v, rtol=TOL, atol=0,
-                                    maxiter=SOLVE_ITER)
+            r = u[ii, jj, sigma].ravel()
+            v, info = spla.bicgstab(op, r, x0=v, rtol=TOL, atol=0, maxiter=SOLVE_ITER)
             if info != 0:
                 raise RuntimeError(f"BiCGSTAB stopped with info {info} in round {i + 1}")
+            residual = max(residual, np.linalg.norm(r - L(sigma, v)) / np.linalg.norm(r))
             new = np.argmax(u + BETA * (v.reshape(n, ny) @ Q.T).T[None, :, :], axis=2)
             changed = (new != sigma).any()
             sigma, i = new, i + 1
-        r = u[ii, jj, sigma].ravel()
-        residual = np.linalg.norm(r - L(sigma, v)) / np.linalg.norm(r)
         return v.reshape(n, ny), i, {"residual": residual}
 
     return solve, (m["w"], m["y"], m["Q"])
@@ -97,11 +98,14 @@ def numba(m, parallel):
                     u[i, j, ip] = c**g / g if c > 0 else -np.inf
         return u
 
-    @numba.njit(parallel=parallel)
+    @numba.njit
     def apply(sigma, Qt, x, out):
-        # out = x - β (x Qᵀ)[σ(w, y), y]: a matrix product, then a gather
+        # out = x - β (x Qᵀ)[σ(w, y), y]: a matrix product, then a gather. The
+        # gather stays serial in numba-parallel: it runs two or three times an
+        # iteration, and starting a parallel region each time cost more than
+        # the gather itself
         EV = x @ Qt
-        for i in numba.prange(sigma.shape[0]):
+        for i in range(sigma.shape[0]):
             for j in range(sigma.shape[1]):
                 out[i, j] = x[i, j] - BETA * EV[sigma[i, j], j]
 
@@ -126,14 +130,19 @@ def numba(m, parallel):
             if np.sqrt(dot(r, r)) < atol:
                 return 0
             rho = dot(rhat, r)
-            if abs(rho) < breakdown or abs(omega) < breakdown:
-                return -1
+            if abs(rho) < breakdown:
+                return -10
             if it == 0:
                 p = r.copy()
             else:
+                if abs(omega) < breakdown:
+                    return -11
                 p = r + (rho / rho_prev) * (alpha / omega) * (p - omega * v)
             apply(sigma, Qt, p, v)
-            alpha = rho / dot(rhat, v)
+            rv = dot(rhat, v)
+            if rv == 0.0:
+                return -11
+            alpha = rho / rv
             s = r - alpha * v
             if np.sqrt(dot(s, s)) < atol:
                 x += alpha * p
@@ -143,7 +152,7 @@ def numba(m, parallel):
             x += alpha * p + omega * s
             r = s - omega * t
             rho_prev = rho
-        return 1
+        return SOLVE_ITER
 
     @numba.njit(parallel=parallel)
     def greedy(u, EV, sigma):
@@ -165,27 +174,28 @@ def numba(m, parallel):
         sigma = np.zeros((n, ny), np.int64)
         new = np.empty_like(sigma)
         v = np.zeros((n, ny), w.dtype)
-        r = np.empty_like(v)
-        i, changed = 0, True
+        r, t = np.empty_like(v), np.empty_like(v)
+        i, changed, residual = 0, True, 0.0
         while changed and i < MAX_ITER:
             for a in range(n):
                 for j in range(ny):
                     r[a, j] = u[a, j, sigma[a, j]]
-            if bicgstab(sigma, Qt, r, v) != 0:
-                raise RuntimeError("BiCGSTAB didn't converge")
+            status = bicgstab(sigma, Qt, r, v)
+            if status != 0:
+                return v, i + 1, residual, status
+            apply(sigma, Qt, v, t)
+            residual = max(residual, np.sqrt(dot(r - t, r - t) / dot(r, r)))
             greedy(u, v @ Qt, new)
             changed = (new != sigma).any()
             sigma, new = new, sigma
             i += 1
-        for a in range(n):
-            for j in range(ny):
-                r[a, j] = u[a, j, sigma[a, j]]
-        t = np.empty_like(v)
-        apply(sigma, Qt, v, t)
-        return v, i, np.sqrt(dot(r - t, r - t) / dot(r, r))
+        return v, i, residual, 0
 
     def solve(w, y, Q):
-        v, i, residual = hpi(w, y, Q)
+        v, i, residual, status = hpi(w, y, Q)
+        if status != 0:
+            # SciPy's codes: the iterations used, or -10 and -11 for a breakdown
+            raise RuntimeError(f"BiCGSTAB stopped with info {status} in round {i}")
         return v, i, {"residual": residual}
 
     return solve, (m["w"], m["y"], m["Q"])
@@ -205,20 +215,20 @@ def jax(m, devices):
             return x - BETA * (x @ Q.T)[sigma, jj]
 
         def cond(state):
-            i, sigma, v, changed = state
+            i, sigma, v, changed, residual = state
             return changed & (i < MAX_ITER)
 
         def body(state):
-            i, sigma, v, _ = state
-            v, _ = bicgstab(lambda x: L(sigma, x), u[ii, jj, sigma], x0=v, tol=TOL,
-                            maxiter=SOLVE_ITER)
+            i, sigma, v, _, residual = state
+            r = u[ii, jj, sigma]
+            v, _ = bicgstab(lambda x: L(sigma, x), r, x0=v, tol=TOL, maxiter=SOLVE_ITER)
+            residual = jnp.maximum(residual, jnp.linalg.norm(r - L(sigma, v)) / jnp.linalg.norm(r))
             new = jnp.argmax(u + BETA * (v @ Q.T).T[None, :, :], axis=2)
-            return i + 1, new, v, jnp.any(new != sigma)
+            return i + 1, new, v, jnp.any(new != sigma), residual
 
-        init = (0, jnp.zeros((n, ny), int), jnp.zeros((n, ny), w.dtype), jnp.array(True))
-        i, sigma, v, _ = jax.lax.while_loop(cond, body, init)
-        r = u[ii, jj, sigma]
-        residual = jnp.linalg.norm(r - L(sigma, v)) / jnp.linalg.norm(r)
+        init = (0, jnp.zeros((n, ny), int), jnp.zeros((n, ny), w.dtype), jnp.array(True),
+                jnp.asarray(0.0, w.dtype))
+        i, sigma, v, _, residual = jax.lax.while_loop(cond, body, init)
         return v, i, {"residual": residual}
 
     return jax.jit(solve), tuple(jax.device_put((m["w"], m["y"], m["Q"]), devices[0]))

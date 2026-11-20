@@ -18,7 +18,7 @@ PACKAGES = ["jax", "jaxlib", "jax-cuda13-plugin", "jax-cuda13-pjrt",
             "jax-cuda12-plugin", "jax-cuda12-pjrt", "jax-rocm7-plugin", "jax-rocm7-pjrt",
             "jax-rocm10-plugin", "jax-rocm10-pjrt", "rocm", "numpy", "scipy", "numba", "llvmlite"]
 FLAG_PREFIXES = ("JAX_", "XLA_", "CUDA_", "HIP_", "ROCR_", "HSA_", "OMP_", "MKL_", "OPENBLAS_",
-                 "NUMBA_")
+                 "VECLIB_", "NUMBA_")
 REPO = Path(__file__).resolve().parent.parent
 
 

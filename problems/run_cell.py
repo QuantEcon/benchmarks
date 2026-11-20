@@ -89,6 +89,7 @@ def main():
         # includes compiling, which happens on the first call
         t = time.perf_counter()
         answer, iterations, *extra = run()
+        assert len(extra) <= 1, "a solve returns (answer, iterations[, measures])"
         row["first_run_s"] = time.perf_counter() - t
         row["cold_s"] = backend_init_s + compile_s + row["first_run_s"]
         answer = np.asarray(answer)
@@ -96,6 +97,7 @@ def main():
         # A problem may return measures of its own, such as a solver's final
         # residual, and check them: P2's JAX solver reports no failure
         for name, value in (extra[0] if extra else {}).items():
+            assert name not in row, f"a measure named {name!r} would overwrite the row's own"
             row[name] = float(value)
         if hasattr(problem, "verify"):
             problem.verify(row)
