@@ -88,6 +88,20 @@ PROBLEMS = {
         # On the cumulative distribution of assets (stationary.sample)
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-3}),
     ),
+    "time_iter": dict(
+        label="P6",
+        lecture="os_time_iter",
+        dtypes=["float64", "float32"],
+        # `grid` grows the grid with the lecture's 250 shocks; `shocks` grows
+        # the shocks with the lecture's 120 grid points. At 100,000 points
+        # NumPy's float32 loop took 440 s a run on the M6, near the cell limit
+        sweeps={"grid": dict(sizes=[120, 1000, 5000, 20000, 50000], quick=[120]),
+                "shocks": dict(sizes=[250, 1000, 5000, 20000, 100000], quick=[250])},
+        # JAX evaluates the Euler equation at every grid point and shock at
+        # once, with a few temporaries of that shape
+        memory=lambda sweep, n, s: 8 * (n * 250 if sweep == "grid" else 120 * n) * s,
+        check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-3}),
+    ),
     "kalman": dict(
         label="P7",
         lecture=None,  # precision/kernels.py's kalman
