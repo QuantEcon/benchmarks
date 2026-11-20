@@ -28,13 +28,19 @@ Phase 1 has four of #5's eight problem types, and Phase 2 adds the other four, s
 
 | Backend | Stack and device |
 |---|---|
-| `numpy` | NumPy, on the CPU. Its linear algebra runs on the BLAS it was built with, recorded as `env.numpy_blas` |
+| `numpy` | NumPy, on the CPU, with SciPy where SciPy has the faster tool for the job. NumPy's linear algebra runs on the BLAS it was built with, recorded as `env.numpy_blas` |
 | `numba` | Numba, `njit` with `parallel=False`, on the CPU |
 | `numba-parallel` | The same Numba source with `parallel=True`, so its `prange` loops use every core |
 | `jax-cpu` | JAX on the CPU |
 | `jax-gpu` | JAX on one GPU: NVIDIA's under CUDA, or AMD's under ROCm |
 
 Serial Numba is kept beside parallel because a parallel region costs microseconds to start, which a small problem doesn't repay.
+
+**NumPy, SciPy and float32.** `np.linalg` computes in float64 even for float32 arrays, and rounds its answer back to float32, so where NumPy's own solver is used, a float32 cell's solves are float64 ([#73](https://github.com/QuantEcon/benchmarks/issues/73)). Each problem uses whichever of the two is faster for its job, in both precisions:
+- **P5's dense sweep** solves one large system, where SciPy's float32 solve is the faster: for the 4,000 states at 2,000 assets it took 0.073 s on the M6, against 0.137 s for NumPy's, which computes in float64. So it uses `scipy.linalg.solve`. P5's sparse sweep uses `scipy.sparse`.
+- **P7** solves many small systems, where NumPy's solver costs less per call even with float64 inside. On the M6 one 10-state solve took 2.2 µs with `np.linalg.solve` against 5.6 µs with `scipy.linalg.solve` in float32, and a batch of 10,000 took 6.6 ms against 9.0 ms. So P7 keeps `np.linalg`, and NumPy's float32 P7 cells are float32 products with float64 solves.
+
+SciPy's linear algebra may come from a different BLAS build from NumPy's: Linux wheels each ship their own OpenBLAS.
 
 ## Results
 

@@ -42,6 +42,9 @@ def _inputs(m):
 
 
 def numpy(m):
+    # np.linalg computes in float64 even for float32 arrays, so a float32
+    # cell's solves and log-determinants here are float64. For these small
+    # matrices it still costs less per call than SciPy's float32 solve (#73)
     def solve(A, H, Y, Q, R):
         n, k = A.shape[:2]
         x = np.zeros((n, k), A.dtype)
