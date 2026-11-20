@@ -104,20 +104,26 @@ def inputs(m):
 
 
 def numpy(m):
+    import scipy.linalg
+    import scipy.sparse as sp
+
     tol = TOL[m["a"].dtype.name]
 
     def dense(a, sigma, Pi):
-        # The lecture's compute_asset_stationary
+        # M = I - P' + 1 1', as the lecture's compute_asset_stationary has it,
+        # built in place: column (i, j) of P' has Π(j, j') at row (σ(i, j), j').
+        # SciPy's solve, since NumPy's linalg computes in float64 even for
+        # float32 arrays, and returns the answer rounded to float32
         n, nz = sigma.shape
-        A = (sigma[:, :, None, None] == np.arange(n)[None, None, :, None]).astype(a.dtype)
-        P = (A * Pi[None, :, None, :]).reshape(n * nz, n * nz)
-        M = np.identity(n * nz, a.dtype) - P.T + np.ones((n * nz, n * nz), a.dtype)
-        psi = np.linalg.solve(M, np.ones(n * nz, a.dtype))
+        N = n * nz
+        M = np.ones((N, N), a.dtype)
+        M[np.arange(N), np.arange(N)] += 1
+        rows = (sigma[:, :, None] * nz + np.arange(nz)).ravel()
+        M[rows, np.repeat(np.arange(N), nz)] -= np.broadcast_to(Pi, (n, nz, nz)).ravel()
+        psi = scipy.linalg.solve(M, np.ones(N, a.dtype), overwrite_a=True, check_finite=False)
         return psi.reshape(n, nz).sum(axis=1), 1
 
     def sparse(a, s, Pi):
-        import scipy.sparse as sp
-
         n, nz = s.shape
         k = np.clip(np.searchsorted(a, s, side="right") - 1, 0, n - 2)
         w = (s - a[k]) / (a[k + 1] - a[k])
@@ -169,15 +175,16 @@ def numba(m, parallel):
         psi = np.linalg.solve(M, np.ones(n * nz, a.dtype))
         return psi.reshape(n, nz).sum(axis=1), 1
 
-    @numba.njit
+    @numba.njit(parallel=parallel)
     def transposed(a, s, Pi):
         # P transposed in CSR: each state's four destinations and weights,
-        # then a counting sort by destination
+        # then a counting sort by destination. The indices are unsigned, so
+        # Numba needn't check each one for a negative index from the end
         n, nz = s.shape
         N = n * nz
         dest = np.empty((N, 2 * nz), np.int64)
         weight = np.empty((N, 2 * nz), a.dtype)
-        for i in range(n):
+        for i in numba.prange(n):
             for j in range(nz):
                 k = min(max(np.searchsorted(a, s[i, j], side="right") - 1, 0), n - 2)
                 w = (s[i, j] - a[k]) / (a[k + 1] - a[k])
@@ -190,7 +197,7 @@ def numba(m, parallel):
         for d in dest.ravel():
             indptr[d + 1] += 1
         indptr = np.cumsum(indptr)
-        indices = np.empty(dest.size, np.int64)
+        indices = np.empty(dest.size, np.uint32)
         data = np.empty(dest.size, a.dtype)
         nxt = indptr[:-1].copy()
         for src in range(N):
@@ -198,7 +205,7 @@ def numba(m, parallel):
                 p = nxt[dest[src, e]]
                 indices[p], data[p] = src, weight[src, e]
                 nxt[dest[src, e]] = p + 1
-        return indptr, indices, data
+        return indptr.astype(np.uint64), indices, data
 
     @numba.njit(parallel=parallel)
     def step(indptr, indices, data, psi, new):
@@ -277,4 +284,12 @@ def jax(m, devices):
 
 
 BUILDERS = {"numpy": numpy, "numba": numba, "jax": jax}
-sample = fixed_positions
+
+
+def sample(psi):
+    """
+    The cumulative distribution of assets at fixed positions. The distribution
+    itself is mostly zeros beside one atom at the borrowing constraint, so an
+    error in its interior would barely register against the atom.
+    """
+    return fixed_positions(np.cumsum(np.asarray(psi, np.float64)))

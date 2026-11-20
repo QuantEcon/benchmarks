@@ -69,7 +69,8 @@ PROBLEMS = {
         # dense: about six (2n)^2 arrays at once, the LU's copy among them;
         # sparse: each state's four destinations and weights, and their temporaries
         memory=lambda sweep, n, s: (24 * n * n * s if sweep == "dense"
-                                    else 2 * n * (64 + 24 * s)),
+                                    else 2 * n * (80 + 24 * s)),
+        # On the cumulative distribution of assets (stationary.sample)
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-3}),
     ),
     "kalman": dict(
