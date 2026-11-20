@@ -18,10 +18,12 @@ Every stack finds the roots with Brent's method, as SciPy's `brentq`, which
 the lecture uses, implements it: NumPy calls `brentq` in a Python loop over
 the grid, as the lecture does; Numba and JAX use a port of `brentq`'s loop.
 JAX applies it to every grid point at once, so each step evaluates the Euler
-equation everywhere until the slowest point has converged. In float32, Brent's
-tolerances are 1e-6 and 4 eps, since float64's 2e-12 is out of reach. A root
-find that fails raises in NumPy and Numba; JAX can't raise, so it counts its
-failures as `unconverged`, and `verify` fails a cell that has any.
+equation everywhere until the slowest point has converged. Brent's tolerances
+are `brentq`'s, xtol 2e-12 and rtol 4 eps, with eps the cell's precision's. A
+root find fails where `brentq` would raise: no sign change on the bracket, a
+NaN, or no convergence in 100 iterations. That raises in NumPy and Numba; JAX
+can't raise, so it counts the failures as `unconverged`, and `verify` fails a
+cell that has any, or whose error against σ* is above 1e-4.
 
 Two sweeps: `grid` grows the grid with the lecture's 250 shocks, and
 `shocks` grows the shocks with the lecture's 120 grid points.
@@ -36,8 +38,10 @@ EDGE = 1e-10            # the bracket is (EDGE, x - EDGE), the lecture's
 TOL = 1e-5              # time iteration's, on the largest change in the policy
 MAX_ITER = 1_000        # time iteration's, the lecture's
 BRENT_ITER = 100        # brentq's maxiter
-# brentq's xtol and rtol in float64, its defaults; float32's
-XTOL = {"float64": 2e-12, "float32": 1e-6}
+EXACT_ERROR = 1e-4      # the largest error against σ* a cell may have; about 1.5e-6 is usual
+# brentq's xtol and rtol, its defaults. rtol is 4 eps of the cell's precision,
+# as brentq's is of float64's, so no step is below float32's spacing
+XTOL = 2e-12
 RTOL = {"float64": 4 * np.finfo(np.float64).eps, "float32": 4 * np.finfo(np.float32).eps}
 
 
@@ -54,8 +58,12 @@ def verify(row):
     if row["iterations"] >= MAX_ITER:
         raise RuntimeError(f"the policy was still changing after {MAX_ITER} iterations")
     if row.get("unconverged", 0) > 0:
-        raise RuntimeError(f"{row['unconverged']:.0f} root finds didn't converge "
-                           f"in {BRENT_ITER} iterations")
+        raise RuntimeError(f"{row['unconverged']:.0f} root finds failed where brentq "
+                           f"would have raised")
+    # A NaN in the policy stops time iteration as if it had converged
+    if not row["exact_error"] <= EXACT_ERROR:
+        raise RuntimeError(f"the error against σ* is {row['exact_error']:.2g}, "
+                           f"above {EXACT_ERROR:g}")
 
 
 def exact_error(sigma, grid):
@@ -67,7 +75,7 @@ def exact_error(sigma, grid):
 def numpy(m):
     from scipy.optimize import brentq
 
-    xtol, rtol = XTOL[m["grid"].dtype.name], RTOL[m["grid"].dtype.name]
+    rtol = RTOL[m["grid"].dtype.name]
 
     def solve(grid, shocks):
         def euler_diff(c, sigma, x):
@@ -77,12 +85,13 @@ def numpy(m):
 
         sigma, new = grid.copy(), np.empty_like(grid)
         i, change = 0, TOL + 1
-        # In float32, x - 1e-10 rounds to x, so at the bracket's upper end k is
-        # 0 and f'(k) infinite, which still gives the Euler equation's sign
+        # In float32, x - 1e-10 rounds to x for x above 2^-9, so at the
+        # bracket's upper end k is 0 and f'(k) infinite, which still gives the
+        # Euler equation's sign
         with np.errstate(divide="ignore"):
             while change > TOL and i < MAX_ITER:
                 for j, x in enumerate(grid):
-                    new[j] = brentq(euler_diff, EDGE, x - EDGE, args=(sigma, x), xtol=xtol,
+                    new[j] = brentq(euler_diff, EDGE, x - EDGE, args=(sigma, x), xtol=XTOL,
                                     rtol=rtol, maxiter=BRENT_ITER)
                 change = np.max(np.abs(new - sigma))
                 sigma, new = new, sigma
@@ -99,50 +108,61 @@ def numba(m, parallel):
     # so the constants take the cell's precision
     t = m["grid"].dtype.type
     alpha, edge, zero, half, one, two, three = t(ALPHA), t(EDGE), t(0), t(0.5), t(1), t(2), t(3)
-    xtol, rtol = t(XTOL[m["grid"].dtype.name]), t(RTOL[m["grid"].dtype.name])
+    xtol, rtol, neg_inf = t(XTOL), t(RTOL[m["grid"].dtype.name]), t(-np.inf)
     beta_mean = t(BETA / m["shocks"].size)      # β, and the mean's 1/n
+    compensate = t is np.float32
 
     @numba.njit
     def interp(y, grid, sigma):
-        # np.interp at one point: linear inside the grid, flat beyond it
+        # np.interp at one point: linear inside the grid, flat beyond it, and
+        # NaN at a NaN
         n = grid.size
         if y <= grid[0]:
             return sigma[0]
         if y >= grid[n - 1]:
             return sigma[n - 1]
-        j = np.searchsorted(grid, y) - 1
+        j = min(np.searchsorted(grid, y), n - 1) - 1
         return sigma[j] + (sigma[j + 1] - sigma[j]) / (grid[j + 1] - grid[j]) * (y - grid[j])
 
     @numba.njit
     def euler_diff(c, sigma, x, grid, shocks):
         k = x - c
         if k == zero:
-            # In float32, x - 1e-10 rounds to x. f'(0) is infinite, which
-            # gives the sign, but would make the compensated sum NaN
-            return -np.inf
+            # In float32, x - 1e-10 rounds to x for x above 2^-9. f'(0) is
+            # infinite, which gives the sign, but would make the compensated
+            # sum NaN
+            return neg_inf
         fk, dfk = k**alpha, alpha * k**(alpha - one)
-        # Kahan's compensated sum: summed one by one in float32, the error grew
-        # with the shocks, to 4e-4 against σ* at 100,000; NumPy's and JAX's
-        # means sum pairwise
         total = comp = zero
         for z in shocks:
-            term = dfk * z / interp(fk * z, grid, sigma) - comp
-            new = total + term
-            comp = (new - total) - term
-            total = new
+            term = dfk * z / interp(fk * z, grid, sigma)
+            if compensate:
+                # Kahan's compensated sum: summed one by one in float32, the
+                # error against σ* grew with the shocks, to 4e-4 at 100,000
+                term -= comp
+                new = total + term
+                comp = (new - total) - term
+                total = new
+            else:
+                total += term
         return one / c - beta_mean * total
 
     @numba.njit
     def brent(sigma, x, grid, shocks):
-        # SciPy's brentq loop: (root, 0), or (last iterate, 1) if it didn't
-        # converge in BRENT_ITER iterations
+        # SciPy's brentq loop, returning the root and a status: 0 if it
+        # converged; where brentq raises, 1 if not in BRENT_ITER iterations, 2
+        # if the bracket has no sign change, 3 at a NaN
         xpre, xcur = edge, x - edge
         fpre = euler_diff(xpre, sigma, x, grid, shocks)
         fcur = euler_diff(xcur, sigma, x, grid, shocks)
+        if fpre != fpre or fcur != fcur:
+            return xcur, 3
         if fpre == 0:
             return xpre, 0
         if fcur == 0:
             return xcur, 0
+        if (fpre < 0) == (fcur < 0):
+            return zero, 2
         xblk = fblk = spre = scur = zero
         for _ in range(BRENT_ITER):
             if fpre != 0 and fcur != 0 and (fpre < 0) != (fcur < 0):
@@ -171,6 +191,8 @@ def numba(m, parallel):
             xpre, fpre = xcur, fcur
             xcur += scur if abs(scur) > delta else (delta if sbis > 0 else -delta)
             fcur = euler_diff(xcur, sigma, x, grid, shocks)
+            if fcur != fcur:
+                return xcur, 3
         return xcur, 1
 
     @numba.njit(parallel=parallel)
@@ -187,17 +209,19 @@ def numba(m, parallel):
         while change > TOL and i < MAX_ITER:
             K(sigma, grid, shocks, new, failed)
             if failed.any():
-                return sigma, i + 1, 1
+                return sigma, i + 1, failed.max()
             change = np.max(np.abs(new - sigma))
             sigma, new = new, sigma
             i += 1
         return sigma, i, 0
 
+    failures = {1: f"didn't converge in {BRENT_ITER} iterations",
+                2: "had no sign change on its bracket", 3: "met a NaN"}
+
     def solve(grid, shocks):
-        sigma, i, failed = time_iter(grid, shocks)
-        if failed:
-            raise RuntimeError(f"a root find didn't converge in {BRENT_ITER} iterations, "
-                               f"in iteration {i}")
+        sigma, i, status = time_iter(grid, shocks)
+        if status:
+            raise RuntimeError(f"a root find {failures[status]}, in iteration {i}")
         return sigma, i, {"exact_error": exact_error(sigma, grid)}
 
     return solve, (m["grid"], m["shocks"])
@@ -207,7 +231,7 @@ def jax(m, devices):
     import jax
     import jax.numpy as jnp
 
-    xtol, rtol = XTOL[m["grid"].dtype.name], RTOL[m["grid"].dtype.name]
+    rtol = RTOL[m["grid"].dtype.name]
 
     def solve(grid, shocks):
         def euler_diff(c, sigma):
@@ -219,20 +243,24 @@ def jax(m, devices):
 
         def K(sigma):
             # SciPy's brentq loop at every grid point, each frozen once it
-            # has converged, until all have or BRENT_ITER is reached
+            # has converged or failed, until all have or BRENT_ITER is reached.
+            # A point fails where brentq would raise: its bracket has no sign
+            # change, or it meets a NaN
             xpre, xcur = jnp.full_like(grid, EDGE), grid - EDGE
             fpre, fcur = euler_diff(xpre, sigma), euler_diff(xcur, sigma)
             zero = jnp.zeros_like(grid)
             root = jnp.where(fpre == 0, xpre, xcur)
             done = (fpre == 0) | (fcur == 0)
-            state = (0, xpre, xcur, zero, fpre, fcur, zero, zero, zero, root, done)
+            failed = (jnp.isnan(fpre) | jnp.isnan(fcur)
+                      | (~done & (jnp.signbit(fpre) == jnp.signbit(fcur))))
+            state = (0, xpre, xcur, zero, fpre, fcur, zero, zero, zero, root, done | failed, failed)
 
             def cond(state):
-                it, *_, done = state
+                it, *_, done, failed = state
                 return (it < BRENT_ITER) & ~done.all()
 
             def body(state):
-                it, xpre, xcur, xblk, fpre, fcur, fblk, spre, scur, root, done = state
+                it, xpre, xcur, xblk, fpre, fcur, fblk, spre, scur, root, done, failed = state
                 new = (fpre != 0) & (fcur != 0) & ((fpre < 0) != (fcur < 0))
                 xblk, fblk = jnp.where(new, xpre, xblk), jnp.where(new, fpre, fblk)
                 spre = jnp.where(new, xcur - xpre, spre)
@@ -242,7 +270,7 @@ def jax(m, devices):
                                     jnp.where(swap, xcur, xblk))
                 fpre, fcur, fblk = (jnp.where(swap, fcur, fpre), jnp.where(swap, fblk, fcur),
                                     jnp.where(swap, fcur, fblk))
-                delta = (xtol + rtol * jnp.abs(xcur)) / 2
+                delta = (XTOL + rtol * jnp.abs(xcur)) / 2
                 sbis = (xblk - xcur) / 2
                 converged = ~done & ((fcur == 0) | (jnp.abs(sbis) < delta))
                 root = jnp.where(converged, xcur, root)
@@ -260,10 +288,12 @@ def jax(m, devices):
                 step = jnp.where(jnp.abs(scur) > delta, scur, jnp.where(sbis > 0, delta, -delta))
                 xcur = jnp.where(done, xcur, xcur + step)
                 fcur = euler_diff(xcur, sigma)
-                return it + 1, xpre, xcur, xblk, fpre, fcur, fblk, spre, scur, root, done
+                failed = failed | (~done & jnp.isnan(fcur))
+                return (it + 1, xpre, xcur, xblk, fpre, fcur, fblk, spre, scur, root,
+                        done | failed, failed)
 
-            *_, xcur, _, _, _, _, _, root, done = jax.lax.while_loop(cond, body, state)
-            return jnp.where(done, root, xcur), jnp.sum(~done)
+            _, _, xcur, *_, root, done, failed = jax.lax.while_loop(cond, body, state)
+            return jnp.where(done & ~failed, root, xcur), jnp.sum(~done | failed)
 
         def cond(state):
             i, sigma, change, unconverged = state
