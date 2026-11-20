@@ -88,11 +88,17 @@ def main():
         # The first run is what a lecture pays on first use; for Numba it
         # includes compiling, which happens on the first call
         t = time.perf_counter()
-        answer, iterations = run()
+        answer, iterations, *extra = run()
         row["first_run_s"] = time.perf_counter() - t
         row["cold_s"] = backend_init_s + compile_s + row["first_run_s"]
         answer = np.asarray(answer)
         row["iterations"] = int(iterations)
+        # A problem may return measures of its own, such as a solver's final
+        # residual, and check them: P2's JAX solver reports no failure
+        for name, value in (extra[0] if extra else {}).items():
+            row[name] = float(value)
+        if hasattr(problem, "verify"):
+            problem.verify(row)
 
         # A silent float64 must not pass as float32, nor the other way
         row["result_dtype"] = answer.dtype.name

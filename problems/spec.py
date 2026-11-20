@@ -39,6 +39,20 @@ PROBLEMS = {
         memory=lambda sweep, n, s: 3 * n * 100 * n * s,
         check=dict(kind="close", rtol={"float64": 1e-8}),
     ),
+    "hpi": dict(
+        label="P2",
+        lecture="opt_savings_2",
+        # float32 can't reach the solves' relative residual of 1e-10 (#72)
+        dtypes=["float64"],
+        # `wealth` is P1's grid with 100 income states; `income` holds the
+        # lecture's 150 wealth points and grows the income states, where the
+        # linear solve grows faster than the greedy step
+        sweeps={"wealth": dict(sizes=[100, 200, 400, 700, 1000, 1500], quick=[100]),
+                "income": dict(sizes=[25, 50, 100, 200, 400], quick=[25])},
+        # The stored rewards, w x y x w, and NumPy's temporaries of that shape, as P1
+        memory=lambda sweep, n, s: 3 * (n * 100 * n if sweep == "wealth" else 150 * n * 150) * s,
+        check=dict(kind="close", rtol={"float64": 1e-8}),
+    ),
     "egm": dict(
         label="P3",
         lecture="ifp_egm_jax",
