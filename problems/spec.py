@@ -57,6 +57,22 @@ PROBLEMS = {
         memory=lambda sweep, n, s: 12 * n * s,
         check=dict(kind="shares", z=5),
     ),
+    "stationary": dict(
+        label="P5",
+        lecture="aiyagari_jax",
+        dtypes=["float64", "float32"],
+        # `dense` is the lecture's method, which needs (2n)^2 entries; `sparse`
+        # is Young's lottery, for grids too large for a dense matrix (#47)
+        sweeps={"dense": dict(sizes=[100, 200, 500, 1000, 2000, 5000], quick=[100]),
+                "sparse": dict(sizes=[1_000, 10_000, 100_000, 1_000_000, 10_000_000],
+                               quick=[1_000])},
+        # dense: about six (2n)^2 arrays at once, the LU's copy among them;
+        # sparse: each state's four destinations and weights, and their temporaries
+        memory=lambda sweep, n, s: (24 * n * n * s if sweep == "dense"
+                                    else 2 * n * (80 + 24 * s)),
+        # On the cumulative distribution of assets (stationary.sample)
+        check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-3}),
+    ),
     "kalman": dict(
         label="P7",
         lecture=None,  # precision/kernels.py's kalman
