@@ -549,3 +549,8 @@ P8 mle_blocked params           300 float32  numba           warm     4.422 s  c
 P8 mle_blocked params           300 float32  numba-parallel  warm     0.489 s  cold    16.846 s       9 iterations
 P8 mle_blocked params          1000 float32  numba           warm    88.475 s  cold    99.668 s      15 iterations
 P8 mle_blocked params          1000 float32  numba-parallel  warm     5.581 s  cold    22.115 s      15 iterations
+Writing to /home/mamckay/bench/run-2026-11-21-p2/results/qe-wharton1-gpu/2026-11-21.jsonl
+P6 time_iter grid           50000 float32  numpy           timeout
+Writing to /home/mamckay/bench/run-2026-11-21-p2/results/qe-wharton1-gpu/2026-11-21.jsonl
+P8 mle     obs         10000000 float64  jax-gpu         warm     3.322 s  cold     4.533 s      16 iterations
+P8 mle_hand obs         10000000 float64  jax-gpu         warm     2.635 s  cold     3.703 s      16 iterations

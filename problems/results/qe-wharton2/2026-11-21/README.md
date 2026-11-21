@@ -5,13 +5,13 @@ For [#5](https://github.com/QuantEcon/benchmarks/issues/5)'s Phase 2: the same s
 | | |
 |---|---|
 | Host | `qe-wharton2`: Apple M5 Pro, 18 cores (6 Super and 12 Performance), 64 GB, macOS 26.7.2 (25G332). A guest machine, on AC power, Low Power Mode off |
-| Software | A fresh clone at `11c1c59`, #82's merge, with a venv at `problems/constraints.txt`: NumPy 2.5.4 (Accelerate), SciPy 1.18.1, Numba 0.68.1, JAX 0.12.0.1, Python 3.12.15 (`setup.txt`) |
+| Software | A fresh clone at `11c1c59`, #82's merge, with a venv at `problems/constraints.txt`: NumPy 2.5.4 (Accelerate), SciPy 1.18.1, Numba 0.68.1, JAX 0.12.0.1, Python 3.12.15, as the rows' `env` records. `setup.txt` has the clone's commit and the packages' versions |
 | When | 2026-11-21, 03:22:22 to 04:40:20 UTC (14:22 to 15:40 AEDT), under the machine's shared lock, so nothing else was booked on it |
 | Script | [`session/chain.sh`](session/chain.sh), in `screen` under `caffeinate -i -s`, which runs each step through [`session/step.sh`](session/step.sh) |
 
 ## What ran
 
-`chain.sh` ran six steps in turn, and would have stopped at the first that failed:
+`chain.sh` ran six steps in turn, and would have stopped if any of the first four had failed:
 
 | Step | What it does | When (UTC) |
 |---|---|---|
@@ -43,6 +43,6 @@ The full run's problems took the same stacks and cells as on the M6:
 ## The machine during the run
 
 - **The chain recorded the machine at the start, and before and after the full run,** in `state.txt`, but not during it. Nothing else was booked on the machine, since the chain held its lock throughout.
-- **`state.txt` is redacted** with the same rule as the 2026-11-06 run's: software the owner's institution manages is shown as `<managed agent>`, with its CPU figures as recorded, and the account's name and home folder are left out. The busiest of those agents took 6% to 12% of a core in its three samples, at the start, before the full run and after it.
+- **`state.txt` is redacted:** as in the 2026-11-06 run's, software the owner's institution manages is shown as `<managed agent>`, with its CPU figures as recorded. This run's files go further than the earlier runs': `state.txt`, `run.log` and `setup.txt` show the account's home folder as `~`, its name as `<user>`, and the temporary folder as `<temporary folder>`. The busiest of those agents took 6% to 12% of a core in its three samples, at the start, before the full run and after it.
 - **The console's animated wallpaper was playing,** at 2% to 7% of a core with its video decoder at 1% to 2%, and wasn't paused. WindowServer took 22% to 31%, and a hardware monitor, `macmon`, 0.5% at the end.
 - **`pmset -g therm` recorded no thermal or performance warning,** before or after, and the battery stayed at 80%, on AC and not charging.

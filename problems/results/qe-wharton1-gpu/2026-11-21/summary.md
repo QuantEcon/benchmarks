@@ -339,6 +339,22 @@ Median warm time, with cold time (compile and first run) in brackets, in seconds
 | 300 | 2.09 (14.4) | 6.28 (23.1) | numba | numba |
 | 1,000 | 28.8 (41.2) | 24.3 (41.2) | numba-parallel | numba-parallel |
 
+### P8 `mle`, obs sweep, float64, on qe-wharton1-gpu (autotune0)
+
+Median warm time, with cold time (compile and first run) in brackets, in seconds.
+
+| Size | `jax-gpu` | Fastest warm | Fastest cold |
+|---:|---:|---|---|
+| 10,000,000 | 3.32 (4.53) | jax-gpu | jax-gpu |
+
+### P8 `mle_hand`, obs sweep, float64, on qe-wharton1-gpu (autotune0)
+
+Median warm time, with cold time (compile and first run) in brackets, in seconds.
+
+| Size | `jax-gpu` | Fastest warm | Fastest cold |
+|---:|---:|---|---|
+| 10,000,000 | 2.63 (3.7) | jax-gpu | jax-gpu |
+
 ### P8 `mle_blocked`, params sweep, float64, on qe-wharton1-gpu (openblas-1-thread)
 
 Median warm time, with cold time (compile and first run) in brackets, in seconds.
@@ -364,4 +380,12 @@ Median warm time, with cold time (compile and first run) in brackets, in seconds
 | 100 | 0.502 (11.8) | 0.0558 (16.4) | numba-parallel | numba |
 | 300 | 4.42 (16) | 0.489 (16.8) | numba-parallel | numba |
 | 1,000 | 88.5 (99.7) | 5.58 (22.1) | numba-parallel | numba-parallel |
+
+### P6 `time_iter`, grid sweep, float32, on qe-wharton1-gpu (timeout-1800)
+
+Median warm time, with cold time (compile and first run) in brackets, in seconds.
+
+| Size | `numpy` | Fastest warm | Fastest cold |
+|---:|---:|---|---|
+| 50,000 | timeout |  |  |
 
