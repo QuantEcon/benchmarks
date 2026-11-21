@@ -3,7 +3,7 @@ P8: maximum likelihood by Newton–Raphson, with the derivatives by hand or by
 autodiff.
 
 The Poisson regression of QuantEcon's maximum likelihood lectures,
-lecture-jax's `mle` and lecture-python's `mle`: y_i ~ Poisson(μ_i), with
+lecture-jax's `mle_jax` and lecture-python's `mle`: y_i ~ Poisson(μ_i), with
 μ_i = exp(x_i'β), fitted from β = 0.1 in every coordinate by
 
     β ← β − H⁻¹ G,   G = X'(y − μ),   H = −X' diag(μ) X
@@ -42,6 +42,7 @@ SEED = 1234
 BLOCK = 4096            # observations a block, in `mle_onepass`'s Numba pass
 # and in `mle_blocked`'s, the fastest of 256, 512 and 1,024 on the M6
 BLAS_BLOCK = {"float64": 256, "float32": 1024}
+CHUNKS = 64             # `mle_blocked`'s runs of blocks, as many as the 2990WX's threads
 
 
 def model(sweep, size, dtype):
@@ -153,7 +154,7 @@ def numba_onepass(m, parallel):
             Gs[b] = g
             Hs[b] = h
 
-    return numba_blocks(m, derivatives, BLOCK, lower=True)
+    return numba_blocks(m, derivatives, lambda n: -(-n // BLOCK), lower=True)
 
 
 def numba_blocked(m, parallel):
@@ -166,25 +167,35 @@ def numba_blocked(m, parallel):
 
     block = BLAS_BLOCK[m["X"].dtype.name]
 
+    # The blocks are split into CHUNKS runs, each of which sums its blocks'
+    # G and H into its own: a block's H is k × k, so one partial a block
+    # would leave hundreds to add up on one thread every iteration
     @numba.njit(parallel=parallel)
     def derivatives(X, y, beta, Gs, Hs):
-        n = X.shape[0]
-        for b in numba.prange(Gs.shape[0]):
-            lo, hi = b * block, min(n, (b + 1) * block)
-            Xb = X[lo:hi]
-            mu = np.exp(Xb @ beta)
-            Gs[b] = Xb.T @ (y[lo:hi] - mu)
-            Hs[b] = -(Xb.T @ (mu.reshape((hi - lo, 1)) * Xb))
+        n, k = X.shape
+        blocks, chunks = (n + block - 1) // block, Gs.shape[0]
+        for c in numba.prange(chunks):
+            g = np.zeros(k, X.dtype)
+            h = np.zeros((k, k), X.dtype)
+            for b in range(c * blocks // chunks, (c + 1) * blocks // chunks):
+                lo, hi = b * block, min(n, (b + 1) * block)
+                Xb = X[lo:hi]
+                mu = np.exp(Xb @ beta)
+                g += Xb.T @ (y[lo:hi] - mu)
+                h -= Xb.T @ (mu.reshape((hi - lo, 1)) * Xb)
+            Gs[c] = g
+            Hs[c] = h
 
-    return numba_blocks(m, derivatives, block, lower=False)
+    return numba_blocks(m, derivatives, lambda n: min(CHUNKS, -(-n // block)), lower=False)
 
 
-def numba_blocks(m, derivatives, block, lower):
+def numba_blocks(m, derivatives, partials, lower):
     """
-    The Newton loop of `mle_onepass` and `mle_blocked`: each block of `block`
-    observations forms its own G and H, its lower triangle if `lower`, and
-    the blocks' are then added up, so threads don't share cache lines and
-    float32's sums stay short.
+    The Newton loop of `mle_onepass` and `mle_blocked`: each of `partials(n)`
+    runs of observations forms its own G and H, its lower triangle if
+    `lower`, and theirs are then added up, so threads don't share cache lines
+    and float32's sums stay short. The runs are fixed, not set by the
+    threads, so parallel answers are serial ones.
     """
     import numba
 
@@ -194,16 +205,15 @@ def numba_blocks(m, derivatives, block, lower):
     start, tol, inf = t(START), t(TOL), t(np.inf)
 
     @numba.njit
-    def newton(X, y):
-        n, k = X.shape
-        blocks = (n + block - 1) // block
-        Gs, Hs = np.empty((blocks, k), X.dtype), np.empty((blocks, k, k), X.dtype)
+    def newton(X, y, parts):
+        k = X.shape[1]
+        Gs, Hs = np.empty((parts, k), X.dtype), np.empty((parts, k, k), X.dtype)
         beta = np.full(k, start)
         i, step = 0, inf
         while step > tol and i < MAX_ITER:
             derivatives(X, y, beta, Gs, Hs)
             G, H = np.zeros(k, X.dtype), np.zeros((k, k), X.dtype)
-            for b in range(blocks):
+            for b in range(parts):
                 G += Gs[b]
                 H += Hs[b]
             if lower:
@@ -217,7 +227,7 @@ def numba_blocks(m, derivatives, block, lower):
         return beta, i, step
 
     def solve(X, y):
-        beta, i, step = newton(X, y)
+        beta, i, step = newton(X, y, partials(X.shape[0]))
         return beta, i, {"last_step": step}
 
     return solve, (m["X"], m["y"])

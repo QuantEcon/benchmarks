@@ -127,7 +127,7 @@ PROBLEMS = {
     ),
     "mle": dict(
         label="P8",
-        lecture="mle",
+        lecture="mle_jax",  # and lecture-python's mle
         dtypes=["float64", "float32"],
         # `obs` grows the observations with the exercise's 3 parameters, from
         # 10,000 since at 1,000 Newton took 41 iterations in float64 and
@@ -137,9 +137,10 @@ PROBLEMS = {
                             quick=[10_000]),
                 "params": dict(sizes=[3, 10, 30, 100, 300, 1_000], quick=[10])},
         memory=lambda sweep, n, s: MLE_MEMORY * (n * 3 if sweep == "obs" else 100_000 * n) * s,
-        # The largest value is the intercept, about 2, where the slopes are as
-        # small as 0.06, so float32's check is tighter than the suite's 1e-3.
-        # Float32 estimates differed from float64's by 3.3e-7 at most on the M6
+        # The largest value is the intercept, −2.5 or −2, where most slopes
+        # are far smaller (the median is 0.03 at 300 parameters), so float32's
+        # check is tighter than the suite's 1e-3. Float32 estimates differed
+        # from float64's by 3.3e-7 at most on the M6
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-5}),
     ),
 }
@@ -155,8 +156,7 @@ PROBLEMS["mle_onepass"] = dict(
             "params": dict(sizes=[3, 10, 30, 100, 300], quick=[10])})
 PROBLEMS["mle_blocked"] = dict(
     PROBLEMS["mle"], backends=["numba", "numba-parallel"], reference="mle",
-    # mle's, and each block's G and H, at 256 rows a block or more: at 1,000
-    # parameters in float64 the blocks' H take 3.1 GB
+    # mle's, and for each of up to 64 runs of blocks (mle.CHUNKS) a k × k H,
+    # its running sum and BLAS's product
     memory=lambda sweep, n, s: (PROBLEMS["mle"]["memory"](sweep, n, s)
-                                + -(-(n if sweep == "obs" else 100_000) // 256)
-                                * (3 if sweep == "obs" else n) ** 2 * s))
+                                + 3 * 64 * (3 if sweep == "obs" else n) ** 2 * s))
