@@ -1,0 +1,3 @@
+benchmarks at 11c1c59: Problems: P8, maximum likelihood with autodiff, and three companions (#81) (#82)
+numpy 2.5.4 | scipy 1.18.1 | numba 0.68.1 | jax 0.12.0.1
+8329f8a2f6b3783ecfa2423883b8e7c98bb6f0706222c50d3c605620db6e4ba1  ~/bench/m6_p2_run.sh
