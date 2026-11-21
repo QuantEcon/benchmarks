@@ -1,0 +1,28 @@
+benchmarks at 11c1c59: Problems: P8, maximum likelihood with autodiff, and three companions (#81) (#82)
+0, 00000000:0B:00.0, NVIDIA TITAN RTX, 595.99.02
+1, 00000000:43:00.0, NVIDIA TITAN RTX, 595.99.02
+jax 0.12.0.1
+jax_cuda13_pjrt 0.12.0.1
+jax_cuda13_plugin 0.12.0.1
+jaxlib 0.12.0.1
+llvmlite 0.50.0
+numba 0.68.1
+numpy 2.5.4
+nvidia_cublas 13.8.1.7
+nvidia_cuda_cccl 13.3.4.3.1
+nvidia_cuda_crt 13.4.92
+nvidia_cuda_cupti 13.4.92
+nvidia_cuda_nvcc 13.4.92
+nvidia_cuda_nvrtc 13.4.92
+nvidia_cuda_runtime 13.4.92
+nvidia_cudnn_cu13 9.27.0.42
+nvidia_cufft 12.4.0.43
+nvidia_cusolver 12.3.5.3
+nvidia_cusparse 12.8.6.72
+nvidia_nccl_cu13 2.32.3
+nvidia_nvjitlink 13.4.92
+nvidia_nvshmem_cu13 3.8.0
+nvidia_nvvm 13.4.92
+scipy 1.18.1
+6420c9757fc1519739a4eafb72cec15692067e6db796166e430dee5978510d81  /home/mamckay/bench/wharton1_p2_run.sh
+0e59856f3e86407ada1930fdc483773f6fcfc0adbd333150d4ea5310e58c8da1  /home/mamckay/bench/hoist_check.py

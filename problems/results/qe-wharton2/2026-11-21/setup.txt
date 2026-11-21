@@ -1,0 +1,14 @@
+== tools1: start 2026-11-21 03:22:22 UTC; cmd: bash ~/bench/pbj-p2/tools.sh
+git version 2.56.1
+== tools1: end 2026-11-21 03:22:31 UTC; exit 0; wall 9 s
+== setup1: start 2026-11-21 03:22:31 UTC; cmd: bash ~/bench/pbj-p2/setup.sh 11c1c59f2f0e44a81d77383427b59f113cde888a
+11c1c59 Problems: P8, maximum likelihood with autodiff, and three companions (#81) (#82)
+2.5.4 1.18.1 0.68.1 0.12.0.1
+real 12.28
+user 0.53
+sys 0.19
+2.5.4 1.18.1 0.68.1 0.12.0.1
+real 0.28
+user 0.20
+sys 0.04
+== setup1: end 2026-11-21 03:22:54 UTC; exit 0; wall 23 s

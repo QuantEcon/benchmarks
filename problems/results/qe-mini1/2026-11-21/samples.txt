@@ -1,0 +1,608 @@
+== 02:46:14
+13:46  up 11 days,  5:01, 1 user, load averages: 1.68 1.13 0.98
+ 3366 174.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37160  15.3 claude
+35670   8.5 /opt/homebrew/bin/claude
+34484   4.3 /opt/homebrew/bin/claude
+89150   2.4 claude
+34939   1.4 /opt/homebrew/bin/claude
+== 02:47:14
+13:47  up 11 days,  5:02, 1 user, load averages: 1.70 1.24 1.03
+ 3583  99.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+98903   0.4 claude
+38603   0.1 claude
+ 3269   0.0 sleep
+ 3173   0.0 sleep
+ 3112   0.0 .venv/bin/python
+== 02:48:14
+13:48  up 11 days,  5:03, 1 user, load averages: 2.30 1.51 1.14
+ 3617 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   1.8 claude
+34277   1.3 claude
+38603   1.0 claude
+34484   0.8 /opt/homebrew/bin/claude
+33353   0.6 claude
+== 02:49:15
+13:49  up 11 days,  5:04, 1 user, load averages: 1.63 1.46 1.15
+ 3617  99.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  676   0.5 /usr/sbin/mDNSResponder
+98903   0.3 claude
+36766   0.2 claude
+  690   0.2 /usr/libexec/airportd
+33353   0.2 claude
+== 02:50:15
+13:50  up 11 days,  5:05, 1 user, load averages: 1.64 1.49 1.18
+ 3700  99.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37160   3.4 claude
+55842   0.5 /opt/homebrew/bin/claude
+79573   0.3 /opt/homebrew/bin/claude
+37195   0.3 /opt/homebrew/bin/claude
+34939   0.1 /opt/homebrew/bin/claude
+== 02:51:15
+13:51  up 11 days,  5:06, 1 user, load averages: 1.87 1.58 1.23
+ 3700  99.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37160   0.8 claude
+35670   0.2 /opt/homebrew/bin/claude
+38603   0.2 claude
+36766   0.2 claude
+98903   0.1 claude
+== 02:52:15
+13:52  up 11 days,  5:07, 1 user, load averages: 4.52 2.23 1.49
+ 3797 911.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   3.7 claude
+34277   0.6 claude
+94649   0.3 claude
+38603   0.3 claude
+37160   0.3 claude
+== 02:53:15
+13:53  up 11 days,  5:08, 1 user, load averages: 3.05 2.26 1.55
+ 3886 298.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   6.4 claude
+79573   4.3 /opt/homebrew/bin/claude
+34484   2.5 /opt/homebrew/bin/claude
+94649   0.4 claude
+37160   0.3 claude
+== 02:54:15
+13:54  up 11 days,  5:09, 1 user, load averages: 3.09 2.47 1.68
+ 3886 283.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   0.5 claude
+ 3976   0.4 ssh
+37227   0.3 /opt/homebrew/bin/claude
+35670   0.3 /opt/homebrew/bin/claude
+94649   0.2 claude
+== 02:55:15
+13:55  up 11 days,  5:10, 1 user, load averages: 2.47 2.40 1.71
+ 4002  99.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34939   2.6 /opt/homebrew/bin/claude
+94649   0.4 claude
+33353   0.3 claude
+98903   0.3 claude
+48546   0.1 claude
+== 02:56:16
+13:56  up 11 days,  5:11, 2 users, load averages: 2.00 2.26 1.70
+ 4140  96.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4051   2.6 macmon
+37195   2.1 /opt/homebrew/bin/claude
+37160   1.3 claude
+79573   0.9 /opt/homebrew/bin/claude
+94649   0.6 claude
+== 02:57:16
+13:57  up 11 days,  5:12, 1 user, load averages: 1.66 2.11 1.68
+ 4140 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34277   3.7 claude
+34939   0.3 /opt/homebrew/bin/claude
+37195   0.2 /opt/homebrew/bin/claude
+48546   0.2 claude
+36766   0.2 claude
+== 02:58:16
+13:58  up 11 days,  5:13, 1 user, load averages: 2.86 2.26 1.75
+ 4181 780.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+35670   9.1 /opt/homebrew/bin/claude
+89150   2.2 claude
+38603   0.7 claude
+94649   0.5 claude
+  623   0.5 /usr/sbin/cfprefsd
+== 02:59:16
+13:59  up 11 days,  5:14, 1 user, load averages: 2.16 2.23 1.78
+ 4266 352.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34277   1.3 claude
+37160   1.2 claude
+94649   0.5 claude
+48546   0.4 claude
+98903   0.4 claude
+== 03:00:16
+14:00  up 11 days,  5:15, 1 user, load averages: 1.63 2.07 1.75
+ 4302 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 4324   0.3 gh
+34484   0.3 /opt/homebrew/bin/claude
+94649   0.1 claude
+33353   0.1 claude
+ 1232   0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+== 03:01:16
+14:01  up 11 days,  5:16, 1 user, load averages: 2.52 2.19 1.81
+ 4400  98.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+98903   0.6 claude
+36766   0.1 claude
+94649   0.1 claude
+37195   0.1 /opt/homebrew/bin/claude
+33353   0.1 claude
+== 03:02:17
+14:02  up 11 days,  5:17, 1 user, load averages: 1.75 2.03 1.78
+ 4437 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+79573   0.8 /opt/homebrew/bin/claude
+89150   0.3 claude
+36766   0.2 claude
+37160   0.1 claude
+55842   0.1 /opt/homebrew/bin/claude
+== 03:03:17
+14:03  up 11 days,  5:18, 1 user, load averages: 1.88 2.00 1.78
+ 4525 121.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34484   0.4 /opt/homebrew/bin/claude
+48546   0.2 claude
+35670   0.1 /opt/homebrew/bin/claude
+98903   0.1 claude
+34277   0.1 claude
+== 03:04:17
+14:04  up 11 days,  5:19, 1 user, load averages: 1.48 1.87 1.74
+ 4534  99.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+33353   0.1 claude
+ 4541   0.0 sleep
+ 4539   0.0 sleep
+ 4520   0.0 sleep
+ 3112   0.0 .venv/bin/python
+== 03:05:17
+14:05  up 11 days,  5:20, 1 user, load averages: 1.25 1.74 1.70
+ 4623 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+79573   0.3 /opt/homebrew/bin/claude
+34939   0.3 /opt/homebrew/bin/claude
+ 4620   0.0 sleep
+ 4539   0.0 sleep
+ 3112   0.0 .venv/bin/python
+== 03:06:17
+14:06  up 11 days,  5:21, 1 user, load averages: 1.09 1.60 1.65
+ 4623 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37195   2.4 /opt/homebrew/bin/claude
+37160   1.0 claude
+79573   0.6 /opt/homebrew/bin/claude
+38603   0.1 claude
+  588   0.1 /usr/libexec/opendirectoryd
+== 03:07:17
+14:07  up 11 days,  5:22, 1 user, load averages: 2.89 2.07 1.82
+ 4728 116.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+94649   3.6 claude
+89150   0.8 claude
+48546   0.7 claude
+55842   0.6 /opt/homebrew/bin/claude
+36766   0.3 claude
+== 03:08:17
+14:08  up 11 days,  5:23, 1 user, load averages: 2.31 2.05 1.83
+ 4740 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+38603   3.3 claude
+34484   1.6 /opt/homebrew/bin/claude
+37195   0.3 /opt/homebrew/bin/claude
+ 4726   0.0 sleep
+ 3112   0.0 .venv/bin/python
+== 03:09:18
+14:09  up 11 days,  5:24, 1 user, load averages: 1.75 1.92 1.80
+ 4740  99.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+98903   0.6 claude
+89150   0.3 claude
+37195   0.2 /opt/homebrew/bin/claude
+38603   0.1 claude
+ 3107   0.1 bash
+== 03:10:18
+14:10  up 11 days,  5:25, 1 user, load averages: 1.31 1.77 1.75
+ 4740 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37195   0.1 /opt/homebrew/bin/claude
+89150   0.1 claude
+  614   0.1 /usr/sbin/notifyd
+55842   0.1 /opt/homebrew/bin/claude
+79573   0.1 /opt/homebrew/bin/claude
+== 03:11:18
+14:11  up 11 days,  5:26, 1 user, load averages: 1.52 1.73 1.73
+ 4923 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+79573   2.2 /opt/homebrew/bin/claude
+35670   0.3 /opt/homebrew/bin/claude
+37160   0.1 claude
+94649   0.1 claude
+ 3112   0.0 .venv/bin/python
+== 03:12:18
+14:12  up 11 days,  5:27, 1 user, load averages: 1.58 1.74 1.74
+ 4923 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+35670   2.2 /opt/homebrew/bin/claude
+37160   1.8 claude
+79573   0.2 /opt/homebrew/bin/claude
+94649   0.1 claude
+ 3112   0.0 .venv/bin/python
+== 03:13:18
+14:13  up 11 days,  5:28, 1 user, load averages: 1.37 1.65 1.70
+ 4923 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37160   1.1 claude
+89150   0.7 claude
+35670   0.5 /opt/homebrew/bin/claude
+ 4943   0.0 sleep
+ 3112   0.0 .venv/bin/python
+== 03:14:18
+14:14  up 11 days,  5:29, 1 user, load averages: 6.69 2.99 2.19
+ 5028 1141.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+94649   1.3 claude
+33353   0.4 claude
+34484   0.1 /opt/homebrew/bin/claude
+ 4943   0.0 sleep
+ 3112   0.0 .venv/bin/python
+== 03:15:19
+14:15  up 11 days,  5:30, 1 user, load averages: 5.50 3.35 2.38
+ 5040 442.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37160   0.6 claude
+79573   0.5 /opt/homebrew/bin/claude
+34484   0.4 /opt/homebrew/bin/claude
+94649   0.3 claude
+48546   0.3 claude
+== 03:16:19
+14:16  up 11 days,  5:31, 1 user, load averages: 4.17 3.39 2.46
+ 5141 132.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+79573   0.2 /opt/homebrew/bin/claude
+34484   0.2 /opt/homebrew/bin/claude
+ 5117   0.0 sleep
+ 5044   0.0 sleep
+ 3112   0.0 .venv/bin/python
+== 03:17:19
+14:17  up 11 days,  5:32, 1 user, load averages: 2.30 2.99 2.37
+ 5240 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+48546   2.3 claude
+ 5243   0.0 /System/Library/Frameworks/AddressBook.framework/Versions/A/Helpers/AddressBookSourceSync.app/Contents/MacOS/AddressBookSourceSync
+ 5242   0.0 sleep
+ 5231   0.0 sleep
+ 5158   0.0 sleep
+== 03:18:19
+14:18  up 11 days,  5:33, 1 user, load averages: 1.67 2.69 2.30
+ 5256  99.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34484   3.7 /opt/homebrew/bin/claude
+37195   1.7 /opt/homebrew/bin/claude
+48546   0.9 claude
+  614   0.1 /usr/sbin/notifyd
+37160   0.1 claude
+== 03:19:19
+14:19  up 11 days,  5:34, 1 user, load averages: 2.26 2.65 2.31
+ 5256  99.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+46597  13.5 /opt/homebrew/opt/tailscale/bin/tailscaled
+98903   1.0 claude
+ 5272   0.7 ssh
+79573   0.1 /opt/homebrew/bin/claude
+ 5270   0.1 rsync
+== 03:20:19
+14:20  up 11 days,  5:35, 1 user, load averages: 3.78 3.05 2.48
+ 5414  99.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+46597  22.6 /opt/homebrew/opt/tailscale/bin/tailscaled
+  883   9.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  576   5.9 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+ 5400   4.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 5408   3.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+== 03:21:20
+14:21  up 11 days,  5:36, 1 user, load averages: 2.16 2.72 2.40
+ 5414 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37160   2.9 claude
+35670   1.9 /opt/homebrew/bin/claude
+36766   1.8 claude
+38603   1.4 claude
+94649   1.3 claude
+== 03:22:20
+14:22  up 11 days,  5:37, 1 user, load averages: 3.42 3.02 2.53
+ 5694 128.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37160   2.2 claude
+38603   2.2 claude
+94649   1.7 claude
+48546   0.3 claude
+36766   0.3 claude
+== 03:23:20
+14:23  up 11 days,  5:38, 1 user, load averages: 2.39 2.79 2.48
+ 5717 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+55842   0.6 /opt/homebrew/bin/claude
+ 5855   0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 5850   0.0 sleep
+ 5842   0.0 caffeinate
+ 5838   0.0 caffeinate
+== 03:24:20
+14:24  up 11 days,  5:39, 1 user, load averages: 1.77 2.54 2.40
+ 5717 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+48546   0.1 claude
+ 5850   0.0 sleep
+ 5747   0.0 sleep
+ 5745   0.0 sleep
+ 5739   0.0 /bin/zsh
+== 03:25:20
+14:25  up 11 days,  5:40, 1 user, load averages: 1.45 2.31 2.32
+ 5717 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+94721   0.3 /usr/libexec/PerfPowerServices
+  674   0.1 /System/Library/PrivateFrameworks/CoreAnalytics.framework/Support/analyticsd
+ 5914   0.0 sleep
+ 5898   0.0 sleep
+ 5739   0.0 /bin/zsh
+== 03:26:20
+14:26  up 11 days,  5:41, 1 user, load averages: 1.20 2.08 2.24
+ 5717 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34484   0.2 /opt/homebrew/bin/claude
+55842   0.1 /opt/homebrew/bin/claude
+ 5914   0.0 sleep
+ 5898   0.0 sleep
+ 5739   0.0 /bin/zsh
+== 03:27:20
+14:27  up 11 days,  5:42, 1 user, load averages: 1.17 1.92 2.16
+ 5717  99.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   2.8 claude
+34277   0.3 claude
+38603   0.1 claude
+98903   0.1 claude
+37160   0.1 claude
+== 03:28:21
+14:28  up 11 days,  5:43, 1 user, load averages: 1.07 1.76 2.09
+ 6071 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+89150   2.0 claude
+38603   0.9 claude
+37227   0.4 /opt/homebrew/bin/claude
+55842   0.2 /opt/homebrew/bin/claude
+94649   0.1 claude
+== 03:29:21
+14:29  up 11 days,  5:44, 1 user, load averages: 1.02 1.62 2.01
+ 6071 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+33353   1.0 claude
+ 6155   0.0 sleep
+ 6148   0.0 sleep
+ 6079   0.0 sleep
+ 5739   0.0 /bin/zsh
+== 03:30:21
+14:30  up 11 days,  5:45, 1 user, load averages: 1.08 1.53 1.95
+ 6071 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   3.0 claude
+35670   0.9 /opt/homebrew/bin/claude
+34484   0.3 /opt/homebrew/bin/claude
+ 6079   0.0 sleep
+ 5739   0.0 /bin/zsh
+== 03:31:21
+14:31  up 11 days,  5:46, 1 user, load averages: 5.82 2.86 2.42
+ 6178 131.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+79573   1.3 /opt/homebrew/bin/claude
+37195   1.1 /opt/homebrew/bin/claude
+34484   0.5 /opt/homebrew/bin/claude
+35670   0.2 /opt/homebrew/bin/claude
+55842   0.2 /opt/homebrew/bin/claude
+== 03:32:21
+14:32  up 11 days,  5:47, 2 users, load averages: 3.26 2.66 2.37
+ 6178 123.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34277   2.7 claude
+98903   2.7 claude
+38603   0.4 claude
+35670   0.3 /opt/homebrew/bin/claude
+36766   0.3 claude
+== 03:33:21
+14:33  up 11 days,  5:48, 2 users, load averages: 2.12 2.44 2.31
+ 6343 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34277   1.9 claude
+ 6299   1.4 macmon
+94649   0.9 claude
+ 6339   0.0 sleep
+ 6278   0.0 -zsh
+== 03:34:22
+14:34  up 11 days,  5:49, 2 users, load averages: 2.76 2.52 2.34
+ 6446  99.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37227   1.4 /opt/homebrew/bin/claude
+ 6299   0.9 macmon
+98903   0.2 claude
+ 3107   0.2 bash
+37195   0.1 /opt/homebrew/bin/claude
+== 03:35:22
+14:35  up 11 days,  5:50, 2 users, load averages: 2.01 2.37 2.30
+ 6446 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+55842   3.0 /opt/homebrew/bin/claude
+48546   0.6 claude
+ 6299   0.5 macmon
+ 6277   0.1 sshd-session: mmcky@ttys016
+ 6278   0.0 -zsh
+== 03:36:22
+14:36  up 11 days,  5:51, 2 users, load averages: 1.47 2.15 2.22
+ 6568 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+17949   3.8 /usr/libexec/sysmond
+  556   0.9 /usr/sbin/systemstats
+79573   0.6 /opt/homebrew/bin/claude
+94649   0.5 claude
+ 6299   0.3 macmon
+== 03:37:22
+14:37  up 11 days,  5:52, 2 users, load averages: 1.29 1.98 2.15
+ 6678 1060.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+37227   1.5 /opt/homebrew/bin/claude
+94649   1.3 claude
+79573   0.5 /opt/homebrew/bin/claude
+34484   0.3 /opt/homebrew/bin/claude
+48546   0.3 claude
+== 03:38:22
+14:38  up 11 days,  5:53, 2 users, load averages: 4.49 2.79 2.44
+ 6699 469.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+94649   1.3 claude
+ 6299   1.1 macmon
+34277   0.6 claude
+33353   0.5 claude
+36766   0.5 claude
+== 03:39:22
+14:39  up 11 days,  5:54, 2 users, load averages: 2.90 2.69 2.43
+ 6756  99.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 6299   2.6 macmon
+ 6772   1.2 gh
+79573   1.2 /opt/homebrew/bin/claude
+ 6776   0.3 ssh
+94649   0.2 claude
+== 03:40:22
+14:40  up 11 days,  5:55, 2 users, load averages: 2.15 2.54 2.39
+ 6844 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 6299   1.7 macmon
+34277   0.7 claude
+94649   0.2 claude
+98903   0.2 claude
+79573   0.1 /opt/homebrew/bin/claude
+== 03:41:23
+14:41  up 11 days,  5:56, 2 users, load averages: 1.42 2.26 2.29
+ 6844 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+35670   1.3 /opt/homebrew/bin/claude
+ 6299   1.3 macmon
+94649   0.2 claude
+79573   0.1 /opt/homebrew/bin/claude
+36766   0.1 claude
+== 03:42:23
+14:42  up 11 days,  5:57, 2 users, load averages: 1.22 2.05 2.21
+ 6976 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 6299   0.7 macmon
+55842   0.4 /opt/homebrew/bin/claude
+34277   0.3 claude
+48546   0.3 claude
+79573   0.1 /opt/homebrew/bin/claude
+== 03:43:23
+14:43  up 11 days,  5:58, 2 users, load averages: 3.10 2.40 2.33
+ 7014 150.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   0.6 claude
+ 6299   0.4 macmon
+94649   0.4 claude
+79573   0.3 /opt/homebrew/bin/claude
+34277   0.3 claude
+== 03:44:23
+14:44  up 11 days,  5:59, 2 users, load averages: 2.02 2.21 2.26
+ 7134  83.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+35670   0.7 /opt/homebrew/bin/claude
+79573   0.3 /opt/homebrew/bin/claude
+37195   0.3 /opt/homebrew/bin/claude
+37160   0.1 claude
+36766   0.1 claude
+== 03:45:23
+14:45  up 11 days, 6 hrs, 2 users, load averages: 1.62 2.06 2.20
+ 7170  97.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+89150   2.1 claude
+36766   2.1 claude
+98903   0.2 claude
+94649   0.1 claude
+34484   0.1 /opt/homebrew/bin/claude
+== 03:46:23
+14:46  up 11 days,  6:01, 2 users, load averages: 1.50 1.94 2.14
+ 7294 162.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 6299   3.3 macmon
+35670   0.2 /opt/homebrew/bin/claude
+89150   0.2 claude
+79573   0.1 /opt/homebrew/bin/claude
+94649   0.1 claude
+== 03:47:24
+14:47  up 11 days,  6:02, 2 users, load averages: 2.07 1.99 2.14
+ 7356 194.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   2.2 claude
+37160   1.6 claude
+ 6299   0.5 macmon
+79573   0.5 /opt/homebrew/bin/claude
+33353   0.3 claude
+== 03:48:24
+14:48  up 11 days,  6:03, 2 users, load averages: 2.24 2.05 2.15
+ 7466 209.4 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34939   2.7 /opt/homebrew/bin/claude
+36766   0.7 claude
+55842   0.3 /opt/homebrew/bin/claude
+35670   0.1 /opt/homebrew/bin/claude
+34484   0.1 /opt/homebrew/bin/claude
+== 03:49:24
+14:49  up 11 days,  6:04, 2 users, load averages: 5.44 2.86 2.44
+ 7483 983.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+48546   1.6 claude
+89150   1.0 claude
+37160   0.6 claude
+ 7493   0.5 ssh
+38603   0.5 claude
+== 03:50:24
+14:50  up 11 days,  6:05, 2 users, load averages: 5.94 3.62 2.76
+ 7613 805.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+94649   3.5 claude
+79573   1.2 /opt/homebrew/bin/claude
+38603   0.7 claude
+35670   0.6 /opt/homebrew/bin/claude
+37160   0.3 claude
+== 03:51:24
+14:51  up 11 days,  6:06, 2 users, load averages: 6.79 4.18 3.02
+ 7636 1092.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+36766   6.0 claude
+35670   0.8 /opt/homebrew/bin/claude
+37160   0.6 claude
+79573   0.6 /opt/homebrew/bin/claude
+38603   0.4 claude
+== 03:52:24
+14:52  up 11 days,  6:07, 2 users, load averages: 7.46 4.75 3.31
+ 7757 1065.5 /Users/mmcky/bench/benchmarks/.venv/bin/python
+48546   5.1 claude
+89150   3.6 claude
+ 6299   1.5 macmon
+35670   1.0 /opt/homebrew/bin/claude
+34484   1.0 /opt/homebrew/bin/claude
+== 03:53:24
+14:53  up 11 days,  6:08, 2 users, load averages: 9.29 5.75 3.78
+ 7788 1063.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34277   4.9 claude
+89150   1.2 claude
+ 6299   0.9 macmon
+94649   0.4 claude
+38603   0.4 claude
+== 03:54:25
+14:54  up 11 days,  6:09, 2 users, load averages: 5.55 5.38 3.78
+ 7911  91.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+38603   1.1 claude
+ 6299   0.8 macmon
+37160   0.2 claude
+34484   0.1 /opt/homebrew/bin/claude
+37227   0.1 /opt/homebrew/bin/claude
+== 03:55:25
+14:55  up 11 days,  6:10, 2 users, load averages: 2.90 4.65 3.61
+ 7974 100.0 /Users/mmcky/bench/benchmarks/.venv/bin/python
+38603   2.1 claude
+48546   1.2 claude
+ 6299   0.5 macmon
+98903   0.4 claude
+35670   0.1 /opt/homebrew/bin/claude
+== 03:56:25
+14:56  up 11 days,  6:11, 2 users, load averages: 3.40 4.47 3.61
+ 8088  79.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+38603   0.4 claude
+37195   0.1 /opt/homebrew/bin/claude
+36766   0.1 claude
+  614   0.1 /usr/sbin/notifyd
+35670   0.1 /opt/homebrew/bin/claude
+== 03:57:25
+14:57  up 11 days,  6:12, 2 users, load averages: 2.41 4.00 3.49
+ 8124  95.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  883   6.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+35670   0.3 /opt/homebrew/bin/claude
+79573   0.1 /opt/homebrew/bin/claude
+34484   0.1 /opt/homebrew/bin/claude
+34277   0.1 claude
+== 03:58:25
+14:58  up 11 days,  6:13, 2 users, load averages: 1.77 3.53 3.35
+ 8239  89.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+ 6299   3.2 macmon
+37195   1.6 /opt/homebrew/bin/claude
+  588   0.8 /usr/libexec/opendirectoryd
+79573   0.2 /opt/homebrew/bin/claude
+35670   0.1 /opt/homebrew/bin/claude
+== 03:59:25
+14:59  up 11 days,  6:14, 2 users, load averages: 2.08 3.28 3.27
+ 8265 170.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+89150   1.5 claude
+ 6299   0.8 macmon
+36766   0.5 claude
+34277   0.3 claude
+94649   0.1 claude
+== 04:00:26
+15:00  up 11 days,  6:15, 2 users, load averages: 8.72 4.71 3.78
+ 8287 1106.9 /Users/mmcky/bench/benchmarks/.venv/bin/python
+34277   3.6 claude
+94649   1.0 claude
+36766   0.7 claude
+79573   0.5 /opt/homebrew/bin/claude
+33353   0.5 claude
+== 04:01:26
+15:01  up 11 days,  6:16, 2 users, load averages: 6.74 4.80 3.88
+ 8429 1054.1 /Users/mmcky/bench/benchmarks/.venv/bin/python
+35670   3.6 /opt/homebrew/bin/claude
+34939   2.5 /opt/homebrew/bin/claude
+48546   2.2 claude
+37195   0.9 /opt/homebrew/bin/claude
+94649   0.7 claude

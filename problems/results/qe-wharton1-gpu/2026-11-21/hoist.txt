@@ -1,0 +1,12 @@
+gpu NVIDIA TITAN RTX, n = 100,000, k = 10
+autodiff:
+  f64[10,100000]           in the loop (region_0.4)
+  f64[10,10]               in the loop (region_0.4)
+by hand:
+  f64[10,10]               in the loop (region_0.4)
+gpu NVIDIA TITAN RTX, n = 100,000, k = 300
+autodiff:
+  f64[300,100000]          in the loop (region_0.4)
+  f64[300,300]             in the loop (region_0.4)
+by hand:
+  f64[300,300]             in the loop (region_0.4)
