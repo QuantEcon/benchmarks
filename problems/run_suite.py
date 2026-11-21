@@ -195,7 +195,7 @@ def main():
             for dtype in (d for d in dtypes if d in spec["dtypes"]):
                 timed_out = set()
                 for size in sizes:
-                    for backend in backends:
+                    for backend in (b for b in backends if b in spec.get("backends", BACKENDS)):
                         cell = dict(problem=name, sweep=sweep, size=size,
                                     backend=backend, dtype=dtype)
                         row = dict(base, timestamp=datetime.now(timezone.utc).isoformat(),

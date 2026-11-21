@@ -17,6 +17,11 @@ KALMAN_BATCH_STATES = {"batch": 10, "batch20": 20, "batch50": 50, "batch100": 10
 # loops run in order; `numba-parallel` is the same source with parallel=True.
 BACKENDS = ["numpy", "numba", "numba-parallel", "jax-cpu", "jax-gpu"]
 
+# P8's memory estimate, in arrays of X's shape: X and y, and XLA's
+# temporaries, which measured up to 3 times X on the M6, autodiff's
+# hoisted product among them
+MLE_MEMORY = 5
+
 # Each problem gives its label in benchmarks#5, the lecture its model comes
 # from, the precisions it runs in, its sweeps (an `optional` one runs only
 # when --sweeps names it), roughly how many bytes a cell
@@ -26,6 +31,10 @@ BACKENDS = ["numpy", "numba", "numba-parallel", "jax-cpu", "jax-gpu"]
 #           value, is within rtol for the cell's precision;
 #   shares  each share of households above a threshold is within z binomial
 #           standard errors of NumPy's.
+# A problem may also list, as `backends`, the only backends it runs on, and
+# name a `reference` problem: a companion that runs the reference's loop
+# another way, checked against the reference's NumPy rows and stopped by its
+# cap.
 PROBLEMS = {
     "vfi": dict(
         label="P1",
@@ -116,4 +125,38 @@ PROBLEMS = {
                                     if sweep in KALMAN_BATCH_STATES else 20 * n * n) * s,
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-3}),
     ),
+    "mle": dict(
+        label="P8",
+        lecture="mle_jax",  # and lecture-python's mle
+        dtypes=["float64", "float32"],
+        # `obs` grows the observations with the exercise's 3 parameters, from
+        # 10,000 since at 1,000 Newton took 41 iterations in float64 and
+        # overflowed in float32 from the lectures' start; `params` grows the
+        # parameters at 100,000 observations
+        sweeps={"obs": dict(sizes=[10_000, 100_000, 500_000, 1_000_000, 3_000_000, 10_000_000],
+                            quick=[10_000]),
+                "params": dict(sizes=[3, 10, 30, 100, 300, 1_000], quick=[10])},
+        memory=lambda sweep, n, s: MLE_MEMORY * (n * 3 if sweep == "obs" else 100_000 * n) * s,
+        # The largest value is the intercept, −2.5 or −2, where most slopes
+        # are far smaller (the median is 0.03 at 300 parameters), so float32's
+        # check is tighter than the suite's 1e-3. Float32 estimates differed
+        # from float64's by 3.3e-7 at most on the M6
+        check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-5}),
+    ),
 }
+
+# P8's companions: mle's JAX loop with the hand-written derivatives, and
+# Numba with μ, G and H in one pass over the observations, added one
+# observation at a time or by BLAS a block at a time. The first stops at 300
+# parameters, where BLAS over all of X already won by 2.7 times on the M6
+PROBLEMS["mle_hand"] = dict(PROBLEMS["mle"], backends=["jax-cpu", "jax-gpu"], reference="mle")
+PROBLEMS["mle_onepass"] = dict(
+    PROBLEMS["mle"], backends=["numba", "numba-parallel"], reference="mle",
+    sweeps={"obs": PROBLEMS["mle"]["sweeps"]["obs"],
+            "params": dict(sizes=[3, 10, 30, 100, 300], quick=[10])})
+PROBLEMS["mle_blocked"] = dict(
+    PROBLEMS["mle"], backends=["numba", "numba-parallel"], reference="mle",
+    # mle's, and for each of up to 64 runs of blocks (mle.CHUNKS) a k × k H,
+    # its running sum and BLAS's product
+    memory=lambda sweep, n, s: (PROBLEMS["mle"]["memory"](sweep, n, s)
+                                + 3 * 64 * (3 if sweep == "obs" else n) ** 2 * s))
