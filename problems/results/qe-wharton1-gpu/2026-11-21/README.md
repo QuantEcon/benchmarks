@@ -35,7 +35,7 @@ The suite's problems, by when each one's first cell started:
 
 ## Checks
 
-- **524 of the 525 cells ran,** status `ok`. P6's `numpy` at a grid of 50,000 in float32 passed the 900 s limit, and its row has status `timeout`. Its rerun with 1,800 s, labelled `timeout-1800`, passed that limit too, so its cold and warm solves took about 900 s each or more. The same cell in float64 took 551 s for the process, with one warm run of 275 s. So float32 is over 3.3× slower here, where it is 1.47× slower at 20,000 on this host and 1.76× at 50,000 on the M6. These runs don't say what else slows it at this size, and the cell wasn't run again (Matt, 2026-11-21). The longest of the card's 101 cells took 140 s.
+- **524 of the 525 cells ran,** status `ok`. P6's `numpy` at a grid of 50,000 in float32 passed the 900 s limit, and its row has status `timeout`. Its rerun with 1,800 s, labelled `timeout-1800`, passed that limit too, so its cold and warm solves took about 900 s each or more. The same cell in float64 took 551 s for the process, with one warm run of 275 s. So float32 is at least 3.26× slower here, where it is 1.47× slower at 20,000 on this host and 1.76× at 50,000 on the M6. These runs don't say what else slows it at this size, and the cell wasn't run again (Matt, 2026-11-21). The longest of the card's 101 cells took 140 s.
 - **Every answer but two agrees with NumPy's in float64** at the same size, within `spec.py`'s tolerances, P8's companions' with `mle`'s NumPy. The two are both in P5's `dense` sweep in float32, at a tolerance of 1e-3:
     - `jax-cpu` at 1,000 assets, 2.0e-3 off;
     - `jax-gpu` at 5,000, 1.4e-2 off.
