@@ -143,6 +143,23 @@ PROBLEMS = {
         # from float64's by 3.3e-7 at most on the M6
         check=dict(kind="close", rtol={"float64": 1e-8, "float32": 1e-5}),
     ),
+    "ssy": dict(
+        label="P9",
+        lecture=None,  # jstac/sdfs_via_autodiff's code/ssy
+        # The solution's w^θ is 3e-47, below float32's smallest number
+        dtypes=["float64"],
+        # `n` is the points on each of four axes, so n⁴ states. The grid's
+        # span grows with n, and successive approximation takes fewer steps
+        # on it: 9,636 at n = 4 and 3,988 at 16
+        sweeps={"newton": dict(sizes=[4, 8, 12, 16, 24, 32], quick=[4]),
+                "successive": dict(sizes=[4, 8, 12, 16, 24], quick=[4])},
+        # About twenty arrays of the n⁴ states: BiCGSTAB's vectors and the
+        # operator's temporaries
+        memory=lambda sweep, n, s: 20 * n**4 * s,
+        # The solves stop on steps under 1e-7 and on Krylov residuals of 1e-4,
+        # so stacks differ by up to about 1e-6 of w
+        check=dict(kind="close", rtol={"float64": 1e-6}),
+    ),
 }
 
 # P8's companions: mle's JAX loop with the hand-written derivatives, and
