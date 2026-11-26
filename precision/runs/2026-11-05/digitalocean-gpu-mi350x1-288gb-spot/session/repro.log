@@ -1,0 +1,25 @@
+== repro: start 2026-11-05 23:40:17 UTC; cmd: bash /root/repro/run_repro.sh
+jax 0.12.0  AMD Instinct MI350X VF  XLA_FLAGS=''
+  sort call 0: 32 output rows are not the input row their iota points to; 32 iota values appear more than once
+  sort call 10: 32 output rows are not the input row their iota points to; 32 iota values appear more than once
+  sort call 15: 64 output rows are not the input row their iota points to; 64 iota values appear more than once
+lax.sort((s32, f64, iota)) of 3145728 rows: 54 ms per call incl. checks; wrong in 19 of 100 calls
+RESULT WRONG
+jax 0.12.0  AMD Instinct MI350X VF
+jnp.argsort(stable=True) of 3145728 keys: 4 ms per call incl. checks; wrong in 0 of 100 calls
+jax 0.12.0  AMD Instinct MI350X VF  XLA_FLAGS=''
+200 scatter-adds of 3145728 updates per call, 13 ms per call; wrong in 0 of 100 calls (max rel. error 1.4e-15); 100 distinct results for 2 inputs
+RESULT OK
+jax 0.12.0  AMD Instinct MI350X VF  XLA_FLAGS='--xla_gpu_enable_scatter_determinism_expander=true'
+  call 44: max relative error vs numpy 2.0e-01
+  call 78: max relative error vs numpy 1.8e-01
+  call 99: max relative error vs numpy 2.0e-01
+200 scatter-adds of 3145728 updates per call, 287 ms per call; wrong in 3 of 100 calls (max rel. error 2.0e-01); 5 distinct results for 2 inputs
+RESULT WRONG
+jax 0.12.0  AMD Instinct MI350X VF  XLA_FLAGS='--xla_gpu_deterministic_ops=true'
+  call 87: max relative error vs numpy 3.5e-02
+  call 93: max relative error vs numpy 1.9e-01
+  call 97: max relative error vs numpy 1.2e-01
+200 scatter-adds of 3145728 updates per call, 288 ms per call; wrong in 3 of 100 calls (max rel. error 1.9e-01); 5 distinct results for 2 inputs
+RESULT WRONG
+== repro: end 2026-11-05 23:42:12 UTC; exit 0; wall 115 s

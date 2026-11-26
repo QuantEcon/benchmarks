@@ -4,8 +4,9 @@ Summarise precision benchmark results as markdown tables.
     python precision/summarise.py results/
 
 For each host and label: warm times in both precisions with the float64
-penalty, and then the size at which each GPU first beats the same
-machine's CPU. Where a cell was run more than once, the latest run counts.
+penalty, then the size at which each GPU first beats the same machine's
+CPU, and how far each GPU's results are from the CPU's. Where a cell was
+run more than once, the latest run counts.
 """
 import argparse
 import json
@@ -53,7 +54,7 @@ def cold(row):
 
 
 def fidelity(lo, hi):
-    """Largest relative difference between the float32 and float64 samples."""
+    """Largest relative difference between two cells' samples, relative to the second's."""
     if not (lo and hi and lo["status"] == hi["status"] == "ok"):
         return ""
     worst = max(abs(a - b) / max(abs(b), 1e-300) for a, b in zip(lo["sample"], hi["sample"]))
@@ -121,6 +122,21 @@ def summarise(rows):
                     never = f"not up to {compared[-1]}" if compared else "no comparison"
                     print(f"| {w} | {dtype} | {d} | {found['warm'] or never} "
                           f"| {found['cold'] or never} |")
+        print()
+
+        # Both get the same inputs, so in float64 their results should differ only by rounding
+        dtypes = ("float32", "float64")
+        pairs = [(w, s, d) for w, s, d in keys
+                 if d.startswith("gpu") and any((w, s, "cpu", t) in cells for t in dtypes)]
+        if not pairs:
+            continue
+        print("**Each GPU's results against this machine's CPU:** the largest relative "
+              "difference between their samples\n")
+        print("| workload | size | device | f32 | f64 |")
+        print("|---|---|---|---|---|")
+        for w, s, d in pairs:
+            diffs = [fidelity(cells.get((w, s, d, t)), cells.get((w, s, "cpu", t))) for t in dtypes]
+            print(f"| {w} | {s} | {d} | {diffs[0]} | {diffs[1]} |")
         print()
 
 

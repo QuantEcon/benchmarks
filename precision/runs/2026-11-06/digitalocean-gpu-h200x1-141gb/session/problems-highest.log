@@ -1,0 +1,27 @@
+== problems-highest: start 2026-11-06 01:29:30 UTC; cmd: bash /root/session/highest.sh digitalocean-gpu-h200x1-141gb highest
+default run's date: 2026-11-06; label highest
+Writing to /root/benchmarks/problems/results/digitalocean-gpu-h200x1-141gb/2026-11-06.jsonl
+P3 egm     grid             200 float32  jax-gpu         warm     0.287 s  cold     1.353 s    2211 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.341 s  cold     1.370 s    2213 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.330 s  cold     1.334 s    2209 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.689 s  cold     1.945 s    2208 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     0.822 s  cold     1.792 s    2214 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.002 s  cold     0.627 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.633 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.002 s  cold     0.683 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.004 s  cold     0.794 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.025 s  cold     0.902 s     200 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.084 s  cold     0.856 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.079 s  cold     0.919 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.078 s  cold     0.913 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.084 s  cold     1.057 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.177 s  cold     1.116 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.087 s  cold     0.709 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.085 s  cold     0.700 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.072 s  cold     0.869 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.095 s  cold     1.090 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.081 s  cold     1.743 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.070 s  cold     1.452 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.081 s  cold     1.924 s    1000 iterations
+re-packed digitalocean-gpu-h200x1-141gb-2026-11-06-problems.tgz
+== problems-highest: end 2026-11-06 01:30:29 UTC; exit 0; wall 59 s

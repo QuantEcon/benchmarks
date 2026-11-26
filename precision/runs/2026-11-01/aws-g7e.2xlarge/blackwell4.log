@@ -1,0 +1,14 @@
+== 7. the recomputing step's compile, autotuner on and off
+Writing to /home/ubuntu/benchmarks/results/aws-g7e.2xlarge/2026-11-01.jsonl
+bellman_recompute    20000 float64  gpu    warm     21.01 ms       19.0 Gcells/s  compile 18.99 s
+bellman_recompute    20000 float32  gpu    warm      0.76 ms      525.3 Gcells/s  compile 5.41 s
+bellman_recompute    40000 float64  gpu    warm     91.39 ms       17.5 Gcells/s  compile 18.96 s
+bellman_recompute    40000 float32  gpu    warm      2.34 ms      682.5 Gcells/s  compile 12.06 s
+Writing to /home/ubuntu/benchmarks/results/aws-g7e.2xlarge/2026-11-01.jsonl
+bellman_recompute    20000 float64  gpu    warm     21.01 ms       19.0 Gcells/s  compile 0.11 s
+bellman_recompute    20000 float32  gpu    warm      0.74 ms      539.7 Gcells/s  compile 0.10 s
+bellman_recompute    40000 float64  gpu    warm     91.43 ms       17.5 Gcells/s  compile 0.19 s
+bellman_recompute    40000 float32  gpu    warm      2.35 ms      682.3 Gcells/s  compile 0.12 s
+== 8. the float64 dot with the autotuner off
+{"label": "autotune0", "lib": "jax", "kind": "normal", "n": 16384, "first_s": 5.486496278000004, "warm_median_s": 5.141538105000109, "tflops": 1.7107902037434795, "error_u": 2.7691952728014884, "targets": ["__triton_nested_gemm_fusion"], "env": {"XLA_FLAGS": "--xla_gpu_autotune_level=0"}, "versions": {"jaxlib": "0.12.0.1", "jax-cuda13-plugin": "0.12.0.1", "nvidia-cublas": "13.8.2.12", "jax-cuda13-pjrt": "0.12.0.1", "jax": "0.12.0.1", "nvidia-cuda-runtime": "13.4.92"}, "device": "NVIDIA RTX PRO 6000 Blackwell Server Edition"}
+== Done (4): ~/blackwell-2026-11-01.tgz

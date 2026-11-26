@@ -1,0 +1,66 @@
+== precision-quick: start 2026-11-05 23:03:56 UTC; cmd: bash precision/run_by_hand.sh digitalocean-gpu-mi350x1-288gb-spot cpu,gpu --quick
+== The machine
+ROCm none: jax-rocm10-plugin
+== Python 3.12 and JAX
+downloading uv 0.13.7 x86_64-unknown-linux-gnu
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+JAX 0.12.0: [RocmDevice(id=0)]
+AMD Instinct MI350X VF allocator limit, GiB: 215.77
+AMD Instinct MI350X VF allocator limit, GiB: 273.3
+== The precision matrix
+Writing to /root/benchmarks/results/digitalocean-gpu-mi350x1-288gb-spot/2026-11-05.jsonl
+matmul                 256 float32  cpu    warm      0.09 ms      362.9 GFLOPS  compile 0.01 s
+matmul                 256 float64  cpu    warm      0.10 ms      329.4 GFLOPS  compile 0.01 s
+matmul                1024 float32  cpu    warm      0.63 ms     3399.4 GFLOPS  compile 0.01 s
+matmul                1024 float64  cpu    warm      1.15 ms     1874.4 GFLOPS  compile 0.01 s
+matmul                 256 float32  gpu    warm      0.08 ms      431.0 GFLOPS  compile 1.20 s
+matmul                 256 float64  gpu    error (JaxRuntimeError: INTERNAL: All backends failed to find supported configs:
+ - INTERNAL: error: HipblasLt error 3)
+matmul                1024 float32  gpu    warm      0.15 ms    14509.9 GFLOPS  compile 1.28 s
+matmul                1024 float64  gpu    error (JaxRuntimeError: INTERNAL: All backends failed to find supported configs:
+ - INTERNAL: error: HipblasLt error 3)
+bellman_stored        1000 float32  cpu    warm      0.08 ms       50.2 GB/s  compile 0.01 s
+bellman_stored        1000 float64  cpu    warm      0.13 ms       60.9 GB/s  compile 0.01 s
+bellman_stored        5000 float32  cpu    warm      0.36 ms      275.5 GB/s  compile 0.01 s
+bellman_stored        5000 float64  cpu    warm      0.79 ms      254.6 GB/s  compile 0.01 s
+bellman_stored        1000 float32  gpu    warm      0.08 ms       52.3 GB/s  compile 0.10 s
+bellman_stored        1000 float64  gpu    warm      0.08 ms       97.2 GB/s  compile 0.11 s
+bellman_stored        5000 float32  gpu    warm      0.08 ms     1212.3 GB/s  compile 0.12 s
+bellman_stored        5000 float64  gpu    warm      0.15 ms     1345.5 GB/s  compile 0.16 s
+bellman_recompute     1000 float32  cpu    warm      0.37 ms        2.7 Gcells/s  compile 0.05 s
+bellman_recompute     1000 float64  cpu    warm      1.78 ms        0.6 Gcells/s  compile 0.05 s
+bellman_recompute     5000 float32  cpu    warm      7.07 ms        3.5 Gcells/s  compile 0.06 s
+bellman_recompute     5000 float64  cpu    warm     42.81 ms        0.6 Gcells/s  compile 0.05 s
+bellman_recompute     1000 float32  gpu    warm      0.08 ms       13.2 Gcells/s  compile 0.12 s
+bellman_recompute     1000 float64  gpu    warm      0.08 ms       11.9 Gcells/s  compile 0.13 s
+bellman_recompute     5000 float32  gpu    warm      0.24 ms      103.1 Gcells/s  compile 0.15 s
+bellman_recompute     5000 float64  gpu    warm      0.39 ms       63.6 Gcells/s  compile 0.29 s
+kalman                1000 float32  cpu    warm      3.11 ms      321.1 ksteps/s  compile 0.26 s
+kalman                1000 float64  cpu    warm      2.92 ms      342.9 ksteps/s  compile 0.17 s
+kalman                1000 float32  gpu    error (JaxRuntimeError: INTERNAL: jaxlib/gpu/linalg_kernels.cc:115: operation gpuGetLastError() failed: invalid kernel file [
+kalman                1000 float64  gpu    error (JaxRuntimeError: INTERNAL: Failed to get configs for: 5 out of 23 instructions. See logs for all failures. Example fai
+Writing to /root/benchmarks/results/digitalocean-gpu-mi350x1-288gb-spot/2026-11-05.jsonl
+matmul                 256 float32  gpu    warm      0.08 ms      398.4 GFLOPS  compile 1.22 s
+matmul                 256 float64  gpu    error (JaxRuntimeError: INTERNAL: All backends failed to find supported configs:
+ - INTERNAL: error: HipblasLt error 3)
+matmul                1024 float32  gpu    warm      0.15 ms    14138.2 GFLOPS  compile 1.31 s
+matmul                1024 float64  gpu    error (JaxRuntimeError: INTERNAL: All backends failed to find supported configs:
+ - INTERNAL: error: HipblasLt error 3)
+== The lectures' packages, as the TITAN RTX run had them
+Using Python 3.12.3 environment at: .venv-phase2
+== Five lectures as written, on the card
+schelling_shocks rep 1: 11.3 s, cells ok True, float32
+== The scale scripts, on the card
+float64 gpu a_size=200: hpi warm 0.040 s (13 it), greedy 0.35 ms, stored 0.18 ms, value 2.39 ms
+float64 gpu a_size=1000: hpi warm 0.049 s (15 it), greedy 0.31 ms, stored 0.17 ms, value 2.45 ms
+float64 gpu s_size=200: K warm 0.330 ms, cold 0.23 s, finite True
+float64 gpu s_size=1000: K warm 0.378 ms, cold 0.19 s, finite True
+float32 gpu a_size=200: hpi warm 0.041 s (13 it), greedy 0.31 ms, stored 0.18 ms, value 2.39 ms
+float32 gpu a_size=1000: hpi warm 0.044 s (13 it), greedy 0.34 ms, stored 0.18 ms, value 2.40 ms
+float32 gpu s_size=200: K warm 0.593 ms, cold 0.13 s, finite True
+float32 gpu s_size=1000: K warm 0.382 ms, cold 0.23 s, finite True
+== Done: digitalocean-gpu-mi350x1-288gb-spot-2026-11-05.tgz. Copy it off the machine, then terminate the machine.
+== precision-quick: end 2026-11-05 23:05:12 UTC; exit 0; wall 76 s

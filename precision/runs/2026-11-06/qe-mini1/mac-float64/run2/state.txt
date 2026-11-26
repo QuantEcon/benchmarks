@@ -1,0 +1,146 @@
+== before: 2026-11-06 19:02:15 AEDT (08:02:15 UTC)
+19:02  up 23 days,  3:36, 1 user, load averages: 1.83 1.66 1.26
+  PID  %CPU %MEM COMM
+88128  37.9  2.4 claude
+77997   2.4  2.4 claude
+95606   2.1  1.7 claude
+  405   0.5  0.0 /usr/libexec/opendirectoryd
+  584   0.2  0.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  846   0.2  0.0 /usr/libexec/secd
+44098   0.1  1.9 claude
+66110   0.1  2.0 /opt/homebrew/bin/claude
+91786   0.1  0.2 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+System-wide memory free percentage: 90%
+== probe at 3806db6 Precision: a probe of float64 on Apple Silicon's CPU, Accelerate against XLA (#44)
+== sample: 2026-11-06 19:02:20 AEDT (08:02:20 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 1.76 1.65 1.26
+  PID  %CPU %MEM COMM
+50584 198.5  1.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+    1   1.2  0.1 /sbin/launchd
+88128   0.9  2.4 claude
+  436   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+77997   0.1  2.4 claude
+66110   0.1  2.0 /opt/homebrew/bin/claude
+91786   0.1  0.2 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+44098   0.1  1.9 claude
+50586   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:02:25 AEDT (08:02:25 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 1.78 1.65 1.27
+  PID  %CPU %MEM COMM
+50619 645.5  3.2 /Users/mmcky/bench/benchmarks/.venv/bin/python
+95606   0.3  1.7 claude
+91786   0.1  0.2 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+88128   0.1  2.4 claude
+77997   0.1  2.4 claude
+72192   0.1  1.7 claude
+50588   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50589   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50586   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:02:30 AEDT (08:02:30 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 3.00 1.91 1.36
+  PID  %CPU %MEM COMM
+50619 1159.8  3.6 /Users/mmcky/bench/benchmarks/.venv/bin/python
+  506   1.4  0.0 /usr/libexec/airportd
+  490   1.3  0.0 /usr/sbin/mDNSResponder
+  436   0.9  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+88128   0.8  2.4 claude
+  377   0.6  0.0 /usr/libexec/configd
+  624   0.3  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+44098   0.2  1.9 claude
+  657   0.2  0.0 /usr/libexec/wifip2pd
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:02:35 AEDT (08:02:35 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 4.12 2.16 1.45
+  PID  %CPU %MEM COMM
+50637 313.0  0.8 /Users/mmcky/bench/benchmarks/.venv/bin/python
+66110   0.4  2.0 /opt/homebrew/bin/claude
+91786   0.3  0.2 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+  436   0.3  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+50591   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50590   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50588   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50589   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50586   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:02:40 AEDT (08:02:40 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 4.75 2.32 1.51
+  PID  %CPU %MEM COMM
+50637 1133.9  3.7 /Users/mmcky/bench/benchmarks/.venv/bin/python
+95606   0.1  1.7 claude
+88128   0.1  2.4 claude
+77997   0.1  2.4 claude
+44098   0.1  1.9 claude
+66110   0.1  2.0 /opt/homebrew/bin/claude
+72192   0.1  1.7 claude
+50589   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50586   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:02:45 AEDT (08:02:45 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 5.01 2.42 1.55
+  PID  %CPU %MEM COMM
+88565 112.1  0.7 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+  393   4.7  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+32118   2.1  0.1 /usr/libexec/spotlightknowledged.importer
+91786   1.3  0.2 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+50662   1.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50664   1.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50659   1.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50658   1.2  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  403   1.1  0.0 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:02:50 AEDT (08:02:50 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 4.85 2.42 1.56
+  PID  %CPU %MEM COMM
+88565 122.1  0.7 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+50686 100.7 32.4 /Users/mmcky/bench/mlx/.venv/bin/python
+    1   0.7  0.1 /sbin/launchd
+  441   0.6  0.1 /usr/libexec/runningboardd
+32118   0.6  0.1 /usr/libexec/spotlightknowledged.importer
+91786   0.2  0.2 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+88128   0.1  2.4 claude
+  544   0.1  0.0 /usr/libexec/gamepolicyd
+  436   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:02:55 AEDT (08:02:55 UTC)
+19:02  up 23 days,  3:37, 1 user, load averages: 4.62 2.42 1.56
+  PID  %CPU %MEM COMM
+50700 1147.3  3.3 /Users/mmcky/bench/benchmarks/.venv/bin/python
+88565  25.3  0.7 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+91786   0.9  0.2 /System/Applications/Utilities/Activity Monitor.app/Contents/MacOS/Activity Monitor
+66110   0.2  2.0 /opt/homebrew/bin/claude
+77997   0.2  2.4 claude
+88128   0.1  2.4 claude
+88992   0.1  0.0 /usr/libexec/sysmond
+44098   0.1  1.9 claude
+95606   0.1  1.7 claude
+System-wide memory free percentage: 90%
+== sample: 2026-11-06 19:03:00 AEDT (08:03:00 UTC)
+19:03  up 23 days,  3:37, 1 user, load averages: 5.77 2.69 1.66
+  PID  %CPU %MEM COMM
+50710 182.4  3.0 /Users/mmcky/bench/mlx/.venv/bin/python
+  440   3.5  0.2 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  436   2.6  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+88529   1.4  0.1 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+66110   0.1  2.0 /opt/homebrew/bin/claude
+88128   0.1  2.4 claude
+77997   0.1  2.4 claude
+50663   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50661   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 90%
+== run.sh exit 0
+== after: 2026-11-06 19:03:05 AEDT (08:03:05 UTC)
+19:03  up 23 days,  3:37, 1 user, load averages: 5.47 2.68 1.66
+  PID  %CPU %MEM COMM
+  436   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+77997   0.1  2.4 claude
+88128   0.1  2.4 claude
+50720   0.0  0.0 sleep
+50667   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50666   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50665   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50664   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+50663   0.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 90%
+== ended 08:03:05

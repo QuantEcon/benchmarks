@@ -1,0 +1,9 @@
+benchmarks at 62df721: qe-mini1 2026-11-10: a .noindex folder stops XLA's dump waking mediaanalysisd (#59)
+numpy 2.5.4 | numba 0.68.1 | jax 0.12.0.1
+hw.ncpu: 18
+hw.perflevel0.name: Super
+hw.perflevel0.physicalcpu: 6
+hw.perflevel1.name: Performance
+hw.perflevel1.physicalcpu: 12
+hw.memsize: 68719476736
+3cefcd7ceb069722a9f42a2d945b0a372b7e2dcf374867591c8901e037d77129  /Users/matt/bench/kalman58/m5pro_kalman58.sh

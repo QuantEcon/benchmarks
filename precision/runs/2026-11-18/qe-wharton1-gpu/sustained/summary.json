@@ -1,0 +1,232 @@
+[
+  {
+    "label": "bellman_stored-float64-40000",
+    "meta": {
+      "workload": "bellman_stored",
+      "dtype": "float64",
+      "size": 40000,
+      "minutes": 60.0,
+      "bound": "memory",
+      "unit": "GB/s",
+      "matmul_precision": "default",
+      "jax": "0.12.0.1",
+      "platform": "gpu",
+      "device_kind": "NVIDIA TITAN RTX",
+      "setup_s": 1.1985479689901695,
+      "compile_s": 0.18769937500474043,
+      "first_run_s": 0.045983920979779214,
+      "start_utc": "2026-11-18T02:22:42Z",
+      "start_epoch": 1794968562.590695,
+      "end_utc": "2026-11-18T03:22:42Z",
+      "end_epoch": 1794972162.6297402,
+      "steps": 75668,
+      "memory_stats": {
+        "num_allocs": 151346,
+        "bytes_in_use": 12800320000,
+        "peak_bytes_in_use": 12864640000,
+        "largest_alloc_size": 12800000000,
+        "bytes_limit": 23930601472,
+        "bytes_reserved": 0,
+        "peak_bytes_reserved": 0,
+        "largest_free_block_bytes": 4379869184,
+        "pool_bytes": 17181966336,
+        "peak_pool_bytes": 17181966336
+      }
+    },
+    "windows": {
+      "first": {
+        "minutes": 5.0,
+        "steps": {
+          "seconds": 300,
+          "steps": 6415,
+          "median_ms": 46.86815,
+          "rate": 273.1065
+        },
+        "card": {
+          "samples": 297,
+          "sm_mhz": 1860.0,
+          "mem_mhz": 6500.0,
+          "power_w": 249.92,
+          "temp_c": 73.0,
+          "reasons": {
+            "GpuIdle": 0.0,
+            "ApplicationsClocksSetting": 0.0,
+            "SwPowerCap": 0.1919191919191919,
+            "HwSlowdown": 0.0,
+            "SyncBoost": 0.0,
+            "SwThermalSlowdown": 0.0,
+            "HwThermalSlowdown": 0.0,
+            "HwPowerBrakeSlowdown": 0.0,
+            "DisplayClockSetting": 0.0,
+            "none": 0.8080808080808081
+          }
+        }
+      },
+      "last": {
+        "minutes": 30.0,
+        "steps": {
+          "seconds": 1800,
+          "steps": 37690,
+          "median_ms": 47.701049999999995,
+          "rate": 268.338
+        },
+        "card": {
+          "samples": 1786,
+          "sm_mhz": 1830.0,
+          "mem_mhz": 6500.0,
+          "power_w": 257.73,
+          "temp_c": 83.0,
+          "reasons": {
+            "GpuIdle": 0.0,
+            "ApplicationsClocksSetting": 0.0,
+            "SwPowerCap": 0.8840985442329228,
+            "HwSlowdown": 0.0,
+            "SyncBoost": 0.0,
+            "SwThermalSlowdown": 0.0,
+            "HwThermalSlowdown": 0.0,
+            "HwPowerBrakeSlowdown": 0.0,
+            "DisplayClockSetting": 0.0,
+            "none": 0.11590145576707726
+          }
+        }
+      }
+    },
+    "idle_before": {
+      "samples": 58,
+      "sm_mhz": 300.0,
+      "mem_mhz": 405.0,
+      "power_w": 29.845,
+      "temp_c": 37.0,
+      "reasons": {
+        "GpuIdle": 1.0,
+        "ApplicationsClocksSetting": 0.0,
+        "SwPowerCap": 0.0,
+        "HwSlowdown": 0.0,
+        "SyncBoost": 0.0,
+        "SwThermalSlowdown": 0.0,
+        "HwThermalSlowdown": 0.0,
+        "HwPowerBrakeSlowdown": 0.0,
+        "DisplayClockSetting": 0.0,
+        "none": 0.0
+      },
+      "minutes": 1.0,
+      "temp_min": 37.0,
+      "temp_max": 37.0
+    }
+  },
+  {
+    "label": "matmul-float32-8192",
+    "meta": {
+      "workload": "matmul",
+      "dtype": "float32",
+      "size": 8192,
+      "minutes": 60.0,
+      "bound": "compute",
+      "unit": "GFLOPS",
+      "matmul_precision": "default",
+      "jax": "0.12.0.1",
+      "platform": "gpu",
+      "device_kind": "NVIDIA TITAN RTX",
+      "setup_s": 0.8528008189750835,
+      "compile_s": 0.5821454329998232,
+      "first_run_s": 0.07675919999019243,
+      "start_utc": "2026-11-18T03:32:46Z",
+      "start_epoch": 1794972766.2092283,
+      "end_utc": "2026-11-18T04:32:46Z",
+      "end_epoch": 1794976366.2730308,
+      "steps": 43266,
+      "memory_stats": {
+        "num_allocs": 86559,
+        "bytes_in_use": 536870912,
+        "peak_bytes_in_use": 1681916160,
+        "largest_alloc_size": 285212672,
+        "bytes_limit": 23930601472,
+        "bytes_reserved": 0,
+        "peak_bytes_reserved": 0,
+        "largest_free_block_bytes": 1073741824,
+        "pool_bytes": 2149580800,
+        "peak_pool_bytes": 2149580800
+      }
+    },
+    "windows": {
+      "first": {
+        "minutes": 5.0,
+        "steps": {
+          "seconds": 300,
+          "steps": 3722,
+          "median_ms": 80.92869999999999,
+          "rate": 13586.1825
+        },
+        "card": {
+          "samples": 297,
+          "sm_mhz": 1560.0,
+          "mem_mhz": 6500.0,
+          "power_w": 276.79,
+          "temp_c": 76.0,
+          "reasons": {
+            "GpuIdle": 0.0,
+            "ApplicationsClocksSetting": 0.0,
+            "SwPowerCap": 1.0,
+            "HwSlowdown": 0.0,
+            "SyncBoost": 0.0,
+            "SwThermalSlowdown": 0.0,
+            "HwThermalSlowdown": 0.0,
+            "HwPowerBrakeSlowdown": 0.0,
+            "DisplayClockSetting": 0.0,
+            "none": 0.0
+          }
+        }
+      },
+      "last": {
+        "minutes": 30.0,
+        "steps": {
+          "seconds": 1800,
+          "steps": 21482,
+          "median_ms": 83.7264,
+          "rate": 13132.1955
+        },
+        "card": {
+          "samples": 1782,
+          "sm_mhz": 1500.0,
+          "mem_mhz": 6500.0,
+          "power_w": 274.39,
+          "temp_c": 84.0,
+          "reasons": {
+            "GpuIdle": 0.0,
+            "ApplicationsClocksSetting": 0.0,
+            "SwPowerCap": 1.0,
+            "HwSlowdown": 0.0,
+            "SyncBoost": 0.0,
+            "SwThermalSlowdown": 0.0,
+            "HwThermalSlowdown": 0.0,
+            "HwPowerBrakeSlowdown": 0.0,
+            "DisplayClockSetting": 0.0,
+            "none": 0.0
+          }
+        }
+      }
+    },
+    "idle_before": {
+      "samples": 58,
+      "sm_mhz": 300.0,
+      "mem_mhz": 405.0,
+      "power_w": 29.595,
+      "temp_c": 38.0,
+      "reasons": {
+        "GpuIdle": 1.0,
+        "ApplicationsClocksSetting": 0.0,
+        "SwPowerCap": 0.0,
+        "HwSlowdown": 0.0,
+        "SyncBoost": 0.0,
+        "SwThermalSlowdown": 0.0,
+        "HwThermalSlowdown": 0.0,
+        "HwPowerBrakeSlowdown": 0.0,
+        "DisplayClockSetting": 0.0,
+        "none": 0.0
+      },
+      "minutes": 1.0,
+      "temp_min": 37.0,
+      "temp_max": 38.0
+    }
+  }
+]

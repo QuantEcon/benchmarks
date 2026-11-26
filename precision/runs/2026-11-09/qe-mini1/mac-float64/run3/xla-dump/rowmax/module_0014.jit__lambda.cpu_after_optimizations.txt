@@ -1,0 +1,43 @@
+HloModule jit__lambda, is_scheduled=true, entry_computation_layout={(f64[18000,18000]{1,0})->f64[18000]{0}}, allow_spmd_sharding_propagation_to_parameters={true}, allow_spmd_sharding_propagation_to_output={true}
+
+FileNames
+1 "/Users/mmcky/work/quantecon/benchmarks/precision/probes/mac_float64/probe.py"
+
+FunctionNames
+1 "<module>"
+2 "cliff"
+3 "timed"
+4 "cliff.<locals>.<lambda>"
+
+FileLocations
+1 {file_name_id=1 function_name_id=1 line=315 end_line=315 column=8 end_column=38}
+2 {file_name_id=1 function_name_id=2 line=195 end_line=195 column=25 end_column=84}
+3 {file_name_id=1 function_name_id=3 line=61 end_line=61 column=10 end_column=16}
+4 {file_name_id=1 function_name_id=4 line=195 end_line=195 column=39 end_column=46}
+5 {file_name_id=1 function_name_id=4 line=190 end_line=190 column=31 end_column=49}
+
+StackFrames
+1 {file_location_id=1 parent_frame_id=1}
+2 {file_location_id=2 parent_frame_id=2}
+3 {file_location_id=3 parent_frame_id=3}
+4 {file_location_id=4 parent_frame_id=4}
+5 {file_location_id=5 parent_frame_id=5}
+
+
+%region_0.1 (reduce_max.3: f64[], reduce_max.4: f64[]) -> f64[] {
+  %reduce_max.3 = f64[] parameter(0), metadata={op_name="reduce_max"}
+  %reduce_max.4 = f64[] parameter(1), metadata={op_name="reduce_max"}
+  ROOT %reduce_max.5 = f64[] maximum(%reduce_max.3, %reduce_max.4), metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+%fused_computation (param_0: f64[18000,18000]) -> f64[18000] {
+  %param_0 = f64[18000,18000]{1,0} parameter(0)
+  %constant.0 = f64[] constant(-inf)
+  ROOT %reduce_max.0 = f64[18000]{0} reduce(%param_0, %constant.0), dimensions={1}, to_apply=%region_0.1, metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+ENTRY %main.2 (R.1: f64[18000,18000]) -> f64[18000] {
+  %R.1 = f64[18000,18000]{1,0} parameter(0), metadata={op_name="R"}
+  ROOT %ynn_fusion = f64[18000]{0} fusion(%R.1), kind=kCustom, calls=%fused_computation, metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}, backend_config={"fusion_config":{"kind":"__ynn_fusion"},"outer_dimension_partitions":[]}
+}
+

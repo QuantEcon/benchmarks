@@ -1,0 +1,4 @@
+Writing to /home/mamckay/bench/benchmarks/problems/results/qe-wharton1-gpu/2026-11-06.jsonl
+P1 vfi     grid            1500 float64  numba           warm   137.855 s  cold   140.618 s     572 iterations
+P1 vfi     grid            1500 float64  numba-parallel  warm    48.269 s  cold    51.742 s     572 iterations
+P1 vfi     grid            1500 float64  jax-cpu         warm    34.426 s  cold    34.531 s     572 iterations

@@ -1,0 +1,15 @@
+overborrowing rep 1: 126.0 s, cells ok True, float32
+wealth_dynamics_jax rep 1: 82.0 s, cells ok True, float32
+schelling_shocks rep 1: 37.8 s, cells ok True, float32
+opt_invest rep 1: exit 124
+opt_invest rep 1: no result
+hopenhayn rep 1: 145.1 s, cells ok True, float64
+overborrowing rep 2: 122.1 s, cells ok True, float32
+wealth_dynamics_jax rep 2: 81.8 s, cells ok True, float32
+schelling_shocks rep 2: 37.7 s, cells ok True, float32
+opt_invest rep 2: exit 124
+opt_invest rep 2: no result
+hopenhayn rep 2: 145.0 s, cells ok True, float64
+overborrowing rep 3: 122.1 s, cells ok True, float32
+wealth_dynamics_jax rep 3: 82.0 s, cells ok True, float32
+schelling_shocks rep 3: 37.7 s, cells ok True, float32

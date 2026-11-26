@@ -1,0 +1,90 @@
+chip: Apple M6
+macOS: 27.2 26B123
+memory bytes: 34359738368
+perflevel0: Super, 2 cores
+perflevel1: Performance, 4 cores
+perflevel2: Efficiency, 6 cores
+sysctl: hw.optional.arm.FEAT_SME: 1
+hw.optional.arm.FEAT_SME2: 1
+hw.optional.arm.FEAT_SME_F64F64: 1
+every SME feature: hw.optional.arm.FEAT_SME: 1; hw.optional.arm.FEAT_SME2: 1; hw.optional.arm.FEAT_SME2p1: 1; hw.optional.arm.SME_F32F32: 1; hw.optional.arm.SME_BI32I32: 1; hw.optional.arm.SME_B16F32: 1; hw.optional.arm.SME_F16F32: 1; hw.optional.arm.SME_I8I32: 1; hw.optional.arm.SME_I16I32: 1; hw.optional.arm.FEAT_SME_F64F64: 1; hw.optional.arm.FEAT_SME_I16I64: 1; hw.optional.arm.FEAT_SME_F16F16: 1; hw.optional.arm.FEAT_SME_B16B16: 1; hw.optional.arm.FEAT_SME_LUTv2: 1; hw.optional.arm.FEAT_SME_F8F16: 1; hw.optional.arm.FEAT_SME_F8F32: 1
+versions: {'python': '3.12.15', 'numpy': '2.5.4', 'jax': '0.12.0.1', 'jaxlib': '0.12.0.1'}
+NumPy's configuration:
+{
+  "Compilers": {
+    "c": {
+      "name": "clang",
+      "linker": "ld64",
+      "version": "15.0.0",
+      "commands": "cc"
+    },
+    "cython": {
+      "name": "cython",
+      "linker": "cython",
+      "version": "3.3.0",
+      "commands": "cython"
+    },
+    "c++": {
+      "name": "clang",
+      "linker": "ld64",
+      "version": "15.0.0",
+      "commands": "c++"
+    }
+  },
+  "Machine Information": {
+    "host": {
+      "cpu": "aarch64",
+      "family": "aarch64",
+      "endian": "little",
+      "system": "darwin"
+    },
+    "build": {
+      "cpu": "aarch64",
+      "family": "aarch64",
+      "endian": "little",
+      "system": "darwin"
+    }
+  },
+  "Build Dependencies": {
+    "blas": {
+      "name": "accelerate",
+      "found": true,
+      "version": "unknown",
+      "detection method": "system",
+      "include directory": "unknown",
+      "lib directory": "unknown",
+      "openblas configuration": "unknown",
+      "pc file directory": "unknown"
+    },
+    "lapack": {
+      "name": "accelerate",
+      "found": true,
+      "version": "unknown",
+      "detection method": "system",
+      "include directory": "unknown",
+      "lib directory": "unknown",
+      "openblas configuration": "unknown",
+      "pc file directory": "unknown"
+    }
+  },
+  "Python Information": {
+    "path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/build-env-b5_gj3sx/bin/python",
+    "version": "3.12"
+  },
+  "SIMD Extensions": {
+    "baseline": [
+      "NEON",
+      "NEON_FP16",
+      "NEON_VFPV4",
+      "ASIMD"
+    ],
+    "found": [
+      "ASIMDHP",
+      "ASIMDDP"
+    ],
+    "not found": [
+      "ASIMDFHM"
+    ]
+  }
+}
+mlx 0.32.4 | numpy 2.5.4

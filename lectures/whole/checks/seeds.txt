@@ -1,0 +1,14 @@
+# float64 sweeps for four lecture-jax lectures (2026-11-01): how much an answer moves with the seed, the draw count or the step count.
+# An Apple M1 Pro laptop with 16 GB, on its CPU: diagnostic runs, not measurements. Python 3.12.13, jax 0.12.0.1, NumPy 2.5.4, QuantEcon 0.13.1.
+# lecture-jax at 4b939ec. Each sweep executes the lecture's own cells unchanged; only the seed, the draw count or the iteration count varies.
+#   python seed_sweeps.py <lecture-jax's lectures/> > seeds.txt
+# Output as printed; the script is beside this file.
+
+hopenhayn, 200 draws, seeds 1234-1243: p* [1.3638, 1.4245, 1.4984, 1.3993, 1.4323, 1.4825, 1.4855, 1.434, 1.4938, 1.4194]; mean 1.4434, sd 0.0451 (3.1%), range 1.3638 to 1.4984
+hopenhayn, 2000 draws, seeds 1234-1243: p* [1.4679, 1.4582, 1.4728, 1.4654, 1.4423, 1.4735, 1.4626, 1.4917, 1.4602, 1.4431]; mean 1.4638, sd 0.0146 (1.0%), range 1.4423 to 1.4917
+mle_jax, seeds 0-19, float64, from [0.1, 0.1, 0.1]: 20 of 20 converge near the true β
+mle_jax's log(jax_factorial(y)) for y = [20, 21, 25, 100, 9779]: [42.34, 43.67, 43.67, 43.67, 43.67]; log(y!) is [42.34, 45.38, 58.0, 363.74, 80075.89] (backend cpu, cpu)
+markov_asset_jax: exact spectral radius 0.9944
+    15 steps, seeds 1234-1253: estimates 0.8690 to 1.0186; 5 of 20 at or above 1, where the lecture's assertion fails
+   100 steps, seeds 1234-1253: estimates 0.9944 to 0.9945; 0 of 20 at or above 1, where the lecture's assertion fails
+  1000 steps, seeds 1234-1253: estimates 0.9944 to 0.9944; 0 of 20 at or above 1, where the lecture's assertion fails

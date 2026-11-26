@@ -1,7 +1,7 @@
 #!/bin/bash
 # QuantEcon/benchmarks#4: every lecture in lectures.txt as used (as written, JAX's defaults), timed per cell.
 #   ./lectures_set.sh <out dir> <repetitions> <platform>...      platforms: cuda (card 0b:00.0) or cpu
-# Each lecture has an hour; perl's alarm stands in for timeout, which macOS lacks.
+# Each lecture has CAP seconds, an hour by default; perl's alarm stands in for timeout, which macOS lacks.
 # DTYPES runs each lecture at each precision in turn, on each platform: `as-written` by default,
 # or for example "float64 float32" (run_lecture.py's --dtype). LIST names the lectures.
 # ROOT holds lectures.txt and lectures/<lecture>.md; PY has the lectures' imports; ENV_INFO is
@@ -11,7 +11,7 @@ PY=${PY:-.venv/bin/python}; RUNNER=${RUNNER:-run_lecture.py}; ENV_INFO=${ENV_INF
 DTYPES=${DTYPES:-as-written}; LIST=${LIST:-lectures.txt}
 OUT=$1; REPS=$2; shift 2
 mkdir -p "$OUT"
-cap() { perl -e 'alarm shift; exec @ARGV' 3600 "$@"; }
+cap() { perl -e 'alarm shift; exec @ARGV' "${CAP:-3600}" "$@"; }
 for rep in $(seq 1 "$REPS"); do
   for lec in $(cat "$LIST"); do
     for plat in "$@"; do

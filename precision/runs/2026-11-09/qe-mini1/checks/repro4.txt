@@ -1,0 +1,4 @@
+float32 1.098 µs per product
+float64 0.174 µs per product
+with XLA_FLAGS=--xla_cpu_experimental_ynn_fusion_type=:
+float32 0.169 µs per product

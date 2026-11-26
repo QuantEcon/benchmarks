@@ -1,0 +1,23 @@
+Writing to /root/benchmarks/problems/results/digitalocean-gpu-mi300x1-192gb/2026-11-06.jsonl
+P3 egm     grid             200 float32  jax-gpu         warm     0.328 s  cold     3.312 s    2212 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.380 s  cold     3.236 s    2204 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.492 s  cold     2.333 s    2212 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.680 s  cold     3.483 s    2212 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     1.392 s  cold     4.338 s    2212 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.005 s  cold     0.456 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.005 s  cold     0.456 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.005 s  cold     0.467 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.010 s  cold     0.531 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.039 s  cold     0.685 s     200 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.141 s  cold     5.700 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.154 s  cold     6.281 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.122 s  cold     6.235 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.140 s  cold     6.232 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.399 s  cold     6.954 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.145 s  cold     0.693 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.146 s  cold     0.723 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.145 s  cold     5.703 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.130 s  cold     5.941 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.142 s  cold     6.674 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.146 s  cold     6.687 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.174 s  cold     6.159 s    1000 iterations

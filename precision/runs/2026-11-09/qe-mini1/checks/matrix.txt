@@ -1,0 +1,20 @@
+Writing to /Users/mmcky/bench/ynn4-2026-11-09-qe-mini1-login2/matrix-default/qe-mini1/2026-11-09.jsonl
+kalman                1000 float32  cpu    warm      5.04 ms      198.4 ksteps/s  compile 0.12 s
+kalman                1000 float64  cpu    warm      1.36 ms      733.5 ksteps/s  compile 0.09 s
+kalman               10000 float32  cpu    warm     51.00 ms      196.1 ksteps/s  compile 0.09 s
+kalman               10000 float64  cpu    warm     15.43 ms      648.1 ksteps/s  compile 0.09 s
+matmul                1000 float32  cpu    warm      1.03 ms     1938.3 GFLOPS  compile 0.00 s
+matmul                1000 float64  cpu    warm      4.84 ms      413.6 GFLOPS  compile 0.00 s
+matmul               10000 float32  cpu    warm   1338.03 ms     1494.7 GFLOPS  compile 0.00 s
+matmul               10000 float64  cpu    warm   5374.78 ms      372.1 GFLOPS  compile 0.00 s
+== exit 0 (default)
+Writing to /Users/mmcky/bench/ynn4-2026-11-09-qe-mini1-login2/matrix-ynn-cleared/qe-mini1/2026-11-09.jsonl
+kalman                1000 float32  cpu    warm      1.40 ms      713.2 ksteps/s  compile 0.09 s
+kalman                1000 float64  cpu    warm      1.40 ms      715.6 ksteps/s  compile 0.09 s
+kalman               10000 float32  cpu    warm     15.83 ms      631.9 ksteps/s  compile 0.09 s
+kalman               10000 float64  cpu    warm     16.04 ms      623.4 ksteps/s  compile 0.09 s
+matmul                1000 float32  cpu    warm      2.36 ms      849.0 GFLOPS  compile 0.00 s
+matmul                1000 float64  cpu    warm      4.85 ms      412.4 GFLOPS  compile 0.00 s
+matmul               10000 float32  cpu    warm   2110.20 ms      947.8 GFLOPS  compile 0.00 s
+matmul               10000 float64  cpu    warm   4117.45 ms      485.7 GFLOPS  compile 0.00 s
+== exit 0 (ynn-cleared)

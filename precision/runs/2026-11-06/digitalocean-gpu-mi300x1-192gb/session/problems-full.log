@@ -1,0 +1,60 @@
+== problems-full: start 2026-11-06 03:17:38 UTC; cmd: bash problems/run_by_hand.sh digitalocean-gpu-mi300x1-192gb
+== The machine
+ROCm none: jax-rocm10-plugin
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0: [RocmDevice(id=0)]
+== The suite on the card
+Writing to /root/benchmarks/problems/results/digitalocean-gpu-mi300x1-192gb/2026-11-06.jsonl
+P1 vfi     grid             100 float64  jax-gpu         warm     0.022 s  cold     7.626 s     572 iterations
+P1 vfi     grid             200 float64  jax-gpu         warm     0.024 s  cold     7.476 s     572 iterations
+P1 vfi     grid             400 float64  jax-gpu         warm     0.036 s  cold     7.641 s     572 iterations
+P1 vfi     grid             700 float64  jax-gpu         warm     0.083 s  cold     7.688 s     572 iterations
+P1 vfi     grid            1000 float64  jax-gpu         warm     0.148 s  cold     7.893 s     572 iterations
+P1 vfi     grid            1500 float64  jax-gpu         warm     0.328 s  cold     7.886 s     572 iterations
+P3 egm     grid             200 float64  jax-gpu         warm     0.639 s  cold     6.322 s    2192 iterations
+P3 egm     grid            1000 float64  jax-gpu         warm     0.438 s  cold     6.252 s    2190 iterations
+P3 egm     grid            5000 float64  jax-gpu         warm     0.591 s  cold     6.437 s    2190 iterations
+P3 egm     grid           20000 float64  jax-gpu         warm     0.680 s  cold     6.468 s    2190 iterations
+P3 egm     grid           50000 float64  jax-gpu         warm     1.384 s  cold     7.188 s    2190 iterations
+P3 egm     grid             200 float32  jax-gpu         warm     0.072 s  cold     3.271 s     494 iterations
+P3 egm     grid            1000 float32  jax-gpu         warm     0.112 s  cold     3.243 s     629 iterations
+P3 egm     grid            5000 float32  jax-gpu         warm     0.180 s  cold     1.990 s     812 iterations
+P3 egm     grid           20000 float32  jax-gpu         warm     0.274 s  cold     3.370 s     878 iterations
+P3 egm     grid           50000 float32  jax-gpu         warm     0.571 s  cold     4.022 s     901 iterations
+P4 wealth  households      1000 float64  jax-gpu         warm     0.005 s  cold     0.527 s     200 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.005 s  cold     0.540 s     200 iterations
+P4 wealth  households    100000 float64  jax-gpu         warm     0.006 s  cold     0.517 s     200 iterations
+P4 wealth  households   1000000 float64  jax-gpu         warm     0.016 s  cold     0.773 s     200 iterations
+P4 wealth  households  10000000 float64  jax-gpu         warm     0.082 s  cold     0.858 s     200 iterations
+P4 wealth  households      1000 float32  jax-gpu         warm     0.005 s  cold     0.454 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.005 s  cold     0.464 s     200 iterations
+P4 wealth  households    100000 float32  jax-gpu         warm     0.005 s  cold     0.454 s     200 iterations
+P4 wealth  households   1000000 float32  jax-gpu         warm     0.010 s  cold     0.519 s     200 iterations
+P4 wealth  households  10000000 float32  jax-gpu         warm     0.039 s  cold     0.680 s     200 iterations
+P7 kalman  batch              1 float64  jax-gpu         warm     0.155 s  cold    14.381 s    1000 iterations
+P7 kalman  batch             10 float64  jax-gpu         warm     0.191 s  cold    14.524 s    1000 iterations
+P7 kalman  batch            100 float64  jax-gpu         warm     0.160 s  cold    14.535 s    1000 iterations
+P7 kalman  batch           1000 float64  jax-gpu         warm     0.181 s  cold    14.344 s    1000 iterations
+P7 kalman  batch          10000 float64  jax-gpu         warm     0.479 s  cold    14.866 s    1000 iterations
+P7 kalman  batch              1 float32  jax-gpu         warm     0.144 s  cold     5.682 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.156 s  cold     6.133 s    1000 iterations
+P7 kalman  batch            100 float32  jax-gpu         warm     0.126 s  cold     6.308 s    1000 iterations
+P7 kalman  batch           1000 float32  jax-gpu         warm     0.143 s  cold     6.054 s    1000 iterations
+P7 kalman  batch          10000 float32  jax-gpu         warm     0.398 s  cold     6.723 s    1000 iterations
+P7 kalman  state              2 float64  jax-gpu         warm     0.168 s  cold    14.459 s    1000 iterations
+P7 kalman  state              5 float64  jax-gpu         warm     0.174 s  cold    14.427 s    1000 iterations
+P7 kalman  state             10 float64  jax-gpu         warm     0.156 s  cold    14.409 s    1000 iterations
+P7 kalman  state             20 float64  jax-gpu         warm     0.156 s  cold    14.132 s    1000 iterations
+P7 kalman  state             50 float64  jax-gpu         warm     0.174 s  cold    14.499 s    1000 iterations
+P7 kalman  state            100 float64  jax-gpu         warm     0.188 s  cold    14.468 s    1000 iterations
+P7 kalman  state            200 float64  jax-gpu         warm     0.203 s  cold    14.491 s    1000 iterations
+P7 kalman  state              2 float32  jax-gpu         warm     0.146 s  cold     0.679 s    1000 iterations
+P7 kalman  state              5 float32  jax-gpu         warm     0.144 s  cold     0.700 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.141 s  cold     5.616 s    1000 iterations
+P7 kalman  state             20 float32  jax-gpu         warm     0.125 s  cold     6.043 s    1000 iterations
+P7 kalman  state             50 float32  jax-gpu         warm     0.141 s  cold     6.206 s    1000 iterations
+P7 kalman  state            100 float32  jax-gpu         warm     0.147 s  cold     6.091 s    1000 iterations
+P7 kalman  state            200 float32  jax-gpu         warm     0.173 s  cold     5.983 s    1000 iterations
+== Done: digitalocean-gpu-mi300x1-192gb-2026-11-06-problems.tgz. Copy it off the machine, then terminate the machine.
+== problems-full: end 2026-11-06 03:25:08 UTC; exit 0; wall 450 s

@@ -1,0 +1,7 @@
+17:50:48 ar1_bayes cuda as-written rep 1: exit 0, 213.6 s, cells ok True, float32
+17:52:30 ar1_bayes cpu as-written rep 1: exit 0, 100.6 s, cells ok True, float32
+17:55:58 ar1_bayes cuda as-written rep 2: exit 0, 205.8 s, cells ok True, float32
+17:57:40 ar1_bayes cpu as-written rep 2: exit 0, 100.1 s, cells ok True, float32
+18:01:08 ar1_bayes cuda as-written rep 3: exit 0, 205.3 s, cells ok True, float32
+18:02:49 ar1_bayes cpu as-written rep 3: exit 0, 99.3 s, cells ok True, float32
+ALLDONE

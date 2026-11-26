@@ -1,0 +1,229 @@
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+kernel 6.8.0-146-generic, amdgpu module 6.19.14.31400000, ROCm in /opt/rocm: none
+AMDSMI Tool: 27.1.0+7da43026 | AMDSMI Library version: 27.1.0 | ROCm version: 10.1.0 | amdgpu version: 6.19.14.31400000 | ionic version: N/A
+GPU: 0
+    ASIC:
+        MARKET_NAME: AMD Instinct MI300X VF
+        VENDOR_ID: 0x1002
+        VENDOR_NAME: Advanced Micro Devices Inc. [AMD/ATI]
+        SUBVENDOR_ID: 0x1002
+        DEVICE_ID: 0x74b5
+        SUBSYSTEM_ID: 0x74a1
+        REV_ID: 0x00
+        CHIP_REV_ID: 0x01
+        EXTERNAL_REV_ID: 0x47
+        ASIC_SERIAL: 0xCA35A4FE6CBCF35E
+        OAM_ID: 2
+        PHYSICAL_ACC_ID: N/A
+        NUM_COMPUTE_UNITS: 304
+        TARGET_GRAPHICS_VERSION: gfx942
+        FLAGS: 258
+    BUS:
+        BDF: 0000:83:00.0
+        MAX_PCIE_WIDTH: 16
+        MAX_PCIE_SPEED: 32 GT/s
+        PCIE_LEVELS: N/A
+        PCIE_INTERFACE_VERSION: Gen 5
+        SLOT_TYPE: OAM
+    IFWI:
+        NAME: AMD MI300X_HW_SRIOV_CVS_1VF
+        BUILD_DATE: 2026/03/31 11:21
+        PART_NUMBER: 113-M3000108-103
+        VERSION: 00182096
+        BOOT_FIRMWARE: 022.040.003.043.000001
+    DRIVER:
+        NAME: amdgpu
+        VERSION: 6.19.14.31400000
+        OS_KERNEL_VERSION: 6.8.0-146-generic
+    BOARD:
+        MODEL_NUMBER: N/A
+        PRODUCT_SERIAL: N/A
+        FRU_ID: N/A
+        PRODUCT_NAME: N/A
+        MANUFACTURER_NAME: Advanced Micro Devices, Inc. [AMD/ATI]
+    RAS:
+        EEPROM_VERSION: 0x0
+        BAD_PAGE_THRESHOLD: 0
+        BAD_PAGE_THRESHOLD_EXCEEDED: False
+        PARITY_SCHEMA: DISABLED
+        SINGLE_BIT_SCHEMA: DISABLED
+        DOUBLE_BIT_SCHEMA: DISABLED
+        POISON_SCHEMA: ENABLED
+        ECC_BLOCK_STATE:
+            UMC: ENABLED
+            SDMA: ENABLED
+            GFX: ENABLED
+            MMHUB: ENABLED
+            ATHUB: ENABLED
+            PCIE_BIF: ENABLED
+            HDP: ENABLED
+            XGMI_WAFL: ENABLED
+            DF: ENABLED
+            SMN: ENABLED
+            SEM: DISABLED
+            MP0: ENABLED
+            MP1: ENABLED
+            FUSE: DISABLED
+            MCA: ENABLED
+            VCN: ENABLED
+            JPEG: ENABLED
+            IH: ENABLED
+            MPIO: ENABLED
+            MMSCH: DISABLED
+            MP5: DISABLED
+            ATU: DISABLED
+            DACC_BE: DISABLED
+            ECLR: DISABLED
+            KPX_SERDES: DISABLED
+            LSDMA: DISABLED
+            MPART: DISABLED
+            MPIFOE: DISABLED
+            MPRAS: DISABLED
+            NBIF: DISABLED
+            NBIO: ENABLED
+            OXRP: DISABLED
+            PCIE_PL: DISABLED
+            PCS_XGMI: DISABLED
+            PIE: DISABLED
+            CS: DISABLED
+            SHUB: DISABLED
+            SSBDCI: DISABLED
+            UCIE_PCS: DISABLED
+    PROCESS_ISOLATION: Disabled
+    VRAM:
+        TYPE: HBM
+        VENDOR: MICRON
+        SIZE: 196288 MB
+        BIT_WIDTH: 2048
+        MAX_BANDWIDTH: 5325 GB/s
+    CACHE_INFO:
+        CACHE_0:
+            CACHE_ACRONYM: L1D
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 32 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 1
+            NUM_CACHE_INSTANCE: 304
+            TOTAL_CACHE_SIZE: 9728 KB
+        CACHE_1:
+            CACHE_ACRONYM: L1I
+            CACHE_PROPERTIES: INST_CACHE, SIMD_CACHE
+            CACHE_SIZE: 64 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 2
+            NUM_CACHE_INSTANCE: 144
+            TOTAL_CACHE_SIZE: 9216 KB
+        CACHE_2:
+            CACHE_ACRONYM: L1I
+            CACHE_PROPERTIES: INST_CACHE, SIMD_CACHE
+            CACHE_SIZE: 64 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 1
+            NUM_CACHE_INSTANCE: 16
+            TOTAL_CACHE_SIZE: 1024 KB
+        CACHE_3:
+            CACHE_ACRONYM: L1D
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 16 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 2
+            NUM_CACHE_INSTANCE: 144
+            TOTAL_CACHE_SIZE: 2304 KB
+        CACHE_4:
+            CACHE_ACRONYM: L1D
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 16 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 1
+            NUM_CACHE_INSTANCE: 16
+            TOTAL_CACHE_SIZE: 256 KB
+        CACHE_5:
+            CACHE_ACRONYM: L2
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 4096 KB
+            CACHE_LEVEL: 2
+            MAX_NUM_CU_SHARED: 304
+            NUM_CACHE_INSTANCE: 1
+            TOTAL_CACHE_SIZE: 4096 KB
+        CACHE_6:
+            CACHE_ACRONYM: L3
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 262144 KB
+            CACHE_LEVEL: 3
+            MAX_NUM_CU_SHARED: 304
+            NUM_CACHE_INSTANCE: 1
+            TOTAL_CACHE_SIZE: 262144 KB
+    MEM_CARVEOUT: N/A (UMA carveout is not supported on this ASIC/VBIOS)
+    CLOCK:
+        SYS:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 214 MHz
+                LEVEL 1: 500 MHz
+                LEVEL 2: 2100 MHz
+        MEM:
+            FREQUENCY_LEVELS:
+                LEVEL 0: 900 MHz
+                LEVEL 1: 1100 MHz
+                LEVEL 2: 1300 MHz
+        DF:
+            FREQUENCY_LEVELS:
+                LEVEL 0: 1300 MHz
+                LEVEL 1: 1550 MHz
+                LEVEL 2: 1800 MHz
+        SOC:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 46 MHz
+                LEVEL 1: 889 MHz
+                LEVEL 2: 1000 MHz
+                LEVEL 3: 1143 MHz
+        DCEF: N/A
+        VCLK0:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 31 MHz
+                LEVEL 1: 914 MHz
+                LEVEL 2: 1200 MHz
+                LEVEL 3: 1333 MHz
+        VCLK1: N/A
+        DCLK0:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 25 MHz
+                LEVEL 1: 711 MHz
+                LEVEL 2: 960 MHz
+                LEVEL 3: 1143 MHz
+        DCLK1: N/A
+
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           46 bits physical, 57 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  20
+On-line CPU(s) list:                     0-19
+Vendor ID:                               GenuineIntel
+BIOS Vendor ID:                          QEMU
+Model name:                              INTEL(R) XEON(R) PLATINUM 8568Y+
+BIOS Model name:                         pc-q35-6.1  CPU @ 2.0GHz
+BIOS CPU family:                         1
+CPU family:                              6
+Model:                                   207
+Thread(s) per core:                      1
+Core(s) per socket:                      20
+Socket(s):                               1
+Stepping:                                2
+BogoMIPS:                                4600.00
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq dtes64 vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 wbnoinvd arat vnmi avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b overflow_recov succor fsrm md_clear serialize tsxldtrk avx512_fp16 arch_capabilities
+Virtualization:                          VT-x
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               640 KiB (20 instances)
+L1i cache:                               640 KiB (20 instances)
+L2 cache:                                80 MiB (20 instances)
+               total        used        free      shared  buff/cache   available
+Mem:             235           6         226           0           5         229
+Swap:              0           0           0

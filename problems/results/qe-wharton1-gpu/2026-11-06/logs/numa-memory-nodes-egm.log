@@ -1,0 +1,4 @@
+Writing to /home/mamckay/bench/benchmarks/problems/results/qe-wharton1-gpu/2026-11-06.jsonl
+P3 egm     grid           50000 float64  numpy           warm   273.349 s  cold   281.525 s    2190 iterations
+P3 egm     grid           50000 float64  numba           warm   297.760 s  cold   304.482 s    2190 iterations
+P3 egm     grid           50000 float64  numba-parallel  warm   273.937 s  cold   284.792 s    2190 iterations

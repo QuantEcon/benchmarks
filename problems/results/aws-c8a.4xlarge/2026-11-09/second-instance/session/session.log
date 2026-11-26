@@ -1,0 +1,25 @@
+downloading uv 0.13.7 x86_64-unknown-linux-gnu
+installing to /home/ubuntu/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOME/.local/bin/env.fish (fish)
+Using Python 3.12.3 environment at: .venv-problems
+== 05:16:53 one core's probe
+read       best   0.0649 s  median   0.0661 s    27.73 GB/s  cpu0 4475 MHz
+copy       best   0.0741 s  median   0.0744 s    48.59 GB/s  cpu0 4488 MHz
+numpy      best   0.3030 s  median   0.3057 s    17.82 GB/s  cpu0 4486 MHz
+numpy-out  best   0.2522 s  median   0.2572 s    21.41 GB/s  cpu0 4490 MHz
+numba      best   0.1636 s  median   0.1637 s    11.00 GB/s  cpu0 4508 MHz
+numba-evT  best   0.1263 s  median   0.1263 s    14.25 GB/s  cpu0 4506 MHz
+== 05:16:59 triad
+triad  1 threads  best  0.1472 s  median  0.1494 s    43.77 GB/s
+triad  2 threads  best  0.0751 s  median  0.0762 s    85.74 GB/s
+triad  4 threads  best  0.0641 s  median  0.0654 s   100.56 GB/s
+triad  8 threads  best  0.0643 s  median  0.0657 s   100.14 GB/s
+triad 16 threads  best  0.0646 s  median  0.0650 s    99.70 GB/s
+EXIT 0

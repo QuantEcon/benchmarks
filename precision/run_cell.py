@@ -22,8 +22,27 @@ SAMPLES = 64
 TELEMETRY = "index,pci.bus_id,clocks.sm,clocks.mem,temperature.gpu,power.draw,utilization.gpu"
 
 
+def amd_telemetry(ids):
+    """amd-smi's metrics for the cards in use, as it writes them: its fields vary by version."""
+    for fields in (["--power", "--clock", "--temperature", "--usage"], []):
+        try:
+            out = subprocess.run(["amd-smi", "metric", "--gpu", *ids.split(","), *fields, "--json"],
+                                 capture_output=True, text=True, timeout=30)
+        except (OSError, subprocess.SubprocessError):
+            return None
+        if out.returncode == 0:
+            try:
+                return json.loads(out.stdout)
+            except ValueError:
+                return None
+    return None
+
+
 def gpu_telemetry():
     """Clocks, temperature and power of the cards in use, read just after timing."""
+    if os.environ.get("JAX_PLATFORMS") == "rocm":
+        ids = os.environ.get("HIP_VISIBLE_DEVICES")
+        return amd_telemetry(ids) if ids else None
     ids = os.environ.get("CUDA_VISIBLE_DEVICES")
     if not ids:
         return None
@@ -50,6 +69,12 @@ def memory_analysis(compiled):
                 ("argument_size_in_bytes", "output_size_in_bytes", "temp_size_in_bytes")}
     except Exception:
         return None
+
+
+def device_memory(devices):
+    """The allocator's counts on each card, read after timing. The CPU keeps none."""
+    stats = [d.memory_stats() for d in devices]
+    return stats if any(stats) else None
 
 
 def main():
@@ -107,6 +132,8 @@ def main():
             jax.block_until_ready(compiled(*inputs))
             warm.append(time.perf_counter() - t)
         row["gpu_telemetry"] = gpu_telemetry()
+        # peak_bytes_in_use is the most the cell held at once
+        row["memory_stats"] = device_memory(devices)
         row.update(warm_s=warm, warm_median_s=statistics.median(warm), warm_min_s=min(warm))
 
         # Fixed positions in the result, for comparing float32 with float64

@@ -15,6 +15,7 @@ benchmarks/
 │   └── matmul/            # Matrix multiplication benchmarks
 ├── hardware/              # Hardware detection and general benchmarks
 ├── precision/             # float32 against float64 across CPU, CUDA and Apple Silicon
+├── problems/              # Problem types in NumPy, Numba and JAX, on CPU and GPU, across sizes
 ├── results/               # JSON-lines output from precision runs, by host (created by a run)
 ├── notebooks/             # Jupyter notebook benchmarks
 ├── lectures/              # Whole lectures run as used, timed per cell, in either precision
@@ -40,6 +41,10 @@ General hardware detection and cross-platform benchmarks comparing:
 ### Precision Benchmarks (`precision/`)
 
 What float64 costs against float32 on each kind of device, by kernel type (compute-, memory- and launch-bound), with the GPU and its own host CPU measured in the same run. One fresh process per measurement, so compile time counts. See [`precision/README.md`](precision/README.md) and [#1](https://github.com/QuantEcon/benchmarks/issues/1).
+
+### Problem Types (`problems/`)
+
+The problem types QuantEcon's lectures use (value function iteration, the endogenous grid method, Monte Carlo simulation, a Kalman filter), each written in NumPy, Numba and JAX and timed as used across problem sizes, on CPUs and GPUs: which stack to use for which problem, at what size, on what hardware. One fresh process per measurement, so compile time counts. See [`problems/README.md`](problems/README.md) and [#5](https://github.com/QuantEcon/benchmarks/issues/5).
 
 ### Notebook Benchmarks (`notebooks/`)
 

@@ -1,0 +1,5 @@
+B device: cuda:0 bytes_limit 18893242368
+B: 4 MiB ok
+B: 4 GiB ok
+B: 1.4 s
+exit 0

@@ -1,0 +1,38 @@
+== before: 2026-11-02 17:00:44 AEDT (06:00:44 UTC)
+17:00  up 19 days,  1:35, 2 users, load averages: 1.20 1.04 1.07
+  PID STAT  %CPU COMM
+71492 S+     2.5 macmon
+77997 Ss+    2.2 claude
+  405 Ss     0.7 /usr/libexec/opendirectoryd
+10642 S      0.6 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+88128 Ss+    0.3 claude
+44098 Ss+    0.2 claude
+87949 S      0.0 sleep
+87921 S      0.0 sleep
+87852 S      0.0 sleep
+ lowpowermode         0
+Now drawing from 'AC Power'
+== the wallpaper is not playing
+== start 2026-11-02T06:00:44Z at 5fbf033
+== check: precision start 06:00:44
+== check: lectures start 06:02:24
+== problems start 06:08:43
+== problems done 07:20:54, exit 0
+== lectures start 07:20:54; lecture-python.myst at 087518ec0
+== lectures done 08:38:30, exit 0
+ALLDONE
+== after: 2026-11-02 19:38:30 AEDT (08:38:30 UTC)
+19:38  up 19 days,  4:13, 2 users, load averages: 3.05 4.66 4.86
+  PID STAT  %CPU COMM
+71492 S+     1.2 macmon
+  584 Ss     0.8 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  405 Ss     0.7 /usr/libexec/opendirectoryd
+  368 Ss     0.7 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd
+86302 Ss+    0.2 bash
+  393 Ss     0.2 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  416 Ss     0.1 /usr/libexec/dasd
+  363 Ss     0.1 /usr/libexec/logd
+10642 R      0.1 /Users/mmcky/.vscode-server/extensions/anthropic.claude-code-2.1.314-darwin-arm64/resources/native-binary/claude
+ lowpowermode         0
+Now drawing from 'AC Power'
+== exit 2026-11-02T08:38:30Z

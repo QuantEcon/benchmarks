@@ -1,0 +1,4 @@
+triad  1 threads  best  0.0477 s  median  0.0478 s   135.11 GB/s
+1 threads: cpu/wall 1.0
+12 threads: cpu/wall 10.49
+          6572916736  maximum resident set size

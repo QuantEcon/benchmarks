@@ -1,0 +1,4 @@
+Writing to /home/mamckay/bench/numa46/run-20261106T070845Z/check/qe-wharton1-gpu/2026-11-06.jsonl
+P3 egm     grid             200 float64  numpy           warm     1.135 s  cold     1.141 s    2192 iterations
+P3 egm     grid             200 float64  numba           warm     0.895 s  cold     7.797 s    2192 iterations
+P3 egm     grid             200 float64  numba-parallel  warm     0.859 s  cold     8.513 s    2192 iterations

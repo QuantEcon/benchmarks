@@ -76,7 +76,7 @@ def main():
     shell = InteractiveShell.instance()
     row = {"lecture": os.path.basename(args.lecture), "dtype": args.dtype,
            "flags": {k: v for k, v in sorted(os.environ.items())
-                     if k.startswith(("JAX_", "XLA_", "CUDA_"))},
+                     if k.startswith(("JAX_", "XLA_", "CUDA_", "HIP_"))},
            "skipped": installs, "cells": []}
     row["startup_s"] = time.perf_counter() - T0
     for i, (source, tags) in enumerate(cells):
@@ -105,11 +105,22 @@ def main():
             row["record"][expr] = f"{type(e).__name__}: {e}"
     import jax
     import jax.numpy as jnp
-    devices = jax.devices()
+    try:
+        devices = jax.devices()
+    except RuntimeError as e:
+        # The lecture asked for a platform this run leaves out: sargent_surico sets
+        # jax_platform_name to cpu, which JAX_PLATFORMS=cuda withholds. The cells
+        # that needed it are already recorded as failed, so keep the row
+        row["platform_error"] = str(e)
+        jax.config.update("jax_platform_name", "")
+        devices = jax.devices()
     row.update(jax=jax.__version__, platform=devices[0].platform,
                device_kind=devices[0].device_kind,
                default_float=jnp.zeros(()).dtype.name,
                x64=bool(jax.config.jax_enable_x64))
+    # The allocator's counts over the whole lecture, on a card; the CPU keeps none
+    stats = [d.memory_stats() for d in devices]
+    row["memory_stats"] = stats if any(stats) else None
     if args.env_info:
         sys.path.insert(0, args.env_info)
         import env_info

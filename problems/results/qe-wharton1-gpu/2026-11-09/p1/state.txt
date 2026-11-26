@@ -1,0 +1,33 @@
+== before: 2026-11-09 01:48:04 EST (06:48:04 UTC)
+ 01:48:04 up  7:58,  2 users,  load average: 0.33, 0.13, 0.04
+0, 00000000:0B:00.0, 300 MHz, 31, 19.75 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 37, 27.51 W, 0 %, 59 MiB
+    PID USER     STAT %CPU COMMAND
+  11561 mamckay  Ss    1.8 systemd
+     12 root     I     1.5 kworker/u256:0-atlantic
+  11583 mamckay  Ssl   1.4 user-session-he
+  11818 root     Ss    0.5 sshd
+  11584 mamckay  Ssl   0.4 wireplumber
+   2697 gdm      Sl+   0.1 gnome-shell
+  11578 mamckay  Ssl   0.1 pipewire
+node 0 free: 62934 MB
+node 1 free: 0 MB
+node 2 free: 62624 MB
+node 3 free: 0 MB
+== after: 2026-11-09 02:12:32 EST (07:12:32 UTC)
+ 02:12:32 up  8:22,  2 users,  load average: 1.22, 10.53, 18.21
+0, 00000000:0B:00.0, 300 MHz, 31, 20.08 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 37, 26.71 W, 0 %, 59 MiB
+    PID USER     STAT %CPU COMMAND
+  11216 root     I     0.4 kworker/u256:2-atlantic
+  12589 root     I     0.3 kworker/u256:1-ipv6_addrconf
+  11886 mamckay  S+    0.2 python3
+   2697 gdm      Sl+   0.1 gnome-shell
+   1924 root     Ssl   0.0 tailscaled
+   1629 root     Ssl   0.0 NetworkManager
+   9368 root     Ssl   0.0 snapd
+node 0 free: 62892 MB
+node 1 free: 0 MB
+node 2 free: 62568 MB
+node 3 free: 0 MB
+== lock released 07:12:35

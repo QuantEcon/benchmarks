@@ -1,0 +1,19 @@
+== problems-quick: start 2026-11-06 02:59:49 UTC; cmd: bash problems/run_by_hand.sh digitalocean-gpu-mi300x1-192gb --quick
+== The machine
+ROCm none: jax-rocm10-plugin
+== Python 3.12, JAX, Numba and SciPy
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0: [RocmDevice(id=0)]
+== The suite on the card
+Writing to /root/benchmarks/problems/results/digitalocean-gpu-mi300x1-192gb/2026-11-06.jsonl
+P1 vfi     grid             100 float64  jax-gpu         warm     0.022 s  cold     7.637 s     572 iterations
+P3 egm     grid             200 float64  jax-gpu         warm     0.640 s  cold     6.432 s    2192 iterations
+P3 egm     grid             200 float32  jax-gpu         warm     0.074 s  cold     3.259 s     494 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.005 s  cold     0.523 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.005 s  cold     0.446 s     200 iterations
+P7 kalman  batch             10 float64  jax-gpu         warm     0.192 s  cold    14.446 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.155 s  cold     6.019 s    1000 iterations
+P7 kalman  state             10 float64  jax-gpu         warm     0.152 s  cold    14.283 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.143 s  cold     5.645 s    1000 iterations
+== Done: digitalocean-gpu-mi300x1-192gb-2026-11-06-problems.tgz. Copy it off the machine, then terminate the machine.
+== problems-quick: end 2026-11-06 03:01:08 UTC; exit 0; wall 79 s

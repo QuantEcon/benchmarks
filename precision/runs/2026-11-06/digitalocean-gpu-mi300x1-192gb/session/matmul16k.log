@@ -1,0 +1,5 @@
+== matmul16k: start 2026-11-06 03:38:57 UTC; cmd: env XLA_FLAGS=--xla_gpu_autotune_level=0 python precision/run_matrix.py --host digitalocean-gpu-mi300x1-192gb --devices gpu --gpus 0 --workloads matmul --sizes 16384 --label autotune0
+Writing to /root/benchmarks/results/digitalocean-gpu-mi300x1-192gb/2026-11-06.jsonl
+matmul               16384 float32  gpu    warm    307.05 ms    28647.4 GFLOPS  compile 1.00 s
+matmul               16384 float64  gpu    warm    499.71 ms    17602.5 GFLOPS  compile 6.74 s
+== matmul16k: end 2026-11-06 03:39:13 UTC; exit 0; wall 16 s

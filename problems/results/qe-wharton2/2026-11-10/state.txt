@@ -1,0 +1,2750 @@
+# Redacted for publication: the machine is a guest's, and software its owner's institution manages is shown as <managed agent>, with its CPU figures as recorded.
+ProductName:		macOS
+ProductVersion:		26.7.1
+BuildVersion:		25G241
+console: another account
+== before: 2026-11-10 08:21:46 EST (13:21:46 UTC)
+ 8:21  up 4 days, 15:29, 3 users, load averages: 2.15 1.95 1.58
+  PID  %CPU %MEM COMM
+  317   6.6  0.4 <managed agent>
+  152   4.8  0.0 /usr/libexec/opendirectoryd
+65312   1.8  0.7 <managed agent>
+  332   1.6  0.1 <managed agent>
+81802   1.5  0.0 sshd-session: matt [priv]
+  324   1.0  0.1 <managed agent>
+  178   0.9  0.0 /usr/sbin/notifyd
+  189   0.9  0.0 /usr/libexec/runningboardd
+  110   0.7  0.1 /usr/libexec/logd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:22:25 EST (13:22:25 UTC)
+ 8:22  up 4 days, 15:30, 3 users, load averages: 1.86 1.89 1.58
+  PID  %CPU %MEM COMM
+82062 100.0  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.9  0.4 <managed agent>
+65312   3.5  0.7 <managed agent>
+  332   0.2  0.1 <managed agent>
+  163   0.1  0.1 /usr/libexec/dasd
+81869   0.1  0.0 bash
+  324   0.1  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+81817   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:22:56 EST (13:22:56 UTC)
+ 8:22  up 4 days, 15:31, 3 users, load averages: 2.08 1.95 1.61
+  PID  %CPU %MEM COMM
+82300  94.5  0.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.8  0.4 <managed agent>
+  319   1.8  0.1 <managed agent>
+65312   1.4  0.7 <managed agent>
+  332   0.9  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+  178   0.3  0.0 /usr/sbin/notifyd
+  188   0.3  0.0 /usr/sbin/cfprefsd
+  907   0.3  0.0 /usr/libexec/trustd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:23:26 EST (13:23:26 UTC)
+ 8:23  up 4 days, 15:31, 3 users, load averages: 1.85 1.90 1.60
+  PID  %CPU %MEM COMM
+82457 100.0  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  236  11.5  0.1 /usr/libexec/airportd
+  317   9.3  0.4 <managed agent>
+65312   4.1  0.7 <managed agent>
+  514   1.9  0.0 /usr/libexec/wifivelocityd
+  324   1.8  0.1 <managed agent>
+    1   1.4  0.0 /sbin/launchd
+  272   0.9  0.0 /System/Library/Frameworks/Security.framework/Versions/A/XPCServices/authd.xpc/Contents/MacOS/authd
+  373   0.8  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:23:57 EST (13:23:57 UTC)
+ 8:23  up 4 days, 15:32, 3 users, load averages: 1.51 1.82 1.58
+  PID  %CPU %MEM COMM
+82568 100.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.9  0.4 <managed agent>
+65312   4.1  0.7 <managed agent>
+  236   1.2  0.1 /usr/libexec/airportd
+  324   0.4  0.1 <managed agent>
+  332   0.3  0.1 <managed agent>
+  514   0.2  0.0 /usr/libexec/wifivelocityd
+81869   0.1  0.0 bash
+  373   0.1  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:24:27 EST (13:24:27 UTC)
+ 8:24  up 4 days, 15:32, 3 users, load averages: 1.91 1.87 1.61
+  PID  %CPU %MEM COMM
+82568 100.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.0  0.4 <managed agent>
+  324   1.4  0.1 <managed agent>
+  332   0.6  0.1 <managed agent>
+  843   0.2  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+ 1066   0.1  0.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.74/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:24:58 EST (13:24:58 UTC)
+ 8:24  up 4 days, 15:33, 3 users, load averages: 1.61 1.80 1.59
+  PID  %CPU %MEM COMM
+82951 100.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   9.6  0.7 <managed agent>
+  317   3.8  0.4 <managed agent>
+82987   2.5  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+  355   0.9  0.1 <managed agent>
+  574   0.9  0.0 /usr/libexec/diagnosticd
+11009   0.5  0.1 <managed agent>
+  324   0.5  0.1 <managed agent>
+    1   0.4  0.0 /sbin/launchd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:25:29 EST (13:25:29 UTC)
+ 8:25  up 4 days, 15:33, 3 users, load averages: 1.37 1.72 1.57
+  PID  %CPU %MEM COMM
+82951 100.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.4  0.4 <managed agent>
+  843   0.2  0.1 <managed agent>
+  315   0.2  0.0 /Library/Application Support/Pharos/PrintScout/PrintScout
+  324   0.1  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  122   0.1  0.0 /usr/libexec/configd
+  200   0.1  0.0 /usr/sbin/mDNSResponder
+82903   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:25:59 EST (13:25:59 UTC)
+ 8:25  up 4 days, 15:34, 3 users, load averages: 1.40 1.70 1.56
+  PID  %CPU %MEM COMM
+82951 100.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.2  0.4 <managed agent>
+  324   2.7  0.1 <managed agent>
+61488   0.4  0.2 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node
+65312   0.3  0.7 <managed agent>
+  332   0.2  0.1 <managed agent>
+  316   0.2  0.3 /Library/Application Support/Workflow/workflowd
+  414   0.2  0.1 <managed agent>
+11009   0.2  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:26:30 EST (13:26:30 UTC)
+ 8:26  up 4 days, 15:34, 3 users, load averages: 4.82 2.48 1.85
+  PID  %CPU %MEM COMM
+83486 440.8  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.6  0.4 <managed agent>
+  324   0.6  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+83379   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+83378   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+83376   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+83377   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+83375   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:27:00 EST (13:27:00 UTC)
+ 8:27  up 4 days, 15:35, 3 users, load averages: 3.52 2.40 1.84
+  PID  %CPU %MEM COMM
+83709  99.1  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  187   8.8  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  317   4.3  0.4 <managed agent>
+10553   1.6  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  184   1.3  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  843   1.0  0.1 <managed agent>
+65312   1.0  0.7 <managed agent>
+  657   0.8  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+10554   0.6  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+System-wide memory free percentage: 92%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:27:31 EST (13:27:31 UTC)
+ 8:27  up 4 days, 15:35, 3 users, load averages: 3.49 2.48 1.89
+  PID  %CPU %MEM COMM
+83866  99.2  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   8.6  0.4 <managed agent>
+65312   5.6  0.7 <managed agent>
+  324   0.7  0.1 <managed agent>
+  236   0.5  0.1 /usr/libexec/airportd
+  811   0.4  0.7 /Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app/Contents/MacOS/Creative Cloud
+  332   0.4  0.1 <managed agent>
+81869   0.3  0.0 bash
+  373   0.2  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:28:01 EST (13:28:01 UTC)
+ 8:28  up 4 days, 15:36, 3 users, load averages: 2.64 2.37 1.87
+  PID  %CPU %MEM COMM
+83866  98.7  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.0  0.4 <managed agent>
+65312   5.0  0.7 <managed agent>
+  187   3.8  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  184   1.0  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  843   0.5  0.1 <managed agent>
+81869   0.3  0.0 bash
+  332   0.3  0.1 <managed agent>
+  159   0.1  0.0 /usr/libexec/locationd
+System-wide memory free percentage: 92%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:28:32 EST (13:28:32 UTC)
+ 8:28  up 4 days, 15:36, 3 users, load averages: 2.13 2.27 1.85
+  PID  %CPU %MEM COMM
+83866  99.4  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.8  0.4 <managed agent>
+65312   0.7  0.7 <managed agent>
+  324   0.5  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+84061   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+84060   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+84059   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+83952   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:29:02 EST (13:29:02 UTC)
+ 8:29  up 4 days, 15:37, 3 users, load averages: 1.79 2.17 1.83
+  PID  %CPU %MEM COMM
+84283  99.2  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.1  0.4 <managed agent>
+  843   0.7  0.1 <managed agent>
+  187   0.3  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  414   0.2  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  184   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+81816   0.0  0.0 login
+System-wide memory free percentage: 92%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:29:33 EST (13:29:33 UTC)
+ 8:29  up 4 days, 15:37, 3 users, load averages: 1.48 2.06 1.80
+  PID  %CPU %MEM COMM
+84283  99.4  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  15.4  0.4 <managed agent>
+  478   1.6  0.0 powermetrics
+  324   1.0  0.1 <managed agent>
+65312   0.8  0.7 <managed agent>
+  332   0.3  0.1 <managed agent>
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  843   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:30:03 EST (13:30:03 UTC)
+ 8:30  up 4 days, 15:38, 3 users, load averages: 1.52 2.02 1.79
+  PID  %CPU %MEM COMM
+84283 100.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.5  0.4 <managed agent>
+  478   0.7  0.0 powermetrics
+  843   0.6  0.1 <managed agent>
+61488   0.4  0.2 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node
+  332   0.2  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+84735   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:30:34 EST (13:30:34 UTC)
+ 8:30  up 4 days, 15:38, 3 users, load averages: 5.11 2.83 2.09
+  PID  %CPU %MEM COMM
+84887 537.5  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   1.4  0.4 <managed agent>
+  189   0.4  0.0 /usr/libexec/runningboardd
+  843   0.4  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+84746   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+84745   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+84744   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+84738   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:31:05 EST (13:31:05 UTC)
+ 8:31  up 4 days, 15:39, 3 users, load averages: 4.01 2.78 2.10
+  PID  %CPU %MEM COMM
+85121  99.4  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  15.7  0.4 <managed agent>
+61488   3.7  0.2 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node
+65312   0.8  0.7 <managed agent>
+  324   0.7  0.1 <managed agent>
+  657   0.3  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  843   0.2  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+  655   0.1  0.1 /System/Library/CoreServices/ControlCenter.app/Contents/MacOS/ControlCenter
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:31:35 EST (13:31:35 UTC)
+ 8:31  up 4 days, 15:39, 3 users, load averages: 2.91 2.63 2.07
+  PID  %CPU %MEM COMM
+85316 100.0  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  15.9  0.4 <managed agent>
+65312   0.5  0.7 <managed agent>
+  324   0.3  0.1 <managed agent>
+  811   0.3  0.7 /Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app/Contents/MacOS/Creative Cloud
+61488   0.2  0.2 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  332   0.1  0.1 <managed agent>
+  139   0.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:32:06 EST (13:32:06 UTC)
+ 8:32  up 4 days, 15:40, 3 users, load averages: 2.87 2.68 2.10
+  PID  %CPU %MEM COMM
+85500  98.4  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.9  0.4 <managed agent>
+65312   1.5  0.7 <managed agent>
+  324   0.9  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+  843   0.2  0.1 <managed agent>
+85279   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+85278   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+84561   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:32:36 EST (13:32:36 UTC)
+ 8:32  up 4 days, 15:40, 3 users, load averages: 2.83 2.69 2.13
+  PID  %CPU %MEM COMM
+85731  56.9  0.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  357  56.1  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+85732  12.5  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+65312  10.1  0.7 <managed agent>
+  317   9.3  0.4 <managed agent>
+  332   2.5  0.1 <managed agent>
+  139   1.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  843   0.9  0.1 <managed agent>
+  122   0.5  0.0 /usr/libexec/configd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:33:07 EST (13:33:07 UTC)
+ 8:33  up 4 days, 15:41, 3 users, load averages: 2.91 2.72 2.16
+  PID  %CPU %MEM COMM
+85903  98.3  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   7.0  0.4 <managed agent>
+65312   2.7  0.7 <managed agent>
+  324   0.7  0.1 <managed agent>
+  332   0.3  0.1 <managed agent>
+  357   0.3  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  139   0.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  843   0.1  0.1 <managed agent>
+81869   0.1  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:33:37 EST (13:33:37 UTC)
+ 8:33  up 4 days, 15:41, 3 users, load averages: 2.31 2.59 2.13
+  PID  %CPU %MEM COMM
+86093 424.1  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  12.4  0.4 <managed agent>
+  843   0.3  0.1 <managed agent>
+  357   0.3  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  139   0.2  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  324   0.1  0.1 <managed agent>
+85860   0.1  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  332   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:34:08 EST (13:34:08 UTC)
+ 8:34  up 4 days, 15:42, 3 users, load averages: 2.06 2.50 2.11
+  PID  %CPU %MEM COMM
+86273  99.2  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.4  0.4 <managed agent>
+65312   0.7  0.7 <managed agent>
+  324   0.5  0.1 <managed agent>
+86221   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86220   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86213   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86218   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86211   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:34:38 EST (13:34:38 UTC)
+ 8:34  up 4 days, 15:42, 3 users, load averages: 1.87 2.40 2.09
+  PID  %CPU %MEM COMM
+86430  99.9  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  16.1  0.4 <managed agent>
+65312   2.7  0.7 <managed agent>
+  843   0.6  0.1 <managed agent>
+  332   0.6  0.1 <managed agent>
+81869   0.3  0.0 bash
+  357   0.2  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  110   0.1  0.1 /usr/libexec/logd
+  324   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:35:09 EST (13:35:09 UTC)
+ 8:35  up 4 days, 15:43, 3 users, load averages: 3.83 2.75 2.22
+  PID  %CPU %MEM COMM
+86625 731.9  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.4  0.4 <managed agent>
+65312   0.3  0.7 <managed agent>
+  324   0.2  0.1 <managed agent>
+  189   0.1  0.0 /usr/libexec/runningboardd
+86592   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+86591   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+86590   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+86589   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:35:39 EST (13:35:39 UTC)
+ 8:35  up 4 days, 15:43, 3 users, load averages: 2.97 2.64 2.20
+  PID  %CPU %MEM COMM
+86800  99.4  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  15.9  0.4 <managed agent>
+  843   0.5  0.1 <managed agent>
+  332   0.4  0.1 <managed agent>
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+  414   0.1  0.1 <managed agent>
+86702   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+86701   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:36:10 EST (13:36:10 UTC)
+ 8:36  up 4 days, 15:44, 3 users, load averages: 2.19 2.48 2.15
+  PID  %CPU %MEM COMM
+86942 100.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.0  0.4 <managed agent>
+  324   0.4  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+  167   0.1  0.0 /usr/sbin/distnoted
+86972   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86964   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86971   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+86967   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:36:40 EST (13:36:40 UTC)
+ 8:36  up 4 days, 15:44, 3 users, load averages: 2.02 2.41 2.14
+  PID  %CPU %MEM COMM
+87173  91.8  0.2 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   5.8  0.7 <managed agent>
+  317   2.4  0.4 <managed agent>
+87179   1.2  0.0 (iostat)
+  332   1.0  0.1 <managed agent>
+  324   0.6  0.1 <managed agent>
+81869   0.4  0.0 bash
+65511   0.3  0.1 <managed agent>
+11009   0.2  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:37:11 EST (13:37:11 UTC)
+ 8:37  up 4 days, 15:45, 3 users, load averages: 2.12 2.38 2.14
+  PID  %CPU %MEM COMM
+87313 136.6  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.7  0.4 <managed agent>
+65312   1.4  0.7 <managed agent>
+  324   0.3  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+65511   0.1  0.1 <managed agent>
+81869   0.1  0.0 bash
+  357   0.1  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+81818   0.0  0.0 caffeinate
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:37:42 EST (13:37:42 UTC)
+ 8:37  up 4 days, 15:45, 3 users, load averages: 3.41 2.63 2.23
+  PID  %CPU %MEM COMM
+87505 939.1  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+65312  14.1  0.7 <managed agent>
+  236  12.1  0.1 /usr/libexec/airportd
+87552   5.9  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+87551   5.8  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  514   3.9  0.0 /usr/libexec/wifivelocityd
+  317   2.4  0.4 <managed agent>
+  324   1.9  0.1 <managed agent>
+    1   1.6  0.0 /sbin/launchd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:38:12 EST (13:38:12 UTC)
+ 8:38  up 4 days, 15:46, 3 users, load averages: 4.36 2.96 2.37
+  PID  %CPU %MEM COMM
+87580 107.3  0.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.8  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  236   0.7  0.1 /usr/libexec/airportd
+65312   0.7  0.7 <managed agent>
+  332   0.6  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+  152   0.2  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:38:43 EST (13:38:43 UTC)
+ 8:38  up 4 days, 15:46, 3 users, load averages: 3.26 2.83 2.34
+  PID  %CPU %MEM COMM
+87795 136.6  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.3  0.4 <managed agent>
+65312   1.1  0.7 <managed agent>
+  324   0.7  0.1 <managed agent>
+  112   0.6  0.0 /usr/libexec/UserEventAgent
+  124   0.6  0.0 /System/Library/CoreServices/powerd.bundle/powerd
+  188   0.5  0.0 /usr/sbin/cfprefsd
+84366   0.4  0.1 /usr/libexec/PerfPowerServices
+ 1034   0.4  0.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:39:13 EST (13:39:13 UTC)
+ 8:39  up 4 days, 15:47, 3 users, load averages: 2.31 2.64 2.29
+  PID  %CPU %MEM COMM
+87795 136.6  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.4  0.4 <managed agent>
+65312   2.1  0.7 <managed agent>
+  214   1.3  0.3 /usr/libexec/mobileassetd
+    1   1.0  0.0 /sbin/launchd
+  843   0.9  0.1 <managed agent>
+  574   0.5  0.0 /usr/libexec/diagnosticd
+  601   0.4  0.0 /usr/sbin/cfprefsd
+  974   0.3  0.0 /usr/libexec/betaenrollmentagent
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:39:44 EST (13:39:44 UTC)
+ 8:39  up 4 days, 15:47, 3 users, load averages: 6.19 3.54 2.62
+  PID  %CPU %MEM COMM
+88203 1139.8  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.4  0.4 <managed agent>
+  324   0.6  0.1 <managed agent>
+65312   0.5  0.7 <managed agent>
+  657   0.3  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  214   0.1  0.3 /usr/libexec/mobileassetd
+88170   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+88172   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+88171   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:40:14 EST (13:40:14 UTC)
+ 8:40  up 4 days, 15:48, 3 users, load averages: 8.64 4.43 2.98
+  PID  %CPU %MEM COMM
+88393 100.0  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  15.7  0.4 <managed agent>
+65312   3.3  0.7 <managed agent>
+  332   0.3  0.1 <managed agent>
+  843   0.3  0.1 <managed agent>
+81869   0.1  0.0 bash
+  324   0.1  0.1 <managed agent>
+88172   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+88171   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:40:45 EST (13:40:45 UTC)
+ 8:40  up 4 days, 15:48, 3 users, load averages: 5.89 4.17 2.93
+  PID  %CPU %MEM COMM
+88532 142.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   1.5  0.4 <managed agent>
+65312   0.9  0.7 <managed agent>
+  324   0.3  0.1 <managed agent>
+  574   0.2  0.0 /usr/libexec/diagnosticd
+88550   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+88549   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+88548   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+88547   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:41:15 EST (13:41:15 UTC)
+ 8:41  up 4 days, 15:49, 3 users, load averages: 10.41 5.36 3.40
+  PID  %CPU %MEM COMM
+88719 659.5  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.0  0.4 <managed agent>
+  843   0.1  0.1 <managed agent>
+  357   0.1  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+88650   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+88651   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+88553   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+88551   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+88552   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:41:46 EST (13:41:46 UTC)
+ 8:41  up 4 days, 15:49, 3 users, load averages: 6.95 5.01 3.34
+  PID  %CPU %MEM COMM
+88883 139.4  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.2  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  324   0.3  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+  814   0.2  0.1 /Applications/Workspace ONE Intelligent Hub.app/Contents/Resources/IntelligentHubAgent.app/Contents/MacOS/IntelligentHubAgent
+85634   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:42:17 EST (13:42:17 UTC)
+ 8:42  up 4 days, 15:50, 3 users, load averages: 4.60 4.62 3.26
+  PID  %CPU %MEM COMM
+88883 135.1  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   1.5  0.4 <managed agent>
+11009   0.1  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+  122   0.1  0.0 /usr/libexec/configd
+89024   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+88700   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+88187   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+85634   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:42:47 EST (13:42:47 UTC)
+ 8:42  up 4 days, 15:50, 3 users, load averages: 10.16 5.86 3.75
+  PID  %CPU %MEM COMM
+89130 1783.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.5  0.4 <managed agent>
+  843   0.4  0.1 <managed agent>
+11009   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+89025   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+85634   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:43:18 EST (13:43:18 UTC)
+ 8:43  up 4 days, 15:51, 3 users, load averages: 11.59 6.62 4.10
+  PID  %CPU %MEM COMM
+89373 923.2  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.4  0.4 <managed agent>
+65312   2.1  0.7 <managed agent>
+  324   0.4  0.1 <managed agent>
+81869   0.3  0.0 bash
+  603   0.1  0.0 /usr/libexec/secd
+  641   0.1  0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+  332   0.1  0.1 <managed agent>
+89366   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:43:48 EST (13:43:48 UTC)
+ 8:43  up 4 days, 15:51, 3 users, load averages: 10.28 6.75 4.23
+  PID  %CPU %MEM COMM
+89619  98.3  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  12.1  0.4 <managed agent>
+  843   0.5  0.1 <managed agent>
+  811   0.2  0.7 /Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app/Contents/MacOS/Creative Cloud
+  324   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+89652   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89650   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89649   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:44:19 EST (13:44:19 UTC)
+ 8:44  up 4 days, 15:52, 3 users, load averages: 8.25 6.54 4.25
+  PID  %CPU %MEM COMM
+89807 1684.7  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.3  0.4 <managed agent>
+65312   0.7  0.7 <managed agent>
+81869   0.5  0.0 bash
+  178   0.1  0.0 /usr/sbin/notifyd
+  324   0.1  0.1 <managed agent>
+  139   0.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  332   0.1  0.1 <managed agent>
+89649   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:44:49 EST (13:44:49 UTC)
+ 8:44  up 4 days, 15:53, 3 users, load averages: 6.83 6.40 4.28
+  PID  %CPU %MEM COMM
+89929  99.4  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   1.2  0.4 <managed agent>
+  843   0.2  0.1 <managed agent>
+11009   0.1  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  414   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+89649   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89651   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:45:20 EST (13:45:20 UTC)
+ 8:45  up 4 days, 15:53, 3 users, load averages: 4.53 5.88 4.16
+  PID  %CPU %MEM COMM
+89929 100.0  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.8  0.4 <managed agent>
+  324   0.3  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+89971   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89648   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89644   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89613   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:45:51 EST (13:45:51 UTC)
+ 8:45  up 4 days, 15:54, 3 users, load averages: 3.25 5.44 4.06
+  PID  %CPU %MEM COMM
+89929  99.2  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.1  0.4 <managed agent>
+  843   0.2  0.1 <managed agent>
+90292   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+90284   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+90283   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+90282   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+90281   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+90279   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:46:21 EST (13:46:21 UTC)
+ 8:46  up 4 days, 15:54, 3 users, load averages: 7.23 6.10 4.34
+  PID  %CPU %MEM COMM
+90431 1712.0  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+    1   3.1  0.0 /sbin/launchd
+  317   3.0  0.4 <managed agent>
+65312   1.5  0.7 <managed agent>
+81869   0.3  0.0 bash
+  843   0.1  0.1 <managed agent>
+90486   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+90487   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+90485   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:46:52 EST (13:46:52 UTC)
+ 8:46  up 4 days, 15:55, 3 users, load averages: 6.54 6.09 4.40
+  PID  %CPU %MEM COMM
+90579 762.7  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.8  0.4 <managed agent>
+65312   1.0  0.7 <managed agent>
+  324   0.4  0.1 <managed agent>
+  332   0.1  0.1 <managed agent>
+  603   0.1  0.0 /usr/libexec/secd
+81869   0.1  0.0 bash
+90486   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+90487   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:47:23 EST (13:47:23 UTC)
+ 8:47  up 4 days, 15:55, 3 users, load averages: 4.92 5.75 4.34
+  PID  %CPU %MEM COMM
+90862 351.8  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.3  0.4 <managed agent>
+65312   3.6  0.7 <managed agent>
+  332   1.4  0.1 <managed agent>
+  324   0.6  0.1 <managed agent>
+  122   0.3  0.0 /usr/libexec/configd
+  574   0.2  0.0 /usr/libexec/diagnosticd
+84366   0.1  0.1 /usr/libexec/PerfPowerServices
+  843   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:47:53 EST (13:47:53 UTC)
+ 8:47  up 4 days, 15:56, 3 users, load averages: 3.93 5.44 4.27
+  PID  %CPU %MEM COMM
+90924 100.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.6  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  332   0.5  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+  414   0.1  0.1 <managed agent>
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+  574   0.1  0.0 /usr/libexec/diagnosticd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:48:24 EST (13:48:24 UTC)
+ 8:48  up 4 days, 15:56, 3 users, load averages: 5.65 5.72 4.41
+  PID  %CPU %MEM COMM
+91225 100.0  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.1  0.4 <managed agent>
+  324   0.8  0.1 <managed agent>
+65312   0.7  0.7 <managed agent>
+  843   0.1  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  424   0.1  0.0 <managed agent>
+90971   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+90487   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:48:54 EST (13:48:54 UTC)
+ 8:48  up 4 days, 15:57, 3 users, load averages: 3.87 5.28 4.30
+  PID  %CPU %MEM COMM
+91225 100.0  0.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.5  0.4 <managed agent>
+65312   2.6  0.7 <managed agent>
+  163   1.4  0.1 /usr/libexec/dasd
+  843   0.5  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+  747   0.2  0.1 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+11009   0.2  0.1 <managed agent>
+    1   0.1  0.0 /sbin/launchd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:49:25 EST (13:49:25 UTC)
+ 8:49  up 4 days, 15:57, 3 users, load averages: 2.74 4.87 4.18
+  PID  %CPU %MEM COMM
+91225 100.0  0.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   8.1  0.4 <managed agent>
+65312   3.7  0.7 <managed agent>
+  324   0.6  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+81869   0.1  0.0 bash
+  597   0.1  0.0 /usr/sbin/distnoted
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+  167   0.1  0.0 /usr/sbin/distnoted
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:49:55 EST (13:49:55 UTC)
+ 8:49  up 4 days, 15:58, 3 users, load averages: 4.37 4.98 4.24
+  PID  %CPU %MEM COMM
+91708 1793.2  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.0  0.4 <managed agent>
+81869   0.5  0.0 bash
+  332   0.1  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+91663   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+91662   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+91661   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+91660   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:50:26 EST (13:50:26 UTC)
+ 8:50  up 4 days, 15:58, 3 users, load averages: 8.31 5.97 4.63
+  PID  %CPU %MEM COMM
+91821 791.6  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  14.0  0.4 <managed agent>
+65312   3.3  0.7 <managed agent>
+  843   0.5  0.1 <managed agent>
+  319   0.4  0.1 <managed agent>
+  332   0.4  0.1 <managed agent>
+81869   0.4  0.0 bash
+  324   0.2  0.1 <managed agent>
+    1   0.1  0.0 /sbin/launchd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:50:57 EST (13:50:57 UTC)
+ 8:50  up 4 days, 15:59, 3 users, load averages: 6.76 5.89 4.65
+  PID  %CPU %MEM COMM
+91995  99.4  0.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  357  84.4  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  236   6.7  0.1 /usr/libexec/airportd
+  317   6.3  0.4 <managed agent>
+65312   3.9  0.7 <managed agent>
+  514   1.3  0.0 /usr/libexec/wifivelocityd
+  324   0.9  0.1 <managed agent>
+    1   0.6  0.0 /sbin/launchd
+91422   0.5  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:51:27 EST (13:51:27 UTC)
+ 8:51  up 4 days, 15:59, 3 users, load averages: 8.53 6.27 4.83
+  PID  %CPU %MEM COMM
+92211 1776.1  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  357   9.3  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  236   5.3  0.1 /usr/libexec/airportd
+  514   1.7  0.0 /usr/libexec/wifivelocityd
+  373   0.4  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  332   0.2  0.1 <managed agent>
+  843   0.2  0.1 <managed agent>
+  317   0.2  0.4 <managed agent>
+    1   0.1  0.0 /sbin/launchd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:51:58 EST (13:51:58 UTC)
+ 8:51  up 4 days, 16 hrs, 3 users, load averages: 7.33 6.22 4.86
+  PID  %CPU %MEM COMM
+92401 100.0  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.1  0.4 <managed agent>
+  478   1.0  0.0 powermetrics
+  324   0.5  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+  122   0.1  0.0 /usr/libexec/configd
+92156   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+92155   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+92154   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:52:29 EST (13:52:29 UTC)
+ 8:52  up 4 days, 16 hrs, 3 users, load averages: 4.99 5.76 4.74
+  PID  %CPU %MEM COMM
+92401 100.0  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  357  16.2  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  142   4.9  0.0 /usr/libexec/diskarbitrationd
+  317   3.6  0.4 <managed agent>
+65312   2.9  0.7 <managed agent>
+92624   2.1  0.0 /System/Library/PrivateFrameworks/DiskImages.framework/Resources/hdiejectd
+    1   1.8  0.0 /sbin/launchd
+  324   1.1  0.1 <managed agent>
+  657   0.8  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:52:59 EST (13:52:59 UTC)
+ 8:52  up 4 days, 16:01, 3 users, load averages: 3.80 5.40 4.64
+  PID  %CPU %MEM COMM
+92401 100.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.8  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+37408   0.3  0.1 /Applications/Tailscale.app/Contents/PlugIns/IPNExtension.appex/Contents/MacOS/IPNExtension
+  324   0.2  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  478   0.1  0.0 powermetrics
+  184   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:53:30 EST (13:53:30 UTC)
+ 8:53  up 4 days, 16:01, 3 users, load averages: 4.54 5.36 4.65
+  PID  %CPU %MEM COMM
+93059 1789.9  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.4  0.4 <managed agent>
+65312   0.7  0.7 <managed agent>
+93095   0.4  0.0 /System/Library/PrivateFrameworks/Ecosystem.framework/Support/ecosystemagent
+  214   0.3  0.3 /usr/libexec/mobileassetd
+  324   0.2  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:54:01 EST (13:54:01 UTC)
+ 8:54  up 4 days, 16:02, 3 users, load averages: 12.28 7.24 5.36
+  PID  %CPU %MEM COMM
+93354 954.2  0.8 /Users/matt/bench/benchmarks/.venv/bin/python
+  187   8.1  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  317   6.0  0.4 <managed agent>
+  184   1.6  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  324   1.1  0.1 <managed agent>
+65312   1.1  0.7 <managed agent>
+10553   0.6  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+10554   0.2  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  424   0.1  0.0 <managed agent>
+System-wide memory free percentage: 92%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:54:31 EST (13:54:31 UTC)
+ 8:54  up 4 days, 16:02, 3 users, load averages: 10.56 7.33 5.46
+  PID  %CPU %MEM COMM
+93354 948.6  0.8 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.0  0.4 <managed agent>
+  657   0.4  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  324   0.1  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+93546   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+93545   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+93543   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:55:02 EST (13:55:02 UTC)
+ 8:55  up 4 days, 16:03, 3 users, load averages: 9.39 7.30 5.51
+  PID  %CPU %MEM COMM
+93756 100.0  1.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.9  0.4 <managed agent>
+65312   1.0  0.7 <managed agent>
+  843   0.9  0.1 <managed agent>
+  187   0.9  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  214   0.5  0.3 /usr/libexec/mobileassetd
+  324   0.4  0.1 <managed agent>
+    1   0.3  0.0 /sbin/launchd
+  184   0.3  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 92%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:55:33 EST (13:55:33 UTC)
+ 8:55  up 4 days, 16:03, 3 users, load averages: 6.16 6.72 5.36
+  PID  %CPU %MEM COMM
+93756  99.9  1.4 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   4.9  0.7 <managed agent>
+  317   2.7  0.4 <managed agent>
+  324   1.1  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+  603   0.1  0.0 /usr/libexec/secd
+81869   0.1  0.0 bash
+65511   0.1  0.1 <managed agent>
+  641   0.1  0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:56:03 EST (13:56:03 UTC)
+ 8:56  up 4 days, 16:04, 3 users, load averages: 4.24 6.20 5.22
+  PID  %CPU %MEM COMM
+93756 100.0  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.7  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  184   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+81818   0.0  0.0 caffeinate
+81816   0.0  0.0 login
+81814   0.0  0.0 SCREEN
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:56:34 EST (13:56:34 UTC)
+ 8:56  up 4 days, 16:04, 3 users, load averages: 3.02 5.72 5.08
+  PID  %CPU %MEM COMM
+93756 100.0  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.0  0.4 <managed agent>
+65312   0.9  0.7 <managed agent>
+  332   0.5  0.1 <managed agent>
+  324   0.5  0.1 <managed agent>
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+  811   0.1  0.7 /Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app/Contents/MacOS/Creative Cloud
+  843   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:57:04 EST (13:57:04 UTC)
+ 8:57  up 4 days, 16:05, 3 users, load averages: 2.35 5.25 4.93
+  PID  %CPU %MEM COMM
+94468 100.0  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   8.7  0.4 <managed agent>
+65312   4.1  0.7 <managed agent>
+  357   0.4  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  843   0.3  0.1 <managed agent>
+  332   0.3  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+81869   0.1  0.0 bash
+  324   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:57:35 EST (13:57:35 UTC)
+ 8:57  up 4 days, 16:05, 3 users, load averages: 10.92 7.10 5.61
+  PID  %CPU %MEM COMM
+94468 1784.2  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.4  0.4 <managed agent>
+81869   0.6  0.0 bash
+65312   0.5  0.7 <managed agent>
+  843   0.4  0.1 <managed agent>
+  122   0.1  0.0 /usr/libexec/configd
+  332   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+94361   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:58:06 EST (13:58:06 UTC)
+ 8:58  up 4 days, 16:06, 3 users, load averages: 16.16 8.75 6.27
+  PID  %CPU %MEM COMM
+94468 1780.2  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.1  0.4 <managed agent>
+  357   0.5  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  657   0.3  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+65312   0.3  0.7 <managed agent>
+  139   0.2  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  324   0.2  0.1 <managed agent>
+94752   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+94751   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:58:37 EST (13:58:37 UTC)
+ 8:58  up 4 days, 16:06, 3 users, load averages: 18.02 9.98 6.80
+  PID  %CPU %MEM COMM
+95015 997.4  1.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.4  0.4 <managed agent>
+  324   0.5  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+  316   0.2  0.3 /Library/Application Support/Workflow/workflowd
+  214   0.1  0.3 /usr/libexec/mobileassetd
+  332   0.1  0.1 <managed agent>
+94753   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+94752   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:59:08 EST (13:59:08 UTC)
+ 8:59  up 4 days, 16:07, 3 users, load averages: 14.77 9.97 6.91
+  PID  %CPU %MEM COMM
+95015 1001.0  1.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  14.2  0.4 <managed agent>
+  357   2.6  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  657   0.9  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+65312   0.9  0.7 <managed agent>
+  332   0.7  0.1 <managed agent>
+  324   0.7  0.1 <managed agent>
+    1   0.1  0.0 /sbin/launchd
+  178   0.1  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 08:59:38 EST (13:59:38 UTC)
+ 8:59  up 4 days, 16:07, 3 users, load averages: 14.42 10.27 7.12
+  PID  %CPU %MEM COMM
+95015 996.1  1.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.0  0.4 <managed agent>
+  843   0.3  0.1 <managed agent>
+  357   0.2  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  163   0.1  0.1 /usr/libexec/dasd
+ 6809   0.1  0.1 /usr/sbin/bluetoothd
+10884   0.1  0.0 /Library/Application Support/Adobe/Adobe Desktop Common/ADCUtils/CrashReporter/AdobeCrashReporter.framework/Versions/A/Adobe Crash Processor.app/Contents/MacOS/Adobe Crash Processor
+  324   0.1  0.1 <managed agent>
+81816   0.0  0.0 login
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:00:09 EST (14:00:09 UTC)
+ 9:00  up 4 days, 16:08, 3 users, load averages: 14.25 10.61 7.35
+  PID  %CPU %MEM COMM
+95015 985.0  1.9 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   5.1  0.7 <managed agent>
+  317   2.3  0.4 <managed agent>
+81869   0.9  0.0 bash
+95548   0.7  0.0 ps
+  843   0.6  0.1 <managed agent>
+  332   0.4  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:00:40 EST (14:00:40 UTC)
+ 9:00  up 4 days, 16:08, 3 users, load averages: 10.76 10.15 7.29
+  PID  %CPU %MEM COMM
+95648  99.1  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.7  0.4 <managed agent>
+  324   0.6  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+  597   0.1  0.0 /usr/sbin/distnoted
+  167   0.1  0.0 /usr/sbin/distnoted
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+95421   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:01:10 EST (14:01:10 UTC)
+ 9:01  up 4 days, 16:09, 3 users, load averages: 8.75 9.65 7.21
+  PID  %CPU %MEM COMM
+95860 945.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.2  0.4 <managed agent>
+  843   0.1  0.1 <managed agent>
+95724   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+95723   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+95629   0.0  0.0 /usr/libexec/biomesyncd
+95422   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:01:41 EST (14:01:41 UTC)
+ 9:01  up 4 days, 16:09, 3 users, load averages: 6.01 8.91 7.04
+  PID  %CPU %MEM COMM
+95935  99.4  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+65312  16.0  0.7 <managed agent>
+96062  10.3  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+96063  10.2  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+  163  10.1  0.1 /usr/libexec/dasd
+96064  10.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+  574   9.1  0.0 /usr/libexec/diagnosticd
+96055   8.3  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+96056   8.2  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:02:11 EST (14:02:11 UTC)
+ 9:02  up 4 days, 16:10, 3 users, load averages: 4.21 8.20 6.84
+  PID  %CPU %MEM COMM
+95935 100.0  0.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  236  13.4  0.1 /usr/libexec/airportd
+65312   4.3  0.7 <managed agent>
+  514   2.9  0.0 /usr/libexec/wifivelocityd
+  317   2.7  0.4 <managed agent>
+  324   1.2  0.1 <managed agent>
+  373   0.9  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  272   0.7  0.0 /System/Library/Frameworks/Security.framework/Versions/A/XPCServices/authd.xpc/Contents/MacOS/authd
+  574   0.7  0.0 /usr/libexec/diagnosticd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:02:42 EST (14:02:42 UTC)
+ 9:02  up 4 days, 16:10, 3 users, load averages: 3.08 7.54 6.65
+  PID  %CPU %MEM COMM
+96405  99.2  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   4.7  0.7 <managed agent>
+  317   3.9  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  236   0.8  0.1 /usr/libexec/airportd
+  324   0.2  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+11009   0.2  0.1 <managed agent>
+    1   0.1  0.0 /sbin/launchd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:03:13 EST (14:03:13 UTC)
+ 9:03  up 4 days, 16:11, 3 users, load averages: 7.96 8.36 6.98
+  PID  %CPU %MEM COMM
+96523 953.5  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.3  0.4 <managed agent>
+  332   0.6  0.1 <managed agent>
+65312   0.5  0.7 <managed agent>
+  324   0.4  0.1 <managed agent>
+  236   0.1  0.1 /usr/libexec/airportd
+  603   0.1  0.0 /usr/libexec/secd
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:03:43 EST (14:03:43 UTC)
+ 9:03  up 4 days, 16:11, 3 users, load averages: 7.34 8.17 6.96
+  PID  %CPU %MEM COMM
+96773 100.0  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.5  0.4 <managed agent>
+  843   0.2  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+10884   0.1  0.0 /Library/Application Support/Adobe/Adobe Desktop Common/ADCUtils/CrashReporter/AdobeCrashReporter.framework/Versions/A/Adobe Crash Processor.app/Contents/MacOS/Adobe Crash Processor
+96578   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+96577   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+96576   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:04:14 EST (14:04:14 UTC)
+ 9:04  up 4 days, 16:12, 3 users, load averages: 5.26 7.59 6.79
+  PID  %CPU %MEM COMM
+96773 100.0  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.2  0.4 <managed agent>
+  324   0.4  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+  332   0.2  0.1 <managed agent>
+96906   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+96905   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+96871   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+96841   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:04:45 EST (14:04:45 UTC)
+ 9:04  up 4 days, 16:12, 3 users, load averages: 3.58 6.96 6.59
+  PID  %CPU %MEM COMM
+96773 100.0  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.4  0.4 <managed agent>
+    1   0.2  0.0 /sbin/launchd
+  324   0.1  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  118   0.1  0.0 /usr/sbin/systemstats
+97043   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+96908   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:05:15 EST (14:05:15 UTC)
+ 9:05  up 4 days, 16:13, 3 users, load averages: 2.63 6.40 6.40
+  PID  %CPU %MEM COMM
+96773 100.0  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.3  0.4 <managed agent>
+  332   0.6  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+  324   0.3  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  178   0.1  0.0 /usr/sbin/notifyd
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  357   0.1  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:05:46 EST (14:05:46 UTC)
+ 9:05  up 4 days, 16:13, 3 users, load averages: 2.07 5.90 6.22
+  PID  %CPU %MEM COMM
+96773  96.8  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   8.9  0.7 <managed agent>
+  317   6.0  0.4 <managed agent>
+  324   0.9  0.1 <managed agent>
+  332   0.6  0.1 <managed agent>
+  189   0.3  0.0 /usr/libexec/runningboardd
+81869   0.3  0.0 bash
+  122   0.1  0.0 /usr/libexec/configd
+  236   0.1  0.1 /usr/libexec/airportd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:06:16 EST (14:06:16 UTC)
+ 9:06  up 4 days, 16:14, 3 users, load averages: 1.75 5.46 6.05
+  PID  %CPU %MEM COMM
+96773 100.0  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.7  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  332   0.6  0.1 <managed agent>
+  110   0.3  0.1 /usr/libexec/logd
+  324   0.1  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+65312   0.1  0.7 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:06:47 EST (14:06:47 UTC)
+ 9:06  up 4 days, 16:14, 3 users, load averages: 10.68 7.17 6.64
+  PID  %CPU %MEM COMM
+97646 1792.6  0.8 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.1  0.4 <managed agent>
+ 7803   0.6  0.2 /Applications/Tailscale.app/Contents/MacOS/Tailscale
+65312   0.4  0.7 <managed agent>
+  357   0.2  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  178   0.1  0.0 /usr/sbin/notifyd
+  324   0.1  0.1 <managed agent>
+97686   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+97685   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:07:18 EST (14:07:18 UTC)
+ 9:07  up 4 days, 16:15, 3 users, load averages: 16.47 8.97 7.31
+  PID  %CPU %MEM COMM
+97958 959.7  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.4  0.4 <managed agent>
+  324   0.7  0.1 <managed agent>
+65312   0.7  0.7 <managed agent>
+84366   0.4  0.1 /usr/libexec/PerfPowerServices
+  332   0.2  0.1 <managed agent>
+97953   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+97952   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+97951   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:07:48 EST (14:07:48 UTC)
+ 9:07  up 4 days, 16:15, 3 users, load averages: 11.71 8.62 7.25
+  PID  %CPU %MEM COMM
+97958 977.6  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   7.8  0.4 <managed agent>
+98178   4.4  0.0 sshd-session: matt [priv]
+  152   2.1  0.0 /usr/libexec/opendirectoryd
+84366   1.2  0.1 /usr/libexec/PerfPowerServices
+  843   0.3  0.1 <managed agent>
+98190   0.3  0.0 sshd-session: matt
+  178   0.2  0.0 /usr/sbin/notifyd
+61488   0.2  0.2 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:08:19 EST (14:08:19 UTC)
+ 9:08  up 4 days, 16:16, 3 users, load averages: 9.96 8.52 7.26
+  PID  %CPU %MEM COMM
+97958 979.1  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.6  0.4 <managed agent>
+  843   0.8  0.1 <managed agent>
+65312   0.5  0.7 <managed agent>
+  324   0.2  0.1 <managed agent>
+  332   0.1  0.1 <managed agent>
+  184   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+98115   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+98114   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:08:50 EST (14:08:50 UTC)
+ 9:08  up 4 days, 16:17, 3 users, load averages: 8.50 8.33 7.24
+  PID  %CPU %MEM COMM
+97958 977.6  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  12.8  0.4 <managed agent>
+65312   4.3  0.7 <managed agent>
+  324   0.5  0.1 <managed agent>
+81869   0.5  0.0 bash
+  332   0.4  0.1 <managed agent>
+  373   0.1  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  236   0.1  0.1 /usr/libexec/airportd
+81817   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:09:20 EST (14:09:20 UTC)
+ 9:09  up 4 days, 16:17, 3 users, load averages: 5.72 7.68 7.04
+  PID  %CPU %MEM COMM
+98564 103.4  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.8  0.4 <managed agent>
+  843   0.3  0.1 <managed agent>
+10884   0.1  0.0 /Library/Application Support/Adobe/Adobe Desktop Common/ADCUtils/CrashReporter/AdobeCrashReporter.framework/Versions/A/Adobe Crash Processor.app/Contents/MacOS/Adobe Crash Processor
+  324   0.1  0.1 <managed agent>
+98233   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+95629   0.0  0.0 /usr/libexec/biomesyncd
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:09:51 EST (14:09:51 UTC)
+ 9:09  up 4 days, 16:18, 3 users, load averages: 4.08 7.09 6.85
+  PID  %CPU %MEM COMM
+98564 104.9  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+    1  19.3  0.0 /sbin/launchd
+  114   1.2  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/Support/fseventsd
+  324   0.4  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+98778   0.1  0.1 /Library/Application Support/Microsoft/MAU2.0/Microsoft AutoUpdate.app/Contents/MacOS/Microsoft Update Assistant.app/Contents/MacOS/Microsoft Update Assistant
+98872   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+98869   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:10:21 EST (14:10:21 UTC)
+ 9:10  up 4 days, 16:18, 3 users, load averages: 3.05 6.55 6.66
+  PID  %CPU %MEM COMM
+98564 102.6  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  899  14.5  0.1 /System/Applications/Weather.app/Contents/PlugIns/WeatherWidget.appex/Contents/MacOS/WeatherWidget
+65312   9.1  0.7 <managed agent>
+  317   8.3  0.4 <managed agent>
+    1   2.1  0.0 /sbin/launchd
+  643   2.1  0.0 /usr/libexec/trustd
+  189   1.8  0.0 /usr/libexec/runningboardd
+  893   1.6  0.0 /System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/XPCServices/extensionkitservice.xpc/Contents/MacOS/extensionkitservice
+  698   1.0  0.0 /System/Library/PrivateFrameworks/ChronoCore.framework/Support/chronod
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:10:52 EST (14:10:52 UTC)
+ 9:10  up 4 days, 16:19, 3 users, load averages: 11.28 8.15 7.23
+  PID  %CPU %MEM COMM
+99086 1710.3  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  14.5  0.4 <managed agent>
+  478   1.0  0.0 powermetrics
+  843   0.4  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+    1   0.1  0.0 /sbin/launchd
+65312   0.1  0.7 <managed agent>
+81869   0.1  0.0 bash
+11009   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:11:23 EST (14:11:23 UTC)
+ 9:11  up 4 days, 16:19, 3 users, load averages: 13.29 9.00 7.57
+  PID  %CPU %MEM COMM
+99358 1138.7  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  40.4  0.4 <managed agent>
+65312   0.8  0.7 <managed agent>
+  324   0.6  0.1 <managed agent>
+  478   0.2  0.0 powermetrics
+  357   0.2  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+99169   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+99160   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+99165   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:11:54 EST (14:11:54 UTC)
+ 9:11  up 4 days, 16:20, 3 users, load averages: 15.84 10.03 8.00
+  PID  %CPU %MEM COMM
+99358 1165.7  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  28.3  0.4 <managed agent>
+65312   0.9  0.7 <managed agent>
+  214   0.5  0.3 /usr/libexec/mobileassetd
+  332   0.4  0.1 <managed agent>
+  574   0.3  0.0 /usr/libexec/diagnosticd
+    1   0.2  0.0 /sbin/launchd
+  843   0.2  0.1 <managed agent>
+  355   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:12:24 EST (14:12:24 UTC)
+ 9:12  up 4 days, 16:20, 3 users, load averages: 15.98 10.56 8.26
+  PID  %CPU %MEM COMM
+99358 1168.4  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  21.1  0.4 <managed agent>
+  357   0.6  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  332   0.4  0.1 <managed agent>
+  139   0.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  843   0.3  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+99759   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+99758   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:12:55 EST (14:12:55 UTC)
+ 9:12  up 4 days, 16:21, 3 users, load averages: 14.72 10.78 8.41
+  PID  %CPU %MEM COMM
+99962 101.7  1.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  28.9  0.4 <managed agent>
+65312   3.9  0.7 <managed agent>
+  843   0.9  0.1 <managed agent>
+  332   0.8  0.1 <managed agent>
+  324   0.3  0.1 <managed agent>
+  139   0.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  357   0.2  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  574   0.1  0.0 /usr/libexec/diagnosticd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:13:26 EST (14:13:26 UTC)
+ 9:13  up 4 days, 16:21, 3 users, load averages: 8.88 9.76 8.14
+  PID  %CPU %MEM COMM
+99962 103.3  1.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  20.8  0.4 <managed agent>
+65312   2.0  0.7 <managed agent>
+  324   1.1  0.1 <managed agent>
+  332   0.4  0.1 <managed agent>
+  843   0.2  0.1 <managed agent>
+  262   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  261   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  258   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:13:56 EST (14:13:56 UTC)
+ 9:13  up 4 days, 16:22, 3 users, load averages: 6.24 9.03 7.93
+  PID  %CPU %MEM COMM
+99962 102.6  1.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  13.2  0.4 <managed agent>
+65312   1.9  0.7 <managed agent>
+  319   1.1  0.1 <managed agent>
+  657   0.8  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  332   0.8  0.1 <managed agent>
+  357   0.6  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  188   0.6  0.0 /usr/sbin/cfprefsd
+  907   0.4  0.0 /usr/libexec/trustd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:14:27 EST (14:14:27 UTC)
+ 9:14  up 4 days, 16:22, 3 users, load averages: 4.39 8.31 7.71
+  PID  %CPU %MEM COMM
+99962 100.2  1.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  15.1  0.4 <managed agent>
+  236   6.9  0.1 /usr/libexec/airportd
+65312   3.4  0.7 <managed agent>
+  514   1.1  0.0 /usr/libexec/wifivelocityd
+  324   0.9  0.1 <managed agent>
+    1   0.6  0.0 /sbin/launchd
+  373   0.6  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  272   0.3  0.0 /System/Library/Frameworks/Security.framework/Versions/A/XPCServices/authd.xpc/Contents/MacOS/authd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:14:57 EST (14:14:57 UTC)
+ 9:14  up 4 days, 16:23, 3 users, load averages: 3.13 7.63 7.48
+  PID  %CPU %MEM COMM
+99962 103.2  1.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   8.8  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  236   0.9  0.1 /usr/libexec/airportd
+65312   0.4  0.7 <managed agent>
+  324   0.2  0.1 <managed agent>
+  514   0.1  0.0 /usr/libexec/wifivelocityd
+  184   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  959   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:15:28 EST (14:15:28 UTC)
+ 9:15  up 4 days, 16:23, 3 users, load averages: 6.95 8.04 7.62
+  PID  %CPU %MEM COMM
+ 1358 1774.5  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  15.4  0.4 <managed agent>
+65312   0.5  0.7 <managed agent>
+37408   0.4  0.1 /Applications/Tailscale.app/Contents/PlugIns/IPNExtension.appex/Contents/MacOS/IPNExtension
+  324   0.2  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+  949   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+95629   0.0  0.0 /usr/libexec/biomesyncd
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:15:58 EST (14:15:58 UTC)
+ 9:15  up 4 days, 16:24, 3 users, load averages: 13.29 9.44 8.14
+  PID  %CPU %MEM COMM
+ 1358 1782.4  0.8 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.9  0.4 <managed agent>
+  332   0.2  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+  843   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:16:29 EST (14:16:29 UTC)
+ 9:16  up 4 days, 16:24, 3 users, load averages: 16.30 10.55 8.59
+  PID  %CPU %MEM COMM
+ 1358 1775.5  0.8 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.8  0.4 <managed agent>
+ 1800   1.7  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 1804   1.7  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 1801   1.7  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 1803   1.6  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 1799   1.6  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 1802   1.6  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+65312   1.0  0.7 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:17:00 EST (14:17:00 UTC)
+ 9:17  up 4 days, 16:25, 3 users, load averages: 17.23 11.37 8.96
+  PID  %CPU %MEM COMM
+ 1895 1155.0  2.1 /Users/matt/bench/benchmarks/.venv/bin/python
+10553   9.6  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  317   8.9  0.4 <managed agent>
+  187   8.1  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+10554   3.9  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  184   1.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  332   0.7  0.1 <managed agent>
+  324   0.5  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+System-wide memory free percentage: 92%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:17:31 EST (14:17:31 UTC)
+ 9:17  up 4 days, 16:25, 3 users, load averages: 14.99 11.37 9.04
+  PID  %CPU %MEM COMM
+ 1895 1137.5  2.1 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   4.0  0.7 <managed agent>
+  317   4.0  0.4 <managed agent>
+  142   1.0  0.0 /usr/libexec/diskarbitrationd
+  324   0.7  0.1 <managed agent>
+81869   0.3  0.0 bash
+  332   0.2  0.1 <managed agent>
+    1   0.2  0.0 /sbin/launchd
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:18:02 EST (14:18:02 UTC)
+ 9:18  up 4 days, 16:26, 3 users, load averages: 14.87 11.67 9.23
+  PID  %CPU %MEM COMM
+ 1895 1159.2  2.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.2  0.4 <managed agent>
+  187   4.7  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+65312   1.3  0.7 <managed agent>
+  184   1.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  324   1.0  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:18:32 EST (14:18:32 UTC)
+ 9:18  up 4 days, 16:26, 3 users, load averages: 14.72 11.97 9.43
+  PID  %CPU %MEM COMM
+ 1895 1177.8  2.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   7.4  0.4 <managed agent>
+65312   4.0  0.7 <managed agent>
+81869   0.6  0.0 bash
+  332   0.2  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+ 2401   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 2400   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 2399   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:19:03 EST (14:19:03 UTC)
+ 9:19  up 4 days, 16:27, 3 users, load averages: 12.93 11.76 9.44
+  PID  %CPU %MEM COMM
+ 1895 1147.0  2.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  14.2  0.4 <managed agent>
+65312   6.3  0.7 <managed agent>
+ 2694   0.7  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  843   0.4  0.1 <managed agent>
+  373   0.2  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  332   0.1  0.1 <managed agent>
+  236   0.1  0.1 /usr/libexec/airportd
+  324   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:19:34 EST (14:19:34 UTC)
+ 9:19  up 4 days, 16:27, 3 users, load averages: 11.87 11.66 9.49
+  PID  %CPU %MEM COMM
+ 1895 1150.2  2.1 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   4.5  0.7 <managed agent>
+  317   2.2  0.4 <managed agent>
+  843   0.6  0.1 <managed agent>
+ 1034   0.3  0.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+81869   0.3  0.0 bash
+  332   0.2  0.1 <managed agent>
+  319   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:20:05 EST (14:20:05 UTC)
+ 9:20  up 4 days, 16:28, 3 users, load averages: 7.65 10.66 9.20
+  PID  %CPU %MEM COMM
+ 2886 102.4  5.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   8.9  0.4 <managed agent>
+65312   0.8  0.7 <managed agent>
+  324   0.5  0.1 <managed agent>
+  357   0.4  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  139   0.2  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+11009   0.1  0.1 <managed agent>
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+  167   0.1  0.0 /usr/sbin/distnoted
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:20:35 EST (14:20:35 UTC)
+ 9:20  up 4 days, 16:28, 3 users, load averages: 5.33 9.81 8.94
+  PID  %CPU %MEM COMM
+ 2886 100.9  5.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  11.5  0.4 <managed agent>
+65312   2.8  0.7 <managed agent>
+61488   0.6  0.2 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node
+  843   0.3  0.1 <managed agent>
+  332   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+81869   0.1  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:21:06 EST (14:21:06 UTC)
+ 9:21  up 4 days, 16:29, 3 users, load averages: 3.77 9.00 8.68
+  PID  %CPU %MEM COMM
+ 2886 101.7  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+ 3375  16.7  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  317   3.2  0.4 <managed agent>
+65312   1.8  0.7 <managed agent>
+    1   0.8  0.0 /sbin/launchd
+  324   0.5  0.1 <managed agent>
+  178   0.3  0.0 /usr/sbin/notifyd
+  110   0.3  0.1 /usr/libexec/logd
+  139   0.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:21:37 EST (14:21:37 UTC)
+ 9:21  up 4 days, 16:29, 3 users, load averages: 2.76 8.25 8.41
+  PID  %CPU %MEM COMM
+ 2886 100.7  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   7.1  0.4 <managed agent>
+  843   0.2  0.1 <managed agent>
+11009   0.1  0.1 <managed agent>
+  329   0.1  0.0 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+81818   0.0  0.0 caffeinate
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:22:07 EST (14:22:07 UTC)
+ 9:22  up 4 days, 16:30, 3 users, load averages: 2.26 7.60 8.17
+  PID  %CPU %MEM COMM
+ 2886 101.3  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.7  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:22:38 EST (14:22:38 UTC)
+ 9:22  up 4 days, 16:30, 3 users, load averages: 1.76 6.97 7.92
+  PID  %CPU %MEM COMM
+ 2886 100.1  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.4  0.4 <managed agent>
+65312   1.5  0.7 <managed agent>
+  324   1.0  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+  357   0.1  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  319   0.1  0.1 <managed agent>
+81869   0.1  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:23:08 EST (14:23:08 UTC)
+ 9:23  up 4 days, 16:31, 3 users, load averages: 1.66 6.45 7.70
+  PID  %CPU %MEM COMM
+ 2886 102.4  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.5  0.4 <managed agent>
+  843   0.9  0.1 <managed agent>
+  324   0.3  0.1 <managed agent>
+  357   0.2  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+65312   0.2  0.7 <managed agent>
+  184   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  414   0.1  0.1 <managed agent>
+ 3992   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:23:39 EST (14:23:39 UTC)
+ 9:23  up 4 days, 16:31, 3 users, load averages: 1.70 6.00 7.49
+  PID  %CPU %MEM COMM
+ 2886 101.5  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.8  0.4 <managed agent>
+65312   2.3  0.7 <managed agent>
+  650   2.2  0.1 /System/Library/PrivateFrameworks/IDS.framework/identityservicesd.app/Contents/MacOS/identityservicesd
+  324   0.6  0.1 <managed agent>
+  332   0.6  0.1 <managed agent>
+  214   0.4  0.3 /usr/libexec/mobileassetd
+    1   0.3  0.0 /sbin/launchd
+  152   0.3  0.0 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:24:09 EST (14:24:09 UTC)
+ 9:24  up 4 days, 16:32, 3 users, load averages: 1.42 5.52 7.27
+  PID  %CPU %MEM COMM
+ 2886  99.0  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.6  0.4 <managed agent>
+  843   0.5  0.1 <managed agent>
+10884   0.1  0.0 /Library/Application Support/Adobe/Adobe Desktop Common/ADCUtils/CrashReporter/AdobeCrashReporter.framework/Versions/A/Adobe Crash Processor.app/Contents/MacOS/Adobe Crash Processor
+  324   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+81869   0.1  0.0 bash
+  214   0.1  0.3 /usr/libexec/mobileassetd
+ 4112   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:24:40 EST (14:24:40 UTC)
+ 9:24  up 4 days, 16:32, 3 users, load averages: 1.32 5.11 7.05
+  PID  %CPU %MEM COMM
+ 2886 102.0  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  16.3  0.4 <managed agent>
+  324   0.5  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+  332   0.1  0.1 <managed agent>
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+ 4577   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 4583   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 4578   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:25:10 EST (14:25:10 UTC)
+ 9:25  up 4 days, 16:33, 3 users, load averages: 1.38 4.76 6.86
+  PID  %CPU %MEM COMM
+ 2886 101.7  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.5  0.4 <managed agent>
+ 4789   0.4  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+65312   0.4  0.7 <managed agent>
+ 4784   0.4  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 4785   0.3  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 4780   0.3  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  843   0.3  0.1 <managed agent>
+ 4778   0.2  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:25:41 EST (14:25:41 UTC)
+ 9:25  up 4 days, 16:33, 3 users, load averages: 1.27 4.36 6.63
+  PID  %CPU %MEM COMM
+ 2886 100.4  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   8.7  0.7 <managed agent>
+  317   6.3  0.4 <managed agent>
+  324   0.4  0.1 <managed agent>
+  657   0.2  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  373   0.1  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:26:11 EST (14:26:11 UTC)
+ 9:26  up 4 days, 16:34, 3 users, load averages: 1.25 4.05 6.44
+  PID  %CPU %MEM COMM
+ 2886 100.2  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  12.6  0.4 <managed agent>
+  236  11.1  0.1 /usr/libexec/airportd
+65312   9.9  0.7 <managed agent>
+  514   2.1  0.0 /usr/libexec/wifivelocityd
+  324   1.9  0.1 <managed agent>
+    1   1.2  0.0 /sbin/launchd
+  657   0.8  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  332   0.8  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:26:42 EST (14:26:42 UTC)
+ 9:26  up 4 days, 16:34, 3 users, load averages: 1.31 3.79 6.26
+  PID  %CPU %MEM COMM
+ 2886 102.0  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.3  0.4 <managed agent>
+  236   1.4  0.1 /usr/libexec/airportd
+65312   1.2  0.7 <managed agent>
+  843   0.9  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+  603   0.3  0.0 /usr/libexec/secd
+  514   0.3  0.0 /usr/libexec/wifivelocityd
+  641   0.2  0.1 /System/Library/CoreServices/WiFiAgent.app/Contents/MacOS/WiFiAgent
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:27:13 EST (14:27:13 UTC)
+ 9:27  up 4 days, 16:35, 3 users, load averages: 1.34 3.56 6.09
+  PID  %CPU %MEM COMM
+ 2886 101.9  4.9 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.2  0.4 <managed agent>
+65312   1.6  0.7 <managed agent>
+  324   1.5  0.1 <managed agent>
+  236   0.1  0.1 /usr/libexec/airportd
+  843   0.1  0.1 <managed agent>
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+81818   0.0  0.0 caffeinate
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:27:43 EST (14:27:43 UTC)
+ 9:27  up 4 days, 16:35, 3 users, load averages: 8.72 5.09 6.55
+  PID  %CPU %MEM COMM
+ 5493 1768.5  1.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.2  0.4 <managed agent>
+  843   0.4  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  324   0.1  0.1 <managed agent>
+65511   0.1  0.1 <managed agent>
+ 5237   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:28:14 EST (14:28:14 UTC)
+ 9:28  up 4 days, 16:36, 3 users, load averages: 14.45 6.83 7.13
+  PID  %CPU %MEM COMM
+ 5493 1773.7  1.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.3  0.4 <managed agent>
+  324   0.3  0.1 <managed agent>
+81869   0.2  0.0 bash
+65312   0.2  0.7 <managed agent>
+  657   0.1  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+ 5239   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 5237   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:28:45 EST (14:28:45 UTC)
+ 9:28  up 4 days, 16:36, 3 users, load averages: 17.99 8.43 7.70
+  PID  %CPU %MEM COMM
+ 5493 1794.8  1.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.1  0.4 <managed agent>
+  478   1.0  0.0 powermetrics
+  843   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+ 5980   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+ 5979   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+ 5978   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+ 5977   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:29:15 EST (14:29:15 UTC)
+ 9:29  up 4 days, 16:37, 3 users, load averages: 19.44 9.69 8.18
+  PID  %CPU %MEM COMM
+ 5493 1798.9  1.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.5  0.4 <managed agent>
+  843   0.4  0.1 <managed agent>
+11009   0.1  0.1 <managed agent>
+  414   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+  478   0.1  0.0 powermetrics
+ 5980   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+ 5979   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:29:46 EST (14:29:46 UTC)
+ 9:29  up 4 days, 16:37, 3 users, load averages: 20.52 10.85 8.65
+  PID  %CPU %MEM COMM
+ 5493 1768.9  1.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.5  0.4 <managed agent>
+65312   1.3  0.7 <managed agent>
+81869   0.2  0.0 bash
+  814   0.1  0.1 /Applications/Workspace ONE Intelligent Hub.app/Contents/Resources/IntelligentHubAgent.app/Contents/MacOS/IntelligentHubAgent
+  324   0.1  0.1 <managed agent>
+ 6021   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 5889   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:30:17 EST (14:30:17 UTC)
+ 9:30  up 4 days, 16:38, 3 users, load averages: 17.35 10.97 8.77
+  PID  %CPU %MEM COMM
+ 6431 1153.5  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.0  0.4 <managed agent>
+  324   0.7  0.1 <managed agent>
+65312   0.6  0.7 <managed agent>
+  122   0.1  0.0 /usr/libexec/configd
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+ 6426   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 6425   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 6424   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:30:48 EST (14:30:48 UTC)
+ 9:30  up 4 days, 16:38, 3 users, load averages: 15.34 11.18 8.93
+  PID  %CPU %MEM COMM
+ 6431 1128.3  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   4.3  0.7 <managed agent>
+  317   3.7  0.4 <managed agent>
+  324   0.9  0.1 <managed agent>
+  332   0.3  0.1 <managed agent>
+81869   0.3  0.0 bash
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  357   0.1  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+81817   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:31:19 EST (14:31:19 UTC)
+ 9:31  up 4 days, 16:39, 3 users, load averages: 14.25 11.29 9.05
+  PID  %CPU %MEM COMM
+ 6431 1225.7  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  11.0  0.4 <managed agent>
+65312   4.7  0.7 <managed agent>
+  324   0.7  0.1 <managed agent>
+81869   0.7  0.0 bash
+  332   0.3  0.1 <managed agent>
+81818   0.0  0.0 caffeinate
+81816   0.0  0.0 login
+81814   0.0  0.0 SCREEN
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:31:50 EST (14:31:50 UTC)
+ 9:31  up 4 days, 16:40, 3 users, load averages: 13.10 11.28 9.12
+  PID  %CPU %MEM COMM
+ 6431 1127.7  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   8.6  0.4 <managed agent>
+65312   1.2  0.7 <managed agent>
+  324   0.7  0.1 <managed agent>
+  332   0.6  0.1 <managed agent>
+  167   0.1  0.0 /usr/sbin/distnoted
+    1   0.1  0.0 /sbin/launchd
+  657   0.1  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  597   0.1  0.0 /usr/sbin/distnoted
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:32:21 EST (14:32:21 UTC)
+ 9:32  up 4 days, 16:40, 3 users, load averages: 14.08 11.70 9.35
+  PID  %CPU %MEM COMM
+ 6431 1128.5  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   7.3  0.4 <managed agent>
+  357   0.5  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  139   0.3  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+81869   0.3  0.0 bash
+  332   0.2  0.1 <managed agent>
+81817   0.0  0.0 bash
+81818   0.0  0.0 caffeinate
+81816   0.0  0.0 login
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:32:51 EST (14:32:51 UTC)
+ 9:32  up 4 days, 16:41, 3 users, load averages: 12.76 11.60 9.39
+  PID  %CPU %MEM COMM
+ 6431 1240.6  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.9  0.4 <managed agent>
+65312   2.2  0.7 <managed agent>
+    1   1.8  0.0 /sbin/launchd
+81869   0.3  0.0 bash
+  603   0.3  0.0 /usr/libexec/secd
+  332   0.2  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+  657   0.1  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:33:22 EST (14:33:22 UTC)
+ 9:33  up 4 days, 16:41, 3 users, load averages: 11.96 11.51 9.43
+  PID  %CPU %MEM COMM
+ 6431 1137.3  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.9  0.4 <managed agent>
+65312   3.2  0.7 <managed agent>
+  843   0.2  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+81869   0.2  0.0 bash
+ 7566   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 7564   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 7565   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:33:53 EST (14:33:53 UTC)
+ 9:33  up 4 days, 16:42, 3 users, load averages: 13.51 11.94 9.66
+  PID  %CPU %MEM COMM
+ 6431 1157.8  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   5.0  0.7 <managed agent>
+  317   2.0  0.4 <managed agent>
+81869   0.6  0.0 bash
+  843   0.3  0.1 <managed agent>
+  373   0.2  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  332   0.2  0.1 <managed agent>
+  236   0.1  0.1 /usr/libexec/airportd
+  324   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:34:24 EST (14:34:24 UTC)
+ 9:34  up 4 days, 16:42, 3 users, load averages: 15.31 12.51 9.96
+  PID  %CPU %MEM COMM
+ 6431 1200.8  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.4  0.4 <managed agent>
+65312   3.4  0.7 <managed agent>
+ 7964   1.9  0.0 /System/Library/PrivateFrameworks/Ecosystem.framework/Support/ecosystemagent
+  332   0.5  0.1 <managed agent>
+81869   0.5  0.0 bash
+  843   0.3  0.1 <managed agent>
+    1   0.3  0.0 /sbin/launchd
+  163   0.1  0.1 /usr/libexec/dasd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:34:55 EST (14:34:55 UTC)
+ 9:34  up 4 days, 16:43, 3 users, load averages: 13.72 12.38 10.00
+  PID  %CPU %MEM COMM
+ 6431 1124.1  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  12.0  0.4 <managed agent>
+65312   5.5  0.7 <managed agent>
+81869   0.6  0.0 bash
+  163   0.3  0.1 /usr/libexec/dasd
+  843   0.2  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+ 7803   0.1  0.2 /Applications/Tailscale.app/Contents/MacOS/Tailscale
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:35:26 EST (14:35:26 UTC)
+ 9:35  up 4 days, 16:43, 3 users, load averages: 12.95 12.36 10.07
+  PID  %CPU %MEM COMM
+ 6431 1154.4  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.7  0.4 <managed agent>
+65312   1.2  0.7 <managed agent>
+  319   0.4  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+81869   0.3  0.0 bash
+  843   0.3  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:35:57 EST (14:35:57 UTC)
+ 9:35  up 4 days, 16:44, 3 users, load averages: 13.76 12.63 10.25
+  PID  %CPU %MEM COMM
+ 6431 1241.4  6.2 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.3  0.4 <managed agent>
+  236   1.7  0.1 /usr/libexec/airportd
+  843   0.9  0.1 <managed agent>
+65312   0.5  0.7 <managed agent>
+  514   0.4  0.0 /usr/libexec/wifivelocityd
+  332   0.2  0.1 <managed agent>
+  357   0.2  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  324   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:36:28 EST (14:36:28 UTC)
+ 9:36  up 4 days, 16:44, 3 users, load averages: 12.66 12.52 10.30
+  PID  %CPU %MEM COMM
+ 8621 105.9  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.5  0.4 <managed agent>
+84366   4.0  0.1 /usr/libexec/PerfPowerServices
+  843   0.7  0.1 <managed agent>
+  324   0.3  0.1 <managed agent>
+  315   0.3  0.0 /Library/Application Support/Pharos/PrintScout/PrintScout
+  200   0.2  0.0 /usr/sbin/mDNSResponder
+65312   0.2  0.7 <managed agent>
+81814   0.0  0.0 SCREEN
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:36:59 EST (14:36:59 UTC)
+ 9:36  up 4 days, 16:45, 3 users, load averages: 8.13 11.44 9.98
+  PID  %CPU %MEM COMM
+ 8621 105.0  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  16.5  0.4 <managed agent>
+65312   4.2  0.7 <managed agent>
+  324   1.2  0.1 <managed agent>
+  153   0.8  0.0 /System/Library/PrivateFrameworks/ApplePushService.framework/apsd
+  332   0.3  0.1 <managed agent>
+  189   0.3  0.0 /usr/libexec/runningboardd
+81869   0.1  0.0 bash
+  843   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:37:29 EST (14:37:29 UTC)
+ 9:37  up 4 days, 16:45, 3 users, load averages: 6.04 10.61 9.73
+  PID  %CPU %MEM COMM
+ 8621 107.1  0.4 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   5.4  0.7 <managed agent>
+  317   2.5  0.4 <managed agent>
+  357   1.9  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+ 9000   1.0  0.0 /System/Library/PrivateFrameworks/DiskImages.framework/Resources/hdiejectd
+  843   0.9  0.1 <managed agent>
+  142   0.8  0.0 /usr/libexec/diskarbitrationd
+  324   0.6  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:38:00 EST (14:38:00 UTC)
+ 9:38  up 4 days, 16:46, 3 users, load averages: 8.96 10.78 9.81
+  PID  %CPU %MEM COMM
+ 9074 1740.2  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+84366  18.0  0.1 /usr/libexec/PerfPowerServices
+10553   7.1  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  187   4.5  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+10554   2.5  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  317   2.2  0.4 <managed agent>
+65312   0.6  0.7 <managed agent>
+  184   0.4  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  324   0.4  0.1 <managed agent>
+System-wide memory free percentage: 92%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:38:30 EST (14:38:30 UTC)
+ 9:38  up 4 days, 16:46, 3 users, load averages: 14.76 12.03 10.30
+  PID  %CPU %MEM COMM
+ 9074 1760.7  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  18.5  0.4 <managed agent>
+65312   4.9  0.7 <managed agent>
+  843   0.3  0.1 <managed agent>
+81869   0.2  0.0 bash
+  657   0.2  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  324   0.1  0.1 <managed agent>
+11009   0.1  0.1 <managed agent>
+  332   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:39:01 EST (14:39:01 UTC)
+ 9:39  up 4 days, 16:47, 3 users, load averages: 18.59 13.27 10.82
+  PID  %CPU %MEM COMM
+ 9074 1750.5  0.5 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  12.9  0.4 <managed agent>
+  187   3.3  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  184   0.7  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+  324   0.4  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+10553   0.1  0.0 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+  357   0.1  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+ 9478   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:39:31 EST (14:39:31 UTC)
+ 9:39  up 4 days, 16:47, 3 users, load averages: 15.96 13.21 10.89
+  PID  %CPU %MEM COMM
+ 9634 994.2  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.7  0.4 <managed agent>
+  843   0.3  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  324   0.1  0.1 <managed agent>
+ 9628   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 9587   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+ 9586   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+ 9585   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:40:02 EST (14:40:02 UTC)
+ 9:40  up 4 days, 16:48, 3 users, load averages: 13.44 12.87 10.84
+  PID  %CPU %MEM COMM
+ 9634 998.5  0.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.6  0.4 <managed agent>
+  187   1.5  0.1 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+  414   0.6  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+  184   0.3  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+65312   0.2  0.7 <managed agent>
+ 9859   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 9861   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:40:33 EST (14:40:33 UTC)
+ 9:40  up 4 days, 16:48, 3 users, load averages: 10.76 12.30 10.71
+  PID  %CPU %MEM COMM
+10005 106.2  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  16.2  0.4 <managed agent>
+  657   0.7  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  843   0.3  0.1 <managed agent>
+  332   0.1  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+  142   0.1  0.0 /usr/libexec/diskarbitrationd
+ 9859   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 9861   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:41:03 EST (14:41:03 UTC)
+ 9:41  up 4 days, 16:49, 3 users, load averages: 7.06 11.25 10.38
+  PID  %CPU %MEM COMM
+10005 105.7  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.6  0.4 <managed agent>
+  324   0.2  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  424   0.1  0.0 <managed agent>
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+81818   0.0  0.0 caffeinate
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:41:34 EST (14:41:34 UTC)
+ 9:41  up 4 days, 16:49, 3 users, load averages: 4.94 10.35 10.08
+  PID  %CPU %MEM COMM
+10005 106.6  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   6.1  0.4 <managed agent>
+  324   1.2  0.1 <managed agent>
+65312   1.2  0.7 <managed agent>
+  843   0.2  0.1 <managed agent>
+  811   0.1  0.7 /Applications/Utilities/Adobe Creative Cloud/ACC/Creative Cloud.app/Contents/MacOS/Creative Cloud
+81817   0.0  0.0 bash
+81818   0.0  0.0 caffeinate
+81816   0.0  0.0 login
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:42:04 EST (14:42:04 UTC)
+ 9:42  up 4 days, 16:50, 3 users, load averages: 3.68 9.52 9.79
+  PID  %CPU %MEM COMM
+10005 104.5  1.1 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   7.5  0.4 <managed agent>
+65312   4.6  0.7 <managed agent>
+  843   1.0  0.1 <managed agent>
+  332   0.3  0.1 <managed agent>
+  357   0.2  0.3 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  139   0.2  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+81869   0.1  0.0 bash
+  184   0.1  0.1 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:42:35 EST (14:42:35 UTC)
+ 9:42  up 4 days, 16:50, 3 users, load averages: 7.97 9.88 9.90
+  PID  %CPU %MEM COMM
+10645 1750.9  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  26.3  0.4 <managed agent>
+65312   4.7  0.7 <managed agent>
+  324   2.7  0.1 <managed agent>
+  407   0.6  0.0 /usr/libexec/sysmond
+10767   0.5  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  357   0.1  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+    1   0.1  0.0 /sbin/launchd
+10722   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:43:05 EST (14:43:05 UTC)
+ 9:43  up 4 days, 16:51, 3 users, load averages: 13.74 11.10 10.35
+  PID  %CPU %MEM COMM
+10645 1768.7  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  14.4  0.4 <managed agent>
+61488   2.5  0.2 /Applications/Utilities/Adobe Creative Cloud Experience/CCXProcess/CCXProcess.app/Contents/MacOS/Creative Cloud Content Manager.node
+  357   0.4  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  139   0.2  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  843   0.2  0.1 <managed agent>
+  332   0.1  0.1 <managed agent>
+10726   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+10725   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:43:36 EST (14:43:36 UTC)
+ 9:43  up 4 days, 16:51, 3 users, load averages: 16.72 12.03 10.70
+  PID  %CPU %MEM COMM
+10645 1761.5  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  18.8  0.4 <managed agent>
+  357   0.5  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  657   0.4  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  324   0.4  0.1 <managed agent>
+65312   0.3  0.7 <managed agent>
+  332   0.2  0.1 <managed agent>
+  315   0.1  0.0 /Library/Application Support/Pharos/PrintScout/PrintScout
+  139   0.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:44:06 EST (14:44:06 UTC)
+ 9:44  up 4 days, 16:52, 3 users, load averages: 20.09 13.32 11.22
+  PID  %CPU %MEM COMM
+10645 1761.7  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  17.7  0.4 <managed agent>
+  332   0.6  0.1 <managed agent>
+  478   0.6  0.0 powermetrics
+  357   0.3  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  324   0.1  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+  139   0.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  843   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:44:37 EST (14:44:37 UTC)
+ 9:44  up 4 days, 16:52, 3 users, load averages: 21.53 14.43 11.71
+  PID  %CPU %MEM COMM
+10645 1750.9  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  27.6  0.4 <managed agent>
+65312   1.1  0.7 <managed agent>
+  214   0.7  0.3 /usr/libexec/mobileassetd
+    1   0.4  0.0 /sbin/launchd
+  332   0.3  0.1 <managed agent>
+  152   0.2  0.0 /usr/libexec/opendirectoryd
+  574   0.2  0.0 /usr/libexec/diagnosticd
+  110   0.2  0.1 /usr/libexec/logd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:45:07 EST (14:45:07 UTC)
+ 9:45  up 4 days, 16:53, 3 users, load averages: 22.42 15.34 12.13
+  PID  %CPU %MEM COMM
+10645 1779.1  0.6 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.0  0.4 <managed agent>
+  357   0.4  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  332   0.2  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+  843   0.1  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+11601   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:45:38 EST (14:45:38 UTC)
+ 9:45  up 4 days, 16:53, 3 users, load averages: 17.43 14.76 12.03
+  PID  %CPU %MEM COMM
+11768 1024.2  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   9.4  0.4 <managed agent>
+  357   0.7  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  324   0.2  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+11599   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+11598   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+11596   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:46:09 EST (14:46:09 UTC)
+ 9:46  up 4 days, 16:54, 3 users, load averages: 12.86 13.94 11.82
+  PID  %CPU %MEM COMM
+11768 1015.2  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.9  0.4 <managed agent>
+65312   2.9  0.7 <managed agent>
+  324   0.6  0.1 <managed agent>
+81869   0.3  0.0 bash
+84366   0.3  0.1 /usr/libexec/PerfPowerServices
+  332   0.2  0.1 <managed agent>
+ 6809   0.1  0.1 /usr/sbin/bluetoothd
+  167   0.1  0.0 /usr/sbin/distnoted
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:46:39 EST (14:46:39 UTC)
+ 9:46  up 4 days, 16:54, 3 users, load averages: 10.54 13.27 11.66
+  PID  %CPU %MEM COMM
+11768 1009.9  1.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.3  0.4 <managed agent>
+  843   0.3  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+12236   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12235   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12230   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12233   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12234   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:47:10 EST (14:47:10 UTC)
+ 9:47  up 4 days, 16:55, 3 users, load averages: 8.53 12.56 11.46
+  PID  %CPU %MEM COMM
+12338 103.6  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.9  0.4 <managed agent>
+  324   0.3  0.1 <managed agent>
+  316   0.2  0.3 /Library/Application Support/Workflow/workflowd
+65312   0.1  0.7 <managed agent>
+12237   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12236   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12235   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12230   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:47:41 EST (14:47:41 UTC)
+ 9:47  up 4 days, 16:55, 3 users, load averages: 5.77 11.50 11.11
+  PID  %CPU %MEM COMM
+12338 103.8  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+12613   8.4  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+65312   3.6  0.7 <managed agent>
+  324   1.1  0.1 <managed agent>
+    1   0.6  0.0 /sbin/launchd
+  139   0.4  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  357   0.4  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  843   0.2  0.1 <managed agent>
+  355   0.2  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:48:11 EST (14:48:11 UTC)
+ 9:48  up 4 days, 16:56, 3 users, load averages: 3.95 10.51 10.77
+  PID  %CPU %MEM COMM
+12338 101.8  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+65312  19.5  0.7 <managed agent>
+  317   9.3  0.4 <managed agent>
+  355   1.0  0.1 <managed agent>
+37408   1.0  0.1 /Applications/Tailscale.app/Contents/PlugIns/IPNExtension.appex/Contents/MacOS/IPNExtension
+  843   0.8  0.1 <managed agent>
+12788   0.6  0.0 ps
+  332   0.5  0.1 <managed agent>
+81869   0.5  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:48:42 EST (14:48:42 UTC)
+ 9:48  up 4 days, 16:56, 3 users, load averages: 2.89 9.63 10.44
+  PID  %CPU %MEM COMM
+12338 103.7  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+65312  10.5  0.7 <managed agent>
+  236   6.6  0.1 /usr/libexec/airportd
+  514   1.3  0.0 /usr/libexec/wifivelocityd
+  324   1.1  0.1 <managed agent>
+    1   0.6  0.0 /sbin/launchd
+  373   0.5  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+  139   0.4  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  357   0.3  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:49:12 EST (14:49:12 UTC)
+ 9:49  up 4 days, 16:57, 3 users, load averages: 2.14 8.81 10.11
+  PID  %CPU %MEM COMM
+12338 105.0  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.3  0.4 <managed agent>
+65312   3.5  0.7 <managed agent>
+  236   0.6  0.1 /usr/libexec/airportd
+  843   0.6  0.1 <managed agent>
+  357   0.6  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  332   0.2  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+  424   0.1  0.0 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:49:43 EST (14:49:43 UTC)
+ 9:49  up 4 days, 16:57, 3 users, load averages: 4.07 8.58 9.98
+  PID  %CPU %MEM COMM
+12338 102.8  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.1  0.4 <managed agent>
+  324   1.0  0.1 <managed agent>
+65312   0.7  0.7 <managed agent>
+  112   0.4  0.0 /usr/libexec/UserEventAgent
+  188   0.4  0.0 /usr/sbin/cfprefsd
+  124   0.3  0.0 /System/Library/CoreServices/powerd.bundle/powerd
+ 1034   0.3  0.4 /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+84366   0.3  0.1 /usr/libexec/PerfPowerServices
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:50:13 EST (14:50:13 UTC)
+ 9:50  up 4 days, 16:58, 3 users, load averages: 2.92 7.87 9.67
+  PID  %CPU %MEM COMM
+12338 103.0  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   4.4  0.7 <managed agent>
+  317   4.3  0.4 <managed agent>
+  357   1.5  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+81869   0.3  0.0 bash
+  843   0.3  0.1 <managed agent>
+  332   0.2  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  324   0.1  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:50:44 EST (14:50:44 UTC)
+ 9:50  up 4 days, 16:58, 3 users, load averages: 2.29 7.25 9.38
+  PID  %CPU %MEM COMM
+12338 104.1  3.7 /Users/matt/bench/benchmarks/.venv/bin/python
+  357  14.3  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  317   2.3  0.4 <managed agent>
+12929   2.1  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+  139   1.4  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+65312   0.6  0.7 <managed agent>
+  657   0.5  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  150   0.4  0.0 /System/Library/PrivateFrameworks/CoreDuetContext.framework/Resources/contextstored
+  324   0.4  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:51:14 EST (14:51:14 UTC)
+ 9:51  up 4 days, 16:59, 3 users, load averages: 7.42 7.83 9.50
+  PID  %CPU %MEM COMM
+13751 1786.5  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   7.0  0.4 <managed agent>
+  357   0.3  0.4 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+  139   0.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  843   0.1  0.1 <managed agent>
+13448   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+13438   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+12929   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:51:45 EST (14:51:45 UTC)
+ 9:51  up 4 days, 16:59, 3 users, load averages: 14.29 9.44 10.02
+  PID  %CPU %MEM COMM
+13751 1756.5  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  16.9  0.4 <managed agent>
+65312   1.8  0.7 <managed agent>
+81869   0.5  0.0 bash
+  332   0.4  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+81818   0.0  0.0 caffeinate
+81816   0.0  0.0 login
+81814   0.0  0.0 SCREEN
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:52:16 EST (14:52:16 UTC)
+ 9:52  up 4 days, 17 hrs, 3 users, load averages: 17.43 10.67 10.45
+  PID  %CPU %MEM COMM
+13751 1785.1  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.1  0.4 <managed agent>
+  324   0.5  0.1 <managed agent>
+65312   0.5  0.7 <managed agent>
+13760   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+89480   0.0  0.1 /Users/matt/bench/benchmarks/.venv/bin/python
+81869   0.0  0.0 bash
+81817   0.0  0.0 bash
+81818   0.0  0.0 caffeinate
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:52:46 EST (14:52:46 UTC)
+ 9:52  up 4 days, 17 hrs, 3 users, load averages: 20.63 12.08 10.97
+  PID  %CPU %MEM COMM
+13751 1675.3  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  388  67.0  0.3 /System/Library/CoreServices/Software Update.app/Contents/Resources/softwareupdated
+65312  12.9  0.7 <managed agent>
+  214   3.8  0.3 /usr/libexec/mobileassetd
+  317   3.5  0.4 <managed agent>
+  373   3.1  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+ 1292   1.3  0.0 /System/Library/AssetsV2/com_apple_MobileAsset_RecoveryOSUpdateBrain/28f9b40aedc0bda53bdc29e31682c998de89e5cb.asset/AssetData/com.apple.NRD.UpdateBrainService.xpc/Contents/MacOS/com.apple.NRD.UpdateBrainService
+  110   0.7  0.1 /usr/libexec/logd
+  319   0.7  0.1 <managed agent>
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:53:17 EST (14:53:17 UTC)
+ 9:53  up 4 days, 17:01, 3 users, load averages: 21.25 13.05 11.35
+  PID  %CPU %MEM COMM
+13751 1747.5  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+65312  16.0  0.7 <managed agent>
+  317   2.4  0.4 <managed agent>
+  355   0.9  0.1 <managed agent>
+81869   0.6  0.0 bash
+  413   0.5  0.0 <managed agent>
+  907   0.4  0.0 /usr/libexec/trustd
+  324   0.3  0.1 <managed agent>
+  373   0.3  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:53:47 EST (14:53:47 UTC)
+ 9:53  up 4 days, 17:01, 3 users, load averages: 23.06 14.24 11.84
+  PID  %CPU %MEM COMM
+13751 1779.2  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   8.7  0.4 <managed agent>
+  843   0.2  0.1 <managed agent>
+14783   0.0  0.0 /usr/libexec/mdmclient
+14694   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+14693   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+14691   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+14692   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+14689   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:54:18 EST (14:54:18 UTC)
+ 9:54  up 4 days, 17:02, 3 users, load averages: 23.16 15.11 12.24
+  PID  %CPU %MEM COMM
+13751 1786.1  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   4.0  0.4 <managed agent>
+  324   0.4  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+14691   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+14692   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+14689   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+14428   0.0  0.0 /System/Library/Frameworks/AudioToolbox.framework/XPCServices/com.apple.audio.SandboxHelper.xpc/Contents/MacOS/com.apple.audio.SandboxHelper
+14423   0.0  0.0 /System/Library/Frameworks/WebKit.framework/Versions/A/XPCServices/com.apple.WebKit.GPU.xpc/Contents/MacOS/com.apple.WebKit.GPU
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:54:48 EST (14:54:48 UTC)
+ 9:54  up 4 days, 17:02, 3 users, load averages: 23.04 15.86 12.61
+  PID  %CPU %MEM COMM
+13751 1758.9  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  11.2  0.4 <managed agent>
+65312   1.8  0.7 <managed agent>
+84366   0.9  0.1 /usr/libexec/PerfPowerServices
+81869   0.4  0.0 bash
+  332   0.2  0.1 <managed agent>
+  324   0.1  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+81816   0.0  0.0 login
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:55:19 EST (14:55:19 UTC)
+ 9:55  up 4 days, 17:03, 3 users, load averages: 23.36 16.61 12.99
+  PID  %CPU %MEM COMM
+13751 1772.0  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  16.9  0.4 <managed agent>
+  332   0.2  0.1 <managed agent>
+65312   0.1  0.7 <managed agent>
+  324   0.1  0.1 <managed agent>
+15474   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+15473   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+15472   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+15471   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:55:49 EST (14:55:49 UTC)
+ 9:55  up 4 days, 17:04, 3 users, load averages: 24.11 17.43 13.41
+  PID  %CPU %MEM COMM
+13751 1786.5  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   3.4  0.4 <managed agent>
+  332   0.2  0.1 <managed agent>
+  843   0.1  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+15476   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+15475   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+15474   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+15473   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:56:20 EST (14:56:20 UTC)
+ 9:56  up 4 days, 17:04, 3 users, load averages: 24.14 18.17 13.84
+  PID  %CPU %MEM COMM
+13751 1762.4  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  17.9  0.4 <managed agent>
+65312   3.1  0.7 <managed agent>
+  843   0.4  0.1 <managed agent>
+  214   0.4  0.3 /usr/libexec/mobileassetd
+    1   0.2  0.0 /sbin/launchd
+  332   0.2  0.1 <managed agent>
+  324   0.2  0.1 <managed agent>
+  574   0.1  0.0 /usr/libexec/diagnosticd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:56:51 EST (14:56:51 UTC)
+ 9:56  up 4 days, 17:05, 3 users, load averages: 24.18 18.73 14.20
+  PID  %CPU %MEM COMM
+13751 1740.0  1.0 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   2.5  0.4 <managed agent>
+  324   0.6  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+15976   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+15971   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+15972   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+15973   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+15975   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:57:21 EST (14:57:21 UTC)
+ 9:57  up 4 days, 17:05, 3 users, load averages: 21.23 18.61 14.31
+  PID  %CPU %MEM COMM
+16177 1005.3  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  16.5  0.4 <managed agent>
+    1   7.0  0.0 /sbin/launchd
+  843   0.6  0.1 <managed agent>
+  236   0.4  0.1 /usr/libexec/airportd
+  324   0.3  0.1 <managed agent>
+  373   0.2  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+65312   0.2  0.7 <managed agent>
+  603   0.1  0.0 /usr/libexec/secd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:57:52 EST (14:57:52 UTC)
+ 9:57  up 4 days, 17:06, 3 users, load averages: 17.46 17.98 14.23
+  PID  %CPU %MEM COMM
+16177 964.3  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+65312   5.2  0.7 <managed agent>
+  317   4.4  0.4 <managed agent>
+81869   0.6  0.0 bash
+    1   0.6  0.0 /sbin/launchd
+  332   0.5  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+ 1010   0.3  0.1 /Applications/Utilities/Adobe Sync/CoreSync/Core Sync.app/Contents/MacOS/Core Sync
+  657   0.3  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:58:22 EST (14:58:22 UTC)
+ 9:58  up 4 days, 17:06, 3 users, load averages: 15.52 17.48 14.18
+  PID  %CPU %MEM COMM
+16177 987.0  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.6  0.4 <managed agent>
+  843   0.3  0.1 <managed agent>
+11009   0.1  0.1 <managed agent>
+ 1066   0.1  0.1 /Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/156.0.8078.74/Helpers/Google Chrome Helper.app/Contents/MacOS/Google Chrome Helper
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  139   0.1  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds
+  324   0.1  0.1 <managed agent>
+  189   0.1  0.0 /usr/libexec/runningboardd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:58:53 EST (14:58:53 UTC)
+ 9:58  up 4 days, 17:07, 3 users, load averages: 11.94 16.43 13.92
+  PID  %CPU %MEM COMM
+16177 985.5  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  13.9  0.4 <managed agent>
+  843   0.6  0.1 <managed agent>
+  332   0.6  0.1 <managed agent>
+65312   0.5  0.7 <managed agent>
+  324   0.3  0.1 <managed agent>
+  178   0.1  0.0 /usr/sbin/notifyd
+  152   0.1  0.0 /usr/libexec/opendirectoryd
+81869   0.0  0.0 bash
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:59:24 EST (14:59:24 UTC)
+ 9:59  up 4 days, 17:07, 3 users, load averages: 9.07 15.29 13.59
+  PID  %CPU %MEM COMM
+16177 995.1  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   5.0  0.4 <managed agent>
+65312   1.0  0.7 <managed agent>
+  324   0.5  0.1 <managed agent>
+81869   0.3  0.0 bash
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+  332   0.1  0.1 <managed agent>
+  657   0.1  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+16840   0.0  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 09:59:55 EST (14:59:55 UTC)
+ 9:59  up 4 days, 17:08, 3 users, load averages: 8.43 14.56 13.38
+  PID  %CPU %MEM COMM
+16177 1010.4  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.7  0.4 <managed agent>
+65312   4.5  0.7 <managed agent>
+  324   1.1  0.1 <managed agent>
+81869   0.6  0.0 bash
+  332   0.2  0.1 <managed agent>
+  316   0.1  0.3 /Library/Application Support/Workflow/workflowd
+  843   0.1  0.1 <managed agent>
+  122   0.1  0.0 /usr/libexec/configd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 10:00:25 EST (15:00:25 UTC)
+10:00  up 4 days, 17:08, 3 users, load averages: 8.37 13.95 13.20
+  PID  %CPU %MEM COMM
+16177 1016.4  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317   1.8  0.4 <managed agent>
+  574   0.7  0.0 /usr/libexec/diagnosticd
+65312   0.7  0.7 <managed agent>
+  843   0.6  0.1 <managed agent>
+84366   0.5  0.1 /usr/libexec/PerfPowerServices
+    1   0.4  0.0 /sbin/launchd
+17256   0.3  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+  373   0.3  0.1 /System/Library/DriverExtensions/AppleCentauriAlpha.dext/AppleCentauriAlpha
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== sample: 2026-11-10 10:00:56 EST (15:00:56 UTC)
+10:00  up 4 days, 17:09, 3 users, load averages: 7.66 13.24 12.97
+  PID  %CPU %MEM COMM
+16177 962.2  3.3 /Users/matt/bench/benchmarks/.venv/bin/python
+  317  10.8  0.4 <managed agent>
+65312   1.5  0.7 <managed agent>
+  319   1.0  0.1 <managed agent>
+  332   0.5  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+  188   0.2  0.0 /usr/sbin/cfprefsd
+  178   0.2  0.0 /usr/sbin/notifyd
+    1   0.1  0.0 /sbin/launchd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== after: 2026-11-10 10:01:14 EST (15:01:14 UTC)
+10:01  up 4 days, 17:09, 3 users, load averages: 7.83 12.94 12.87
+  PID  %CPU %MEM COMM
+  317  10.6  0.4 <managed agent>
+  332   0.7  0.1 <managed agent>
+  324   0.4  0.1 <managed agent>
+65312   0.4  0.7 <managed agent>
+  657   0.3  0.1 /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
+  152   0.2  0.0 /usr/libexec/opendirectoryd
+  178   0.1  0.0 /usr/sbin/notifyd
+10148   0.1  0.0 /System/Library/ExtensionKit/Extensions/VPN.appex/Contents/MacOS/VPN
+17370   0.0  0.0 /System/Library/Frameworks/Contacts.framework/Support/contactsd
+System-wide memory free percentage: 93%
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+== ended 15:01:14

@@ -1,0 +1,18 @@
+== blas1-numa-default numba-parallel start 07:13:42
+Writing to /home/mamckay/bench/blas47/p7-20261109T071342Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P7 kalman  batch          10000 float64  numba-parallel  warm   173.104 s  cold   190.095 s    1000 iterations
+== blas1-numa-default numba-parallel done, exit 0 07:19:47
+== blas-default-numa-default numba-parallel start 07:19:47
+Writing to /home/mamckay/bench/blas47/p7-20261109T071342Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P7 kalman  batch          10000 float64  numba-parallel  warm   196.063 s  cold   213.748 s    1000 iterations
+== blas-default-numa-default numba-parallel done, exit 0 07:26:38
+== blas1-numa-default numba start 07:26:38
+Writing to /home/mamckay/bench/blas47/p7-20261109T071342Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P7 kalman  batch          10000 float64  numba           warm    62.681 s  cold    74.655 s    1000 iterations
+== blas1-numa-default numba done, exit 0 07:28:56
+== blas-default-numa-default numba start 07:28:56
+Writing to /home/mamckay/bench/blas47/p7-20261109T071342Z/rows/qe-wharton1-gpu/2026-11-09.jsonl
+P7 kalman  batch          10000 float64  numba           warm    65.864 s  cold    78.534 s    1000 iterations
+== blas-default-numa-default numba done, exit 0 07:31:21
+== ALLDONE 07:31:21
+EXIT 0

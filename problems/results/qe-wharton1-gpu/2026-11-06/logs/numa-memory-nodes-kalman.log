@@ -1,0 +1,5 @@
+Writing to /home/mamckay/bench/benchmarks/problems/results/qe-wharton1-gpu/2026-11-06.jsonl
+P7 kalman  batch          10000 float64  numpy           warm    43.619 s  cold    42.441 s    1000 iterations
+P7 kalman  batch          10000 float64  numba           warm    63.854 s  cold    76.032 s    1000 iterations
+P7 kalman  batch          10000 float64  numba-parallel  warm   156.982 s  cold   173.955 s    1000 iterations
+P7 kalman  batch          10000 float64  jax-cpu         warm    54.257 s  cold    55.020 s    1000 iterations

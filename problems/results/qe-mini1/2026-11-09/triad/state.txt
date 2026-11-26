@@ -1,0 +1,40 @@
+ProductName:		macOS
+ProductVersion:		27.2
+BuildVersion:		26B123
+console: mmcky
+hw.ncpu: 12
+hw.perflevel0.name: Super
+hw.perflevel0.physicalcpu: 2
+hw.perflevel1.name: Performance
+hw.perflevel1.physicalcpu: 4
+hw.perflevel2.name: Efficiency
+hw.perflevel2.physicalcpu: 6
+hw.memsize: 34359738368
+e73525d3c593394b3c11bd697844003df0b325dd041a383e3f628e35ddaa50d9  /Users/mmcky/work/quantecon/benchmarks-jax-organiser/scratch/triad47/stream_triad.py
+== before: 2026-11-09 16:27:00 AEDT (05:27:00 UTC)
+16:27  up  5:41, 1 user, load averages: 0.89 0.92 0.94
+  PID  %CPU %MEM COMM
+ 1378  13.3  1.6 claude
+28957  12.7  0.1 /System/Library/Frameworks/Metal.framework/Versions/A/XPCServices/MTLCompilerService.xpc/Contents/MacOS/MTLCompilerService
+ 1374  10.9  1.8 claude
+ 1376   8.7  1.9 claude
+26593   6.2  0.4 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+33168   0.9  0.0 /bin/zsh
+24958   0.8  0.3 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer
+33169   0.7  0.0 bash
+  422   0.5  0.1 /usr/libexec/opendirectoryd
+System-wide memory free percentage: 92%
+== after: 2026-11-09 16:27:03 AEDT (05:27:03 UTC)
+16:27  up  5:42, 1 user, load averages: 0.89 0.92 0.94
+  PID  %CPU %MEM COMM
+ 1376   4.6  1.9 claude
+26754   4.0  2.0 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+ 1374   3.1  1.8 claude
+  568   2.6  0.6 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mds_stores
+33194   1.0  0.1 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+ 1390   1.0  2.1 /opt/homebrew/bin/claude
+  453   0.3  0.0 /usr/libexec/logd_helper
+ 1401   0.2  1.8 /opt/homebrew/bin/claude
+  748   0.2  0.0 /opt/homebrew/bin/tmux
+System-wide memory free percentage: 92%
+== ended 05:27:03

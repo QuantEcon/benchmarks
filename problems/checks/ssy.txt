@@ -1,0 +1,17 @@
+1. T w, against the authors' T_ssy on the same w
+   2x3x4x5: largest relative difference 1.7e-16
+   4x2x5x3: largest relative difference 1.8e-16
+2. The solution of w = T w from w = 800, on each stack, against the authors' two solvers
+   2x3x4x5, by newton, against their newton:
+      numpy           5 iterations; w from 741.61 to 973.59; |T w - w| 2.3e-05; largest difference 6.9e-08 (8e-11 relative)
+      numba           5 iterations; w from 741.61 to 973.59; |T w - w| 2.3e-05; largest difference 3.2e-05 (4e-08 relative)
+      numba-parallel  5 iterations; w from 741.61 to 973.59; |T w - w| 2.3e-05; largest difference 3.2e-05 (4e-08 relative)
+      jax             5 iterations; w from 741.61 to 973.59; |T w - w| 2.3e-05; largest difference 2.3e-05 (3e-08 relative)
+   2x3x4x5, by successive, against their successive_approx:
+      numpy           10428 iterations; w from 741.61 to 973.59; |T w - w| 1.0e-07; largest difference 7.6e-12 (9e-15 relative)
+      numba           10428 iterations; w from 741.61 to 973.59; |T w - w| 1.0e-07; largest difference 7.6e-12 (9e-15 relative)
+      numba-parallel  10428 iterations; w from 741.61 to 973.59; |T w - w| 1.0e-07; largest difference 7.6e-12 (9e-15 relative)
+      jax             10428 iterations; w from 741.61 to 973.59; |T w - w| 1.0e-07; largest difference 7.6e-12 (9e-15 relative)
+3. float32
+   theta = -16.02; 800^theta = 0.0e+00 in float32, whose smallest normal number is 1.2e-38
+   T w at w = 800, where the solution lies (584 to 924): 120 of 120 values are inf

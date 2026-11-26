@@ -1,0 +1,32 @@
+ProductName:		macOS
+ProductVersion:		27.2
+BuildVersion:		26B123
+console: mmcky
+3ab1785b2331ed8cbb9772bda3c3bd99b7267300287dae1bfc85935441c74f42  /Users/mmcky/work/quantecon/benchmarks-jax-organiser/scratch/bw47/bw_probe.py
+== before: 2026-11-09 15:36:41 AEDT (04:36:41 UTC)
+15:36  up  4:51, 1 user, load averages: 0.90 0.88 0.89
+  PID  %CPU %MEM COMM
+ 1376  18.5  1.9 claude
+ 1390  13.3  2.1 /opt/homebrew/bin/claude
+ 1378   0.7  1.5 claude
+  422   0.6  0.1 /usr/libexec/opendirectoryd
+  448   0.5  0.0 /usr/sbin/notifyd
+  380   0.2  0.2 /usr/libexec/logd
+ 1401   0.2  1.8 /opt/homebrew/bin/claude
+    1   0.2  0.1 /sbin/launchd
+ 1374   0.1  1.8 claude
+System-wide memory free percentage: 92%
+== after: 2026-11-09 15:36:44 AEDT (04:36:44 UTC)
+15:36  up  4:51, 1 user, load averages: 0.91 0.88 0.89
+  PID  %CPU %MEM COMM
+ 1390  15.5  2.1 /opt/homebrew/bin/claude
+ 1376   6.9  1.9 claude
+26754   0.1  2.0 /System/Library/PrivateFrameworks/MediaAnalysis.framework/Versions/A/mediaanalysisd
+31231   0.1  0.0 /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/mdworker_shared
+31228   0.0  0.0 sleep
+31220   0.0  0.0 /bin/zsh
+31217   0.0  0.0 sleep
+31196   0.0  0.0 bash
+31151   0.0  0.0 caffeinate
+System-wide memory free percentage: 92%
+== ended 04:36:44

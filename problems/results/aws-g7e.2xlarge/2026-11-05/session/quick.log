@@ -1,0 +1,25 @@
+6b42b04 Docs: take out the instance prices (#34)
+quick start 2026-11-05T06:50:18Z
+== The machine
+driver 595.112.07: jax[cuda13]
+== Python 3.12, JAX, Numba and SciPy
+downloading uv 0.13.7 x86_64-unknown-linux-gnu
+installing to /home/ubuntu/.local/bin
+  uv
+  uvx
+everything's installed!
+Using Python 3.12.3 environment at: .venv-problems
+JAX 0.12.0.1: [CudaDevice(id=0)]
+== The suite on the card
+Writing to /home/ubuntu/benchmarks/problems/results/aws-g7e.2xlarge/2026-11-05.jsonl
+P1 vfi     grid             100 float64  jax-gpu         warm     0.033 s  cold     5.216 s     572 iterations
+P3 egm     grid             200 float64  jax-gpu         warm     0.337 s  cold     1.641 s    2192 iterations
+P3 egm     grid             200 float32  jax-gpu         warm     0.097 s  cold     1.171 s     809 iterations
+P4 wealth  households     10000 float64  jax-gpu         warm     0.003 s  cold     0.581 s     200 iterations
+P4 wealth  households     10000 float32  jax-gpu         warm     0.001 s  cold     0.471 s     200 iterations
+P7 kalman  batch             10 float64  jax-gpu         warm     0.075 s  cold     1.159 s    1000 iterations
+P7 kalman  batch             10 float32  jax-gpu         warm     0.076 s  cold     1.043 s    1000 iterations
+P7 kalman  state             10 float64  jax-gpu         warm     0.087 s  cold     0.895 s    1000 iterations
+P7 kalman  state             10 float32  jax-gpu         warm     0.071 s  cold     0.772 s    1000 iterations
+== Done: aws-g7e.2xlarge-2026-11-05-problems.tgz. Copy it off the machine, then terminate the machine.
+quick end 2026-11-05T06:51:10Z, wall 52 s, exit 0

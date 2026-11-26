@@ -1,0 +1,357 @@
+== before: 2026-11-21 00:15:11 EST (05:15:11 UTC)
+ 00:15:11 up 6 days, 6 min,  3 users,  load average: 0.70, 8.98, 14.39
+0, 00000000:0B:00.0, 300 MHz, 36, 29.76 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.58 W, 0 %, 60 MiB
+    PID STAT %CPU COMMAND
+ 631948 Sl+   3.5 btop
+     12 I     1.4 kworker/u256:0-atlantic
+ 655749 Ss    0.6 sshd
+   2720 Sl+   0.1 gnome-shell
+   1260 S     0.1 irq/210-iwlwifi
+   1942 Ssl   0.1 tailscaled
+ 631877 S     0.1 sshd
+== start 2026-11-21T05:15:11Z at 11c1c59
+== problems start 05:15:11: stationary,hpi,time_iter,mle,mle_hand,mle_onepass,mle_blocked
+== sample: 2026-11-21 00:25:11 EST (05:25:11 UTC)
+ 00:25:11 up 6 days, 16 min,  3 users,  load average: 5.64, 17.10, 17.50
+0, 00000000:0B:00.0, 300 MHz, 36, 29.50 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.08 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 669665 Rl    117 python
+ 631948 Sl+   3.5 btop
+     12 I     1.4 kworker/u256:0-atlantic
+ 655820 Sl    0.9 python
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 00:35:12 EST (05:35:12 UTC)
+ 00:35:12 up 6 days, 26 min,  3 users,  load average: 7.19, 9.79, 13.19
+0, 00000000:0B:00.0, 300 MHz, 36, 29.49 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.75 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 676082 Rl   1153 python
+ 631948 Sl+   3.4 btop
+     12 I     1.4 kworker/u256:0-atlantic
+ 655820 Sl    0.4 python
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 00:45:12 EST (05:45:12 UTC)
+ 00:45:12 up 6 days, 36 min,  3 users,  load average: 16.29, 9.57, 10.69
+0, 00000000:0B:00.0, 300 MHz, 36, 29.40 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.92 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 678123 Sl   1513 python
+ 631948 Sl+   3.4 btop
+     12 I     1.4 kworker/u256:0-atlantic
+ 655820 Sl    0.3 python
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 00:55:12 EST (05:55:12 UTC)
+ 00:55:12 up 6 days, 46 min,  3 users,  load average: 5.63, 8.95, 10.85
+0, 00000000:0B:00.0, 375 MHz, 38, 29.44 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.25 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 683065 Rl    567 python
+ 683209 R     300 ps
+ 631948 Sl+   3.4 btop
+     12 I     1.4 kworker/u256:0-atlantic
+ 655820 Sl    0.2 python
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+== sample: 2026-11-21 01:05:13 EST (06:05:13 UTC)
+ 01:05:13 up 6 days, 56 min,  3 users,  load average: 3.58, 7.38, 9.47
+0, 00000000:0B:00.0, 300 MHz, 36, 29.50 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.16 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 686358 Rl    819 python
+ 687099 R     400 ps
+ 631948 Sl+   3.3 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+ 655820 Sl    0.1 python
+   2720 Sl+   0.1 gnome-shell
+== sample: 2026-11-21 01:15:13 EST (06:15:13 UTC)
+ 01:15:13 up 6 days,  1:06,  3 users,  load average: 10.49, 10.68, 10.86
+0, 00000000:0B:00.0, 300 MHz, 36, 29.66 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.67 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 689249 Rl   1236 python
+ 631948 Sl+   3.3 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+ 655820 Sl    0.1 python
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 01:25:13 EST (06:25:13 UTC)
+ 01:25:13 up 6 days,  1:16,  3 users,  load average: 22.14, 21.81, 16.65
+0, 00000000:0B:00.0, 300 MHz, 37, 29.37 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.25 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 701230 Rl   5947 python
+ 701388 R     400 ps
+ 631948 Sl+   3.3 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 01:35:14 EST (06:35:14 UTC)
+ 01:35:14 up 6 days,  1:26,  3 users,  load average: 1.19, 4.76, 10.00
+0, 00000000:0B:00.0, 300 MHz, 36, 29.56 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.14 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 706395 Rl    105 python
+ 631948 Sl+   3.3 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+ 655820 Sl    0.1 python
+== sample: 2026-11-21 01:45:14 EST (06:45:14 UTC)
+ 01:45:14 up 6 days,  1:36,  3 users,  load average: 1.24, 1.99, 6.07
+0, 00000000:0B:00.0, 300 MHz, 36, 29.71 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.66 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 710498 R     500 ps
+ 709523 Rl    103 python
+ 631948 Sl+   3.2 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 01:55:14 EST (06:55:14 UTC)
+ 01:55:14 up 6 days,  1:46,  3 users,  load average: 1.04, 1.15, 3.65
+0, 00000000:0B:00.0, 300 MHz, 36, 29.85 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.40 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 712444 R     400 ps
+ 711334 Rl    103 python
+ 631948 Sl+   3.2 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 02:05:14 EST (07:05:14 UTC)
+ 02:05:14 up 6 days,  1:56,  3 users,  load average: 1.28, 2.89, 4.04
+0, 00000000:0B:00.0, 300 MHz, 37, 29.67 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.95 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 718091 R     400 ps
+ 717939 Rl    299 python
+ 631948 Sl+   3.2 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 02:15:15 EST (07:15:15 UTC)
+ 02:15:15 up 6 days,  2:06,  3 users,  load average: 1.78, 2.24, 3.03
+0, 00000000:0B:00.0, 300 MHz, 37, 29.70 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.48 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 720912 R     300 ps
+ 720715 Rl    151 python
+ 631948 Sl+   3.2 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 02:25:15 EST (07:25:15 UTC)
+ 02:25:15 up 6 days,  2:16,  3 users,  load average: 1.59, 1.76, 2.37
+0, 00000000:0B:00.0, 300 MHz, 36, 29.41 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.99 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 722738 R     400 ps
+ 720715 Rl    101 python
+ 631948 Sl+   3.2 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 02:35:15 EST (07:35:15 UTC)
+ 02:35:15 up 6 days,  2:26,  3 users,  load average: 1.02, 1.26, 1.83
+0, 00000000:0B:00.0, 300 MHz, 35, 29.44 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.26 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 723585 Rl    103 python
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+ 631877 S     0.0 sshd
+== sample: 2026-11-21 02:45:15 EST (07:45:15 UTC)
+ 02:45:15 up 6 days,  2:36,  3 users,  load average: 1.12, 1.84, 2.25
+0, 00000000:0B:00.0, 300 MHz, 36, 29.63 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.16 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 731013 R     400 ps
+ 730595 Sl    215 python
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 02:55:16 EST (07:55:16 UTC)
+ 02:55:16 up 6 days,  2:46,  3 users,  load average: 5.27, 4.79, 3.24
+0, 00000000:0B:00.0, 300 MHz, 38, 29.87 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 27.93 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 734236 Rl    417 python
+ 734445 R     300 ps
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 03:05:16 EST (08:05:16 UTC)
+ 03:05:16 up 6 days,  2:56,  3 users,  load average: 1.16, 1.99, 2.46
+0, 00000000:0B:00.0, 300 MHz, 36, 29.77 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 27.30 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 740505 R     300 ps
+ 740080 Rl    110 python
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 03:15:16 EST (08:15:16 UTC)
+ 03:15:16 up 6 days,  3:06,  3 users,  load average: 8.80, 10.88, 6.75
+0, 00000000:0B:00.0, 300 MHz, 36, 29.62 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.34 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 747891 Rl   1449 python
+ 748219 R     300 ps
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 03:25:16 EST (08:25:16 UTC)
+ 03:25:16 up 6 days,  3:16,  3 users,  load average: 32.96, 24.96, 15.39
+0, 00000000:0B:00.0, 405 MHz, 39, 58.87 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.25 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 761111 Rl   1065 python
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+ 631877 S     0.0 sshd
+== sample: 2026-11-21 03:35:17 EST (08:35:17 UTC)
+ 03:35:17 up 6 days,  3:26,  3 users,  load average: 12.58, 23.04, 21.45
+0, 00000000:0B:00.0, 375 MHz, 42, 29.91 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 42, 28.97 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 767699 Rl   5447 python
+ 767778 R     600 ps
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 03:45:17 EST (08:45:17 UTC)
+ 03:45:17 up 6 days,  3:36,  3 users,  load average: 9.36, 20.00, 23.34
+0, 00000000:0B:00.0, 300 MHz, 40, 29.76 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 42, 28.84 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 780562 Sl   3661 python
+ 781039 R     400 ps
+ 781040 S    33.3 head
+ 631948 Sl+   3.1 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+== sample: 2026-11-21 03:55:17 EST (08:55:17 UTC)
+ 03:55:17 up 6 days,  3:46,  3 users,  load average: 2.29, 8.65, 17.25
+0, 00000000:0B:00.0, 300 MHz, 36, 29.54 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 41, 28.83 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 791094 R     400 ps
+ 790942 Rl    273 python
+ 631948 Sl+   3.0 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 04:05:18 EST (09:05:18 UTC)
+ 04:05:18 up 6 days,  3:56,  3 users,  load average: 11.45, 6.87, 11.54
+0, 00000000:0B:00.0, 300 MHz, 36, 29.74 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.82 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 797801 R     300 ps
+ 797525 Rl    160 python
+ 631948 Sl+   3.0 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 04:15:18 EST (09:15:18 UTC)
+ 04:15:18 up 6 days,  4:06,  3 users,  load average: 47.25, 25.01, 16.44
+0, 00000000:0B:00.0, 300 MHz, 35, 29.46 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 29.19 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 803497 Rl   3131 python
+ 803718 R     500 ps
+ 631948 Sl+   3.0 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+== sample: 2026-11-21 04:25:18 EST (09:25:18 UTC)
+ 04:25:18 up 6 days,  4:16,  3 users,  load average: 56.51, 41.79, 29.99
+0, 00000000:0B:00.0, 300 MHz, 35, 29.52 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 40, 28.32 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 807235 Rl   5548 python
+ 631948 Sl+   3.0 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+ 631877 S     0.0 sshd
+== problems done 09:27:44, exit 0
+== OpenBLAS check start 09:27:44
+== sample: 2026-11-21 04:35:18 EST (09:35:18 UTC)
+ 04:35:18 up 6 days,  4:26,  3 users,  load average: 1.36, 11.98, 21.60
+0, 00000000:0B:00.0, 300 MHz, 35, 29.61 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.32 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 809580 R    99.8 python
+ 631948 Sl+   3.0 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+ 631877 S     0.0 sshd
+== sample: 2026-11-21 04:45:19 EST (09:45:19 UTC)
+ 04:45:19 up 6 days,  4:36,  3 users,  load average: 10.91, 7.52, 15.00
+0, 00000000:0B:00.0, 300 MHz, 35, 29.29 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 28.16 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 812810 Rl   1668 python
+ 631948 Sl+   3.0 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+ 631877 S     0.0 sshd
+== OpenBLAS check done 09:45:41, exit 0
+== hoisting check start 09:45:41
+== hoisting check done 09:45:48
+ALLDONE
+== after: 2026-11-21 04:45:48 EST (09:45:48 UTC)
+ 04:45:48 up 6 days,  4:37,  3 users,  load average: 22.73, 10.81, 15.86
+0, 00000000:0B:00.0, 1935 MHz, 39, 91.44 W, 66 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 27.44 W, 0 %, 59 MiB
+    PID STAT %CPU COMMAND
+ 631948 Sl+   3.0 btop
+     12 I     1.4 kworker/u256:0-atlantic
+   1260 S     0.1 irq/210-iwlwifi
+   2720 Sl+   0.1 gnome-shell
+   1942 Ssl   0.1 tailscaled
+ 631877 S     0.0 sshd
+   1622 Ssl   0.0 NetworkManager
+== lock released 09:45:48

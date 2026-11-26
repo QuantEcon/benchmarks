@@ -1,0 +1,42 @@
+== packages: start 03:38:10 UTC
+Using Python 3.12.16 environment at: /home/ubuntu/venv
+JAX 0.12.0.1: [TpuDevice(id=0, process_index=0, coords=(0,0,0), core_on_chip=0)]
+== lectures rep 1: start 03:38:16 UTC
+overborrowing rep 1: 126.0 s, cells ok True, float32
+wealth_dynamics_jax rep 1: 82.0 s, cells ok True, float32
+schelling_shocks rep 1: 37.8 s, cells ok True, float32
+opt_invest rep 1: exit 124
+opt_invest rep 1: no result
+hopenhayn rep 1: 145.1 s, cells ok True, float64
+== scale scripts: start 03:59:57 UTC
+float64 tpu a_size=200: hpi warm 0.320 s (13 it), greedy 0.28 ms, stored 0.21 ms, value 29.10 ms
+float64 tpu a_size=1000: hpi warm 0.494 s (15 it), greedy 0.78 ms, stored 0.36 ms, value 34.52 ms
+float64 tpu a_size=2000: hpi warm 0.592 s (14 it), greedy 2.36 ms, stored 0.66 ms, value 43.00 ms
+float64 tpu a_size=5000: hpi warm 0.857 s (11 it), greedy 13.32 ms, stored 4.99 ms, value 68.62 ms
+float64 tpu a_size=10000: hpi warm 1.906 s (12 it), greedy 51.03 ms, stored 19.03 ms, value 111.96 ms
+float64 tpu s_size=200: K warm 0.533 ms, cold 3.70 s, finite True
+float64 tpu s_size=1000: K warm 1.135 ms, cold 6.17 s, finite True
+float64 tpu s_size=5000: K warm 4.738 ms, cold 21.42 s, finite True
+float64 tpu s_size=20000: K warm 10.968 ms, cold 8.78 s, finite True
+float64 tpu s_size=50000: K warm 25.187 ms, cold 11.78 s, finite True
+float32 tpu a_size=200: hpi warm 0.026 s (13 it), greedy 0.24 ms, stored 0.20 ms, value 1.68 ms
+float32 tpu a_size=1000: hpi warm 0.071 s (15 it), greedy 0.25 ms, stored 0.25 ms, value 4.44 ms
+float32 tpu a_size=2000: hpi warm 0.112 s (14 it), greedy 0.26 ms, stored 0.34 ms, value 7.55 ms
+float32 tpu a_size=5000: hpi warm 0.231 s (15 it), greedy 0.40 ms, stored 0.95 ms, value 16.13 ms
+float32 tpu a_size=10000: hpi warm 0.478 s (15 it), greedy 0.91 ms, stored 2.95 ms, value 30.59 ms
+float32 tpu s_size=200: K warm 0.398 ms, cold 0.40 s, finite True
+float32 tpu s_size=1000: K warm 0.680 ms, cold 0.46 s, finite True
+float32 tpu s_size=5000: K warm 2.411 ms, cold 0.88 s, finite True
+float32 tpu s_size=20000: K warm 5.361 ms, cold 2.92 s, finite True
+float32 tpu s_size=50000: K warm 12.065 ms, cold 8.14 s, finite True
+== lectures rep 2: start 04:07:07 UTC
+overborrowing rep 2: 122.1 s, cells ok True, float32
+wealth_dynamics_jax rep 2: 81.8 s, cells ok True, float32
+schelling_shocks rep 2: 37.7 s, cells ok True, float32
+opt_invest rep 2: exit 124
+opt_invest rep 2: no result
+hopenhayn rep 2: 145.0 s, cells ok True, float64
+== lectures rep 3: start 04:28:43 UTC
+overborrowing rep 3: 122.1 s, cells ok True, float32
+wealth_dynamics_jax rep 3: 82.0 s, cells ok True, float32
+schelling_shocks rep 3: 37.7 s, cells ok True, float32

@@ -1,0 +1,25 @@
+== before: 2026-11-10 04:01:41 EST (09:01:41 UTC)
+ 04:01:41 up 1 day, 10:11,  2 users,  load average: 0.10, 0.06, 0.01
+0, 00000000:0B:00.0, 300 MHz, 35, 29.32 W, 0 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 39, 29.40 W, 0 %, 60 MiB
+    PID USER     STAT %CPU COMMAND
+ 224771 mamckay  Ssl  23.2 user-session-he
+ 224750 mamckay  Ss   22.0 systemd
+ 224774 mamckay  Ssl   5.8 wireplumber
+ 224768 mamckay  Ssl   2.3 pipewire
+ 224777 mamckay  Ssl   2.3 pipewire-pulse
+ 224867 mamckay  Ssl   1.4 xdg-document-po
+ 167408 root     I     1.2 kworker/u256:2-atlantic
+== after: 2026-11-10 04:25:11 EST (09:25:11 UTC)
+ 04:25:11 up 1 day, 10:35,  2 users,  load average: 1.02, 1.02, 1.00
+0, 00000000:0B:00.0, 1845 MHz, 78, 117.04 W, 76 %, 6 MiB
+1, 00000000:43:00.0, 300 MHz, 54, 30.12 W, 0 %, 59 MiB
+    PID USER     STAT %CPU COMMAND
+ 167408 root     I     1.2 kworker/u256:2-atlantic
+ 223410 gdm      Sl+   0.5 gnome-shell
+   1924 root     Ssl   0.1 tailscaled
+ 223280 gdm      Sl+   0.0 Xorg
+     15 root     I     0.0 rcu_preempt
+   1629 root     Ssl   0.0 NetworkManager
+   1258 root     S     0.0 irq/210-iwlwifi
+== lock released 09:25:11

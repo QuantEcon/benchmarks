@@ -1,0 +1,39 @@
+# Redacted for publication: the machine is a guest's, and software its owner's institution manages is shown as <managed agent>, with its CPU figures as recorded.
+== machine: start 2026-11-06 13:34:34 UTC; cmd: bash /Users/matt/bench/pbj-m5pro/machine.sh
+ProductName:		macOS
+ProductVersion:		26.7.1
+BuildVersion:		25G241
+Apple M5 Pro
+18
+6
+12
+68719476736
+2026-11-06 13:34:34 UTC
+ 8:34  up 15:42, 3 users, load averages: 1.27 1.34 2.12
+Now drawing from 'AC Power'
+ -InternalBattery-0 (id=8126563)	80%; AC attached; not charging present: true
+ powermode            0
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+There is a screen on:
+	37702.pbj-m5pro	(Detached)
+1 Socket in /var/folders/f_/0m_h5njx3yvddfxy7c5bs6f80000gq/T/.screen.
+
+  PID  %CPU %MEM    RSS COMM
+  318  14.8  0.6 414096 <managed agent>
+  317   5.5  0.4 244848 <managed agent>
+37704   4.3  0.0  10128 login
+  152   4.2  0.0  21696 /usr/libexec/opendirectoryd
+37699   2.9  0.0   2496 zsh
+37705   1.5  0.0   2064 bash
+  332   1.4  0.1  62448 <managed agent>
+  414   1.0  0.1  54064 <managed agent>
+  189   1.0  0.0  22544 /usr/libexec/runningboardd
+37689   0.9  0.0  20320 sshd-session: matt [priv]
+37702   0.8  0.0   1712 SCREEN
+37707   0.8  0.0   2064 bash
+  324   0.8  0.1  72144 <managed agent>
+  178   0.7  0.0   4544 /usr/sbin/notifyd
+on AC power, Low Power Mode off
+== machine: end 2026-11-06 13:34:34 UTC; exit 0; wall 0 s

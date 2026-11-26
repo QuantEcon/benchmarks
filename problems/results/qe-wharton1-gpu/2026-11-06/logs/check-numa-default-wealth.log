@@ -1,0 +1,4 @@
+Writing to /home/mamckay/bench/numa46/run-20261106T070845Z/check/qe-wharton1-gpu/2026-11-06.jsonl
+P4 wealth  households     10000 float64  numpy           warm     0.110 s  cold     0.111 s     200 iterations
+P4 wealth  households     10000 float64  numba-parallel  warm     0.009 s  cold     1.882 s     200 iterations
+P4 wealth  households     10000 float64  jax-cpu         warm     0.202 s  cold     0.808 s     200 iterations

@@ -18,7 +18,6 @@ except ImportError:  # JAX releases before shard_map left experimental
     from jax.experimental.shard_map import shard_map
 
 from spec import BLOCK
-from ssy import ssy_jvp, ssy_operator
 
 BETA = 0.96
 
@@ -130,6 +129,4 @@ BUILDERS = {
     "bellman_stored": bellman_stored,
     "bellman_recompute": bellman_recompute,
     "kalman": kalman,
-    "ssy_operator": ssy_operator,
-    "ssy_jvp": ssy_jvp,
 }

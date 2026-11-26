@@ -1,0 +1,34 @@
+== before: 2026-11-21 13:45:14 AEDT (02:45:14 UTC)
+13:45  up 11 days, 5 hrs, 1 user, load averages: 1.17 0.97 0.92
+  PID STAT  %CPU COMM
+38603 Ss+   19.2 claude
+ 3071 Ss     1.0 /bin/zsh
+34484 Ss+    0.9 /opt/homebrew/bin/claude
+37195 Ss+    0.7 /opt/homebrew/bin/claude
+79573 Ss+    0.7 /opt/homebrew/bin/claude
+48546 Ss+    0.6 claude
+33353 Ss+    0.4 claude
+34939 Ss+    0.4 /opt/homebrew/bin/claude
+89150 Ss+    0.4 claude
+ lowpowermode         0
+Now drawing from 'AC Power'
+== the wallpaper is not playing
+== start 2026-11-21T02:45:14Z at 11c1c59
+== problems start 02:45:14: stationary,hpi,time_iter,mle,mle_hand,mle_onepass,mle_blocked
+== problems done 04:01:30, exit 0
+ALLDONE
+== after: 2026-11-21 15:01:30 AEDT (04:01:30 UTC)
+15:01  up 11 days,  6:16, 2 users, load averages: 7.88 5.07 3.98
+  PID STAT  %CPU COMM
+35670 Ss+    9.5 /opt/homebrew/bin/claude
+55842 Ss+    6.3 /opt/homebrew/bin/claude
+34277 Ss+    2.1 claude
+38603 Ss+    0.7 claude
+36766 Ss+    0.3 claude
+94649 Ss+    0.3 claude
+34484 Ss+    0.2 /opt/homebrew/bin/claude
+89150 Ss+    0.2 claude
+37195 Ss+    0.1 /opt/homebrew/bin/claude
+ lowpowermode         0
+Now drawing from 'AC Power'
+== exit 2026-11-21T04:01:30Z

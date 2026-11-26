@@ -1,0 +1,12 @@
+certifi==2026.10.23
+charset-normalizer==3.5.2
+idna==3.20
+jax==0.12.0.1
+jaxlib==0.12.0.1
+libtpu==0.0.50.1
+ml-dtypes==0.6.0
+numpy==2.5.4
+opt-einsum==3.4.0
+requests==2.34.2
+scipy==1.18.1
+urllib3==2.8.0

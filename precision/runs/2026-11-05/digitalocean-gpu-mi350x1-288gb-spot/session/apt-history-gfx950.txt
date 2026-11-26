@@ -1,0 +1,3 @@
+Commandline: apt-get install -y -qq amdrocm-blas10.1-gfx950 amdrocm-core-dev10.1-gfx950 amdrocm-core10.1-gfx950 amdrocm-dnn10.1-gfx950 amdrocm-fft10.1-gfx950 amdrocm-rand10.1-gfx950 amdrocm-rccl10.1-gfx950 amdrocm-solver10.1-gfx950 amdrocm-sparse10.1-gfx950
+Install: amdrocm-rccl10.1-gfx950:amd64 (10.1.0-3), amdrocm-solver10.1-gfx950:amd64 (10.1.0-3), amdrocm-core-dev10.1-gfx950:amd64 (10.1.0-3), amdrocm-fft10.1-gfx950:amd64 (10.1.0-3), amdrocm-core10.1-gfx950:amd64 (10.1.0-3), amdrocm-sparse10.1-gfx950:amd64 (10.1.0-3), amdrocm-rand10.1-gfx950:amd64 (10.1.0-3), amdrocm-blas10.1-gfx950:amd64 (10.1.0-3), amdrocm-dnn10.1-gfx950:amd64 (10.1.0-3)
+End-Date: 2026-11-05  23:10:45

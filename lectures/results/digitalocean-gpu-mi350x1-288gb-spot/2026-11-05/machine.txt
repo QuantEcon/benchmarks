@@ -1,0 +1,261 @@
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.5 LTS (Noble Numbat)"
+kernel 6.8.0-146-generic, amdgpu module 6.19.14.31400000, ROCm in /opt/rocm: none
+AMDSMI Tool: 27.1.0+7da43026 | AMDSMI Library version: 27.1.0 | ROCm version: 10.1.0 | amdgpu version: 6.19.14.31400000 | ionic version: N/A
+GPU: 0
+    ASIC:
+        MARKET_NAME: AMD Instinct MI350X VF
+        VENDOR_ID: 0x1002
+        VENDOR_NAME: Advanced Micro Devices Inc. [AMD/ATI]
+        SUBVENDOR_ID: 0x1002
+        DEVICE_ID: 0x75b0
+        SUBSYSTEM_ID: 0x75a0
+        REV_ID: 0x00
+        CHIP_REV_ID: 0x00
+        EXTERNAL_REV_ID: 0x50
+        ASIC_SERIAL: 0x7AAC9FFFD325A9A5
+        OAM_ID: 3
+        PHYSICAL_ACC_ID: N/A
+        NUM_COMPUTE_UNITS: 256
+        TARGET_GRAPHICS_VERSION: gfx950
+        FLAGS: 258
+    BUS:
+        BDF: 0000:83:00.0
+        MAX_PCIE_WIDTH: 16
+        MAX_PCIE_SPEED: 32 GT/s
+        PCIE_LEVELS: N/A
+        PCIE_INTERFACE_VERSION: Gen 5
+        SLOT_TYPE: OAM
+    IFWI:
+        NAME: AMD MI350X
+        BUILD_DATE: 2026/01/22 17:08
+        PART_NUMBER: 113-M350-01-1K1-030A
+        VERSION: 00175783
+        BOOT_FIRMWARE: 023.040.001.008.000001
+    DRIVER:
+        NAME: amdgpu
+        VERSION: 6.19.14.31400000
+        OS_KERNEL_VERSION: 6.8.0-146-generic
+    BOARD:
+        MODEL_NUMBER: N/A
+        PRODUCT_SERIAL: N/A
+        FRU_ID: N/A
+        PRODUCT_NAME: N/A
+        MANUFACTURER_NAME: Advanced Micro Devices, Inc. [AMD/ATI]
+    RAS:
+        EEPROM_VERSION: 0x0
+        BAD_PAGE_THRESHOLD: 0
+        BAD_PAGE_THRESHOLD_EXCEEDED: False
+        PARITY_SCHEMA: DISABLED
+        SINGLE_BIT_SCHEMA: DISABLED
+        DOUBLE_BIT_SCHEMA: DISABLED
+        POISON_SCHEMA: ENABLED
+        ECC_BLOCK_STATE:
+            UMC: ENABLED
+            SDMA: ENABLED
+            GFX: ENABLED
+            MMHUB: ENABLED
+            ATHUB: ENABLED
+            PCIE_BIF: ENABLED
+            HDP: ENABLED
+            XGMI_WAFL: ENABLED
+            DF: ENABLED
+            SMN: ENABLED
+            SEM: DISABLED
+            MP0: ENABLED
+            MP1: ENABLED
+            FUSE: DISABLED
+            MCA: ENABLED
+            VCN: ENABLED
+            JPEG: ENABLED
+            IH: ENABLED
+            MPIO: ENABLED
+            MMSCH: DISABLED
+            MP5: DISABLED
+            ATU: DISABLED
+            DACC_BE: DISABLED
+            ECLR: DISABLED
+            KPX_SERDES: DISABLED
+            LSDMA: DISABLED
+            MPART: DISABLED
+            MPIFOE: DISABLED
+            MPRAS: DISABLED
+            NBIF: ENABLED
+            NBIO: ENABLED
+            OXRP: DISABLED
+            PCIE_PL: DISABLED
+            PCS_XGMI: DISABLED
+            PIE: DISABLED
+            CS: DISABLED
+            SHUB: DISABLED
+            SSBDCI: DISABLED
+            UCIE_PCS: DISABLED
+    PROCESS_ISOLATION: Disabled
+    VRAM:
+        TYPE: HBM3E
+        VENDOR: MICRON
+        SIZE: 294592 MB
+        BIT_WIDTH: 2048
+        MAX_BANDWIDTH: 8192 GB/s
+    CACHE_INFO:
+        CACHE_0:
+            CACHE_ACRONYM: L1D
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 32 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 1
+            NUM_CACHE_INSTANCE: 256
+            TOTAL_CACHE_SIZE: 8192 KB
+        CACHE_1:
+            CACHE_ACRONYM: L1I
+            CACHE_PROPERTIES: INST_CACHE, SIMD_CACHE
+            CACHE_SIZE: 64 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 2
+            NUM_CACHE_INSTANCE: 112
+            TOTAL_CACHE_SIZE: 7168 KB
+        CACHE_2:
+            CACHE_ACRONYM: L1I
+            CACHE_PROPERTIES: INST_CACHE, SIMD_CACHE
+            CACHE_SIZE: 64 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 1
+            NUM_CACHE_INSTANCE: 32
+            TOTAL_CACHE_SIZE: 2048 KB
+        CACHE_3:
+            CACHE_ACRONYM: L1D
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 16 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 2
+            NUM_CACHE_INSTANCE: 112
+            TOTAL_CACHE_SIZE: 1792 KB
+        CACHE_4:
+            CACHE_ACRONYM: L1D
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 16 KB
+            CACHE_LEVEL: 1
+            MAX_NUM_CU_SHARED: 1
+            NUM_CACHE_INSTANCE: 32
+            TOTAL_CACHE_SIZE: 512 KB
+        CACHE_5:
+            CACHE_ACRONYM: L2
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 4096 KB
+            CACHE_LEVEL: 2
+            MAX_NUM_CU_SHARED: 256
+            NUM_CACHE_INSTANCE: 1
+            TOTAL_CACHE_SIZE: 4096 KB
+        CACHE_6:
+            CACHE_ACRONYM: L3
+            CACHE_PROPERTIES: DATA_CACHE, SIMD_CACHE
+            CACHE_SIZE: 262144 KB
+            CACHE_LEVEL: 3
+            MAX_NUM_CU_SHARED: 256
+            NUM_CACHE_INSTANCE: 1
+            TOTAL_CACHE_SIZE: 262144 KB
+    MEM_CARVEOUT: N/A (UMA carveout is not supported on this ASIC/VBIOS)
+    CLOCK:
+        SYS:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 154 MHz
+                LEVEL 1: 500 MHz
+                LEVEL 2: 2200 MHz
+        MEM:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 2000 MHz
+        DF:
+            CURRENT_LEVEL: 1
+            FREQUENCY_LEVELS:
+                LEVEL 0: 1250 MHz
+                LEVEL 1: 1500 MHz
+        SOC:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 45 MHz
+                LEVEL 1: 1200 MHz
+        DCEF: N/A
+        VCLK0:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 59 MHz
+                LEVEL 1: 1900 MHz
+        VCLK1: N/A
+        DCLK0:
+            CURRENT_LEVEL: 0
+            FREQUENCY_LEVELS:
+                LEVEL 0: 48 MHz
+                LEVEL 1: 1520 MHz
+        DCLK1: N/A
+
+ACCESS TABLE:
+             0000:83:00.0
+0000:83:00.0 ENABLED
+WEIGHT TABLE:
+             0000:83:00.0
+0000:83:00.0 0
+HOPS TABLE:
+             0000:83:00.0
+0000:83:00.0 0
+LINK TYPE TABLE:
+             0000:83:00.0
+0000:83:00.0 SELF
+NUMA BW TABLE:
+             0000:83:00.0
+0000:83:00.0 N/A
+CACHE COHERENCY TABLE:
+             0000:83:00.0
+0000:83:00.0 SELF
+ATOMICS TABLE:
+             0000:83:00.0
+0000:83:00.0 SELF
+DMA TABLE:
+             0000:83:00.0
+0000:83:00.0 SELF
+BI-DIRECTIONAL TABLE:
+             0000:83:00.0
+0000:83:00.0 SELF
+
+
+Legend:
+  SELF = Current GPU
+  ENABLED / DISABLED = Link is enabled or disabled
+  N/A = Not supported
+  T/F = True / False
+  C/NC = Coherent / Non-Coherent io links
+  64,32 = 64 bit and 32 bit atomic support
+  <BW from>-<BW to>
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           52 bits physical, 57 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  24
+On-line CPU(s) list:                     0-23
+Vendor ID:                               AuthenticAMD
+BIOS Vendor ID:                          QEMU
+Model name:                              AMD EPYC 9575F 64-Core Processor
+BIOS Model name:                         pc-q35-6.1  CPU @ 2.0GHz
+BIOS CPU family:                         1
+CPU family:                              26
+Model:                                   2
+Thread(s) per core:                      1
+Core(s) per socket:                      24
+Socket(s):                               1
+Stepping:                                1
+BogoMIPS:                                6599.99
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm rep_good nopl cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy svm cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw perfctr_core ssbd perfmon_v2 ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 clzero xsaveerptr wbnoinvd arat npt lbrv nrip_save tsc_scale vmcb_clean flushbyasid pausefilter pfthreshold v_vmsave_vmload vgif vnmi avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq la57 rdpid movdiri movdir64b overflow_recov succor fsrm avx512_vp2intersect arch_capabilities
+Virtualization:                          AMD-V
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               1.5 MiB (24 instances)
+L1i cache:                               1.5 MiB (24 instances)
+L2 cache:                                12 MiB (24 instances)
+               total        used        free      shared  buff/cache   available
+Mem:             251           7         238           0           8         244
+Swap:              0           0           0
+AMD Instinct MI350X VF allocator limit, GiB: 215.77
+AMD Instinct MI350X VF allocator limit, GiB: 273.3

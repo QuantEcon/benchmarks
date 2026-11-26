@@ -1,0 +1,133 @@
+== 9. JAX through the legacy cuBLAS API
+-- legacy
+-- legacy-emulate
+-- legacy-emulate-autotune0
+== 10. the emulation against the inputs' range, n = 8192
+-- cupy-native-range
+-- cupy-emulate-range
+label                      kind               n  TFLOPS  error/u  first_s  targets
+native                     uniform         2048    1.70    36.76      7.2  (no custom call)
+native                     uniform         8192    1.71    70.62     67.9  (no custom call)
+native                     uniform        16384    1.72   112.80    508.8  (no custom call)
+native                     normal          2048    1.69     3.22      0.0  (no custom call)
+native                     normal          8192    1.71     3.09      0.7  (no custom call)
+native                     normal         16384    1.72     2.77      5.3  (no custom call)
+native                     lognormal       2048    1.69    65.03      0.0  (no custom call)
+native                     lognormal       8192    1.71   243.13      0.7  (no custom call)
+native                     lognormal      16384    1.72   437.55      5.3  (no custom call)
+emulate                    uniform         2048    1.69    36.76      6.9  __triton_nested_gemm_fusion
+emulate                    uniform         8192    1.71    70.62     67.4  __triton_nested_gemm_fusion
+emulate                    normal          2048    1.69     2.90      0.0  __triton_nested_gemm_fusion
+emulate                    normal          8192    1.71     3.26      0.7  __triton_nested_gemm_fusion
+emulate                    lognormal       2048    1.69    58.40      0.0  __triton_nested_gemm_fusion
+emulate                    lognormal       8192    1.71   220.71      0.7  __triton_nested_gemm_fusion
+cublas                     uniform         2048    1.48    19.83      0.3  __cublas$lt$matmul
+cublas                     uniform         8192    1.49    70.62      6.7  __cublas$lt$matmul
+cublas                     uniform        16384    1.51   112.80     52.8  __cublas$lt$matmul
+cublas                     normal          2048    1.48     1.87      0.0  __cublas$lt$matmul
+cublas                     normal          8192    1.50     3.09      0.8  __cublas$lt$matmul
+cublas                     normal         16384    1.51     2.77      6.0  __cublas$lt$matmul
+cublas                     lognormal       2048    1.48    34.93      0.0  __cublas$lt$matmul
+cublas                     lognormal       8192    1.50   243.13      0.8  __cublas$lt$matmul
+cublas                     lognormal      16384    1.51   437.55      6.0  __cublas$lt$matmul
+cublas-emulate             uniform         2048    1.68    12.64      0.2  __cublas$lt$matmul
+cublas-emulate             uniform         8192    1.69    70.62      6.2  __cublas$lt$matmul
+cublas-emulate             uniform        16384    1.71   112.80     49.4  __cublas$lt$matmul
+cublas-emulate             normal          2048    1.67     1.59      0.0  __cublas$lt$matmul
+cublas-emulate             normal          8192    1.69     3.09      0.7  __cublas$lt$matmul
+cublas-emulate             normal         16384    1.71     2.77      5.4  __cublas$lt$matmul
+cublas-emulate             lognormal       2048    1.68    35.83      0.0  __cublas$lt$matmul
+cublas-emulate             lognormal       8192    1.69   243.13      0.7  __cublas$lt$matmul
+cublas-emulate             lognormal      16384    1.71   437.55      5.4  __cublas$lt$matmul
+cublas-emulate-eager       uniform         2048    1.67    12.64      0.2  __cublas$lt$matmul
+cublas-emulate-eager       uniform         8192    1.69    70.62      6.2  __cublas$lt$matmul
+cublas-emulate-eager       uniform        16384    1.71   112.80     49.5  __cublas$lt$matmul
+cublas-emulate-eager       normal          2048    1.67     1.59      0.0  __cublas$lt$matmul
+cublas-emulate-eager       normal          8192    1.69     3.09      0.7  __cublas$lt$matmul
+cublas-emulate-eager       normal         16384    1.71     2.77      5.4  __cublas$lt$matmul
+cublas-emulate-eager       lognormal       2048    1.68    35.83      0.0  __cublas$lt$matmul
+cublas-emulate-eager       lognormal       8192    1.69   243.13      0.7  __cublas$lt$matmul
+cublas-emulate-eager       lognormal      16384    1.71   437.55      5.4  __cublas$lt$matmul
+cublaslt-emulate           uniform         2048    1.67    12.64      0.2  __cublas$lt$matmul
+cublaslt-emulate           uniform         8192    1.69    70.62      6.2  __cublas$lt$matmul
+cublaslt-emulate           normal          2048    1.67     1.28      0.0  __cublas$lt$matmul
+cublaslt-emulate           normal          8192    1.69     3.26      0.7  __cublas$lt$matmul
+cublaslt-emulate           lognormal       2048    1.68    30.37      0.0  __cublas$lt$matmul
+cublaslt-emulate           lognormal       8192    1.69   220.71      0.7  __cublas$lt$matmul
+autotune0                  normal          2048    1.68     1.82      0.2  __triton_nested_gemm_fusion
+autotune0                  normal          8192    1.71     3.30      1.0  __triton_nested_gemm_fusion
+autotune0                  normal         16384    1.71     2.77      5.5  __triton_nested_gemm_fusion
+cupy-native                uniform         2048    1.48    19.83      0.1  cupy.matmul
+cupy-native                uniform         8192    1.49    70.62      0.7  cupy.matmul
+cupy-native                uniform        16384    1.51   112.80      5.9  cupy.matmul
+cupy-native                normal          2048    1.49     1.87      0.0  cupy.matmul
+cupy-native                normal          8192    1.49     3.09      0.7  cupy.matmul
+cupy-native                normal         16384    1.51     2.77      5.9  cupy.matmul
+cupy-native                lognormal       2048    1.49    34.93      0.0  cupy.matmul
+cupy-native                lognormal       8192    1.49   243.13      0.7  cupy.matmul
+cupy-native                lognormal      16384    1.51   437.55      5.9  cupy.matmul
+cupy-emulate               uniform         2048   11.10     1.82      0.1  cupy.matmul
+cupy-emulate               uniform         8192   27.96     1.77      0.1  cupy.matmul
+cupy-emulate               uniform        16384   31.71     1.83      0.3  cupy.matmul
+cupy-emulate               normal          2048   10.81     0.11      0.0  cupy.matmul
+cupy-emulate               normal          8192   27.03     0.06      0.1  cupy.matmul
+cupy-emulate               normal         16384   30.63     0.06      0.3  cupy.matmul
+cupy-emulate               lognormal       2048    1.47    57.22      0.0  cupy.matmul
+cupy-emulate               lognormal       8192    1.50   212.22      0.7  cupy.matmul
+cupy-emulate               lognormal      16384    1.51   411.73      5.9  cupy.matmul
+cupy-emulate-eager         uniform         2048   11.06     1.82      0.1  cupy.matmul
+cupy-emulate-eager         uniform         8192   27.97     1.77      0.1  cupy.matmul
+cupy-emulate-eager         uniform        16384   31.74     1.83      0.3  cupy.matmul
+cupy-emulate-eager         normal          2048   10.81     0.11      0.0  cupy.matmul
+cupy-emulate-eager         normal          8192   27.03     0.06      0.1  cupy.matmul
+cupy-emulate-eager         normal         16384   30.50     0.06      0.3  cupy.matmul
+cupy-emulate-eager         lognormal       2048    1.47    57.22      0.0  cupy.matmul
+cupy-emulate-eager         lognormal       8192    1.50   212.22      0.7  cupy.matmul
+cupy-emulate-eager         lognormal      16384    1.51   411.73      5.9  cupy.matmul
+cupy-mathmode              uniform         2048   11.08     1.82      0.1  cupy.matmul
+cupy-mathmode              uniform         8192   27.96     1.77      0.1  cupy.matmul
+cupy-mathmode              uniform        16384   31.71     1.83      0.3  cupy.matmul
+cupy-mathmode              normal          2048   10.83     0.11      0.0  cupy.matmul
+cupy-mathmode              normal          8192   27.03     0.06      0.1  cupy.matmul
+cupy-mathmode              normal         16384   30.51     0.06      0.3  cupy.matmul
+cupy-mathmode              lognormal       2048    1.47    57.22      0.0  cupy.matmul
+cupy-mathmode              lognormal       8192    1.50   212.22      0.7  cupy.matmul
+cupy-mathmode              lognormal      16384    1.51   411.73      5.9  cupy.matmul
+cupy-mathmode-eager        uniform         2048   11.06     1.82      0.1  cupy.matmul
+cupy-mathmode-eager        uniform         8192   27.96     1.77      0.1  cupy.matmul
+cupy-mathmode-eager        uniform        16384   31.38     1.83      0.3  cupy.matmul
+cupy-mathmode-eager        normal          2048   10.80     0.11      0.0  cupy.matmul
+cupy-mathmode-eager        normal          8192   27.03     0.06      0.1  cupy.matmul
+cupy-mathmode-eager        normal         16384   30.61     0.06      0.3  cupy.matmul
+cupy-mathmode-eager        lognormal       2048    1.47    57.22      0.0  cupy.matmul
+cupy-mathmode-eager        lognormal       8192    1.50   212.22      0.7  cupy.matmul
+cupy-mathmode-eager        lognormal      16384    1.51   411.73      5.9  cupy.matmul
+legacy                     uniform         2048    1.48    19.83      0.3  __cublas$lt$matmul
+legacy                     uniform         8192    1.50    70.62      6.7  __cublas$lt$matmul
+legacy                     uniform        16384    1.51   112.80     52.8  __cublas$lt$matmul
+legacy                     normal          2048    1.48     1.87      0.0  __cublas$lt$matmul
+legacy                     normal          8192    1.50     3.09      0.8  __cublas$lt$matmul
+legacy                     normal         16384    1.51     2.77      6.0  __cublas$lt$matmul
+legacy-emulate             uniform         2048    1.68    12.64      0.2  __cublas$lt$matmul
+legacy-emulate             uniform         8192    1.69    70.62      6.2  __cublas$lt$matmul
+legacy-emulate             uniform        16384    1.71   112.80     49.4  __cublas$lt$matmul
+legacy-emulate             normal          2048    1.68     1.59      0.0  __cublas$lt$matmul
+legacy-emulate             normal          8192    1.69     3.09      0.7  __cublas$lt$matmul
+legacy-emulate             normal         16384    1.71     2.77      5.4  __cublas$lt$matmul
+legacy-emulate-autotune0   uniform         2048    1.36    36.76      0.1  __cublas$lt$matmul
+legacy-emulate-autotune0   uniform         8192    1.49    70.62      0.8  __cublas$lt$matmul
+legacy-emulate-autotune0   uniform        16384    1.51   112.80      6.1  __cublas$lt$matmul
+legacy-emulate-autotune0   normal          2048    1.36     3.22      0.0  __cublas$lt$matmul
+legacy-emulate-autotune0   normal          8192    1.50     3.09      0.8  __cublas$lt$matmul
+legacy-emulate-autotune0   normal         16384    1.51     2.77      6.0  __cublas$lt$matmul
+cupy-native-range          lognormal0.5    8192    1.49    85.43      0.8  cupy.matmul
+cupy-native-range          lognormal1      8192    1.49    85.18      0.7  cupy.matmul
+cupy-native-range          lognormal2      8192    1.49    96.17      0.7  cupy.matmul
+cupy-native-range          lognormal3      8192    1.49   119.11      0.7  cupy.matmul
+cupy-native-range          lognormal4      8192    1.49   115.87      0.7  cupy.matmul
+cupy-emulate-range         lognormal0.5    8192   27.95     1.51      0.1  cupy.matmul
+cupy-emulate-range         lognormal1      8192   26.16     1.42      0.1  cupy.matmul
+cupy-emulate-range         lognormal2      8192   23.83     2.13      0.1  cupy.matmul
+cupy-emulate-range         lognormal3      8192   21.30     2.11      0.1  cupy.matmul
+cupy-emulate-range         lognormal4      8192   19.74     2.06      0.1  cupy.matmul
+== Done (6): ~/blackwell-2026-11-01.tgz

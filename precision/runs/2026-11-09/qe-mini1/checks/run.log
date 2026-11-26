@@ -1,0 +1,9 @@
+== ynn_dot_check, default 02:33:46
+== ynn_dot_check, fusion cleared, float32 three times 02:33:52
+== #4's reproducer 02:33:59
+== run_matrix, kalman and matmul, default 02:34:00
+== run_matrix, kalman and matmul, ynn-cleared 02:34:45
+== probe48 run1 02:35:27
+== probe48 run2 02:36:20
+== probe48 run3 02:37:12
+== done 02:38:05

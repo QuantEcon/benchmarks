@@ -1,0 +1,88 @@
+HloModule jit__lambda, is_scheduled=true, entry_computation_layout={(f64[16000,16000]{1,0}, f64[16000]{0})->f64[16000]{0}}, allow_spmd_sharding_propagation_to_parameters={true,true}, allow_spmd_sharding_propagation_to_output={true}
+
+FileNames
+1 "/Users/mmcky/work/quantecon/benchmarks/precision/probes/mac_float64/probe.py"
+
+FunctionNames
+1 "<module>"
+2 "cliff"
+3 "timed"
+4 "cliff.<locals>.<lambda>"
+
+FileLocations
+1 {file_name_id=1 function_name_id=1 line=315 end_line=315 column=8 end_column=38}
+2 {file_name_id=1 function_name_id=2 line=195 end_line=195 column=25 end_column=84}
+3 {file_name_id=1 function_name_id=3 line=61 end_line=61 column=10 end_column=16}
+4 {file_name_id=1 function_name_id=4 line=195 end_line=195 column=39 end_column=46}
+5 {file_name_id=1 function_name_id=4 line=188 end_line=188 column=41 end_column=79}
+6 {file_name_id=1 function_name_id=4 line=188 end_line=188 column=53 end_column=70}
+7 {file_name_id=1 function_name_id=4 line=188 end_line=188 column=60 end_column=70}
+8 {file_name_id=1 function_name_id=4 line=188 end_line=188 column=49 end_column=70}
+
+StackFrames
+1 {file_location_id=1 parent_frame_id=1}
+2 {file_location_id=2 parent_frame_id=2}
+3 {file_location_id=3 parent_frame_id=3}
+4 {file_location_id=4 parent_frame_id=4}
+5 {file_location_id=5 parent_frame_id=5}
+6 {file_location_id=6 parent_frame_id=5}
+7 {file_location_id=7 parent_frame_id=5}
+8 {file_location_id=8 parent_frame_id=5}
+
+
+%fused_computation (param_0: f64[16000,16000], param_1.2: f64[16000]) -> f64[16000,16000] {
+  %param_0 = f64[16000,16000]{1,0} parameter(0)
+  %param_1.2 = f64[16000]{0} parameter(1)
+  %constant.0 = f64[] constant(0.96)
+  %broadcast.3 = f64[16000]{0} broadcast(%constant.0), dimensions={}, metadata={op_name="jit(<lambda>)/mul" stack_frame_id=6}
+  %mul.1 = f64[16000]{0} multiply(%param_1.2, %broadcast.3), metadata={op_name="jit(<lambda>)/mul" stack_frame_id=6}
+  %add.1 = f64[16000,16000]{1,0} broadcast(%mul.1), dimensions={1}, metadata={op_name="jit(<lambda>)/add" stack_frame_id=8}
+  ROOT %add.0 = f64[16000,16000]{1,0} add(%param_0, %add.1), metadata={op_name="jit(<lambda>)/add" stack_frame_id=8}
+}
+
+%region_0.1 (reduce_max.3: f64[], reduce_max.4: f64[]) -> f64[] {
+  %reduce_max.3 = f64[] parameter(0), metadata={op_name="reduce_max"}
+  %reduce_max.4 = f64[] parameter(1), metadata={op_name="reduce_max"}
+  ROOT %reduce_max.5 = f64[] maximum(%reduce_max.3, %reduce_max.4), metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+%wrapped_reduce-window_computation (param_0.1: f64[16000,16000], param_1.3: f64[]) -> f64[16000,500] {
+  %param_0.1 = f64[16000,16000]{1,0} parameter(0)
+  %param_1.3 = f64[] parameter(1)
+  ROOT %reduce-window.2 = f64[16000,500]{1,0} reduce-window(%param_0.1, %param_1.3), window={size=1x32 stride=1x32}, to_apply=%region_0.1
+}
+
+%region_0.1.clone (reduce_max.0: f64[], reduce_max.1: f64[]) -> f64[] {
+  %reduce_max.0 = f64[] parameter(0), metadata={op_name="reduce_max"}
+  %reduce_max.1 = f64[] parameter(1), metadata={op_name="reduce_max"}
+  ROOT %reduce_max.2 = f64[] maximum(%reduce_max.0, %reduce_max.1), metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+%wrapped_reduce-window_computation.1 (param_0.2: f64[16000,500], param_1.4: f64[]) -> f64[16000,16] {
+  %param_0.2 = f64[16000,500]{1,0} parameter(0)
+  %param_1.4 = f64[] parameter(1)
+  ROOT %reduce-window.3 = f64[16000,16]{1,0} reduce-window(%param_0.2, %param_1.4), window={size=1x32 stride=1x32 pad=0_0x6_6}, to_apply=%region_0.1.clone
+}
+
+%region_0.1.clone.1 (reduce_max.6: f64[], reduce_max.8: f64[]) -> f64[] {
+  %reduce_max.6 = f64[] parameter(0), metadata={op_name="reduce_max"}
+  %reduce_max.8 = f64[] parameter(1), metadata={op_name="reduce_max"}
+  ROOT %reduce_max.9 = f64[] maximum(%reduce_max.6, %reduce_max.8), metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+%wrapped_reduce_computation (param_0.3: f64[16000,16], param_1.5: f64[]) -> f64[16000] {
+  %param_0.3 = f64[16000,16]{1,0} parameter(0)
+  %param_1.5 = f64[] parameter(1)
+  ROOT %reduce_max.10 = f64[16000]{0} reduce(%param_0.3, %param_1.5), dimensions={1}, to_apply=%region_0.1.clone.1, metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}
+}
+
+ENTRY %main.2 (R.1: f64[16000,16000], v.1: f64[16000]) -> f64[16000] {
+  %R.1 = f64[16000,16000]{1,0} parameter(0), metadata={op_name="R"}
+  %v.1 = f64[16000]{0} parameter(1), metadata={op_name="v"}
+  %constant.3 = f64[] constant(-inf)
+  %broadcast_add_fusion = f64[16000,16000]{1,0} fusion(%R.1, %v.1), kind=kLoop, calls=%fused_computation, metadata={op_name="jit(<lambda>)/add" stack_frame_id=8}, backend_config={"outer_dimension_partitions":["4"]}
+  %wrapped_reduce-window = f64[16000,500]{1,0} fusion(%broadcast_add_fusion, %constant.3), kind=kLoop, calls=%wrapped_reduce-window_computation, backend_config={"outer_dimension_partitions":["4"]}
+  %wrapped_reduce-window.1 = f64[16000,16]{1,0} fusion(%wrapped_reduce-window, %constant.3), kind=kLoop, calls=%wrapped_reduce-window_computation.1, backend_config={"outer_dimension_partitions":["4"]}
+  ROOT %wrapped_reduce = f64[16000]{0} fusion(%wrapped_reduce-window.1, %constant.3), kind=kLoop, calls=%wrapped_reduce_computation, metadata={op_name="jit(<lambda>)/reduce_max" stack_frame_id=5}, backend_config={"outer_dimension_partitions":["4"]}
+}
+

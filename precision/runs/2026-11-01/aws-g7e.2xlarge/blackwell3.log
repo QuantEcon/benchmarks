@@ -1,0 +1,61 @@
+== 2b. the emulation variable on XLA's default path
+-- emulate
+== 5. float64 matmul through cuBLAS
+-- cublas
+-- cublas-emulate
+-- cublas-emulate-eager
+-- cublaslt-emulate
+== 6. the compiled dot, and cuBLAS's log, with Triton on and off
+== 4. CuPy, as a control: does the emulation work on this card when cuBLAS is called directly?
+blackwell3.sh: line 43: uv: command not found
+CuPy: install failed
+label                  kind            n  TFLOPS  error/u  first_s  targets
+native                 uniform      2048    1.70    36.76      7.2  (no custom call)
+native                 uniform      8192    1.71    70.62     67.9  (no custom call)
+native                 uniform     16384    1.72   112.80    508.8  (no custom call)
+native                 normal       2048    1.69     3.22      0.0  (no custom call)
+native                 normal       8192    1.71     3.09      0.7  (no custom call)
+native                 normal      16384    1.72     2.77      5.3  (no custom call)
+native                 lognormal    2048    1.69    65.03      0.0  (no custom call)
+native                 lognormal    8192    1.71   243.13      0.7  (no custom call)
+native                 lognormal   16384    1.72   437.55      5.3  (no custom call)
+emulate                uniform      2048    1.69    36.76      6.9  __triton_nested_gemm_fusion
+emulate                uniform      8192    1.71    70.62     67.4  __triton_nested_gemm_fusion
+emulate                normal       2048    1.69     2.90      0.0  __triton_nested_gemm_fusion
+emulate                normal       8192    1.71     3.26      0.7  __triton_nested_gemm_fusion
+emulate                lognormal    2048    1.69    58.40      0.0  __triton_nested_gemm_fusion
+emulate                lognormal    8192    1.71   220.71      0.7  __triton_nested_gemm_fusion
+cublas                 uniform      2048    1.48    19.83      0.3  __cublas$lt$matmul
+cublas                 uniform      8192    1.49    70.62      6.7  __cublas$lt$matmul
+cublas                 uniform     16384    1.51   112.80     52.8  __cublas$lt$matmul
+cublas                 normal       2048    1.48     1.87      0.0  __cublas$lt$matmul
+cublas                 normal       8192    1.50     3.09      0.8  __cublas$lt$matmul
+cublas                 normal      16384    1.51     2.77      6.0  __cublas$lt$matmul
+cublas                 lognormal    2048    1.48    34.93      0.0  __cublas$lt$matmul
+cublas                 lognormal    8192    1.50   243.13      0.8  __cublas$lt$matmul
+cublas                 lognormal   16384    1.51   437.55      6.0  __cublas$lt$matmul
+cublas-emulate         uniform      2048    1.68    12.64      0.2  __cublas$lt$matmul
+cublas-emulate         uniform      8192    1.69    70.62      6.2  __cublas$lt$matmul
+cublas-emulate         uniform     16384    1.71   112.80     49.4  __cublas$lt$matmul
+cublas-emulate         normal       2048    1.67     1.59      0.0  __cublas$lt$matmul
+cublas-emulate         normal       8192    1.69     3.09      0.7  __cublas$lt$matmul
+cublas-emulate         normal      16384    1.71     2.77      5.4  __cublas$lt$matmul
+cublas-emulate         lognormal    2048    1.68    35.83      0.0  __cublas$lt$matmul
+cublas-emulate         lognormal    8192    1.69   243.13      0.7  __cublas$lt$matmul
+cublas-emulate         lognormal   16384    1.71   437.55      5.4  __cublas$lt$matmul
+cublas-emulate-eager   uniform      2048    1.67    12.64      0.2  __cublas$lt$matmul
+cublas-emulate-eager   uniform      8192    1.69    70.62      6.2  __cublas$lt$matmul
+cublas-emulate-eager   uniform     16384    1.71   112.80     49.5  __cublas$lt$matmul
+cublas-emulate-eager   normal       2048    1.67     1.59      0.0  __cublas$lt$matmul
+cublas-emulate-eager   normal       8192    1.69     3.09      0.7  __cublas$lt$matmul
+cublas-emulate-eager   normal      16384    1.71     2.77      5.4  __cublas$lt$matmul
+cublas-emulate-eager   lognormal    2048    1.68    35.83      0.0  __cublas$lt$matmul
+cublas-emulate-eager   lognormal    8192    1.69   243.13      0.7  __cublas$lt$matmul
+cublas-emulate-eager   lognormal   16384    1.71   437.55      5.4  __cublas$lt$matmul
+cublaslt-emulate       uniform      2048    1.67    12.64      0.2  __cublas$lt$matmul
+cublaslt-emulate       uniform      8192    1.69    70.62      6.2  __cublas$lt$matmul
+cublaslt-emulate       normal       2048    1.67     1.28      0.0  __cublas$lt$matmul
+cublaslt-emulate       normal       8192    1.69     3.26      0.7  __cublas$lt$matmul
+cublaslt-emulate       lognormal    2048    1.68    30.37      0.0  __cublas$lt$matmul
+cublaslt-emulate       lognormal    8192    1.69   220.71      0.7  __cublas$lt$matmul
+== Done (3): ~/blackwell-2026-11-01.tgz

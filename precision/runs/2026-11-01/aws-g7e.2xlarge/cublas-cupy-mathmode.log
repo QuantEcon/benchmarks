@@ -1,0 +1,86 @@
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasCreate_v2(cublasContext**) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x7ffe80b053a8)
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x(nil))
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasSetMathMode(cublasHandle_t, cublasMath_t) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i!  mode: type=cublasMath_t; val=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH(8)
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_DEFAULT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasGetMathMode(cublasHandle_t, cublasMath_t*) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i!  mode: type=cublasMath_t; val=POINTER (IN HEX:0x0x7ffe80b05630)
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasGetVersion_v2(cublasHandle_t, int*) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i!  version: type=int; val=POINTER (IN HEX:0x0x7ffe80b05630)
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasSetStream_v2(cublasHandle_t, cudaStream_t) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i!  streamId: type=SOME TYPE; val=POINTER (IN HEX:0x(nil))
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasGemmEx(cublasHandle_t, cublasOperation_t, cublasOperation_t, int, int, int, const void*, const void*, cudaDataType, int, const void*, cudaDataType, int, const void*, void*, cudaDataType, int, cublasComputeType_t, cublasGemmAlgo_t) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i!  transa: type=cublasOperation_t; val=CUBLAS_OP_N(0)
+i!  transb: type=cublasOperation_t; val=CUBLAS_OP_N(0)
+i!  m: type=int; val=1024
+i!  n: type=int; val=1024
+i!  k: type=int; val=1024
+i!  alpha: type=void; val=POINTER (IN HEX:0x0x7ffe80b048c8)
+i!  A: type=void; val=POINTER (IN HEX:0x0x731ece000000)
+i!  Atype: type=cudaDataType_t; val=CUDA_R_64F(1)
+i!  lda: type=int; val=1024
+i!  B: type=void; val=POINTER (IN HEX:0x0x731ef0c00000)
+i!  Btype: type=cudaDataType_t; val=CUDA_R_64F(1)
+i!  ldb: type=int; val=1024
+i!  beta: type=void; val=POINTER (IN HEX:0x0x7ffe80b048d0)
+i!  C: type=void; val=POINTER (IN HEX:0x0x731ece800000)
+i!  Ctype: type=cudaDataType_t; val=CUDA_R_64F(1)
+i!  ldc: type=int; val=1024
+i!  computeType: type=cublasComputeType_t; val=CUBLAS_COMPUTE_64F(70)
+i!  algo: type=SOME TYPE; val=CUBLAS_GEMM_DEFAULT_TENSOR_OP(99)
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasSetStream_v2(cublasHandle_t, cudaStream_t) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i!  streamId: type=SOME TYPE; val=POINTER (IN HEX:0x(nil))
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasGemmEx(cublasHandle_t, cublasOperation_t, cublasOperation_t, int, int, int, const void*, const void*, cudaDataType, int, const void*, cudaDataType, int, const void*, void*, cudaDataType, int, cublasComputeType_t, cublasGemmAlgo_t) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i!  transa: type=cublasOperation_t; val=CUBLAS_OP_N(0)
+i!  transb: type=cublasOperation_t; val=CUBLAS_OP_N(0)
+i!  m: type=int; val=1024
+i!  n: type=int; val=1024
+i!  k: type=int; val=1024
+i!  alpha: type=void; val=POINTER (IN HEX:0x0x7ffe80b04928)
+i!  A: type=void; val=POINTER (IN HEX:0x0x731ece000000)
+i!  Atype: type=cudaDataType_t; val=CUDA_R_64F(1)
+i!  lda: type=int; val=1024
+i!  B: type=void; val=POINTER (IN HEX:0x0x731ef0c00000)
+i!  Btype: type=cudaDataType_t; val=CUDA_R_64F(1)
+i!  ldb: type=int; val=1024
+i!  beta: type=void; val=POINTER (IN HEX:0x0x7ffe80b04930)
+i!  C: type=void; val=POINTER (IN HEX:0x0x731ecf000000)
+i!  Ctype: type=cudaDataType_t; val=CUDA_R_64F(1)
+i!  ldc: type=int; val=1024
+i!  computeType: type=cublasComputeType_t; val=CUBLAS_COMPUTE_64F(70)
+i!  algo: type=SOME TYPE; val=CUBLAS_GEMM_DEFAULT_TENSOR_OP(99)
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
+I! cuBLAS (v13.8.0) function cublasStatus_t cublasDestroy_v2(cublasHandle_t) called:
+i!  handle: type=cublasHandle_t; val=POINTER (IN HEX:0x0x2813f730)
+i! Time: 2026-11-01T07:22:57 elapsed from start 0.000000 minutes or 0.000000 seconds
+i!Process=6849; Thread=126587140134208; GPU=0; Handle=POINTER (IN HEX:0x0x2813f730); StreamId=POINTER (IN HEX:0x(nil)) (defaultStream); MathMode=CUBLAS_FP64_EMULATED_FIXEDPOINT_MATH
+i! COMPILED WITH: GNU GCC/G++ / 8.5.0 20210514 (Red Hat 8.5.0-28)
